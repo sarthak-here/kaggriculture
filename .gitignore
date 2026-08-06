@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+replays/
+*.replay.json
+kaggriculture-data/
+.kaggle/
