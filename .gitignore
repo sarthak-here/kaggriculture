@@ -5,3 +5,5 @@ replays/
 *.replay.json
 kaggriculture-data/
 .kaggle/
+submission.tar.gz
+debug_log.txt
