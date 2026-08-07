@@ -1,40 +1,73 @@
 """
-Kaggriculture agent — v3: adds animals (coop/pasture, feed/care/harvest,
-fertilizer collection) on top of v2's multi-unit crops/land/hiring.
+Kaggriculture agent — v8: rebuilt around real top-player replay diagnostics
+(2026-08-07), not the v1-v7 spot-price/single-product ROI model.
 
-Design per STRATEGY.md, scoped to the engine's real per-turn budget
-(actTimeout=1s, remainingOverageTime=60s total — kaggriculture.json):
-every-turn work here is O(units + tiles), no per-turn search/simulation.
+Four findings from mining top-5-leaderboard replays (episode analysis, not
+guesswork) drove this rewrite:
 
-Key mechanic (verified against the engine source, not just the rules text):
-FEED and PLACE consume from the ACTING UNIT'S OWN inventory, not the shed.
-So feeding/placing is a two-step, multi-turn dance per unit: stand
-shed-adjacent and PICKUP the item into inventory, then walk it to the
-animal/structure and act. Both steps are re-derived fresh from the
-observation every turn (private["inventories"][i] tells us exactly what
-each unit is currently carrying) rather than tracked as separate state.
+1. The animal CARE bonus is the dominant lever, and it's an entire mechanic
+   v1-v7 never modeled. Per the engine source (kaggriculture.py): CARE only
+   builds pending_care_bonus on a day where the animal is BOTH cared_today
+   AND fed_today; at each production checkpoint (every `interval` days) it
+   yields base(1) + bonus, then the bonus resets to 0 unconditionally --
+   missing FEED specifically on the checkpoint day forfeits the whole
+   accumulated bonus. Disciplined daily feed+care gets a steady-state rate
+   of (1+interval)/interval products/day (game_data.animal_daily_rate) --
+   e.g. ~1.5 milk/day per cow, not the ~0.5/day the old ROI table assumed.
+   This alone made animals look net-negative until days_left~18-19 when
+   they're actually profitable from turn 1.
+2. Market orders take a quantity arg (BUY_SEED/BUY_ANIMAL/BUY_PRODUCT/SELL;
+   NOT HIRE, which is atomic). maxMarketOrdersPerTurn=10 caps ORDER LINES,
+   not items, so one BUY_ANIMAL COW 4 line buys 4 cows. The old code always
+   bought qty=1 and never modeled the 10-line budget explicitly, so SELL
+   lines (one per shed item, up to 9 possible) could silently starve
+   HIRE/BUY_* lines queued after them once the shed diversified.
+3. Hiring isn't capped near 10 hands. fib(n) cost is uncapped (fib(13)=377,
+   still cheap against a $50k+ economy); top players hire ~14/day, spread
+   across a turn's 10-line order budget over a few hours each morning as
+   cash allows.
+4. Melon is a short-lived bridge, not a monocrop: its glut side is the
+   steepest curve in the game (above_target=3.60, quadratic) and two
+   players both leaning on it crashes it hard in real matches. Strawberry
+   (ongoing, gentler glut curve) is the real scale crop. Winning players
+   also stop expanding at 3 quadrants (skip the $4000 4th) and use the
+   freed cash for hands/animals instead, and treat fertilizer collection
+   as a real revenue line (sell what isn't used to fertilize crops).
 
-Priority per unit each turn (STRATEGY.md's "never miss" rule first):
-  1. If on an animal tile: harvest ready product > collect fertilizer >
-     feed (if carrying wheat) > care
-  2. Harvest if standing on a ready plant
-  3. Water if standing on an unwatered plant
-  4. Pick up wheat/animal from the shed if adjacent and it's needed
-  5. Plant the best-ROI affordable crop / build a structure / place an
-     animal, whichever applies to the tile we're standing on
-  6. Clear a weed
-  7. Otherwise move toward the nearest unclaimed pending task
-Land/hiring/animal-investment are evaluated once per turn against simple
-ROI/utilization gates. Selling still dumps the whole shed every turn
-(task #11 will chunk this against the price curve instead).
+Kept from v7 (still correct, re-verified against engine source this pass):
+FEED/PLACE consume from the acting unit's own carried inventory, not the
+shed -- pickup-then-walk-then-act is still a real multi-turn dance. Crops
+DO decay (yield_units drains, then reverts to WEED) if left unharvested
+past max_lifespan_step, so harvest still can't be deprioritized the way
+animal harvest can (animal yield_units has no decay, only a max_held cap
+-- confirmed absent from the engine's plant-only _decay_plants). Endgame
+liquidation (dump everything, stop new investment) still applies as
+`liquidating`.
+
+Scoped to the engine's real per-turn budget (actTimeout=1s,
+remainingOverageTime=60s total) -- everything here is O(units + tiles),
+no per-turn search/simulation.
 """
-from game_data import CROPS, ANIMALS, land_cost, sell_quantity
+from game_data import CROPS, ANIMALS, land_cost, sell_quantity, animal_daily_rate
+
+# Everything sellable via the shed except WHEAT: a unit's carried WHEAT is
+# ambiguous (harvested wheat to sell vs. wheat fetched for a feed round
+# trip), so it's left alone and only ever reaches the shed via the normal
+# end-of-day auto-drop or an explicit FEED.
+SELLABLE_PRODUCTS = (set(CROPS) - {"WHEAT"}) | {spec["product"] for spec in ANIMALS.values()} | {"FERTILIZER"}
 
 DAYS_LEFT_TO_STOP_PLANTING = 2
 DAYS_LEFT_TO_STOP_EXPANDING = 5
-DAYS_LEFT_TO_STOP_ANIMAL_INVESTMENT = 8
-TILES_PER_UNIT_TARGET = 4  # rough capacity a single farmer/hand can keep up with
-MIN_OPERATING_CASH_RESERVE = 400  # kept untouched by land/animal purchases, for ongoing seed/operating costs
+DAYS_LEFT_TO_STOP_ANIMAL_INVESTMENT = 5
+MAX_QUADRANTS = 3  # winning replays never buy the 4th (SE, $4000) -- 3 quadrants + hands/animals beats more idle land
+MAX_MELON_TILES = 12  # melon is a bridge crop (fastest early cash) -- real matches show its glut crashes hard once both players lean on it
+TILES_PER_UNIT_TARGET = 4  # rough crop-tile capacity a single farmer/hand can keep up with
+ANIMAL_TILES_PER_UNIT = 3  # each animal needs a near-daily feed+care round trip -- roughly 3 animals is a hand's worth of upkeep
+MAX_ANIMAL_BUYS_PER_TURN = 8  # bound a single turn's investment burst so it can't blow the whole bank in one shot
+MAX_UNHOUSED_PER_SPECIES = 4  # don't buy an animal type faster than structures can be built for it
+MAX_TOTAL_ANIMALS = 12  # hard population cap -- local testing showed the per-species/staffing gates alone still let the herd run to 19+ structures on a 75-tile farm, consuming 100% of realistic hand capacity on animal upkeep alone and starving crops down to ~10-20 tiles for the whole game
+MAX_MARKET_ORDERS = 10  # engine hard cap: maxMarketOrdersPerTurn, shared across every order type
+MIN_OPERATING_CASH_RESERVE = 400  # kept untouched by investment purchases, for ongoing seed/operating costs
 SHED_CAPACITY = 100  # not exposed in the observation; matches the documented default
 SHED_OVERFLOW_SAFETY = 0.85  # above this fraction full, sell regardless of price to avoid discard
 MIN_SELL_PRICE_RATIO = 0.7  # don't sell a unit whose marginal price would fall below this fraction of current
@@ -82,24 +115,16 @@ def shed_adjacent_tiles(board_size):
     return [(half - 1, half - 1), (half, half - 1), (half - 1, half), (half, half)]
 
 
-def best_crop_to_plant(money, market_prices, days_left):
-    """ROI-scored crop choice at current spot price. (Tried discounting
-    this for our own future price impact -- i.e. treating a heavy melon
-    commitment as self-crashing melon's price -- since melon scores
-    ~6-8x every other crop undiscounted and the competition organizer
-    called an undiscounted melon monocrop one of the strongest metas
-    seen during balancing. Reverted: local testing (2026-08-07, 3 fixed
-    seeds vs starter) showed it net-negative -- melon's price never
-    actually dropped much below base in practice, because sell_quantity
-    already throttles real selling pressure at the point of sale and
-    town consumption keeps draining inventory. The pre-emptive discount
-    was strictly more pessimistic than reality and left real value
-    on the table. If this becomes a real problem against tougher ladder
-    opponents who also compete hard for the melon market, revisit with
-    a softer discount informed by real replay data, not a static
-    assume-it-all-sells-at-once formula.)"""
+def best_crop_to_plant(money, market_prices, days_left, melon_tile_count):
+    """ROI-scored crop choice at current spot price. Melon is excluded once
+    MAX_MELON_TILES is reached -- undiscounted it scores far above every
+    other crop, which is exactly the monocrop trap real replays show
+    crashing melon's price once both players lean on it (its glut curve is
+    quadratic, the steepest in the game)."""
     best, best_score = None, float("-inf")
     for crop, spec in CROPS.items():
+        if crop == "MELON" and melon_tile_count >= MAX_MELON_TILES:
+            continue
         if spec["first_yield_day"] > days_left:
             continue
         if spec["seed_cost"] > money:
@@ -114,53 +139,37 @@ def best_crop_to_plant(money, market_prices, days_left):
     return best
 
 
-def best_animal_to_get(money, market_prices, days_left):
-    """Steady-state profit/day estimate: production rate * price, minus
-    1 wheat/day feed cost, minus animal cost amortized over the days
-    actually left to produce. Ignores the CARE bonus (upside only, keeps
-    the estimate conservative). BUILD_COOP/BUILD_PASTURE cost nothing --
-    verified against the engine source, they just place a structure on an
-    empty tile via a unit's turn -- so only the animal's own market cost
-    applies; no phantom structure-cost estimate needed here.
-
-    Requires POSITIVE profit, not just "enough runway to produce at all" --
-    a real gap found by direct calculation (2026-08-07): with the feed
-    cost included, no animal actually breaks even until days_left is
-    roughly 18-19 (e.g. at days_left=8.3, GOOSE nets -$250, COW -$440,
-    SHEEP -$500), yet the old runway-only check let this function
-    recommend an animal any time days_left > interval*2 -- confidently
-    picking "the least-bad losing investment" for the whole days_left
-    9-18 window. DAYS_LEFT_TO_STOP_ANIMAL_INVESTMENT (a cheap early exit
-    before this function is even called) intentionally stays a loose
-    pre-filter; this profit check is the real gate."""
+def rank_animals_to_buy(money, market_prices, days_left):
+    """Profitable animals, best profit/day first, using the real
+    steady-state care-bonus rate (see game_data.animal_daily_rate) instead
+    of the old naive '1 product per interval' assumption. That old
+    assumption made every animal look unprofitable until days_left~18-19;
+    the real rate makes them profitable almost immediately, matching real
+    replays that buy multiple animals turn 1 with starting cash."""
     wheat_price = market_prices.get("WHEAT", CROPS["WHEAT"]["base_price"])
-    best, best_score = None, 0.0
+    ranked = []
     for animal, spec in ANIMALS.items():
-        total_cost = spec["cost"]
-        if total_cost > money:
+        if spec["cost"] > money:
             continue
         productive_days = days_left - spec["first_yield_day"]
-        if productive_days <= spec["interval"] * 2:
-            continue  # not enough runway to be worth it
+        if productive_days <= 0:
+            continue
+        rate = animal_daily_rate(animal)
         price = market_prices.get(spec["product"], spec["base_price"])
-        revenue = (productive_days / spec["interval"]) * price
-        feed_cost = days_left * wheat_price
-        profit_per_day = (revenue - feed_cost - total_cost) / days_left
-        if profit_per_day > best_score:
-            best, best_score = animal, profit_per_day
-    return best
+        daily_revenue = rate * price
+        daily_feed_cost = wheat_price  # 1 wheat/day, required for the care bonus itself
+        daily_amortized_cost = spec["cost"] / productive_days
+        profit_per_day = daily_revenue - daily_feed_cost - daily_amortized_cost
+        if profit_per_day > 0:
+            ranked.append((animal, profit_per_day))
+    ranked.sort(key=lambda t: -t[1])
+    return [a for a, _ in ranked]
 
 
 def find_nearest_unclaimed(pos, candidates, claimed):
-    """Nearest unclaimed candidate to `pos`. Sorts by squared Euclidean
-    distance rather than Manhattan: Manhattan distance ties constantly on
-    a grid (every tile on a diamond around pos scores the same), and
-    Python's min() breaks ties by picking whichever candidate happens to
-    come first in the list -- since tiles are iterated in row-major
-    (y, then x) order, that systematically favored low-x/low-y tiles any
-    time multiple options were equally close, which reads as units always
-    drifting toward one corner instead of genuinely going to the nearest
-    open tile (reported directly from watching a replay, 2026-08-07)."""
+    """Nearest unclaimed candidate to `pos`, by squared Euclidean distance
+    (Manhattan ties constantly on a grid and min() breaks ties by iteration
+    order, which reads as units drifting toward one corner)."""
     options = [c for c in candidates if c not in claimed]
     if not options:
         return None
@@ -169,13 +178,10 @@ def find_nearest_unclaimed(pos, candidates, claimed):
 
 def find_best_build_site_unclaimed(candidates, claimed, shed_center):
     """Pick an empty tile for a new animal structure by proximity to the
-    shed, not to whichever unit happens to be routing there. Feeding is a
+    shed, not to whichever unit happens to be routing there -- feeding is a
     daily round trip (shed -> animal -> shed) for the rest of the season,
-    so a structure's distance from the shed is a recurring cost paid every
-    day it's alive, unlike the one-off walk to go build it (spotted by
-    comparing replays, 2026-08-07: opponents' animal structures cluster
-    near their shed; ours ended up scattered wherever a unit happened to
-    be standing when it decided to build)."""
+    so distance from the shed is a recurring cost, unlike the one-off walk
+    to go build it."""
     options = [c for c in candidates if c not in claimed]
     if not options:
         return None
@@ -184,41 +190,41 @@ def find_best_build_site_unclaimed(candidates, claimed, shed_center):
 
 def held_seed_to_plant(seed_budget):
     """Any seed already sitting in inventory should be planted before
-    buying anything new — the 'best crop' recommendation can flicker
-    turn to turn as our own sells nudge prices, and re-deriving it at
-    plant time (instead of using whatever we already paid for) strands
-    money on abandoned seed purchases."""
+    buying anything new -- the 'best crop' recommendation can flicker turn
+    to turn as our own sells nudge prices, and re-deriving it at plant time
+    (instead of using whatever we already paid for) strands money on
+    abandoned seed purchases."""
     held = [(crop, n) for crop, n in seed_budget.items() if n > 0]
     if not held:
         return None
     return max(held, key=lambda c: c[1])[0]
 
 
-def decide_unit_action(pos, tile, inv, day, seed_budget, plant_crop, liquidating,
+def decide_unit_action(pos, tile, inv, day, hour, seed_budget, plant_crop, liquidating,
                         claimed, needs_harvest, needs_water, empty_tiles, weeds,
                         ctx):
     """Returns op_list. Mutates `claimed`/`seed_budget`/ctx budgets so a
     second unit acting later this same turn doesn't collide with what an
-    earlier unit already committed to (the engine silently no-ops or
-    fails an over-committed action rather than queuing it)."""
+    earlier unit already committed to (the engine silently no-ops or fails
+    an over-committed action rather than queuing it)."""
     # ---- animal tile we're standing on ----
+    # Not gated on "can this animal still produce again" -- feeding is
+    # cheap (~$25-50) and the CARE bonus (game_data.animal_daily_rate) only
+    # accrues on days the animal is BOTH fed AND cared, so missing a day
+    # for a marginal runway saving forfeits far more than it saves.
     if has_animal(tile):
         if tile["yield_units"] > 0:
             return ["HARVEST"]
         if tile["fertilizer_available"]:
             return ["COLLECT_FERTILIZER"]
-        # Feeding only pays off if another scheduled production can still
-        # land before the season ends -- otherwise it just burns wheat
-        # that's worth more sold. (Cheap approximation: checks the
-        # animal's fixed interval, not this instance's exact next
-        # production day, but that's enough to catch the true-waste case.)
-        days_left = 30 - day
-        can_still_produce = days_left >= ANIMALS[tile["animal"]]["interval"]
-        if not tile["fed_today"] and inv.get("WHEAT", 0) > 0 and can_still_produce:
+        if not tile["fed_today"] and inv.get("WHEAT", 0) > 0 and not liquidating:
             return ["FEED"]
-        if not tile["cared_today"] and can_still_produce:
+        if not tile["cared_today"] and not liquidating:
             return ["CARE"]
 
+    # Crops (unlike animals) decay once ready and left unharvested --
+    # yield_units drains and the tile reverts to WEED -- so harvest still
+    # can't be deprioritized below animal upkeep the way animal-harvest can.
     if is_plant(tile) and tile["yield_units"] > 0 and \
        (day - tile["planted_day"]) >= CROPS[tile["crop"]]["first_yield_day"]:
         return ["HARVEST"]
@@ -226,32 +232,74 @@ def decide_unit_action(pos, tile, inv, day, seed_budget, plant_crop, liquidating
     if is_plant(tile) and not tile["watered_today"]:
         return ["WATER"]
 
-    # ---- shed pickups: wheat for feeding, or a purchased animal to place ----
+    # Opportunistic fertilize: only on a tile already watered today (never
+    # delay watering for this) and not already covered, using carried
+    # fertilizer. Doubles that tile's next watering yield for ~2 days.
+    if (is_plant(tile) and tile["watered_today"] and inv.get("FERTILIZER", 0) > 0
+            and tile.get("fertilized_until_day", -1) < day + 1):
+        return ["FERTILIZE"]
+
+    # ---- place a carried animal on any compatible empty structure ----
+    # PASTURE accepts COW or SHEEP, COOP only GOOSE -- no need to
+    # pre-assign a structure to a specific species, any match works.
+    if is_structure(tile) and "animal" not in tile:
+        for animal in ANIMALS:
+            if ANIMALS[animal]["structure"] == tile["kind"] and inv.get(animal, 0) > 0:
+                return ["PLACE", animal]
+
+    # ---- shed pickups: wheat/fertilizer for the round trip, or a
+    # purchased animal with a home slot waiting ----
     if pos in ctx["shed_tiles"]:
         if ctx["wheat_pickup_wanted"] > 0 and inv.get("WHEAT", 0) == 0:
             n = min(ctx["wheat_pickup_wanted"], ctx["shed"].get("WHEAT", 0))
             if n > 0:
                 ctx["wheat_pickup_wanted"] -= n
                 return ["PICKUP", "WHEAT", n]
-        if ctx["animal_to_place"] is not None and inv.get(ctx["animal_to_place"], 0) == 0:
-            animal = ctx["animal_to_place"]
-            if ctx["shed"].get(animal, 0) > 0 and ctx["animal_pickup_claimed"] < ctx["shed"].get(animal, 0):
-                ctx["animal_pickup_claimed"] += 1
+        if ctx["fert_pickup_wanted"] > 0 and inv.get("FERTILIZER", 0) == 0:
+            n = min(ctx["fert_pickup_wanted"], ctx["shed"].get("FERTILIZER", 0))
+            if n > 0:
+                ctx["fert_pickup_wanted"] -= n
+                return ["PICKUP", "FERTILIZER", n]
+        for animal in ctx["pickup_priority"]:
+            kind = ANIMALS[animal]["structure"]
+            if (inv.get(animal, 0) == 0 and ctx["shed"].get(animal, 0) > 0
+                    and ctx["home_slots"].get(kind, 0) > 0):
+                ctx["home_slots"][kind] -= 1
                 return ["PICKUP", animal, 1]
-
-    # ---- place a carried animal on a matching empty structure ----
-    if is_structure(tile) and "animal" not in tile and ctx["animal_to_place"] is not None:
-        if tile["kind"] == ANIMALS[ctx["animal_to_place"]]["structure"] and inv.get(ctx["animal_to_place"], 0) > 0:
-            return ["PLACE", ctx["animal_to_place"]]
+        # Mid-day flush: harvested products otherwise sit unsellable in a
+        # unit's inventory until the end-of-day auto-drop, lagging sales by
+        # up to half a day. Uses PLACE <item> n (per product), never DROP --
+        # DROP empties the whole inventory, which would dump WHEAT a unit
+        # is carrying out to feed an animal, undoing that round trip
+        # mid-mission. Carried FERTILIZER is only flushed once nothing else
+        # still wants to pick more up (ctx["fert_pickup_wanted"] spent) --
+        # otherwise this could flush fertilizer one unit just fetched for
+        # fertilizing right back into the shed.
+        for item in SELLABLE_PRODUCTS:
+            if item == "FERTILIZER" and ctx["fert_pickup_wanted"] > 0:
+                continue
+            n = inv.get(item, 0)
+            if n > 0:
+                return ["PLACE", item, n]
 
     if tile is None and not liquidating:
-        if ctx["build_target"] is not None and not ctx["build_committed"]:
-            ctx["build_committed"] = True
-            return [f"BUILD_{ctx['build_target']}"]
-        held = held_seed_to_plant(seed_budget)
-        if held is not None:
-            seed_budget[held] -= 1
-            return ["PLANT", held]
+        for kind in ("PASTURE", "COOP"):
+            if ctx["build_wanted"].get(kind, 0) > 0:
+                ctx["build_wanted"][kind] -= 1
+                return [f"BUILD_{kind}"]
+        # A fresh seed starts at consecutive_unwatered=1 (no grace period
+        # per the rules doc) -- planted on the day's last turn with no
+        # chance to water before rollover, it's a guaranteed weed by
+        # morning: seed cost lost, plus a DIG later. Hour 22 is still fine
+        # (the unit is standing right on it; next turn's on-tile WATER
+        # branch above fires deterministically before anything else can
+        # claim the unit). Seed buying itself stays ungated -- seeds keep
+        # overnight, only the act of planting is time-sensitive.
+        if hour < 23:
+            held = held_seed_to_plant(seed_budget)
+            if held is not None:
+                seed_budget[held] -= 1
+                return ["PLANT", held]
 
     if is_weed(tile):
         return ["DIG"]
@@ -262,60 +310,52 @@ def decide_unit_action(pos, tile, inv, day, seed_budget, plant_crop, liquidating
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
-    if ctx["animals_need_harvest"]:
-        t = find_nearest_unclaimed(pos, ctx["animals_need_harvest"], claimed)
+    # Animal upkeep (harvest/fertilizer/feed/care), merged into one
+    # high-priority category -- this used to rank behind crop watering and
+    # weeding, which is exactly why the care bonus rarely accrued: with
+    # limited hands, anything else pending always won the priority fight.
+    if ctx["animals_need_visit"]:
+        # A unit not carrying wheat can't actually FEED, so don't send it
+        # to a tile whose only outstanding need is feed -- it would arrive,
+        # find nothing else to do (CARE/HARVEST/fertilizer already done),
+        # and waste the trip. Leave those for a wheat-carrying unit.
+        candidates = ctx["animals_need_visit"]
+        if inv.get("WHEAT", 0) == 0 and ctx["feed_only"]:
+            candidates = [c for c in candidates if c not in ctx["feed_only"]]
+        t = find_nearest_unclaimed(pos, candidates, claimed)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
-    if ctx["animals_need_fertilizer"]:
-        t = find_nearest_unclaimed(pos, ctx["animals_need_fertilizer"], claimed)
-        if t:
-            claimed.add(t)
-            return [step_toward(pos, t)]
+    # Carrying an animal with nowhere placed yet -- deliver it before
+    # picking up any new task; it's dead weight in inventory otherwise.
+    for animal in ANIMALS:
+        if inv.get(animal, 0) > 0:
+            kind = ANIMALS[animal]["structure"]
+            t = find_nearest_unclaimed(pos, ctx["structures_need_animal"].get(kind, []), claimed)
+            if t:
+                claimed.add(t)
+                return [step_toward(pos, t)]
+            break
     if needs_water:
         t = find_nearest_unclaimed(pos, needs_water, claimed)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
-    if ctx["animals_need_feed"]:
-        if inv.get("WHEAT", 0) > 0:
-            t = find_nearest_unclaimed(pos, ctx["animals_need_feed"], claimed)
-            if t:
-                claimed.add(t)
-                return [step_toward(pos, t)]
-        elif ctx["wheat_pickup_wanted"] > 0 and ctx["shed"].get("WHEAT", 0) > 0:
-            t = find_nearest_unclaimed(pos, ctx["shed_tiles"], claimed)
-            if t:
-                return [step_toward(pos, t)]  # don't claim a shed tile, others may need it too
-    # Weeds block land use for as long as they sit there, and used to rank
-    # dead last -- behind even the animal-care bonus -- so in the late game,
-    # when there's almost always something higher-priority competing for a
-    # unit's turn, they never got cleared and permanently ate into usable
-    # land (spotted directly from watching a replay, 2026-08-07: money
-    # growth visibly slows turn ~500-720 while opponents' farms stay clear).
-    # Moved up so they get regular attention instead of being starved out.
+    if ctx["animals_need_feed_no_wheat"] and ctx["wheat_pickup_wanted"] > 0 and ctx["shed"].get("WHEAT", 0) > 0:
+        t = find_nearest_unclaimed(pos, ctx["shed_tiles"], claimed)
+        if t:
+            return [step_toward(pos, t)]  # don't claim a shed tile, others may need it too
+    # Weeds block land use for as long as they sit there -- moved above
+    # planting/building so they get regular attention instead of being
+    # starved out in the late game (spotted directly from watching a
+    # replay: money growth visibly slows turn ~500-720 while opponents'
+    # farms stay clear).
     if weeds:
         t = find_nearest_unclaimed(pos, weeds, claimed)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
-    if (ctx["animal_to_place"] is not None and inv.get(ctx["animal_to_place"], 0) > 0
-            and ctx["structures_need_animal"]):
-        t = find_nearest_unclaimed(pos, ctx["structures_need_animal"], claimed)
-        if t:
-            claimed.add(t)
-            return [step_toward(pos, t)]
-    if (ctx["animal_to_place"] is not None and inv.get(ctx["animal_to_place"], 0) == 0
-            and ctx["shed"].get(ctx["animal_to_place"], 0) > 0):
-        t = find_nearest_unclaimed(pos, ctx["shed_tiles"], claimed)
-        if t:
-            return [step_toward(pos, t)]
-    # Building routes to the empty tile closest to the SHED, not to the
-    # unit -- a structure's distance from the shed is a cost paid on every
-    # future feeding trip for the rest of the season, unlike the one-off
-    # walk to go build it.
-    if (not liquidating and ctx["build_target"] is not None and not ctx["build_committed"]
-            and empty_tiles):
+    if not liquidating and any(n > 0 for n in ctx["build_wanted"].values()) and empty_tiles:
         t = find_best_build_site_unclaimed(empty_tiles, claimed, ctx["shed_center"])
         if t:
             claimed.add(t)
@@ -325,19 +365,19 @@ def decide_unit_action(pos, tile, inv, day, seed_budget, plant_crop, liquidating
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
-    if ctx["animals_need_care"]:
-        t = find_nearest_unclaimed(pos, ctx["animals_need_care"], claimed)
-        if t:
-            claimed.add(t)
-            return [step_toward(pos, t)]
 
     return ["PASS"]
 
 
-def owned_structure_kind(me, pos):
-    x, y = pos
-    tile = me["tiles"][y][x]
-    return tile.get("kind") if isinstance(tile, dict) else None
+def _fib(n):
+    """Matches the engine's hire-cost fib exactly: fib(0)=1, fib(1)=1,
+    fib(2)=2, ... uncapped (fib(13)=377) -- still cheap against a $50k+
+    economy, which is why top players hire to ~14/day instead of stopping
+    at a $55 (index-9) self-imposed ceiling."""
+    a, b = 1, 1
+    for _ in range(n):
+        a, b = b, a + b
+    return a
 
 
 def agent(obs):
@@ -350,139 +390,231 @@ def agent(obs):
     market_prices = obs["market"]["prices"]
     board_size = len(me["tiles"])
 
-    market = []
-    hands_actions = []
-
     liquidating = days_left <= DAYS_LEFT_TO_STOP_PLANTING
+
+    owned = list(iter_owned_tiles(me))
+    num_owned_tiles = len(owned)
+    empty_tiles_all = [(x, y) for x, y, t in owned if t is None]
+    shed = private.get("shed", {})
+    inventories = private.get("inventories", [])
+
+    def total_held(item):
+        return shed.get(item, 0) + sum(inv.get(item, 0) for inv in inventories)
 
     # ---- sell shed inventory, chunked against the price curve ----
     # Dumping everything at once craters premium goods (strawberry/melon/
     # milk/wool all have above_target > 1, crashing to the $1 floor fast on
     # a glut). Hold back whatever would sell for materially less than the
-    # current price; it carries over and gets re-priced next turn as town
-    # consumption drains market inventory back down. In the endgame or when
-    # the shed is close to overflowing (capped at 100, excess discarded),
-    # sell everything regardless — a held unit that never sells is worth $0.
-    shed = private.get("shed", {})
+    # current price; it carries over and gets re-priced next turn. In the
+    # endgame or near shed overflow (capped at 100, excess discarded), sell
+    # everything regardless -- a held unit that never sells is worth $0.
     shed_total = sum(shed.values())
     force_sell_all = liquidating or shed_total >= SHED_CAPACITY * SHED_OVERFLOW_SAFETY
     market_inventory = obs["market"]["inventory"]
+    animal_count = sum(1 for _, _, t in owned if has_animal(t))
+    orders_sell = []
     for item, count in shed.items():
         if count <= 0:
             continue
-        n = count if force_sell_all else sell_quantity(item, count, market_inventory.get(item, 10000), MIN_SELL_PRICE_RATIO)
+        # Animals can end up sitting in the shed between BUY_ANIMAL and
+        # PICKUP (waiting on a structure). They aren't in PRODUCTS -- the
+        # engine's SELL quoting silently drops an order for them -- but the
+        # old shed.items() loop iterated everything and queued one anyway,
+        # burning an order-line slot for nothing every turn an animal
+        # waited in shed (confirmed via Fable's diff of a real v6 loss:
+        # 'agent SELLs cows' in the action log, right after BUY_ANIMAL).
+        if item in ANIMALS:
+            continue
+        sellable = count
+        if item == "WHEAT" and not liquidating:
+            # Reserve enough wheat to feed today's animals before selling
+            # any surplus. Without this, a day with animal_count > 0 will
+            # BUY_PRODUCT WHEAT to restock feed, then the very next turn
+            # this loop sees shed wheat again and SELLs it (price still
+            # looks sellable), then next turn buys it back again --
+            # confirmed in local testing: WHEAT flip-flopped BUY/SELL every
+            # single turn on day 2, bleeding money on the spread each round
+            # trip for no gain, since the price impact of a buy+sell of the
+            # same unit nets negative.
+            sellable = max(0, count - animal_count)
+        n = sellable if force_sell_all else sell_quantity(item, sellable, market_inventory.get(item, 10000), MIN_SELL_PRICE_RATIO)
         if n > 0:
-            market.append(["SELL", item, n])
-
-    # ---- land expansion: buy the next quadrant as soon as affordable ----
-    # Used to gate this on utilization > 0.8 (only expand once already
-    # tile-constrained) plus a 2x cash buffer. A real ranked match (episode
-    # 90596561, 2026-08-07) showed this is badly too conservative: the
-    # opponent bought all 4 quadrants by ~day 10 despite having very little
-    # cash margin, while we crawled to 3 quadrants and never got the 4th at
-    # all (blocked by our own DAYS_LEFT_TO_STOP_EXPANDING cutoff, having
-    # waited too long). Their money pulled decisively ahead from day 18 on
-    # (67k vs our 21k by day 28) -- more land is production capacity that
-    # compounds over the remaining season, so it's worth buying proactively
-    # ahead of need, not reactively once already full.
-    #
-    # But buying land alone isn't the whole story: a real match (episode
-    # 90598933, 2026-08-07) showed the opposite failure mode when this
-    # collides with an aggressive melon opening. Melon (the ROI-best crop
-    # by a wide margin) takes 10 days to first yield, and this agent plants
-    # every empty tile it can afford on sight -- so a fast start can dump
-    # most of the starting $3000 into ~20 melon seeds within the first two
-    # days. If land purchases then eat whatever cash is left over that same
-    # window, money can get pinned near $0 for 10+ days straight (that
-    # match: money oscillated $0-$334 from day 2 to day 22) with zero
-    # operating cushion -- unable to hire, fertilize, or recover from bad
-    # luck, even though the eventual harvest is coming. A MIN_OPERATING_CASH
-    # reserve on top of the land cost itself keeps land purchases from
-    # competing with the crop cycle's own cash needs during that gap.
-    owned = list(iter_owned_tiles(me))
-    num_owned_tiles = len(owned)
-    empty_tiles_all = [(x, y) for x, y, t in owned if t is None]
-    next_land_cost = land_cost(len(me["unlocked_quadrants"]))
-    if (next_land_cost is not None and days_left > DAYS_LEFT_TO_STOP_EXPANDING
-            and me["money"] > next_land_cost * 1.3 + MIN_OPERATING_CASH_RESERVE):
-        market.append(["BUY_LAND"])
-
-    # ---- hiring: only worth deciding at the start of the day (a hand
-    # hired mid-day still costs the same but works fewer turns) ----
-    if hour == 0 and not liquidating:
-        max_useful_hands = max(0, num_owned_tiles // TILES_PER_UNIT_TARGET - 1)
-        hires_today = me["hires_today"]
-        fib = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
-        while hires_today < max_useful_hands:
-            idx = min(hires_today, len(fib) - 1)
-            hire_cost = fib[idx]
-            if me["money"] < hire_cost * 3:
-                break
-            market.append(["HIRE"])
-            hires_today += 1
+            value = n * market_prices.get(item, 0)
+            orders_sell.append((value, ["SELL", item, n]))
+    orders_sell.sort(key=lambda t: -t[0])  # protect the highest-value sells if the order budget gets tight
+    orders_sell = [o for _, o in orders_sell]
 
     # ---- animal task lists ----
-    # Skip animals that can't produce again before the season ends --
-    # feeding them would just burn wheat worth more sold.
-    animals_need_feed = [
-        (x, y) for x, y, t in owned
-        if has_animal(t) and not t["fed_today"] and days_left >= ANIMALS[t["animal"]]["interval"]
-    ]
+    animals_need_feed = [(x, y) for x, y, t in owned if has_animal(t) and not t["fed_today"]]
+    animals_need_feed_no_wheat = bool(animals_need_feed)
     animals_need_harvest = [(x, y) for x, y, t in owned if has_animal(t) and t["yield_units"] > 0]
     animals_need_fertilizer = [(x, y) for x, y, t in owned if has_animal(t) and t["fertilizer_available"]]
     animals_need_care = [(x, y) for x, y, t in owned if has_animal(t) and not t["cared_today"]]
-    structures_need_animal = [(x, y) for x, y, t in owned if is_structure(t) and "animal" not in t]
-    animal_count = sum(1 for _, _, t in owned if has_animal(t))
+    animals_need_visit = list(set(animals_need_harvest) | set(animals_need_fertilizer)
+                               | set(animals_need_feed) | set(animals_need_care))
+    other_needs = set(animals_need_harvest) | set(animals_need_fertilizer) | set(animals_need_care)
+    feed_only = set(animals_need_feed) - other_needs
+    structures_need_animal = {"PASTURE": [], "COOP": []}
+    for x, y, t in owned:
+        if is_structure(t) and "animal" not in t:
+            structures_need_animal[t["kind"]].append((x, y))
 
-    # top up wheat for feeding if we're running low relative to how many mouths we have.
-    # Not once liquidating: buying wheat only to feed animals that won't get
-    # another chance to produce before the season ends is pure waste --
-    # that money is worth more banked (or that wheat worth more sold).
-    shed_wheat = private.get("shed", {}).get("WHEAT", 0)
+    # top up wheat for feeding (not once liquidating -- new production
+    # won't land in time, so unspent wheat is worth more sold than fed).
+    shed_wheat = shed.get("WHEAT", 0)
+    orders_wheat = []
     if not liquidating and animal_count > 0 and shed_wheat < animal_count and me["money"] >= market_prices.get("WHEAT", 25):
-        market.append(["BUY_PRODUCT", "WHEAT", animal_count - shed_wheat])
+        orders_wheat.append(["BUY_PRODUCT", "WHEAT", animal_count - shed_wheat])
 
-    # ---- decide whether to invest in a new animal this turn ----
-    # Used a flat $5000 cash gate before even considering an animal --
-    # arbitrarily far above what one actually costs (GOOSE $300, COW $400,
-    # SHEEP $500; BUILD_COOP/PASTURE itself is a free unit action, not a
-    # market cost). Real match data (episode 90598134, 2026-08-07) showed
-    # the cost of that: we had only 3 COW established by game end vs an
-    # opponent's 9 SHEEP + 5 COW (14 total) despite them holding LESS land
-    # than us -- animals produce indefinitely once running, so starting
-    # late compounds badly over a 30-day season. Replaced with a gate
-    # proportional to the cheapest animal's actual cost (same
-    # MIN_OPERATING_CASH_RESERVE pattern as the land-buying fix), so we
-    # can get a GOOSE running as soon as it's genuinely affordable rather
-    # than waiting for 10-15x that amount to sit in the bank.
-    cheapest_animal_cost = min(spec["cost"] for spec in ANIMALS.values())
-    animal_to_place = None
-    build_target = None
-    if (not liquidating and days_left > DAYS_LEFT_TO_STOP_ANIMAL_INVESTMENT
-            and me["money"] > cheapest_animal_cost * 1.5 + MIN_OPERATING_CASH_RESERVE
-            and empty_tiles_all and not structures_need_animal):
-        animal = best_animal_to_get(me["money"], market_prices, days_left)
-        if animal is not None:
-            build_target = ANIMALS[animal]["structure"]
-    if structures_need_animal:
-        # finish placing whatever the existing empty structure expects.
-        # A structure is shared by 1-2 animal types (COOP->GOOSE only,
-        # PASTURE->COW or SHEEP); tie-break PASTURE to COW consistently.
-        structure_kind = owned_structure_kind(me, structures_need_animal[0])
-        animal = next(a for a, spec in ANIMALS.items() if spec["structure"] == structure_kind)
-        animal_to_place = animal
-        # Check total held (shed + whatever a unit is already carrying
-        # toward the structure), not just the shed: a picked-up animal
-        # spends several turns in transit with shed count back at 0,
-        # which would otherwise trigger a fresh BUY_ANIMAL every turn
-        # along the way.
-        carried = sum(inv.get(animal, 0) for inv in private.get("inventories", []))
-        total_held = private.get("shed", {}).get(animal, 0) + carried
-        if total_held == 0 and me["money"] >= ANIMALS[animal]["cost"]:
-            market.append(["BUY_ANIMAL", animal, 1])
+    # ---- hiring, phase 1: guarantee minimum staffing for the EXISTING
+    # herd before spending anything on MORE animals. `hands` is wiped to
+    # [] on every day rollover (confirmed in the engine source) -- every
+    # hand is a fresh re-hire every single day. Local testing exposed a
+    # death spiral: animal investment used to claim cash before hiring, so
+    # on any day cash was tight, hands stayed at 0 -- with 0 hands, an
+    # 18-animal herd gets fed by no one, escapes en masse after 2 missed
+    # days, and the whole investment (and the cash spent on it) is lost.
+    # Existing animals must be able to eat before new ones get bought.
+    HIRE_MIN_RESERVE = 2
+    active_tiles = num_owned_tiles - len(empty_tiles_all)
+    animal_workload = sum(1 for _, _, t in owned if is_structure(t))
+    min_hands_for_upkeep = 0 if liquidating else -(-animal_workload // ANIMAL_TILES_PER_UNIT)  # ceil div
+    orders_hire = []
+    hires_today = me["hires_today"]
+    money_left = me["money"]
+    if not liquidating:
+        while hires_today < min_hands_for_upkeep:
+            hire_cost = _fib(hires_today)
+            if money_left < hire_cost + HIRE_MIN_RESERVE:
+                break
+            orders_hire.append(["HIRE"])
+            money_left -= hire_cost
+            hires_today += 1
+
+    # ---- land expansion: buy up to 3 quadrants total, skip the 4th ----
+    # Real matches consistently stop at 3 quadrants (never buy the $4000
+    # SE) and redirect that cash to hands/animals instead. Budgeted off
+    # money_left (net of phase-1 hiring), not raw me["money"] -- otherwise
+    # this and the animal-investment budget below both claim the same cash
+    # in the same turn (worst case: turn 1, $3000 passes the land check at
+    # $1700, queues a $1000 BUY_LAND, then animal investment separately
+    # budgets ~$2600 of that same $3000 -- ~$3600 committed against a $3000
+    # bank, and which order the engine actually funds isn't something this
+    # code controls). Also requires day >= 1: the real meta doesn't buy
+    # land turn 1 either -- it goes all-in on animals+seeds and buys Q2/Q3
+    # a week-plus in, funded from revenue, not starting cash. Buying land
+    # turn 1 recreates the exact land-vs-opening liquidity crunch this
+    # project already diagnosed once (a real match loss, documented above).
+    orders_land = []
+    next_land_cost = land_cost(len(me["unlocked_quadrants"]))
+    if (next_land_cost is not None and len(me["unlocked_quadrants"]) < MAX_QUADRANTS
+            and day >= 1 and days_left > DAYS_LEFT_TO_STOP_EXPANDING
+            and money_left > next_land_cost * 1.3 + MIN_OPERATING_CASH_RESERVE):
+        orders_land.append(["BUY_LAND"])
+        money_left -= next_land_cost
+
+    # ---- animal investment: round-robin the ranked list, buying 1 of the
+    # best-still-affordable species at a time until cash/per-turn caps
+    # bite. This naturally diversifies (each pass buys a different
+    # species) and is self-limiting turn to turn since spent cash is
+    # reflected in next turn's `money` -- no persistent state needed.
+    # Only gated by MAX_UNHOUSED_PER_SPECIES (don't buy an animal type
+    # faster than structures can be built for it) -- NOT by empty land,
+    # since by mid-game most land is already crops and an animal bought
+    # ahead of its structure just waits a turn or two in the shed; gating
+    # on empty land here previously blocked ever refilling structures that
+    # already existed once free land ran low, which is exactly how the
+    # herd, once thinned by a staffing gap, could never recover even with
+    # cash in hand. ----
+    # Growing the herd is only allowed once phase-1 fully staffed the
+    # EXISTING one (hires_today reached min_hands_for_upkeep in cash terms,
+    # not cut short by insufficient money) -- otherwise this is exactly the
+    # bootstrapping trap that caused a real collapse in local testing:
+    # buying animals faster than affordable staffing keeps outrunning cash,
+    # so the care-bonus discipline the whole ROI model depends on never
+    # actually happens, and every extra animal just adds unpaid feed risk.
+    staffing_established = hires_today >= min_hands_for_upkeep
+    total_animal_population = animal_count + sum(total_held(a) for a in ANIMALS)
+    room_for_more = max(0, MAX_TOTAL_ANIMALS - total_animal_population)
+    orders_animal_buy = []
+    animal_buy_spend = 0
+    if not liquidating and staffing_established and room_for_more > 0 and days_left > DAYS_LEFT_TO_STOP_ANIMAL_INVESTMENT:
+        ranked = rank_animals_to_buy(money_left, market_prices, days_left)
+        if ranked:
+            budget = money_left - MIN_OPERATING_CASH_RESERVE
+            unhoused_now = {a: total_held(a) for a in ANIMALS}
+            to_buy = {}
+            picks = 0
+            attempts = 0
+            while (budget > 0 and picks < MAX_ANIMAL_BUYS_PER_TURN and sum(to_buy.values()) < room_for_more
+                   and ranked and attempts < 4 * len(ranked) + 4):
+                attempts += 1
+                species = ranked[picks % len(ranked)] if len(ranked) > 1 else ranked[0]
+                cost = ANIMALS[species]["cost"]
+                if cost > budget:
+                    ranked = [a for a in ranked if a != species]
+                    continue
+                if unhoused_now.get(species, 0) >= MAX_UNHOUSED_PER_SPECIES:
+                    picks += 1
+                    continue
+                to_buy[species] = to_buy.get(species, 0) + 1
+                unhoused_now[species] = unhoused_now.get(species, 0) + 1
+                budget -= cost
+                animal_buy_spend += cost
+                picks += 1
+            for species, qty in to_buy.items():
+                orders_animal_buy.append(["BUY_ANIMAL", species, qty])
+    money_left -= animal_buy_spend
+
+    # Structures needed for whatever's currently unhoused (bought-but-not-
+    # placed, in shed or in transit) -- recomputed from observed state
+    # every turn, so it self-resolves as structures get built or animals
+    # get placed, independent of whether a NEW purchase happened this turn.
+    empty_pasture = len(structures_need_animal["PASTURE"])
+    empty_coop = len(structures_need_animal["COOP"])
+    pasture_unhoused = max(0, total_held("COW") + total_held("SHEEP") - empty_pasture)
+    coop_unhoused = max(0, total_held("GOOSE") - empty_coop)
+    build_wanted = {"PASTURE": pasture_unhoused, "COOP": coop_unhoused}
+
+    # ---- hiring, phase 2: top up toward the full workload-driven target
+    # (tile work + upkeep) with whatever cash animal investment left
+    # behind -- growth staffing, funded only after the existing herd's
+    # upkeep and this turn's investment are both covered. Counts PENDING
+    # work (held seeds not yet planted, structures queued to build,
+    # animals bought but not yet placed) alongside tiles already in use --
+    # without this, turn 1 always computes target_hands=0 (active_tiles=0,
+    # animal_workload=0 before anything is built yet) and the farmer solo-
+    # builds/plants the whole opening while the real meta runs ~5 hands
+    # from turn 1. Also stops once the marginal hire's fib cost exceeds
+    # what it can plausibly earn back that day -- fib is uncapped and a
+    # mature 75-tile farm's raw tile/animal count can compute a target
+    # near 19-20, where hands 15+ cost $610-4181/day each; the real meta
+    # tops out around 14 hands/day for exactly this reason.
+    MAX_MARGINAL_HIRE_COST = 400
+    if not liquidating:
+        pending = sum(private["seeds"].values()) + sum(build_wanted.values()) + sum(total_held(a) for a in ANIMALS)
+        target_hands = max(
+            0,
+            round((active_tiles + pending) / TILES_PER_UNIT_TARGET + animal_workload / ANIMAL_TILES_PER_UNIT) - 1,
+        )
+        while hires_today < target_hands:
+            hire_cost = _fib(hires_today)
+            if hire_cost > MAX_MARGINAL_HIRE_COST:
+                break
+            if money_left < hire_cost + HIRE_MIN_RESERVE:
+                break
+            orders_hire.append(["HIRE"])
+            money_left -= hire_cost
+            hires_today += 1
+
+    pickup_priority = list(rank_animals_to_buy(me["money"], market_prices, days_left))
+    for a in ANIMALS:
+        if a not in pickup_priority:
+            pickup_priority.append(a)
 
     # ---- per-unit actions ----
     empty_tiles = list(empty_tiles_all)
+    melon_tile_count = sum(1 for _, _, t in owned if is_plant(t) and t.get("crop") == "MELON")
     needs_harvest = [
         (x, y) for x, y, t in owned
         if is_plant(t) and t["yield_units"] > 0
@@ -490,28 +622,46 @@ def agent(obs):
     ]
     needs_water = [(x, y) for x, y, t in owned if is_plant(t) and not t["watered_today"]]
     weeds = [(x, y) for x, y, t in owned if is_weed(t)]
-    plant_crop = best_crop_to_plant(me["money"], market_prices, days_left) if (not liquidating and build_target is None) else None
+    # Uses money_left (already net of this turn's hire/animal commitments),
+    # not raw me["money"] -- otherwise this can order seeds against cash
+    # that animal investment already spent earlier this same turn, and the
+    # engine either partially fills or silently drops the line.
+    plant_crop = best_crop_to_plant(money_left, market_prices, days_left, melon_tile_count) \
+        if not liquidating else None
     holding_any_seed = held_seed_to_plant(private["seeds"]) is not None
-    if plant_crop is not None and not holding_any_seed and me["money"] >= CROPS[plant_crop]["seed_cost"]:
-        market.append(["BUY_SEED", plant_crop, 1])
+    orders_seed = []
+    if plant_crop is not None and not holding_any_seed:
+        seed_cost = CROPS[plant_crop]["seed_cost"]
+        room = len(empty_tiles_all)
+        if plant_crop == "MELON":
+            room = min(room, max(0, MAX_MELON_TILES - melon_tile_count))
+        affordable = int(max(0, money_left - MIN_OPERATING_CASH_RESERVE) // seed_cost) if seed_cost > 0 else 0
+        qty = min(room, affordable)
+        if qty > 0:
+            orders_seed.append(["BUY_SEED", plant_crop, qty])
+
+    fert_room_tiles = [
+        (x, y) for x, y, t in owned
+        if is_plant(t) and t["watered_today"] and t.get("fertilized_until_day", -1) < day + 1
+    ]
+    fert_pickup_wanted = min(shed.get("FERTILIZER", 0), len(fert_room_tiles)) if fert_room_tiles else 0
 
     claimed = set()
     seed_budget = dict(private["seeds"])  # shared, decremented as units commit to planting
     half = board_size // 2
     ctx = {
-        "shed": private.get("shed", {}),
+        "shed": shed,
         "shed_tiles": shed_adjacent_tiles(board_size),
         "shed_center": (half - 0.5, half - 0.5),
-        "animals_need_feed": animals_need_feed,
-        "animals_need_harvest": animals_need_harvest,
-        "animals_need_fertilizer": animals_need_fertilizer,
-        "animals_need_care": animals_need_care,
+        "animals_need_visit": animals_need_visit,
+        "feed_only": feed_only,
+        "animals_need_feed_no_wheat": animals_need_feed_no_wheat,
         "structures_need_animal": structures_need_animal,
         "wheat_pickup_wanted": len(animals_need_feed),
-        "animal_to_place": animal_to_place,
-        "animal_pickup_claimed": 0,
-        "build_target": build_target,
-        "build_committed": False,
+        "fert_pickup_wanted": fert_pickup_wanted,
+        "home_slots": {"PASTURE": empty_pasture, "COOP": empty_coop},
+        "build_wanted": dict(build_wanted),
+        "pickup_priority": pickup_priority,
     }
 
     units = [(me["farmer"], private["inventories"][0])]
@@ -522,7 +672,7 @@ def agent(obs):
     for (ux, uy), inv in units:
         utile = me["tiles"][uy][ux]
         ops = decide_unit_action(
-            (ux, uy), utile, inv, day, seed_budget, plant_crop, liquidating,
+            (ux, uy), utile, inv, day, hour, seed_budget, plant_crop, liquidating,
             claimed, needs_harvest, needs_water, empty_tiles, weeds, ctx,
         )
         if utile is None and (ux, uy) in empty_tiles:
@@ -531,5 +681,19 @@ def agent(obs):
 
     farmer_ops = all_ops[0]
     hands_actions = all_ops[1:]
+
+    # ---- assemble market orders under the 10-line-per-turn engine cap ----
+    # Feed wheat goes first, always: missing FEED on a production checkpoint
+    # day forfeits the ENTIRE accumulated care bonus (the single most
+    # valuable thing in this economy, per the whole point of this rewrite)
+    # -- it's one order line and can never be allowed to fall off the end
+    # of a busy turn's 10-line budget. Near shed overflow or liquidating,
+    # protect SELL next (discarded inventory is a pure loss); otherwise
+    # prioritize growth investment (hire/animal/land/seed).
+    if force_sell_all:
+        market = orders_wheat + orders_sell + orders_hire + orders_animal_buy + orders_land + orders_seed
+    else:
+        market = orders_wheat + orders_hire + orders_animal_buy + orders_land + orders_seed + orders_sell
+    market = market[:MAX_MARKET_ORDERS]
 
     return {"farmer": farmer_ops, "hands": hands_actions, "market": market}

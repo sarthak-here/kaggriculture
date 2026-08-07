@@ -89,6 +89,26 @@ def predicted_price(item, inventory):
     return max(1, round(price))
 
 
+def animal_daily_rate(animal):
+    """Steady-state products/day from disciplined daily FEED+CARE.
+
+    Engine mechanic (verified against kaggriculture.py, not the rules text):
+    pending_care_bonus increments by 1 only on a day where BOTH cared_today
+    AND fed_today are true; at each production checkpoint (every `interval`
+    days) yield_units += 1 (base) + bonus, and bonus resets to 0 regardless
+    of whether it was consumed (missing FEED specifically on the production
+    day forfeits the whole accumulated bonus, not just that day's share).
+    Since bonus can't exceed `interval` days of accrual before it's
+    consumed/reset at the next checkpoint, the achievable steady-state rate
+    with zero missed feed/care days is (1 + interval) / interval — e.g. a
+    COW (interval=2) yields ~1.5 milk/day, not the ~0.5/day a naive
+    "1 unit per interval" model assumes. yield_units itself is capped by
+    max_held, but that only affects harvest cadence, not the long-run rate.
+    """
+    spec = ANIMALS[animal]
+    return (1 + spec["interval"]) / spec["interval"]
+
+
 def land_cost(num_quadrants_owned):
     """Cost of the next BUY_LAND purchase, given how many quadrants (incl.
     the free starting NW) are currently owned."""
