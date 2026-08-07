@@ -34,8 +34,7 @@ DAYS_LEFT_TO_STOP_PLANTING = 2
 DAYS_LEFT_TO_STOP_EXPANDING = 5
 DAYS_LEFT_TO_STOP_ANIMAL_INVESTMENT = 8
 TILES_PER_UNIT_TARGET = 4  # rough capacity a single farmer/hand can keep up with
-MIN_CASH_BUFFER_FOR_ANIMALS = 5000
-MIN_OPERATING_CASH_RESERVE = 400  # kept untouched by land purchases, for ongoing seed/operating costs
+MIN_OPERATING_CASH_RESERVE = 400  # kept untouched by land/animal purchases, for ongoing seed/operating costs
 SHED_CAPACITY = 100  # not exposed in the observation; matches the documented default
 SHED_OVERFLOW_SAFETY = 0.85  # above this fraction full, sell regardless of price to avoid discard
 MIN_SELL_PRICE_RATIO = 0.7  # don't sell a unit whose marginal price would fall below this fraction of current
@@ -117,13 +116,16 @@ def best_crop_to_plant(money, market_prices, days_left):
 
 def best_animal_to_get(money, market_prices, days_left):
     """Steady-state profit/day estimate: production rate * price, minus
-    1 wheat/day feed cost, minus (structure + animal cost) amortized over
-    the days actually left to produce. Ignores the CARE bonus (upside
-    only, keeps the estimate conservative)."""
+    1 wheat/day feed cost, minus animal cost amortized over the days
+    actually left to produce. Ignores the CARE bonus (upside only, keeps
+    the estimate conservative). BUILD_COOP/BUILD_PASTURE cost nothing --
+    verified against the engine source, they just place a structure on an
+    empty tile via a unit's turn -- so only the animal's own market cost
+    applies; no phantom structure-cost estimate needed here."""
     wheat_price = market_prices.get("WHEAT", CROPS["WHEAT"]["base_price"])
     best, best_score = None, float("-inf")
     for animal, spec in ANIMALS.items():
-        total_cost = spec["cost"] + 200  # +structure cost estimate (coop/pasture has no listed price; treated as bundled capital outlay)
+        total_cost = spec["cost"]
         if total_cost > money:
             continue
         productive_days = days_left - spec["first_yield_day"]
@@ -390,10 +392,24 @@ def agent(obs):
         market.append(["BUY_PRODUCT", "WHEAT", animal_count - shed_wheat])
 
     # ---- decide whether to invest in a new animal this turn ----
+    # Used a flat $5000 cash gate before even considering an animal --
+    # arbitrarily far above what one actually costs (GOOSE $300, COW $400,
+    # SHEEP $500; BUILD_COOP/PASTURE itself is a free unit action, not a
+    # market cost). Real match data (episode 90598134, 2026-08-07) showed
+    # the cost of that: we had only 3 COW established by game end vs an
+    # opponent's 9 SHEEP + 5 COW (14 total) despite them holding LESS land
+    # than us -- animals produce indefinitely once running, so starting
+    # late compounds badly over a 30-day season. Replaced with a gate
+    # proportional to the cheapest animal's actual cost (same
+    # MIN_OPERATING_CASH_RESERVE pattern as the land-buying fix), so we
+    # can get a GOOSE running as soon as it's genuinely affordable rather
+    # than waiting for 10-15x that amount to sit in the bank.
+    cheapest_animal_cost = min(spec["cost"] for spec in ANIMALS.values())
     animal_to_place = None
     build_target = None
     if (not liquidating and days_left > DAYS_LEFT_TO_STOP_ANIMAL_INVESTMENT
-            and me["money"] > MIN_CASH_BUFFER_FOR_ANIMALS and empty_tiles_all and not structures_need_animal):
+            and me["money"] > cheapest_animal_cost * 1.5 + MIN_OPERATING_CASH_RESERVE
+            and empty_tiles_all and not structures_need_animal):
         animal = best_animal_to_get(me["money"], market_prices, days_left)
         if animal is not None:
             build_target = ANIMALS[animal]["structure"]
