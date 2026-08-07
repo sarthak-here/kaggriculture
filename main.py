@@ -83,6 +83,21 @@ def shed_adjacent_tiles(board_size):
 
 
 def best_crop_to_plant(money, market_prices, days_left):
+    """ROI-scored crop choice at current spot price. (Tried discounting
+    this for our own future price impact -- i.e. treating a heavy melon
+    commitment as self-crashing melon's price -- since melon scores
+    ~6-8x every other crop undiscounted and the competition organizer
+    called an undiscounted melon monocrop one of the strongest metas
+    seen during balancing. Reverted: local testing (2026-08-07, 3 fixed
+    seeds vs starter) showed it net-negative -- melon's price never
+    actually dropped much below base in practice, because sell_quantity
+    already throttles real selling pressure at the point of sale and
+    town consumption keeps draining inventory. The pre-emptive discount
+    was strictly more pessimistic than reality and left real value
+    on the table. If this becomes a real problem against tougher ladder
+    opponents who also compete hard for the melon market, revisit with
+    a softer discount informed by real replay data, not a static
+    assume-it-all-sells-at-once formula.)"""
     best, best_score = None, float("-inf")
     for crop, spec in CROPS.items():
         if spec["first_yield_day"] > days_left:
