@@ -154,9 +154,16 @@ def decide_unit_action(pos, tile, inv, day, seed_budget, plant_crop, liquidating
             return ["HARVEST"]
         if tile["fertilizer_available"]:
             return ["COLLECT_FERTILIZER"]
-        if not tile["fed_today"] and inv.get("WHEAT", 0) > 0:
+        # Feeding only pays off if another scheduled production can still
+        # land before the season ends -- otherwise it just burns wheat
+        # that's worth more sold. (Cheap approximation: checks the
+        # animal's fixed interval, not this instance's exact next
+        # production day, but that's enough to catch the true-waste case.)
+        days_left = 30 - day
+        can_still_produce = days_left >= ANIMALS[tile["animal"]]["interval"]
+        if not tile["fed_today"] and inv.get("WHEAT", 0) > 0 and can_still_produce:
             return ["FEED"]
-        if not tile["cared_today"]:
+        if not tile["cared_today"] and can_still_produce:
             return ["CARE"]
 
     if is_plant(tile) and tile["yield_units"] > 0 and \
@@ -323,16 +330,24 @@ def agent(obs):
             hires_today += 1
 
     # ---- animal task lists ----
-    animals_need_feed = [(x, y) for x, y, t in owned if has_animal(t) and not t["fed_today"]]
+    # Skip animals that can't produce again before the season ends --
+    # feeding them would just burn wheat worth more sold.
+    animals_need_feed = [
+        (x, y) for x, y, t in owned
+        if has_animal(t) and not t["fed_today"] and days_left >= ANIMALS[t["animal"]]["interval"]
+    ]
     animals_need_harvest = [(x, y) for x, y, t in owned if has_animal(t) and t["yield_units"] > 0]
     animals_need_fertilizer = [(x, y) for x, y, t in owned if has_animal(t) and t["fertilizer_available"]]
     animals_need_care = [(x, y) for x, y, t in owned if has_animal(t) and not t["cared_today"]]
     structures_need_animal = [(x, y) for x, y, t in owned if is_structure(t) and "animal" not in t]
     animal_count = sum(1 for _, _, t in owned if has_animal(t))
 
-    # top up wheat for feeding if we're running low relative to how many mouths we have
+    # top up wheat for feeding if we're running low relative to how many mouths we have.
+    # Not once liquidating: buying wheat only to feed animals that won't get
+    # another chance to produce before the season ends is pure waste --
+    # that money is worth more banked (or that wheat worth more sold).
     shed_wheat = private.get("shed", {}).get("WHEAT", 0)
-    if animal_count > 0 and shed_wheat < animal_count and me["money"] >= market_prices.get("WHEAT", 25):
+    if not liquidating and animal_count > 0 and shed_wheat < animal_count and me["money"] >= market_prices.get("WHEAT", 25):
         market.append(["BUY_PRODUCT", "WHEAT", animal_count - shed_wheat])
 
     # ---- decide whether to invest in a new animal this turn ----
