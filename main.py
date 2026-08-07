@@ -35,6 +35,7 @@ DAYS_LEFT_TO_STOP_EXPANDING = 5
 DAYS_LEFT_TO_STOP_ANIMAL_INVESTMENT = 8
 TILES_PER_UNIT_TARGET = 4  # rough capacity a single farmer/hand can keep up with
 MIN_CASH_BUFFER_FOR_ANIMALS = 5000
+MIN_OPERATING_CASH_RESERVE = 400  # kept untouched by land purchases, for ongoing seed/operating costs
 SHED_CAPACITY = 100  # not exposed in the observation; matches the documented default
 SHED_OVERFLOW_SAFETY = 0.85  # above this fraction full, sell regardless of price to avoid discard
 MIN_SELL_PRICE_RATIO = 0.7  # don't sell a unit whose marginal price would fall below this fraction of current
@@ -331,12 +332,26 @@ def agent(obs):
     # (67k vs our 21k by day 28) -- more land is production capacity that
     # compounds over the remaining season, so it's worth buying proactively
     # ahead of need, not reactively once already full.
+    #
+    # But buying land alone isn't the whole story: a real match (episode
+    # 90598933, 2026-08-07) showed the opposite failure mode when this
+    # collides with an aggressive melon opening. Melon (the ROI-best crop
+    # by a wide margin) takes 10 days to first yield, and this agent plants
+    # every empty tile it can afford on sight -- so a fast start can dump
+    # most of the starting $3000 into ~20 melon seeds within the first two
+    # days. If land purchases then eat whatever cash is left over that same
+    # window, money can get pinned near $0 for 10+ days straight (that
+    # match: money oscillated $0-$334 from day 2 to day 22) with zero
+    # operating cushion -- unable to hire, fertilize, or recover from bad
+    # luck, even though the eventual harvest is coming. A MIN_OPERATING_CASH
+    # reserve on top of the land cost itself keeps land purchases from
+    # competing with the crop cycle's own cash needs during that gap.
     owned = list(iter_owned_tiles(me))
     num_owned_tiles = len(owned)
     empty_tiles_all = [(x, y) for x, y, t in owned if t is None]
     next_land_cost = land_cost(len(me["unlocked_quadrants"]))
     if (next_land_cost is not None and days_left > DAYS_LEFT_TO_STOP_EXPANDING
-            and me["money"] > next_land_cost * 1.3):
+            and me["money"] > next_land_cost * 1.3 + MIN_OPERATING_CASH_RESERVE):
         market.append(["BUY_LAND"])
 
     # ---- hiring: only worth deciding at the start of the day (a hand
