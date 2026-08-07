@@ -215,6 +215,13 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, plant_
     second unit acting later this same turn doesn't collide with what an
     earlier unit already committed to (the engine silently no-ops or fails
     an over-committed action rather than queuing it)."""
+    # WHEAT is normally excluded from flush/haul (ambiguous: harvested-to-
+    # sell vs fetched-for-feed) -- but once liquidating, FEED is disabled
+    # entirely (see the animal-tile branch below), so any carried WHEAT is
+    # unambiguously sellable, and stranding it uncounted would leave real
+    # money on the table with no offsetting benefit.
+    flush_items = SELLABLE_PRODUCTS | {"WHEAT"} if liquidating else SELLABLE_PRODUCTS
+
     # ---- animal tile we're standing on ----
     # Not gated on "can this animal still produce again" -- feeding is
     # cheap (~$25-50) and the CARE bonus (game_data.animal_daily_rate) only
@@ -245,12 +252,12 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, plant_
     # normally -- a harvest it can't deliver is worthless, but hauling too
     # early wastes turns that could still harvest something nearby.
     if final_day:
-        carried_sellable = any(inv.get(item, 0) > 0 for item in SELLABLE_PRODUCTS)
+        carried_sellable = any(inv.get(item, 0) > 0 for item in flush_items)
         if carried_sellable:
             nearest_shed = min(ctx["shed_tiles"], key=lambda t: manhattan(pos, t))
             if hour + manhattan(pos, nearest_shed) >= 22:
                 if pos in ctx["shed_tiles"]:
-                    for item in SELLABLE_PRODUCTS:
+                    for item in flush_items:
                         n = inv.get(item, 0)
                         if n > 0:
                             return ["PLACE", item, n]
@@ -303,7 +310,7 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, plant_
         # still wants to pick more up (ctx["fert_pickup_wanted"] spent) --
         # otherwise this could flush fertilizer one unit just fetched for
         # fertilizing right back into the shed.
-        for item in SELLABLE_PRODUCTS:
+        for item in flush_items:
             if item == "FERTILIZER" and ctx["fert_pickup_wanted"] > 0:
                 continue
             n = inv.get(item, 0)
@@ -705,7 +712,10 @@ def agent(obs):
         "feed_only": feed_only,
         "animals_need_feed_no_wheat": animals_need_feed_no_wheat,
         "structures_need_animal": structures_need_animal,
-        "wheat_pickup_wanted": len(animals_need_feed),
+        # 0 once liquidating -- FEED is disabled during liquidation (see
+        # decide_unit_action's animal-tile branch), so fetching wheat for
+        # it is a pointless round trip with nothing at the other end.
+        "wheat_pickup_wanted": 0 if liquidating else len(animals_need_feed),
         "fert_pickup_wanted": fert_pickup_wanted,
         "home_slots": {"PASTURE": empty_pasture, "COOP": empty_coop},
         "build_wanted": dict(build_wanted),
