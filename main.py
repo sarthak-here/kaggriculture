@@ -121,9 +121,20 @@ def best_animal_to_get(money, market_prices, days_left):
     the estimate conservative). BUILD_COOP/BUILD_PASTURE cost nothing --
     verified against the engine source, they just place a structure on an
     empty tile via a unit's turn -- so only the animal's own market cost
-    applies; no phantom structure-cost estimate needed here."""
+    applies; no phantom structure-cost estimate needed here.
+
+    Requires POSITIVE profit, not just "enough runway to produce at all" --
+    a real gap found by direct calculation (2026-08-07): with the feed
+    cost included, no animal actually breaks even until days_left is
+    roughly 18-19 (e.g. at days_left=8.3, GOOSE nets -$250, COW -$440,
+    SHEEP -$500), yet the old runway-only check let this function
+    recommend an animal any time days_left > interval*2 -- confidently
+    picking "the least-bad losing investment" for the whole days_left
+    9-18 window. DAYS_LEFT_TO_STOP_ANIMAL_INVESTMENT (a cheap early exit
+    before this function is even called) intentionally stays a loose
+    pre-filter; this profit check is the real gate."""
     wheat_price = market_prices.get("WHEAT", CROPS["WHEAT"]["base_price"])
-    best, best_score = None, float("-inf")
+    best, best_score = None, 0.0
     for animal, spec in ANIMALS.items():
         total_cost = spec["cost"]
         if total_cost > money:
@@ -141,10 +152,34 @@ def best_animal_to_get(money, market_prices, days_left):
 
 
 def find_nearest_unclaimed(pos, candidates, claimed):
+    """Nearest unclaimed candidate to `pos`. Sorts by squared Euclidean
+    distance rather than Manhattan: Manhattan distance ties constantly on
+    a grid (every tile on a diamond around pos scores the same), and
+    Python's min() breaks ties by picking whichever candidate happens to
+    come first in the list -- since tiles are iterated in row-major
+    (y, then x) order, that systematically favored low-x/low-y tiles any
+    time multiple options were equally close, which reads as units always
+    drifting toward one corner instead of genuinely going to the nearest
+    open tile (reported directly from watching a replay, 2026-08-07)."""
     options = [c for c in candidates if c not in claimed]
     if not options:
         return None
-    return min(options, key=lambda c: manhattan(pos, c))
+    return min(options, key=lambda c: (pos[0] - c[0]) ** 2 + (pos[1] - c[1]) ** 2)
+
+
+def find_best_build_site_unclaimed(candidates, claimed, shed_center):
+    """Pick an empty tile for a new animal structure by proximity to the
+    shed, not to whichever unit happens to be routing there. Feeding is a
+    daily round trip (shed -> animal -> shed) for the rest of the season,
+    so a structure's distance from the shed is a recurring cost paid every
+    day it's alive, unlike the one-off walk to go build it (spotted by
+    comparing replays, 2026-08-07: opponents' animal structures cluster
+    near their shed; ours ended up scattered wherever a unit happened to
+    be standing when it decided to build)."""
+    options = [c for c in candidates if c not in claimed]
+    if not options:
+        return None
+    return min(options, key=lambda c: (shed_center[0] - c[0]) ** 2 + (shed_center[1] - c[1]) ** 2)
 
 
 def held_seed_to_plant(seed_budget):
@@ -252,6 +287,18 @@ def decide_unit_action(pos, tile, inv, day, seed_budget, plant_crop, liquidating
             t = find_nearest_unclaimed(pos, ctx["shed_tiles"], claimed)
             if t:
                 return [step_toward(pos, t)]  # don't claim a shed tile, others may need it too
+    # Weeds block land use for as long as they sit there, and used to rank
+    # dead last -- behind even the animal-care bonus -- so in the late game,
+    # when there's almost always something higher-priority competing for a
+    # unit's turn, they never got cleared and permanently ate into usable
+    # land (spotted directly from watching a replay, 2026-08-07: money
+    # growth visibly slows turn ~500-720 while opponents' farms stay clear).
+    # Moved up so they get regular attention instead of being starved out.
+    if weeds:
+        t = find_nearest_unclaimed(pos, weeds, claimed)
+        if t:
+            claimed.add(t)
+            return [step_toward(pos, t)]
     if (ctx["animal_to_place"] is not None and inv.get(ctx["animal_to_place"], 0) > 0
             and ctx["structures_need_animal"]):
         t = find_nearest_unclaimed(pos, ctx["structures_need_animal"], claimed)
@@ -263,19 +310,23 @@ def decide_unit_action(pos, tile, inv, day, seed_budget, plant_crop, liquidating
         t = find_nearest_unclaimed(pos, ctx["shed_tiles"], claimed)
         if t:
             return [step_toward(pos, t)]
-    if not liquidating and (held_seed_to_plant(seed_budget) is not None or plant_crop is not None
-                             or (ctx["build_target"] is not None and not ctx["build_committed"])) and empty_tiles:
+    # Building routes to the empty tile closest to the SHED, not to the
+    # unit -- a structure's distance from the shed is a cost paid on every
+    # future feeding trip for the rest of the season, unlike the one-off
+    # walk to go build it.
+    if (not liquidating and ctx["build_target"] is not None and not ctx["build_committed"]
+            and empty_tiles):
+        t = find_best_build_site_unclaimed(empty_tiles, claimed, ctx["shed_center"])
+        if t:
+            claimed.add(t)
+            return [step_toward(pos, t)]
+    if not liquidating and (held_seed_to_plant(seed_budget) is not None or plant_crop is not None) and empty_tiles:
         t = find_nearest_unclaimed(pos, empty_tiles, claimed)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
     if ctx["animals_need_care"]:
         t = find_nearest_unclaimed(pos, ctx["animals_need_care"], claimed)
-        if t:
-            claimed.add(t)
-            return [step_toward(pos, t)]
-    if weeds:
-        t = find_nearest_unclaimed(pos, weeds, claimed)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
@@ -446,9 +497,11 @@ def agent(obs):
 
     claimed = set()
     seed_budget = dict(private["seeds"])  # shared, decremented as units commit to planting
+    half = board_size // 2
     ctx = {
         "shed": private.get("shed", {}),
         "shed_tiles": shed_adjacent_tiles(board_size),
+        "shed_center": (half - 0.5, half - 0.5),
         "animals_need_feed": animals_need_feed,
         "animals_need_harvest": animals_need_harvest,
         "animals_need_fertilizer": animals_need_fertilizer,
