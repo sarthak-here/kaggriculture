@@ -96,3 +96,28 @@ def land_cost(num_quadrants_owned):
     if idx < 0 or idx >= len(LAND_COSTS):
         return None
     return LAND_COSTS[idx]
+
+
+def sell_quantity(item, held, market_inventory, min_price_ratio=0.7):
+    """How many of `held` units of `item` to sell this turn, instead of
+    dumping everything: each unit sold pushes the item's market inventory
+    up and its price down (selling is processed one unit at a time), so
+    this walks the real price curve and stops once the marginal unit's
+    price would fall below `min_price_ratio` of the current price —
+    self-limiting per resource (steep-glut premium goods like strawberry/
+    melon/wool naturally get sold in smaller chunks than staples that
+    absorb oversupply gently). Any unsold remainder just carries over to
+    next turn, when town consumption may have pushed the price back up."""
+    if held <= 0 or item not in MARKET_PARAMS:
+        return held  # unknown item (e.g. FERTILIZER never sold): sell all, harmless
+    current_price = predicted_price(item, market_inventory)
+    floor = max(1, current_price * min_price_ratio)
+    inv = market_inventory
+    n = 0
+    for _ in range(held):
+        p = predicted_price(item, inv)
+        if p < floor:
+            break
+        n += 1
+        inv += 1
+    return n

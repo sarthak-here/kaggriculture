@@ -28,13 +28,16 @@ Land/hiring/animal-investment are evaluated once per turn against simple
 ROI/utilization gates. Selling still dumps the whole shed every turn
 (task #11 will chunk this against the price curve instead).
 """
-from game_data import CROPS, ANIMALS, land_cost
+from game_data import CROPS, ANIMALS, land_cost, sell_quantity
 
 DAYS_LEFT_TO_STOP_PLANTING = 2
 DAYS_LEFT_TO_STOP_EXPANDING = 5
 DAYS_LEFT_TO_STOP_ANIMAL_INVESTMENT = 8
 TILES_PER_UNIT_TARGET = 4  # rough capacity a single farmer/hand can keep up with
 MIN_CASH_BUFFER_FOR_ANIMALS = 5000
+SHED_CAPACITY = 100  # not exposed in the observation; matches the documented default
+SHED_OVERFLOW_SAFETY = 0.85  # above this fraction full, sell regardless of price to avoid discard
+MIN_SELL_PRICE_RATIO = 0.7  # don't sell a unit whose marginal price would fall below this fraction of current
 
 
 def manhattan(a, b):
@@ -276,10 +279,24 @@ def agent(obs):
 
     liquidating = days_left <= DAYS_LEFT_TO_STOP_PLANTING
 
-    # ---- sell everything currently in the shed ----
-    for item, count in private.get("shed", {}).items():
-        if count > 0:
-            market.append(["SELL", item, count])
+    # ---- sell shed inventory, chunked against the price curve ----
+    # Dumping everything at once craters premium goods (strawberry/melon/
+    # milk/wool all have above_target > 1, crashing to the $1 floor fast on
+    # a glut). Hold back whatever would sell for materially less than the
+    # current price; it carries over and gets re-priced next turn as town
+    # consumption drains market inventory back down. In the endgame or when
+    # the shed is close to overflowing (capped at 100, excess discarded),
+    # sell everything regardless — a held unit that never sells is worth $0.
+    shed = private.get("shed", {})
+    shed_total = sum(shed.values())
+    force_sell_all = liquidating or shed_total >= SHED_CAPACITY * SHED_OVERFLOW_SAFETY
+    market_inventory = obs["market"]["inventory"]
+    for item, count in shed.items():
+        if count <= 0:
+            continue
+        n = count if force_sell_all else sell_quantity(item, count, market_inventory.get(item, 10000), MIN_SELL_PRICE_RATIO)
+        if n > 0:
+            market.append(["SELL", item, n])
 
     # ---- land expansion: buy the next quadrant if we're using what we have ----
     owned = list(iter_owned_tiles(me))
@@ -333,7 +350,14 @@ def agent(obs):
         structure_kind = owned_structure_kind(me, structures_need_animal[0])
         animal = next(a for a, spec in ANIMALS.items() if spec["structure"] == structure_kind)
         animal_to_place = animal
-        if private.get("shed", {}).get(animal, 0) == 0 and me["money"] >= ANIMALS[animal]["cost"]:
+        # Check total held (shed + whatever a unit is already carrying
+        # toward the structure), not just the shed: a picked-up animal
+        # spends several turns in transit with shed count back at 0,
+        # which would otherwise trigger a fresh BUY_ANIMAL every turn
+        # along the way.
+        carried = sum(inv.get(animal, 0) for inv in private.get("inventories", []))
+        total_held = private.get("shed", {}).get(animal, 0) + carried
+        if total_held == 0 and me["money"] >= ANIMALS[animal]["cost"]:
             market.append(["BUY_ANIMAL", animal, 1])
 
     # ---- per-unit actions ----
