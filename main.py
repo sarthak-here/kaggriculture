@@ -60,6 +60,7 @@ DAYS_LEFT_TO_STOP_PLANTING = 2
 DAYS_LEFT_TO_STOP_EXPANDING = 5
 DAYS_LEFT_TO_STOP_ANIMAL_INVESTMENT = 5
 MAX_QUADRANTS = 3  # winning replays never buy the 4th (SE, $4000) -- 3 quadrants + hands/animals beats more idle land
+EXPAND_WHEN_EMPTY_TILES_BELOW = 4  # buy the next quadrant only once land, not cash, is the binding constraint
 MAX_MELON_TILES = 12  # melon is a bridge crop (fastest early cash) -- real matches show its glut crashes hard once both players lean on it
 TILES_PER_UNIT_TARGET = 4  # rough crop-tile capacity a single farmer/hand can keep up with
 ANIMAL_TILES_PER_UNIT = 3  # each animal needs a near-daily feed+care round trip -- roughly 3 animals is a hand's worth of upkeep
@@ -147,6 +148,7 @@ def rank_animals_to_buy(money, market_prices, days_left):
     the real rate makes them profitable almost immediately, matching real
     replays that buy multiple animals turn 1 with starting cash."""
     wheat_price = market_prices.get("WHEAT", CROPS["WHEAT"]["base_price"])
+    fert_price = market_prices.get("FERTILIZER", 100)
     ranked = []
     for animal, spec in ANIMALS.items():
         if spec["cost"] > money:
@@ -156,9 +158,15 @@ def rank_animals_to_buy(money, market_prices, days_left):
             continue
         rate = animal_daily_rate(animal)
         price = market_prices.get(spec["product"], spec["base_price"])
-        daily_revenue = rate * price
+        # Fertilizer credit: every surviving animal drops ~1 fertilizer/day,
+        # sellable -- offsets most or all of the feed cost below.
+        daily_revenue = rate * price + fert_price * 0.8
         daily_feed_cost = wheat_price  # 1 wheat/day, required for the care bonus itself
-        daily_amortized_cost = spec["cost"] / productive_days
+        # The animal eats from the day it's placed, not from first yield --
+        # first_yield_day days of pre-yield feed (plus ~1 day of buy ->
+        # pickup -> place logistics lag) is real spend the amortized-cost
+        # term below must also cover, not just the purchase price.
+        daily_amortized_cost = (spec["cost"] + wheat_price * (spec["first_yield_day"] + 1)) / productive_days
         profit_per_day = daily_revenue - daily_feed_cost - daily_amortized_cost
         if profit_per_day > 0:
             ranked.append((animal, profit_per_day))
@@ -200,7 +208,7 @@ def held_seed_to_plant(seed_budget):
     return max(held, key=lambda c: c[1])[0]
 
 
-def decide_unit_action(pos, tile, inv, day, hour, seed_budget, plant_crop, liquidating,
+def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, plant_crop, liquidating,
                         claimed, needs_harvest, needs_water, empty_tiles, weeds,
                         ctx):
     """Returns op_list. Mutates `claimed`/`seed_budget`/ctx budgets so a
@@ -228,6 +236,26 @@ def decide_unit_action(pos, tile, inv, day, hour, seed_budget, plant_crop, liqui
     if is_plant(tile) and tile["yield_units"] > 0 and \
        (day - tile["planted_day"]) >= CROPS[tile["crop"]]["first_yield_day"]:
         return ["HARVEST"]
+
+    # ---- final-day haul-home: SELL only sells shed contents, and unit
+    # inventories only auto-drop at day rollover -- there's no rollover
+    # after day 29, so anything harvested on the final day that isn't hand-
+    # carried to the shed and PLACEd is worth exactly $0. Before the
+    # deadline (last possible turn to still make it back), keep working
+    # normally -- a harvest it can't deliver is worthless, but hauling too
+    # early wastes turns that could still harvest something nearby.
+    if final_day:
+        carried_sellable = any(inv.get(item, 0) > 0 for item in SELLABLE_PRODUCTS)
+        if carried_sellable:
+            nearest_shed = min(ctx["shed_tiles"], key=lambda t: manhattan(pos, t))
+            if hour + manhattan(pos, nearest_shed) >= 22:
+                if pos in ctx["shed_tiles"]:
+                    for item in SELLABLE_PRODUCTS:
+                        n = inv.get(item, 0)
+                        if n > 0:
+                            return ["PLACE", item, n]
+                else:
+                    return [step_toward(pos, nearest_shed)]
 
     if is_plant(tile) and not tile["watered_today"]:
         return ["WATER"]
@@ -391,6 +419,7 @@ def agent(obs):
     board_size = len(me["tiles"])
 
     liquidating = days_left <= DAYS_LEFT_TO_STOP_PLANTING
+    final_day = days_left <= 1
 
     owned = list(iter_owned_tiles(me))
     num_owned_tiles = len(owned)
@@ -505,10 +534,19 @@ def agent(obs):
     # a week-plus in, funded from revenue, not starting cash. Buying land
     # turn 1 recreates the exact land-vs-opening liquidity crunch this
     # project already diagnosed once (a real match loss, documented above).
+    # Also requires empty tiles to actually be scarce (<= EXPAND_WHEN_EMPTY_
+    # TILES_BELOW): a cash-only gate fires as soon as a couple of good
+    # sells push money over the threshold, regardless of whether the
+    # CURRENT quadrant is even full yet -- land is only worth buying once
+    # tiles, not cash, are the binding constraint. This is the honest
+    # version of the old utilization gate: instead of a fuzzy "0.8 used"
+    # threshold, it measures the thing that actually matters directly, and
+    # naturally reproduces the meta's observed Q2~day7/Q3~day11 timing.
     orders_land = []
     next_land_cost = land_cost(len(me["unlocked_quadrants"]))
     if (next_land_cost is not None and len(me["unlocked_quadrants"]) < MAX_QUADRANTS
             and day >= 1 and days_left > DAYS_LEFT_TO_STOP_EXPANDING
+            and len(empty_tiles_all) <= EXPAND_WHEN_EMPTY_TILES_BELOW
             and money_left > next_land_cost * 1.3 + MIN_OPERATING_CASH_RESERVE):
         orders_land.append(["BUY_LAND"])
         money_left -= next_land_cost
@@ -541,7 +579,17 @@ def agent(obs):
     if not liquidating and staffing_established and room_for_more > 0 and days_left > DAYS_LEFT_TO_STOP_ANIMAL_INVESTMENT:
         ranked = rank_animals_to_buy(money_left, market_prices, days_left)
         if ranked:
-            budget = money_left - MIN_OPERATING_CASH_RESERVE
+            # Reserve enough to keep planting cheap crops before the animal
+            # budget gets first claim on the rest of the cash -- without
+            # this, the round-robin buyer (first-claim on money_left, up to
+            # MAX_TOTAL_ANIMALS) can sink most of turn 1's cash into animals
+            # and keep first-claiming every dollar after, leaving crops to
+            # live on scraps for a week while animals ramp toward their
+            # first yield -- an empty, weed-growing Q1 for days, worth $0
+            # the whole time. Fades to irrelevant mid-game as empty tiles
+            # run out on their own.
+            seed_reserve = min(len(empty_tiles_all), 15) * 20
+            budget = money_left - MIN_OPERATING_CASH_RESERVE - seed_reserve
             unhoused_now = {a: total_held(a) for a in ANIMALS}
             to_buy = {}
             picks = 0
@@ -672,7 +720,7 @@ def agent(obs):
     for (ux, uy), inv in units:
         utile = me["tiles"][uy][ux]
         ops = decide_unit_action(
-            (ux, uy), utile, inv, day, hour, seed_budget, plant_crop, liquidating,
+            (ux, uy), utile, inv, day, hour, final_day, seed_budget, plant_crop, liquidating,
             claimed, needs_harvest, needs_water, empty_tiles, weeds, ctx,
         )
         if utile is None and (ux, uy) in empty_tiles:
