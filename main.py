@@ -305,14 +305,23 @@ def agent(obs):
         if n > 0:
             market.append(["SELL", item, n])
 
-    # ---- land expansion: buy the next quadrant if we're using what we have ----
+    # ---- land expansion: buy the next quadrant as soon as affordable ----
+    # Used to gate this on utilization > 0.8 (only expand once already
+    # tile-constrained) plus a 2x cash buffer. A real ranked match (episode
+    # 90596561, 2026-08-07) showed this is badly too conservative: the
+    # opponent bought all 4 quadrants by ~day 10 despite having very little
+    # cash margin, while we crawled to 3 quadrants and never got the 4th at
+    # all (blocked by our own DAYS_LEFT_TO_STOP_EXPANDING cutoff, having
+    # waited too long). Their money pulled decisively ahead from day 18 on
+    # (67k vs our 21k by day 28) -- more land is production capacity that
+    # compounds over the remaining season, so it's worth buying proactively
+    # ahead of need, not reactively once already full.
     owned = list(iter_owned_tiles(me))
     num_owned_tiles = len(owned)
     empty_tiles_all = [(x, y) for x, y, t in owned if t is None]
-    utilization = 1 - (len(empty_tiles_all) / num_owned_tiles if num_owned_tiles else 1)
     next_land_cost = land_cost(len(me["unlocked_quadrants"]))
     if (next_land_cost is not None and days_left > DAYS_LEFT_TO_STOP_EXPANDING
-            and me["money"] > next_land_cost * 2 and utilization > 0.8):
+            and me["money"] > next_land_cost * 1.3):
         market.append(["BUY_LAND"])
 
     # ---- hiring: only worth deciding at the start of the day (a hand
