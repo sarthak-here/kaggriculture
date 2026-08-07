@@ -151,6 +151,13 @@ def rank_animals_to_buy(money, market_prices, days_left):
     fert_price = market_prices.get("FERTILIZER", 100)
     ranked = []
     for animal, spec in ANIMALS.items():
+        if animal == "GOOSE":
+            # Hard exclusion, not a ranking penalty: every strong opponent's
+            # build has zero geese. A principled version (charging the
+            # ranker for per-animal visit workload, which is what actually
+            # makes egg's thin margin die under real logistics contention)
+            # can wait for a future pass -- this is what the data supports.
+            continue
         if spec["cost"] > money:
             continue
         productive_days = days_left - spec["first_yield_day"]
@@ -232,7 +239,12 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, plant_
             return ["HARVEST"]
         if tile["fertilizer_available"]:
             return ["COLLECT_FERTILIZER"]
-        if not tile["fed_today"] and inv.get("WHEAT", 0) > 0 and not liquidating:
+        # Even while liquidating, still feed an animal carrying a banked
+        # care bonus: missing FEED on its checkpoint day forfeits the whole
+        # bonus for base-1 production -- a cow with bonus 2-3 loses
+        # ~$300-500 of milk to save ~$50 of wheat. Everything else stays
+        # unfed during liquidation (no more checkpoints worth banking for).
+        if not tile["fed_today"] and inv.get("WHEAT", 0) > 0 and (not liquidating or tile.get("pending_care_bonus", 0) > 0):
             return ["FEED"]
         if not tile["cared_today"] and not liquidating:
             return ["CARE"]
@@ -340,6 +352,18 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, plant_
         return ["DIG"]
 
     # ---- movement toward the most useful unclaimed task ----
+    # A unit already carrying wheat delivers it before joining the harvest
+    # queue -- the ranking below (animals_need_visit) skips feed-only tiles
+    # for wheat-less units, but a wheat-carrying unit could still get
+    # diverted onto a harvest/water/weed task first without this, which is
+    # exactly how missed feeds accumulated with wheat sitting unused in
+    # inventory. Non-carriers still hit needs_harvest first below, so crop
+    # decay stays covered.
+    if inv.get("WHEAT", 0) > 0 and ctx["animals_need_feed"]:
+        t = find_nearest_unclaimed(pos, ctx["animals_need_feed"], claimed)
+        if t:
+            claimed.add(t)
+            return [step_toward(pos, t)]
     if needs_harvest:
         t = find_nearest_unclaimed(pos, needs_harvest, claimed)
         if t:
@@ -390,6 +414,17 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, plant_
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
+    # A unit carrying fertilizer targets ongoing crops (strawberry/tomato)
+    # first -- the double-production bonus on a $250 strawberry beats the
+    # +2/day a one-time crop gets, so ongoing tiles are worth the walk even
+    # when a closer one-time tile is available.
+    if inv.get("FERTILIZER", 0) > 0:
+        target = find_nearest_unclaimed(pos, ctx["fert_targets_ongoing"], claimed)
+        if target is None:
+            target = find_nearest_unclaimed(pos, ctx["fert_targets_onetime"], claimed)
+        if target:
+            claimed.add(target)
+            return [step_toward(pos, target)]
     if not liquidating and any(n > 0 for n in ctx["build_wanted"].values()) and empty_tiles:
         t = find_best_build_site_unclaimed(empty_tiles, claimed, ctx["shed_center"])
         if t:
@@ -437,18 +472,43 @@ def agent(obs):
     def total_held(item):
         return shed.get(item, 0) + sum(inv.get(item, 0) for inv in inventories)
 
-    # ---- sell shed inventory, chunked against the price curve ----
+    # ---- sell shed inventory, chunked against the price curve, with
+    # back-loaded premium selling ----
     # Dumping everything at once craters premium goods (strawberry/melon/
     # milk/wool all have above_target > 1, crashing to the $1 floor fast on
     # a glut). Hold back whatever would sell for materially less than the
-    # current price; it carries over and gets re-priced next turn. In the
-    # endgame or near shed overflow (capped at 100, excess discarded), sell
-    # everything regardless -- a held unit that never sells is worth $0.
+    # current price; it carries over and gets re-priced next turn.
+    #
+    # PREMIUM goods specifically get a three-phase selling schedule instead
+    # of the flat chunked rule everything else uses: real-match fleet data
+    # showed too much premium revenue landing early/mid-game at depressed
+    # prices instead of riding the late-game demand spike (town consumption
+    # keeps growing all season, so the same unit sold on day 25 fetches
+    # more than on day 15). Before HOLD_START_DAY, sell normally. Between
+    # HOLD_START_DAY and DUMP_START_DAY, hold premiums back unless shed
+    # pressure demands otherwise (see the cap-relief pass below). From
+    # DUMP_START_DAY on, sell premiums into the demand spike with a looser
+    # floor (0.5 instead of 0.7) so real volume actually moves instead of
+    # trickling out -- the point is to finish near-empty by day 29, with
+    # `liquidating`'s unconditional dump as the final backstop for anything
+    # still left.
+    PREMIUM = {"STRAWBERRY", "MILK", "WOOL", "MELON"}
+    HOLD_START_DAY = 16
+    DUMP_START_DAY = 24
+
     shed_total = sum(shed.values())
-    force_sell_all = liquidating or shed_total >= SHED_CAPACITY * SHED_OVERFLOW_SAFETY
+    force_sell_all = liquidating
+    near_cap = shed_total >= SHED_CAPACITY * SHED_OVERFLOW_SAFETY
     market_inventory = obs["market"]["inventory"]
     animal_count = sum(1 for _, _, t in owned if has_animal(t))
+    bonus_carrying_unfed_count = sum(
+        1 for _, _, t in owned
+        if has_animal(t) and not t["fed_today"] and t.get("pending_care_bonus", 0) > 0
+    )
+
     orders_sell = []
+    held_premium = {}  # item -> sellable count, deferred during the hold window
+    non_premium_sold = 0
     for item, count in shed.items():
         if count <= 0:
             continue
@@ -462,21 +522,52 @@ def agent(obs):
         if item in ANIMALS:
             continue
         sellable = count
-        if item == "WHEAT" and not liquidating:
+        if item == "WHEAT":
             # Reserve enough wheat to feed today's animals before selling
-            # any surplus. Without this, a day with animal_count > 0 will
+            # any surplus -- without this, a day with animal_count > 0 will
             # BUY_PRODUCT WHEAT to restock feed, then the very next turn
-            # this loop sees shed wheat again and SELLs it (price still
-            # looks sellable), then next turn buys it back again --
-            # confirmed in local testing: WHEAT flip-flopped BUY/SELL every
+            # this loop sees shed wheat again and SELLs it, then buys it
+            # back again (confirmed in local testing: flip-flopped every
             # single turn on day 2, bleeding money on the spread each round
-            # trip for no gain, since the price impact of a buy+sell of the
-            # same unit nets negative.
-            sellable = max(0, count - animal_count)
-        n = sellable if force_sell_all else sell_quantity(item, sellable, market_inventory.get(item, 10000), MIN_SELL_PRICE_RATIO)
+            # trip). During liquidation the reserve shrinks to just the
+            # bonus-carrying animals still worth feeding (see the on-tile
+            # FEED branch) instead of disappearing to 0.
+            reserve = animal_count if not liquidating else bonus_carrying_unfed_count
+            sellable = max(0, count - reserve)
+
+        if item in PREMIUM and not force_sell_all:
+            if day < HOLD_START_DAY:
+                n = sell_quantity(item, sellable, market_inventory.get(item, 10000), MIN_SELL_PRICE_RATIO)
+            elif day < DUMP_START_DAY:
+                n = 0
+                if sellable > 0:
+                    held_premium[item] = sellable
+            else:
+                n = sell_quantity(item, sellable, market_inventory.get(item, 10000), 0.5)
+        else:
+            n = sellable if force_sell_all else sell_quantity(item, sellable, market_inventory.get(item, 10000), MIN_SELL_PRICE_RATIO)
+            if item not in PREMIUM:
+                non_premium_sold += n
+
         if n > 0:
             value = n * market_prices.get(item, 0)
             orders_sell.append((value, ["SELL", item, n]))
+
+    # Shed-cap pressure valve for held-back premiums: non-premium items
+    # (wheat/fertilizer, the real space hogs) already got sold above at
+    # their normal rate. Only dip into a held premium -- and only the
+    # single CHEAPEST one, chunked normally rather than dumped -- if the
+    # shed is still over the cap after that. Never let cap pressure force
+    # strawberry out at a depressed hold-window price when wheat could
+    # have made the room instead.
+    if held_premium and (shed_total - non_premium_sold) >= SHED_CAPACITY * SHED_OVERFLOW_SAFETY:
+        cheapest_item = min(held_premium, key=lambda it: market_prices.get(it, 0))
+        sellable = held_premium[cheapest_item]
+        n = sell_quantity(cheapest_item, sellable, market_inventory.get(cheapest_item, 10000), MIN_SELL_PRICE_RATIO)
+        if n > 0:
+            value = n * market_prices.get(cheapest_item, 0)
+            orders_sell.append((value, ["SELL", cheapest_item, n]))
+
     orders_sell.sort(key=lambda t: -t[0])  # protect the highest-value sells if the order budget gets tight
     orders_sell = [o for _, o in orders_sell]
 
@@ -695,10 +786,19 @@ def agent(obs):
         if qty > 0:
             orders_seed.append(["BUY_SEED", plant_crop, qty])
 
-    fert_room_tiles = [
+    # Ongoing crops (STRAWBERRY/TOMATO) get fertilizer priority over
+    # one-time crops (WHEAT/CARROT/MELON) -- the double-production bonus on
+    # a $250 strawberry beats +2/day on wheat by a wide margin.
+    ONGOING_CROPS = {c for c, spec in CROPS.items() if spec["kind"] == "ongoing"}
+    fert_room_ongoing = [
         (x, y) for x, y, t in owned
-        if is_plant(t) and t["watered_today"] and t.get("fertilized_until_day", -1) < day + 1
+        if is_plant(t) and t["crop"] in ONGOING_CROPS and t["watered_today"] and t.get("fertilized_until_day", -1) < day + 1
     ]
+    fert_room_onetime = [
+        (x, y) for x, y, t in owned
+        if is_plant(t) and t["crop"] not in ONGOING_CROPS and t["watered_today"] and t.get("fertilized_until_day", -1) < day + 1
+    ]
+    fert_room_tiles = fert_room_ongoing + fert_room_onetime
     fert_pickup_wanted = min(shed.get("FERTILIZER", 0), len(fert_room_tiles)) if fert_room_tiles else 0
 
     claimed = set()
@@ -709,14 +809,18 @@ def agent(obs):
         "shed_tiles": shed_adjacent_tiles(board_size),
         "shed_center": (half - 0.5, half - 0.5),
         "animals_need_visit": animals_need_visit,
+        "animals_need_feed": animals_need_feed,
         "feed_only": feed_only,
         "animals_need_feed_no_wheat": animals_need_feed_no_wheat,
         "structures_need_animal": structures_need_animal,
-        # 0 once liquidating -- FEED is disabled during liquidation (see
-        # decide_unit_action's animal-tile branch), so fetching wheat for
-        # it is a pointless round trip with nothing at the other end.
-        "wheat_pickup_wanted": 0 if liquidating else len(animals_need_feed),
+        # Normally the count of all unfed animals; during liquidation FEED
+        # is disabled except for bonus-carrying animals (see the on-tile
+        # animal branch), so only fetch wheat for those -- fetching for
+        # everything else during liquidation is a round trip to nowhere.
+        "wheat_pickup_wanted": bonus_carrying_unfed_count if liquidating else len(animals_need_feed),
         "fert_pickup_wanted": fert_pickup_wanted,
+        "fert_targets_ongoing": fert_room_ongoing,
+        "fert_targets_onetime": fert_room_onetime,
         "home_slots": {"PASTURE": empty_pasture, "COOP": empty_coop},
         "build_wanted": dict(build_wanted),
         "pickup_priority": pickup_priority,
@@ -748,7 +852,7 @@ def agent(obs):
     # of a busy turn's 10-line budget. Near shed overflow or liquidating,
     # protect SELL next (discarded inventory is a pure loss); otherwise
     # prioritize growth investment (hire/animal/land/seed).
-    if force_sell_all:
+    if force_sell_all or near_cap:
         market = orders_wheat + orders_sell + orders_hire + orders_animal_buy + orders_land + orders_seed
     else:
         market = orders_wheat + orders_hire + orders_animal_buy + orders_land + orders_seed + orders_sell
