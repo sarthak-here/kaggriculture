@@ -7,3 +7,6 @@ kaggriculture-data/
 .kaggle/
 submission.tar.gz
 debug_log.txt
+
+# local replay renders (tens of MB each)
+replay_*.html
