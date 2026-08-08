@@ -45,6 +45,8 @@ DAYS_LEFT_TO_STOP_PLANTING = 2       # wheat planted day 27 (days_left=3) still 
 DAYS_LEFT_TO_STOP_ANIMALS = 5        # don't buy/replace herd members that can't pay back
 MAX_MARKET_ORDERS = 10               # engine cap on order LINES per turn
 MIN_OPERATING_CASH_RESERVE = 300     # untouched by investment, keeps seeds/feed flowing
+OPENING_CASH_RESERVE = 50            # d0-1: the turn-1 feed wheat IS the buffer
+OPENING_RESERVE_LAST_DAY = 1
 HIRE_MIN_RESERVE = 2
 MAX_MARGINAL_HIRE_COST = 400         # fib is uncapped; hands past ~14 can't earn their cost back
 SHED_CAPACITY = 100
@@ -60,6 +62,8 @@ TILES_PER_UNIT_TARGET = 4
 ANIMAL_TILES_PER_UNIT = 3
 EARLY_HANDS_CAP = 4                  # skeleton crew days 1-6 (program: 0-4/day)
 FULL_HANDS_CAP = 14                  # program's steady state
+LAST_BUILDOUT_DAY = 13               # while building out, land/herd beat upkeep chores
+WHEAT_FILL_RESERVE_TILES = 7         # wheat seed money held back from the premium pick
 
 
 def herd_target(day):
@@ -283,6 +287,15 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
                 claimed.add(t)
                 return [step_toward(pos, t)]
             break
+    # Buildout: while the herd is still being placed, getting a structure up
+    # beats a watering round. A pasture that lands a day earlier is a day of
+    # production plus a day of care bonus; a plant survives to the rollover.
+    if (not liquidating and day <= LAST_BUILDOUT_DAY and ctx["unhoused_total"] > 0
+            and any(n > 0 for n in ctx["build_wanted"].values()) and ctx["build_sites"]):
+        t = find_nearest_unclaimed(pos, list(ctx["build_sites"]), claimed)
+        if t:
+            claimed.add(t)
+            return [step_toward(pos, t)]
     if needs_water:
         t = find_nearest_unclaimed(pos, needs_water, claimed)
         if t:
@@ -292,11 +305,18 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
         t = find_nearest_unclaimed(pos, ctx["shed_tiles"], claimed)
         if t:
             return [step_toward(pos, t)]  # shed tiles stay unclaimed, shared
-    if weeds:
-        t = find_nearest_unclaimed(pos, weeds, claimed)
+    # Planting outranks weeds and fertilizer while land is still filling: a
+    # held seed that never reaches dirt is a tile producing nothing for the
+    # rest of the game, while a weed or a skipped fert day costs one crop-day.
+    if (not liquidating and day <= LAST_BUILDOUT_DAY and empty_tiles
+            and held_seed_to_plant(seed_budget) is not None):
+        plantable = [e for e in empty_tiles if e not in ctx["build_sites"]]
+        t = find_nearest_unclaimed(pos, plantable, claimed)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
+    # Fertilizer ahead of weeds: a carrier that detours to dig is a fert unit
+    # not applied, and ongoing-crop coverage is the entire point of carrying it.
     if inv.get("FERTILIZER", 0) > 0:
         target = find_nearest_unclaimed(pos, ctx["fert_targets_ongoing"], claimed)
         if target is None:
@@ -304,6 +324,11 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
         if target:
             claimed.add(target)
             return [step_toward(pos, target)]
+    if weeds:
+        t = find_nearest_unclaimed(pos, weeds, claimed)
+        if t:
+            claimed.add(t)
+            return [step_toward(pos, t)]
     if not liquidating and any(n > 0 for n in ctx["build_wanted"].values()) and ctx["build_sites"]:
         t = find_nearest_unclaimed(pos, list(ctx["build_sites"]), claimed)
         if t:
@@ -517,13 +542,40 @@ def agent(obs):
             pick, deficit = "MELON", melon_deficit
         elif days_left > CROPS["WHEAT"]["first_yield_day"]:
             pick, deficit = "WHEAT", plantable_empties
+        # Hold back the wheat-fill money BEFORE the premium pick spends down
+        # to the operating floor. Wheat is $10/tile against melon's $80, so
+        # this trades ~1 melon for ~7 tiles that would otherwise sit bare for
+        # the whole wave (measured: d0 left 10 plantable tiles with $8 spare).
+        # Days 0-1 the opening is its own buffer: the feed wheat bought on
+        # turn 1 covers the day's upkeep, so holding $300 back just prices us
+        # out of ~4 premium seeds. The reference opening runs down to ~$50.
+        op_reserve = (OPENING_CASH_RESERVE if day <= OPENING_RESERVE_LAST_DAY
+                      else MIN_OPERATING_CASH_RESERVE)
+        wheat_cost = CROPS["WHEAT"]["seed_cost"]
+        wheat_reserve = 0
+        if (pick is not None and pick != "WHEAT"
+                and days_left > CROPS["WHEAT"]["first_yield_day"]):
+            wheat_reserve = wheat_cost * min(WHEAT_FILL_RESERVE_TILES, plantable_empties)
+        bought = 0
         if pick is not None:
             seed_cost = CROPS[pick]["seed_cost"]
-            affordable = int(max(0, money_left - MIN_OPERATING_CASH_RESERVE) // seed_cost) if seed_cost else 0
+            affordable = int(max(0, money_left - op_reserve - wheat_reserve) // seed_cost) if seed_cost else 0
             qty = min(deficit, plantable_empties, affordable)
             if qty > 0:
                 orders_seed.append(["BUY_SEED", pick, qty])
                 money_left -= qty * seed_cost
+                bought = qty
+        # Wheat fill for whatever the premium pick didn't cover. Only ONE
+        # crop was ever ordered per turn, so a strawberry/melon wave left
+        # every remaining tile bare until the wave finished planting.
+        leftover = plantable_empties - bought
+        if (pick != "WHEAT" and leftover > 0
+                and days_left > CROPS["WHEAT"]["first_yield_day"]):
+            affordable = int(max(0, money_left - op_reserve) // wheat_cost) if wheat_cost else 0
+            wqty = min(leftover, affordable, WHEAT_FILL_RESERVE_TILES)
+            if wqty > 0:
+                orders_seed.append(["BUY_SEED", "WHEAT", wqty])
+                money_left -= wqty * wheat_cost
 
     # ---- fertilizer targeting: ongoing crops first (double production on
     # a $120+ strawberry beats +2/day on wheat), surplus gets sold ----
@@ -555,6 +607,7 @@ def agent(obs):
         "fert_targets_onetime": fert_room_onetime,
         "home_slots": {"PASTURE": empty_pasture, "COOP": empty_coop},
         "build_wanted": dict(build_wanted),
+        "unhoused_total": sum(unhoused.values()),
         "build_sites": build_sites,
         "pickup_priority": ["COW", "SHEEP", "GOOSE"],
     }

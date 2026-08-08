@@ -193,6 +193,54 @@ revenue, not whether a farm action lands.
 > submitting it presents their play as our submission. Resolve provenance before
 > this goes anywhere near the ladder.
 
+### 5. v11 — four microscope fixes + opening cash reserve (SHIPPED)
+
+Five changes, 30 paired matches (15 seeds x both slot orders) vs pristine v10:
+
+1. **Wheat fill.** The seed block ordered exactly ONE crop per turn, so a
+   strawberry/melon wave left every remaining tile bare until the wave finished.
+   Added a second `BUY_SEED WHEAT` line for leftover plantable tiles, capped at
+   `WHEAT_FILL_RESERVE_TILES = 7`.
+2. **Wheat money reserved first.** The fix above did nothing on its own: melon
+   spent down to the operating floor, leaving `(308-300)//10 = 0` affordable
+   wheat. Now the wheat allowance is held back *before* the premium pick.
+3. **Opening cash reserve.** `MIN_OPERATING_CASH_RESERVE = 300` was pricing us
+   out of ~4 premium seeds on day 0. Days 0-1 now use
+   `OPENING_CASH_RESERVE = 50`, scoped to the seed section only (animal
+   investment still stops at $300, which is what frees the cash for seeds).
+4. **Planting priority** above weeds and fertilizer while `day <= 13`.
+5. **Buildout priority** (build sites) above watering while unhoused animals
+   exist and `day <= 13`; **fertilizer** moved above weeds.
+
+| metric | target | v11 | v10 | mean delta | 2SE | improved |
+|---|---|---|---|---|---|---|
+| wheat_by_d2 | 7 | **7.00** | **0.00** | +7.00 | +-0.00 | 30/30 |
+| money_d15 | >=15000 | 7,855 | 6,385 | **+1,470** | +-867 | 21/30 |
+| straw_fert_cov | >=0.70 | 0.50 | 0.46 | **+0.05** | +-0.02 | 26/30 |
+| animals_d12 | 14 | 12.87 | 12.47 | +0.40 | +-0.29 | 14/30 |
+| seed_residence_d | <=1 | 2.02 | 1.99 | +0.04 | — | — |
+| **final score** | — | 83,184 | 82,727 | +457 | **+-2,685** | 17/30 (57%) |
+
+**v10 planted literally zero wheat by day 2** — the bug was real and total.
+Mechanism metrics improve significantly; **final score remains within noise**,
+which is expected at n=30 and is why the gate was mechanism-based.
+
+**A hypothesis that was tested and died.** After the first pass (wheat fill alone,
+which measured money_d15 *down* $1,551) the theory was that filling idle tiles
+with wheat displaces melon, and since the ramp is cash-constrained, wheat is the
+lower-value use of both the tile and the dollar. The counter-evidence was WH's
+revealed preference: he buys 12 melon AND 7 wheat on day 0, running down to ~$50,
+because his turn-1 feed wheat *is* his operating buffer. Exempting days 0-1 from
+the reserve reproduced that, and money_d15 flipped from -1,551 to **+1,470**. It
+was never wheat-vs-melon; it was our own reserve protecting against a problem the
+opening already solves. **Two knobs looked like one trade-off; they weren't.**
+
+Two metric definitions were also wrong and were corrected: `wheat_d3` ("standing
+at end of day 3") is structurally ~0 for any agent, since wheat is `one_time` with
+`first_yield_day: 2` and harvest clears the tile — replaced with
+cumulative-planted-by-end-of-d2. And `money_d15 >= 15000` is a WH benchmark, not a
+bar v10 could clear (v10 sits at 6,385).
+
 ## Reproducing
 
 ```bash
