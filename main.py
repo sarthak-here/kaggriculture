@@ -148,6 +148,21 @@ def held_seed_to_plant(seed_budget):
     return max(held, key=lambda c: c[1])[0]
 
 
+def flush_order(inv, items, prices):
+    """(item, qty) held from `items`, most valuable first.
+
+    `items` is a SET OF STRINGS, and Python randomizes str hashing per
+    process, so iterating it directly made which goods reached the shed a
+    PYTHONHASHSEED accident (measured: same seed, identical agents, scores
+    85,989 / 83,884 / 84,910). A unit can only PLACE one item per turn, so
+    this order decides what gets banked -- sort by value, not alphabetically,
+    and tie-break on name so it is fully deterministic.
+    """
+    held = [(i, inv.get(i, 0)) for i in items if inv.get(i, 0) > 0]
+    held.sort(key=lambda kv: (-(kv[1] * float(prices.get(kv[0], 0) or 0)), kv[0]))
+    return held
+
+
 def _fib(n):
     a, b = 1, 1
     for _ in range(n):
@@ -184,14 +199,16 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
     # ---- final-day haul-home: no rollover after day 29, so carried goods
     # that don't reach the shed are worth $0 ----
     if final_day:
-        if any(inv.get(item, 0) > 0 for item in flush_items):
+        carried = flush_order(inv, flush_items, ctx["prices"])
+        if carried:
             nearest_shed = min(ctx["shed_tiles"], key=lambda t: manhattan(pos, t))
-            if hour + manhattan(pos, nearest_shed) >= 22:
+            # One PLACE per turn, so N distinct item types need N turns AT the
+            # shed on top of the walk. Leaving at hour+dist>=22 only ever
+            # banked the first type and stranded the rest.
+            if hour + manhattan(pos, nearest_shed) + (len(carried) - 1) >= 22:
                 if pos in ctx["shed_tiles"]:
-                    for item in flush_items:
-                        n = inv.get(item, 0)
-                        if n > 0:
-                            return ["PLACE", item, n]
+                    item, n = carried[0]
+                    return ["PLACE", item, n]
                 else:
                     return [step_toward(pos, nearest_shed)]
 
@@ -228,12 +245,12 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
                 return ["PICKUP", animal, 1]
         # mid-day flush of sellable products (PLACE per item, never DROP —
         # DROP would dump feed wheat mid-round-trip)
-        for item in flush_items:
+        for item, n in flush_order(inv, flush_items, ctx["prices"]):
             if item == "FERTILIZER" and ctx["fert_pickup_wanted"] > 0:
                 continue
-            n = inv.get(item, 0)
-            if n > 0:
-                return ["PLACE", item, n]
+            if item == "WHEAT" and ctx["wheat_pickup_wanted"] > 0:
+                continue
+            return ["PLACE", item, n]
 
     if tile is None and not liquidating:
         # BUILD only on a designated ring site near the shed — never on
@@ -619,6 +636,7 @@ def agent(obs):
     ctx = {
         "shed": shed,
         "shed_tiles": shed_adjacent_tiles(board_size),
+        "prices": market_prices,
         "animals_need_visit": animals_need_visit,
         "animals_need_feed": animals_need_feed,
         "feed_only": feed_only,
@@ -664,7 +682,13 @@ def agent(obs):
     # Feed wheat first always (a dropped feed order can forfeit a whole
     # care bonus); sells jump the queue when the shed is at risk. ----
     if force_sell_all:
-        market = orders_wheat + orders_sell + orders_hire + orders_animal + orders_land + orders_seed
+        # HIRE ahead of SELL. On d28-29 one wheat line plus up to 9 product
+        # sell lines filled the 10-line cap and dropped every HIRE, so v11's
+        # deliberate "keep hiring through liquidation" change never executed
+        # and the endgame still ran with 0 hands -- which is also why goods
+        # sat unhauled. A dropped sell carries to the next turn; a dropped
+        # hire is gone for the day.
+        market = orders_wheat + orders_hire + orders_sell + orders_animal + orders_land + orders_seed
     else:
         market = orders_wheat + orders_hire + orders_animal + orders_land + orders_seed + orders_sell
     market = market[:MAX_MARKET_ORDERS]
