@@ -258,6 +258,29 @@ at v11. Do not re-run them; read the "died at" column first.
 | 7 | opponent-aware sell ordering | rejected | **the engine has no such mechanism** |
 | 8 | feed-buy tightening | rejected | **0/30**, missed feeds 37 -> 71 |
 | 8b | liquidation-only feed variant | neutral | real but worth ~$276 (buy/sell round-trip) |
+| 9 | week-one fertilizer sell mode | rejected | `money_d15` -1,678 (3.4 SE) |
+
+**#9 detail — the diagnosis was right and the fix still lost.** `FERT_SELL_ONLY_UNTIL_DAY
+= 8`: carriers route to the shed, `FERTILIZE` gated off, so collected fertilizer is
+sold instead of applied. **Mechanism landed perfectly** — fert units 174 -> 243,
+revenue **+$5,839**, hitting the trace's exact 4/day rate from d3. Died at
+`money_d15`: **-$1,678 at 3.4 SE**, score -694 (2SE +-2,574).
+
+Root cause: **"week one hands are idle" was the load-bearing assumption and it is
+false.** Week one is exactly when buildout happens — structures going up, Q1 being
+planted, herd being placed — so diverting fert carriers to the shed spends the very
+turns that were building the farm. The constraint law bit in the one window claimed
+to be exempt from it. Secondary cost: gating `FERTILIZE` off also stopped
+fertilizing **wheat**, a ~600-unit revenue line, not just the melons argued to be
+worthless.
+
+**The diagnosis that survives, and it is solid:** the trace's days 2-6 revenue is
+**100% fertilizer**, flat at **4 units/day at ~$98** (one per animal per day) —
+$396/$392/$389 on d2/d3/d4 against our $99/$98/$97. Wheat is spiky (a 40-unit spike
+on d5) and is NOT the mechanism. The fix was aimed at the wrong half twice:
+**collection was never the bottleneck** (v11 already collects 4-7/day), and neither
+was the shed pickup — the fertilizer goes **animal -> unit inventory -> straight onto
+a crop**, never touching the shed at all.
 
 **#4 detail:** `MELON.planted` was 15.0 in both arms — bit-identical. The window
 was never the constraint; the seed picker was (see #5).
