@@ -10,3 +10,6 @@ debug_log.txt
 
 # local replay renders (tens of MB each)
 replay_*.html
+
+# large notebook checkpoints
+.ipynb_checkpoints/
