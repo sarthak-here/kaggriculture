@@ -367,6 +367,86 @@ d11.** Nothing tested this session touches it.
 
 Melon is NOT a candidate — it can't yield before day 10.
 
+### 10-13. Wheat fetching, v13, the engine upgrade, and the Seb package
+
+| # | change | verdict | died at |
+|---|---|---|---|
+| 10 | wheat fetch before animal visits, unbounded | rejected | feed spend **+$17,147**, 1/30 |
+| 10b | + one fetcher per unfed animal | rejected | feed spend +$11,729, 5/30 |
+| 10c | **+ `day <= 9` gate** | **SHIPPED as v12** | 20/30, +2,806 |
+| 11 | **v13: deterministic value-ordered flush** | **SHIPPED, submitted** | — |
+| 12 | land d4/d6/d10 + Q4 | rejected | `money_d15` **-3,076**, 6/40 |
+| 13 | inventory-keyed herd sizing | neutral | 20/40, +254 (2SE +-1,820) |
+
+**#10 — the defect was real and the fix needed two bounds, both found by measurement.**
+`feed_only` excludes only tiles whose SOLE need is feed, so a **feed+care** tile still
+pulled a wheat-less unit: care done, unit leaves, second trip for the feed. Measured
+**5,705 animal-tile visits against the reference agent's 3,288** on the same herd. But
+**wheat circulation is coupled to wheat spending** through the stateless feed top-up that
+#8 proved cannot be tightened, so every extra pickup drains the shed and triggers a
+re-buy. Benefit and cost are separated in time — the one-trip gain lands as d15 cash,
+the re-buy cost is all d10-29 — so gating to `day <= 9` takes the half that pays.
+**Both failed versions IMPROVED every registered guard** (missed feeds down, d15 cash up)
+while losing badly; the cost was in a metric neither of us had listed.
+
+**#11 — v13 fixed the measuring instrument.** See the nondeterminism section above; that
+bug is now closed. `flush_order()` sorts by value, tie-broken by name. Also: final-day
+haul deadline accounts for item types carried (`hour + dist + (types-1) >= 22`), and HIRE
+moved ahead of SELL in force-sell mode — **the latter kept as hygiene only, because the
+bug it targeted does not exist**: d28-29 markets average 1.8 lines/turn and hit the
+10-line cap in 2 of 48 turns, dropping zero hires.
+
+### THE ENGINE MISMATCH — read before trusting anything above
+
+**We were testing on the wrong engine.** Local was `kaggle_environments` 1.32.4; live is
+1.32.6, and the kaggriculture file differs by **102 lines**:
+
+| | 1.32.4 | 1.32.6 |
+|---|---|---|
+| shop draw | without replacement | **with replacement**, `MAX_SHOP_INSTANCES = 8` |
+| milk demand | always exactly 3 — **a constant** | varies **1-4** across seeds |
+| LOCKED tiles | guard precedes shed ops | shed ops resolve first |
+
+On 1.32.4 every game ended with all 8 distinct shops, so demand was pinned and
+shop-adaptive strategy had nothing to adapt to. Absolute scores roughly halved on
+1.32.6 (self-play ~101k -> ~40-57k).
+
+**What survived the upgrade** (round-robin, 180 matches on 1.32.6): the ordering is
+unchanged — **v13 beats v10 by +3,048 (2SE +-1,991) and v11 by +1,589 (2SE +-1,169)**,
+v10 ~ v11. v13's margin is *larger* on the correct engine, so its selection and ladder
+submission were not artifacts. **#7 also survives**: 1.32.6 keeps the per-unit lockstep
+market and the identical `# Both players see the same pre-commit inventory` comment, so
+within-turn sell ordering remains impossible.
+
+**Now suspect, re-test before citing:** #4 melon window, #5 seed gate, #6 chunk cap,
+#9 fertilizer sell mode — all four turn on product demand or realized price, and all ran
+where every product was guaranteed shop demand. On 1.32.6 a product can draw **zero**
+shops and crash. **Improved for free:** our `shed_adjacent_tiles` matches the engine's
+`_shed_access_tiles` exactly, and three of those four no longer block on LOCKED.
+
+**#12 — land is a bet financed by milk, not an independent lever.** d4/d6/d10 + Q4 is
+what the top player does 5/5, and it still lost 6/40 at -4,527 with `money_d15` -3,076.
+The tell: **strawberry plantings fell 5.7 despite owning more land** — we buy tiles we
+cannot afford to seed. His week-one dip is survivable because milk at $260 refills the
+tank by d15; ours is not.
+
+**#13 — and this is the finding that matters.** Keying cow/sheep ceilings to market
+headroom was neutral (+254, 2SE +-1,820) even after correcting the floors to v13 levels
+so the cap could only add. Milk revenue rose +$1,983 but `money_d15` fell 978 and milk
+price fell 1.7 — the extra cows cannibalise their own price. **Because we are already on
+the wrong side of the threshold.** Our own trajectory:
+
+| day | mktinv_MILK | price |
+|---|---|---|
+| 15 | 9,949 | **$222** |
+| 20 | **10,001** | $158 |
+| 25 | 10,023 | $112 |
+
+**We cross I0 around day 20 and never come back** — identical to Seb's three 60-93k
+games. His 128k/137k advantage was not 13 cows; it was *never crossing I0*, which his
+high shop demand did for him for free. More cows on the wrong side just accelerate the
+crash. **The lever is sell-side: never push inventory over the line.**
+
 ## Reproducing
 
 ```bash
