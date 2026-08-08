@@ -447,6 +447,75 @@ games. His 128k/137k advantage was not 13 cows; it was *never crossing I0*, whic
 high shop demand did for him for free. More cows on the wrong side just accelerate the
 crash. **The lever is sell-side: never push inventory over the line.**
 
+### 14-16. The milk thread, and the complete causal chain
+
+| # | change | verdict | died at |
+|---|---|---|---|
+| 14 | absolute glut guard (margin 0/50/100) | rejected | **its own mechanism metric** — 3/40 |
+| 15 | cow target 5/6/7 vs 8 | conditional | low draw +825, **high draw -8,715** |
+| 16 | demand-conditional herd (shop-count) | neutral | 30/60, -103 (2SE +-2,022) |
+
+**#14 — unilateral market control is impossible in BOTH directions.** The guard capped
+sells at `(I0 - margin) - mktinv`, i.e. never push a premium product over the glut line.
+It failed on the metric it was built for: **crossings were IDENTICAL to baseline at every
+margin — 29/40 vs 29/40, 28/40 vs 28/40, 27/40 vs 27/40** — and realized milk price went
+DOWN. The market is shared: the opponent supplies the glut whether we participate or not,
+so withholding only donates the scarcity-priced units to them. Together with #7 (can't
+sell first to advantage) this **retires the entire category**: in a lockstep shared
+market you cannot move price by changing your own behaviour, in either direction.
+
+**#15 — the answer is conditional, not a smaller constant.** Fewer cows wins mildly on
+low-demand draws (56%, +825) and loses catastrophically on high ones (**1/6 and 1/8**,
+-8,715 and -6,039). Note a variant-generation artifact: targets 5 and 6 give identical
+results, because the ramp sets `cows = 6` at d9 before the steady-state target applies
+and animals are never sold — the herd ratchets.
+
+**#16 — and this is where the project's central question gets answered.** Sizing the herd
+to the actual shop draw worked mechanically: on high-demand draws it built **13.9 cows**
+(Seb's number) and milk revenue rose **+$8,240**. Feed rose **+$10,297**. Priced per
+marginal cow:
+
+| | per extra cow |
+|---|---|
+| milk revenue | +$1,397 |
+| feed cost | **-$1,745** |
+| capital | -$400 |
+| **net** | **-$749** |
+
+**A cow loses money even on the best draw in the game** — not because milk is cheap, but
+because our feed costs more to deliver than the milk is worth.
+
+### THE CAUSAL CHAIN (every link independently measured)
+
+> our feed logistics cost **4x** the reference (~$38-42k vs **$10.6k** for the same ~14
+> animals) -> each marginal cow nets **-$749** -> high-demand draws cannot be exploited ->
+> milk revenue stays ~$25k against Seb's $74-80k -> the score gap.
+
+And #8 proved the cost cannot simply be cut: buying the exact feed deficit saved $30.6k
+of wheat and **cost $22.8k of score**, because the surplus is insurance that makes feeds
+land *given our routing*.
+
+**This retroactively explains three separate neutral/negative results in one stroke.**
+Seb's herd size (#16), his land schedule (#12), and shop-adaptive sizing (#16) all
+presuppose a feed cost we do not have. **We were copying strategies his logistics made
+affordable.** The herd is capped by the cost of walking wheat to animals — not by demand,
+not by cash, not by labour.
+
+### NEXT: feed delivery cost per animal
+
+Not the purchasing rule (#8 closed that) — the **trip pattern** that makes surplus
+necessary. Hypothesis: `PICKUP WHEAT n` takes `min(wheat_pickup_wanted, shed_wheat)`, and
+shed wheat is thin because the top-up buys only the deficit and units drain it, so each
+unit picks up 1-2 and feeds 1-2 animals per round trip. Fourteen animals then need 7-14
+trips instead of 2-3. That would explain both the 4x cost and why the surplus is
+load-bearing: **the surplus is what makes a large pickup possible**, and #8 removed the
+surplus without changing the trip pattern, so it starved.
+
+Numbers to collect for both agents: wheat carried per PICKUP, animals fed per
+shed-departure, shed-departures for feeding per day, shed wheat at hour 0 vs mid-day, and
+whether a carrier is diverted to other tasks mid-route (the reference bundles
+feed->collect->care on the same tile).
+
 ## Reproducing
 
 ```bash
