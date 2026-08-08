@@ -273,12 +273,34 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
             return [step_toward(pos, t)]
     if ctx["animals_need_visit"]:
         candidates = ctx["animals_need_visit"]
-        if inv.get("WHEAT", 0) == 0 and ctx["feed_only"]:
-            candidates = [c for c in candidates if c not in ctx["feed_only"]]
+        if inv.get("WHEAT", 0) == 0:
+            # `feed_only` excludes only tiles whose SOLE need is feed, so a
+            # tile needing feed AND care still pulls a wheat-less unit: it
+            # does the care half, leaves, and the feed needs a second trip.
+            # Measured: 5,705 animal-tile visits vs the reference's 3,288 on
+            # the same herd. While the shed can supply wheat, skip every
+            # feed-needing tile and fetch wheat first (block below) so the
+            # animal is served in one trip instead of two.
+            skip = ctx["needs_feed_set"] if ctx["wheat_fetchable"] else ctx["feed_only"]
+            if skip:
+                candidates = [c for c in candidates if c not in skip]
         t = find_nearest_unclaimed(pos, candidates, claimed)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
+    # Fetch wheat before the remaining movement options, so a unit that just
+    # skipped feed-needing animals goes to arm itself rather than wandering
+    # off to water. Bounded by wheat_pickup_wanted, which the PICKUP decrements.
+    if (inv.get("WHEAT", 0) == 0 and ctx["wheat_fetchable"]
+            and ctx["fetch_budget"] > 0 and ctx["animals_need_feed"]):
+        t = min(ctx["shed_tiles"], key=lambda s: manhattan(pos, s))
+        if t != pos:
+            # Bounded: dispatch at most one fetcher per unfed animal. Without
+            # this every wheat-less unit stampedes the shed, drains it, and
+            # the stateless feed top-up re-fires against the empty shed --
+            # measured +$17,147 of wheat and -$16,636 of score.
+            ctx["fetch_budget"] -= 1
+            return [step_toward(pos, t)]  # shed tiles stay unclaimed, shared
     for animal in ANIMALS:
         if inv.get(animal, 0) > 0:
             kind = ANIMALS[animal]["structure"]
@@ -600,6 +622,16 @@ def agent(obs):
         "animals_need_visit": animals_need_visit,
         "animals_need_feed": animals_need_feed,
         "feed_only": feed_only,
+        "needs_feed_set": set(animals_need_feed),
+        "fetch_budget": len(animals_need_feed),
+        # Early game only: the one-trip benefit shows up as +$3,195 of d15
+        # cash, but every extra pickup drains the shed and the stateless feed
+        # top-up re-buys against it (+$11,729 over d10-29). Take the early
+        # half of the trade and leave the late half alone.
+        "wheat_fetchable": (len(animals_need_feed) > 0
+                            and shed.get("WHEAT", 0) > 0
+                            and day <= 9
+                            and not liquidating),
         "structures_need_animal": structures_need_animal,
         "wheat_pickup_wanted": len(animals_need_feed) if not liquidating else bonus_carrying_unfed,
         "fert_pickup_wanted": fert_pickup_wanted,
