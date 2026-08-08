@@ -64,6 +64,7 @@ EARLY_HANDS_CAP = 4                  # skeleton crew days 1-6 (program: 0-4/day)
 FULL_HANDS_CAP = 14                  # program's steady state
 LAST_BUILDOUT_DAY = 13               # while building out, land/herd beat upkeep chores
 WHEAT_FILL_RESERVE_TILES = 7         # wheat seed money held back from the premium pick
+WHEAT_PICKUP_CAP = 4                 # wheat a unit may withdraw per shed visit
 
 
 def herd_target(day):
@@ -228,7 +229,15 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
     # ---- shed-adjacent services ----
     if pos in ctx["shed_tiles"]:
         if ctx["wheat_pickup_wanted"] > 0 and inv.get("WHEAT", 0) == 0:
-            n = min(ctx["wheat_pickup_wanted"], ctx["shed"].get("WHEAT", 0))
+            # Cap the withdrawal, not the purchase. Measured: we pull 4.94
+            # wheat per PICKUP against the reference's 2.59 and drain the shed
+            # from ~43 at h0 to 11.5 by midday (it holds 29.4) -- and the
+            # drained shed is what re-arms the stateless feed top-up. 2.59 is
+            # demonstrably enough for the same 320 feeds. This leaves the buy
+            # rule alone, so the surplus stays in the shed as the insurance
+            # experiment #8 proved it has to be.
+            n = min(ctx["wheat_pickup_wanted"], ctx["shed"].get("WHEAT", 0),
+                    WHEAT_PICKUP_CAP)
             if n > 0:
                 ctx["wheat_pickup_wanted"] -= n
                 return ["PICKUP", "WHEAT", n]
