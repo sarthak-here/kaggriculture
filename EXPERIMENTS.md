@@ -241,6 +241,109 @@ at end of day 3") is structurally ~0 for any agent, since wheat is `one_time` wi
 cumulative-planted-by-end-of-d2. And `money_d15 >= 15000` is a WH benchmark, not a
 bar v10 could clear (v10 sits at 6,385).
 
+### 6. Trace-extraction campaign — 8 rejections, and what they cost to learn
+
+Baseline for all of these is v11 (`a981d69`). 30 paired matches each (15 seeds x
+both slot orders) unless noted. **Every one of these was reverted** — the repo is
+at v11. Do not re-run them; read the "died at" column first.
+
+| # | change | verdict | died at |
+|---|---|---|---|
+| 1 | two-tier watering priority | rejected | mechanism worked (-44% water deaths), score flat |
+| 2 | `FULL_HANDS_CAP` 16 / 18 / 20 | rejected | **0/60**, `money_d15` collapse |
+| 3 | **v11 — 5 fixes** | **SHIPPED** | mechanism +, score within noise |
+| 4 | `MELON_LAST_PLANT_DAY` 13->17 | rejected | **inert** — constraint wasn't binding |
+| 5 | per-crop seed gate (drip planting) | rejected | 37%, `money_d15` -2,902 (2SE +-524) |
+| 6 | premium sell chunk cap ~7 | rejected | **its own mechanism metric** — prices fell |
+| 7 | opponent-aware sell ordering | rejected | **the engine has no such mechanism** |
+| 8 | feed-buy tightening | rejected | **0/30**, missed feeds 37 -> 71 |
+| 8b | liquidation-only feed variant | neutral | real but worth ~$276 (buy/sell round-trip) |
+
+**#4 detail:** `MELON.planted` was 15.0 in both arms — bit-identical. The window
+was never the constraint; the seed picker was (see #5).
+
+**#6 detail:** chunks fell 16.2 -> 6.1 as instructed and realized prices went
+DOWN. `sell_quantity` already walks the real price curve and stops at the price
+floor; a constant cap can only block sales the curve judged safe, and in a shared
+market the deferred units get sold later, after the opponent has moved inventory.
+
+**#7 detail — an engine truth worth keeping:** the market is a **per-unit lockstep
+loop across both players**, with the engine's own comment `# Both players see the
+same pre-commit inventory for this unit.` **There is no within-turn first-mover
+advantage, by construction.** Sell-ordering strategies cannot work here at any
+gating. Cross-turn timing (selling on turn N vs N+40) IS a real mechanism and
+remains untested.
+
+**#8 detail — the most counter-intuitive result:** v11 buys ~782 wheat / $38k over
+d10-29 against a real need of ~280 (measured: 39 wheat bought on one day for 14
+animals). Tightening it to the exact deficit saved $30.6k of wheat and **lost
+$22.8k of score, 0/30 seeds, missed feeds 37 -> 71 (worse in 30/30)**. Surplus
+wheat is *insurance that feeds land*; a forfeited care bonus costs ~$1,500. The
+trace's low feed spend comes from shed-ring structures and short round trips, not
+from smarter buying.
+
+#### Three constants that are load-bearing — treat as correct unless disproven
+
+1. `MAX_MARGINAL_HIRE_COST = 400` — raising it is catastrophic (#2). Hire cost is
+   DAILY RECURRING (`hands` is wiped every rollover), so price any hire as
+   `cost x remaining days`.
+2. `sell_quantity`'s curve walk — beat a hand-written chunk cap (#6).
+3. Feed over-buying against the whole herd from shed stock alone — beat exact-
+   deficit buying by $22.8k (#8).
+
+**The prior this sets:** seven of eight changes assumed slack that wasn't there,
+all in the same direction. The burden of proof on "this constant is obviously
+suboptimal" is now high.
+
+#### The reference trace agent is partly dead code
+
+Two of its three closed-loop layers do nothing: the route selector always returns
+`premium_control` (the market always opens at equilibrium, so `MELON >= 200` is
+always true), and `_front_run_market` targets the non-existent within-turn
+ordering advantage. Its ~$150k comes from fewer mechanisms than its file implies.
+
+#### What the gap is NOT (all measured, all ruled out)
+
+Realized price (~$12/unit, not $100) · the hold window (we hold MORE — 100% of
+strawberry sold after d20 vs its 86%) · sell ordering (impossible) · feed
+purchasing (insurance) · labour supply (idle at the margin) · opening buys (both
+farms are broke through d6) · land utilisation (our farm is not emptier — see the
+day-29 replay).
+
+### NEXT SESSION STARTS HERE: the days 2-6 revenue divergence
+
+The only organ left, and it sits upstream of the `money_d15` metric that killed
+four experiments. From the per-day ledger (6 seeds, trace vs v11):
+
+| day | trace revenue | v11 revenue | trace money@h0 | v11 money@h0 |
+|---|---|---|---|---|
+| 2 | 396 | 99 | 21 | 11 |
+| 3 | 392 | 98 | 85 | 9 |
+| 4 | 389 | 97 | 442 | 4 |
+| 5 | 1,902 | 192 | 162 | 0 |
+| 6 | 1,590 | 350 | 1,024 | 24 |
+| 11 | 9,644 | 10,952 | **7,259** | **99** |
+
+Both farms spend near-identically on day 0 and are equally broke d1-6, so **the
+divergence is revenue-side, roughly 4x, and it compounds into a 73x cash gap by
+d11.** Nothing tested this session touches it.
+
+**The question:** what is the trace selling on days 2-6? Measure per-day, days
+0-7: units sold by product, realized price, and what physically produced them.
+
+**Pre-registered candidates:**
+1. **Fertilizer collection cadence.** 4 animals from day 0 produce 1
+   fertilizer/animal/day, sellable at ~$94 early — potentially ~$375/day from
+   day 1 if collected daily. **This is the leading candidate**, and notably it's
+   a routing fix in the one window where the constraint law does NOT bite:
+   early-game hands have nothing else to do.
+2. **Wheat cycle.** It plants ~10 wheat on day 0 vs our 7 and may harvest on a
+   tighter cycle (wheat is `first_yield_day: 2`, `one_time`, tile clears on
+   harvest).
+3. **Wool timing.** Its first wool lands ~day 6, milk ~day 8.
+
+Melon is NOT a candidate — it can't yield before day 10.
+
 ## Reproducing
 
 ```bash
