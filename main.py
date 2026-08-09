@@ -194,6 +194,21 @@ def fert_worth_it(tile, day):
             and tile["yield_units"] < spec["max_yield"])
 
 
+def water_before_harvest(tile, day):
+    """A one-time crop still inside its yield window gains +1 (+2 fertilized)
+    from being watered, and that gain lands on the WATER action itself. The
+    harvest branch runs first, so without this the last window day is taken at
+    yield N when one more WATER would have made it N+1/N+2. The tile survives
+    to the end of max_yield_day, so both fit in the same day."""
+    spec = CROPS[tile["crop"]]
+    if spec["kind"] == "ongoing" or tile["watered_today"]:
+        return False
+    age = day - tile["planted_day"]
+    window_start = (spec["max_yield_day"] + 1) // 2
+    return (window_start <= age <= spec["max_yield_day"]
+            and tile["yield_units"] < spec["max_yield"])
+
+
 def worth_harvesting(tile, day, days_left):
     """One-time crops keep ACCUMULATING yield through their bonus window (+1 per
     watered day, +2 fertilised), so harvesting the moment they turn ripe throws
@@ -276,6 +291,7 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
     # Crops decay if left unharvested; harvest-on-tile stays top priority.
     if (is_plant(tile) and tile["yield_units"] > 0
             and worth_harvesting(tile, day, ctx["days_left"])
+            and not water_before_harvest(tile, day)
             and (pos, "HARVEST") not in ctx["tile_acted"]):
         ctx["tile_acted"].add((pos, "HARVEST"))
         return ["HARVEST"]
