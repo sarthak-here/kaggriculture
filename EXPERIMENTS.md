@@ -944,6 +944,36 @@ Best case is +180 against a 2SE of 291 — inside noise, from a rule that fires 
 harvest and the travel cap took every execution win available. What remains is capacity
 (13-15 hands) funded by revenue per tile — the same wall as #21b.
 
+### 24. Market coupling — a blind spot in the A-vs-B harness
+
+Both players trade in ONE market, so our selling pattern moves the price curve the opponent
+sells into. A paired A-vs-B test cannot see this: it reports our margin against the arm we
+changed, not against the field.
+
+Caught on v23. Against the trace agent v23 earns +6,721 more than v22 in absolute terms and
+its MARGIN is 4,756 WORSE, because the trace agent gained +11,477 from the same price shift:
+
+| vs trace, 40 matches | our score | trace score | margin | record |
+|---|---|---|---|---|
+| v23 | 76,936 | 96,086 | −19,150 | 2/40 |
+| v22 | 70,215 | 84,609 | −14,394 | 7/40 |
+
+**Resolved by a neutral third party.** v23 and v22 each vs v14, 40 matches:
+
+| | our mean | v14 mean | margin | record |
+|---|---|---|---|---|
+| v23 | 86,226 | 50,441 | +35,785 (2SE 2,848) | 40/40 |
+| v22 | 89,869 | 54,397 | +35,472 (2SE 2,720) | 40/40 |
+
+Identical within noise (+313). Under v23 BOTH scores shift down together, so the coupling
+moves both boats and the margin holds. The trace agent is a replayed fixed script whose sell
+schedule happens to profit from our altered curve — the least representative opponent we own.
+
+**Method rule: for any change that alters WHAT or WHEN we sell, check the margin against a
+neutral third party (v14 snapshot) before shipping, not just the paired A-vs-B.** Ladder
+rank is decided by match outcomes, so margin against a varied field is the target metric,
+and absolute cash can move without it.
+
 ## Reproducing
 
 ```bash
