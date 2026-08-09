@@ -516,6 +516,79 @@ shed-departure, shed-departures for feeding per day, shed wheat at hour 0 vs mid
 whether a carrier is diverted to other tasks mid-route (the reference bundles
 feed->collect->care on the same tile).
 
+### 17. Feed delivery — the falsified hypothesis, and the win
+
+**Hypothesis (WRONG, and worth recording because we predicted the opposite):**
+`PICKUP WHEAT n` takes `min(wheat_pickup_wanted, shed_wheat)`; shed wheat is thin, so
+units pick up 1-2 and feed 1-2 animals per trip, needing 7-14 trips for 14 animals.
+
+**Measured — we pick up MORE than the reference, not less:**
+
+| metric | reference trace | v13 |
+|---|---|---|
+| wheat / PICKUP | 2.59 | **4.94** |
+| animals fed / trip | 1.66 | **2.60** |
+| total PICKUPs | 209 | 221 |
+| total FEEDs | 320 | 315 |
+| **moves / trip** | **5.96** | **15.32** |
+| unit-turns / feed | 7.21 | **11.88** |
+| trips diverted mid-route | 79% | **88%** |
+| shed wheat @h12 (d10+) | 29.4 | **11.5** |
+
+Trip counts and total feeding are near-identical. The cost is **movement** — 2.6x the
+walking for the same deliveries — and the big pickups **drain the shed** (43 at h0 -> 11.5
+by midday), which re-arms the stateless top-up. So the wheat waste was driven by
+WITHDRAWAL size, not the purchase rule.
+
+**#17 result — v14, `WHEAT_PICKUP_CAP = 4`: 29/40 = 72%, +1,275 (2SE +-1,177).** Capping
+the withdrawal leaves the buy rule untouched, so the surplus stays in the shed as the
+insurance #8 proved it must be. The sweep found where the trade-off balances:
+
+| cap | win rate | diff | feed spend | PICKUPs | note |
+|---|---|---|---|---|---|
+| 2 | 16/40 = 40% | -950 | -18.1k | **345 v 190** | trip explosion eats the saving |
+| 3 | 21/40 = 52% | -258 | -14.0k | 335 v 204 | |
+| **4** | **29/40 = 72%** | **+1,275** | **-10.7k** | 290 v 185 | missed feeds 7 v 13 |
+
+`moves/trip` fell in every arm (13.26 v 18.74 at cap 4), so pickup size and moves-per-trip
+were NOT independent — the interaction ran in our favour.
+
+**Ladder confirmation:** v13 scored **769.5** against v10's **754.3** — same direction as
+the local +2,339/60% call. The local method predicts real results.
+
+### THE REFERENCE PLAYERS ARE FIXED SCRIPTS — do not re-derive strategy from them
+
+**Seb's first 30 turns are byte-identical across all five replays** — same buys, same
+tiles, same units, same hours, down to `h5(0,3):PLANT-WHEAT at t16`. Money at t1 is
+$1,807 in every game. He is a replayed script, exactly like the trace agent (whose route
+selector and front-run layer we already found inert).
+
+**This invalidates the adaptation finding.** The cow counts that appeared to track milk
+demand (13/11/9/7/7 against demand 4/3/1/1/0) are not decisions — they are one script
+meeting different cash trajectories. High milk price -> more revenue -> the scripted
+`BUY_ANIMAL` orders clear. Low price -> the same orders fail on insufficient funds.
+**Demand did not cause him to buy cows; it caused him to afford the cows the script
+always attempts.** His 60k-137k spread on an identical script also means most of that
+outcome is the seed, not skill.
+
+**Closed permanently — do not spend runs here:** herd sizing, shop-adaptive sizing,
+land-schedule copying. And treat every "technique" mined from a single replay as suspect
+until the same script is checked across seeds for identical prefixes.
+
+**What survives:** the reference agents are still useful as *behavioural* comparisons for
+mechanical efficiency (feed delivery cost, moves per trip, wasted actions) — properties
+of execution that hold regardless of whether the policy was scripted.
+
+### Open defect found while pattern-diffing: wasted CARE
+
+Measured on v14, seed 42: day 18 issues **33 CARE actions for 13 animals — 20 wasted
+unit-turns**, consistent across d10-29 (~400 total). The engine's CARE no-ops if
+`cared_today` is already set. Cause: every unit evaluates the on-tile animal block against
+the START-of-turn observation, so several units standing on the same tile all see
+`cared_today == False` and all issue CARE; one succeeds. We have `claimed` to stop two
+units walking to the same target but nothing to stop two units ACTING on the same tile.
+Likely applies to FEED / COLLECT_FERTILIZER / HARVEST too.
+
 ## Reproducing
 
 ```bash
