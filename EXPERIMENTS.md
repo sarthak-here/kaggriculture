@@ -733,6 +733,62 @@ recorded at step `i`**. Reading the action from step `i-1` (the natural assumpti
 attributes every change to the wrong turn. This burned an earlier harvest-yield audit too.
 For "what caused this tile to change between `i-1` and `i`", read the action at step `i`.
 
+### 21. Q3, properly attacked — from −4,276 to ~−1,000, still not shipped
+
+19 arms. The #19 conclusion ("Q3 is cash-limited") was **wrong**, and so were the two
+diagnoses after it. Recorded in order, because each was disproven by the next:
+
+| hypothesis | test | verdict |
+|---|---|---|
+| day 7-15 cash | `EF_d16` buys Q3 after day 15, `money@d15 +0` | **wrong** — still −5,603 |
+| cash guard too loose | reserve $300 vs $3,000 | **irrelevant** — money goes $1,244 (d10) → $15,574 (d12), never near the threshold; arms byte-identical |
+| premium seed load | strawberry target 42 → 26/19 | helps a little, not the cause |
+| seed supply | shed held **24 wheat** beside **22 empty tiles** | **wrong** — supply was never short |
+| labour | 11 / 12 / 13 hands | **wrong** — monotonically worse, empty stayed ~21 at 13 hands |
+
+**The actual mechanism**, found by reading the movement chain:
+
+`territory → harvest → animals → wheat fetch → place animal → buildout → needs_water → shed feed → planting`
+
+Watering movement outranks planting movement. With ~39 planted tiles needing water daily,
+`needs_water` is never empty, so **a unit that starts the long walk to SW is re-tasked to a
+nearer thirsty crop on the very next turn and never arrives.** No amount of cash, seed or
+labour can fix that — the units physically never get there. Presence confirmed it: SW drew
+39 unit-turns/day against NW's 142, and only 5 of its 25 tiles were ever planted.
+
+A second, independent defect found on the way: the high-priority planting branch is gated on
+`day <= LAST_BUILDOUT_DAY` (13), so from day 14 planting is the **lowest-priority action in
+the agent**, below fertilizer, weeds and build sites. Q3 is bought day 11+, i.e. always into
+that dead zone.
+
+Hoisting planting above watering while land is genuinely empty finally moves it:
+
+| plant-first threshold | record | delta | empty@d20 | straw rev |
+|---|---|---|---|---|
+| 4 | 2/40 | −6,640 | 10.8 | 23,307 |
+| 8 | 0/40 | −8,672 | **9.7** | **16,111** |
+| 12 | 0/40 | −13,395 | 13.2 | 16,449 |
+| **14** | 17/40 | **−304** | 13.2 | 22,148 |
+| 16 | 3/40 | −4,171 | 12.8 | 22,021 |
+| 18 | 5/40 | −3,621 | 15.6 | 19,701 |
+
+Empty tiles finally fall (19 → 10-13) and planted reaches ~40. **But filling harder scores
+worse** — at threshold 8 the crew abandons watering and strawberry revenue collapses
+23,713 → 16,111. Planting and watering compete for the same unit-turns; there is no setting
+that buys both.
+
+**The t14 = −304 is not real.** The sweep is non-monotonic (t12 −13,395, t14 −304,
+t16 −4,171), which is the VPT signature. Fresh seeds: **−1,138 (2SE 1,193), 14/40**.
+Pooled ≈ −700 to −1,100.
+
+**Status: Q3 is now roughly cost-neutral instead of −4,276, but the point estimate is still
+negative and the win rate 35%. NOT SHIPPED.** `IC_plantfirst14` in the scratchpad is the
+best arm. Also note the no-Q3 control `JD_noq3_t14` is −734, so plant-first does not help
+the two-quadrant baseline either — at 3.4 empty tiles it never fires.
+
+**To make Q3 pay, the remaining ~$1,000 has to come from revenue, not from land mechanics.**
+Every land-side lever is now exhausted and documented above.
+
 ## Reproducing
 
 ```bash
