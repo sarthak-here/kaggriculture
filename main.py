@@ -61,7 +61,10 @@ STRAWBERRY_LAST_PLANT_DAY = 13       # program stops at d11; 10-day first yield 
 TILES_PER_UNIT_TARGET = 4
 ANIMAL_TILES_PER_UNIT = 3
 EARLY_HANDS_CAP = 4                  # skeleton crew days 1-6 (program: 0-4/day)
-FULL_HANDS_CAP = 14                  # program's steady state
+FULL_HANDS_CAP = 9                   # measured optimum. 14 was copied from a bot we
+                                     # later found was replaying a recording; hands 13
+                                     # and 14 alone cost fib(12)+fib(13) = $610/DAY,
+                                     # ~$14k over d7-29, against ~$8k of extra output.
 LAST_BUILDOUT_DAY = 13               # while building out, land/herd beat upkeep chores
 WHEAT_FILL_RESERVE_TILES = 7         # wheat seed money held back from the premium pick
 WHEAT_PICKUP_CAP = 4                 # wheat a unit may withdraw per shed visit
