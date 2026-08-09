@@ -214,8 +214,32 @@ def worth_harvesting(tile, day, days_left):
     return days_left <= 2
 
 
+
+# ---- territory ownership -----------------------------------------------------
+# 37% of all unit-turns are spent walking. Every previous fix changed WHICH task
+# a unit took; none changed the fact that units criss-cross the whole farm. Here
+# each task tile is owned by its NEAREST unit, so a unit works a compact
+# territory and its next job is usually adjacent to its last one. Priority order
+# is untouched -- it just applies within the territory first. If a unit's
+# territory is clear it falls back to the global lists, so nothing goes unworked.
+def territories(unit_positions, tile_lists):
+    """[{tier: [tiles]} per unit] -- every tile owned by its nearest unit."""
+    owned = [{k: [] for k in tile_lists} for _ in unit_positions]
+    if not unit_positions:
+        return owned
+    for tier, tiles in tile_lists.items():
+        for t in tiles:
+            best, bd = 0, None
+            for ui, p in enumerate(unit_positions):
+                d = (p[0] - t[0]) ** 2 + (p[1] - t[1]) ** 2
+                if bd is None or d < bd:
+                    best, bd = ui, d
+            owned[best][tier].append(t)
+    return owned
+
+
 def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquidating,
-                       claimed, needs_harvest, needs_water, empty_tiles, weeds, ctx):
+                       claimed, needs_harvest, needs_water, empty_tiles, weeds, ctx, unit_idx=None):
     """One unit's action. Mutates claimed/seed_budget/ctx budgets so units
     acting later this turn don't collide with earlier commitments."""
     flush_items = SELLABLE_PRODUCTS | {"WHEAT"} if liquidating else SELLABLE_PRODUCTS
@@ -336,6 +360,16 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
+    _mine = ctx["territory"][unit_idx] if unit_idx is not None and ctx.get("territory") else None
+    if _mine:
+        for _tier, _pool in (("harvest", needs_harvest), ("animal", ctx["animals_need_visit"]),
+                             ("water", needs_water)):
+            _cand = _mine.get(_tier) or []
+            if _cand:
+                t = find_nearest_unclaimed(pos, _cand, claimed)
+                if t:
+                    claimed.add(t)
+                    return [step_toward(pos, t)]
     if needs_harvest:
         t = find_nearest_unclaimed(pos, needs_harvest, claimed)
         if t:
@@ -724,12 +758,16 @@ def agent(obs):
     for i, (hx, hy) in enumerate(me.get("hands", [])):
         units.append(((hx, hy), inventories[i + 1] if i + 1 < len(inventories) else {}))
 
+    ctx["territory"] = territories(
+        [p for p, _ in units],
+        {"harvest": needs_harvest, "animal": animals_need_visit, "water": needs_water})
+
     all_ops = []
-    for (ux, uy), inv in units:
+    for _ui, ((ux, uy), inv) in enumerate(units):
         utile = me["tiles"][uy][ux]
         ops = decide_unit_action(
             (ux, uy), utile, inv, day, hour, final_day, seed_budget, liquidating,
-            claimed, needs_harvest, needs_water, empty_tiles, weeds, ctx,
+            claimed, needs_harvest, needs_water, empty_tiles, weeds, ctx, _ui,
         )
         if utile is None and (ux, uy) in empty_tiles:
             empty_tiles.remove((ux, uy))
