@@ -54,7 +54,7 @@ SHED_OVERFLOW_SAFETY = 0.85
 MIN_SELL_PRICE_RATIO = 0.7
 
 # ---- the transcribed schedule ----
-LAND_SCHEDULE = {2: 7, 3: 11}        # quadrant count -> earliest day to buy it
+LAND_SCHEDULE = {2: 7}        # quadrant count -> earliest day to buy it
 MELON_TARGET = 12                    # sustained while day <= MELON_LAST_PLANT_DAY
 MELON_LAST_PLANT_DAY = 13            # wave 2 at d10-11 fits; later melon can't finish
 STRAWBERRY_LAST_PLANT_DAY = 13       # program stops at d11; 10-day first yield makes later marginal
