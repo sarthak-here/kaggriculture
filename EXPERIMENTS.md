@@ -789,6 +789,48 @@ the two-quadrant baseline either — at 3.4 empty tiles it never fires.
 **To make Q3 pay, the remaining ~$1,000 has to come from revenue, not from land mechanics.**
 Every land-side lever is now exhausted and documented above.
 
+### 21b. Why the 2-quadrant algorithm cannot simply be scaled to 3 — labour economics
+
+The natural objection: our 2-quadrant play works (32 planted, 3.5 empty), we have $22k spare
+at day 20, so staff the third plot proportionally (~13 hands for ~48 tiles) and run the same
+algorithm. Tested on top of `IC_plantfirst14`, and **it works mechanically and fails
+economically**:
+
+| crew | planted@d20 | empty@d20 | record | delta |
+|---|---|---|---|---|
+| 9 | 38.4 | 12.7 | 14/40 | −1,138 |
+| 11 | 43.0 | 11.3 | 0/40 | −8,546 |
+| 13 | 45.3 | 10.6 | 0/40 | −14,626 |
+| 14 | **50.0** | **7.4** | 0/40 | **−21,791** |
+
+Full land coverage is achievable — 50 planted tiles against the baseline's 31.7. It just
+costs far more than it earns.
+
+**HIRE cost is Fibonacci per hand AND recurs daily** (the engine wipes `hands` to `[]` every
+rollover, so the whole bill is re-paid each day):
+
+| hand # | 9 | 10 | 11 | 12 | 13 | 14 |
+|---|---|---|---|---|---|---|
+| cost/day | 34 | 55 | 89 | 144 | 233 | 377 |
+| daily wage bill | **88** | 143 | 232 | 376 | 609 | **986** |
+
+9 → 14 hands = **+$19,756 of labour over days 8-29**. Measured score delta **−21,791**.
+The labour bill IS the loss. What it bought: wheat +$11,547, strawberry −$2,844 =
+**+$8,703**. We pay $19,756 to earn $8,703.
+
+Marginal analysis: hand #14 costs $8,294 over the game and works ~3.6 tiles worth ~$1,400 —
+**about 6x its marginal product**. Break-even is a hand worth ~$65/day; Fibonacci crosses
+that at hand #11. `FULL_HANDS_CAP = 9` and v18's conditional 11 are sitting exactly on that
+cliff, which is why every hand sweep since has come back negative.
+
+**Conclusion: money is not the constraint (we hold $22k at d20); the marginal hand's wage
+exceeds its output. Q3 cannot be staffed into profit at current revenue per tile.**
+
+The trace agent runs 13-15 hands, pays the SAME Fibonacci bill, and still scores 85k to our
+70k — it affords the crew because it earns more per tile. **The gap is revenue per tile, not
+land and not labour.** Next leads: SOUTH movement (744 v 142) and DROP v PLACE (78/25 v
+0/202).
+
 ## Reproducing
 
 ```bash
