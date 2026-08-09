@@ -974,6 +974,36 @@ neutral third party (v14 snapshot) before shipping, not just the paired A-vs-B.*
 rank is decided by match outcomes, so margin against a varied field is the target metric,
 and absolute cash can move without it.
 
+### 25. Boustrophedon sweep (band per worker) — REJECTED, but it solves Q3 coverage
+
+Idea: each worker owns a contiguous band and mows it — out along one row, back along the
+next — doing every job on the tiles it passes, instead of greedily jumping to the nearest
+task. Implemented generally: serpentine-order every owned tile (even rows L-R, odd rows R-L
+so consecutive entries are adjacent), cut the path into one contiguous band per unit, and
+target the next tile FORWARD along the band, wrapping at the end. Bands are assigned by each
+unit's own path position so nobody crosses anyone; a clear band falls through to the existing
+chain. Adding a quadrant just lengthens the path and re-cuts the bands — no per-plot logic.
+
+| arm | record | delta | empty@d20 | planted@d20 | straw rev |
+|---|---|---|---|---|---|
+| sweep | 1/40 | −9,600 | 2.1 | 32.5 | 19,304 (v 23,668) |
+| sweep, planting excluded from band | 2/40 | −7,106 | 1.6 | 33.9 | 23,905 |
+| sweep + Q3 | 0/40 | −15,021 | **5.7** | **42.0** | 21,664 |
+
+**Why it cannot win: there is no travel left to reclaim.** work/move 0.94 vs v23's 0.95,
+MOVE 3,096 v 3,119, WATER identical at 869. `TRAVEL_CAP = 2` already confines units to a
+2-tile radius, so "next along my band" and "nearest task" resolve to nearly the same tile.
+
+**Why it loses: a sweep is route-ordered, not value-ordered.** A unit waters a cheap wheat
+because it is next in the band while a ready strawberry waits one band over. Strawberry
+revenue 23,668 -> 19,304 is the entire loss.
+
+**Worth keeping:** `QC_sweep_q3` reached **5.7 empty / 42.0 planted**, by far the best Q3
+coverage ever measured (every other Q3 arm sat at ~18-19 empty — see #21). The sweep DOES
+solve the coverage problem that cash, seed, hands and planting-priority all failed to solve.
+It still loses because Q3 is wage-limited, not coverage-limited (#21b). **If revenue per tile
+ever makes Q3 viable, `QC_sweep_q3` is how to farm it.**
+
 ## Reproducing
 
 ```bash
