@@ -174,6 +174,26 @@ def _fib(n):
     return a
 
 
+
+def fert_worth_it(tile, day):
+    """Does fertiliser on THIS tile today buy anything? Ongoing crops only on a
+    production checkpoint inside the fertiliser window; one-time crops only
+    inside the bonus window and below cap; melon never (caps on water alone)."""
+    spec = CROPS[tile["crop"]]
+    age = day - tile["planted_day"]
+    if spec["kind"] == "ongoing":
+        for ahead in (0, 1, 2):
+            since = (day + ahead + 1) - tile["planted_day"] - spec["first_yield_day"]
+            if since >= 0 and since % spec["interval"] == 0:
+                return True
+        return False
+    if tile["crop"] == "MELON":
+        return False
+    window_start = (spec["max_yield_day"] + 1) // 2
+    return (window_start <= age <= spec["max_yield_day"]
+            and tile["yield_units"] < spec["max_yield"])
+
+
 def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquidating,
                        claimed, needs_harvest, needs_water, empty_tiles, weeds, ctx):
     """One unit's action. Mutates claimed/seed_budget/ctx budgets so units
@@ -220,7 +240,8 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
         return ["WATER"]
 
     if (is_plant(tile) and tile["watered_today"] and inv.get("FERTILIZER", 0) > 0
-            and tile.get("fertilized_until_day", -1) < day + 1):
+            and tile.get("fertilized_until_day", -1) < day + 1
+            and fert_worth_it(tile, day)):
         return ["FERTILIZE"]
 
     # place a carried animal on any compatible empty structure
