@@ -61,6 +61,7 @@ STRAWBERRY_LAST_PLANT_DAY = 13       # program stops at d11; 10-day first yield 
 TILES_PER_UNIT_TARGET = 4
 ANIMAL_TILES_PER_UNIT = 3
 EARLY_HANDS_CAP = 4                  # skeleton crew days 1-6 (program: 0-4/day)
+TRAVEL_CAP = 2                    # prefer work within this manhattan radius
 FULL_HANDS_CAP = 9                   # measured optimum. 14 was copied from a bot we
                                      # later found was replaying a recording; hands 13
                                      # and 14 alone cost fib(12)+fib(13) = $610/DAY,
@@ -138,8 +139,14 @@ def shed_adjacent_tiles(board_size):
     return [(half - 1, half - 1), (half, half - 1), (half - 1, half), (half, half)]
 
 
-def find_nearest_unclaimed(pos, candidates, claimed):
+def find_nearest_unclaimed(pos, candidates, claimed, cap=None):
+    """`cap` bounds how far a unit will walk for this task (manhattan). It is
+    a preference, not a restriction: decide_unit_action is retried without a
+    cap when nothing is in range, so far tiles are still served."""
     options = [c for c in candidates if c not in claimed]
+    if cap is not None:
+        options = [c for c in options
+                   if abs(pos[0] - c[0]) + abs(pos[1] - c[1]) <= cap]
     if not options:
         return None
     return min(options, key=lambda c: (pos[0] - c[0]) ** 2 + (pos[1] - c[1]) ** 2)
@@ -254,7 +261,8 @@ def territories(unit_positions, tile_lists):
 
 
 def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquidating,
-                       claimed, needs_harvest, needs_water, empty_tiles, weeds, ctx, unit_idx=None):
+                       claimed, needs_harvest, needs_water, empty_tiles, weeds, ctx, unit_idx=None,
+                       travel_cap=None):
     """One unit's action. Mutates claimed/seed_budget/ctx budgets so units
     acting later this turn don't collide with earlier commitments."""
     flush_items = SELLABLE_PRODUCTS | {"WHEAT"} if liquidating else SELLABLE_PRODUCTS
@@ -392,7 +400,7 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
     # wheat carriers deliver feed before anything else (missed feeds with
     # wheat in circulation were v8's biggest documented leak)
     if inv.get("WHEAT", 0) > 0 and ctx["animals_need_feed"]:
-        t = find_nearest_unclaimed(pos, ctx["animals_need_feed"], claimed)
+        t = find_nearest_unclaimed(pos, ctx["animals_need_feed"], claimed, travel_cap)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
@@ -402,12 +410,12 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
                              ("water", needs_water)):
             _cand = _mine.get(_tier) or []
             if _cand:
-                t = find_nearest_unclaimed(pos, _cand, claimed)
+                t = find_nearest_unclaimed(pos, _cand, claimed, travel_cap)
                 if t:
                     claimed.add(t)
                     return [step_toward(pos, t)]
     if needs_harvest:
-        t = find_nearest_unclaimed(pos, needs_harvest, claimed)
+        t = find_nearest_unclaimed(pos, needs_harvest, claimed, travel_cap)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
@@ -424,7 +432,7 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
             skip = ctx["needs_feed_set"] if ctx["wheat_fetchable"] else ctx["feed_only"]
             if skip:
                 candidates = [c for c in candidates if c not in skip]
-        t = find_nearest_unclaimed(pos, candidates, claimed)
+        t = find_nearest_unclaimed(pos, candidates, claimed, travel_cap)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
@@ -444,7 +452,7 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
     for animal in ANIMALS:
         if inv.get(animal, 0) > 0:
             kind = ANIMALS[animal]["structure"]
-            t = find_nearest_unclaimed(pos, ctx["structures_need_animal"].get(kind, []), claimed)
+            t = find_nearest_unclaimed(pos, ctx["structures_need_animal"].get(kind, []), claimed, travel_cap)
             if t:
                 claimed.add(t)
                 return [step_toward(pos, t)]
@@ -454,12 +462,12 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
     # production plus a day of care bonus; a plant survives to the rollover.
     if (not liquidating and day <= LAST_BUILDOUT_DAY and ctx["unhoused_total"] > 0
             and any(n > 0 for n in ctx["build_wanted"].values()) and ctx["build_sites"]):
-        t = find_nearest_unclaimed(pos, list(ctx["build_sites"]), claimed)
+        t = find_nearest_unclaimed(pos, list(ctx["build_sites"]), claimed, travel_cap)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
     if needs_water:
-        t = find_nearest_unclaimed(pos, needs_water, claimed)
+        t = find_nearest_unclaimed(pos, needs_water, claimed, travel_cap)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
@@ -473,32 +481,32 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
     if (not liquidating and day <= LAST_BUILDOUT_DAY and empty_tiles
             and held_seed_to_plant(seed_budget) is not None):
         plantable = [e for e in empty_tiles if e not in ctx["build_sites"]]
-        t = find_nearest_unclaimed(pos, plantable, claimed)
+        t = find_nearest_unclaimed(pos, plantable, claimed, travel_cap)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
     # Fertilizer ahead of weeds: a carrier that detours to dig is a fert unit
     # not applied, and ongoing-crop coverage is the entire point of carrying it.
     if inv.get("FERTILIZER", 0) > 0:
-        target = find_nearest_unclaimed(pos, ctx["fert_targets_ongoing"], claimed)
+        target = find_nearest_unclaimed(pos, ctx["fert_targets_ongoing"], claimed, travel_cap)
         if target is None:
-            target = find_nearest_unclaimed(pos, ctx["fert_targets_onetime"], claimed)
+            target = find_nearest_unclaimed(pos, ctx["fert_targets_onetime"], claimed, travel_cap)
         if target:
             claimed.add(target)
             return [step_toward(pos, target)]
     if weeds:
-        t = find_nearest_unclaimed(pos, weeds, claimed)
+        t = find_nearest_unclaimed(pos, weeds, claimed, travel_cap)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
     if not liquidating and any(n > 0 for n in ctx["build_wanted"].values()) and ctx["build_sites"]:
-        t = find_nearest_unclaimed(pos, list(ctx["build_sites"]), claimed)
+        t = find_nearest_unclaimed(pos, list(ctx["build_sites"]), claimed, travel_cap)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
     if not liquidating and (held_seed_to_plant(seed_budget) is not None) and empty_tiles:
         plantable = [e for e in empty_tiles if e not in ctx["build_sites"]]
-        t = find_nearest_unclaimed(pos, plantable, claimed)
+        t = find_nearest_unclaimed(pos, plantable, claimed, travel_cap)
         if t:
             claimed.add(t)
             return [step_toward(pos, t)]
@@ -805,7 +813,16 @@ def agent(obs):
         ops = decide_unit_action(
             (ux, uy), utile, inv, day, hour, final_day, seed_budget, liquidating,
             claimed, needs_harvest, needs_water, empty_tiles, weeds, ctx, _ui,
+            TRAVEL_CAP,
         )
+        if ops == ["PASS"]:
+            # nothing worth doing nearby -- the PASS path commits nothing, so
+            # re-ask with the whole farm in scope rather than idle.
+            ops = decide_unit_action(
+                (ux, uy), utile, inv, day, hour, final_day, seed_budget, liquidating,
+                claimed, needs_harvest, needs_water, empty_tiles, weeds, ctx, _ui,
+                None,
+            )
         if utile is None and (ux, uy) in empty_tiles:
             empty_tiles.remove((ux, uy))
         all_ops.append(ops)
