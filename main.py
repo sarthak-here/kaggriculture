@@ -607,7 +607,10 @@ def agent(obs):
     elif day < 7:
         target_hands = min(base_target, EARLY_HANDS_CAP)
     else:
-        target_hands = min(base_target, FULL_HANDS_CAP)
+        _cap = FULL_HANDS_CAP
+        if len(empty_tiles_all) >= 20 and me["money"] > 5000:
+            _cap = 11
+        target_hands = min(base_target, _cap)
     while hires_today < target_hands:
         cost = _fib(hires_today)
         if cost > MAX_MARGINAL_HIRE_COST or money_left < cost + HIRE_MIN_RESERVE:
