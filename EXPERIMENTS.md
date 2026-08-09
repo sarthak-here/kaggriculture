@@ -831,6 +831,84 @@ The trace agent runs 13-15 hands, pays the SAME Fibonacci bill, and still scores
 land and not labour.** Next leads: SOUTH movement (744 v 142) and DROP v PLACE (78/25 v
 0/202).
 
+### 22. Travel cap — SHIPPED as v23 (`3c408dd`)
+
+The movement chain is task-type first, distance second: a unit would walk eight tiles to a
+HARVEST while standing beside a thirsty plant. MOVE was ~42% of all actions.
+
+`TRAVEL_CAP` bounds the global fallback searches. It is a PREFERENCE, not a restriction —
+`decide_unit_action` is re-run uncapped when nothing is in range, so far tiles are still
+served. The PASS path commits nothing (claims/budgets/tile_acted only mutate on commit), so
+the retry is side-effect free.
+
+| cap | original seeds | fresh seeds |
+|---|---|---|
+| 1 | −5,213 | — |
+| **2** | **+2,784 (35/40)** | **+2,954 (33/40)** |
+| 3 | +1,378 (30/40) | +1,775 (32/40) |
+| 4 | −2,056 | −6,941 |
+| 6 | — | −3,446 |
+
+Pooled at cap 2: **68/80 = 85%, +2,870**. Caps 2 and 3 are positive on two independent seed
+sets each and cap 4 negative on both, so the cliff between 3 and 4 is real. Land ends up
+FULLER (empty@d20 4.3 → 1.5, planted 30.8 → 33.9) because units stop burning turns in transit.
+
+### 22b. Dynamic crew sizing — REJECTED at every threshold
+
+Requested: hire above 9 only when needed, release when idle. Both halves fail.
+
+**Nobody is idle.** PASS is 0-2% of actions from day 8 on, so there is no worker to release.
+The engine wipes `hands` nightly anyway, so release is already automatic.
+
+Queue-driven cap raise (trigger on `needs_water + needs_harvest + animals + empties` per hand):
+
+| trigger | record | delta |
+|---|---|---|
+| queue/hand > 5, cap 12 | 0/40 | −7,381 |
+| queue/hand > 8, cap 12 | 1/40 | −5,354 |
+| queue/hand > 5, cap 11 | 1/40 | −5,128 |
+| queue/hand > 12, cap 12 | 2/40 | −1,998 |
+
+**The loss shrinks monotonically as the trigger gets stricter** — the best version of the
+feature is the one that never fires. There is no backlog condition under which hand #10+
+earns its Fibonacci wage (see #21b).
+
+### 22c. Weeds are not a cost centre — thread closed for good
+
+| weed cause | per game | note |
+|---|---|---|
+| lifespan decay | 16.4 | **16.6 of these are STRAWBERRY at natural end of life** — 4 productions done, dies by design |
+| | 1.6 | WHEAT, genuinely avoidable |
+| unwatered 2 days | 6.6 | |
+| random spawn | 0.4 | only fires on empty tiles; v23 runs at 1.5 empties |
+
+Crop value still on the plant when it rotted: **$157/game**. DIG is 22 actions of ~5,900
+(0.4%). Wheat loses 4.0 yield-units/game to decay ticks, strawberry 0.2 — because ongoing
+crops are already harvested on sight and one-time crops at `age >= max_yield_day`.
+
+A CRITICAL_HARVEST preemption for one-time crops at/after `max_yield_day` was implemented
+and tested anyway: **−2,502 (9/40)**. The rule is already in `worth_harvesting`.
+
+### 22d. Critical-water rescue — the FIFTH falsification of watering priority
+
+Thirst kills 6.6 plants/game, forfeiting ~**$2,627** of future production (STRAWBERRY 3.0 →
+$1,332; MELON 0.8 → $950; WHEAT 2.8 → $345). Real money, and still not recoverable this way.
+
+| arm | record | delta |
+|---|---|---|
+| rescue, uncapped | 0/40 | −9,135 |
+| rescue, within travel cap 4 | 10/40 | −4,694 |
+| rescue, within travel cap 2 | 11/40 | −843 (2SE 749) |
+| + CRITICAL_HARVEST | 0/40 | −7,710 |
+
+The uncapped version **backfired mechanically**: thirst deaths rose 7.2 → 13.5 and waterings
+fell 878 → 730. Units set off on long walks to one dying plant, watering nothing en route, so
+more plants slipped to 1 dry day — **the rule manufactures the emergency it is preventing.**
+Capping it fixes the backfire and still loses, because a plant at 1 dry day is already in
+`needs_water`; the special case only reorders work.
+
+**Standing law, now 5 for 5: prioritising watering never pays. Do not test a sixth variant.**
+
 ## Reproducing
 
 ```bash
