@@ -644,6 +644,49 @@ Two open leads from this table, both unmeasured:
 - **DROP 78 v 0.** It drops goods in the field; we always walk them to a shed and PLACE
   (202 v 25). Possible large movement saving.
 
+### 19. Q3 re-tested on top of v21 — still loses, and the cause is now isolated
+
+v20 dropped the third quadrant, but that verdict was measured while the crew was burning
+~800 unit-turns a game on duplicate work (#18). With those turns reclaimed the question
+was legitimately open again. It is now closed properly.
+
+vs v21, 20 seeds × both slot orders:
+
+| arm | record | delta | empty@d20 | planted@d20 | seeds | straw rev | money@d15 |
+|---|---|---|---|---|---|---|---|
+| +Q3 | 16/40 | −4,276 | 19.7 | 40.1 | 111 | 28,738 | −4,706 |
+| +Q3, 12 hands | 1/40 | −9,715 | 19.1 | 40.4 | 116 | 29,142 | −10,480 |
+| 12 hands only | 0/40 | −8,582 | 0.9 | 34.8 | 128 | 22,173 | −7,453 |
+| +Q3, 14 hands | 2/40 | −12,039 | 17.3 | 41.3 | 122 | 31,186 | −7,467 |
+| +Q3, seed throttle removed | 19/40 | −3,713 | 17.6 | 40.3 | 117 | 32,637 | −6,059 |
+
+**Q3 is cash-limited, not labour-limited.** Four independent attacks — reclaimed turns,
+more hands, unthrottled seed buying, all combined — and it never fills: ~18 of the 25 new
+tiles are still bare at day 20 in every arm. The $4,000 purchase lands at day 11 and
+`strawberry_target` is keyed to quadrant count, so Q3 also pulls cash into $100 seeds
+right inside the binding window. Crop revenue does rise (+$9,351 strawberry in the best
+arm) and it is never enough. This is the same `money_d15` wall that has now killed ~20
+experiments. **Do not re-open Q3 without first solving day 7-15 cash.**
+
+### 19b. Seed-purchase throughput — no longer a constraint at two quadrants
+
+Two real throttles were found and tested:
+- `holding_any_seed`: we refuse to buy any seed while ONE unplanted seed sits in the shed,
+  so only one batch is ever in flight.
+- the leftover wheat fill is `min(leftover, affordable, WHEAT_FILL_RESERVE_TILES)` = 7
+  tiles per order, the same constant that serves as the cash reserve.
+
+Both are genuine design smells, and lifting them does nothing, because after #18 v21
+already ends day 20 with **1.9 empty tiles**. There is no land left for extra seed to go on.
+
+| arm | record | delta |
+|---|---|---|
+| top-up floor 3 (buy while holding <3) | 14/40 | −817 (2SE 747) |
+| wheat fill cap 7 → 25 | 15/40 | −1,393 |
+| both | 8/40 | −2,427 |
+
+Keep in mind if land ever expands: these caps will bind again the moment empty tiles exist.
+
 ## Reproducing
 
 ```bash
