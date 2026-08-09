@@ -687,6 +687,52 @@ already ends day 20 with **1.9 empty tiles**. There is no land left for extra se
 
 Keep in mind if land ever expands: these caps will bind again the moment empty tiles exist.
 
+### 20. Water the last window day before harvesting — SHIPPED as v22 (`fc45b35`)
+
+Found by watching a replay: the trace agent's wheat goes **4 -> 6 in one step**. That is
+the engine's WATER handler (`kaggriculture.py:419-431`):
+
+```python
+bonus = 2 if tile["fertilized_until_day"] >= day else 1
+tile["yield_units"] = min(crop_data["max_yield"], tile["yield_units"] + bonus)
+```
+
+**The yield gain lands on the WATER action itself, not at day rollover.** Fertilizer
+doubles it, +1 -> +2. So wheat (starts at 1, window ages 2-4) reaches 4 on watering alone
+and 6 only if fertilized — which is exactly the corrected `max_yield: 6` in game_data.py.
+
+We never reached 6 because `worth_harvesting` returns True at `age >= max_yield_day` and
+the harvest branch sits ABOVE the water branch. Wheat at age 4 was harvested on the spot,
+though the tile survives to the end of that day and had one more watering in it.
+
+Wheat transitions, seed 7, one match:
+
+| | 1→2 | 1→3 | 2→3 | 2→4 | 3→4 | 3→5 | 4→6 | 5→6 |
+|---|---|---|---|---|---|---|---|---|
+| trace | 40 | 23 | 22 | 9 | 21 | 15 | 3 | 3 |
+| v21 | 78 | 0 | 40 | 27 | **0** | **0** | **0** | **0** |
+
+Zero transitions starting from 3/4/5 on our side against 42 on theirs. Mean wheat yield per
+harvested tile **2.90 -> 4.49**. Also applies to melon and carrot.
+
+| seed set | record | delta |
+|---|---|---|
+| original 20 | 35/40 | +3,851 (2SE 959) |
+| fresh 20 (5001-5020) | 28/40 | +1,588 (2SE 1,605) |
+| fresh 30 (6001-6030) | 38/60 | +1,627 (2SE 1,096) |
+| **pooled** | **101/140 (72%)** | **+2,251** |
+
+The first set overstated it by ~2x and its 2SE did not catch that; the second set's band
+barely excluded zero. Three sets were needed to get an honest number. **Report the pooled
+figure, not the discovery set.**
+
+#### Method note: step alignment in replays
+
+In this environment the observation at step `i` **already includes the effect of the action
+recorded at step `i`**. Reading the action from step `i-1` (the natural assumption)
+attributes every change to the wrong turn. This burned an earlier harvest-yield audit too.
+For "what caused this tile to change between `i-1` and `i`", read the action at step `i`.
+
 ## Reproducing
 
 ```bash
