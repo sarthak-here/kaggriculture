@@ -245,23 +245,39 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
     flush_items = SELLABLE_PRODUCTS | {"WHEAT"} if liquidating else SELLABLE_PRODUCTS
 
     # ---- on an animal tile ----
+    # Each unit evaluates this against the START-of-turn observation, so
+    # every unit standing on the same pen saw cared_today == False and all
+    # issued CARE; one landed, the rest burned their turn. Measured 24 CARE
+    # actions for ~14 animals (1.7x), ~200 wasted unit-turns a game.
+    # tile_acted records what has been claimed on a tile THIS turn, keyed by
+    # (pos, action): different actions on one tile all succeed, only the
+    # duplicate of a given action is wasted.
     if has_animal(tile):
-        if tile["yield_units"] > 0:
+        done = ctx["tile_acted"]
+        if tile["yield_units"] > 0 and (pos, "HARVEST") not in done:
+            done.add((pos, "HARVEST"))
             return ["HARVEST"]
-        if tile["fertilizer_available"]:
+        if tile["fertilizer_available"] and (pos, "COLLECT") not in done:
+            done.add((pos, "COLLECT"))
             return ["COLLECT_FERTILIZER"]
         # During liquidation only animals still carrying a banked care
         # bonus get fed (forfeiting a banked bonus on the final checkpoint
         # trades ~$300-500 of product for ~$50 of wheat).
         if not tile["fed_today"] and inv.get("WHEAT", 0) > 0 and \
+           (pos, "FEED") not in done and \
            (not liquidating or tile.get("pending_care_bonus", 0) > 0):
+            done.add((pos, "FEED"))
             return ["FEED"]
-        if not tile["cared_today"] and not liquidating:
+        if (not tile["cared_today"] and not liquidating
+                and (pos, "CARE") not in done):
+            done.add((pos, "CARE"))
             return ["CARE"]
 
     # Crops decay if left unharvested; harvest-on-tile stays top priority.
     if (is_plant(tile) and tile["yield_units"] > 0
-            and worth_harvesting(tile, day, ctx["days_left"])):
+            and worth_harvesting(tile, day, ctx["days_left"])
+            and (pos, "HARVEST") not in ctx["tile_acted"]):
+        ctx["tile_acted"].add((pos, "HARVEST"))
         return ["HARVEST"]
 
     # ---- final-day haul-home: no rollover after day 29, so carried goods
@@ -280,12 +296,16 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
                 else:
                     return [step_toward(pos, nearest_shed)]
 
-    if is_plant(tile) and not tile["watered_today"]:
+    if (is_plant(tile) and not tile["watered_today"]
+            and (pos, "WATER") not in ctx["tile_acted"]):
+        ctx["tile_acted"].add((pos, "WATER"))
         return ["WATER"]
 
     if (is_plant(tile) and tile["watered_today"] and inv.get("FERTILIZER", 0) > 0
             and tile.get("fertilized_until_day", -1) < day + 1
-            and fert_worth_it(tile, day)):
+            and fert_worth_it(tile, day)
+            and (pos, "FERTILIZE") not in ctx["tile_acted"]):
+        ctx["tile_acted"].add((pos, "FERTILIZE"))
         return ["FERTILIZE"]
 
     # place a carried animal on any compatible empty structure
@@ -758,6 +778,7 @@ def agent(obs):
     for i, (hx, hy) in enumerate(me.get("hands", [])):
         units.append(((hx, hy), inventories[i + 1] if i + 1 < len(inventories) else {}))
 
+    ctx["tile_acted"] = set()      # per-turn, like `claimed`
     ctx["territory"] = territories(
         [p for p, _ in units],
         {"harvest": needs_harvest, "animal": animals_need_visit, "water": needs_water})
