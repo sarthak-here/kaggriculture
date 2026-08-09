@@ -10,22 +10,35 @@ import math
 
 # yield_per_tile_day matches the "Yield / tile / day" column in the rules
 # (unfertilized, watered daily, harvested at peak). max_yield is unfertilized.
+# Verified field-by-field against the engine's CROPS table
+# (.venv/.../kaggriculture/kaggriculture.py). Five values here were WRONG and
+# have been corrected -- see the notes. They were never read by main.py, which
+# uses only first_yield_day and seed_cost, so nothing behaved differently; but
+# any yield-aware logic MUST use these, so they are now correct.
+#
+# One-time crops accumulate yield in a window: window_start = (max_yield_day+1)//2
+# through max_yield_day, gaining +1 per watered day, +2 if also fertilised,
+# capped at max_yield. So wheat (window age 2-4, starting at 1 unit) reaches 4
+# on watering alone and 6 only with fertiliser -- the old max_yield of 4 was the
+# UNFERTILISED outcome recorded as if it were the cap.
 CROPS = {
     "WHEAT":      {"kind": "one_time", "seed_cost": 10,  "base_price": 25,
-                    "first_yield_day": 2,  "max_yield_day": 4,  "max_yield": 4,
-                    "yield_per_tile_day": 0.80},
+                    "first_yield_day": 2,  "max_yield_day": 4,  "max_yield": 6,
+                    "yield_per_tile_day": 0.80},          # max_yield was 4
     "CARROT":     {"kind": "one_time", "seed_cost": 20,  "base_price": 35,
-                    "first_yield_day": 2,  "max_yield_day": 3,  "max_yield": 3,
-                    "yield_per_tile_day": 0.75},
+                    "first_yield_day": 2,  "max_yield_day": 3,  "max_yield": 4,
+                    "yield_per_tile_day": 0.75},          # max_yield was 3
     "TOMATO":     {"kind": "ongoing",  "seed_cost": 50,  "base_price": 60,
-                    "first_yield_day": 8,  "max_yield_day": 11, "interval": 1,
+                    "first_yield_day": 8,  "max_yield_day": 8,  "interval": 1,
+                    "max_yield": 4,                       # max_yield_day was 11
                     "max_scheduled": 4, "yield_per_tile_day": 0.33},
     "STRAWBERRY": {"kind": "ongoing",  "seed_cost": 100, "base_price": 120,
-                    "first_yield_day": 10, "max_yield_day": 16, "interval": 2,
+                    "first_yield_day": 10, "max_yield_day": 10, "interval": 2,
+                    "max_yield": 4,                       # max_yield_day was 16
                     "max_scheduled": 4, "yield_per_tile_day": 0.24},
     "MELON":      {"kind": "one_time", "seed_cost": 80,  "base_price": 250,
-                    "first_yield_day": 10, "max_yield_day": 10, "max_yield": 6,
-                    "yield_per_tile_day": 0.55},
+                    "first_yield_day": 10, "max_yield_day": 12, "max_yield": 6,
+                    "yield_per_tile_day": 0.55},          # max_yield_day was 10
 }
 
 ANIMALS = {
