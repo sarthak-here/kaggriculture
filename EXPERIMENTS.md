@@ -589,6 +589,61 @@ the START-of-turn observation, so several units standing on the same tile all se
 units walking to the same target but nothing to stop two units ACTING on the same tile.
 Likely applies to FEED / COLLECT_FERTILIZER / HARVEST too.
 
+**CLOSED by #18 below — it did apply to all four, and it was the biggest win of the session.**
+
+### 18. On-tile action de-duplication — SHIPPED as v21 (`56761e1`)
+
+The defect above, fixed. `ctx["tile_acted"]` is a per-turn set keyed by `(pos, action)`,
+cleared alongside `claimed`. Keyed by *action*, not tile, because two different actions on
+one tile both succeed in the engine — only the repeat of a given action is wasted. Applied
+to the animal block (HARVEST / COLLECT / FEED / CARE) and to on-tile HARVEST / WATER /
+FERTILIZE, which race identically.
+
+Mechanism, 5 seeds, 14 animals over 30 days = 420 animal-days:
+
+| | v20 | v21 |
+|---|---|---|
+| CARE actions | 535 | **291** |
+| duplicate on-tile actions | 1,150 | **330** |
+| FEED | 438 | 309 |
+| COLLECT_FERTILIZER | 469 | 306 |
+
+v20 issued **more CARE actions than there were animal-days**, which is the tell.
+
+Score vs v20, 20 seeds × both slot orders:
+
+| seed set | record | delta |
+|---|---|---|
+| original | 40/40 | **+5,977** (2SE 898) |
+| fresh (5001-5020) | 40/40 | **+10,444** (2SE 1,888) |
+
+80/80 paired wins. Nothing else this session came close.
+
+**The important part is where the reclaimed turns went**: not to PASS, to PLANT.
+Empty tiles @ d20 **9.0 → 3.6**, planted @ d20 **25.6 → 32.0**, seeds bought 83 → 128,
+money @ d15 +2,562. Four separate attempts to buy land coverage directly (more seeds,
+plant priority, more hands, territory assignment) all failed; the coverage was not
+seed- or hand-limited, it was **turn-limited by duplicated work**.
+
+### Trace-agent crew comparison (seed 42, trace 113,328 v v21-lineage 60,917)
+
+| day 21 | trace | v20 |
+|---|---|---|
+| hands | **14** | 10 |
+| distinct tiles worked | **61** | 35 |
+| duplicate actions | 11 | 67 |
+| CARE (whole game) | 321 | 520 |
+| WATER (whole game) | 915 | 694 |
+| SOUTH moves (whole game) | **744** | 142 |
+| DROP / PLACE | 78 / 25 | 0 / 202 |
+
+The trace agent does not have the duplication defect (321 CARE ≈ one per animal-day).
+Two open leads from this table, both unmeasured:
+- **SOUTH 744 v 142.** We barely walk into the southern quadrants. Strong suspect for the
+  remaining coverage gap.
+- **DROP 78 v 0.** It drops goods in the field; we always walk them to a shed and PLACE
+  (202 v 25). Possible large movement saving.
+
 ## Reproducing
 
 ```bash
