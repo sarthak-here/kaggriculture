@@ -1004,6 +1004,38 @@ solve the coverage problem that cash, seed, hands and planting-priority all fail
 It still loses because Q3 is wage-limited, not coverage-limited (#21b). **If revenue per tile
 ever makes Q3 viable, `QC_sweep_q3` is how to farm it.**
 
+#### 25b. Two follow-ups: the first sweep was buggy, and the fixed one still loses
+
+**The first implementation was not sweeping at all.** `sweep_bands` re-sorted units by path
+position EVERY turn, so as units moved their order flipped and a worker was handed a
+different band mid-walk — it abandoned its strip and the motion degenerated to random.
+Caught by watching the replay, not by any metric. Fix: worker `i` owns band `i` for the whole
+game, no re-sorting.
+
+The fix worked on exactly the thing it should:
+
+| | direction reversals | delta vs v23 | straw rev |
+|---|---|---|---|
+| v23 (no route structure) | 19% | — | 23,200 |
+| stable sweep, free 5-tile slices | **15%** | −7,055 | 22,061 |
+| row-pair bands, 10 tiles (out-and-back, per plot) | — | **−10,410** | 18,897 |
+| buggy reshuffling sweep | 21% | −9,600 | 19,304 |
+
+**The stable sweep turns around LESS than our shipped agent (15% v 19%) and still loses.**
+Row-pair bands — the literal "out along row 1, back along row 2, ~10 tiles" design, verified
+tile-by-tile — are worse still.
+
+**Monotonic: the more route structure imposed, the worse the score, and strawberry revenue
+tracks it exactly (23,200 -> 22,061 -> 18,897).** A worker sweeping a fixed strip services
+tiles in GEOGRAPHIC order, so ripe premium crops wait while it waters whatever is next in the
+lane. Since #23 showed we already beat the trace agent on work-per-move (0.95 v 0.86), there
+was never travel to reclaim — route discipline can only cost value-ordering, never buy
+efficiency.
+
+Crew size was pinned from both sides while testing this (sweep arms, 40 matches each):
+6 workers −34,046, 7 −23,780, 8 −11,542, 10 −9,600. Below 9 hands the farm starves; above 9
+the Fibonacci wage outruns output (#21b). **9 hands is the optimum, bounded on both sides.**
+
 ## Reproducing
 
 ```bash
