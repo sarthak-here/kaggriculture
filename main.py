@@ -194,6 +194,26 @@ def fert_worth_it(tile, day):
             and tile["yield_units"] < spec["max_yield"])
 
 
+def worth_harvesting(tile, day, days_left):
+    """One-time crops keep ACCUMULATING yield through their bonus window (+1 per
+    watered day, +2 fertilised), so harvesting the moment they turn ripe throws
+    most of the crop away: wheat is ripe at age 2 with ~2 units but reaches 4
+    (6 fertilised) by age 4. Wait for the cap or the end of the window --
+    whichever comes first -- since decay only starts after max_yield_day.
+    Ongoing crops bank each production immediately, so take those at once."""
+    spec = CROPS[tile["crop"]]
+    age = day - tile["planted_day"]
+    if age < spec["first_yield_day"]:
+        return False
+    if spec["kind"] == "ongoing":
+        return True
+    if tile["yield_units"] >= spec["max_yield"]:
+        return True
+    if age >= spec["max_yield_day"]:
+        return True
+    return days_left <= 2
+
+
 def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquidating,
                        claimed, needs_harvest, needs_water, empty_tiles, weeds, ctx):
     """One unit's action. Mutates claimed/seed_budget/ctx budgets so units
@@ -216,8 +236,8 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
             return ["CARE"]
 
     # Crops decay if left unharvested; harvest-on-tile stays top priority.
-    if is_plant(tile) and tile["yield_units"] > 0 and \
-       (day - tile["planted_day"]) >= CROPS[tile["crop"]]["first_yield_day"]:
+    if (is_plant(tile) and tile["yield_units"] > 0
+            and worth_harvesting(tile, day, ctx["days_left"])):
         return ["HARVEST"]
 
     # ---- final-day haul-home: no rollover after day 29, so carried goods
@@ -464,7 +484,7 @@ def agent(obs):
             structures_need_animal[t["kind"]].append((x, y))
         elif is_plant(t):
             crop_counts[t["crop"]] = crop_counts.get(t["crop"], 0) + 1
-            if t["yield_units"] > 0 and (day - t["planted_day"]) >= CROPS[t["crop"]]["first_yield_day"]:
+            if t["yield_units"] > 0 and worth_harvesting(t, day, days_left):
                 needs_harvest.append((x, y))
             if not t["watered_today"]:
                 needs_water.append((x, y))
@@ -669,6 +689,7 @@ def agent(obs):
     ctx = {
         "shed": shed,
         "shed_tiles": shed_adjacent_tiles(board_size),
+        "days_left": days_left,
         "prices": market_prices,
         "animals_need_visit": animals_need_visit,
         "animals_need_feed": animals_need_feed,
