@@ -909,6 +909,41 @@ Capping it fixes the backfire and still loses, because a plant at 1 dry day is a
 
 **Standing law, now 5 for 5: prioritising watering never pays. Do not test a sixth variant.**
 
+### 23. Movement efficiency vs the trace agent — THE GAP DOES NOT EXIST
+
+Two leads were flagged off the v20-vs-trace action mix (#18). **Both were misreadings and are
+now closed.** Same-match measurement, v23 vs trace, mean of 4 seeds:
+
+| | total actions | MOVE | move share | work per move | deposits | HARVEST |
+|---|---|---|---|---|---|---|
+| **v23** | 6,175 | 3,103 | **50%** | **0.95** | 257 | 255 |
+| trace | 6,758 | 3,386 | **50%** | 0.86 | 121 | 341 |
+
+**We are slightly MORE step-efficient than the trace agent** (0.95 work per move vs 0.86).
+Its larger action count is 13-15 hands, not tighter routing. There is no routing win available.
+
+- **"SOUTH 744 v our 142"** — geography, not technique. It owns three quadrants and walks
+  south; we own two northern ones.
+- **"DROP 78 v our 0"** — a real engine fact with no value here. `DROP`
+  (kaggriculture.py:330) banks the unit's ENTIRE inventory in one action; `PLACE` (:364)
+  banks ONE item type. But our units almost always carry a single type, so a DROP rule fires
+  only 15x/game (PLACE 257 -> 188) and the deposit gap is trip COUNT, not cost per trip.
+
+| DROP arm | record | delta |
+|---|---|---|
+| DROP at >=2 types (+ final-day haul) | 20/40 | −407 |
+| DROP at >=1 type | 19/40 | −286 |
+| DROP at >=3 types | 31/40 | +180 (2SE 291) |
+| DROP at >=2, no haul change | 19/40 | −554 |
+
+Best case is +180 against a 2SE of 291 — inside noise, from a rule that fires 4 times a game.
+**Not shipped.** Keep `drop_safe()` in mind only if inventories ever carry multiple types
+(it is unsafe while carrying feed wheat, fertilizer for a run, or an animal en route).
+
+**Consequence: the deficit vs the trace agent is not execution.** De-dup, water-before-
+harvest and the travel cap took every execution win available. What remains is capacity
+(13-15 hands) funded by revenue per tile — the same wall as #21b.
+
 ## Reproducing
 
 ```bash
