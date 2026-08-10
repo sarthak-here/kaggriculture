@@ -1158,6 +1158,46 @@ actually got wrong.
 Positive margin, badly losing agent. With drop3 (+180 margin, 78% wins) it demonstrates the
 two metrics are decoupled in BOTH directions — neither can be inferred from the other.
 
+### 27. v25 SHIPPED (`4ac3eb5`) — the crop MIX was wrong, not the revenue
+
+Split the trace agent's advantage into volume / price / mix (`scratchpad/revenue_gap.py`,
+8 seeds). The surprise: **our total revenue already matches it** — 126,765 v 128,189, within
+1%. Final money differs by 13,941. We earn the same money from the wrong crop.
+
+| | v25 lineage | trace |
+|---|---|---|
+| strawberry tiles @ d18 | **18.5** | **40.0** |
+| strawberry revenue | 17,588 | 36,819 |
+| wheat revenue | 25,382 | 9,033 |
+| **wheat SPEND** | **27,831** | **13,970** |
+| cows / sheep | 7.9 / 5.9 | 8.0 / 6.0 |
+
+We churn wheat at near-zero margin (buy 27,831, sell 25,382) on tiles that could carry
+strawberry at ~$920/tile. **The cause was a constant, not a capability:**
+`strawberry_target` returned 19 for two quadrants and we sat at 18.5 — at the cap with land
+to spare.
+
+| target (2 quadrants) | original seeds | fresh seeds | pooled (80) |
+|---|---|---|---|
+| 24 | 68% | — | — |
+| **28** | **70%** | **65%** | **68%** |
+| 30 | 75% | 62% | 69% |
+| 32 | 65% | 60% | 63% |
+| 36 / 40 / 44 | identical to 32 — land saturates at ~35 planted tiles |
+
+Strawberry revenue **+$10,000** in every winning arm. **Funding it by cutting melon FAILED
+(32%)** — the trade is wheat -> strawberry, not melon -> strawberry.
+
+Panel (6 agents, 14 seeds, both seats, 420 matches): trace 91% | **straw28 56%** |
+straw32 45% | straw30 41% | v24 36% | v22 26%. Beats v24 head-to-head 71%.
+
+**The head-to-head sweep preferred 30; the panel preferred 28.** That disagreement is
+exactly why the panel is the promotion test.
+
+**This reframes Q3 (#21, #21b).** Nineteen arms failed because we filled the new quadrant
+with cheap wheat — the same zero-margin churn. A quadrant filled with STRAWBERRY at
+~$920/tile is a case none of them tested. Retesting now.
+
 ## Reproducing
 
 ```bash
