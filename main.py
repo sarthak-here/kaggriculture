@@ -61,6 +61,7 @@ STRAWBERRY_LAST_PLANT_DAY = 13       # program stops at d11; 10-day first yield 
 TILES_PER_UNIT_TARGET = 4
 ANIMAL_TILES_PER_UNIT = 3
 EARLY_HANDS_CAP = 4                  # skeleton crew days 1-6 (program: 0-4/day)
+DROP_MIN_TYPES = 3      # item types that make DROP beat a PLACE chain
 TRAVEL_CAP = 2                    # prefer work within this manhattan radius
 FULL_HANDS_CAP = 9                   # measured optimum. 14 was copied from a bot we
                                      # later found was replaying a recording; hands 13
@@ -157,6 +158,25 @@ def held_seed_to_plant(seed_budget):
     if not held:
         return None
     return max(held, key=lambda c: c[1])[0]
+
+
+def drop_safe(inv, ctx):
+    """True when the unit's whole inventory can go to the shed in one DROP.
+
+    Unsafe to DROP while carrying something with a purpose: feed wheat or
+    fertilizer that a pickup run still wants, or an animal on its way to a
+    structure. DROP takes everything, so one kept item vetoes it.
+    """
+    for item, n in inv.items():
+        if n <= 0:
+            continue
+        if item in ANIMALS:
+            return False
+        if item == "WHEAT" and ctx["wheat_pickup_wanted"] > 0:
+            return False
+        if item == "FERTILIZER" and ctx["fert_pickup_wanted"] > 0:
+            return False
+    return True
 
 
 def flush_order(inv, items, prices):
@@ -315,6 +335,10 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
             # banked the first type and stranded the rest.
             if hour + manhattan(pos, nearest_shed) + (len(carried) - 1) >= 22:
                 if pos in ctx["shed_tiles"]:
+                    # One DROP banks every type; the PLACE chain stranded all
+                    # but the first when the deadline bit.
+                    if len(carried) >= 2 and drop_safe(inv, ctx):
+                        return ["DROP"]
                     item, n = carried[0]
                     return ["PLACE", item, n]
                 else:
@@ -366,7 +390,10 @@ def decide_unit_action(pos, tile, inv, day, hour, final_day, seed_budget, liquid
                 return ["PICKUP", animal, 1]
         # mid-day flush of sellable products (PLACE per item, never DROP —
         # DROP would dump feed wheat mid-round-trip)
-        for item, n in flush_order(inv, flush_items, ctx["prices"]):
+        _carried = flush_order(inv, flush_items, ctx["prices"])
+        if len(_carried) >= DROP_MIN_TYPES and drop_safe(inv, ctx):
+            return ["DROP"]          # whole inventory in one action
+        for item, n in _carried:
             if item == "FERTILIZER" and ctx["fert_pickup_wanted"] > 0:
                 continue
             if item == "WHEAT" and ctx["wheat_pickup_wanted"] > 0:
