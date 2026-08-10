@@ -94,7 +94,7 @@ def strawberry_target(quadrants, day):
     if quadrants >= 3:
         return 42
     if quadrants == 2:
-        return 19
+        return 28
     return 0
 
 
