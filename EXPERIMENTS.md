@@ -1113,6 +1113,30 @@ shipped wins are worth ~+30 each.** Per kaitofukami (unverified), 22 of the top 
 identical Day-0 signature — the top is largely one copied replay route. Our `premium/` trace
 agent is that species and scores 92% on our own panel.
 
+### 26d. v24 SHIPPED (`a9304c9`) — the first version promoted on win rate
+
+`DROP_MIN_TYPES = 3` + `drop_safe()`. DROP banks the unit's ENTIRE inventory in one action
+where PLACE banks one item type (engine :330 vs :364); `drop_safe()` vetoes only while
+carrying something with a purpose (feed wheat or fertilizer a pickup run wants, an animal
+en route to a structure).
+
+**Rejected on 2026-08-09 as "+180, inside noise". That rejection was wrong** — it went
+31/40 = 78% on the original seeds AND 31/40 = 78% on fresh seeds, and margin is worth
+nothing (#26). Panel (6 agents, 14 seeds, both seats, 420 matches):
+
+| agent | field win rate | Bradley-Terry |
+|---|---|---|
+| trace | 92% | 4.078 |
+| **v24** | **74%** | **1.088** |
+| v23 | 64% | 0.608 |
+| v22 | 49% | 0.221 |
+| v20 | 21% | 0.005 |
+| v14 | 0% | 0.000 |
+
+Beats v23 head-to-head 71% on a mean margin of **+142** — the exact case the old criterion
+throws away. Also improves against the trace agent (11% v v23's 7%).
+Submitted 2026-08-10.
+
 ## Reproducing
 
 ```bash
