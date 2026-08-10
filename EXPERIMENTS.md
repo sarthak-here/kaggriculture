@@ -1242,6 +1242,50 @@ yet melon revenue barely moved (13,791 v their 14,447 from 12.6 tiles) — we re
 **$166/unit v their $110**. Melon has the steepest price curve in the game (`above: sq`,
 target 3.60). Few melons is correct, not a deficiency.
 
+### 27d. Feed wheat is NOT the gap, and sell-throttling makes things worse
+
+**Correction to 27c: that lead was wrong — it compared GROSS wheat spend, not net.**
+
+| | bought | harvested | FEED | sold | shed end | NET cash |
+|---|---|---|---|---|---|---|
+| v25 | 602 | 259 | **290** | 560 | 7 | **−4,260** |
+| trace | 275 | 239 | **323** | 206 | 0 | −4,706 |
+
+The trace agent FEEDS MORE (323 v 290) on less than half the purchased wheat, but our net
+wheat cash is actually *better*. We simply run a much larger buy-and-sell loop at the same
+net. Wheat is not the leak.
+
+**A real measurement flaw surfaced here.** Engine :583 re-quotes EVERY UNIT at the current
+market inventory, so a SELL of n units walks the price down as it executes. Every revenue
+figure in this ledger priced whole orders at the pre-order price — overstating revenue, and
+overstating it more for whoever sells in bigger chunks. Realized vs nominal
+(`scratchpad/realized.py`, 6 seeds):
+
+| product | our slip | their slip | our units/order | their units/order |
+|---|---|---|---|---|
+| **MELON** | **−3,618** | −845 | **16.3** | 7.7 |
+| strawberry | −817 | −1,138 | 10.1 | 7.5 |
+| **TOTAL** | **−5,953** | −3,627 | | |
+
+We lose **26% of melon revenue to our own dumping** (nominal 13,894 -> realized 10,276);
+they lose 6%. Melon has the steepest curve in the game (`above: sq`, target 3.60).
+
+**But tightening the sell throttle LOSES.** `MIN_SELL_PRICE_RATIO` swept up from 0.70:
+
+| ratio | win rate |
+|---|---|
+| 0.80 | 8% |
+| 0.88 | 5% |
+| 0.94 | 5% |
+| 0.98 | 25% |
+
+Holding stock to protect the price costs more than the price impact — unsold inventory is
+worth $0 at game end and prices recover slowly. Same lesson as v9's hold-window regression.
+**The trickle is already near-optimal; do not re-test sell throttling.**
+
+**Caveat for future audits: nominal revenue is not comparable across agents that sell in
+different chunk sizes. Use `realized.py`'s price walk.**
+
 ## Reproducing
 
 ```bash
