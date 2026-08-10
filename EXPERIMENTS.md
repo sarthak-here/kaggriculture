@@ -1198,6 +1198,50 @@ exactly why the panel is the promotion test.
 with cheap wheat — the same zero-margin churn. A quadrant filled with STRAWBERRY at
 ~$920/tile is a case none of them tested. Retesting now.
 
+### 27b. Q3 CLOSED FOR GOOD — tested with strawberry, the last untested hypothesis
+
+#27 reframed Q3: every earlier arm filled the new quadrant with cheap wheat, so a
+strawberry-filled quadrant was never tested. Retested on the v25 base, 40 matches each:
+
+| arm | win rate | strawberry rev | empty@d20 | money@d15 |
+|---|---|---|---|---|
+| Q3 d11, straw target 42 | 5% | 29,070 | 13.8 | −3,821 |
+| Q3 d11, straw target 50 | 0% | 29,240 | 14.6 | −4,415 |
+| Q3 d14, straw target 42 | 0% | 23,709 | 17.1 | −2,674 |
+| Q3 d9, straw target 42 | 5% | 29,386 | 13.1 | −3,668 |
+| **v25 baseline, TWO quadrants** | — | **30,946** | **0.7** | — |
+
+**A third quadrant does not raise strawberry revenue — it slightly LOWERS it.** v25 already
+earns ~$30,946 of strawberry on two quadrants; Q3 adds ~14 permanently empty tiles and
+drains $3,800 of day-15 cash.
+
+**The trace agent's third quadrant was never the CAUSE of its strawberry advantage.** We
+only needed to stop growing wheat on land we already owned. **23 arms across three sessions.
+Do not re-open Q3.**
+
+### 27c. NEXT LEAD: feed wheat costs us double for a smaller herd (~$13,845)
+
+Post-v25 revenue split (8 seeds), remaining gap to the trace agent:
+
+| | v25 | trace |
+|---|---|---|
+| total revenue | 128,466 | 129,460 |
+| **final money** | **83,071** | **99,517** |
+| **WHEAT SPEND** | **27,862** | **14,018** |
+| herd | 7.5 cow + 5.5 sheep = 13 | 8 + 6 = 14 |
+| wheat units SOLD | 569 | 208 |
+
+**Revenue is level; the gap is cost, and it is almost entirely feed wheat — $13,845 of the
+$16,446 shortfall.** We buy ~670 units for a 13-animal herd and simultaneously sell 569
+harvested units: a large buy-and-sell loop that nets about the same as theirs (−4,260 v
+−4,706) at twice the gross. Ask: why does a 13-animal herd need double the feed of a
+14-animal one?
+
+Also settled here: **melon volume is self-defeating.** Our tiles fell 10.2 -> 2.5 under v25
+yet melon revenue barely moved (13,791 v their 14,447 from 12.6 tiles) — we realise
+**$166/unit v their $110**. Melon has the steepest price curve in the game (`above: sq`,
+target 3.60). Few melons is correct, not a deficiency.
+
 ## Reproducing
 
 ```bash
