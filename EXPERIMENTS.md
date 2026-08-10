@@ -1137,6 +1137,27 @@ Beats v23 head-to-head 71% on a mean margin of **+142** — the exact case the o
 throws away. Also improves against the trace agent (11% v v23's 7%).
 Submitted 2026-08-10.
 
+### 26e. Re-audit of margin-judged rejections — only ONE was wrong
+
+Since drop3 proved the old criterion discards real wins, the near-misses were rebuilt on
+top of v24 and re-screened on WIN RATE (40 matches each vs v24):
+
+| arm | win rate | margin | old verdict |
+|---|---|---|---|
+| `XA_drop2` DROP at 2+ types | 42% | −540 | rejected — correctly |
+| `XB_drop4` DROP at 4+ types | **22%** | **+30** | untested |
+| `XC_cap3` travel cap 3 | 35% | −1,062 | rejected — correctly |
+| `XD_cap1` travel cap 1 | 0% | −7,241 | rejected — correctly |
+| `XE_topup3` seed top-up floor 3 | 18% | −2,679 | rejected — correctly |
+
+**No further hidden winners. v24's `DROP_MIN_TYPES = 3` and `TRAVEL_CAP = 2` are locally
+optimal on the correct metric**, and drop3 was the only rejection the margin criterion
+actually got wrong.
+
+`XB_drop4` is the mirror image of the drop3 case: **+30 mean margin, 22% win rate.**
+Positive margin, badly losing agent. With drop3 (+180 margin, 78% wins) it demonstrates the
+two metrics are decoupled in BOTH directions — neither can be inferred from the other.
+
 ## Reproducing
 
 ```bash
