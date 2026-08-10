@@ -1036,6 +1036,83 @@ Crew size was pinned from both sides while testing this (sweep arms, 40 matches 
 6 workers −34,046, 7 −23,780, 8 −11,542, 10 −9,600. Below 9 hands the farm starves; above 9
 the Fibonacci wage outruns output (#21b). **9 hands is the optimum, bounded on both sides.**
 
+### 26. COIN MARGIN IS WORTH NOTHING — verified on 25,849 real rating deltas
+
+kaitofukami's v25 notebook claims the official evaluation page says "coin margin does not
+matter; only win/loss/tie does". The page is JS-rendered and unreadable by fetch, so this was
+tested against real data instead: the public `georgymamarin/kaggriculture-episodes` dataset
+carries `rating_after` per (episode, agent). Sorting each submission's episodes
+chronologically and diffing `rating_after` gives the per-game rating delta.
+
+| outcome | mean rating delta |
+|---|---|
+| WIN | **+47.92** |
+| LOSS | **-16.33** |
+
+Within wins, controlling for rating gap (±100) and sorting by coin margin:
+
+| margin quartile | mean margin | mean rating delta |
+|---|---|---|
+| narrowest 25% | 1,009 | +43.31 |
+| 2nd | 3,979 | +47.44 |
+| 3rd | 8,137 | +44.94 |
+| widest 25% | **26,082** | +48.08 |
+
+Widest minus narrowest: **+4.78 against 2SE 6.76**. correlation(margin, delta) = **+0.025**.
+
+**A 26,000-coin thrashing pays exactly what a 1,000-coin squeaker pays.** Reproduce with
+`scratchpad/rating_test.py`.
+
+**PROMOTION RULE, effective now: rank by WIN RATE, never by mean margin.** Margin remains
+useful only as a mechanism diagnostic (is the change doing what it should), never as the
+decision. Note the asymmetry too: a win pays ~3x what a loss costs, so volume of play helps.
+
+### 26b. The paired-seat panel — and a harness bug that inverted it
+
+Built `scratchpad/panel.py`: every agent plays every other, all seeds, BOTH seat orders,
+ranked by field win rate plus Bradley-Terry (MM iteration). Motivated by #24 and by the
+community notebook "Beating Your Own Best Agent Is The Wrong Test".
+
+**The first run was WRONG and said v22 (81%) beat v23 (70%).** Cause:
+`kaggle_environments/agent.py:get_last_callable` appends the agent's directory to `sys.path`
+and `exec`s the file — but `import game_data` caches under that BARE NAME in `sys.modules`,
+so **the first agent to import it in a worker process fixes that module for every agent
+after it**, across matches. The snapshots carried the pre-correction game_data (WHEAT
+max_yield 4 not 6, STRAWBERRY max_yield_day 16 not 10) and v22/v23 read those fields in
+`fert_worth_it` / `water_before_harvest`, so they played with stale constants.
+
+`tips.py` was immune only by luck — every arm directory got a copy of the CURRENT
+game_data.py, so the shared module was always identical. **All shipped decisions stand**;
+verified directly: v23 vs v22 = 35/40 = 88%, +2,784, and shipped `main.py` is byte-identical
+to the tested arm `LF_cap2_h9`.
+
+`panel.py` now aborts unless every agent carries an identical `game_data.py`. **Any new
+harness that mixes agents from different directories must do the same check.**
+
+Corrected panel, 6 agents, 10 seeds, both seats (300 matches):
+
+| agent | field win rate | Bradley-Terry |
+|---|---|---|
+| trace | 92% | 3.966 |
+| **v23** | **78%** | **1.321** |
+| v22 | 70% | 0.711 |
+| v20 | 40% | 0.003 |
+| v14 | 14% | 0.000 |
+| v10 | 6% | 0.000 |
+
+Monotone in development order — itself a check the broken run failed. **v23 confirmed best.**
+
+Genuine non-transitivity survives: v23 beats v22 overall yet does WORSE against the trace
+agent (10% v v22's 30%). That is exactly why field win rate is the promotion metric.
+
+### 26c. Leaderboard reality (2026-08-10)
+
+We are **rank 1,351 of 3,540** at **922.3** (v22; it drifted up from 893.4). Median 709.9.
+1st 3,233.4 | 30th 3,013.3 | 100th 2,851.8. **The gap to top-30 is ~2,090 points and our
+shipped wins are worth ~+30 each.** Per kaitofukami (unverified), 22 of the top 30 share an
+identical Day-0 signature — the top is largely one copied replay route. Our `premium/` trace
+agent is that species and scores 92% on our own panel.
+
 ## Reproducing
 
 ```bash
