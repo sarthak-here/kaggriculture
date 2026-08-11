@@ -1392,6 +1392,60 @@ until measured.
 shipping.** Every production-side explanation is now eliminated; the failure is on the
 market side.
 
+### 29. Geese and profitability-based animal buying — sound theory, 15 arms, all lose
+
+**The price curves strongly suggest geese should work.** Revenue from dumping N units into a
+fresh market:
+
+| units | MILK price | WOOL price | EGG price | milk revenue | wool revenue | EGG revenue |
+|---|---|---|---|---|---|---|
+| 50 | 55 | 55 | 43 | 5,430 | 7,655 | 2,244 |
+| 100 | **1** | **1** | **42** | 6,205 | 7,969 | 4,371 |
+| 200 | 1 | 1 | **41** | 6,305 | 8,069 | **8,510** |
+
+**Milk and wool are LINEAR above target and saturate near $6.3k / $8.1k no matter how much
+is produced. EGG is LOGARITHMIC and keeps scaling.** The goose is also the cheapest ($300),
+fastest (interval 1, ~2/day) and earliest (day 4) animal, and the reference players never buy
+geese, so that market sits unsaturated.
+
+**And it still loses.** Geese at a fixed target (cap cows at 7 when milk < 100, buy geese):
+
+| geese | win rate | delta |
+|---|---|---|
+| 4 | 2% | −2,075 |
+| 6 | 2% | −2,613 |
+| 10 | 2% | −4,312 |
+
+Mechanism verified: +$6,249 of egg revenue with milk and wool UNCHANGED — genuinely
+additive. But each COOP displaces a crop tile and the birds cost feed and care turns:
+planted 34.8 -> 32.1, seeds 114 -> 98. Monotonic in goose count, so the birds are the cost.
+
+**Marginal-profit purchasing** (price each animal at current market prices, net of feed,
+purchase and the crop tile it displaces; buy the best while positive) — two models, 11 arms:
+
+*Model 1 — lifetime output priced as one dump.* WRONG: the town consumes daily so production
+meets a recovering market. Understated high-volume animals, cut sheep 6 -> 2, and at low tile
+cost collapsed crops 35 -> 20 tiles. Best −11,541 (12%).
+
+*Model 2 — priced per DAY against a recovering market.* Correct pricing, still loses:
+
+| crop-tile opportunity value | win rate | delta |
+|---|---|---|
+| 900 | 12% | −10,112 |
+| 1,500 | 32% | −4,099 |
+| **2,200** | **40%** | **−2,569** |
+| 3,000 | 18% | −8,641 |
+| 4,500 | 0% | −45,010 (herd starved) |
+
+Peak at 2,200 and still short of v25, non-monotonic either side. **The transcribed herd curve
+is hard to beat**; every profitability variant disturbs the crop economy (strawberry revenue
+23,650 v 31,116 at the peak arm).
+
+**Verdict: NOT SHIPPED.** The egg-market insight is real and worth keeping — if a future
+build has spare structure tiles that do NOT displace crops (e.g. a genuinely working third
+quadrant), geese are the right thing to put on them, because eggs are the only product whose
+price survives volume.
+
 ## Reproducing
 
 ```bash
