@@ -1572,6 +1572,48 @@ top-up re-buys), and role separation makes it worse (#31).
 wheat buffer so the bigger withdrawals cannot drain it — the measured failure mode at cap 8+
 was shed drain, not the cap itself.
 
+### 33. THE STEP GAP IS FERTILISER LOGISTICS — solved mechanically, not yet profitably
+
+Chasing #30's 331-action logistics gap to its source. It is NOT wheat: wheat pickups are
+210 v the reference's 209, and almost nothing is placed back. Broken down by item:
+
+| | PICKUP fert | PLACE fert | total fert logistics |
+|---|---|---|---|
+| **v25** | **156** | **209** | **365** |
+| trace | 39 | **1** | **40** |
+
+**That 325-action difference IS the logistics gap.** And the reason is free money we were
+leaving: **the engine auto-banks every carried inventory at the nightly rollover**
+(`_drop_inventories_to_shed`). The reference agent simply CARRIES collected fertiliser all
+day and lets the rollover bank it. We PLACE it by hand, then PICK IT BACK UP to apply it.
+
+**Fix (`CARRY_FERTILIZER`): drop FERTILIZER from the mid-day flush. It works exactly:**
+
+| | PLACE fert | PICKUP fert | logistics share | productive actions |
+|---|---|---|---|---|
+| v25 | 150 | 92 | 19.8% | 2,331 |
+| **carry** | **13** | **4** | **13.3%** | 2,336 |
+| trace | 1 | 39 | 14.7% | 2,485 |
+
+**We become MORE step-efficient than the reference agent.** The long-standing "our labour
+takes more steps" complaint is mechanically solved.
+
+**But it loses on score: 15/40 = 38%, −2,588** — because fertiliser revenue halves
+(21,972 -> 10,734, −$11,238). Carried fertiliser reaches the shed only at rollover and much
+of it never gets sold.
+
+Shed-capacity overflow was the obvious suspect and is **ruled out**: carrying thresholds of
+3 / 5 / 8 give byte-identical results, so units never hold more than 3 and the cap never
+binds.
+
+**OPEN: why does fertiliser that is banked at rollover not get sold?** Worth ~$11k, and the
+step problem is already solved, so this single question converts a −2,588 arm into a likely
+win. Best candidate: the sell path reserves or skips it, or it arrives after the day's sell
+orders are already issued.
+
+Also rejected this round: pickup cap + deeper shed buffer (cap 6/8/12 x buffer 2-3x, all
+lose, −2,987 to −34,876 — the buffer ties up cash and wheat spend rises to 37,336).
+
 ## Reproducing
 
 ```bash
