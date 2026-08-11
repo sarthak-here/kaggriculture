@@ -1751,6 +1751,50 @@ quadrant. It cannot be reached by crop mix, target tuning or planting dates.** T
 #28d — why our three-quadrant builds sell into a crashed market — the single blocking
 question for the whole project. Everything else is now measured and closed.
 
+### 36. Third quadrant WITH every learned technique — matches the farm, fails the economics
+
+Fair criticism taken: the techniques had been tested on TWO quadrants (where 35 tiles are
+full and everything is zero-sum) while the three-quadrant builds were tested WITHOUT them.
+Combined properly: Q3 + melon alternation (#35) + strawberry 42 + seed throughput +
+plant-first + crew 11-12. `scratchpad/bigfarm2.py`.
+
+| arm | win rate | planted@d20 | straw revenue | money@d15 |
+|---|---|---|---|---|
+| Q3 d11, crew 12 | 0/40 | **55.1** | 24,976 | −9,556 |
+| Q3 d11, crew 11 | 2/40 | 51.7 | 23,564 | −9,083 |
+| Q3 d11, melon to d22 | 0/40 | 54.5 | 19,524 | −10,743 |
+| Q3 d14, crew 12 | 0/40 | 52.3 | 19,355 | −7,797 |
+| **v25 (two quadrants)** | — | **34.2** | **31,024** | — |
+
+**We finally MATCH the reference's farm size — 55 tiles against their ~56.** No earlier arm
+did. And strawberry revenue FALLS versus our own two-quadrant build while holding more
+strawberry tiles.
+
+**Diagnosed: the big farm is under-fertilised and under-watered per tile.**
+
+| | tiles @d18 | water per tile | FERTILIZE actions | fert per tile |
+|---|---|---|---|---|
+| 3 quadrants | 57.7 | 21.3 | **104** | **1.8** |
+| 2 quadrants | 32.7 | 25.9 | **115** | **3.5** |
+
+70% more tiles, FEWER fertiliser applications. Strawberry is ongoing: a fertilised checkpoint
+yields +2 instead of +1, so half the coverage roughly halves the bonus on our best crop.
+Supply is herd-capped — we collect ~290 and buy zero.
+
+**Buying the shortfall makes it far worse:** 0/40, **−61k to −68k**, money@d15 −18,141,
+strawberry revenue 15,737. Fertiliser purchases drain the day 7-15 ramp and the farm never
+recovers.
+
+**Pattern across EVERY three-quadrant build: money@d15 goes from ~0 to −8k to −18k, and score
+tracks it.** The quadrant costs $4,000 plus extra seed plus extra wages inside the one window
+where cash is binding. #28's dismissal of the cash explanation was based on the late-buy arm
+(d16, money@d15 +0, only −5,603) — that arm avoids the squeeze and loses least. **The cash
+window is real after all; it is the least-bad Q3 variant that proves it.**
+
+**Status: Q3 reproduces the reference's FARM but not its ECONOMY.** The remaining question is
+unchanged and now very sharp: the reference funds the same farm without the day 7-15 collapse
+(#34b shows it is not ahead on wealth at day 10 — it is level, then pulls away from day 12).
+
 ## Reproducing
 
 ```bash
