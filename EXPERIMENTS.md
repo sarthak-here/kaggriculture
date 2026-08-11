@@ -1606,7 +1606,32 @@ Shed-capacity overflow was the obvious suspect and is **ruled out**: carrying th
 3 / 5 / 8 give byte-identical results, so units never hold more than 3 and the cap never
 binds.
 
-**OPEN: why does fertiliser that is banked at rollover not get sold?** Worth ~$11k, and the
+**CORRECTED — the fertiliser "revenue collapse" was a MEASUREMENT ARTIFACT.**
+
+Exact per-step money deltas (6 seeds), the only accounting proven reliable:
+
+| | money IN | money OUT | final |
+|---|---|---|---|
+| carry | 107,614 | 30,518 | 80,096 |
+| v25 | 111,081 | 31,736 | 82,344 |
+| gap | **−3,466** | **−1,218** | **−2,248** |
+
+The carry fix costs **−$3,466 of income, not −$11,238**, and saves $1,218 of spend. The real
+cost is TIMING: carried fertiliser reaches the shed only at rollover, so it sells a day later
+into a more saturated market.
+
+**The "we sell 179 units we do not have" anomaly was also the metric, not a defect.** An
+order that cannot fill is re-submitted next turn and counted again. The agent is correct.
+
+**METHOD RULE (again, and this one has now bitten three times): never derive revenue from
+SUBMITTED market orders.** They over-count re-submissions and ignore the per-unit price walk.
+Use per-step money deltas. #27's "revenue is level", #28d's milk-price story and #33's
+fertiliser collapse were all distorted by this.
+
+**OPEN (restated, now correctly sized ~$3.5k): can the step saving be kept without the
+one-day sell delay?** The step problem itself IS solved -- 13.3% logistics v the reference's
+14.7%. Candidate: bank fertiliser opportunistically when a unit is already standing at the
+shed, so it reaches the market same-day at no extra travel. Worth ~$11k, and the
 step problem is already solved, so this single question converts a −2,588 arm into a likely
 win. Best candidate: the sell path reserves or skips it, or it arrives after the day's sell
 orders are already issued.
