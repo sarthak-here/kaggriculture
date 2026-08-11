@@ -1659,6 +1659,42 @@ orders are already issued.
 Also rejected this round: pickup cap + deeper shed buffer (cap 6/8/12 x buffer 2-3x, all
 lose, −2,987 to −34,876 — the buffer ties up cash and wheat spend rises to 37,336).
 
+### 34. HOW THE REFERENCE AGENT ACTUALLY WINS — it is the first 10 days
+
+Localising the −14,666 income gap in TIME with per-step money deltas (4 seeds):
+
+| day | our income | trace income | gap | our cash | trace cash |
+|---|---|---|---|---|---|
+| 6 | 559 | **1,569** | −1,010 | 934 | 2,410 |
+| 10 | 2,848 | **4,301** | −1,453 | **383** | **3,792** |
+| 14 | 3,227 | **5,978** | −2,751 | 19,276 | 19,960 |
+| 16-20 | — | — | **+4,094 (WE lead)** | — | — |
+| 22-26 | — | — | −4,984 | 54,225 | 62,245 |
+
+**By day 10 it holds $3,792 and we hold $383 — ten times our cash.** We out-earn it in days
+16-20; by then it has already converted the head start into producing assets and pulls away
+again from day 22. Early income COMPOUNDS.
+
+**Their opening is nearly identical to ours** (days 0-8, mean of 4 seeds):
+
+| | HIRE | land | wheat/straw/melon seed | cows / sheep | MILK sold | wheat sold | fert sold |
+|---|---|---|---|---|---|---|---|
+| v25 | 47 | 1 | 23 / 15 / 12 | 6 / **2** | **6** | 68 | 75 |
+| trace | 44 | 1 | 24 / 12 / 11 | 5 / **6** | **18** | 43 | 33 |
+
+Same hires, same land, same seed mix. **Two differences: it runs 6 sheep to our 2, and it has
+sold 18 milk by day 8 to our 6.** Wool is base $200 and first yields on DAY 6 — the earliest
+high-value product in the game. Our early sales are fertiliser (75) and wheat (68), the two
+cheapest goods.
+
+**So the gap is not strategy, land, labour, routing or steps — it is how fast animals are
+converted to cash in days 4-11.** That is a fresh, precisely located target and the first one
+in three sessions that is not already falsified.
+
+Next: (a) sheep count in the opening (2 -> 6, wool yields day 6 v milk day 8); (b) why milk
+reaches market so much more slowly for us in days 6-10 — harvest cadence, hauling, or sell
+ordering.
+
 ## Reproducing
 
 ```bash
