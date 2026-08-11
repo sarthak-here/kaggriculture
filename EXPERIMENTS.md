@@ -1795,6 +1795,58 @@ window is real after all; it is the least-bad Q3 variant that proves it.**
 unchanged and now very sharp: the reference funds the same farm without the day 7-15 collapse
 (#34b shows it is not ahead on wealth at day 10 — it is level, then pulls away from day 12).
 
+### 37. The Day 10-12 inflection, traced to its root
+
+Days 8-14, mean of 4 seeds (v25 | trace):
+
+| day | melon $ | milk $ | harvests | land bought |
+|---|---|---|---|---|
+| 8 | 0 / 0 | **1,080 / 3,172** | **1.0 / 9.0** | — |
+| 10 | 0 / 3,096 | 548 / 1,090 | 13.8 / 8.0 | **— / 1** |
+| 11 | **12,028** / 5,968 | 0 / 538 | 5.5 / 7.0 | — |
+| 14 | 0 / 801 | 1,689 / 1,066 | 2.8 / **12.0** | — |
+
+**Day 8 is the first milk checkpoint and we bank a third of what they do.** They then buy the
+third quadrant on day 10 with that money, and it compounds (#34b). Their harvesting is level
+(8-12/day); ours spikes on day 10 catching up. Strawberry earns **$0 for both** through day
+14, so our biggest crop plays no part in this inflection. Melon is not a problem either — we
+dump 12,028 on day 11 against their spread 3,096+5,968 and still earn more over the window.
+
+**ROOT CAUSE: `first_yield_day` counts from PLACEMENT, not from day 0.** Animal placement:
+
+| | placed on day 0 | producing by day 8 |
+|---|---|---|
+| **v25 cows** | **1.0** | **1.0** |
+| **trace cows** | **3.0** | **3.0** |
+
+A cow must be on the board by day 0 to milk on day 8. They place 3, we place 1 — exactly the
+3x day-8 milk gap. `herd_target` already asks for 2 cows before day 7, so the bottleneck is
+upstream: PASTURES must be BUILT before an animal can be placed, and each build costs a turn.
+
+**Two fixes tested, both fail:**
+
+*Prioritise ripe livestock above crop harvest* (`scratchpad/ripe.py`): **no effect** — day-8
+harvests stay at 1 for both, because we have nothing ripe to collect. Correctly built,
+correctly measured, wrong hypothesis.
+
+*Front-load the herd* so cows are placed by day 0:
+
+| early cows / sheep | win rate | delta | money@d15 |
+|---|---|---|---|
+| 3 / 2 | 0% | −13,124 | −4,482 |
+| **4 / 2** | **20%** | −4,737 | −7,294 |
+| 3 / 3 | 0% | −13,191 | −11,089 |
+| 5 / 2 | 10% | −6,860 | −4,261 |
+
+**The diagnosis is right and the fix still does not pay.** Buying the earlier herd costs more
+in the days 0-15 window than the earlier milk returns — the same wall every early-game
+investment hits.
+
+**Standing conclusion: our economy cannot fund ANY extra early asset — land, herd, fertiliser,
+crew — without losing more than it gains. The reference funds all of them. That is now the
+single unexplained fact in the project**, and it is an opening-economics question, not a
+farming one.
+
 ## Reproducing
 
 ```bash
