@@ -1286,6 +1286,78 @@ worth $0 at game end and prices recover slowly. Same lesson as v9's hold-window 
 **Caveat for future audits: nominal revenue is not comparable across agents that sell in
 different chunk sizes. Use `realized.py`'s price walk.**
 
+### 28. Q3 RE-OPENED — the ladder data says the top runs 3-4 patches, and it is right
+
+**#21/#27b concluded Q3 never pays. That conclusion was drawn entirely from OUR agent and is
+not safe.** The field says otherwise. `episode_features.csv` joined to `rating_after`,
+33,900 seat-episodes:
+
+| rating band | n | tiles planted | peak crew | strawberry | wheat | money |
+|---|---|---|---|---|---|---|
+| 0-1000 (us) | 11,662 | 134 | 8.7 | 18.7 | 57.9 | 54,089 |
+| 1500-2000 | 5,519 | 154 | 13.6 | 42.2 | 88.0 | 94,787 |
+| 2500-2900 | 5,425 | 151 | 13.9 | 41.8 | 85.0 | 107,383 |
+| 2900-3100 | 197 | **159** | **14.0** | 41.5 | 92.6 | 102,483 |
+
+**100% of the top 500 rated seats planted >50 tiles.** Median 158. We run crew 10 and ~114
+plantings — the 0-1000 profile, which is exactly where we are rated.
+
+**Why 23 arms missed it:** every one moved ONE lever from a small-farm baseline, and each
+lever loses alone (land with no crew, crew with no land, seed with nothing to plant on).
+Reproduce the package with `scratchpad/bigfarm.py`.
+
+### 28b. The big-farm package: we CAN build it, and it starves the animals
+
+`BF_3q_c14` (3 quadrants, crew 14, seed top-up, wheat fill 25, plant-first, straw target 42)
+reproduces the top profile exactly — **58.6 planted tiles, 42.3 strawberry (MORE than the
+trace agent's 40), 174 seeds, land full at 1.4 empty.** And it scores 2% on the panel.
+
+| revenue | BF_3q_c14 | v25 | change |
+|---|---|---|---|
+| **MILK** | 11,983 | 21,949 | **−45%** |
+| **WOOL** | 5,467 | 14,769 | **−63%** |
+| strawberry | 17,702 | 24,964 | −29% |
+| melon | 12,704 | 13,935 | −9% |
+
+Same herd (8 cow / 6 sheep), MORE feeding (308 v 293) — yet animal revenue collapses.
+**14 hands over 75 tiles cannot service crops and animals at once, and animals are the
+highest-value goods in the game** (milk base 160, wool 200, v wheat 25). We bought 17 extra
+strawberry tiles and paid ~$19,000 of milk and wool for them.
+
+**So the blocker is LABOUR ALLOCATION, not land, wages, seed throughput or coverage — all of
+which are now individually eliminated.** To run a big farm we need the animal economy held
+intact while crops scale: dedicated animal servicing that expansion cannot cannibalise.
+
+### 28c. Corrected cost model — earlier wage figures in #21b were WRONG
+
+`farmHandCostMult = 1`, `_hire_cost = mult * _fib(hires_today)`, and **`hires_today` resets
+at every rollover** (line 868) along with the nightly `hands = []` wipe. Actual measured
+spend, 3 seeds:
+
+| | hires/game | **wages/game** | max hires in one day |
+|---|---|---|---|
+| v25 | 239 | **2,288** | 11 |
+| trace | 284 | **8,426** | 15 |
+
+The trace agent pays only ~$6,138 more in wages and ~$2,000 more for land. **#21b's claim
+that staffing a third quadrant costs ~$19,756 was wrong** — it assumed the full daily ladder
+was paid for every hand every day at peak size.
+
+Exact money flow (per-step deltas, 4 seeds) — the reliable accounting:
+
+| | money IN | money OUT | final |
+|---|---|---|---|
+| v25 | 114,524 | 35,000 | 82,523 |
+| trace | **129,190** | 30,521 | 101,669 |
+
+**Income gap −14,666; spend gap +4,479.** Note this contradicts #27/#27d's "revenue is
+level" — that used nominal per-order pricing and a per-agent price walk, both of which
+ignore that the two agents sell into ONE market in lockstep. **Use per-step money deltas for
+any cost or revenue claim; nominal order pricing is not trustworthy.**
+
+Also eliminated as causes: the 10-order-per-turn cap (we hit it 22 turns v their 19 and issue
+MORE sell orders, 340 v 229) and buy-side price slippage (+101 v +44, negligible).
+
 ## Reproducing
 
 ```bash
