@@ -1628,8 +1628,28 @@ SUBMITTED market orders.** They over-count re-submissions and ignore the per-uni
 Use per-step money deltas. #27's "revenue is level", #28d's milk-price story and #33's
 fertiliser collapse were all distorted by this.
 
-**OPEN (restated, now correctly sized ~$3.5k): can the step saving be kept without the
-one-day sell delay?** The step problem itself IS solved -- 13.3% logistics v the reference's
+**RESOLVED — the extra steps are a TRADE WE WIN, not waste.**
+
+Every variant that removes the fertiliser round-trip lands on the same result:
+
+| variant | win rate | delta |
+|---|---|---|
+| full carry (no mid-day fert flush) | 38% | −2,588 |
+| carry with threshold 3 / 5 / 8 | 38% | −2,561 / −2,588 / −2,588 |
+| bank surplus, keep 1 / 2 / 3 in hand | 38% | −2,767 / −2,742 / −2,769 |
+
+The parameter never matters because units skip banking whenever fertiliser is wanted, which
+is most of the time. **v25 spends ~242 extra actions a game on fertiliser round-trips and
+earns +$3,466 for them (~$14/action), because shed-banked fertiliser sells a DAY EARLIER
+than rollover-banked.** The reference agent takes fewer steps and forgoes that income.
+
+**So "we take more steps than the trace agent" is TRUE and CORRECT.** Steps are not the
+objective; money is. Our step count is higher because we run a fertiliser trade the reference
+does not. **Do not optimise step count again without pricing what the steps earn.**
+
+Kept for reuse: `CARRY_FERTILIZER` cuts logistics from 19.8% to 13.3% (better than the
+reference's 14.7%) if a future build ever needs actions more than it needs the fertiliser
+income. The step problem itself IS solved -- 13.3% logistics v the reference's
 14.7%. Candidate: bank fertiliser opportunistically when a unit is already standing at the
 shed, so it reaches the market same-day at no extra travel. Worth ~$11k, and the
 step problem is already solved, so this single question converts a −2,588 arm into a likely
