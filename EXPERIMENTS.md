@@ -1483,6 +1483,56 @@ where feed-carriers and produce-carriers are distinct would let DROP actually fi
 currently fires 4-15 times a game against a possible ~96) and could recover most of the 331
 wasted actions. This is the most promising untested idea on the board.
 
+### 31. Role separation and day-dependent crew — both fail, and they complete the picture
+
+**Role separation** (feeders fetch wheat and service animals; producers never touch wheat so
+DROP is safe for them by construction) — the #30 fix. **Backfired.** Logistics share rose
+24.9% v v25's 18.9%, PICKUP 389 v 310, DROP barely moved (18 v 4). Producers cannot FEED, so
+the feeders make MORE trips to cover the herd.
+
+| feed crew | 4 | 5 | 6 | 5 (DROP at 2+) |
+|---|---|---|---|---|
+| win rate | 0% | 0% | 25% | 0% |
+
+It improves monotonically as it converges back on v25 — the restriction is the damage.
+
+**Day-dependent crew** (the day 7-15 cash squeeze is over by day 18, so raise the cap once
+cash is deep) — a good hypothesis, also fails:
+
+| arm | crew 11 from d18 | crew 11 from d20 | crew 12 from d18 | crew 12 from d22 |
+|---|---|---|---|---|
+| win rate | 0% | 0% | 5% | 0% |
+
+`money@d15` is IDENTICAL (+0) in every arm, so cash genuinely was not the constraint. What
+falls is **strawberry revenue** (25,440 v 27,101): the extra late hands harvest and sell more
+into a market that is already full.
+
+### THE UNIFYING RESULT: our revenue is MARKET-CAPPED, so extra capacity has negative value
+
+Every capacity-increasing change tested across three sessions loses, and always the same way
+— production rises, revenue does not, costs do:
+
+| change | outcome | what happened |
+|---|---|---|
+| 3rd/4th quadrant (23 arms) | loses | tiles planted, revenue flat |
+| crew 11-14 (many arms) | loses | more harvest, prices fall |
+| big-farm package (#28b) | 2% | 42 strawberry tiles, revenue flat |
+| geese (#29) | loses | +6,249 eggs, crop tiles lost |
+| profitability buying (#29) | loses | herd churn, straw revenue down |
+| role separation (#31) | loses | logistics UP |
+| day-dependent crew (#31) | loses | straw revenue down |
+
+Milk and wool are LINEAR above target and saturate near $6.3k/$8.1k; strawberry is linear at
+~$1.92/unit. **More production floods a market that cannot absorb it.** The 2026-08-11 rules
+change (town demand halved) makes this STRICTER, not looser.
+
+**So the open question is not how to produce more — it is how to SELL the same production
+into a less-saturated market.** #28d is the sharp form: the big farm sold identical milk
+units at a QUARTER of the price purely because the market carried ~50 more units at its sell
+moments, and the trace agent sells 270 strawberry units to our 172 at the SAME realised
+price, which saturation alone cannot explain. **Sell timing and spreading is the last
+untested lever, and every production-side lever is now closed.**
+
 ## Reproducing
 
 ```bash
