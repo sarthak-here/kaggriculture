@@ -1687,13 +1687,35 @@ sold 18 milk by day 8 to our 6.** Wool is base $200 and first yields on DAY 6 �
 high-value product in the game. Our early sales are fertiliser (75) and wheat (68), the two
 cheapest goods.
 
-**So the gap is not strategy, land, labour, routing or steps — it is how fast animals are
-converted to cash in days 4-11.** That is a fresh, precisely located target and the first one
-in three sessions that is not already falsified.
+### 34b. CORRECTION — the above is WRONG. It counted CASH, not WEALTH.
 
-Next: (a) sheep count in the opening (2 -> 6, wool yields day 6 v milk day 8); (b) why milk
-reaches market so much more slowly for us in days 6-10 — harvest cadence, hauling, or sell
-ordering.
+Cash alone is not the score at day 10; unsold stock is real wealth. Counting cash + shed +
+carried + animals + standing crops:
+
+| day | our wealth | trace wealth | gap |
+|---|---|---|---|
+| 8 | 6,469 | 10,688 | −4,218 |
+| **10** | **24,176** | 18,728 | **+5,448 (WE LEAD)** |
+| 12 | 27,519 | 26,812 | +707 |
+| 14 | 29,936 | 35,696 | −5,760 |
+| 18 | 45,708 | 52,510 | −6,802 |
+| 24 | 78,126 | 93,388 | −15,263 |
+| 28 | 87,096 | 102,348 | −15,252 |
+
+**At day 10 we held $17,648 of shed and carried stock — we were AHEAD on total wealth, not
+10x behind.** The opening is fine. The "first 10 days" conclusion above was an artifact of
+measuring cash while ignoring inventory.
+
+**The divergence starts at day 12-14 and widens monotonically after.** The column that tracks
+it is STANDING CROP VALUE: they hold 4,120 to our 2,808 at d12 and 5,060 to our 2,900 at d18,
+and theirs stays productive to the end (2,650 at d26) while ours decays to 310 by d28.
+
+**So they keep a bigger PRODUCING farm alive through days 14-26.** This is the land question
+again (#28), but with a much sharper signature than any of the 23 Q3 arms tested: the target
+is standing crop value maintained in the second half, not tiles planted at day 20.
+
+**METHOD RULE: measure WEALTH (cash + shed + carried + animals + crops), never cash alone,
+for anything mid-game.** Cash-only comparisons mistake asset composition for a deficit.
 
 ## Reproducing
 
