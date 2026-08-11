@@ -1533,6 +1533,45 @@ moments, and the trace agent sells 270 strawberry units to our 172 at the SAME r
 price, which saturation alone cannot explain. **Sell timing and spreading is the last
 untested lever, and every production-side lever is now closed.**
 
+### 32. Hungarian (optimal) assignment — implemented and REJECTED
+
+Literature check: greedy nearest-unclaimed is the standard SUB-optimal baseline; minimum-cost
+bipartite assignment (Hungarian / Jonker-Volgenant) is the optimality reference in
+multi-robot task allocation. Implemented in pure stdlib (submissions cannot import scipy),
+O(n^3), run once per turn over units x tasks. `scratchpad/hungarian.py`.
+
+The earlier failed attempt (AA_globalassign) minimised PURE distance and starved the lower
+tiers. This version puts priority and distance in one matrix so the solver trades them off:
+`cost[u][t] = manhattan(u, t) - VALUE[tier(t)]`.
+
+| arm (harvest/animal/water/plant/weed values) | win rate | delta |
+|---|---|---|
+| 12/12/8/6/3 | 18% | −3,443 |
+| 20/20/10/6/3 | 2% | −5,670 |
+| 8/10/6/5/2 | 15% | −4,785 |
+| **30/30/15/8/4** | **30%** | −2,490 |
+
+**It improves as the priority weights rise — i.e. as it converges on the greedy priority
+chain we already have.** Optimal distance assignment is worse than priority-ordered greedy
+here, for two measured reasons:
+
+1. **Steps per productive job is already near-optimal: 1.09-1.13 v the reference's 1.03.**
+   There is very little to win in walking-to-task.
+2. **The logistics gap is SHED ROUND-TRIPS, which assignment does not touch** — PICKUP 459 v
+   262, PLACE 255 v 25 (#30).
+
+(It would also need the sweep's stability fix: the assignment is recomputed every turn, so
+targets can swap between units mid-walk.)
+
+**Conclusion: task-routing is a closed problem. The remaining step waste is entirely in shed
+logistics.** Constraints already established there: `WHEAT_PICKUP_CAP` cannot be raised
+(#30 — 6/8/12/20 give 28%/8%/0%/0% because bigger withdrawals drain the shed and the feed
+top-up re-buys), and role separation makes it worse (#31).
+
+**Untested idea that fits all the constraints:** raise the pickup cap AND hold a larger shed
+wheat buffer so the bigger withdrawals cannot drain it — the measured failure mode at cap 8+
+was shed drain, not the cap itself.
+
 ## Reproducing
 
 ```bash
