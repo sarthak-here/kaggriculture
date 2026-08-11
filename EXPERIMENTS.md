@@ -1717,6 +1717,40 @@ is standing crop value maintained in the second half, not tiles planted at day 2
 **METHOD RULE: measure WEALTH (cash + shed + carried + animals + crops), never cash alone,
 for anything mid-game.** Cash-only comparisons mistake asset composition for a deficit.
 
+### 35. The standing-crop gap needs LAND — crop mix is zero-sum on two quadrants
+
+Following 34b: the divergence from day 12-14 tracks standing crop value. Decomposed:
+
+| day | our straw / melon | trace straw / melon |
+|---|---|---|
+| 12 | 25.0 / **0.2** | 30.0 / **10.0** |
+| 16 | 26.8 / **3.5** | 40.0 / **12.8** |
+| 20 | 25.8 / **3.2** | 40.0 / **12.8** |
+
+**A v25 regression found here: melon was almost eliminated.** The seed purchase buys ONE crop
+per turn, strawberry first. Raising the strawberry target 19 -> 28 (v25) meant `straw_deficit`
+never reaches zero, so MELON is never bought — 0.2 tiles standing at d12 against a target of
+12. Melon has the highest base price in the game ($250).
+
+Fixed by alternating strawberry/melon on turn parity, and extending
+`MELON_LAST_PLANT_DAY`. **All arms still lose:**
+
+| arm | win rate | delta | straw revenue |
+|---|---|---|---|
+| alternate, last plant d13 | 40% | −1,082 | 22,326 (v 27,377) |
+| alternate, last plant d18 | 40% | −1,698 | 22,577 |
+| alternate, d18, target 14 | 0% | −9,082 | 18,770 |
+| alternate, last plant d22 | 40% | −1,698 | 22,577 |
+
+**Melon displaces strawberry instead of adding to it** — two quadrants hold ~35 tiles, so crop
+mix is ZERO-SUM for us. The reference stands ~56 crop tiles (40 straw + 12.8 melon + 3 wheat)
+in the same window, which is more than two quadrants physically hold.
+
+**Conclusion: the standing-crop advantage that opens the gap from day 12 REQUIRES the third
+quadrant. It cannot be reached by crop mix, target tuning or planting dates.** That makes
+#28d — why our three-quadrant builds sell into a crashed market — the single blocking
+question for the whole project. Everything else is now measured and closed.
+
 ## Reproducing
 
 ```bash
