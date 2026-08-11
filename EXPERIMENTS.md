@@ -1446,6 +1446,43 @@ build has spare structure tiles that do NOT displace crops (e.g. a genuinely wor
 quadrant), geese are the right thing to put on them, because eggs are the only product whose
 price survives volume.
 
+### 30. THE LABOUR GAP IS REAL — #23 measured it with the wrong metric
+
+#23 concluded "we out-route the trace agent 0.95 v 0.86 work-per-move, there is no routing
+win available". **That was wrong: it counted HAULING as work.** Split productive work from
+logistics and the gap is large and consistent (3 seeds, v25 v trace):
+
+| | steps per productive job | **logistics share of work** | PICKUP | PLACE | DROP | PRODUCTIVE actions |
+|---|---|---|---|---|---|---|
+| **v25** | 1.11 | **25.7%** | **459** | **255** | 5 | 2,197 |
+| trace | **1.03** | **14.7%** | 262 | 25 | 96 | **2,485** |
+
+**We burn 760 actions per game on logistics against their 429 — 331 wasted actions — and
+they convert a similar total into 288 MORE productive ones.** This is the single clearest
+remaining inefficiency, and it is exactly what the user has been pointing at for two
+sessions.
+
+Two identified causes:
+- **PICKUP 459 v 262.** `WHEAT_PICKUP_CAP = 4` forces a shed trip per ~4 feeds.
+- **PLACE 255 v 25.** They bank whole inventories with DROP (96 v our 5). `drop_safe()`
+  vetoes DROP whenever a unit carries feed wheat, which is most of the time.
+
+**Raising the pickup cap does NOT work** (win rate, vs v25):
+
+| cap | 6 | 8 | 12 | 20 |
+|---|---|---|---|---|
+| win rate | 28% | 8% | 0% | 0% |
+
+Wheat spend rises 21,089 -> 32,112: bigger withdrawals drain the shed and the stateless feed
+top-up re-buys. **v14's cap of 4 survives even on the corrected metric — do not re-test.**
+
+**Open lead, untested: ROLE SEPARATION.** Our units carry feed wheat and harvested produce at
+the same time, so they can never DROP and must PLACE one item type at a time. The trace agent
+appears to split the jobs — its haulers carry produce only and bank it in one action. A build
+where feed-carriers and produce-carriers are distinct would let DROP actually fire (it
+currently fires 4-15 times a game against a possible ~96) and could recover most of the 331
+wasted actions. This is the most promising untested idea on the board.
+
 ## Reproducing
 
 ```bash
