@@ -1358,6 +1358,40 @@ any cost or revenue claim; nominal order pricing is not trustworthy.**
 Also eliminated as causes: the 10-order-per-turn cap (we hit it 22 turns v their 19 and issue
 MORE sell orders, 340 v 229) and buy-side price slippage (+101 v +44, negligible).
 
+### 28d. The big farm fails on PRICE REALIZATION, not production — cause still open
+
+Ring-fenced animal crew (`scratchpad/ringfence.py`, first N units serve animals ahead of all
+crop work, falling through when the herd is served): **did not fix it.** Milk stayed at 9,098.
+
+Then the actual mechanism, seed 7:
+
+| | milk units | milk orders | units/order | market MILK inventory at our sell times | quoted price |
+|---|---|---|---|---|---|
+| BF_3q | **204** | 53 | 3.8 | mean **10,065** | mean **$22.9** (min 1) |
+| v25 | **207** | 35 | 5.9 | mean **10,016** | mean **$127.0** |
+
+**The big farm produces the SAME milk and sells it for a quarter of the price.** Milk is
+linear above target at ~$2.10/unit, so the ~50 units of extra market inventory at our sell
+moments is worth ~$105/unit — the whole $10,000.
+
+Feed/care are fine (no_care 14 v 16 animal-days, no_feed 2 v 4), herd identical (8 cow /
+6 sheep), wool units 142 v 148. **Production is not the problem at all.**
+
+Eliminated as causes:
+- shed capacity — 14/100 used, never close to full
+- 10-order-per-turn cap — BF hits it 24 turns v v25's 22, and issues MORE sells (325 v 290)
+- feed/care completion, herd size, animal harvesting
+- wages (#28c), buy-side slippage (+101 v +44)
+
+**Open: why does the same volume of milk meet a market carrying ~50 more units?** Milk does
+sit in the shed longer on the big farm (mean 0.77 v 0.43, max 24 v 12), which points at sell
+TIMING rather than sell sizing — but that is a lead, not a conclusion. Do not build on it
+until measured.
+
+**Status: your reading of the ladder is right (#28) and our big-farm build is not yet worth
+shipping.** Every production-side explanation is now eliminated; the failure is on the
+market side.
+
 ## Reproducing
 
 ```bash
