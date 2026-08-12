@@ -2144,6 +2144,49 @@ This also explains why all five sell-throttles lost: the binding constraint is n
 inventory or price, it is how many productive tile-days we can run. **Any future idea that
 buys a better price by occupying a tile or a shed slot for longer starts from behind.**
 
+### 45. Crop-plan and livestock-placement batch — all lose
+
+**Melon-first rotation** (melon owns the land to ~d10, strawberry takes the freed tiles):
+
+| arm | win rate | delta | straw revenue |
+|---|---|---|---|
+| melon 25 to d3, straw d11-16 | 0/40 | −11,470 | 25,080 (v 35,718) |
+| melon 30 to d4, straw d12-16 | 0/40 | −16,924 | 20,112 |
+
+Pushing strawberry to day 11 costs two of its four productions. Three arms returned identical
+results, so the melon target was not even binding.
+
+**Second quadrant all melon, wheat bought not grown:**
+
+| melon / straw | wheat fill | win rate | delta | straw revenue |
+|---|---|---|---|---|
+| 20 / 15 | 0 | 2% | −15,477 | 18,556 (v 37,056) |
+| 25 / 12 | 0 | 0% | −20,882 | 14,927 |
+| 18 / 20 | 0 | 0% | −12,352 | 22,840 |
+| 20 / 15 | 7 | 5% | −11,532 | 15,243 |
+
+**Melon cannot replace strawberry as the primary crop.** Strawberry is ongoing (4 productions
+per tile); melon is one-time. Per tile-day strawberry wins even at melon's $250 base.
+
+**Livestock per-quadrant cap** (structures were ring-packed at the shed: measured 7 animals
+in EACH of our two quadrants):
+
+| cap | lands | win rate | delta |
+|---|---|---|---|
+| 5 | 2 | 5% | −10,769 |
+| 6 | 2 | 2% | −5,596 |
+| 5 | 3 | 5% | −6,049 |
+| 4 | 3 | 0% | −7,776 |
+
+On two lands a cap of 5 houses only 10 animals and the rest are bought but never placed. With
+a third land it behaves as every other Q3 arm has. Combined with #43's herd-size test
+(9/10/11/12 animals, all lost), **livestock count AND placement are both already right.**
+
+**Melon staging is impossible, not merely unhelpful:** melon starts at yield 1 and gains +1
+per watered day from age 6, so it is AT its cap of 6 exactly when `first_yield_day = 10`
+first permits harvest. The engine never offers a melon below cap. All split settings returned
+byte-identical results.
+
 ## Reproducing
 
 ```bash
