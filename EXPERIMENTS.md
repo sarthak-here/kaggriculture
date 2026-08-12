@@ -2062,6 +2062,53 @@ because it revealed our schedule was cow-first by construction and no experiment
 ever questioned that. Look for what a stronger agent does that our code CANNOT express, not
 for parameters to copy.
 
+### 43. Four replay observations, all measured
+
+From watching a downloaded opponent replay (4 quadrants, earlier melon sales, big day-11/12
+cash jump, heavy animal spend).
+
+**1. Melon selling — observation correct, fix loses.** They sell melon across days 10 AND 11
+(7.1 units/order); we dump 12,028 on day 11 alone (16.3/order) into the steepest curve in the
+game (`above: sq`, target 3.60), losing 26% of melon revenue to our own price impact v their
+6%. Capping the melon chunk:
+
+| chunk cap | 5 | 7 | 9 |
+|---|---|---|---|
+| win rate | 22% | 25% | 25% |
+| delta | −329 | −261 | −218 |
+
+**This is the FIFTH independent sell-throttle test to lose** (#27d global ratio, #33 fert
+carry, melon here). Holding inventory always costs more than the price impact. **Settled --
+do not retest.**
+
+**2. Melon cannot be harvested earlier.** It starts at yield 1 and gains +1 per watered day
+from age 6, so it caps at `max_yield = 6` by age 10 — exactly when `first_yield_day` first
+permits harvest. `fert_worth_it`'s "melon never" rule is CORRECT: fertiliser cannot advance
+the harvest, only waste a unit.
+
+**3. Herd size — count confirmed, reduction loses.** 8 cows + 6 sheep = 14 structure tiles,
+28% of a 50-tile farm:
+
+| late herd | 5+4 | 6+4 | 6+5 | 7+5 | v26 (8+6) |
+|---|---|---|---|---|---|
+| win rate | 2% | 2% | 12% | 10% | — |
+| planted@d20 | 39.0 | 39.0 | 38.6 | 37.6 | 35.6 |
+| straw revenue | 23,678 | 23,678 | 24,121 | 25,379 | 26,502 |
+
+Planted tiles rise and day-15 cash improves (+1,742), but **strawberry revenue falls**: the
+freed tiles add strawberry to a saturated market while milk ($160) and wool ($200) sell into
+separate curves. **Animal tiles out-earn crop tiles. 28% livestock is correct.**
+
+**4. Wasted planting turns — not happening.** Correctly aligned (action at step i, effect
+visible in obs i): 3 failed PLANT and 2 failed WATER per game out of 1,059 such actions --
+**0.5% waste**. Structures are already ring-sited near the shed and excluded from
+`plantable`.
+
+(A first attempt at #4 reported a 100% waste rate. That was the step-alignment error from
+#20 recurring -- action taken from step i-1 against tiles from i-1/i. **The alignment trap is
+easy to fall back into; check that the "succeeded" bucket is non-empty before believing any
+failure-rate measurement.**)
+
 ## Reproducing
 
 ```bash
