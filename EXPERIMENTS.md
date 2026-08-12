@@ -2187,6 +2187,49 @@ per watered day from age 6, so it is AT its cap of 6 exactly when `first_yield_d
 first permits harvest. The engine never offers a melon below cap. All split settings returned
 byte-identical results.
 
+### 46. All tips COMBINED with the third quadrant — still loses, and they subtract
+
+Fair test: each tip lost alone (#43-#45), but #28b showed single-lever tests can miss a basin
+needing several levers, and #40 showed our own search misses things. So: third quadrant +
+livestock capped per land + staggered harvest + more melon + wheat bought not grown, together.
+
+| arm | config | win rate | delta | empty@d20 | money@d15 |
+|---|---|---|---|---|---|
+| TIP_a | Q3, 5/land, split (2,1), melon 18 | 2% | −10,748 | 9.6 | −4,405 |
+| TIP_b | Q3, 5/land, melon 25, no wheat fill | 0% | −16,523 | 12.1 | −341 |
+| TIP_c | TIP_a + crew 12 | 0% | −13,695 | 9.0 | −3,944 |
+| **TIP_d** | Q3, 6/land, split (1,1), melon 14 | **12%** | **−4,432** | 12.1 | −3,156 |
+
+**The ordering is the result: the arm closest to tips-OFF does best.** Plain Q3 alone scores
+−4,000 to −5,000; TIP_d (tips nearly disabled) lands at −4,432, and the score degrades
+monotonically as more tips are applied (−4,432 -> −10,748 -> −13,695 -> −16,523).
+
+**So the tips do not merely fail to rescue Q3 — they subtract from it.** Q3's own signature is
+unchanged throughout: 9-12 tiles still empty at day 20 and negative day-15 cash, exactly as in
+the previous 30 configurations.
+
+**Q3 status after ~34 configurations: closed unless the day 7-15 economy changes.**
+
+### Ladder confirmation of v26
+
+| version | rating |
+|---|---|
+| **v26 (sheep-first)** | **1,019.2** |
+| v22 | 945.6 |
+| v24 | 931.4 |
+| v25 | 911.5 |
+| v15 | 759.9 |
+
+**First submission over 1,000 and the largest ladder gain of the project (+107.7 over v25).**
+It confirms the local measurement (74/80, panel 42% -> 72%) rather than contradicting it.
+
+Note v24 and v25 both scored BELOW v22 on the ladder despite winning locally — ratings are
+noisy (a public log shows byte-identical resubmissions spanning 681-1,129), so that ordering
+should not be over-read. v26's ~75-point clearance is outside that band.
+
+**Pattern worth keeping: every version built by internal search sits in the 910-945 band. The
+one built from reading an external agent (v26) broke past it.**
+
 ## Reproducing
 
 ```bash
