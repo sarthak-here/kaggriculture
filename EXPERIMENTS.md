@@ -2021,6 +2021,47 @@ our agent needs bodies to plant and water. **Same lesson as every other fragment
 the day-20 wheat wave of 49, and the two-quadrant land schedule at days 6/10 (now that the
 opening economy is wool-funded, which is the condition none of the 23 Q3 arms had).
 
+### 42. Mining the frontier tape — one big win, four closed leads
+
+The decoded route was read fully: capital plan, unit action mix, and sell rhythm.
+
+**Its unit profile v ours:**
+
+| | frontier | v26 |
+|---|---|---|
+| WATER | **1,010** | 845 |
+| **PASS** | **994 (15%)** | ~113 (2%) |
+| PICKUP / PLACE / DROP | **135 / 13 / 57** | 459 / 255 / 5 |
+| FERTILIZE | **72** | 115 |
+| PLANT | 199 | ~150 |
+| MOVE share | 43% | 50% |
+
+**It idles 15% of the time** -- crew deliberately oversized -- and spends the slack on
+watering, not hauling. It independently confirms #33: 13 PLACEs to our 255.
+
+**Its sell rhythm:** wheat 455u/39 orders, strawberry 286u/19, milk 241u/32 (7.5 per order),
+fertiliser 235u/50, wool 132u/12, melon 114u in 16 orders of 7.1 (we dump melon in 16.3s).
+
+**Leads tested from the tape:**
+
+| lead | result |
+|---|---|
+| **sheep-first opening (4 sheep, 0 cows early)** | **SHIPPED as v26 — 74/80 = 92.5%** |
+| skeleton early crew (1-4 hands to day 6) | 0/40 all arms, straw revenue 33,005 -> 26,755 |
+| land at days 6 and 10 | 0-28%, empty@d20 back to 13-15 |
+| strawberry last-plant day 15/17/19 | neutral (30-32%, +14 to −242) — target already met, and a strawberry planted after ~d19 cannot yield in time |
+| feed from own wheat harvest (sell-reserve 2/3/5x) | 38/35/10%, best −431; wheat revenue 23,089 -> 8,955 |
+
+**The wheat round-trip is genuinely break-even for us** — wheat has the gentlest price curve
+in the game, so buying feed and selling harvest costs almost nothing either way. Their 212 v
+our 600 feed purchases is a style difference, not an edge.
+
+**Standing lesson: transplanted fragments keep failing (#38) while a transplanted
+ASSUMPTION-BREAKER succeeded.** The sheep opening worked not because it was copied but
+because it revealed our schedule was cow-first by construction and no experiment of ours had
+ever questioned that. Look for what a stronger agent does that our code CANNOT express, not
+for parameters to copy.
+
 ## Reproducing
 
 ```bash
