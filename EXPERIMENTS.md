@@ -2109,6 +2109,41 @@ visible in obs i): 3 failed PLANT and 2 failed WATER per game out of 1,059 such 
 easy to fall back into; check that the "succeeded" bucket is non-empty before believing any
 failure-rate measurement.**)
 
+### 44. Staggered harvest (spread supply at the SOURCE) — three forms, all lose
+
+Idea: instead of throttling SALES (5 previous tests, all lost because held stock costs more
+than the price impact), spread supply by harvesting a mass planting in stages -- 25% at
+yield 4, 50% at 5, 25% at cap. The crop keeps growing while it waits, so holding is free.
+Genuinely different mechanism, and worth testing.
+
+**Form 1 — stage all one-time crops** (25%/50%/25% by tile position, deterministic, no hash):
+
+| split | (2,1) | (1,1) | (3,2) |
+|---|---|---|---|
+| win rate | 32% | 28% | 12% |
+| delta | −157 | −19 | −4,327 |
+
+Strawberry revenue rose (25,420 v 24,281) but **wheat fell** (22,698 v 25,024): wheat has the
+gentlest curve in the game and never needed spreading, so staging it just discarded 2 units
+a tile.
+
+**Form 2 — stage MELON only.** All splits byte-identical to baseline: **it can never fire.**
+Melon starts at yield 1 and gains +1 per watered day from age 6, so it is AT its cap of 6
+exactly when `first_yield_day = 10` first permits harvest. There is no window in which melon
+is harvestable and below cap.
+
+**Form 3 — stagger melon by DAY instead** (hold ripe tiles 0/1/2 extra days; melon does not
+decay until after `max_yield_day = 12`, so holding is free in YIELD terms): **0/40, −5,402.**
+Seeds bought 107 v 120, wheat revenue 22,039 v 25,044.
+
+**Why it fails, and the principle it establishes: TILE-DAYS ARE THE SCARCE RESOURCE, NOT THE
+MARKET.** A melon taken at age 10 frees its tile for a replant; held to age 12 it costs two
+tile-days of production. That cost exceeds the price impact of dumping.
+
+This also explains why all five sell-throttles lost: the binding constraint is never
+inventory or price, it is how many productive tile-days we can run. **Any future idea that
+buys a better price by occupying a tile or a shed slot for longer starts from behind.**
+
 ## Reproducing
 
 ```bash
