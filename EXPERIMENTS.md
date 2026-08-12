@@ -1847,6 +1847,41 @@ crew — without losing more than it gains. The reference funds all of them. Tha
 single unexplained fact in the project**, and it is an opening-economics question, not a
 farming one.
 
+### 38. Seat-bias audit — diagnostics are sound, and the trace gap is symmetric
+
+Every ad-hoc diagnostic in #27-#37 ran us in seat 0 and the reference in seat 1, and the
+engine handles atomic orders (HIRE, BUY_LAND) "in player order". Audited with two identical-
+agent controls (`scratchpad/seatcheck.py`, 10 seeds each):
+
+| configuration | seat 0 | seat 1 | diff |
+|---|---|---|---|
+| v25 v v25 (control) | 75,325 | 75,558 | **−232** |
+| trace v trace (control) | 69,591 | 69,550 | **+41** |
+| v25 seat0 v trace seat1 | 80,562 | 95,361 | −14,799 |
+| trace seat0 v v25 seat1 | 95,312 | 80,572 | **−14,740** |
+
+**Seat-balanced: ours 80,567 v trace 95,336, gap −14,770, we win 1/20.**
+
+**No meaningful seat bias, and the gap is identical in both orders.** Today's diagnostics are
+sound as measured.
+
+**One real detail: in v25 self-play seat 0 wins 0/10 despite a margin of only 232.** Tiny but
+perfectly consistent, so paired promotion tests MUST keep running both seat orders (tips.py
+and panel.py do).
+
+**And the honest framing correction:** we have never run the reference's pattern. Every arm
+grafted one or two of its decisions (3 cows on day 0, a third quadrant, melon alternation,
+14 hands) onto our own decision engine. Its 719-action replay is internally self-funding --
+day-0 purchases pay for day-8 milk which pays for day-10 land. Transplanted fragments arrive
+without the chain that paid for them, which is why every arm reproduces the MECHANISM and not
+the MONEY. Independent support: kaitofukami reports freezing Seb's observed trace scored
+0/50 for them.
+
+**Also worth keeping in proportion: the reference is a top-30-class agent (~3,200 rating) and
+we are rank ~1,351 (922).** Losing 1/20 to it is the expected result of a ~2,000-point gap,
+not evidence of a defect. Progress is measured against the FIELD (panel win rate), where
+v25 > v24 > v22 > v20, and the ladder has confirmed each step.
+
 ## Reproducing
 
 ```bash
