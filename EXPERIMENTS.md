@@ -1926,6 +1926,52 @@ need either a different basin (the field's approach: start from a strong public 
 modify it, with attribution) or a genuinely new mechanism. That is a decision for the user,
 not a measurement.
 
+### 40. v26 SHIPPED (`84753ee`) — sheep-first opening, from decoding a public frontier route
+
+#39 concluded v25 was a local optimum. It was — inside a cow-first assumption that had never
+been questioned, because `herd_target` opens `cows = 2` and every herd arm varied cows.
+
+Decoded the Apache-2.0 public route in prvsiyan's "The Moon Counts Melons" (a replay tape of
+episode 91603791, team chunhu666). Its turn 0:
+
+    HIRE x4, BUY_ANIMAL COW 1, BUY_ANIMAL SHEEP 4,
+    BUY_SEED WHEAT 5, BUY_SEED MELON 5, BUY_PRODUCT WHEAT 5
+
+~$2,982 of the $3,000 start, on turn 0, SHEEP-heavy — and only 5 melon seeds to our 12.
+
+**Sheep first-yield on DAY 6, two days before cows, and wool is base $200 v milk's $160.**
+The frontier early economy is WOOL-funded. That is precisely the window we were losing
+(#37: their $1,569 v our $559 at day 6), and we had misdiagnosed it as a milk/cow-placement
+problem.
+
+| early cows / sheep | win rate |
+|---|---|
+| 3 / 1 | 0% |
+| 3 / 0 | 18% |
+| 2 / 1 | 12% |
+| 4 / 1 | 0% |
+| 1 / 4 | 40% |
+| 2 / 4 | 60% |
+| **0 / 4** | **90%** |
+
+vs v25: original 36/40 = 90% (+5,623), fresh 38/40 = 95% (+5,751), **pooled 74/80 = 92.5%**.
+Strawberry revenue rises too (33,175 v 31,938), so the wool-funded opening buys a better crop
+economy rather than trading against it. Cows are untouched from day 7 on.
+
+**Method lesson: "local optimum" was true only within an unexamined assumption.** Every herd
+experiment varied the cow count because the schedule was written cow-first. Reading what a
+stronger agent actually does broke the frame that all our own experiments shared.
+
+**Decoding recipe** (these routes are base85+zlib, not opaque):
+```python
+b85 = re.search(r"AGENT_B85 = '(.*?)'", src, re.S).group(1)
+source = zlib.decompress(base64.b85decode(b85)).decode("utf-8")
+mod = types.ModuleType("m"); exec(compile(source, "<m>", "exec"), mod.__dict__)
+mod._ACTIONS      # 719 turns of {'farmer':..., 'hands':[...], 'market':[...]}
+```
+Saved at `scratchpad/pub/moon_main.py`. **This tape is a readable frontier opening and the
+rest of it has not yet been mined.**
+
 ## Reproducing
 
 ```bash
