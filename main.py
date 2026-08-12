@@ -74,8 +74,13 @@ WHEAT_PICKUP_CAP = 4                 # wheat a unit may withdraw per shed visit
 
 def herd_target(day):
     """Transcribed herd curve: (cows, sheep) wanted as of `day`."""
+    # The public frontier route (episode 91603791) opens with FOUR SHEEP and one
+    # cow, spending ~$2,982 of the $3,000 start on turn 0. Sheep first-yield on
+    # DAY 6 -- two days before cows -- and wool is base $200 against milk's $160,
+    # so the early economy is wool-funded. That matches the measured day-6 gap
+    # (their $1,569 v our $559, #37). Every earlier herd arm was cow-first.
     if day < 7:
-        cows = 2
+        cows = 0
     elif day == 7:
         cows = 4
     elif day == 8:
@@ -84,7 +89,7 @@ def herd_target(day):
         cows = 6
     else:
         cows = 8
-    sheep = 2 if day < 10 else (4 if day == 10 else 6)
+    sheep = 4 if day < 10 else (4 if day == 10 else 6)
     return cows, sheep
 
 
