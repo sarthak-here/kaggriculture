@@ -1882,6 +1882,50 @@ we are rank ~1,351 (922).** Losing 1/20 to it is the expected result of a ~2,000
 not evidence of a defect. Progress is measured against the FIELD (panel win rate), where
 v25 > v24 > v22 > v20, and the ladder has confirmed each step.
 
+### 39. v25 is a LOCAL OPTIMUM — and the field's meta is derivative
+
+Herd composition swapped rather than enlarged (day-0 spend in brackets):
+
+| early cows / sheep | day-0 spend | win rate | delta |
+|---|---|---|---|
+| 3 / 1 | $1,700 | 0% | −8,385 |
+| **3 / 0** | **$1,200 (CHEAPER than baseline)** | 18% | −3,595 |
+| 2 / 1 | $1,300 | 12% | −4,515 |
+| 4 / 1 | $2,100 | 0% | −11,005 |
+| v25 baseline 2 / 2 | $1,800 | — | — |
+
+**Even a strictly cheaper opening loses.** The day-8 milk diagnosis (#37) is correct and the
+fix still fails, in both the "spend more" and "spend less, differently" directions.
+
+**Every single-parameter move away from v25 now loses**: herd size, herd composition, land
+(23 arms), crew (many), crop mix, melon timing, fertiliser buying, sell throttling, routing
+(Hungarian), step efficiency, role separation, day-dependent crew, geese, profitability-based
+purchasing. v25 sits in a local optimum.
+
+### Field context (GitHub + public logs, 2026-08-12)
+
+20+ public repos. Two useful and non-competitive: `rooklift/krobus` (replay viewer) and
+`Beiciccc/Kaggriculture` (a 35-submission public experiment log). From the latter:
+
+- **Independently confirms #26**: "Ranking is based on head-to-head wins, losses, and ties
+  rather than final coin margin."
+- **Ratings are very noisy**: their BYTE-IDENTICAL resubmissions opened at 681 / 724 / 735 /
+  744 and drifted to 808 / 943 / 1046 / 1129. **Our 922 is inside normal variation; never
+  read a single submission's rating as a verdict.**
+- **Their band is ours** (700-1,130) despite a rigorous derivative programme with
+  preregistered promotion gates. The ~3,200 tier is a different population.
+- **A submission-killing trap we already guard**: their C17 scored 3000-3000 because
+  "redefining an existing callable name did not move its insertion position, while the newly
+  named helper became the last callable" -- Kaggle's loader took the wrong entrypoint.
+  **Our pre-submission check that `agent()` is the last top-level function is load-bearing.**
+- **The meta is derivative**: the top is largely attributed Apache-2.0 forks of a few public
+  policies (Kaito, Moon, Rain, Rayk), modified and re-published.
+
+**Strategic consequence: incremental tuning of our own basin is exhausted.** Further gains
+need either a different basin (the field's approach: start from a strong public policy and
+modify it, with attribution) or a genuinely new mechanism. That is a decision for the user,
+not a measurement.
+
 ## Reproducing
 
 ```bash
