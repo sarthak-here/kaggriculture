@@ -1972,6 +1972,55 @@ mod._ACTIONS      # 719 turns of {'farmer':..., 'hands':[...], 'market':[...]}
 Saved at `scratchpad/pub/moon_main.py`. **This tape is a readable frontier opening and the
 rest of it has not yet been mined.**
 
+### 41. v26 panel-confirmed, and the rest of the frontier route mined
+
+**Panel (5 agents, 12 seeds, both seats, 240 matches):**
+
+| agent | field win rate | Bradley-Terry |
+|---|---|---|
+| trace | 90% | 3.288 |
+| **v26** | **72%** | **1.174** |
+| v25 | 42% | 0.283 |
+| v24 | 30% | 0.168 |
+| v22 | 17% | 0.086 |
+
+v26 beats v22 100%, v24 100%, v25 88%. **Field win rate 42% -> 72% is the largest single
+jump of the project.** Submitted 2026-08-12.
+
+**The frontier route's full capital plan** (`scratchpad/mine_moon.py`):
+
+| | frontier route | v26 |
+|---|---|---|
+| early hands d1-6 | **1, 2, 3, 3, 3, 4** | ~5-7 |
+| peak hands | **14** | 9 |
+| land bought | **days 6 AND 10** (3 quadrants) | day 7 only |
+| herd | 1 cow + 4 sheep d0; cows d5-8; 9 cows + 4 sheep total | 4 sheep d0, cows from d7 |
+| geese | **zero** | zero |
+| strawberry seed | 37 total, wave of **16 on day 10** | — |
+| melon seed | **19 total** | ~12 by d8 alone |
+| wheat seed | 148 total, incl. **49 on day 20** | — |
+| feed wheat bought | 212 | ~600 |
+
+Note it buys **a third of our feed wheat** (212 v ~600) for a comparable herd, and only 19
+melon seeds all game.
+
+**Skeleton early crew tested and FAILED:**
+
+| day0 / early cap | win rate | delta | straw revenue |
+|---|---|---|---|
+| 4 / 3 | 0% | −6,202 | 26,755 (v 33,005) |
+| 3 / 3 | 0% | −10,062 | 26,032 |
+| 5 / 3 | 0% | −9,548 | 25,945 |
+| 4 / 2 | 0% | −14,458 | 24,552 |
+
+A 1-hand day 1 works inside a scripted route that knows exactly where each unit must stand;
+our agent needs bodies to plant and water. **Same lesson as every other fragment transplant
+(#38): the tape is self-consistent, our engine is not the same engine.**
+
+**Still unmined and cheap to try:** feed wheat at a third of ours, melon seed at 19 total,
+the day-20 wheat wave of 49, and the two-quadrant land schedule at days 6/10 (now that the
+opening economy is wool-funded, which is the condition none of the 23 Q3 arms had).
+
 ## Reproducing
 
 ```bash
