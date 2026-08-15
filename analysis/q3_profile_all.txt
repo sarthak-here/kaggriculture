@@ -1,0 +1,202 @@
+  read episode-90596561-replay.json  rewards=[24763.0, 80682.0]
+  read episode-90598134-replay.json  rewards=[110596.0, 28622.0]
+  read episode-90598933-replay.json  rewards=[5617.0, 60895.0]
+  read episode-90599725-replay.json  rewards=[46740.0, 11055.0]
+  read episode-90600518-replay.json  rewards=[27677.0, 13350.0]
+  read episode-90601309-replay.json  rewards=[26397.0, 46812.0]
+  read episode-90602117-replay.json  rewards=[8345.0, 51408.0]
+  read episode-90602914-replay.json  rewards=[32969.0, 7922.0]
+  read episode-90603730-replay.json  rewards=[24007.0, 24774.0]
+  read episode-90604514-replay.json  rewards=[13817.0, 47970.0]
+  read episode-90605306-replay.json  rewards=[29176.0, 33849.0]
+  read episode-90606094-replay.json  rewards=[51446.0, 40525.0]
+  read episode-90606895-replay.json  rewards=[17871.0, 8209.0]
+  read episode-90607716-replay.json  rewards=[23018.0, 14479.0]
+  read episode-90613799-replay.json  rewards=[32176.0, 9483.0]
+  read episode-90618494-replay.json  rewards=[55323.0, 29946.0]
+  read episode-90619292-replay.json  rewards=[27981.0, 28629.0]
+  read episode-90620093-replay.json  rewards=[27124.0, 51160.0]
+  read episode-90620887-replay.json  rewards=[57968.0, 18916.0]
+  read episode-90621676-replay.json  rewards=[36059.0, 13574.0]
+  read episode-90622470-replay.json  rewards=[53164.0, 29966.0]
+  read episode-90623276-replay.json  rewards=[110851.0, 31997.0]
+  read episode-90624072-replay.json  rewards=[38328.0, 36308.0]
+  read episode-90624878-replay.json  rewards=[14255.0, 27370.0]
+  read episode-90625676-replay.json  rewards=[48942.0, 19551.0]
+  read episode-90626485-replay.json  rewards=[31374.0, 19439.0]
+  read episode-90627274-replay.json  rewards=[29642.0, 35738.0]
+  read episode-90628060-replay.json  rewards=[35219.0, 42508.0]
+  read episode-90628851-replay.json  rewards=[59931.0, 54111.0]
+  read episode-90629661-replay.json  rewards=[4649.0, 25317.0]
+  read episode-90630457-replay.json  rewards=[53158.0, 49585.0]
+  read episode-90631239-replay.json  rewards=[33997.0, 89721.0]
+  read episode-90642322-replay.json  rewards=[45585.0, 48974.0]
+  read episode-90643021-replay.json  rewards=[25968.0, 12456.0]
+  read episode-90665965-replay.json  rewards=[30496.0, 28889.0]
+  read episode-90666750-replay.json  rewards=[47130.0, 82380.0]
+
+==============================================================================
+SCORE BY FINAL QUADRANT COUNT  (72 player-games)
+==============================================================================
+  1 quadrants: n=6   median    29,966   max    49,585   min    12,456
+  2 quadrants: n=10  median    29,176   max    51,446   min    11,055
+  3 quadrants: n=11  median    59,931   max   110,851   min    13,574
+  4 quadrants: n=45  median    31,374   max    80,682   min     4,649
+
+==============================================================================
+TOP 3+ QUADRANT BUILDS (n=56)
+==============================================================================
+    110,851  episode-90623276-replay.json p0  land bought on days {2: 8, 3: 10}
+    110,596  episode-90598134-replay.json p0  land bought on days {3: 11}
+     89,721  episode-90631239-replay.json p1  land bought on days {3: 11}
+     82,380  episode-90666750-replay.json p1  land bought on days {2: 8, 3: 16}
+     80,682  episode-90596561-replay.json p1  land bought on days {2: 8, 3: 10, 4: 11}
+     60,895  episode-90598933-replay.json p1  land bought on days {2: 10, 3: 12}
+
+==============================================================================
+DAY-BY-DAY BUILD OF THE TOP 3 (money / quads / hands / tiles / animals)
+==============================================================================
+
+--- 110,851  episode-90623276-replay.json p0  land {2: 8, 3: 10} ---
+day   money  quads  hands  tiles  animals   crop mix
+  0     460      1      3     16        3   MELO:2 STRA:3 WHEA:11  | COW:2 SHEEP:1
+  1     756      1      3     16        4   MELO:2 STRA:3 WHEA:11  | COW:2 SHEEP:2
+  2     753      1      3     16        4   MELO:2 STRA:3 WHEA:11  | COW:2 SHEEP:2
+  3     990      1      3     16        4   MELO:2 STRA:3 WHEA:11  | COW:2 SHEEP:2
+  4     449      1      3      9        5   MELO:2 STRA:3 WHEA:4  | COW:3 SHEEP:2
+  5     458      1      3     15        7   MELO:1 STRA:3 WHEA:11  | COW:4 SHEEP:3
+  6     706      1      3     15        7   MELO:1 STRA:3 WHEA:11  | COW:4 SHEEP:3
+  7   2,214      1     10     17        8   MELO:2 STRA:4 WHEA:11  | COW:5 SHEEP:3
+  8   2,031      2     10     34        8   MELO:8 STRA:16 WHEA:10  | COW:5 SHEEP:3
+  9   1,664      2     10     38        8   MELO:12 STRA:18 WHEA:8  | COW:5 SHEEP:3
+ 10     690      3     10     54        8   MELO:14 STRA:25 WHEA:15  | COW:5 SHEEP:3
+ 11   5,079      3     10     64        8   MELO:19 STRA:29 WHEA:16  | COW:5 SHEEP:3
+ 12   4,928      3     10     64        8   MELO:19 STRA:29 WHEA:16  | COW:5 SHEEP:3
+ 13   9,194      3     10     62        8   MELO:19 STRA:29 WHEA:14  | COW:5 SHEEP:3
+ 14  13,429      3     10     64        8   MELO:19 STRA:29 WHEA:16  | COW:5 SHEEP:3
+ 15  15,558      3     10     64        8   MELO:19 STRA:29 WHEA:16  | COW:5 SHEEP:3
+ 16  19,871      3     10     63        8   MELO:19 STRA:29 WHEA:15  | COW:5 SHEEP:3
+ 18  33,537      3     10     57        8   MELO:15 STRA:29 WHEA:13  | COW:5 SHEEP:3
+ 20  48,892      3     10     58        8   MELO:14 STRA:28 WHEA:16  | COW:5 SHEEP:3
+ 22  67,616      3     13     53        8   MELO:9 STRA:28 WHEA:16  | COW:5 SHEEP:3
+ 24  80,235      3     13     52        8   MELO:9 STRA:27 WHEA:16  | COW:5 SHEEP:3
+ 26  97,643      3     13     31        8   MELO:9 STRA:13 WHEA:9  | COW:5 SHEEP:3
+ 28 110,101      3     13     11        8   MELO:6 STRA:2 WHEA:3  | COW:5 SHEEP:3
+
+--- 110,596  episode-90598134-replay.json p0  land {3: 11} ---
+day   money  quads  hands  tiles  animals   crop mix
+  0   1,533      2      4     31        0   WHEA:31
+  1   1,506      2      4     43        0   WHEA:43
+  2   1,499      2      4     43        0   WHEA:43
+  3      81      2      6     43        3   WHEA:43  | COW:3
+  4      75      2      6     20        3   WHEA:20  | COW:3
+  5      81      2      6     18        7   WHEA:18  | COW:5 SHEEP:2
+  6     385      2      6     27        8   WHEA:27  | COW:5 SHEEP:3
+  7     284      2      9     36        9   WHEA:36  | COW:5 SHEEP:4
+  8     173      2      9     35       10   WHEA:35  | COW:5 SHEEP:5
+  9      90      2      9     35       12   WHEA:35  | COW:5 SHEEP:7
+ 10     167      2      9     33       12   WHEA:33  | COW:5 SHEEP:7
+ 11   3,236      3      9     55       14   MELO:22 WHEA:33  | COW:5 SHEEP:9
+ 12   5,296      3      9     42       14   MELO:22 WHEA:20  | COW:5 SHEEP:9
+ 13  10,882      3     12     50       14   MELO:22 WHEA:28  | COW:5 SHEEP:9
+ 14  14,399      3     12     49       14   MELO:22 WHEA:27  | COW:5 SHEEP:9
+ 15  21,117      3     12     53       14   MELO:22 WHEA:31  | COW:5 SHEEP:9
+ 16  22,609      3     12     55       14   MELO:22 WHEA:33  | COW:5 SHEEP:9
+ 18  33,682      3     12     52       14   MELO:22 WHEA:30  | COW:5 SHEEP:9
+ 20  43,674      3     12     46       14   MELO:22 WHEA:24  | COW:5 SHEEP:9
+ 22  52,701      3     12     52       14   MELO:22 WHEA:30  | COW:5 SHEEP:9
+ 24  80,252      3     12     31       14   WHEA:31  | COW:5 SHEEP:9
+ 26  89,417      3     12     40       14   WHEA:40  | COW:5 SHEEP:9
+ 28  97,447      3     12     39       14   WHEA:39  | COW:5 SHEEP:9
+
+--- 89,721  episode-90631239-replay.json p1  land {3: 11} ---
+day   money  quads  hands  tiles  animals   crop mix
+  0       7      2      6      4        4   MELO:4  | COW:4
+  1       3      2      3      4        4   MELO:4  | COW:4
+  2      21      2      6      6        2   MELO:6  | COW:2
+  3      27      2      6      7        2   MELO:7  | COW:2
+  4     122      2      6      8        2   MELO:8  | COW:2
+  5       8      2      6     10        2   MELO:10  | COW:2
+  6      34      2      6     11        2   MELO:11  | COW:2
+  7      56      2      6     12        2   MELO:12  | COW:2
+  8      29      2      6     19        6   MELO:12 STRA:7  | COW:6
+  9       4      2      5     19        6   MELO:12 STRA:7  | COW:6
+ 10   1,340      2      6     15        6   MELO:8 STRA:7  | COW:6
+ 11      22      3      6     15       12   MELO:8 STRA:7  | COW:12
+ 12   1,934      3      8     13       12   MELO:6 STRA:7  | COW:12
+ 13   5,398      3      8     12       12   MELO:5 STRA:7  | COW:12
+ 14   8,237      3      8     11       12   MELO:4 STRA:7  | COW:12
+ 15  12,026      3      8     10       12   MELO:2 STRA:7 WHEA:1  | COW:12
+ 16  17,875      3      8      9       12   MELO:1 STRA:7 WHEA:1  | COW:12
+ 18  25,138      3      8     11       12   STRA:7 WHEA:4  | COW:12
+ 20  34,961      3      8     11       12   STRA:7 WHEA:4  | COW:12
+ 22  46,923      3      8     10       12   STRA:7 WHEA:3  | COW:12
+ 24  56,503      3      8     11       12   STRA:7 WHEA:4  | COW:12
+ 26  74,051      3      8      2       12   WHEA:2  | COW:12
+ 28  83,532      3      8      0       12     | COW:12
+
+==============================================================================
+MEAN TRAJECTORY: top-half 3+ quadrant builds
+==============================================================================
+day   money  quads  hands  tiles  animals
+  0     559    1.6    5.2   12.8      1.6
+  2     266    1.6    4.5   17.3      1.7
+  4     227    1.6    3.6   17.8      1.8
+  6     303    1.6    5.2   20.0      2.2
+  8     324    1.8    4.4   22.5      2.7
+ 10   1,593    2.1    7.1   21.7      3.4
+ 12   6,334    3.4    8.0   28.6      4.9
+ 14   8,090    3.5    8.3   34.8      5.9
+ 16  10,189    3.7    8.4   38.6      6.3
+ 18  14,380    3.7    8.3   38.3      6.6
+ 20  19,536    3.7    8.4   37.2      6.6
+ 22  29,252    3.7    8.0   36.0      6.6
+ 24  38,424    3.7    7.9   30.1      6.8
+ 26  45,295    3.7    8.0   26.1      6.9
+ 28  51,476    3.7    4.3   19.6      6.8
+
+==============================================================================
+WHAT PREDICTS THE SCORE?  (Pearson r vs final reward)
+==============================================================================
+  r =  +0.64   mean animals d8-15
+  r =  +0.59   mean animals d0-7
+  r =  -0.50   day Q3 bought
+  r =  +0.43   mean STRAWBERRY tiles d8-15
+  r =  -0.41   mean MELON tiles d0-7
+  r =  +0.35   mean hands d0-7
+  r =  -0.24   day Q2 bought (lower=earlier)
+  r =  +0.22   mean tiles planted d8-15
+  r =  +0.19   mean STRAWBERRY tiles d0-7
+  r =  +0.18   mean WHEAT tiles d0-7
+  r =  -0.10   mean TILES PLANTED d0-7
+  r =  +0.10   money at d7
+  r =  +0.02   final quadrants
+
+------------------------------------------------------------------------------
+LAND TIMING, BUYERS ONLY (removes the 'never bought' sentinel)
+------------------------------------------------------------------------------
+  Q2: n=23  r = -0.06 between day-bought and reward   (median day 10)
+        mean reward: bought    43,663   never bought    32,532  (n=49)
+  Q3: n=26  r = -0.02 between day-bought and reward   (median day 11)
+        mean reward: bought    50,497   never bought    27,943  (n=46)
+  Q4: n=45  r = +0.03 between day-bought and reward   (median day 11)
+        mean reward: bought    32,599   never bought    41,903  (n=27)
+
+==============================================================================
+TOP QUARTILE vs BOTTOM QUARTILE (mean values)
+==============================================================================
+metric                               top 18    bottom 18
+reward                             65,016.4     13,111.4
+day Q2 bought                          49.5         78.8
+day Q3 bought                          36.1         89.3
+final quadrants                         3.2          3.0
+tiles planted d0-7                     18.6         20.6
+WHEAT tiles d0-7                        5.9          3.1
+MELON tiles d0-7                       10.0         15.4
+STRAWBERRY tiles d0-7                   1.4          0.2
+STRAWBERRY tiles d8-15                  8.7          0.4
+animals d0-7                            2.2          0.3
+animals d8-15                           6.3          0.9
+hands d0-7                              6.1          3.9
+
+wrote C:\Users\sarthak\Desktop\projects\kaggriculture\analysis\q3_profile.json

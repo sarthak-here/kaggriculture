@@ -1,0 +1,133 @@
+  read episode-90596561-replay.json  rewards=[24763.0, 80682.0]
+  read episode-90598134-replay.json  rewards=[110596.0, 28622.0]
+  read episode-90598933-replay.json  rewards=[5617.0, 60895.0]
+  read episode-90599725-replay.json  rewards=[46740.0, 11055.0]
+  read episode-90600518-replay.json  rewards=[27677.0, 13350.0]
+  read episode-90601309-replay.json  rewards=[26397.0, 46812.0]
+  read episode-90602117-replay.json  rewards=[8345.0, 51408.0]
+  read episode-90602914-replay.json  rewards=[32969.0, 7922.0]
+  read episode-90603730-replay.json  rewards=[24007.0, 24774.0]
+  read episode-90604514-replay.json  rewards=[13817.0, 47970.0]
+  read episode-90605306-replay.json  rewards=[29176.0, 33849.0]
+  read episode-90606094-replay.json  rewards=[51446.0, 40525.0]
+
+==============================================================================
+SCORE BY FINAL QUADRANT COUNT  (24 player-games)
+==============================================================================
+  2 quadrants: n=4   median    29,176   max    51,446   min    11,055
+  3 quadrants: n=4   median    60,895   max   110,596   min    24,763
+  4 quadrants: n=16  median    28,622   max    80,682   min     5,617
+
+==============================================================================
+TOP 3+ QUADRANT BUILDS (n=20)
+==============================================================================
+    110,596  episode-90598134-replay.json p0  land bought on days {3: 11}
+     80,682  episode-90596561-replay.json p1  land bought on days {2: 8, 3: 10, 4: 11}
+     60,895  episode-90598933-replay.json p1  land bought on days {2: 10, 3: 12}
+     51,408  episode-90602117-replay.json p1  land bought on days {2: 11, 3: 15}
+     47,970  episode-90604514-replay.json p1  land bought on days {2: 7, 3: 11, 4: 13}
+     46,812  episode-90601309-replay.json p1  land bought on days {4: 11}
+
+==============================================================================
+DAY-BY-DAY BUILD OF THE TOP 3 (money / quads / hands / tiles / animals)
+==============================================================================
+
+--- 110,596  episode-90598134-replay.json p0  land {3: 11} ---
+day   money  quads  hands  tiles  animals   crop mix
+  0   1,533      2      4     31        0   WHEA:31
+  1   1,506      2      4     43        0   WHEA:43
+  2   1,499      2      4     43        0   WHEA:43
+  3      81      2      6     43        3   WHEA:43  | COW:3
+  4      75      2      6     20        3   WHEA:20  | COW:3
+  5      81      2      6     18        7   WHEA:18  | COW:5 SHEEP:2
+  6     385      2      6     27        8   WHEA:27  | COW:5 SHEEP:3
+  7     284      2      9     36        9   WHEA:36  | COW:5 SHEEP:4
+  8     173      2      9     35       10   WHEA:35  | COW:5 SHEEP:5
+  9      90      2      9     35       12   WHEA:35  | COW:5 SHEEP:7
+ 10     167      2      9     33       12   WHEA:33  | COW:5 SHEEP:7
+ 11   3,236      3      9     55       14   MELO:22 WHEA:33  | COW:5 SHEEP:9
+ 12   5,296      3      9     42       14   MELO:22 WHEA:20  | COW:5 SHEEP:9
+ 13  10,882      3     12     50       14   MELO:22 WHEA:28  | COW:5 SHEEP:9
+ 14  14,399      3     12     49       14   MELO:22 WHEA:27  | COW:5 SHEEP:9
+ 15  21,117      3     12     53       14   MELO:22 WHEA:31  | COW:5 SHEEP:9
+ 16  22,609      3     12     55       14   MELO:22 WHEA:33  | COW:5 SHEEP:9
+ 18  33,682      3     12     52       14   MELO:22 WHEA:30  | COW:5 SHEEP:9
+ 20  43,674      3     12     46       14   MELO:22 WHEA:24  | COW:5 SHEEP:9
+ 22  52,701      3     12     52       14   MELO:22 WHEA:30  | COW:5 SHEEP:9
+ 24  80,252      3     12     31       14   WHEA:31  | COW:5 SHEEP:9
+ 26  89,417      3     12     40       14   WHEA:40  | COW:5 SHEEP:9
+ 28  97,447      3     12     39       14   WHEA:39  | COW:5 SHEEP:9
+
+--- 80,682  episode-90596561-replay.json p1  land {2: 8, 3: 10, 4: 11} ---
+day   money  quads  hands  tiles  animals   crop mix
+  0     182      1      6     20        4   CARR:12 MELO:8  | COW:3 GOOSE:1
+  1     319      1      6     21        4   CARR:13 MELO:8  | COW:3 GOOSE:1
+  2     548      1      6     21        4   CARR:13 MELO:8  | COW:3 GOOSE:1
+  3     282      1      6     14        4   CARR:3 MELO:8 STRA:3  | COW:3 GOOSE:1
+  4     344      1      6     21        4   CARR:2 MELO:8 STRA:10 WHEA:1  | COW:3 GOOSE:1
+  5     893      1      6     21        4   CARR:2 MELO:8 STRA:10 WHEA:1  | COW:3 GOOSE:1
+  6     837      1      6     20        5   MELO:8 STRA:11 WHEA:1  | COW:4 GOOSE:1
+  7     872      1      6     20        5   MELO:8 STRA:11 WHEA:1  | COW:4 GOOSE:1
+  8     801      2      6     19        7   MELO:8 STRA:11  | COW:6 GOOSE:1
+  9     460      2     11     21       14   MELO:8 STRA:11 WHEA:2  | COW:10 GOOSE:3 SHEEP:1
+ 10   4,283      3     13     19       14   STRA:12 WHEA:7  | COW:10 GOOSE:3 SHEEP:1
+ 11   1,423      4     12     20       24   STRA:12 WHEA:8  | COW:10 GOOSE:6 SHEEP:8
+ 12   2,241      4     13     23       27   STRA:12 WHEA:11  | COW:9 GOOSE:10 SHEEP:8
+ 13   1,379      4     13     22       26   STRA:12 WHEA:10  | COW:10 GOOSE:9 SHEEP:7
+ 14   4,584      4     13     21       28   STRA:12 WHEA:9  | COW:10 GOOSE:10 SHEEP:8
+ 15   3,778      4     13     21       34   STRA:12 WHEA:9  | COW:10 GOOSE:16 SHEEP:8
+ 16   5,333      4     13     22       34   STRA:12 WHEA:10  | COW:10 GOOSE:16 SHEEP:8
+ 18  15,913      4     13     20       34   STRA:12 WHEA:8  | COW:10 GOOSE:16 SHEEP:8
+ 20  24,427      4     13     19       34   STRA:9 WHEA:10  | COW:10 GOOSE:16 SHEEP:8
+ 22  36,535      4     13     16       34   STRA:2 WHEA:14  | COW:10 GOOSE:16 SHEEP:8
+ 24  45,941      4     13     14       34   STRA:1 WHEA:13  | COW:10 GOOSE:16 SHEEP:8
+ 26  61,205      4     13      6       34   STRA:1 WHEA:5  | COW:10 GOOSE:16 SHEEP:8
+ 28  70,241      4     13      0       34     | COW:10 GOOSE:16 SHEEP:8
+
+--- 60,895  episode-90598933-replay.json p1  land {2: 10, 3: 12} ---
+day   money  quads  hands  tiles  animals   crop mix
+  0     722      1      6     22        0   MELO:12 WHEA:10
+  1     239      1     12     22        3   MELO:12 WHEA:10  | COW:3
+  2      52      1      9     22        3   MELO:12 WHEA:10  | COW:3
+  3      32      1     11     22        3   MELO:12 WHEA:10  | COW:3
+  4      67      1     11     12        3   MELO:12  | COW:3
+  5   1,018      1     12     12        3   MELO:12  | COW:3
+  6     767      1     12     22        3   MELO:12 WHEA:10  | COW:3
+  7     607      1     12     22        3   MELO:12 WHEA:10  | COW:3
+  8     493      1     12     22        3   MELO:12 WHEA:10  | COW:3
+  9   1,549      1     12     22        3   MELO:12 WHEA:10  | COW:3
+ 10   1,662      2     12      0        3     | COW:3
+ 11  16,241      2     12     26        3   MELO:12 STRA:4 WHEA:10  | COW:3
+ 12  14,753      3     12     32        3   MELO:12 STRA:10 WHEA:10  | COW:3
+ 13  10,253      3     12     38        6   MELO:12 STRA:16 WHEA:10  | COW:6
+ 14   9,131      3     12     44        8   MELO:12 STRA:22 WHEA:10  | COW:8
+ 15   9,845      3     12     39        8   MELO:12 STRA:27  | COW:8
+ 16  10,999      3     12     49        8   MELO:12 STRA:27 WHEA:10  | COW:7 SHEEP:1
+ 18   9,561      3     12     49        9   MELO:12 STRA:27 WHEA:10  | COW:8 SHEEP:1
+ 20   9,783      3     12     44        9   MELO:12 STRA:27 WHEA:5  | COW:8 SHEEP:1
+ 22  25,952      3     12     58        9   STRA:27 WHEA:31  | COW:8 SHEEP:1
+ 24  28,864      3     12     57        9   STRA:27 WHEA:30  | COW:8 SHEEP:1
+ 26  40,367      3     12     31       10   STRA:27 WHEA:4  | COW:8 SHEEP:2
+ 28  52,454      3     12     23       10   STRA:23  | COW:8 SHEEP:2
+
+==============================================================================
+MEAN TRAJECTORY: top-half 3+ quadrant builds
+==============================================================================
+day   money  quads  hands  tiles  animals
+  0   1,063    1.5    5.2   17.4      0.6
+  2     482    1.5    6.7   23.2      1.1
+  4     345    1.5    3.9   19.4      1.3
+  6     466    1.6    6.4   22.0      2.0
+  8     412    1.8    4.8   23.4      2.6
+ 10   1,832    2.0    7.1   17.6      3.5
+ 12   5,832    3.5    8.9   28.4      5.4
+ 14   6,637    3.6    9.4   38.1      6.1
+ 16   7,851    3.7    9.4   42.9      6.7
+ 18  10,843    3.7    9.5   43.9      6.8
+ 20  14,439    3.7    9.5   43.6      6.8
+ 22  24,638    3.7    9.0   42.9      6.8
+ 24  37,668    3.7    8.7   34.7      6.9
+ 26  45,228    3.7    8.3   29.2      7.2
+ 28  50,597    3.7    5.4   17.3      7.0
+
+wrote C:\Users\sarthak\Desktop\projects\kaggriculture\analysis\q3_profile.json

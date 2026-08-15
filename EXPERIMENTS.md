@@ -2362,6 +2362,70 @@ So Q3 does not merely fail on its own, it subtracts from the one arm that is wor
 the same interaction #46 saw with the day-0 tips. **Any future Q3 attempt has to be
 measured against a carrot-enabled baseline, or it will look better than it is.**
 
+### #49. Why do real agents make 3 quadrants pay? Mined the 36-replay corpus
+
+`analysis/q3_profile.py` profiles all 72 player-games in `replays/` day by day and
+correlates the build against final reward.
+
+**Two measurement bugs found and fixed first** — both would have inverted the reading:
+- Hands vanish overnight and are re-hired during the day, so `len(hands)` at hour 0 is
+  always 0. Use the day's PEAK crew.
+- An occupied animal tile carries `animal` as a **single string** (`_new_animal`), not an
+  `animals` list. Reading it as a list reported **0 animals for every player in every
+  game**, which briefly looked like the headline finding ("the top agents keep no
+  livestock"). It was entirely an artifact.
+
+**Land is NOT the win condition.**
+
+| metric | r vs reward |
+|---|---|
+| final quadrant count | **+0.02** |
+| mean animals d8-15 | **+0.64** |
+| mean animals d0-7 | +0.59 |
+| mean STRAWBERRY tiles d8-15 | +0.43 |
+| mean MELON tiles d0-7 | **−0.41** |
+| mean hands d0-7 | +0.35 |
+
+The day-bought correlations in the first pass (Q3 r=−0.50) were an artifact of using 99 as
+a "never bought" sentinel — they measured *whether*, not *when*. **Among buyers only,
+timing is worthless: Q2 r=−0.06, Q3 r=−0.02, Q4 r=+0.03.**
+
+What the buy/don't-buy split does say:
+
+| | bought | never bought |
+|---|---|---|
+| Q3 | **50,497** | 27,943 |
+| Q4 | 32,599 | **41,903** |
+
+So **three quadrants is the sweet spot and a fourth is negative** — which is why the raw
+correlation with quadrant *count* is ~0. But this is observational and confounded: agents
+that can afford Q3 are the ones whose economy already works. Our #48 result is the
+controlled version of the same question (one line changed, 0/32), and it says buying Q3
+does not create the economy that pays for it.
+
+**We are not short of the things that correlate.** Our d8-15 animals (~11) and strawberry
+(~28 tiles) both exceed the corpus top quartile (6.3 and 8.7).
+
+**The one real lead is the single best build, 110,596 (`episode-90598134` p0), decoded:**
+
+```
+d0 h1:  HIRE x4
+d0 h2:  BUY_LAND            <- Q2 on DAY 0, not day 7
+        BUY_SEED WHEAT 44   <- 44 wheat in one order
+        (~$1,447 of the $3,000 opening: $1,000 land + $440 seed + $7 fib hires)
+d0-d2:  plant/water wheat with all 5 units -> 43 tiles standing by day 1
+d3-d11: herd ramps 3 -> 14 (COW:5 SHEEP:9), wheat held at 33-43 tiles
+d11:    Q3 + MELON 22 planted in one wave, cash $167 -> $3,236 -> $10,882 by d13
+```
+
+It **never plants a single strawberry**, and runs wheat->melon only. Against our build:
+43 producing tiles in week one versus our ~18, because wheat is $10 with a 2-day yield
+while strawberry is $100 with a 10-day one — the capital lockup lands exactly on the day
+7-15 cash wall that has killed all ~35 Q3 attempts.
+
+n=1, so this is a lead and not a law — but v26, the only version that ever broke the
+910-945 band, also came from decoding one external agent rather than from internal search.
+
 ## Reproducing
 
 ```bash

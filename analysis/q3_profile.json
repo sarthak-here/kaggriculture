@@ -1,0 +1,665 @@
+[
+ {
+  "file": "episode-90596561-replay.json",
+  "pid": 0,
+  "reward": 24763.0,
+  "final_quads": 3,
+  "land_days": {
+   "2": 11,
+   "3": 16
+  }
+ },
+ {
+  "file": "episode-90596561-replay.json",
+  "pid": 1,
+  "reward": 80682.0,
+  "final_quads": 4,
+  "land_days": {
+   "2": 8,
+   "3": 10,
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90598134-replay.json",
+  "pid": 0,
+  "reward": 110596.0,
+  "final_quads": 3,
+  "land_days": {
+   "3": 11
+  }
+ },
+ {
+  "file": "episode-90598134-replay.json",
+  "pid": 1,
+  "reward": 28622.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90598933-replay.json",
+  "pid": 0,
+  "reward": 5617.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90598933-replay.json",
+  "pid": 1,
+  "reward": 60895.0,
+  "final_quads": 3,
+  "land_days": {
+   "2": 10,
+   "3": 12
+  }
+ },
+ {
+  "file": "episode-90599725-replay.json",
+  "pid": 0,
+  "reward": 46740.0,
+  "final_quads": 4,
+  "land_days": {
+   "3": 11,
+   "4": 12
+  }
+ },
+ {
+  "file": "episode-90599725-replay.json",
+  "pid": 1,
+  "reward": 11055.0,
+  "final_quads": 2,
+  "land_days": {
+   "2": 2
+  }
+ },
+ {
+  "file": "episode-90600518-replay.json",
+  "pid": 0,
+  "reward": 27677.0,
+  "final_quads": 4,
+  "land_days": {
+   "3": 11,
+   "4": 12
+  }
+ },
+ {
+  "file": "episode-90600518-replay.json",
+  "pid": 1,
+  "reward": 13350.0,
+  "final_quads": 4,
+  "land_days": {
+   "3": 11,
+   "4": 14
+  }
+ },
+ {
+  "file": "episode-90601309-replay.json",
+  "pid": 0,
+  "reward": 26397.0,
+  "final_quads": 4,
+  "land_days": {
+   "3": 4,
+   "4": 9
+  }
+ },
+ {
+  "file": "episode-90601309-replay.json",
+  "pid": 1,
+  "reward": 46812.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90602117-replay.json",
+  "pid": 0,
+  "reward": 8345.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90602117-replay.json",
+  "pid": 1,
+  "reward": 51408.0,
+  "final_quads": 3,
+  "land_days": {
+   "2": 11,
+   "3": 15
+  }
+ },
+ {
+  "file": "episode-90602914-replay.json",
+  "pid": 0,
+  "reward": 32969.0,
+  "final_quads": 4,
+  "land_days": {
+   "2": 6,
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90602914-replay.json",
+  "pid": 1,
+  "reward": 7922.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90603730-replay.json",
+  "pid": 0,
+  "reward": 24007.0,
+  "final_quads": 2,
+  "land_days": {
+   "2": 9
+  }
+ },
+ {
+  "file": "episode-90603730-replay.json",
+  "pid": 1,
+  "reward": 24774.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90604514-replay.json",
+  "pid": 0,
+  "reward": 13817.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90604514-replay.json",
+  "pid": 1,
+  "reward": 47970.0,
+  "final_quads": 4,
+  "land_days": {
+   "2": 7,
+   "3": 11,
+   "4": 13
+  }
+ },
+ {
+  "file": "episode-90605306-replay.json",
+  "pid": 0,
+  "reward": 29176.0,
+  "final_quads": 2,
+  "land_days": {
+   "2": 14
+  }
+ },
+ {
+  "file": "episode-90605306-replay.json",
+  "pid": 1,
+  "reward": 33849.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90606094-replay.json",
+  "pid": 0,
+  "reward": 51446.0,
+  "final_quads": 2,
+  "land_days": {}
+ },
+ {
+  "file": "episode-90606094-replay.json",
+  "pid": 1,
+  "reward": 40525.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90606895-replay.json",
+  "pid": 0,
+  "reward": 17871.0,
+  "final_quads": 1,
+  "land_days": {}
+ },
+ {
+  "file": "episode-90606895-replay.json",
+  "pid": 1,
+  "reward": 8209.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90607716-replay.json",
+  "pid": 0,
+  "reward": 23018.0,
+  "final_quads": 2,
+  "land_days": {
+   "2": 10
+  }
+ },
+ {
+  "file": "episode-90607716-replay.json",
+  "pid": 1,
+  "reward": 14479.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90613799-replay.json",
+  "pid": 0,
+  "reward": 32176.0,
+  "final_quads": 1,
+  "land_days": {}
+ },
+ {
+  "file": "episode-90613799-replay.json",
+  "pid": 1,
+  "reward": 9483.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90618494-replay.json",
+  "pid": 0,
+  "reward": 55323.0,
+  "final_quads": 4,
+  "land_days": {
+   "2": 8,
+   "3": 10,
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90618494-replay.json",
+  "pid": 1,
+  "reward": 29946.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90619292-replay.json",
+  "pid": 0,
+  "reward": 27981.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90619292-replay.json",
+  "pid": 1,
+  "reward": 28629.0,
+  "final_quads": 4,
+  "land_days": {
+   "2": 12,
+   "4": 13
+  }
+ },
+ {
+  "file": "episode-90620093-replay.json",
+  "pid": 0,
+  "reward": 27124.0,
+  "final_quads": 4,
+  "land_days": {
+   "3": 9,
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90620093-replay.json",
+  "pid": 1,
+  "reward": 51160.0,
+  "final_quads": 2,
+  "land_days": {
+   "2": 14
+  }
+ },
+ {
+  "file": "episode-90620887-replay.json",
+  "pid": 0,
+  "reward": 57968.0,
+  "final_quads": 4,
+  "land_days": {
+   "3": 9,
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90620887-replay.json",
+  "pid": 1,
+  "reward": 18916.0,
+  "final_quads": 2,
+  "land_days": {
+   "2": 11
+  }
+ },
+ {
+  "file": "episode-90621676-replay.json",
+  "pid": 0,
+  "reward": 36059.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90621676-replay.json",
+  "pid": 1,
+  "reward": 13574.0,
+  "final_quads": 3,
+  "land_days": {
+   "3": 13
+  }
+ },
+ {
+  "file": "episode-90622470-replay.json",
+  "pid": 0,
+  "reward": 53164.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90622470-replay.json",
+  "pid": 1,
+  "reward": 29966.0,
+  "final_quads": 1,
+  "land_days": {}
+ },
+ {
+  "file": "episode-90623276-replay.json",
+  "pid": 0,
+  "reward": 110851.0,
+  "final_quads": 3,
+  "land_days": {
+   "2": 8,
+   "3": 10
+  }
+ },
+ {
+  "file": "episode-90623276-replay.json",
+  "pid": 1,
+  "reward": 31997.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90624072-replay.json",
+  "pid": 0,
+  "reward": 38328.0,
+  "final_quads": 4,
+  "land_days": {
+   "3": 15,
+   "4": 17
+  }
+ },
+ {
+  "file": "episode-90624072-replay.json",
+  "pid": 1,
+  "reward": 36308.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90624878-replay.json",
+  "pid": 0,
+  "reward": 14255.0,
+  "final_quads": 1,
+  "land_days": {}
+ },
+ {
+  "file": "episode-90624878-replay.json",
+  "pid": 1,
+  "reward": 27370.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90625676-replay.json",
+  "pid": 0,
+  "reward": 48942.0,
+  "final_quads": 4,
+  "land_days": {
+   "2": 11,
+   "3": 13,
+   "4": 15
+  }
+ },
+ {
+  "file": "episode-90625676-replay.json",
+  "pid": 1,
+  "reward": 19551.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90626485-replay.json",
+  "pid": 0,
+  "reward": 31374.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90626485-replay.json",
+  "pid": 1,
+  "reward": 19439.0,
+  "final_quads": 2,
+  "land_days": {
+   "2": 10
+  }
+ },
+ {
+  "file": "episode-90627274-replay.json",
+  "pid": 0,
+  "reward": 29642.0,
+  "final_quads": 2,
+  "land_days": {
+   "2": 14
+  }
+ },
+ {
+  "file": "episode-90627274-replay.json",
+  "pid": 1,
+  "reward": 35738.0,
+  "final_quads": 4,
+  "land_days": {
+   "3": 9,
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90628060-replay.json",
+  "pid": 0,
+  "reward": 35219.0,
+  "final_quads": 2,
+  "land_days": {
+   "2": 2
+  }
+ },
+ {
+  "file": "episode-90628060-replay.json",
+  "pid": 1,
+  "reward": 42508.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90628851-replay.json",
+  "pid": 0,
+  "reward": 59931.0,
+  "final_quads": 3,
+  "land_days": {
+   "2": 10,
+   "3": 16
+  }
+ },
+ {
+  "file": "episode-90628851-replay.json",
+  "pid": 1,
+  "reward": 54111.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90629661-replay.json",
+  "pid": 0,
+  "reward": 4649.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 13
+  }
+ },
+ {
+  "file": "episode-90629661-replay.json",
+  "pid": 1,
+  "reward": 25317.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90630457-replay.json",
+  "pid": 0,
+  "reward": 53158.0,
+  "final_quads": 4,
+  "land_days": {
+   "3": 9,
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90630457-replay.json",
+  "pid": 1,
+  "reward": 49585.0,
+  "final_quads": 1,
+  "land_days": {}
+ },
+ {
+  "file": "episode-90631239-replay.json",
+  "pid": 0,
+  "reward": 33997.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90631239-replay.json",
+  "pid": 1,
+  "reward": 89721.0,
+  "final_quads": 3,
+  "land_days": {
+   "3": 11
+  }
+ },
+ {
+  "file": "episode-90642322-replay.json",
+  "pid": 0,
+  "reward": 45585.0,
+  "final_quads": 4,
+  "land_days": {
+   "3": 9,
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90642322-replay.json",
+  "pid": 1,
+  "reward": 48974.0,
+  "final_quads": 3,
+  "land_days": {
+   "2": 11,
+   "3": 12
+  }
+ },
+ {
+  "file": "episode-90643021-replay.json",
+  "pid": 0,
+  "reward": 25968.0,
+  "final_quads": 4,
+  "land_days": {
+   "3": 11,
+   "4": 12
+  }
+ },
+ {
+  "file": "episode-90643021-replay.json",
+  "pid": 1,
+  "reward": 12456.0,
+  "final_quads": 1,
+  "land_days": {}
+ },
+ {
+  "file": "episode-90665965-replay.json",
+  "pid": 0,
+  "reward": 30496.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90665965-replay.json",
+  "pid": 1,
+  "reward": 28889.0,
+  "final_quads": 3,
+  "land_days": {
+   "2": 12,
+   "3": 18
+  }
+ },
+ {
+  "file": "episode-90666750-replay.json",
+  "pid": 0,
+  "reward": 47130.0,
+  "final_quads": 4,
+  "land_days": {
+   "4": 11
+  }
+ },
+ {
+  "file": "episode-90666750-replay.json",
+  "pid": 1,
+  "reward": 82380.0,
+  "final_quads": 3,
+  "land_days": {
+   "2": 8,
+   "3": 16
+  }
+ }
+]
