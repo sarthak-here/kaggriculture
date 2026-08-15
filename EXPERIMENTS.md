@@ -2426,6 +2426,53 @@ while strawberry is $100 with a 10-day one — the capital lockup lands exactly 
 n=1, so this is a lead and not a law — but v26, the only version that ever broke the
 910-945 band, also came from decoding one external agent rather than from internal search.
 
+### #50. v28 wheat-rush: transcribing the 110,596 opening — FAILS, 0/20 and 0/24
+
+Built the #49 lead as `variants/v28_wheatrush`: Q2 on **day 0**, 44 wheat in one order,
+**no animal before day 3**, no strawberry ever, melon held to a single 22-tile wave at
+day 11. A faithful transcription of `episode-90598134` p0.
+
+**The opening reproduces exactly.** Day 0 ends 2 quadrants / 37-44 wheat tiles / 0 animals
+/ **$1,488**, against the reference's $1,533.
+
+**Then it starves.** Money pins at $0-17 from day 7, so the day-11 melon wave is never
+affordable, and land goes bare (5-9 tiles on some days against the reference's steady
+33-43). **0 wins in 20 paired games, mean margin −60,890.**
+
+**Wheat is not the revenue for either build** — v28 sold 1,065 wheat and bought back 853;
+the reference sold 554 and bought 570. Wheat is feed infrastructure that roughly pays for
+itself. The reference's actual engine is **114 MELON** (base $250) plus milk 156 / wool
+187. Strip the melon wave and there is no high-value crop left, which is exactly what
+happened to v28.
+
+**METHOD ERROR, recorded so it is not repeated.** Two ablations were run and scored by
+SELF-PLAY reward on one seed:
+
+| build | self-play reward (seed 2001) | vs v27, paired |
+|---|---|---|
+| v28 | 51,274 | −60,890 (0/20) |
+| v28b (hands 9->12) | 61,723 | not run |
+| v28c (herd held to day 12) | **70,345** | **−77,747 (0/24)** |
+
+The self-play ladder said v28c was the big winner. Against a common opponent it is the
+**worst** of the three. **Self-play absolute reward is not a strength measure** — both
+seats change together and they share one market, so the number moves with the equilibrium,
+not with strength. This is the market-coupling trap from #24/#28d in a new disguise.
+**Always score a variant against a FIXED opponent.**
+
+**Verdict: the wheat-rush direction is closed.** Its one portable-looking by-product
+(hands 9->12, since the reference runs 12 to work 55 tiles while our cap was tuned on a
+2-quadrant farm) was retested properly — `v27_hands12` vs `v27`, one constant apart —
+and **loses 0/24, mean margin −8,930**. `FULL_HANDS_CAP = 9` stands, now bounded on both
+sides for a THREE-quadrant farm as well. The self-play "+10k" was pure artifact.
+
+**Everything the corpus offered has now been tested and none of it transfers.** #49's
+correlations were observational; both controlled tests built from them (#48 Q3, #50
+wheat-rush) lost decisively. The pattern from #39 holds: **v27 is a local optimum and
+single levers moved off it lose**, whether the lever comes from internal search or from
+copying a stronger agent's build. What actually worked this cycle (v26 sheep-first, v27
+carrot) came from a NEW mechanism, not from re-weighting the existing one.
+
 ## Reproducing
 
 ```bash
