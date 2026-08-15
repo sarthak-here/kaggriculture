@@ -45,6 +45,10 @@ ONGOING_CROPS = {c for c, spec in CROPS.items() if spec.get("kind") == "ongoing"
 DAYS_LEFT_TO_STOP_PLANTING = 2       # wheat planted day 27 (days_left=3) still lands day 29
 DAYS_LEFT_TO_STOP_ANIMALS = 5        # don't buy/replace herd members that can't pay back
 MAX_MARKET_ORDERS = 10               # engine cap on order LINES per turn
+TERMINAL_SWEEP_STEP = 716            # last 4 steps of 720: start emptying the shed
+TERMINAL_SWEEP_ALL_STEP = 718        # from here, re-sell even what is already queued
+TERMINAL_SWEEP_ORDER = ("CARROT", "EGG", "FERTILIZER", "MELON", "MILK",
+                        "STRAWBERRY", "TOMATO", "WHEAT", "WOOL")
 MIN_OPERATING_CASH_RESERVE = 300     # untouched by investment, keeps seeds/feed flowing
 OPENING_CASH_RESERVE = 50            # d0-1: the turn-1 feed wheat IS the buffer
 OPENING_RESERVE_LAST_DAY = 1
@@ -55,7 +59,7 @@ SHED_OVERFLOW_SAFETY = 0.85
 MIN_SELL_PRICE_RATIO = 0.7
 
 # ---- the transcribed schedule ----
-LAND_SCHEDULE = {2: 7, 3: 10}  # quadrant count -> earliest day to buy it
+LAND_SCHEDULE = {2: 7}         # quadrant count -> earliest day to buy it
                                # Q3 on day 10 matches what the frontier agents do
                                # (#34b). ~34 earlier configurations lost on the day
                                # 7-15 cash wall; re-enabled by explicit request.
@@ -117,6 +121,31 @@ def strawberry_target(quadrants, day):
     if quadrants == 2:
         return 28
     return 0
+
+
+def sell_priority(item, qty, market_inventory, unlocked_shops):
+    """Rank a SELL order by the price damage it suffers if it is delayed.
+
+    We used to rank by gross revenue (qty * current price), which puts big cheap
+    orders ahead of small orders sitting on a steep part of the curve. The public
+    3,094-scoring agent ranks by IMPACT instead -- qty * (price now - price after
+    this order lands) -- so the order with the most to lose from waiting goes
+    first, which matters because both players' orders interleave in one market and
+    the steep-glut goods (melon `sq`, wool `sq`) collapse fastest.
+
+    The urgency term nudges an item up when its inventory is already above I0
+    relative to how fast the town drains it.
+    """
+    inv = market_inventory.get(item, 10000)
+    now = predicted_price(item, inv)
+    later = predicted_price(item, inv + qty)
+    impact = qty * max(0, now - later)
+    if impact <= 0:
+        return 0.0
+    demand = max(0.25, daily_demand(item, unlocked_shops))
+    excess = max(0, inv + qty - 10000)
+    urgency = min(1.0, (excess / demand) / 10.0)
+    return impact * (1.0 + 0.25 * urgency)
 
 
 def carrot_tiles_wanted(market_inventory, unlocked_shops, days_left,
@@ -611,6 +640,7 @@ def agent(obs):
     days_left = 30 - day
     market_prices = obs["market"]["prices"]
     market_inventory = obs["market"]["inventory"]
+    unlocked_shops = (obs.get("town") or {}).get("unlocked_shops", [])
     board_size = len(me["tiles"])
     half = board_size // 2
     shed_center = (half - 0.5, half - 0.5)
@@ -688,7 +718,8 @@ def agent(obs):
         n = sellable if force_sell_all else sell_quantity(
             item, sellable, market_inventory.get(item, 10000), MIN_SELL_PRICE_RATIO)
         if n > 0:
-            orders_sell.append((n * market_prices.get(item, 0), ["SELL", item, n]))
+            orders_sell.append((sell_priority(item, n, market_inventory,
+                                              unlocked_shops), ["SELL", item, n]))
     orders_sell.sort(key=lambda t: -t[0])
     orders_sell = [o for _, o in orders_sell]
 
@@ -936,5 +967,26 @@ def agent(obs):
     else:
         market = orders_wheat + orders_hire + orders_animal + orders_land + orders_seed + orders_sell
     market = market[:MAX_MARKET_ORDERS]
+
+    # ---- terminal sweep: on the last few steps, dump whatever is still in the
+    # shed. Normal liquidation reserves feed wheat and is capped at 10 lines, so
+    # goods that arrive late (a day-29 carrot harvest) can sit there to the
+    # buzzer -- measured 6 stranded carrots even with the arm working. Anything
+    # unsold at the end is worth exactly zero, so on the final steps every
+    # remaining line is spent selling, cheapest-to-carry first. ----
+    _step = day * 24 + hour
+    if _step >= TERMINAL_SWEEP_STEP:
+        planned = {}
+        for o in market:
+            if o and o[0] == "SELL":
+                planned[o[1]] = planned.get(o[1], 0) + int(o[2])
+        for item in TERMINAL_SWEEP_ORDER:
+            if len(market) >= MAX_MARKET_ORDERS:
+                break
+            held = shed.get(item, 0)
+            extra = (held if _step >= TERMINAL_SWEEP_ALL_STEP
+                     else held - planned.get(item, 0))
+            if extra > 0:
+                market.append(["SELL", item, extra])
 
     return {"farmer": all_ops[0], "hands": all_ops[1:], "market": market}

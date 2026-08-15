@@ -2473,6 +2473,85 @@ single levers moved off it lose**, whether the lever comes from internal search 
 copying a stronger agent's build. What actually worked this cycle (v26 sheep-first, v27
 carrot) came from a NEW mechanism, not from re-weighting the existing one.
 
+### #51. The public 3,094 agent decoded — land closed for the 4th time, sell-ranking wins
+
+Pulled the highest-scoring public notebook, `salemali7/3094-score-kaggriculture`
+("HarvestForge-X" / `BL-MDgogo-10C4S-R0`). Its agent is a base64+zlib blob: a **719-action
+replay** plus generic execution guards, self-described as a behavioural reconstruction
+from twelve public traces. Decoded to `public/salemali7_agent.py`; route extracted with
+`importlib` (it is `_ACTIONS`).
+
+**As a benchmark it beats v27 80% (16-4), mean margin +17,524.** That is now our target,
+and a far better yardstick than the v14 snapshot.
+
+**Its capital schedule, decoded:**
+
+| | route | v27 |
+|---|---|---|
+| BUY_LAND days | **6 and 11 -> exactly 3 quadrants, never a 4th** | day 7 -> 2 |
+| herd | **10 COW / 4 SHEEP** | 8 COW / 6 SHEEP |
+| hands | **11-12 from day 8** | 9 |
+| melon | 12 on d0, 20 by d6 | 12 |
+| strawberry | 11 while small, then a **23-seed wave the day Q3 lands** (34 total) | 28 |
+| carrot | **days 21-25** | our v27 arm, independently |
+| wheat | bought constantly for feed (91 units on d23 alone) | same idea |
+
+Two things worth noting: it stops at THREE quadrants, confirming #49's buy/don't-buy split
+from the other direction; and it plants late carrot, which is the v27 arm arrived at
+independently by a top-30 agent.
+
+**v29 = that whole schedule transcribed onto our execution layer. LOSES 0/24, −21,242.**
+(One real bug found and fixed on the way: with 2C+2S standing from turn 0 and
+`OPENING_CASH_RESERVE = 50`, there was no money left for day-0 feed wheat and the entire
+opening herd escaped on day 2. Raised to 260 and gave melon a ramp so it is not all bought
+on day 0. The herd then survives — and it still loses.)
+
+**LAND IS NOW CLOSED ON FOUR INDEPENDENT CONTROLLED TESTS:**
+
+| test | what was added | result |
+|---|---|---|
+| #48 | Q3 alone at day 10 | 0/32, −5,621 |
+| #50 | wheat-rush opening + Q3 | 0/20, −60,890 |
+| #50 | ...plus hands and herd fixes | 0/24, −77,747 |
+| **#51** | **full top-30 schedule, 3 quads, 10C4S, 12 hands** | **0/24, −21,242** |
+
+**The reason is that the top agents are REPLAYS.** Their per-step execution is recorded
+expert play; the capital schedule is only the visible part. Transcribing the schedule onto
+a hand-written policy does not transfer the execution, and the extra land makes us *worse*
+because our policy cannot work the tiles it adds. **Do not attempt a third quadrant again
+without first improving per-tile execution.**
+
+**What DID transfer: sell ORDERING.** The route ranks its sell orders by *price impact* --
+`qty * (price_now - price_after_this_order)`, times a small urgency term from
+`_demand_per_day` -- so the order with the most to lose from waiting goes out first. We
+ranked by gross revenue, which puts big cheap orders ahead of small ones sitting on a steep
+part of the curve. It matters because both players' orders interleave in one market and the
+`sq`-glut goods (melon, wool) collapse fastest.
+
+**v30 = impact-ranked sells. WINS 89.3% (25-3), +2,461 over 14 seeds x 2 orders**, and
+sells *more* carrot through the same planting (642 v 618). One helper, no schedule change.
+(`duel.py`'s "lever did not move" warning fires here because it watches carrot *planting*,
+which is identical by design; the lever is the sell order.)
+
+**v31 = v30 + terminal sweep.** Their `_terminal_liquidation` spends every spare order line
+on the last 4 steps emptying the shed, since anything unsold at the buzzer is worth zero.
+Ours reserved feed wheat and hit the 10-line cap, stranding late arrivals (6 carrots
+measured, #47). **WINS 78.6% (22-6) over v30**, carrot sold 844 v 786. Margin is only +278
+but promotion is by win rate.
+
+**Q3 RETESTED INSIDE THE IMPROVED BUILD — still 0/24, −6,036 (fifth strike).** And it
+suppresses the carrot arm again exactly as in #48: 74 planted / 118 sold with Q3 against
+114 / 318 without. Land does not become affordable by making the rest of the agent better.
+
+**HONEST LIMIT: none of this closes the benchmark gap.** v31 against the public 3,094 agent
+is 20% / −18,340; v27 was 20% / −17,524. Statistically indistinguishable. v30/v31 are real
+improvements *within our lineage* (which is what the ladder rewards, since most opponents
+are mid-field) but they do **not** make us competitive with a top-30 replay. Beating that
+needs better per-tile execution, not better book-keeping.
+
+**SHIPPED as v33 = v27 + impact-ranked sells + terminal sweep, Q3 reverted.
+Direct against v27: 96.4% (27-1), +2,682 over 14 seeds x 2 orders.**
+
 ## Reproducing
 
 ```bash
