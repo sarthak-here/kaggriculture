@@ -2329,6 +2329,39 @@ gives **12.7% mean error at an 8-day horizon** against 56-73% for naive extrapol
 and it errs low, which is the safe direction for a commit gate. (b) Sweep
 `CARROT_MIN_MARGINAL_PRICE`; $70 is conservative against a ~$40 break-even.
 
+### #48. Third quadrant re-enabled by request — loses 0/32, and it eats v27's carrot gain
+
+Q3 turned back on at `LAND_SCHEDULE = {2: 7, 3: 10}` (day 10 is when the frontier agents
+buy it, #34b). Requested explicitly with consequences accepted; recorded here for the
+ledger, not as a promotion argument.
+
+Mechanism fires: quadrants go 1 -> 2 (day 9) -> 3 (**day 12**, not 10 — cash gates it two
+days; money sits at $69/$373/$341 across days 9-11).
+
+**16 seeds x 2 seat orders vs v27, one line different:**
+
+| | Q3 build | v27 |
+|---|---|---|
+| wins | **0** | **32** |
+| mean margin | **−5,621** | — |
+
+It loses in **both seat orders on all 16 seeds** — worst −13,138, best −1,161, never a
+single win. This is the same day 7-15 cash wall as the previous ~34 configurations
+(#28d, #36, #37): buying $2,000 of land at day 10-12 strands the ramp.
+
+**New and worth keeping: Q3 actively suppresses the carrot arm.** Carrot planted/sold
+collapses because Q3 eats the cash and the tiles that carrot would have used:
+
+| seed | Q3 build | v27 |
+|---|---|---|
+| 2008 | 18 planted / **25 sold** | 33 planted / **104 sold** |
+| 2006 | 12 / 18 | 14 / 37 |
+| 2014 | 1 / 0 | 9 / 12 |
+
+So Q3 does not merely fail on its own, it subtracts from the one arm that is working —
+the same interaction #46 saw with the day-0 tips. **Any future Q3 attempt has to be
+measured against a carrot-enabled baseline, or it will look better than it is.**
+
 ## Reproducing
 
 ```bash
