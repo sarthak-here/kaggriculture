@@ -2230,7 +2230,130 @@ should not be over-read. v26's ~75-point clearance is outside that band.
 **Pattern worth keeping: every version built by internal search sits in the 910-945 band. The
 one built from reading an external agent (v26) broke past it.**
 
+## 2026-08-15 — the balance patches
+
+### #47. CARROT/TOMATO/EGG became situationally valuable — v27 opportunistic carrot
+
+Two upstream balance patches landed, both announced by Kaggle:
+
+- **1.32.6 / PR #1394** — town-centre demand cut from 2x/day (with a late 2x/4x
+  multiplier) to a flat 1x/day, and **shops are now drawn WITH replacement**, so a town
+  can roll 4x PET_CAFE and 0x YARN_STORE. Markets are much less resistant to sell
+  pressure and per-product demand now varies wildly game to game.
+- **1.32.7 / PR #1399** — CARROT, TOMATO and EGG got a **"hinge"** scarcity curve.
+  Below I0 the price is now `base + below_target*base*(u + 8*max(0,u-1)^2)` with
+  `u = deficit/T`: calm to the knee at T, quadratic past it. CARROT T=450 target **1.00**
+  (was log/0.20), TOMATO T=200 target 0.40, EGG T=332 target 0.40.
+
+**First: a live bug.** `game_data.MARKET_PARAMS` still held the pre-1.32.7 curves. That
+table backs `sell_quantity()`, so *every* sell decision was being priced against a
+fictional market. Fixed, and `analysis/verify_price_model.py` now asserts the replica is
+identical to the engine for all 9 products over 6,005 inventory points each.
+**Run it after every kaggle-environments upgrade.**
+
+**Measured, 40 games, `analysis/market_scarcity.py`** (our agent grows none of the three,
+so this is the untouched market):
+
+| product | ends past knee | median price | max | base |
+|---|---|---|---|---|
+| TOMATO | **52%** | $91 | $445 | $60 |
+| CARROT | **35%** | $63 | **$594** | $35 |
+| EGG | 20% | $66 | $167 | $50 |
+
+Kaggle's own announced rates are 50% / 26% / 22%, so the harness agrees with the source.
+Spike size tracks the shop draw almost monotonically (carrot demand-weight 8 -> $594
+median, weight 2 -> $51), which is the PR #1394 replacement change biting.
+
+**EGG is not worth it** — a goose is $300 and p90 is only $96/unit. Arm dropped.
+
+**Why carrot and not tomato first.** Carrot is $20, 3 days, 4 units, one-time, and in the
+endgame it competes with nothing but wheat fill (break-even vs wheat is only ~$40/unit).
+Tomato pays far more per tile but needs an 8-day commitment that would displace
+strawberry. Carrot is the arm that risks nothing already proven.
+
+**The gate must project, not observe.** Gating on today's price fired two days too late:
+price ran $68 -> $101 over the last three days, so the crop went in on day 26-27 and half
+of it was still in the ground at the buzzer — 16 tiles planted, **12 units sold**, 13
+stranded in the shed. `obs["town"]["unlocked_shops"]` is observable and the consumption
+schedule is fixed, so `game_data.daily_demand()` computes the drain exactly:
+
+| day | predicted/day | actual/day |
+|---|---|---|
+| 25-29 | 49 | 49 |
+
+Projecting the harvest-day price with it, same seed: **33 tiles, 69 units sold**, 6
+stranded. `carrot_tiles_wanted()` also walks the price curve down one unit at a time and
+subtracts crop already standing (`committed_units`), because the spike is a finite pool —
+without that it re-sizes to the whole spike every turn and floods its own market.
+
+**Result — `analysis/duel.py`, 20 seeds x 2 seat orders vs a carrot-disabled baseline
+differing by ONE constant:**
+
+| | v27 | baseline |
+|---|---|---|
+| wins | **23** | 9 (8 ties) |
+| **win rate (decisive)** | **71.9%** | — |
+| carrot planted / sold | 444 / 1,052 | 0 / 0 |
+
+Attribution is unusually clean:
+
+- In the **11 seeds where the gate never fired, mean margin is exactly +0** — every
+  seat-order pair is a perfect mirror. The change is a strict **no-op** when it does not
+  fire, so it carries essentially no regression risk.
+- In the **9 seeds where it fired, mean margin +2,904**, and 7 of the 9 won *both* seat
+  orders. The two that split were marginal 3- and 8-tile fires.
+- Seed 2017: carrot at $252, margin **+14,861** — the size of the whole trace-agent gap.
+
+The 71.9% understates the effect: non-firing seeds are exact mirrors that contribute one
+win to each side by construction, pulling the rate toward 50%.
+
+**Market-coupling check (the ledger rule for anything that changes what/when we sell).**
+Both builds played the same 12 seeds x 2 orders against a neutral third party, the v14
+snapshot, with all three sharing one `game_data.py` (v14 reads only `seed_cost` and
+`first_yield_day`, so the shared table is behaviourally inert for it):
+
+| | margin vs neutral v14 |
+|---|---|
+| v27 | **+48,601** |
+| v26 baseline | +47,542 |
+| **v27 edge** | **+1,059** |
+
+Both win 24/24 against v14, so win rate saturates and only margin discriminates. The edge
+against a neutral opponent (+1,059) is slightly **smaller** than the head-to-head margin
+(+1,307), which is the reassuring direction — the paired test was not being flattered by
+coupling. Carrot revenue is genuinely new money, not money taken from the opponent.
+
+**Follow-ups, in order.** (a) TOMATO, worth ~$8k/tile against carrot's ~$680 and spiking
+in 52% of games — the 8-day forecast is viable, since projecting with `daily_demand()`
+gives **12.7% mean error at an 8-day horizon** against 56-73% for naive extrapolation,
+and it errs low, which is the safe direction for a commit gate. (b) Sweep
+`CARROT_MIN_MARGINAL_PRICE`; $70 is conservative against a ~$40 break-even.
+
 ## Reproducing
+
+```bash
+# Rebuild the eval opponents (variants/ is gitignored - these are derived).
+# A/B baseline: same file, ONE constant flipped, so the arm is the only difference.
+mkdir -p variants/v26_nocarrot && cp game_data.py variants/v26_nocarrot/
+sed 's/CARROT_MAX_TILES = 16/CARROT_MAX_TILES = 0/' main.py > variants/v26_nocarrot/main.py
+
+# Neutral third party. v14 reads only seed_cost/first_yield_day from game_data,
+# so sharing the CURRENT game_data.py is behaviourally inert for it -- and it is
+# required, because `import game_data` caches under a bare module name and two
+# different copies in one process poison each other.
+mkdir -p variants/v14_neutral && git show v14:main.py > variants/v14_neutral/main.py
+cp game_data.py variants/v14_neutral/
+
+# Promotion decision: paired seats, ranked by win rate.
+.venv/Scripts/python.exe -u analysis/duel.py main.py variants/v26_nocarrot/main.py 20
+
+# Coupling check: BOTH builds vs the same neutral opponent, compare margins.
+.venv/Scripts/python.exe -u analysis/duel.py main.py variants/v14_neutral/main.py 12
+.venv/Scripts/python.exe -u analysis/duel.py variants/v26_nocarrot/main.py variants/v14_neutral/main.py 12
+
+# After ANY kaggle-environments upgrade, before trusting a single sell decision:
+.venv/Scripts/python.exe analysis/verify_price_model.py
+```
 
 ```bash
 # head-to-head, fixed seed

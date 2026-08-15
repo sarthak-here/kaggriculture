@@ -34,7 +34,8 @@ Engine budget: everything O(units + tiles), no search. agent() must stay
 the LAST top-level function in this file (kaggle_environments loads the
 last callable).
 """
-from game_data import CROPS, ANIMALS, land_cost, sell_quantity
+from game_data import (CROPS, ANIMALS, land_cost, sell_quantity,
+                       predicted_price, daily_demand)
 
 # Sellable via shed flush / haul. WHEAT excluded normally (ambiguous with
 # feed round trips) but included once liquidating, when FEED is disabled.
@@ -71,6 +72,18 @@ LAST_BUILDOUT_DAY = 13               # while building out, land/herd beat upkeep
 WHEAT_FILL_RESERVE_TILES = 7         # wheat seed money held back from the premium pick
 WHEAT_PICKUP_CAP = 4                 # wheat a unit may withdraw per shed visit
 
+# ---- opportunistic carrot (kaggle-environments 1.32.7 / PR #1399) ----
+# 1.32.7 gave CARROT, TOMATO and EGG a "hinge" scarcity curve: flat up to a
+# deficit of T, then quadratic. CARROT has the sharpest one (T=450,
+# below_target 1.00) and nobody in the meta grows it, so in 35% of measured
+# games it ends the season past the knee -- median $63/unit but a long tail
+# ($594 observed). A carrot tile is $20 and 3 days for 4 units, so it competes
+# with nothing but wheat fill and needs no forecast: we read the live price.
+# Deliberately placed BELOW strawberry/melon so the proven opening is untouched;
+# early in the game the deficit is small and this gate simply never fires.
+CARROT_MIN_MARGINAL_PRICE = 70       # 2x base. Below this a tile is worth more as wheat.
+CARROT_MAX_TILES = 16                # past this our own supply flattens the spike
+
 
 def herd_target(day):
     """Transcribed herd curve: (cows, sheep) wanted as of `day`."""
@@ -101,6 +114,46 @@ def strawberry_target(quadrants, day):
     if quadrants == 2:
         return 28
     return 0
+
+
+def carrot_tiles_wanted(market_inventory, unlocked_shops, days_left,
+                        plantable_empties, committed_units=0):
+    """How many tiles of carrot the coming scarcity spike can absorb.
+
+    Two things make this a projection rather than a price check:
+
+    * We are paid at HARVEST, not at planting, and the town keeps eating carrot
+      the whole time ours is growing. Gating on today's price fired two days too
+      late -- the price ran $68 -> $101 over the final three days, so the crop
+      went in on day 26-27 and half of it was still in the ground at the buzzer.
+      daily_demand() reads the actual unlocked shops, so the forward price is
+      exact for the shops already open.
+    * Every carrot we sell puts a unit back into inventory and slides us down
+      the hinge, so the spike is a finite pool, not a price. Walk the curve and
+      stop where the marginal unit stops beating what the tile earns as wheat.
+      `committed_units` is the crop already standing plus what is in the shed:
+      without it this re-sizes to the whole spike every single turn and plants
+      several times the supply the spike can actually absorb.
+
+    Returns 0 when the market will not be short, which is the common case.
+    """
+    spec = CROPS["CARROT"]
+    # Age the crop can reach and still be sold before the last day.
+    grow = min(spec["max_yield_day"], days_left - 1)
+    if grow < spec["first_yield_day"]:
+        return 0
+    inv = market_inventory.get("CARROT", 10000)
+    inv_at_harvest = (inv - daily_demand("CARROT", unlocked_shops) * grow
+                      + committed_units)
+    if predicted_price("CARROT", inv_at_harvest) < CARROT_MIN_MARGINAL_PRICE:
+        return 0
+    per_tile = spec["max_yield"]
+    cap_units = min(plantable_empties, CARROT_MAX_TILES) * per_tile
+    units = 0
+    while units < cap_units and \
+            predicted_price("CARROT", inv_at_harvest + units) >= CARROT_MIN_MARGINAL_PRICE:
+        units += 1
+    return units // per_tile
 
 
 def manhattan(a, b):
@@ -740,11 +793,18 @@ def agent(obs):
         melon_deficit = 0
         if day <= MELON_LAST_PLANT_DAY and days_left > CROPS["MELON"]["first_yield_day"]:
             melon_deficit = max(0, MELON_TARGET - crop_counts.get("MELON", 0))
+        carrot_committed = (crop_counts.get("CARROT", 0) * CROPS["CARROT"]["max_yield"]
+                            + shed.get("CARROT", 0))
+        carrot_tiles = carrot_tiles_wanted(
+            market_inventory, (obs.get("town") or {}).get("unlocked_shops", []),
+            days_left, plantable_empties, carrot_committed)
         pick = None
         if straw_deficit > 0:
             pick, deficit = "STRAWBERRY", straw_deficit
         elif melon_deficit > 0:
             pick, deficit = "MELON", melon_deficit
+        elif carrot_tiles > 0:
+            pick, deficit = "CARROT", carrot_tiles
         elif days_left > CROPS["WHEAT"]["first_yield_day"]:
             pick, deficit = "WHEAT", plantable_empties
         # Hold back the wheat-fill money BEFORE the premium pick spends down

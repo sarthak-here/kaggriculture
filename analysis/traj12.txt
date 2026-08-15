@@ -1,0 +1,398 @@
+OpenSpiel exception: Unknown game 'universal_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+OpenSpiel exception: Unknown game 'repeated_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+seed 5000  final deficit  CAR=  317  TOM=  113  EGG=  323
+seed 5001  final deficit  CAR=  407  TOM=  161  EGG=  179
+seed 5002  final deficit  CAR=  497  TOM=  401  EGG=   29
+seed 5003  final deficit  CAR=  341  TOM=  251  EGG=  131
+seed 5004  final deficit  CAR=  113  TOM=  317  EGG=  227
+seed 5005  final deficit  CAR=  389  TOM=  149  EGG=  131
+seed 5006  final deficit  CAR=  353  TOM=  371  EGG=  269
+seed 5007  final deficit  CAR=  161  TOM=  161  EGG=   95
+seed 5008  final deficit  CAR=  323  TOM=  179  EGG=   29
+seed 5009  final deficit  CAR=  479  TOM=  281  EGG=   95
+seed 5010  final deficit  CAR=  263  TOM=   59  EGG=  215
+seed 5011  final deficit  CAR=  209  TOM=  269  EGG=  125
+
+12 games, 30 days recorded
+
+======================================================================
+MEAN DEFICIT BY DAY
+======================================================================
+day         CAR       TOM       EGG
+  0           0         0         0
+  2           2         2         2
+  4           6         5         4
+  6          10         9         8
+  8          18        16        12
+ 10          26        25        18
+ 12          36        36        26
+ 14          52        49        36
+ 16          74        66        46
+ 18         102        86        57
+ 20         133       108        73
+ 22         168       132        90
+ 24         208       156       106
+ 26         254       184       126
+ 28         298       212       144
+
+======================================================================
+LINEAR EXTRAPOLATION FROM DAY d  ->  FINAL DEFICIT
+predicted = deficit(d) * (final_day / d)
+======================================================================
+
+CARROT (knee T=450)
+  day  8: mean abs err  79.5%   gate u>1  hit  0  missed  2  false-alarm  0
+  day 10: mean abs err  76.6%   gate u>1  hit  0  missed  2  false-alarm  0
+  day 12: mean abs err  73.9%   gate u>1  hit  0  missed  2  false-alarm  0
+  day 14: mean abs err  68.2%   gate u>1  hit  0  missed  2  false-alarm  0
+  day 16: mean abs err  59.9%   gate u>1  hit  0  missed  2  false-alarm  0
+
+TOMATO (knee T=200)
+  day  8: mean abs err  73.4%   gate u>1  hit  0  missed  6  false-alarm  0
+  day 10: mean abs err  67.8%   gate u>1  hit  0  missed  6  false-alarm  0
+  day 12: mean abs err  62.0%   gate u>1  hit  1  missed  5  false-alarm  0
+  day 14: mean abs err  56.0%   gate u>1  hit  1  missed  5  false-alarm  0
+  day 16: mean abs err  48.7%   gate u>1  hit  1  missed  5  false-alarm  0
+
+EGG (knee T=332)
+  day  8: mean abs err  62.2%   gate u>1  hit  0  missed  0  false-alarm  0
+  day 10: mean abs err  59.0%   gate u>1  hit  0  missed  0  false-alarm  0
+  day 12: mean abs err  55.8%   gate u>1  hit  0  missed  0  false-alarm  0
+  day 14: mean abs err  49.6%   gate u>1  hit  0  missed  0  false-alarm  0
+  day 16: mean abs err  44.5%   gate u>1  hit  0  missed  0  false-alarm  0
+
+wrote C:\Users\sarthak\Desktop\projects\kaggriculture\analysis\scarcity_trajectory_results.json

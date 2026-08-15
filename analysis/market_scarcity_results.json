@@ -1,0 +1,922 @@
+[
+ {
+  "seed": 1000,
+  "shops": [
+   "PET_CAFE",
+   "PET_CAFE",
+   "BRUNCH_SPOT",
+   "YARN_STORE",
+   "BAKERY",
+   "FARMERS_MARKET",
+   "BRUNCH_SPOT",
+   "PET_CAFE"
+  ],
+  "deficit": {
+   "CARROT": 786,
+   "TOMATO": 102,
+   "EGG": 300
+  },
+  "price": {
+   "CARROT": 252,
+   "TOMATO": 72,
+   "EGG": 68
+  }
+ },
+ {
+  "seed": 1001,
+  "shops": [
+   "FARMERS_MARKET",
+   "SMOOTHIE_SHOP",
+   "ICE_CREAM_SHOP",
+   "PIZZA_SHOP",
+   "FARMERS_MARKET",
+   "FARMERS_MARKET",
+   "YARN_STORE",
+   "BRUNCH_SPOT"
+  ],
+  "deficit": {
+   "CARROT": 354,
+   "TOMATO": 462,
+   "EGG": 66
+  },
+  "price": {
+   "CARROT": 63,
+   "TOMATO": 445,
+   "EGG": 54
+  }
+ },
+ {
+  "seed": 1002,
+  "shops": [
+   "PIZZA_SHOP",
+   "BRUNCH_SPOT",
+   "PET_CAFE",
+   "ICE_CREAM_SHOP",
+   "ICE_CREAM_SHOP",
+   "YARN_STORE",
+   "PIZZA_SHOP",
+   "SMOOTHIE_SHOP"
+  ],
+  "deficit": {
+   "CARROT": 282,
+   "TOMATO": 246,
+   "EGG": 174
+  },
+  "price": {
+   "CARROT": 57,
+   "TOMATO": 100,
+   "EGG": 60
+  }
+ },
+ {
+  "seed": 1003,
+  "shops": [
+   "BAKERY",
+   "FARMERS_MARKET",
+   "PET_CAFE",
+   "PIZZA_SHOP",
+   "SMOOTHIE_SHOP",
+   "FARMERS_MARKET",
+   "BAKERY",
+   "BRUNCH_SPOT"
+  ],
+  "deficit": {
+   "CARROT": 498,
+   "TOMATO": 354,
+   "EGG": 282
+  },
+  "price": {
+   "CARROT": 77,
+   "TOMATO": 216,
+   "EGG": 67
+  }
+ },
+ {
+  "seed": 1004,
+  "shops": [
+   "YARN_STORE",
+   "PET_CAFE",
+   "FARMERS_MARKET",
+   "ICE_CREAM_SHOP",
+   "BAKERY",
+   "YARN_STORE",
+   "SMOOTHIE_SHOP",
+   "PIZZA_SHOP"
+  ],
+  "deficit": {
+   "CARROT": 444,
+   "TOMATO": 192,
+   "EGG": 120
+  },
+  "price": {
+   "CARROT": 70,
+   "TOMATO": 83,
+   "EGG": 57
+  }
+ },
+ {
+  "seed": 1005,
+  "shops": [
+   "BRUNCH_SPOT",
+   "FARMERS_MARKET",
+   "SMOOTHIE_SHOP",
+   "PIZZA_SHOP",
+   "YARN_STORE",
+   "PET_CAFE",
+   "BAKERY",
+   "PET_CAFE"
+  ],
+  "deficit": {
+   "CARROT": 390,
+   "TOMATO": 282,
+   "EGG": 246
+  },
+  "price": {
+   "CARROT": 65,
+   "TOMATO": 126,
+   "EGG": 65
+  }
+ },
+ {
+  "seed": 1006,
+  "shops": [
+   "SMOOTHIE_SHOP",
+   "SMOOTHIE_SHOP",
+   "PET_CAFE",
+   "PET_CAFE",
+   "FARMERS_MARKET",
+   "BRUNCH_SPOT",
+   "ICE_CREAM_SHOP",
+   "PET_CAFE"
+  ],
+  "deficit": {
+   "CARROT": 660,
+   "TOMATO": 120,
+   "EGG": 102
+  },
+  "price": {
+   "CARROT": 147,
+   "TOMATO": 74,
+   "EGG": 56
+  }
+ },
+ {
+  "seed": 1007,
+  "shops": [
+   "PET_CAFE",
+   "ICE_CREAM_SHOP",
+   "BRUNCH_SPOT",
+   "PIZZA_SHOP",
+   "BAKERY",
+   "BRUNCH_SPOT",
+   "SMOOTHIE_SHOP",
+   "BAKERY"
+  ],
+  "deficit": {
+   "CARROT": 354,
+   "TOMATO": 138,
+   "EGG": 354
+  },
+  "price": {
+   "CARROT": 63,
+   "TOMATO": 77,
+   "EGG": 72
+  }
+ },
+ {
+  "seed": 1008,
+  "shops": [
+   "ICE_CREAM_SHOP",
+   "YARN_STORE",
+   "PIZZA_SHOP",
+   "PET_CAFE",
+   "YARN_STORE",
+   "FARMERS_MARKET",
+   "PIZZA_SHOP",
+   "SMOOTHIE_SHOP"
+  ],
+  "deficit": {
+   "CARROT": 318,
+   "TOMATO": 282,
+   "EGG": 30
+  },
+  "price": {
+   "CARROT": 60,
+   "TOMATO": 126,
+   "EGG": 52
+  }
+ },
+ {
+  "seed": 1009,
+  "shops": [
+   "BAKERY",
+   "BRUNCH_SPOT",
+   "FARMERS_MARKET",
+   "YARN_STORE",
+   "YARN_STORE",
+   "ICE_CREAM_SHOP",
+   "ICE_CREAM_SHOP",
+   "YARN_STORE"
+  ],
+  "deficit": {
+   "CARROT": 156,
+   "TOMATO": 156,
+   "EGG": 336
+  },
+  "price": {
+   "CARROT": 47,
+   "TOMATO": 79,
+   "EGG": 70
+  }
+ },
+ {
+  "seed": 1010,
+  "shops": [
+   "SMOOTHIE_SHOP",
+   "SMOOTHIE_SHOP",
+   "BRUNCH_SPOT",
+   "YARN_STORE",
+   "PET_CAFE",
+   "YARN_STORE",
+   "ICE_CREAM_SHOP",
+   "BRUNCH_SPOT"
+  ],
+  "deficit": {
+   "CARROT": 210,
+   "TOMATO": 30,
+   "EGG": 192
+  },
+  "price": {
+   "CARROT": 51,
+   "TOMATO": 64,
+   "EGG": 62
+  }
+ },
+ {
+  "seed": 1011,
+  "shops": [
+   "FARMERS_MARKET",
+   "BAKERY",
+   "ICE_CREAM_SHOP",
+   "PET_CAFE",
+   "YARN_STORE",
+   "BAKERY",
+   "BRUNCH_SPOT",
+   "FARMERS_MARKET"
+  ],
+  "deficit": {
+   "CARROT": 444,
+   "TOMATO": 228,
+   "EGG": 300
+  },
+  "price": {
+   "CARROT": 70,
+   "TOMATO": 91,
+   "EGG": 68
+  }
+ },
+ {
+  "seed": 1012,
+  "shops": [
+   "PET_CAFE",
+   "BRUNCH_SPOT",
+   "ICE_CREAM_SHOP",
+   "PIZZA_SHOP",
+   "FARMERS_MARKET",
+   "PET_CAFE",
+   "YARN_STORE",
+   "PIZZA_SHOP"
+  ],
+  "deficit": {
+   "CARROT": 588,
+   "TOMATO": 264,
+   "EGG": 174
+  },
+  "price": {
+   "CARROT": 107,
+   "TOMATO": 111,
+   "EGG": 60
+  }
+ },
+ {
+  "seed": 1013,
+  "shops": [
+   "BAKERY",
+   "YARN_STORE",
+   "YARN_STORE",
+   "PET_CAFE",
+   "BAKERY",
+   "ICE_CREAM_SHOP",
+   "SMOOTHIE_SHOP",
+   "PET_CAFE"
+  ],
+  "deficit": {
+   "CARROT": 318,
+   "TOMATO": 30,
+   "EGG": 282
+  },
+  "price": {
+   "CARROT": 60,
+   "TOMATO": 64,
+   "EGG": 67
+  }
+ },
+ {
+  "seed": 1014,
+  "shops": [
+   "SMOOTHIE_SHOP",
+   "YARN_STORE",
+   "PIZZA_SHOP",
+   "PIZZA_SHOP",
+   "ICE_CREAM_SHOP",
+   "ICE_CREAM_SHOP",
+   "SMOOTHIE_SHOP",
+   "PET_CAFE"
+  ],
+  "deficit": {
+   "CARROT": 102,
+   "TOMATO": 264,
+   "EGG": 30
+  },
+  "price": {
+   "CARROT": 43,
+   "TOMATO": 111,
+   "EGG": 52
+  }
+ },
+ {
+  "seed": 1015,
+  "shops": [
+   "PET_CAFE",
+   "BRUNCH_SPOT",
+   "BAKERY",
+   "FARMERS_MARKET",
+   "FARMERS_MARKET",
+   "BRUNCH_SPOT",
+   "FARMERS_MARKET",
+   "FARMERS_MARKET"
+  ],
+  "deficit": {
+   "CARROT": 642,
+   "TOMATO": 318,
+   "EGG": 372
+  },
+  "price": {
+   "CARROT": 136,
+   "TOMATO": 165,
+   "EGG": 75
+  }
+ },
+ {
+  "seed": 1016,
+  "shops": [
+   "BRUNCH_SPOT",
+   "YARN_STORE",
+   "BAKERY",
+   "PIZZA_SHOP",
+   "BAKERY",
+   "PET_CAFE",
+   "FARMERS_MARKET",
+   "PIZZA_SHOP"
+  ],
+  "deficit": {
+   "CARROT": 228,
+   "TOMATO": 228,
+   "EGG": 408
+  },
+  "price": {
+   "CARROT": 53,
+   "TOMATO": 91,
+   "EGG": 83
+  }
+ },
+ {
+  "seed": 1017,
+  "shops": [
+   "BRUNCH_SPOT",
+   "SMOOTHIE_SHOP",
+   "BRUNCH_SPOT",
+   "PET_CAFE",
+   "PET_CAFE",
+   "ICE_CREAM_SHOP",
+   "YARN_STORE",
+   "FARMERS_MARKET"
+  ],
+  "deficit": {
+   "CARROT": 462,
+   "TOMATO": 66,
+   "EGG": 318
+  },
+  "price": {
+   "CARROT": 71,
+   "TOMATO": 68,
+   "EGG": 69
+  }
+ },
+ {
+  "seed": 1018,
+  "shops": [
+   "PET_CAFE",
+   "PIZZA_SHOP",
+   "FARMERS_MARKET",
+   "PET_CAFE",
+   "ICE_CREAM_SHOP",
+   "FARMERS_MARKET",
+   "BAKERY",
+   "ICE_CREAM_SHOP"
+  ],
+  "deficit": {
+   "CARROT": 768,
+   "TOMATO": 372,
+   "EGG": 84
+  },
+  "price": {
+   "CARROT": 235,
+   "TOMATO": 247,
+   "EGG": 55
+  }
+ },
+ {
+  "seed": 1019,
+  "shops": [
+   "YARN_STORE",
+   "BRUNCH_SPOT",
+   "SMOOTHIE_SHOP",
+   "BAKERY",
+   "FARMERS_MARKET",
+   "PET_CAFE",
+   "ICE_CREAM_SHOP",
+   "SMOOTHIE_SHOP"
+  ],
+  "deficit": {
+   "CARROT": 264,
+   "TOMATO": 120,
+   "EGG": 282
+  },
+  "price": {
+   "CARROT": 56,
+   "TOMATO": 74,
+   "EGG": 67
+  }
+ },
+ {
+  "seed": 1020,
+  "shops": [
+   "ICE_CREAM_SHOP",
+   "YARN_STORE",
+   "BRUNCH_SPOT",
+   "FARMERS_MARKET",
+   "SMOOTHIE_SHOP",
+   "PIZZA_SHOP",
+   "FARMERS_MARKET",
+   "PIZZA_SHOP"
+  ],
+  "deficit": {
+   "CARROT": 192,
+   "TOMATO": 300,
+   "EGG": 156
+  },
+  "price": {
+   "CARROT": 50,
+   "TOMATO": 144,
+   "EGG": 59
+  }
+ },
+ {
+  "seed": 1021,
+  "shops": [
+   "ICE_CREAM_SHOP",
+   "BRUNCH_SPOT",
+   "SMOOTHIE_SHOP",
+   "ICE_CREAM_SHOP",
+   "BRUNCH_SPOT",
+   "PET_CAFE",
+   "BRUNCH_SPOT",
+   "YARN_STORE"
+  ],
+  "deficit": {
+   "CARROT": 174,
+   "TOMATO": 30,
+   "EGG": 318
+  },
+  "price": {
+   "CARROT": 49,
+   "TOMATO": 64,
+   "EGG": 69
+  }
+ },
+ {
+  "seed": 1022,
+  "shops": [
+   "YARN_STORE",
+   "SMOOTHIE_SHOP",
+   "ICE_CREAM_SHOP",
+   "BRUNCH_SPOT",
+   "BRUNCH_SPOT",
+   "PIZZA_SHOP",
+   "PIZZA_SHOP",
+   "BRUNCH_SPOT"
+  ],
+  "deficit": {
+   "CARROT": 30,
+   "TOMATO": 156,
+   "EGG": 264
+  },
+  "price": {
+   "CARROT": 37,
+   "TOMATO": 79,
+   "EGG": 66
+  }
+ },
+ {
+  "seed": 1023,
+  "shops": [
+   "BAKERY",
+   "PET_CAFE",
+   "FARMERS_MARKET",
+   "BAKERY",
+   "SMOOTHIE_SHOP",
+   "SMOOTHIE_SHOP",
+   "PIZZA_SHOP",
+   "YARN_STORE"
+  ],
+  "deficit": {
+   "CARROT": 444,
+   "TOMATO": 210,
+   "EGG": 300
+  },
+  "price": {
+   "CARROT": 70,
+   "TOMATO": 86,
+   "EGG": 68
+  }
+ },
+ {
+  "seed": 1024,
+  "shops": [
+   "PET_CAFE",
+   "PET_CAFE",
+   "ICE_CREAM_SHOP",
+   "PET_CAFE",
+   "PET_CAFE",
+   "ICE_CREAM_SHOP",
+   "BAKERY",
+   "SMOOTHIE_SHOP"
+  ],
+  "deficit": {
+   "CARROT": 1038,
+   "TOMATO": 30,
+   "EGG": 84
+  },
+  "price": {
+   "CARROT": 594,
+   "TOMATO": 64,
+   "EGG": 55
+  }
+ },
+ {
+  "seed": 1025,
+  "shops": [
+   "PIZZA_SHOP",
+   "PET_CAFE",
+   "PET_CAFE",
+   "BAKERY",
+   "FARMERS_MARKET",
+   "BAKERY",
+   "ICE_CREAM_SHOP",
+   "PIZZA_SHOP"
+  ],
+  "deficit": {
+   "CARROT": 660,
+   "TOMATO": 318,
+   "EGG": 210
+  },
+  "price": {
+   "CARROT": 147,
+   "TOMATO": 165,
+   "EGG": 63
+  }
+ },
+ {
+  "seed": 1026,
+  "shops": [
+   "SMOOTHIE_SHOP",
+   "FARMERS_MARKET",
+   "BAKERY",
+   "BAKERY",
+   "ICE_CREAM_SHOP",
+   "YARN_STORE",
+   "YARN_STORE",
+   "SMOOTHIE_SHOP"
+  ],
+  "deficit": {
+   "CARROT": 174,
+   "TOMATO": 174,
+   "EGG": 264
+  },
+  "price": {
+   "CARROT": 49,
+   "TOMATO": 81,
+   "EGG": 66
+  }
+ },
+ {
+  "seed": 1027,
+  "shops": [
+   "YARN_STORE",
+   "BAKERY",
+   "BRUNCH_SPOT",
+   "YARN_STORE",
+   "SMOOTHIE_SHOP",
+   "PET_CAFE",
+   "SMOOTHIE_SHOP",
+   "YARN_STORE"
+  ],
+  "deficit": {
+   "CARROT": 174,
+   "TOMATO": 30,
+   "EGG": 300
+  },
+  "price": {
+   "CARROT": 49,
+   "TOMATO": 64,
+   "EGG": 68
+  }
+ },
+ {
+  "seed": 1028,
+  "shops": [
+   "FARMERS_MARKET",
+   "PET_CAFE",
+   "FARMERS_MARKET",
+   "ICE_CREAM_SHOP",
+   "BRUNCH_SPOT",
+   "BAKERY",
+   "SMOOTHIE_SHOP",
+   "PIZZA_SHOP"
+  ],
+  "deficit": {
+   "CARROT": 606,
+   "TOMATO": 354,
+   "EGG": 192
+  },
+  "price": {
+   "CARROT": 116,
+   "TOMATO": 216,
+   "EGG": 62
+  }
+ },
+ {
+  "seed": 1029,
+  "shops": [
+   "YARN_STORE",
+   "BAKERY",
+   "PET_CAFE",
+   "PIZZA_SHOP",
+   "SMOOTHIE_SHOP",
+   "BRUNCH_SPOT",
+   "SMOOTHIE_SHOP",
+   "PET_CAFE"
+  ],
+  "deficit": {
+   "CARROT": 354,
+   "TOMATO": 138,
+   "EGG": 246
+  },
+  "price": {
+   "CARROT": 63,
+   "TOMATO": 77,
+   "EGG": 65
+  }
+ },
+ {
+  "seed": 1030,
+  "shops": [
+   "FARMERS_MARKET",
+   "PET_CAFE",
+   "BRUNCH_SPOT",
+   "PET_CAFE",
+   "BAKERY",
+   "PET_CAFE",
+   "FARMERS_MARKET",
+   "PIZZA_SHOP"
+  ],
+  "deficit": {
+   "CARROT": 894,
+   "TOMATO": 282,
+   "EGG": 246
+  },
+  "price": {
+   "CARROT": 377,
+   "TOMATO": 126,
+   "EGG": 65
+  }
+ },
+ {
+  "seed": 1031,
+  "shops": [
+   "PIZZA_SHOP",
+   "BAKERY",
+   "BAKERY",
+   "YARN_STORE",
+   "ICE_CREAM_SHOP",
+   "PIZZA_SHOP",
+   "BAKERY",
+   "PET_CAFE"
+  ],
+  "deficit": {
+   "CARROT": 102,
+   "TOMATO": 264,
+   "EGG": 354
+  },
+  "price": {
+   "CARROT": 43,
+   "TOMATO": 111,
+   "EGG": 72
+  }
+ },
+ {
+  "seed": 1032,
+  "shops": [
+   "BAKERY",
+   "FARMERS_MARKET",
+   "YARN_STORE",
+   "PIZZA_SHOP",
+   "SMOOTHIE_SHOP",
+   "FARMERS_MARKET",
+   "YARN_STORE",
+   "PET_CAFE"
+  ],
+  "deficit": {
+   "CARROT": 318,
+   "TOMATO": 354,
+   "EGG": 192
+  },
+  "price": {
+   "CARROT": 60,
+   "TOMATO": 216,
+   "EGG": 62
+  }
+ },
+ {
+  "seed": 1033,
+  "shops": [
+   "ICE_CREAM_SHOP",
+   "FARMERS_MARKET",
+   "SMOOTHIE_SHOP",
+   "FARMERS_MARKET",
+   "BRUNCH_SPOT",
+   "BRUNCH_SPOT",
+   "PET_CAFE",
+   "PET_CAFE"
+  ],
+  "deficit": {
+   "CARROT": 462,
+   "TOMATO": 282,
+   "EGG": 192
+  },
+  "price": {
+   "CARROT": 71,
+   "TOMATO": 126,
+   "EGG": 62
+  }
+ },
+ {
+  "seed": 1034,
+  "shops": [
+   "PET_CAFE",
+   "BAKERY",
+   "BRUNCH_SPOT",
+   "YARN_STORE",
+   "YARN_STORE",
+   "BRUNCH_SPOT",
+   "PET_CAFE",
+   "YARN_STORE"
+  ],
+  "deficit": {
+   "CARROT": 462,
+   "TOMATO": 30,
+   "EGG": 372
+  },
+  "price": {
+   "CARROT": 71,
+   "TOMATO": 64,
+   "EGG": 75
+  }
+ },
+ {
+  "seed": 1035,
+  "shops": [
+   "SMOOTHIE_SHOP",
+   "BRUNCH_SPOT",
+   "PET_CAFE",
+   "YARN_STORE",
+   "PIZZA_SHOP",
+   "BRUNCH_SPOT",
+   "SMOOTHIE_SHOP",
+   "YARN_STORE"
+  ],
+  "deficit": {
+   "CARROT": 282,
+   "TOMATO": 120,
+   "EGG": 246
+  },
+  "price": {
+   "CARROT": 57,
+   "TOMATO": 74,
+   "EGG": 65
+  }
+ },
+ {
+  "seed": 1036,
+  "shops": [
+   "BAKERY",
+   "BRUNCH_SPOT",
+   "BRUNCH_SPOT",
+   "BAKERY",
+   "ICE_CREAM_SHOP",
+   "SMOOTHIE_SHOP",
+   "ICE_CREAM_SHOP",
+   "ICE_CREAM_SHOP"
+  ],
+  "deficit": {
+   "CARROT": 30,
+   "TOMATO": 30,
+   "EGG": 570
+  },
+  "price": {
+   "CARROT": 37,
+   "TOMATO": 64,
+   "EGG": 167
+  }
+ },
+ {
+  "seed": 1037,
+  "shops": [
+   "ICE_CREAM_SHOP",
+   "SMOOTHIE_SHOP",
+   "BRUNCH_SPOT",
+   "PIZZA_SHOP",
+   "ICE_CREAM_SHOP",
+   "BRUNCH_SPOT",
+   "PIZZA_SHOP",
+   "BRUNCH_SPOT"
+  ],
+  "deficit": {
+   "CARROT": 30,
+   "TOMATO": 192,
+   "EGG": 264
+  },
+  "price": {
+   "CARROT": 37,
+   "TOMATO": 83,
+   "EGG": 66
+  }
+ },
+ {
+  "seed": 1038,
+  "shops": [
+   "FARMERS_MARKET",
+   "YARN_STORE",
+   "SMOOTHIE_SHOP",
+   "PET_CAFE",
+   "BRUNCH_SPOT",
+   "YARN_STORE",
+   "FARMERS_MARKET",
+   "FARMERS_MARKET"
+  ],
+  "deficit": {
+   "CARROT": 498,
+   "TOMATO": 282,
+   "EGG": 120
+  },
+  "price": {
+   "CARROT": 77,
+   "TOMATO": 126,
+   "EGG": 57
+  }
+ },
+ {
+  "seed": 1039,
+  "shops": [
+   "SMOOTHIE_SHOP",
+   "FARMERS_MARKET",
+   "BAKERY",
+   "BAKERY",
+   "BAKERY",
+   "FARMERS_MARKET",
+   "YARN_STORE",
+   "PIZZA_SHOP"
+  ],
+  "deficit": {
+   "CARROT": 246,
+   "TOMATO": 282,
+   "EGG": 354
+  },
+  "price": {
+   "CARROT": 54,
+   "TOMATO": 126,
+   "EGG": 72
+  }
+ }
+]

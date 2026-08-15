@@ -13,3 +13,7 @@ replay_*.html
 
 # large notebook checkpoints
 .ipynb_checkpoints/
+
+# eval opponents: derived copies of tagged versions / one-constant variants.
+# Regenerate with the recipe in EXPERIMENTS.md "Reproducing".
+variants/

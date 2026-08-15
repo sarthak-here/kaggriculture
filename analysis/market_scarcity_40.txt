@@ -1,0 +1,448 @@
+OpenSpiel exception: Unknown game 'universal_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+OpenSpiel exception: Unknown game 'repeated_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+====================================================================
+PRICE CURVES  (deficit below I0=10000 -> unit price)
+====================================================================
+CARROT      base=$35   knee T=450  hinge
+                0:$35        225:$52        450:$70        675:$158       900:$385      1125:$752      1350:$1260  
+TOMATO      base=$60   knee T=200  hinge
+                0:$60        100:$72        200:$84        300:$144       400:$300       500:$552       600:$900   
+EGG         base=$50   knee T=332  hinge
+                0:$50        166:$60        332:$70        498:$120       664:$250       830:$460       996:$750   
+
+seed 1000  CAR d=  786 $252     TOM d=  102 $72      EGG d=  300 $68    
+seed 1001  CAR d=  354 $63      TOM d=  462 $445     EGG d=   66 $54    
+seed 1002  CAR d=  282 $57      TOM d=  246 $100     EGG d=  174 $60    
+seed 1003  CAR d=  498 $77      TOM d=  354 $216     EGG d=  282 $67    
+seed 1004  CAR d=  444 $70      TOM d=  192 $83      EGG d=  120 $57    
+seed 1005  CAR d=  390 $65      TOM d=  282 $126     EGG d=  246 $65    
+seed 1006  CAR d=  660 $147     TOM d=  120 $74      EGG d=  102 $56    
+seed 1007  CAR d=  354 $63      TOM d=  138 $77      EGG d=  354 $72    
+seed 1008  CAR d=  318 $60      TOM d=  282 $126     EGG d=   30 $52    
+seed 1009  CAR d=  156 $47      TOM d=  156 $79      EGG d=  336 $70    
+seed 1010  CAR d=  210 $51      TOM d=   30 $64      EGG d=  192 $62    
+seed 1011  CAR d=  444 $70      TOM d=  228 $91      EGG d=  300 $68    
+seed 1012  CAR d=  588 $107     TOM d=  264 $111     EGG d=  174 $60    
+seed 1013  CAR d=  318 $60      TOM d=   30 $64      EGG d=  282 $67    
+seed 1014  CAR d=  102 $43      TOM d=  264 $111     EGG d=   30 $52    
+seed 1015  CAR d=  642 $136     TOM d=  318 $165     EGG d=  372 $75    
+seed 1016  CAR d=  228 $53      TOM d=  228 $91      EGG d=  408 $83    
+seed 1017  CAR d=  462 $71      TOM d=   66 $68      EGG d=  318 $69    
+seed 1018  CAR d=  768 $235     TOM d=  372 $247     EGG d=   84 $55    
+seed 1019  CAR d=  264 $56      TOM d=  120 $74      EGG d=  282 $67    
+seed 1020  CAR d=  192 $50      TOM d=  300 $144     EGG d=  156 $59    
+seed 1021  CAR d=  174 $49      TOM d=   30 $64      EGG d=  318 $69    
+seed 1022  CAR d=   30 $37      TOM d=  156 $79      EGG d=  264 $66    
+seed 1023  CAR d=  444 $70      TOM d=  210 $86      EGG d=  300 $68    
+seed 1024  CAR d= 1038 $594     TOM d=   30 $64      EGG d=   84 $55    
+seed 1025  CAR d=  660 $147     TOM d=  318 $165     EGG d=  210 $63    
+seed 1026  CAR d=  174 $49      TOM d=  174 $81      EGG d=  264 $66    
+seed 1027  CAR d=  174 $49      TOM d=   30 $64      EGG d=  300 $68    
+seed 1028  CAR d=  606 $116     TOM d=  354 $216     EGG d=  192 $62    
+seed 1029  CAR d=  354 $63      TOM d=  138 $77      EGG d=  246 $65    
+seed 1030  CAR d=  894 $377     TOM d=  282 $126     EGG d=  246 $65    
+seed 1031  CAR d=  102 $43      TOM d=  264 $111     EGG d=  354 $72    
+seed 1032  CAR d=  318 $60      TOM d=  354 $216     EGG d=  192 $62    
+seed 1033  CAR d=  462 $71      TOM d=  282 $126     EGG d=  192 $62    
+seed 1034  CAR d=  462 $71      TOM d=   30 $64      EGG d=  372 $75    
+seed 1035  CAR d=  282 $57      TOM d=  120 $74      EGG d=  246 $65    
+seed 1036  CAR d=   30 $37      TOM d=   30 $64      EGG d=  570 $167   
+seed 1037  CAR d=   30 $37      TOM d=  192 $83      EGG d=  264 $66    
+seed 1038  CAR d=  498 $77      TOM d=  282 $126     EGG d=  120 $57    
+seed 1039  CAR d=  246 $54      TOM d=  282 $126     EGG d=  354 $72    
+
+====================================================================
+SUMMARY over 40 games (agent: main.py vs itself)
+====================================================================
+
+CARROT  (base $35, knee T=450)
+  deficit   min     30  median    354  max   1038
+  price     min $37     median $63     max $594   
+  past knee (u>1): 14/40 = 35%   |  u>2: 1/40 = 2%
+
+TOMATO  (base $60, knee T=200)
+  deficit   min     30  median    228  max    462
+  price     min $64     median $91     max $445   
+  past knee (u>1): 21/40 = 52%   |  u>2: 1/40 = 2%
+
+EGG  (base $50, knee T=332)
+  deficit   min     30  median    264  max    570
+  price     min $52     median $66     max $167   
+  past knee (u>1): 8/40 = 20%   |  u>2: 0/40 = 0%
+
+====================================================================
+SHOP COMPOSITION (drawn with replacement)
+====================================================================
+  PET_CAFE           50 instances  (1.25 per game)  -> ['CARROT']
+  BRUNCH_SPOT        43 instances  (1.07 per game)  -> ['EGG', 'WHEAT', 'STRAWBERRY']
+  YARN_STORE         42 instances  (1.05 per game)  -> ['WOOL']
+  FARMERS_MARKET     41 instances  (1.02 per game)  -> ['WHEAT', 'CARROT', 'TOMATO', 'STRAWBERRY']
+  BAKERY             38 instances  (0.95 per game)  -> ['EGG', 'WHEAT']
+  SMOOTHIE_SHOP      38 instances  (0.95 per game)  -> ['STRAWBERRY', 'MILK']
+  ICE_CREAM_SHOP     35 instances  (0.88 per game)  -> ['STRAWBERRY', 'MILK', 'WHEAT']
+  PIZZA_SHOP         33 instances  (0.82 per game)  -> ['MILK', 'TOMATO', 'WHEAT']
+
+====================================================================
+SPIKE vs SHOP DRAW
+====================================================================
+
+CARROT: demanded by ['PET_CAFE', 'FARMERS_MARKET']
+  demand weight  0:   3 games, median price $37
+  demand weight  1:   2 games, median price $49
+  demand weight  2:  10 games, median price $51
+  demand weight  3:   6 games, median price $63
+  demand weight  4:   7 games, median price $70
+  demand weight  5:   5 games, median price $77
+  demand weight  6:   3 games, median price $136
+  demand weight  7:   2 games, median price $252
+  demand weight  8:   2 games, median price $594
+
+TOMATO: demanded by ['PIZZA_SHOP', 'FARMERS_MARKET']
+  demand weight  0:   7 games, median price $64
+  demand weight  1:   9 games, median price $74
+  demand weight  2:  10 games, median price $100
+  demand weight  3:  11 games, median price $126
+  demand weight  4:   3 games, median price $165
+
+EGG: demanded by ['BAKERY', 'BRUNCH_SPOT']
+  demand weight  0:   2 games, median price $52
+  demand weight  1:  10 games, median price $57
+  demand weight  2:  15 games, median price $65
+  demand weight  3:  11 games, median price $69
+  demand weight  4:   2 games, median price $167
+
+wrote C:\Users\sarthak\Desktop\projects\kaggriculture\analysis\market_scarcity_results.json

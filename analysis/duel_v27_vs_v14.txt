@@ -1,0 +1,377 @@
+OpenSpiel exception: Unknown game 'universal_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+OpenSpiel exception: Unknown game 'repeated_poker'. Available games are:
+2048
+add_noise
+amazons
+amazons_proxy
+ant_foraging_arena
+antichess
+backgammon
+backgammon_proxy
+banqi
+bargaining
+bargaining_proxy
+battleship
+blackjack
+blotto
+breakthrough
+breakthrough_proxy
+bridge
+bridge_arena
+bridge_uncontested_bidding
+cached_tree
+capture_the_flag
+capture_the_flag_proxy
+catch
+chat_game
+checkers
+checkers_proxy
+chess
+chinese_checkers
+cliff_walking
+clobber
+clobber_proxy
+coin_game
+coin_game_arena
+coin_game_proxy
+colored_trails
+connect_four
+connect_four_proxy
+coop_box_pushing
+coop_to_1p
+coordinated_mp
+crazy_eights
+crazyhouse
+cribbage
+crossword
+cursor_go
+dark_chess
+dark_hex
+dark_hex_ir
+dark_hex_proxy
+deep_sea
+dots_and_boxes
+dots_and_boxes_proxy
+dou_dizhu
+efg_game
+einstein_wurfelt_nicht
+euchre
+first_sealed_auction
+gin_rummy
+gin_rummy_proxy
+go
+go_fish
+go_fish_proxy
+go_proxy
+gomoku
+goofspiel
+havannah
+havannah_proxy
+hearts
+hex
+hive
+hive_proxy
+kriegspiel
+kuhn_poker
+laser_tag
+latent_ttt
+leduc_poker
+lewis_signaling
+liars_dice
+liars_dice_ir
+lines_of_action
+lines_of_action_proxy
+maedn
+mancala
+mancala_proxy
+markov_soccer
+markov_soccer_proxy
+matching_pennies_3p
+matrix_bos
+matrix_brps
+matrix_cd
+matrix_coordination
+matrix_mp
+matrix_pd
+matrix_rps
+matrix_rpsw
+matrix_sh
+matrix_shapleys_game
+mfg_crowd_modelling
+mfg_crowd_modelling_2d
+mfg_dynamic_routing
+mfg_garnet
+misere
+mnk
+morpion_solitaire
+negotiation
+negotiation_proxy
+nfg_game
+nim
+nine_mens_morris
+nine_mens_morris_proxy
+normal_form_extensive_game
+oh_hell
+oshi_zumo
+oshi_zumo_proxy
+othello
+othello_proxy
+oware
+pathfinding
+pentago
+phantom_go
+phantom_ttt
+phantom_ttt_ir
+pig
+python_ant_foraging
+python_ant_foraging_proxy
+python_block_dominoes
+python_dynamic_routing
+python_hangman
+python_iterated_prisoners_dilemma
+python_kuhn_poker
+python_liars_poker
+python_pokerkit_wrapper
+python_pokerkit_wrapper_acpc_style
+python_repeated_pokerkit
+python_team_dominoes
+python_tic_tac_toe
+quoridor
+rbc
+repeated_game
+repeated_leduc_poker
+restricted_nash_response
+sheriff
+shogi
+shogi_proxy
+skat
+snake
+snake_proxy
+social_deduction
+solitaire
+spades
+start_at
+stones_and_gems
+tarok
+tic_tac_toe
+tiny_bridge_2p
+tiny_bridge_4p
+tiny_hanabi
+trade_comm
+turn_based_simultaneous_game
+twixt
+ultimate_tic_tac_toe
+ultimate_tic_tac_toe_proxy
+xiangqi
+y
+y_proxy
+yacht
+zerosum
+A = main.py   game_data md5 4052625cb16b53eed649d813aff8204d
+B = variants/v14_neutral/main.py   game_data md5 4052625cb16b53eed649d813aff8204d
+game_data.py identical - safe to mix in one process
+
+  seed 2000 order 0: A   114,405  B    63,314  A   A planted   0 sold   0   carrot $43   
+  seed 2000 order 1: A   116,808  B    82,513  A   A planted   0 sold   0   carrot $46   
+  seed 2001 order 0: A   135,508  B    86,586  A   A planted   0 sold   0   carrot $37   
+  seed 2001 order 1: A   135,643  B    89,016  A   A planted   0 sold   0   carrot $54   
+  seed 2002 order 0: A    77,467  B    40,194  A   A planted   0 sold   0   carrot $68   
+  seed 2002 order 1: A    72,588  B    35,426  A   A planted   0 sold   0   carrot $68   
+  seed 2003 order 0: A   117,371  B    72,832  A   A planted   0 sold   0   carrot $68   
+  seed 2003 order 1: A   117,258  B    72,824  A   A planted   4 sold   8   carrot $70   
+  seed 2004 order 0: A    76,488  B    19,811  A   A planted  45 sold 114   carrot $84   
+  seed 2004 order 1: A    72,619  B    18,294  A   A planted  44 sold 105   carrot $108  
+  seed 2005 order 0: A   111,617  B    70,562  A   A planted   0 sold   0   carrot $50   
+  seed 2005 order 1: A   123,708  B    67,303  A   A planted   0 sold   0   carrot $50   
+  seed 2006 order 0: A    82,340  B    23,705  A   A planted   0 sold   0   carrot $60   
+  seed 2006 order 1: A    82,340  B    23,705  A   A planted   0 sold   0   carrot $60   
+  seed 2007 order 0: A    95,444  B    54,836  A   A planted   0 sold   0   carrot $42   
+  seed 2007 order 1: A    95,434  B    54,846  A   A planted   0 sold   0   carrot $42   
+  seed 2008 order 0: A   143,426  B   100,640  A   A planted   0 sold   0   carrot $40   
+  seed 2008 order 1: A   143,426  B   100,640  A   A planted   0 sold   0   carrot $40   
+  seed 2009 order 0: A    92,043  B    32,442  A   A planted  42 sold 120   carrot $129  
+  seed 2009 order 1: A    92,043  B    32,442  A   A planted  42 sold 120   carrot $129  
+  seed 2010 order 0: A    66,827  B    12,104  A   A planted   0 sold   0   carrot $65   
+  seed 2010 order 1: A    69,076  B    16,274  A   A planted   0 sold   0   carrot $57   
+  seed 2011 order 0: A   130,367  B    82,534  A   A planted   0 sold   0   carrot $47   
+  seed 2011 order 1: A   103,486  B    48,472  A   A planted   0 sold   0   carrot $54   
+
+====================================================================
+RESULT over 24 paired-seat games (12 seeds x 2 orders)
+====================================================================
+  A wins 24   B wins 0   ties 0
+  A WIN RATE (decisive games): 100.0%     <-- promotion criterion
+  mean margin (diagnostic only): +48,601
+
+  MECHANISM  A: carrot planted  177  sold  467
+             B: carrot planted    0  sold    0
+  games ending past the carrot knee: 5/24
+
+wrote C:\Users\sarthak\Desktop\projects\kaggriculture\analysis\duel_results.json

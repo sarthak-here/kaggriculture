@@ -52,25 +52,68 @@ ANIMALS = {
 
 LAND_COSTS = [1000, 2000, 4000]  # cost of the 1st/2nd/3rd extra quadrant bought
 
+# Which shops buy what. Since 1.32.6 (PR #1394) shops are drawn WITH
+# replacement, so a town can hold several copies of one shop and the demand for
+# a single product varies enormously game to game. A shop selling exactly one
+# product consumes it at 2x; every other shop consumes 1 of each of its
+# products per tick. Mirrors SHOPS in the engine.
+SHOPS = {
+    "BAKERY":         ["EGG", "WHEAT"],
+    "PIZZA_SHOP":     ["MILK", "TOMATO", "WHEAT"],
+    "BRUNCH_SPOT":    ["EGG", "WHEAT", "STRAWBERRY"],
+    "YARN_STORE":     ["WOOL"],
+    "ICE_CREAM_SHOP": ["STRAWBERRY", "MILK", "WHEAT"],
+    "PET_CAFE":       ["CARROT"],
+    "SMOOTHIE_SHOP":  ["STRAWBERRY", "MILK"],
+    "FARMERS_MARKET": ["WHEAT", "CARROT", "TOMATO", "STRAWBERRY"],
+}
+
+# Engine defaults: shops consume every 4th turn (6 ticks per 24-turn day) and
+# the town centre takes 1 of every non-fertilizer product once a day.
+SHOP_TICKS_PER_DAY = 6
+TOWN_CENTER_PER_DAY = 1
+
+
+def daily_demand(item, unlocked_shops):
+    """Units of `item` the town removes from the market per day.
+
+    Both the shop list and the schedule are observable, so this is exact for the
+    shops already unlocked rather than an estimate. It ignores shops that have
+    yet to unlock, which makes it a deliberate under-estimate late in the game
+    (by then the town is usually at its 8-shop cap anyway).
+    """
+    per_tick = sum(2 if len(SHOPS[s]) == 1 else 1
+                   for s in unlocked_shops
+                   if s in SHOPS and item in SHOPS[s])
+    centre = TOWN_CENTER_PER_DAY if item != "FERTILIZER" else 0
+    return per_tick * SHOP_TICKS_PER_DAY + centre
+
 QUADRANT_ORIGIN = {  # (x, y) of a quadrant's top-left corner, boardSize=10 assumed
     "NW": (0, 0), "NE": (5, 0), "SW": (0, 5), "SE": (5, 5),
 }
 
 # Price function params (see competition rules "Price Function" table).
+# CARROT/TOMATO/EGG switched their scarcity branch to "hinge" in
+# kaggle-environments 1.32.7 (PR #1399): calm up to the knee at T, then a
+# quadratic term takes over, so a genuinely scarce product runs away in price.
+# HINGE_GAIN and the shape below are copied from the engine.
 MARKET_PARAMS = {
     "WHEAT":      {"base": 25,  "I0": 10000, "T": 400, "below": "sqrt",   "below_target": 0.80, "above": "log",  "above_target": 0.20},
-    "CARROT":     {"base": 35,  "I0": 10000, "T": 450, "below": "log",    "below_target": 0.20, "above": "sqrt", "above_target": 0.70},
-    "TOMATO":     {"base": 60,  "I0": 10000, "T": 200, "below": "linear", "below_target": 0.40, "above": "sqrt", "above_target": 0.60},
+    "CARROT":     {"base": 35,  "I0": 10000, "T": 450, "below": "hinge",  "below_target": 1.00, "above": "sqrt", "above_target": 0.70},
+    "TOMATO":     {"base": 60,  "I0": 10000, "T": 200, "below": "hinge",  "below_target": 0.40, "above": "sqrt", "above_target": 0.60},
     "STRAWBERRY": {"base": 120, "I0": 10000, "T": 100, "below": "sqrt",   "below_target": 0.70, "above": "linear", "above_target": 1.60},
     "MELON":      {"base": 250, "I0": 10000, "T": 300, "below": "log",    "below_target": 0.20, "above": "sq",   "above_target": 3.60},
-    "EGG":        {"base": 50,  "I0": 10000, "T": 332, "below": "linear", "below_target": 0.40, "above": "log",  "above_target": 0.20},
+    "EGG":        {"base": 50,  "I0": 10000, "T": 332, "below": "hinge",  "below_target": 0.40, "above": "log",  "above_target": 0.20},
     "MILK":       {"base": 160, "I0": 10000, "T": 122, "below": "sqrt",   "below_target": 0.60, "above": "linear", "above_target": 1.60},
     "WOOL":       {"base": 200, "I0": 10000, "T": 105, "below": "log",    "below_target": 0.20, "above": "sq",   "above_target": 3.20},
     "FERTILIZER": {"base": 100, "I0": 10000, "T": 200, "below": "linear", "below_target": 0.40, "above": "linear", "above_target": 0.40},
 }
 
 
-def _f(name, x):
+HINGE_GAIN = 8.0
+
+
+def _f(name, x, t=None):
     if name == "linear":
         return x
     if name == "sq":
@@ -81,6 +124,12 @@ def _f(name, x):
         return math.log(1 + x)
     if name == "log10":
         return math.log10(1 + x)
+    if name == "hinge":
+        # Degenerates to linear if t is missing, matching the engine.
+        if not t or t <= 0:
+            return x
+        u = x / t
+        return u + HINGE_GAIN * max(0.0, u - 1.0) ** 2
     raise ValueError(f"unknown shape fn {name}")
 
 
@@ -96,9 +145,9 @@ def predicted_price(item, inventory):
     sign = 1 if diff < 0 else -1
     shape = p["below"] if diff < 0 else p["above"]
     target = p["below_target"] if diff < 0 else p["above_target"]
-    f_t = _f(shape, t)
+    f_t = _f(shape, t, t)
     amp = target * base / f_t if f_t else 0
-    price = base + sign * amp * _f(shape, abs(diff))
+    price = base + sign * amp * _f(shape, abs(diff), t)
     return max(1, round(price))
 
 
