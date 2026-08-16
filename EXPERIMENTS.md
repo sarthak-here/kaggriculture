@@ -2772,6 +2772,47 @@ demand pool, the margin is in per-step execution quality, which a recorded exper
 and a written policy does not. That path is derivative and the source notebooks ask forks
 to retain attribution, so it is the user's call, not ours.
 
+### #57. Replay backbone (v50) — WIP, 18,587 of the ~110,000 it needs
+
+Per #56, the only 3-quadrant agents with public evidence of working are recorded routes,
+not policies. Built one: `replay_agent/` embeds the player-0 action sequence of public
+episode 90598134 (reward 110,596, three quadrants) from Kaggle's published episodes
+dataset, with our own market layer on top (impact-ranked sells + terminal sweep, #51).
+**Attribution is in the module docstring — the route is another competitor's play.**
+
+Progress on seed 2001 against v45:
+
+| build | reward | standing tiles at end |
+|---|---|---|
+| raw frozen trace | 2,857 | 2 |
+| + cash floor $260 | 2,029 | — |
+| + cash floor $100 | 5,027 | 8 |
+| **+ farmer position resync** | **18,587** | 18 |
+| + hand position resync | 18,587 (no change) | 18 |
+| v45 for reference | ~111,000 | — |
+
+**What was learned, and it is the useful part:**
+
+- **A frozen trace really does collapse** (2,857), confirming the public claim that freezing
+  an adaptive trace scores ~0. Days 0-2 track the source EXACTLY (31/43/43 tiles, money
+  1,533/1,506/1,499), then weeds -- which spawn on different tiles every seed -- block a
+  scheduled PLANT and knock the units off the route. Every later position-relative action
+  then lands on the wrong tile.
+- **Position resync is the single biggest guard: 5,027 -> 18,587 (3.7x).** If a unit is not
+  standing where the recording stood, walking back beats firing a misaligned action.
+- **Cash floor must be SMALL.** The route deliberately runs to ~$75 to buy seed; a $260
+  floor starved its own seed buying and halved standing tiles. But zero is fatal too --
+  hands vanish nightly, so $0 at end of day means no crew tomorrow, and the raw trace lost
+  its whole crew on days 6 and 9 that way. $100 is about right (a 9-hand crew costs ~$88).
+- **Hand position resync changed nothing**, so hand positions were already aligned. The
+  remaining failure is action-level, not positional: BUY_SEED/HARVEST steps that the live
+  state cannot satisfy.
+
+**Still missing** is what the public 3,094 agent spends most of its code on: weed repair
+with shift/repay bookkeeping (dig the blocking weed, then catch the route back up), and
+projected-shed tracking so recorded sells match real stock. That is the remaining work if
+this path is continued.
+
 ## Reproducing
 
 ```bash
