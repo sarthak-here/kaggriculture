@@ -2677,6 +2677,30 @@ sell-on-the-right-turn edge.
 **Also confirmed:** fertiliser is worth selling despite ZERO town demand — 237 units for
 ~$18,679 ($79/unit average) as the price walks $100 -> $43. Do not cut it.
 
+### #54. CARROT_MIN_MARGINAL_PRICE sweep — the $70 floor is right, lower is worse
+
+#53's revenue audit showed carrot demand at 49/day (~1,078 units a season) against our 77
+units sold, which looked like the most under-exploited number in the agent. The obvious
+read was that the $70 floor (2x base) was far too conservative, since carrot beats a wheat
+tile at roughly $40. **That read was wrong.**
+
+Swept against master (v45), 12 seeds x 2 seat orders each:
+
+| floor | carrot planted | carrot sold | win rate | margin |
+|---|---|---|---|---|
+| **$40** | 632 | **1,608** | **29.2%** | −859 |
+| **$50** | 404 | 952 | **33.3%** | −892 |
+| **$70 (shipped)** | ~180 | ~400 | baseline | — |
+
+Monotonic: the more carrot we plant, the worse we do. Selling 1,608 carrots instead of 400
+LOSES. Carrot at $46-74/unit is worth less per tile-DAY than the strawberry and wheat it
+displaces (strawberry ~$412/tile/day, carrot ~$99), so chasing the raw demand number spends
+good tile-days on a cheap crop.
+
+**Carrot is a late-game filler for tiles that have nothing better to do, not a main crop.**
+The high floor is what keeps it in that role. The 49/day demand is real but it is not
+OURS to take profitably — supplying it costs more than it pays.
+
 ## Reproducing
 
 ```bash
