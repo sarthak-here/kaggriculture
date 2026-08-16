@@ -2813,6 +2813,36 @@ with shift/repay bookkeeping (dig the blocking weed, then catch the route back u
 projected-shed tracking so recorded sells match real stock. That is the remaining work if
 this path is continued.
 
+### #58. Both replay paths measured — the public agent wins, ours does not work
+
+Built both routes to a 3-quadrant agent and measured them against v45.
+
+| path | what it is | result vs v45 |
+|---|---|---|
+| **A: our own replay backbone** (`replay_agent/`) | episode 90598134's route + our guards | **18,587 vs ~111,000** (seed 2001) |
+| **B: public 3,094 agent** (`variants/pub3094`) | salemali7's published notebook agent | **70.8% (17-7), +18,904** |
+
+**Path B is the only thing that delivers what was asked**: three quadrants AND a decisive
+win over our own line. It is a decoded copy of `salemali7/3094-score-kaggriculture`, itself
+described as a behavioural reconstruction from twelve public traces.
+
+**Path A stalled, and the failure is instructive.** Adding weed repair with a shift/repay
+counter made it strictly WORSE — reward 0.0, two standing tiles, status DONE with no crash.
+Holding the route index back for ALL units whenever any ONE unit digs deadlocks against the
+position resync: the units are pinned to the held-back recorded positions and never advance,
+so the farm buys seed forever and harvests nothing. **A correct implementation needs
+PER-UNIT shift tracking**, not one global counter -- which is presumably why the public
+agent carries separate `_SHIFT_STATE` and `_WEED_STATE` dicts per seat with due/repay
+bookkeeping. Reverted to farmer-resync-only (18,587).
+
+Honest position: reproducing a working replay agent is a real engineering project, not a
+patch. The measured gap is 18,587 against ~111,000.
+
+**DECISION POINT, and it is the user's, not ours.** Submitting path B means entering
+substantially another competitor's agent under our own name. The source notebook is public
+and published for forking with attribution retained, so it is permitted; whether to do it
+is a call about the user's own entry. Nothing from path B has been submitted.
+
 ## Reproducing
 
 ```bash
