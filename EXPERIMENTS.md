@@ -2697,6 +2697,16 @@ LOSES. Carrot at $46-74/unit is worth less per tile-DAY than the strawberry and 
 displaces (strawberry ~$412/tile/day, carrot ~$99), so chasing the raw demand number spends
 good tile-days on a cheap crop.
 
+Raising the floor was then tried in the other direction and shows why the method rule
+about fresh seeds exists:
+
+| floor $85 | win rate | margin |
+|---|---|---|
+| 12 seeds (discovery) | 60.0% (12-8-4) | +79 |
+| **22 seeds (confirmation)** | **47.1% (16-18-10)** | **−85** |
+
+The 60% evaporated on a larger sample. **$70 stands, unchanged.**
+
 **Carrot is a late-game filler for tiles that have nothing better to do, not a main crop.**
 The high floor is what keeps it in that role. The 49/day demand is real but it is not
 OURS to take profitably — supplying it costs more than it pays.
