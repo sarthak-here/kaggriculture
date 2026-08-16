@@ -1,0 +1,30 @@
+{
+  "id": "cjlcjlcjl/kaggriculture-what-the-top-farms-do-a-live-meta",
+  "id_no": 129705129,
+  "title": "Kaggriculture: What the Top Farms Do \u2014 a Live Meta",
+  "code_file": "kaggriculture-what-the-top-farms-do-a-live-meta.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [],
+  "dataset_sources": [
+    "kaggle/kaggriculture-episodes-2026-08-04",
+    "kaggle/kaggriculture-episodes-2026-08-05",
+    "kaggle/kaggriculture-episodes-2026-08-06",
+    "kaggle/kaggriculture-episodes-2026-08-07",
+    "kaggle/kaggriculture-episodes-2026-08-08",
+    "kaggle/kaggriculture-episodes-2026-08-09",
+    "kaggle/kaggriculture-episodes-2026-08-10",
+    "kaggle/kaggriculture-episodes-2026-08-11"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [
+    "kaggriculture"
+  ],
+  "model_sources": [],
+  "docker_image": "gcr.io/kaggle-images/python@sha256:dafd4ce5668bbf1ad422e4c109e0f18c9623c3a7c7f48b0235f13142755c40b9",
+  "machine_shape": "None"
+}

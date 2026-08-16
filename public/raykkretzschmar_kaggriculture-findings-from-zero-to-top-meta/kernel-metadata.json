@@ -1,0 +1,27 @@
+{
+  "id": "raykkretzschmar/kaggriculture-findings-from-zero-to-top-meta",
+  "id_no": 129396610,
+  "title": "Kaggriculture: Findings from Zero to Top Meta",
+  "code_file": "kaggriculture-findings-from-zero-to-top-meta.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "keywords": [
+    "beginner",
+    "python",
+    "education"
+  ],
+  "dataset_sources": [],
+  "kernel_sources": [
+    "kaitofukami/177-180-fresh-top-30-v21-1-conditional-memory"
+  ],
+  "competition_sources": [
+    "kaggriculture"
+  ],
+  "model_sources": [],
+  "docker_image": "gcr.io/kaggle-images/python@sha256:dafd4ce5668bbf1ad422e4c109e0f18c9623c3a7c7f48b0235f13142755c40b9",
+  "machine_shape": "None"
+}

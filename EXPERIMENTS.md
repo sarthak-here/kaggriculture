@@ -2552,6 +2552,74 @@ needs better per-tile execution, not better book-keeping.
 **SHIPPED as v33 = v27 + impact-ranked sells + terminal sweep, Q3 reverted.
 Direct against v27: 96.4% (27-1), +2,682 over 14 seeds x 2 orders.**
 
+### #52. THE MARKET CEILING — why land cannot pay, with the number
+
+Ten controlled land configurations have now lost (#48 x1, #50 x2, #51 x1, #52 x6 below).
+This entry explains the mechanism, and it is not about land at all.
+
+**Measured total town demand, full 8-shop town, per season, at BASE prices:**
+
+| product | demand/day | season units | value at base |
+|---|---|---|---|
+| STRAWBERRY | 25 | 550 | $66,000 |
+| CARROT | 49 | 1,078 | $37,730 |
+| MILK | 7 | 154 | $24,640 |
+| WHEAT | 31 | 682 | $17,050 |
+| TOMATO | 13 | 286 | $17,160 |
+| EGG | 13 | 286 | $14,300 |
+| MELON | 1 | 22 | $5,500 |
+| WOOL | 1 | 22 | $4,400 |
+| **TOTAL** | | | **$186,780, split between BOTH players** |
+
+That is ~$93k each. **v33 already scores 80,008.** We are at the ceiling.
+
+**Kaggriculture is a zero-sum race for a fixed demand pool, not a production game.**
+The town buys a bounded number of units per day; anything produced beyond that drives the
+price to the floor. Land, labour and crop tiles all scale SUPPLY, and supply is not the
+binding constraint. This single fact explains every negative result in this ledger:
+
+- adding a 3rd quadrant loses (supply up, demand flat)
+- adding hands loses (wages up, sellable output flat)
+- removing fertiliser logistics freed ~15% of labour and PLANT went 130 -> 129, because
+  planting was never labour-bound
+- filling new land with TOMATO also fails: total tomato demand is only ~13/day, so the
+  whole season's tomato market absorbs ~286 units — about 7 tiles' worth, not a quadrant
+
+**Supporting measurement — labour is spent on travel, and extra land does not add work:**
+
+| | v33 (2 quadrants) | v33+Q3 (3 quadrants) | pub3094 (top-30, 3 quads) |
+|---|---|---|---|
+| total unit-actions | 6,177 | 6,302 (+2%) | 6,894 |
+| MOVE | **49%** | **49%** | **50%** |
+| PLANT | 130 | 138 | **187** |
+| HARVEST | 291 | 303 | **394** |
+
+Everyone spends half their labour walking. The benchmark does slightly LESS total work than
+us and scores 60,004 to our 37,395 — it is not out-producing us, it is out-SELLING us.
+
+**Configurations tested and rejected this round** (all vs v33, paired seats):
+
+| variant | change | result |
+|---|---|---|
+| v34 | Q3 + hands 9->14 | 0/24, −23,243 |
+| v35 | Q3 + hands 14 + 5-pen cap | 0/24, −26,138 |
+| v36 | 5-pen-per-quadrant cap alone | 8.3%, −9,211 |
+| v37 | meta herd 10C/4S from day 0 | 37.5%, −7,622 |
+| v38 | stop hauling fertiliser to crops | loses |
+| v39 | Q3 + tomato arm on the new land | loses |
+
+The pen cap is worth a note: capping pens at 5/quadrant frees crop tiles but cuts the herd
+from 14 to ~9, and milk+wool are $29k of the $186k pool. The freed tiles grow crops we
+cannot sell. Net negative.
+
+**CONSEQUENCE — the only way up is SHARE, not output.** Beating the field means taking a
+larger slice of a fixed pool: selling before the opponent does, at better moments, into
+products they are not supplying. That is why v30's impact-ranked sell ordering won (+2,461)
+while every supply-side change lost, and it is why the public 3,094 agent ships a
+`_PREEMPT_ENABLED` clone-preemption path (disabled in the published notebook) that front-runs
+the opponent's sells. **Next work belongs there, and in the under-supplied hinge products,
+not in more land.**
+
 ## Reproducing
 
 ```bash
