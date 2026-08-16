@@ -113,6 +113,34 @@ def herd_target(day):
     return cows, sheep
 
 
+def adaptive_herd(day, unlocked_shops):
+    """Split the herd between COW and SHEEP by what the town actually buys.
+
+    Since 1.32.6 (PR #1394) shops are drawn WITH replacement, so a town can open
+    with no YARN_STORE at all -- and then wool demand is 1/day from the town centre
+    alone and wool trades at the $1 floor (measured $2.00 on seed 2001 while
+    strawberry sat at $212). v26's sheep-first opening was tuned before that patch,
+    when a yarn store was far likelier to exist.
+
+    Total herd size is unchanged; only the split adapts, and only from day 7, by
+    which point ~3 shops have unlocked. Days 0-6 keep the proven opening because
+    the town has revealed nothing yet.
+    """
+    cows, sheep = herd_target(day)
+    if day < 7 or not unlocked_shops:
+        return cows, sheep
+    wool = daily_demand("WOOL", unlocked_shops)
+    milk = daily_demand("MILK", unlocked_shops)
+    total = cows + sheep
+    if wool + milk <= 0:
+        return cows, sheep
+    # Never let one species go to zero outright -- a single animal of each keeps
+    # the fertiliser stream and hedges a late shop unlock.
+    want_sheep = int(round(total * wool / float(wool + milk)))
+    want_sheep = max(1, min(total - 1, want_sheep))
+    return total - want_sheep, want_sheep
+
+
 def strawberry_target(quadrants, day):
     if day > STRAWBERRY_LAST_PLANT_DAY:
         return 0
@@ -761,7 +789,7 @@ def agent(obs):
     # still pays) ----
     orders_animal = []
     if not liquidating and days_left > DAYS_LEFT_TO_STOP_ANIMALS and hires_today >= min_hands_for_upkeep:
-        cow_t, sheep_t = herd_target(day)
+        cow_t, sheep_t = adaptive_herd(day, (obs.get("town") or {}).get("unlocked_shops", []))
         for species, target in (("COW", cow_t), ("SHEEP", sheep_t)):
             deficit = target - (placed.get(species, 0) + unhoused.get(species, 0))
             if deficit <= 0:
