@@ -2843,6 +2843,34 @@ substantially another competitor's agent under our own name. The source notebook
 and published for forking with attribution retained, so it is permitted; whether to do it
 is a call about the user's own entry. Nothing from path B has been submitted.
 
+### #59. Path A drift guards — three designs, all worse than doing nothing
+
+Continued the own-replay agent. Three ways to handle a unit knocked off the recorded
+route, all measured on seed 2001 against v45 (~111,000-152,000 depending on coupling):
+
+| guard design | reward |
+|---|---|
+| **step-locked cursor + position resync (kept)** | **18,587** |
+| global shift/repay counter | 0 |
+| per-unit cursors with daily re-sync | 920 |
+
+**The rule: never hold a route cursor back.** The recorded positions change every single
+step, so once a unit has drifted at all, "am I where the recording stood?" is true almost
+every turn. Any design that withholds cursor advancement until the unit is back in position
+makes it walk forever and never execute -- globally (reward 0) or per-unit (920). What works
+is the opposite: advance the cursor with wall-clock step ALWAYS, and treat position
+correction as a best-effort overlay that simply costs that unit its turn.
+
+So path A's ceiling is not cursor bookkeeping. Getting a replay agent to work needs the
+action-level guards the public agent carries (projected shed so recorded sells match real
+stock, weed repair that does not desync, market-state tracking), or a different approach
+entirely -- deriving a POLICY from the replay corpus rather than replaying actions.
+
+**Path B was submitted** with attribution in both the module docstring and the submission
+message: it is Salem Ali's public notebook agent, reproduced unmodified, entered because it
+runs three quadrants profitably where twelve of our own configurations could not. Our own
+line remains v45.
+
 ## Reproducing
 
 ```bash
