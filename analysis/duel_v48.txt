@@ -334,7 +334,7 @@ y
 y_proxy
 yacht
 zerosum
-A = variants/v47_condland/main.py   game_data md5 4052625cb16b53eed649d813aff8204d
+A = variants/v48_condland2/main.py   game_data md5 4052625cb16b53eed649d813aff8204d
 B = main.py   game_data md5 4052625cb16b53eed649d813aff8204d
 game_data.py identical - safe to mix in one process
 
@@ -346,10 +346,10 @@ game_data.py identical - safe to mix in one process
   seed 2002 order 1: A    97,046  B    97,605  B   A planted   0 sold   0   carrot $43   
   seed 2003 order 0: A    64,089  B    63,028  A   A planted   0 sold   0   carrot $44   
   seed 2003 order 1: A    63,967  B    63,112  A   A planted   0 sold   0   carrot $44   
-  seed 2004 order 0: A   122,488  B   122,344  A   A planted   0 sold   0   carrot $37   
-  seed 2004 order 1: A   122,344  B   122,488  B   A planted   0 sold   0   carrot $37   
-  seed 2005 order 0: A    93,423  B   101,663  B   A planted   0 sold   0   carrot $57   
-  seed 2005 order 1: A   101,663  B    93,423  A   A planted   0 sold   0   carrot $57   
+  seed 2004 order 0: A   110,827  B   113,723  B   A planted   0 sold   0   carrot $44   
+  seed 2004 order 1: A   110,827  B   113,723  B   A planted   0 sold   0   carrot $44   
+  seed 2005 order 0: A    90,711  B   102,924  B   A planted   0 sold   0   carrot $54   
+  seed 2005 order 1: A    96,977  B    97,252  B   A planted   0 sold   0   carrot $54   
   seed 2006 order 0: A    52,469  B    53,087  B   A planted   5 sold  10   carrot $71   
   seed 2006 order 1: A    52,469  B    53,087  B   A planted   5 sold  10   carrot $71   
   seed 2007 order 0: A    81,773  B    81,773  =   A planted  22 sold  47   carrot $123  
@@ -360,30 +360,30 @@ game_data.py identical - safe to mix in one process
   seed 2009 order 1: A   106,097  B   106,097  =   A planted   0 sold   0   carrot $57   
   seed 2010 order 0: A    85,640  B    85,816  B   A planted   0 sold   0   carrot $57   
   seed 2010 order 1: A    85,640  B    85,471  A   A planted   0 sold   0   carrot $57   
-  seed 2011 order 0: A   117,405  B   115,290  A   A planted   0 sold   0   carrot $49   
-  seed 2011 order 1: A   115,290  B   117,405  B   A planted   0 sold   0   carrot $49   
-  seed 2012 order 0: A    49,734  B    48,467  A   A planted  26 sold  61   carrot $69   
-  seed 2012 order 1: A    48,467  B    49,734  B   A planted  19 sold  42   carrot $69   
-  seed 2013 order 0: A   134,518  B   134,518  =   A planted   0 sold   0   carrot $37   
-  seed 2013 order 1: A   134,518  B   134,518  =   A planted   0 sold   0   carrot $37   
+  seed 2011 order 0: A   104,696  B   100,586  A   A planted   0 sold   0   carrot $47   
+  seed 2011 order 1: A    90,893  B    90,324  A   A planted   0 sold   0   carrot $60   
+  seed 2012 order 0: A    51,394  B    55,678  B   A planted   0 sold   0   carrot $67   
+  seed 2012 order 1: A    61,745  B    62,328  B   A planted   0 sold   0   carrot $60   
+  seed 2013 order 0: A   101,945  B   108,372  B   A planted   0 sold   0   carrot $54   
+  seed 2013 order 1: A   101,945  B   108,372  B   A planted   0 sold   0   carrot $54   
   seed 2014 order 0: A    88,811  B    88,961  B   A planted   0 sold   0   carrot $56   
   seed 2014 order 1: A    88,811  B    88,961  B   A planted   0 sold   0   carrot $56   
-  seed 2015 order 0: A   116,505  B   114,607  A   A planted   0 sold   0   carrot $44   
-  seed 2015 order 1: A   114,607  B   116,505  B   A planted   0 sold   0   carrot $44   
+  seed 2015 order 0: A   111,054  B   116,263  B   A planted   0 sold   0   carrot $44   
+  seed 2015 order 1: A   109,824  B   116,853  B   A planted   0 sold   0   carrot $47   
   seed 2016 order 0: A   131,500  B   130,625  A   A planted   0 sold   0   carrot $37   
   seed 2016 order 1: A   128,973  B   127,108  A   A planted   0 sold   0   carrot $46   
-  seed 2017 order 0: A    49,928  B    61,630  B   A planted  32 sold  66   carrot $289  
-  seed 2017 order 1: A    52,668  B    61,553  B   A planted  30 sold  73   carrot $282  
+  seed 2017 order 0: A    57,673  B    57,673  =   A planted  39 sold 107   carrot $262  
+  seed 2017 order 1: A    57,673  B    57,673  =   A planted  39 sold 107   carrot $262  
 
 ====================================================================
 RESULT over 36 paired-seat games (18 seeds x 2 orders)
 ====================================================================
-  A wins 13   B wins 15   ties 8
-  A WIN RATE (decisive games): 46.4%     <-- promotion criterion
-  mean margin (diagnostic only): -433
+  A wins 10   B wins 18   ties 8
+  A WIN RATE (decisive games): 35.7%     <-- promotion criterion
+  mean margin (diagnostic only): -1,072
 
-  MECHANISM  A: carrot planted  211  sold  492
-             B: carrot planted  243  sold  607
+  MECHANISM  A: carrot planted  182  sold  464
+             B: carrot planted  198  sold  504
   games ending past the carrot knee: 8/36
 
-wrote C:\Users\sarthak\Desktop\projects\kaggriculture\analysis\duel_v47_condland_vs_kaggriculture.json
+wrote C:\Users\sarthak\Desktop\projects\kaggriculture\analysis\duel_v48_condland2_vs_kaggriculture.json

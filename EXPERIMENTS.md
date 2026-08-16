@@ -2737,6 +2737,41 @@ Consequences, and they are retroactive:
 - A divergence between two builds is NOT evidence that a code change did something. Diff
   the actions against a null copy first.
 
+### #56. CONDITIONAL third quadrant — buy land only in rich towns. Also fails.
+
+Every prior land test bought Q3 unconditionally. Since PR #1394 draws shops WITH
+replacement, town demand varies a lot between games (measured across seeds: crop demand
+$2,650-$7,210/day at base, 2.7x spread), so land could be a bad average bet and still be a
+good conditional one. `land_worth_it()` gates the third quadrant on demand projected to a
+full 8-shop town, since only ~4 shops are known at the day-11 decision.
+
+| build | gate | result vs v45 |
+|---|---|---|
+| v47 | all crop demand >= $6,200/day projected | 46.4% (13-15-8), −433 |
+| v48 | fillable crops only, carrot-rich towns blocked | **35.7% (10-18-8), −1,072** |
+
+v47's per-seed breakdown was genuinely informative — the gate DID win where it fired on
+seeds 2003 [1061, 855] and 2016 [875, 1865], both orders positive. But seed 2017, the
++14,861 carrot-spike seed of #47, lost **11,702 and 8,885**. Counting carrot demand as
+"rich town" made the gate fire hardest in PET_CAFE towns, which is exactly where the third
+quadrant starves the carrot arm — the signal was self-defeating.
+
+v48 removed carrot/tomato from the signal and blocked carrot-rich towns outright. It got
+WORSE (35.7%), which says the remaining fillable-crop demand does not predict where land
+pays either.
+
+**LAND IS NOW 12 CONTROLLED CONFIGURATIONS, ALL NEGATIVE** (#48 x1, #50 x2, #51 x1,
+#52 x6, #56 x2). Conditional purchase was the last structurally different idea available
+to a computed policy and it did not work.
+
+**The one approach not yet tried, and the only one with public evidence of working:
+replay a route instead of computing one.** Every 3-quadrant agent we can actually verify
+(the 110,596 corpus build, the public 3,094 agent) is a hard-coded action sequence, not a
+policy. #52 explains why that matters: with ~50% of unit actions spent walking and a fixed
+demand pool, the margin is in per-step execution quality, which a recorded expert route has
+and a written policy does not. That path is derivative and the source notebooks ask forks
+to retain attribution, so it is the user's call, not ours.
+
 ## Reproducing
 
 ```bash
