@@ -2620,6 +2620,63 @@ while every supply-side change lost, and it is why the public 3,094 agent ships 
 the opponent's sells. **Next work belongs there, and in the under-supplied hinge products,
 not in more land.**
 
+### #53. Share-capture round: adaptive herd WINS, order-slot and crop-mix arms fail
+
+Following #52's conclusion that only SHARE of a fixed pool can grow, six arms were tried.
+
+**Revenue audit first (seed 2001, v33) — where our money actually comes from:**
+
+| product | units | revenue | $/unit | town demand/day |
+|---|---|---|---|---|
+| STRAWBERRY | 199 | $40,951 | **$206** | 25 |
+| WHEAT | 554 | $22,911 | $41 | 31 |
+| FERTILIZER | 265 | $19,788 | $75 | **0** |
+| MILK | 189 | $12,980 | $69 | 7 |
+| MELON | 72 | $9,216 | $128 | **1** |
+| CARROT | 77 | $5,674 | $74 | **49** |
+| WOOL | 174 | $4,498 | **$26** | **1** |
+
+Strawberry sells ABOVE base ($206 v $120), so the town is still short of it.
+
+**WINNER — v45 adaptive herd, 60.7% (17-11), +936.** PR #1394 draws shops WITH
+replacement, so a town can roll no YARN_STORE at all; wool demand is then 1/day and wool
+trades at $2.00 while strawberry sits at $212. We were still running a fixed 8C/6S herd.
+`adaptive_herd()` keeps herd SIZE and moves only the split, weighting COW/SHEEP by measured
+MILK/WOOL demand from the unlocked shops, engaging from day 7 once ~3 shops are known.
+**v26's sheep-first opening was tuned before that patch** — this is the patch catching up
+with it.
+
+**THE REAL PRICING MODEL, corrected.** "Low town demand" does NOT mean "worthless":
+demand/day governs price RECOVERY, but the curve's `T` governs price DECAY PER UNIT SOLD.
+
+| product | base | glut curve | T | outcome |
+|---|---|---|---|---|
+| MELON | 250 | sq 3.60 | **300** | holds **$128** on 1/day demand |
+| WOOL | 200 | sq 3.20 | **105** | collapses to **$26** on 1/day demand |
+
+Same demand, opposite verdicts — which is why cutting sheep WON and cutting melon LOST.
+
+**FAILED ARMS:**
+
+| arm | idea | result |
+|---|---|---|
+| v40 | hoist ALL sells ahead of buys for queue position | 53.6%, −358 |
+| v41 | hoist only the top-2 sells | 50.0%, +340 |
+| v43 | size carrot by cumulative demand | no-op (the $70 floor still gates it) |
+| v44 | melon 12->4, strawberry 28->40 | **0/28, −16,069** |
+
+On v40/v41: the engine really does resolve market orders by INDEX in lockstep across both
+players (`for i in range(max_len)`), so an earlier slot quotes against better inventory --
+but hoisting sells pushes seed orders past the 10-line cap and the lost planting cancels
+the price gain exactly. Queue position is real and worth ~0 net.
+
+**Also measured and rejected:** intra-day timing. Price by position in the 4-step town
+consumption cycle varies by only $0.34-1.38 on prices of $60-213. There is no
+sell-on-the-right-turn edge.
+
+**Also confirmed:** fertiliser is worth selling despite ZERO town demand — 237 units for
+~$18,679 ($79/unit average) as the price walks $100 -> $43. Do not cut it.
+
 ## Reproducing
 
 ```bash
