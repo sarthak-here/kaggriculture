@@ -2711,6 +2711,32 @@ The 60% evaporated on a larger sample. **$70 stands, unchanged.**
 The high floor is what keeps it in that role. The 49/day demand is real but it is not
 OURS to take profitably — supplying it costs more than it pays.
 
+### #55. SEAT ASYMMETRY — identical agents score ~2% apart. Never read an unpaired game.
+
+While debugging an apparent divergence in the conditional-land build, a null test settled a
+question that has been contaminating every single-seed comparison in this project:
+
+```
+variants/null_copy/main.py  vs  main.py     (byte-identical files, different paths)
+seed 2000 -> steps differing: 445 of 720
+             rewards: 108,192 vs 110,260     (a 2,068 / ~2% gap)
+```
+
+**The two seats are not symmetric.** Seat 0 and seat 1 start in different board positions,
+so identical code takes different routes from day 2 onward and scores ~2% apart. The gap is
+larger than most of the effects we have been trying to measure.
+
+Consequences, and they are retroactive:
+
+- **Any single unpaired game is worthless as evidence**, including every "vs v33 on seed
+  2001" number quoted while iterating. Only `analysis/duel.py` results (both seat orders,
+  every seed) count. This is why it plays both orders.
+- It also explains the mirror-pair rows in #47: seeds where the arm did not fire showed
+  margins like [1978, −1978] — that is pure seat advantage cancelling exactly, which is
+  the design working.
+- A divergence between two builds is NOT evidence that a code change did something. Diff
+  the actions against a null copy first.
+
 ## Reproducing
 
 ```bash
