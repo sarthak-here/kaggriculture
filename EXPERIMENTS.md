@@ -3047,6 +3047,65 @@ thing the corpus audit did.
 more submission evicts it.** Both are converging toward roughly 2,050-2,200 from opposite
 directions.
 
+### #63. BC feature design — and a unit policy at 79.8% on held-out episodes
+
+Built the cloning pipeline and validated that the features carry signal.
+
+**The encoder (`analysis/features.py`) is shared by training and inference.** Any drift
+between how features are built at train time and play time silently destroys the policy and
+is invisible in training metrics, so there is exactly one code path. For the same reason its
+constants come from `game_data` rather than a local copy — that is precisely the bug that
+left the public agent pricing carrot 89% wrong after 1.32.7 (#60).
+
+**Everything is shaped by one constraint: `actTimeout` is 1 second per step** for a farm of
+up to ~15 units. So the encoder splits into what is shared per step and what is per unit:
+
+| piece | dim | computed |
+|---|---|---|
+| `global` | 82 | once per step |
+| `grid` (22 channels x 10x10) | 2,200 | once per step |
+| `unit` (position, carry, tile-under, nearest-work vectors, 5x5 egocentric patch) | 325 | per unit |
+
+Measured **2.3 ms per step for all 12 units** — 400x inside the budget. The network mirrors
+the split (`relu(Wg@glob + Wr@grid + Wu@unit)`), so the expensive half is projected once per
+step and only a small matmul runs per unit.
+
+**Action space is small and clean** (`analysis/action_space.py`): the corpus emits **27
+distinct unit classes, top 20 covering 99.74%**. Completed to **35 classes** so every legal
+op has a slot — a never-predicted class costs one logit, a missing one silently mislabels
+data. PICKUP counts (1-6) go to a separate head instead of multiplying the vocabulary.
+Market orders are a **separate model**: 19 verb|item classes, and **80.35% of steps emit no
+market order at all**.
+
+**Extraction** (`analysis/extract_bc_dataset.py`) stores relationally — per-step features
+once, unit rows pointing at them — because storing the 2.2k-float grid per unit would
+duplicate it ~12x. 80 episodes (tetsuya + Ryo Hasegawa, the reactive pair #61 identified)
+gave **576,592 unit-decisions in 32 s, 27 MB**. Both seats' observations were verified
+complete in the replays first.
+
+**Baseline (`analysis/train_bc.py`, numpy, ~15 s/epoch): val accuracy 0.7984 vs a 0.1427
+majority-class baseline — a 5.6x lift.** Split is **BY EPISODE**, never by row: units in one
+game share a board and market, so a random row split leaks across the boundary.
+
+Per-class recall says something useful about *what* it learned:
+
+| learned nearly perfectly | learned poorly |
+|---|---|
+| FEED 0.977, PICKUP\|WHEAT 0.935, PLANT\|WHEAT 0.923, CARE 0.918, COLLECT_FERTILIZER 0.919, WATER 0.915, PASS 0.907, HARVEST 0.889 | WEST 0.679, EAST 0.698, SOUTH 0.702, NORTH 0.754, FERTILIZE 0.577, **DROP 0.286** |
+
+**Task selection — what to do on arrival — is essentially solved. Movement is the weak
+half**, which is expected: several routes to the same tile are equally good, so top-1
+accuracy understates movement quality. DROP at 0.286 is a real gap worth a look.
+
+**Train loss 0.536 vs val loss 0.551 means this is UNDERfit, not overfit** — capacity,
+epochs and the remaining 293 episodes are all still on the table.
+
+**What this does NOT prove.** 79.8% action agreement is not 79.8% of the skill. BC suffers
+compounding covariate shift: a 20% per-decision error rate walks the agent into states the
+expert never visited, and this environment punishes exactly that (a frozen trace scores
+2,857 — #57). **The only verdict that counts is `duel.py` against v45.** Do not read the
+accuracy as a result.
+
 ## Reproducing
 
 ```bash
