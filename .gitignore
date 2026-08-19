@@ -18,3 +18,4 @@ replay_*.html
 # Regenerate with the recipe in EXPERIMENTS.md "Reproducing".
 variants/
 scratch_lb/
+replays_top/
