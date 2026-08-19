@@ -19,3 +19,5 @@ replay_*.html
 variants/
 scratch_lb/
 replays_top/
+bc_data/
+bc_model.npz
