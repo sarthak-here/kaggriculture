@@ -2933,6 +2933,80 @@ recorded so the next session does not rediscover it and assume it is the big win
 - Flipping the flag means submitting a **modified** version of another competitor's agent.
   The attribution block must stay and the modification must be disclosed in it.
 
+### #61. The top-10 corpus — and the finding that "the top are replays" is WRONG
+
+Scraped **373 episodes played by the top 10 teams** (`analysis/scrape_top_episodes.py`),
+to test whether a cloned policy is worth building. It is, and the audit overturned a
+belief this ledger has carried since #48.
+
+**Getting the data.** Kaggle's episode API has **no team filter** — `ListEpisodes` accepts
+only `{"ids": [...]}` or `{"submissionId": N}`. Two traps: the bundled
+`kaggle_environments.api` helper is **stale** (its `/requests/EpisodeService/` base URL
+400s; the live one is `/api/i/competitions.EpisodeService/`), and `GetEpisodeReplay` is
+**404 / gone** — replays now come from the authenticated CLI, `kaggle competitions replay
+<id> -p <dir>`. The way to a specific team is that every `ListEpisodes` response also
+returns a `teams[]` array carrying each team's `publicLeaderboardSubmissionId`. So the
+scraper seeds from our own submission and BFS-walks up the ladder, always expanding through
+the highest-rated team not yet queried. Matchmaking is rating-based, so it took **7 hops**
+from us (2,344) to all ten targets (2,908-3,149). Replays are ~31 MB each and gzip **62x**,
+so they are stored gzipped and the raw file deleted: 11.6 GB of transfer, **197 MB on disk**.
+
+**Corpus: 373 episodes, 2,925,126 target-seat unit-decisions, 373/373 seat labels verified**
+against the replay's own reward array. Best rewards **143,984-168,259**, versus 110,596 for
+the best thing in our own 36-episode `replays/` set and ~111,000 for v45. 7x the data and a
+markedly stronger teacher.
+
+**First audit looked like a death sentence.** Only **6 distinct day-0 openings across 373
+episodes**, and 9 of the 10 teams open *identically in every game they play* — one opening
+covers 57.6% of the corpus and is shared across teams. That is the #48/#56 "the top are
+hard-coded replays" story, apparently confirmed.
+
+**It is wrong.** Measuring modal-action agreement across seeds per team
+(`analysis/corpus_determinism.py`) shows the scripted part is only the opening:
+
+| team | rank | overall agreement | steps identical in ALL seeds |
+|---|---|---|---|
+| tetsuya | 1 | **0.282** | 10.8% |
+| Ryo Hasegawa | 2 | **0.305** | 8.9% |
+| Galaxantic | 10 | 0.775 | 27.5% |
+| ReCurSiON | 6 | **0.945** | 70.7% |
+
+For Ryo Hasegawa the day-by-day profile is a cliff: day 0 agreement **1.000**, days 1-4
+0.93-0.85, day 7 0.43, and from day 15 to the end **0.05** — which with 20 episodes is the
+floor, i.e. every episode does something different. **85.7% of all steps have <90%
+agreement.** These are not replays. They are policies with a scripted ~4-day capital
+opening (the modal 5-hire/2-cow/2-sheep queue we already decoded) and ~25 days of genuinely
+reactive play.
+
+**Two consequences that matter.**
+
+1. **This explains the public agent's ceiling.** `salemali7`'s notebook builds its route by
+   taking the *majority action across twelve traces*. That method **destroys exactly the
+   state-conditional behaviour measured above** — it collapses a reactive policy into a
+   fixed 719-step route. Which is why the reconstruction scores ~2,344 while the agents it
+   was reconstructed from score 2,908-3,149. The missing ~700 points is the reactivity that
+   majority-voting averaged away. **Cloning real episodes preserves what majority-voting
+   throws out**, so BC is strictly better than another reconstruction.
+2. **Reactivity tracks rank at the top.** The two most reactive agents are ranks 1 and 2;
+   the near-pure replay (ReCurSiON, 0.945) sits at rank 6. So **curate the training set**:
+   train on tetsuya and Ryo Hasegawa, and exclude or downweight ReCurSiON, which would
+   mostly teach a fixed route.
+
+**Caveat, stated honestly:** low agreement proves actions *differ* across seeds, not that
+they differ *usefully* — some divergence is position drift rather than deliberate
+conditioning. But a drifted replay would still show correlated actions, and 0.05 across
+the whole back half is near-total divergence. Either way the actions are state-dependent
+in effect, which is what BC needs.
+
+**Verb mix on the target seat** (2.93M decisions): moves 44.3%, WATER 12.1%, PASS 8.5%,
+HARVEST 5.1%, SELL 4.8%, FEED 4.1%, CARE 4.1%, COLLECT_FERTILIZER 4.0%, PLANT 2.4%. The
+corpus is dominated by routing and tending — which is precisely the per-step execution #52
+identified as the margin, and the one thing our hand-written policy cannot express.
+
+Next: feature design, then a held-out-episode BC baseline. Note the deployment constraint —
+do not assume torch exists in the submission sandbox; train in torch, export to numpy, and
+embed the weights base64 in `main.py` the way the public agent embeds its route.
+
 ## Reproducing
 
 ```bash
