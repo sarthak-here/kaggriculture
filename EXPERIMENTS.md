@@ -2871,6 +2871,68 @@ message: it is Salem Ali's public notebook agent, reproduced unmodified, entered
 runs three quadrants profitably where twelve of our own configurations could not. Our own
 line remains v45.
 
+### #60. The ladder entry ships its share-capture path DISABLED — flipping it wins 95.8%
+
+Our leaderboard rank is currently carried entirely by the public agent (rank **372 of
+5,290**, score **2,344.5**, verified via the kaggle CLI 2026-08-19). Our own line, v45,
+reads 973.6. So the question "how do we rank better" is really "what is wrong with the
+entry that holds our rank", and there are two answers.
+
+**Finding 1 (the lever). `_PREEMPT_ENABLED = False` in the submitted file.** The author
+ships a complete clone-preemption path — `_preempt_shift` pulls tomorrow's scheduled sells
+of the four premium goods (STRAWBERRY/MELON/MILK/WOOL) forward one step, with a
+`_repay_shift` due-counter so nothing is sold twice — and then turns it off, with the
+docstring noting "clone preemption is disabled in this experiment." This is exactly the
+mechanism #52 says is the only lever left: **share, not output.** Front-run the opponent's
+sell into a shared market.
+
+Flipping that one constant, measured with `duel.py` (paired seats, win rate):
+
+| test | opponent | result |
+|---|---|---|
+| **preempt ON vs the shipped OFF build** | itself (clone) | **95.8% (23-1), +891 over 12 seeds x 2 orders** |
+| gate behaviour vs a non-clone | v45 | **fires 0 times, 3/3 seeds — strict no-op** |
+
+Mechanism verified before reading the score, per the standing rule: on seed 2001 it fired
+**11 times** and shifted **90 units** (WOOL 44, MILK 46) forward, reproducing that duel's
+98,831-97,516 exactly. (`duel.py`'s built-in mechanism counter is the *carrot* one and is
+meaningless for this lever — its "the lever did not move" warning is a false alarm here.)
+
+**The gate is `_clone_distance(obs) <= 6`,** a public-signature distance between the two
+farms. In a mirror it is 0 at every step; against v45 it is 10-44 and never once dips to 6.
+So the win is **conditional on facing a route-clone** — pure upside where it fires, byte
+-identical behaviour where it does not. That condition is common in our rating band
+precisely because this notebook is public and 22/30 of the top-30 share a Day-0 signature,
+but the ladder's actual clone share cannot be measured locally. Treat +891 as the
+best case, not the expected case.
+
+**Finding 2 (a real defect, small blast radius). The public agent still prices on the
+pre-1.32.7 curves.** Its `_MARKET_PARAMS` hardcodes `log` for CARROT and `linear` for
+TOMATO/EGG, while the engine gives all three the `hinge` curve (#47); `_market_price` has
+no hinge branch at all. Measured error against `game_data.predicted_price`:
+
+| item | at the knee (T) | at 1.5x T | at 2x T |
+|---|---|---|---|
+| CARROT | $42 vs $70 (-40%) | $42 vs $158 (-73%) | $43 vs $385 (**-89%**) |
+| TOMATO | exact | $96 vs $144 (-33%) | $108 vs $300 (-64%) |
+| EGG | exact | $80 vs $120 (-33%) | $90 vs $250 (-64%) |
+
+It also corrupts `_impact_score`, which takes `current_quote` from the real market but
+`later_quote` from this model: past the knee it scores a 20-unit carrot sell at 2,320 when
+the true impact is 280, an 8x overestimate.
+
+**But do not overrate this.** The route buys 14 CARROT seed and sells 15 CARROT, plants no
+TOMATO, and keeps no geese, so the mispricing touches ~15 of the ~3,830 units it sells a
+game. It is worth fixing on principle, not for points. **Not shipped and not measured** —
+recorded so the next session does not rediscover it and assume it is the big win.
+
+**Nothing submitted.** Two constraints govern that call and both are the user's:
+- **Only the latest 2 submissions score.** They are currently pub (2,344.5) and v45
+  (973.6), so exactly **one** slot can be spent without risk; a second new submission
+  evicts the pub entry and the rank goes with it.
+- Flipping the flag means submitting a **modified** version of another competitor's agent.
+  The attribution block must stay and the modification must be disclosed in it.
+
 ## Reproducing
 
 ```bash
