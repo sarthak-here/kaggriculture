@@ -3007,6 +3007,46 @@ Next: feature design, then a held-out-episode BC baseline. Note the deployment c
 do not assume torch exists in the submission sandbox; train in torch, export to numpy, and
 embed the weights base64 in `main.py` the way the public agent embeds its route.
 
+### #62. Ladder ratings INFLATE early then decay — a peak score is not a result
+
+Reading the two live submissions' per-match rating deltas (`analysis/submission_progress.py`,
+and the deltas are in the `ListEpisodes` payload as `initialScore`/`updatedScore`) shows the
+rating system is TrueSkill-shaped: the step size collapses as a submission's uncertainty
+shrinks, so **almost all of a submission's rating is earned in its first ~45 matches**.
+
+| segment | pub 55555746 win pay | net/match | rating |
+|---|---|---|---|
+| first 25% (46) | **+64.08** | +40.42 | 600 -> **2441.3** |
+| 2nd 25% | +5.99 | -0.35 | 2441.3 -> 2425.0 |
+| 3rd 25% | +4.75 | -0.51 | 2425.0 -> 2401.6 |
+| last 25% | +4.12 | **-2.23** | 2401.6 -> **2296.6** |
+
+Same shape on the preempt build (68 matches): win pay **+98.29 -> +19.10 -> +8.32 -> +5.38**,
+net/match +65.56 -> +11.22 -> +2.98 -> **+2.29**.
+
+**Consequences, both of which we got wrong before measuring:**
+
+1. **A submission cannot grind its way up once the step decays.** At +5.38 a win and +2.79
+   net per match, climbing 1,995 -> 2,292 needs ~107 more matches *and the step keeps
+   shrinking the whole time*, so the true asymptote is well below a linear projection.
+   **Do not read "still climbing" off a positive trend** — check the step size first. This
+   corrects the previous session's reading of the preempt build as merely "young".
+2. **The peak rating is inflated and the converged one is the real one.** pub banked 2,441
+   during its high-uncertainty phase against a weaker pool, and has been corrected DOWNWARD
+   ever since: **-145 over its last 47 matches, with a 15% win rate against a mean opponent
+   of 2,326.** Its "2,344 / rank 372" was never its strength; it was its uncertainty.
+
+**And this independently confirms #61 on the live ladder.** The public reconstruction wins
+**15%** of its matches at the 2,326 level. That is exactly the predicted failure: majority
+-voting twelve traces collapses a reactive policy into a fixed route, and against the real
+reactive agents at the top of the ladder the route loses. The ladder is telling us the same
+thing the corpus audit did.
+
+**Practical:** rank is set by the BEST of the latest 2 submissions, and both slots are ours
+(preempt + pub), so nothing is at risk right now. But **pub is the older of the two — one
+more submission evicts it.** Both are converging toward roughly 2,050-2,200 from opposite
+directions.
+
 ## Reproducing
 
 ```bash
