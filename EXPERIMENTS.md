@@ -3152,6 +3152,69 @@ never buys feed is not playable. Per-class thresholds calibrated for F1 on held-
 lifted overall F1 **0.484 -> 0.604** and brought every essential class alive (HIRE .880,
 SELL|WHEAT .793, feed .574, COW .572).
 
+### #65. BC agent v1 plays badly — 84.7% per-decision accuracy, ~1 reward
+
+**Result: the cloned agent does NOT work yet.** Against v45 it scores **1 vs 97,325**
+(seed 2001) and **1 vs 160,558** (seed 2002). Recorded in full because the failure is
+informative and the pipeline underneath it is sound.
+
+**Offline the models are fine** — unit policy **0.8473** held-out (35 classes, majority
+0.1463), market policy **F1 0.685** after per-class threshold calibration. Inference runs
+at **6 ms/step** against a 1,000 ms budget.
+
+**Three real bugs were found and fixed on the way**, each of which moved it:
+
+1. **Label leakage** (#64) — `obs[i]` contains the effect of `action[i]`. Score 0.
+2. **Hire slot starvation** — the crew-rebuild guard claimed all 10 market order lines, so
+   `BUY_SEED` could never be emitted and the farm planted **nothing for 30 days**. The
+   corpus opening spends exactly 5 lines on HIRE and 5 on seed/stock. Capped at 5.
+3. `gd.CROPS[c]["seed"]` is spelled **`seed_cost`** in `game_data` — a silent KeyError that
+   killed the agent at day 0 and looked like a strategy failure in the trace.
+
+**The remaining failure is economic, and the trace is unambiguous** (seed 2001, day/money/
+hands/planted/seeds/shed):
+
+```
+  0    239   9   3  15   0
+  2     63   9   8   8   0
+  3      9   8   9   5   1
+  4      2   4   9   5   1
+  6      1   0   0   5   1
+```
+
+The opening works — 9 hands, 9 tiles planted, seeds bought. Then **money bleeds to zero by
+day 4 and never recovers**, the crew (wiped nightly by the engine) cannot be rebuilt, and
+the farm is dead for 24 of 30 days.
+
+**Cause: it never closes the produce -> sell loop.** Over days 0-5, with 9 tiles planted,
+it emitted **WATER only 26 times** — roughly 4/day for 9 thirsty tiles — so crops never
+reached yield, the shed stayed at 0-2 units, and there was nothing to sell. Meanwhile
+**PICKUP fired 166 times** (1.88% of the corpus, ~15% here) and **PASS 408**.
+
+**So the deployment action distribution is badly skewed versus the training distribution,
+even though per-decision accuracy is 84.7%.** That is textbook BC covariate shift: small
+per-step errors move the farm into states the top-10 corpus never contains (broke, 3 hands,
+2 planted tiles), and inside those states every prediction is extrapolation. This
+environment punishes it hard — the same reason a frozen trace scores 2,857 (#57).
+
+**Contributing design error**: the legality mask deliberately left `PICKUP` unmasked to
+avoid over-constraining, and `PICKUP` promptly became the second-most-common action. Masking
+too little is as harmful as masking too much; the wasted turns compound into the cash bleed.
+
+**Next, in order of expected value:**
+1. **Execution-guard layer.** Mask `PICKUP` unless the unit is on the shed or a tile holding
+   produce, and force the obvious on-tile work (WATER a thirsty tile, HARVEST a ready one)
+   rather than letting a soft argmax skip it. This is precisely the action-level guard code
+   the public 3,094 agent spends most of its lines on (#58) — the guards are not a detail,
+   they are the product.
+2. **DAgger-style correction** — roll the policy out, collect the states it actually visits,
+   and label them from the nearest corpus behaviour. Straight BC cannot fix its own drift.
+3. Only then revisit capacity/epochs. The model is still underfit (train .402 / val .439),
+   but underfitting is NOT the binding constraint — the deployment gap is.
+
+**Do not read the 0.8473 as progress toward a score.** It measures agreement on states the
+expert visited, and the agent's problem is the states the expert never visited.
+
 ## Reproducing
 
 ```bash

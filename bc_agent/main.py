@@ -127,36 +127,133 @@ def _legal_mask(cache, index, x, y, seeds, carried):
     return mask
 
 
-def _market_orders(cache, shed, money):
+def _fib(n):
+    a, b = 1, 1
+    for _ in range(int(n)):
+        a, b = b, a + b
+    return a
+
+
+def _hire_block_cost(already, want):
+    return sum(_fib(already + i) for i in range(max(0, want)))
+
+
+CREW_TARGET = 9          # #52: bounded on both sides, 9 is optimal
+CASH_FLOOR = 150.0       # must survive the night; a 9-hand crew costs 88
+HIRE_LINES = 5           # of the 10 order slots, hiring may claim at most this many
+SELL_TRIGGER = 6         # sell whenever the shed holds this much; the corpus sells constantly
+
+
+def _market_orders(cache, obs, shed, money):
+    """Learned orders, wrapped in the economic guards a clone cannot learn.
+
+    A pure BC market head walks into a death spiral: it overbuys, ends the day
+    broke, cannot re-hire in the morning (the engine wipes `hands` every night),
+    stops planting, and never recovers. That state -- broke, 3 hands -- appears
+    nowhere in the corpus, so every prediction inside it is extrapolation. The
+    guards below keep the agent inside the distribution it was trained on.
+    """
     glob = cache.glob.astype(np.float32)[None, :]
     grid = cache.grid.astype(np.float32)[None, :]
     h = np.maximum(glob @ _MWg + grid @ _MWr + _Mb, 0.0)
     emit = (h @ _MWe + _Mbe)[0]
     qty = np.expm1(np.clip((h @ _MWq + _Mbq)[0], 0.0, 6.0))
 
-    fire = np.where(emit > _MTHR)[0]
-    # strongest signal first: with a 10-line cap, order is a real decision
-    fire = fire[np.argsort(-(emit[fire] - _MTHR[fire]))]
+    farm = cache.farm
+    hands = len(list(_get(farm, "hands", []) or []))
+    hires_today = int(float(_get(farm, "hires_today")))
+    market = _get(obs, "market", {}) or {}
+    prices = _get(market, "prices", {}) or {}
+    inv = _get(market, "inventory", {}) or {}
+    day = int(float(_get(obs, "day")))
+    step = int(float(_get(obs, "step")))
 
     orders = []
+    budget = float(money)
+
+    # --- GUARD A: rebuild the crew every morning ------------------------
+    # Hiring is Fibonacci-cheap (9 hands = 88 total) and the crew is wiped
+    # nightly, so this is close to unconditionally correct.
+    # HIRE_LINES caps how many of the 10 order slots hiring may take. Without
+    # it the crew rebuild ate all ten lines, no BUY_SEED could ever be emitted,
+    # the farm planted NOTHING for 30 days and scored 1. The corpus opening
+    # spends exactly 5 lines on HIRE and the other 5 on seed and stock, so
+    # hiring is spread across the morning rather than done in one step.
+    want = max(0, CREW_TARGET - hands)
+    if want and _hire_block_cost(hires_today, 1) <= budget:
+        got = 0
+        while got < want and got < HIRE_LINES and len(orders) < HIRE_LINES:
+            cost = _fib(hires_today + got)
+            if cost > budget - 1:
+                break
+            orders.append(["HIRE"])
+            budget -= cost
+            got += 1
+
+    # --- GUARD B: sell when broke, and sweep at the buzzer ---------------
+    terminal = step >= 716
+    shed_total = sum(int(float(_get(shed, i))) for i in F.PRODUCTS)
+    if budget < CASH_FLOOR or terminal or shed_total >= SELL_TRIGGER:
+        held = [(item, int(float(_get(shed, item)))) for item in F.PRODUCTS]
+        held = [(i, n) for i, n in held if n > 0]
+
+        def value(pair):
+            item, n = pair
+            price = float(_get(prices, item, gd.MARKET_PARAMS[item]["base"]))
+            return n * price
+        for item, n in sorted(held, key=value, reverse=True):
+            if len(orders) >= MAX_ORDERS:
+                break
+            if terminal:
+                sell = n
+            else:
+                sell = gd.sell_quantity(item, n, int(float(_get(inv, item, 10000))))
+                sell = max(1, min(n, int(sell)))
+            orders.append(["SELL", item, int(sell)])
+            budget += sell * float(_get(prices, item, 0))
+
+    # --- learned orders, cheapest-signal-last, all affordability checked --
+    fire = np.where(emit > _MTHR)[0]
+    fire = fire[np.argsort(-(emit[fire] - _MTHR[fire]))]
+    have_sold = {o[1] for o in orders if o[0] == "SELL"}
+
     for k in fire:
+        if len(orders) >= MAX_ORDERS:
+            break
         name = F.MARKET_ACTIONS[int(k)]
-        n = int(round(float(qty[k])))
-        if n < 1:
-            n = 1
+        n = max(1, int(round(float(qty[k]))))
+
+        if name == "HIRE":
+            continue                      # guard A owns hiring
+        if name == "BUY_LAND":
+            continue                      # #56: land is 12/12 negative for us
         if name.startswith("SELL|"):
             item = name.split("|", 1)[1]
-            held = int(float(_get(shed, item)))
-            if held <= 0:
+            if item in have_sold:
                 continue
-            n = min(n, held)
-        elif name == "HIRE":
-            n = min(n, 8)
-        for line in F.market_order(int(k), n):
-            orders.append(line)
-            if len(orders) >= MAX_ORDERS:
-                return orders
-    return orders
+            n = min(n, int(float(_get(shed, item))))
+            if n <= 0:
+                continue
+            orders.append(["SELL", item, n])
+            budget += n * float(_get(prices, item, 0))
+            continue
+
+        # --- buys: never spend past the floor --------------------------
+        verb, arg = name.split("|", 1)
+        if verb == "BUY_SEED":
+            unit = float(gd.CROPS[arg]["seed_cost"])
+        elif verb == "BUY_ANIMAL":
+            unit = float(gd.ANIMALS[arg]["cost"])
+        else:
+            unit = float(_get(prices, arg, gd.MARKET_PARAMS[arg]["base"]))
+        spendable = max(0.0, budget - CASH_FLOOR)
+        n = min(n, int(spendable // max(1.0, unit)))
+        if n <= 0:
+            continue
+        orders.append([verb, arg, n])
+        budget -= n * unit
+
+    return orders[:MAX_ORDERS]
 
 
 def agent(obs, configuration=None):
@@ -195,6 +292,6 @@ def agent(obs, configuration=None):
     action = {
         "farmer": ops[0] if ops else ["PASS"],
         "hands": ops[1:],
-        "market": _market_orders(cache, shed, money),
+        "market": _market_orders(cache, obs, shed, money),
     }
     return action
