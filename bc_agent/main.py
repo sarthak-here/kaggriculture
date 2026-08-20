@@ -189,6 +189,8 @@ def _assign_move(cache, x, y, carrying, seeds, claimed):
     if carrying >= 4:
         return _step_toward(x, y, 4, 4)          # shed access corner
 
+    # feeding-first was tested and LOSES (14,986/10,506/4,401): it pulls units
+    # off the crops, and the crop loss outweighs the starved livestock.
     order = ["harvest", "thirsty"]
     if any(float(_get(seeds, c)) > 0 for c in F.CROPS):
         order.append("plantable")
@@ -229,6 +231,8 @@ CREW_TARGET = 9          # #52: bounded on both sides, 9 is optimal
 CASH_FLOOR = 150.0       # must survive the night; a 9-hand crew costs 88
 HIRE_LINES = 5           # of the 10 order slots, hiring may claim at most this many
 SELL_TRIGGER = 6         # sell whenever the shed holds this much; the corpus sells constantly
+NO_LIVESTOCK = False     # A/B: dropping livestock LOSES (15,482/12,172/18,029 vs
+                         # 16,651/21,158/21,222) -- they pay even when most starve.
 SEED_BATCH = 8           # cap seed bought per step so one batch cannot drain the bankroll
 OPENING_STEPS = 120      # 5 days: where #61 says the fixed schedule ends and policy begins
 
@@ -293,6 +297,8 @@ def _market_orders(cache, obs, shed, money, seeds_now):
                     continue
                 orders.append(["SELL", item, n])
                 budget += n * float(_get(prices, item, 0))
+                continue
+            if verb == "BUY_ANIMAL" and NO_LIVESTOCK:
                 continue
             if verb == "BUY_SEED":
                 unit = float(gd.CROPS[item]["seed_cost"])
@@ -428,6 +434,8 @@ def _market_orders(cache, obs, shed, money, seeds_now):
         if name == "HIRE":
             continue                      # guard A owns hiring
         if name == "BUY_LAND":
+            continue
+        if name.startswith("BUY_ANIMAL") and NO_LIVESTOCK:
             continue                      # #56: land is 12/12 negative for us
         if name.startswith("SELL|"):
             item = name.split("|", 1)[1]
