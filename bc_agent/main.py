@@ -229,6 +229,7 @@ CREW_TARGET = 9          # #52: bounded on both sides, 9 is optimal
 CASH_FLOOR = 150.0       # must survive the night; a 9-hand crew costs 88
 HIRE_LINES = 5           # of the 10 order slots, hiring may claim at most this many
 SELL_TRIGGER = 6         # sell whenever the shed holds this much; the corpus sells constantly
+SEED_BATCH = 8           # cap seed bought per step so one batch cannot drain the bankroll
 OPENING_STEPS = 120      # 5 days: where #61 says the fixed schedule ends and policy begins
 
 try:
@@ -238,7 +239,7 @@ except Exception:                                    # noqa: BLE001
     _SCHEDULE = {}
 
 
-def _market_orders(cache, obs, shed, money):
+def _market_orders(cache, obs, shed, money, seeds_now):
     """Learned orders, wrapped in the economic guards a clone cannot learn.
 
     A pure BC market head walks into a death spiral: it overbuys, ends the day
@@ -304,6 +305,71 @@ def _market_orders(cache, obs, shed, money):
                 continue
             orders.append([verb, item, n])
             budget -= n * unit
+
+    # --- GUARD D: BUY LAND ON THE EXPERT SCHEDULE (#68) -----------------
+    # EXPERIMENTS #48/#56 closed land after ~35 negative configurations -- but
+    # every one of those was measured with our HAND-WRITTEN policy, which could
+    # not work the extra tiles. All six top episodes buy it on the same tight
+    # clock: quadrant 2 on day 6-7, quadrant 3 on day 10-11, without exception.
+    # With expert per-step execution the tiles get worked, so the old verdict
+    # does not transfer. This is the one place the ledger's "do not re-open" is
+    # conditional on a policy we are no longer running.
+    empty_now = cache.work.get("plantable", 0)
+    owned = len(list(_get(farm, "unlocked_quadrants", []) or []))
+    # A/B TWICE, both negative: land ON = 172/5,622/584 (before cash fix) and
+    # 4,632/7,704/5,205 (after) vs OFF = 13,888/15,426/10,181 and
+    # 16,651/21,158/21,222. Experts buy quadrant 2 on day 6 and 3 on day 10, but
+    # they can AFFORD it by then and we cannot -- #56 holds for the BC agent too.
+    if False and 1 <= owned <= 2 and empty_now <= 4:
+        target_day = 6 if owned == 1 else 10
+        if day >= target_day:
+            cost = float(gd.LAND_COSTS[owned - 1])
+            if budget >= cost + CASH_FLOOR and len(orders) < MAX_ORDERS:
+                orders.append(["BUY_LAND"])
+                budget -= cost
+
+    # --- GUARD C: KEEP THE LAND FULL (#68) ------------------------------
+    # The scale gap, measured. Ryo Hasegawa (168,259) runs `empty` tiles at ZERO
+    # from day 3 onward -- 21 planted by day 3, 53 by day 12 -- holding only 0-8
+    # seeds at a time because every seed bought is planted at once. Our agent sat
+    # on 25 EMPTY tiles with 12-15 planted. That single difference is the whole
+    # 4x production gap; it is a capital-allocation rule, not a policy subtlety.
+    #
+    # So: buy enough seed to cover every empty tile, every step, cash permitting.
+    # Crop choice follows the value model (#53) and the yield clock -- wheat is
+    # cheap and yields on day 2, melon/strawberry are worth far more but need 10
+    # days, so they stop being buyable near the end.
+    empty = empty_now
+    seed_held = sum(int(float(_get(seeds_now, c))) for c in F.CROPS)
+    deficit = empty - seed_held
+    if deficit > 0 and budget > CASH_FLOOR:
+        # Crop choice must be CASH-AWARE, not just clock-aware. Melon seed is $80
+        # against wheat's $10, so leading with melon while poor drains exactly the
+        # cash the farm needs to keep hiring and to reach the land price. Wheat
+        # yields on day 2 and funds the expensive crops; melon/strawberry are
+        # worth far more per tile but need 10 days and a bankroll.
+        days_left = 30 - day
+        rich = budget > 2500
+        if days_left <= 4:
+            plan = ["WHEAT"]
+        elif days_left <= 12:
+            plan = ["WHEAT", "CARROT"]
+        elif rich:
+            plan = ["MELON", "STRAWBERRY", "WHEAT"]
+        else:
+            plan = ["WHEAT", "MELON", "STRAWBERRY"]
+        # and never sink the whole bankroll into one step's worth of seed
+        deficit = min(deficit, SEED_BATCH)
+        for crop in plan:
+            if deficit <= 0 or len(orders) >= MAX_ORDERS:
+                break
+            unit = float(gd.CROPS[crop]["seed_cost"])
+            n = min(deficit, int(max(0.0, budget - CASH_FLOOR) // max(1.0, unit)))
+            if n <= 0:
+                continue
+            orders.append(["BUY_SEED", crop, n])
+            budget -= n * unit
+            deficit -= n
 
     # --- GUARD A: rebuild the crew every morning ------------------------
     # Hiring is Fibonacci-cheap (9 hands = 88 total) and the crew is wiped
@@ -436,6 +502,6 @@ def agent(obs, configuration=None):
     action = {
         "farmer": ops[0] if ops else ["PASS"],
         "hands": ops[1:],
-        "market": _market_orders(cache, obs, shed, money),
+        "market": _market_orders(cache, obs, shed, money, seeds),
     }
     return action
