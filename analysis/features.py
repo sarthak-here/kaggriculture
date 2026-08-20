@@ -402,3 +402,49 @@ def label_action(index, count=0):
     if verb == "PICKUP" and count:
         return [verb, arg, int(count)]
     return [verb, arg]
+
+
+# ---------------------------------------------------------------------------
+# market order vocabulary (second model; 80.35% of steps emit nothing)
+# ---------------------------------------------------------------------------
+
+MARKET_ACTIONS = (
+    ["HIRE", "BUY_LAND"]
+    + ["SELL|%s" % p for p in PRODUCTS]
+    + ["BUY_SEED|%s" % c for c in CROPS]
+    + ["BUY_ANIMAL|%s" % a for a in ANIMALS]
+    + ["BUY_PRODUCT|%s" % p for p in PRODUCTS]
+)
+MARKET_ACTION_INDEX = {n: i for i, n in enumerate(MARKET_ACTIONS)}
+N_MARKET_ACTIONS = len(MARKET_ACTIONS)
+
+
+def market_label(order):
+    """Engine market order -> (class index, quantity). HIRE/BUY_LAND count as 1."""
+    if not order:
+        return None
+    verb = str(order[0])
+    if verb in ("HIRE", "BUY_LAND"):
+        return MARKET_ACTION_INDEX[verb], 1
+    if len(order) < 2:
+        return None
+    key = "%s|%s" % (verb, order[1])
+    idx = MARKET_ACTION_INDEX.get(key)
+    if idx is None:
+        return None
+    qty = 1
+    if len(order) >= 3:
+        try:
+            qty = max(1, int(order[2]))
+        except (TypeError, ValueError):
+            qty = 1
+    return idx, qty
+
+
+def market_order(index, quantity):
+    """Inverse: class index + quantity -> engine order line(s)."""
+    name = MARKET_ACTIONS[int(index)]
+    if name in ("HIRE", "BUY_LAND"):
+        return [[name]] * max(1, int(quantity))
+    verb, arg = name.split("|", 1)
+    return [[verb, arg, max(1, int(quantity))]]

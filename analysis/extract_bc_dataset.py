@@ -60,17 +60,26 @@ def extract_one(row):
     seat = int(row["seat"])
     steps = data.get("steps") or []
 
-    globs, grids = [], []
+    globs, grids, markets = [], [], []
     units, sidx, labels, counts = [], [], [], []
     skipped = 0
 
-    for st in steps:
+    # OFF-BY-ONE, VERIFIED (EXPERIMENTS #64): the observation stored at index i
+    # ALREADY contains the effect of the action stored at index i -- at step 1
+    # money already reads 25 with 5 hands while the 5 HIRE orders sit in that
+    # same entry, and of 365 WATER actions every one had watered_today already
+    # true on its own tile (0 under the shifted pairing). Training obs[i] against
+    # action[i] therefore leaks the label: the model learns "watered_today is set
+    # -> emit WATER", which is unlearnable at play time and produced an agent
+    # that scored 0. The decision that produced action[i+1] was made at obs[i].
+    for i in range(len(steps) - 1):
         try:
-            entry = st[seat]
+            entry = steps[i][seat]
+            nxt = steps[i + 1][seat]
         except (IndexError, TypeError):
             continue
         obs = entry.get("observation")
-        act = entry.get("action")
+        act = nxt.get("action")
         if not isinstance(obs, dict) or not isinstance(act, dict):
             continue
         # The replay stores each seat's own observation; make sure the encoder
@@ -100,11 +109,20 @@ def extract_one(row):
                 continue
             rows_here.append((vec, lab[0], lab[1]))
 
-        if not rows_here:
+        # Market labels are PER STEP: total quantity per verb|item class.
+        # HIRE repeats as separate lines, so quantities accumulate.
+        mrow = np.zeros(F.N_MARKET_ACTIONS, dtype=np.int16)
+        for order in act.get("market") or []:
+            m = F.market_label(order)
+            if m is not None:
+                mrow[m[0]] += m[1]
+
+        if not rows_here and not mrow.any():
             continue
         step_index = len(globs)
         globs.append(cache.glob)
         grids.append(cache.grid)
+        markets.append(mrow)
         for vec, lab, cnt in rows_here:
             units.append(vec)
             sidx.append(step_index)
@@ -122,6 +140,7 @@ def extract_one(row):
         sidx=np.asarray(sidx, dtype=np.int32),
         label=np.asarray(labels, dtype=np.int8),
         count=np.asarray(counts, dtype=np.int8),
+        market=np.asarray(markets, dtype=np.int16),
         meta=np.asarray([episode_id, seat, int(row["reward"]), int(row.get("rank", 0))],
                         dtype=np.int64),
     )

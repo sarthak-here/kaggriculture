@@ -3106,6 +3106,52 @@ expert never visited, and this environment punishes exactly that (a frozen trace
 2,857 — #57). **The only verdict that counts is `duel.py` against v45.** Do not read the
 accuracy as a result.
 
+### #64. The BC label was leaking — obs[i] contains the effect of action[i]
+
+The first playable BC agent scored **0** against v45's 123,483. The diagnosis is worth
+recording in full because the bug was invisible in every training metric and this ledger
+had already warned about it.
+
+**Symptom.** The agent never hired — 0 hands for the whole game — spent its 3,000 on 34
+animals with no pasture to put them on, was broke by step 120, and emitted PASS 639 times.
+Live and training step-0 features were verified **byte-identical**, so it was not feature
+drift.
+
+**Cause.** In a replay, the observation stored at index `i` ALREADY contains the effect of
+the action stored at index `i`:
+
+- step 0: `money 3000, hands 0`, action `PASS` / no orders
+- step 1: **`money 25, hands 5`** — and the five `HIRE` orders are in *that same entry*
+- of 365 WATER actions sampled, **365 had `watered_today` already true** on the unit's own
+  tile; under the shifted pairing, **0** did.
+
+So the decision that produced `action[i+1]` was made at `obs[i]`. Training `obs[i] -> action[i]`
+teaches "`watered_today` is set, therefore emit WATER" — a rule that is unlearnable at play
+time because the live agent sees the tile *before* it acts.
+
+**This inflated #63's headline number.** The 0.7984 val accuracy was partly the model reading
+the answer off the observation, which is exactly why the suspiciously strong classes were the
+ones whose effects are visible in the tile they act on: WATER .915, FEED .977, CARE .918,
+COLLECT_FERTILIZER .919, HARVEST .889. **Treat #63's per-class recalls as void.**
+
+**Fix** in `extract_bc_dataset.py`: iterate `range(len(steps) - 1)` and pair
+`steps[i].observation` with `steps[i+1].action`. Step 0 now correctly carries the modal
+opening — `HIRE x5, BUY_SEED WHEAT 7, BUY_SEED MELON 12, BUY_ANIMAL COW 2, SHEEP 2,
+BUY_PRODUCT WHEAT 6` — which matches the opening decoded independently in #48.
+
+**The lesson is the meta one.** "Observation at replay step i already includes the action
+recorded at step i" was ALREADY in this ledger's method rules, written down from an earlier
+session, and it was not applied when building the extractor. A high validation number was
+taken as evidence the pipeline was right. **A BC pipeline's first check should be an
+adversarial one — verify the label is not visible in the input — before reading any
+accuracy at all.**
+
+**Market model note.** A single 0.5 threshold left the rare-but-essential classes at ~0
+recall (SELL|WOOL 0.000, BUY_ANIMAL|COW 0.000, BUY_PRODUCT feed 0.010) — an agent that
+never buys feed is not playable. Per-class thresholds calibrated for F1 on held-out episodes
+lifted overall F1 **0.484 -> 0.604** and brought every essential class alive (HIRE .880,
+SELL|WHEAT .793, feed .574, COW .572).
+
 ## Reproducing
 
 ```bash
