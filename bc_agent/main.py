@@ -79,12 +79,39 @@ def _tile_at(cache, x, y):
     return "LOCKED"
 
 
-def _legal_mask(cache, index, x, y, seeds, carried):
-    """Conservative: mask only what is certainly illegal."""
+SHED_ACCESS = {(4, 4), (4, 5), (5, 4), (5, 5)}   # engine _shed_access_tiles(10)
+
+
+def _legal_mask(cache, index, x, y, seeds, carried, shed):
+    """Mask what the ENGINE would reject. Nothing is forced.
+
+    #66 measured what top agents do when standing on obvious work, and it rules
+    out forcing: on a ready crop they HARVEST only 18% of the time, on a thirsty
+    crop they WATER 45%, at the shed holding goods they DROP 18%. Units walk
+    THROUGH tiles constantly, so local state does not determine the action --
+    a "always harvest a ready tile" guard would deviate from expert play, not
+    correct toward it.
+
+    What IS safe is refusing actions the engine silently discards, since those
+    cost the unit its turn for nothing. v1 left PICKUP unmasked and it became
+    the second-most-common action (166 emissions in six days, ~15% vs 1.88% in
+    the corpus), every one of them wasted.
+    """
     mask = np.zeros(F.N_UNIT_ACTIONS, dtype=np.float32)
     tile = _tile_at(cache, x, y)
     is_dict = isinstance(tile, dict)
     kind = tile.get("kind") if is_dict else None
+    at_shed = (x, y) in SHED_ACCESS
+    carrying = sum(float(v) for v in (carried or {}).values())
+
+    # PICKUP: engine requires shed adjacency AND stock of that item in the shed.
+    for item in F.CARRIABLE:
+        if not at_shed or float(_get(shed, item)) <= 0:
+            mask[F.UNIT_ACTION_INDEX["PICKUP|%s" % item]] = NEG
+
+    # DROP: engine requires shed adjacency AND something in hand.
+    if not at_shed or carrying <= 0:
+        mask[F.UNIT_ACTION_INDEX["DROP"]] = NEG
 
     # moves that would leave the board
     if y <= 0:
@@ -107,8 +134,6 @@ def _legal_mask(cache, index, x, y, seeds, carried):
         mask[F.UNIT_ACTION_INDEX["DIG"]] = NEG
     if not (is_dict and tile.get("fertilizer_available")):
         mask[F.UNIT_ACTION_INDEX["COLLECT_FERTILIZER"]] = NEG
-    if not carried:
-        mask[F.UNIT_ACTION_INDEX["DROP"]] = NEG
 
     # planting needs bare owned ground AND a seed of that crop
     plantable = tile is None
@@ -282,7 +307,7 @@ def agent(obs, configuration=None):
         logits = h @ _Wo + _bo
         x, y = int(positions[i][0]), int(positions[i][1])
         carried = inventories[i] if i < len(inventories) else {}
-        logits = logits + _legal_mask(cache, i, x, y, seeds, carried)
+        logits = logits + _legal_mask(cache, i, x, y, seeds, carried, shed)
         choice = int(np.argmax(logits))
         if logits[choice] <= NEG / 2:
             ops.append(["PASS"])

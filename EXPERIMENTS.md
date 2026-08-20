@@ -3215,6 +3215,62 @@ too little is as harmful as masking too much; the wasted turns compound into the
 **Do not read the 0.8473 as progress toward a score.** It measures agreement on states the
 expert visited, and the agent's problem is the states the expert never visited.
 
+### #66. Execution guards — the farm survives now, but still loses decisively
+
+Added the guard layer #65 called for. **It fixed the collapse and did not fix the score.**
+
+**First, a measurement that changed the design.** Before hard-coding "always harvest a ready
+tile", `analysis/ontile_conditionals.py` measured what the top-10 agents actually do while
+standing on obvious work (target seat, #64 alignment):
+
+| standing on | what experts do |
+|---|---|
+| READY crop (yield>0) | WATER 20%, **HARVEST 18%**, WEST 15%, EAST 13% |
+| THIRSTY crop | **WATER 45%**, WEST 14%, EAST 10% |
+| UNFED animal | FEED 23%, NORTH 23%, PASS 17% |
+| at SHED carrying goods | **DROP 18%**, NORTH 16%, WEST 12% |
+
+**So forcing is wrong.** Experts harvest a ready tile under one time in five and drop at the
+shed under one time in five — they walk *through* tiles constantly, and the local tile does
+not determine the action. A "force the obvious work" guard would have driven the policy
+*away* from expert behaviour while looking like a fix. Guards are therefore **hard legality
+only**, from the engine's own preconditions:
+
+- `PICKUP` requires shed adjacency (tiles `(4,4) (4,5) (5,4) (5,5)`) AND stock of that item.
+- `DROP` requires shed adjacency AND something carried.
+
+**Effect on stability is large.** Before/after on seed 2001:
+
+| | v1 (#65) | with guards |
+|---|---|---|
+| crew at day 9 | **0** (dead since day 6) | **9** |
+| tiles planted | 9 peak, 0 by day 6 | 12-15 sustained |
+| tiles reaching yield | ~0 | **all planted tiles** |
+| wasted PICKUP | 166 in 6 days | 0 |
+
+**Effect on score is nil.** BC 1 / 1 / 5,381 against v45 128,159 / 129,658 / 167,252.
+
+**The remaining gap is production, and it is quantified.** With the farm alive, units stand
+on a ready tile **567 times** and harvest on ~4% of them against the expert's 18% — roughly
+a 4.5x under-harvest — and the farm carries 12-15 planted tiles against the expert's 40-58.
+It also over-waters (92% on a thirsty tile vs the expert's 45%). Production never reaches
+the level where sales can fund the next round.
+
+**This is the covariate-shift wall, not a missing guard.** Every state the agent occupies
+(12 tiles, ~$200, 9 hands) is one the top-10 corpus never contains, and inside those states
+the policy's action distribution drifts from what it scored 0.8473 on. Legality masking
+removes wasted turns; it cannot move the policy back into the training distribution.
+
+**What is actually needed next — and it is not more guards:**
+1. **DAgger-style relabelling.** Roll the policy out, collect the states it actually visits,
+   label them from the nearest corpus behaviour, retrain. This is the only step that
+   addresses the distribution mismatch directly.
+2. Failing that, seed the early game from the known modal opening (#48) so the farm reaches
+   expert scale before the learned policy takes over — a hybrid, but an honest one.
+
+**Do not add more legality guards expecting a score change.** The legal-action space is now
+correct; the problem is which legal action gets chosen, in states the expert never visited.
+
 ## Reproducing
 
 ```bash
