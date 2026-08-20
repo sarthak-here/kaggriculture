@@ -17,6 +17,7 @@ suppress good actions the model learned and is harder to notice than the
 occasional wasted turn.
 """
 
+import json
 import os
 import sys
 
@@ -152,6 +153,67 @@ def _legal_mask(cache, index, x, y, seeds, carried, shed):
     return mask
 
 
+MOVE_SET = ("NORTH", "SOUTH", "EAST", "WEST")
+
+
+def _step_toward(x, y, tx, ty):
+    """One legal board step from (x,y) toward (tx,ty); longer axis first."""
+    dx, dy = tx - x, ty - y
+    options = []
+    if abs(dx) >= abs(dy):
+        options = [("EAST" if dx > 0 else "WEST") if dx else None,
+                   ("SOUTH" if dy > 0 else "NORTH") if dy else None]
+    else:
+        options = [("SOUTH" if dy > 0 else "NORTH") if dy else None,
+                   ("EAST" if dx > 0 else "WEST") if dx else None]
+    for opt in options:
+        if opt:
+            return opt
+    return None
+
+
+def _assign_move(cache, x, y, carrying, seeds, claimed):
+    """Where should this unit walk? Returns a direction, or None to keep the model's.
+
+    #67: through the agent's own inference path the policy scores 0.916 on
+    expert states -- the wiring is fine -- and its errors are overwhelmingly
+    MOVE-vs-MOVE (WEST->SOUTH, EAST->SOUTH). Direction is exactly where BC is
+    weakest, because several routes to the same tile are equally good so top-1
+    accuracy is low by construction. But it is also the error that COMPOUNDS:
+    a unit sent the wrong way never arrives, so it never harvests, and the farm
+    starves.
+
+    So keep the learned decision about WHAT to do on a tile, and make WHERE TO
+    WALK deterministic. `claimed` stops the whole crew converging on one tile.
+    """
+    if carrying >= 4:
+        return _step_toward(x, y, 4, 4)          # shed access corner
+
+    order = ["harvest", "thirsty"]
+    if any(float(_get(seeds, c)) > 0 for c in F.CROPS):
+        order.append("plantable")
+    order += ["unfed", "uncared", "fert", "weeds"]
+
+    best = None
+    best_key = None
+    for kind in order:
+        for (ty, tx) in cache.nearest.get(kind, ()):
+            if (tx, ty) in claimed:
+                continue
+            d = abs(tx - x) + abs(ty - y)
+            key = (order.index(kind), d)
+            if best_key is None or key < best_key:
+                best_key, best = key, (tx, ty)
+        if best is not None:
+            break                                 # respect the priority order
+    if best is None:
+        return None
+    claimed.add(best)
+    if (best[0], best[1]) == (x, y):
+        return None                               # already there; let the model act
+    return _step_toward(x, y, best[0], best[1])
+
+
 def _fib(n):
     a, b = 1, 1
     for _ in range(int(n)):
@@ -167,6 +229,13 @@ CREW_TARGET = 9          # #52: bounded on both sides, 9 is optimal
 CASH_FLOOR = 150.0       # must survive the night; a 9-hand crew costs 88
 HIRE_LINES = 5           # of the 10 order slots, hiring may claim at most this many
 SELL_TRIGGER = 6         # sell whenever the shed holds this much; the corpus sells constantly
+OPENING_STEPS = 120      # 5 days: where #61 says the fixed schedule ends and policy begins
+
+try:
+    with open(_find("opening_schedule.json")) as _fh:
+        _SCHEDULE = json.load(_fh)
+except Exception:                                    # noqa: BLE001
+    _SCHEDULE = {}
 
 
 def _market_orders(cache, obs, shed, money):
@@ -195,6 +264,46 @@ def _market_orders(cache, obs, shed, money):
 
     orders = []
     budget = float(money)
+
+    # --- OPENING SCRIPT (#67) -------------------------------------------
+    # For the first OPENING_STEPS the capital plan is a fixed schedule, not a
+    # policy: cross-episode agreement in the dominant cluster is 1.000 on days
+    # 0-2 and 0.951 on day 4 (#61, #67). Replaying it is safe in a way replaying
+    # a unit route is NOT -- a HIRE is a HIRE wherever the units stand, so there
+    # is no position to desync. The point is to hand the learned policy a farm at
+    # expert scale on day 5, instead of the quarter-scale farm it was drifting
+    # into and had never seen in training (#66).
+    if step < OPENING_STEPS and _SCHEDULE:
+        for raw in _SCHEDULE.get(str(step), []):
+            if len(orders) >= MAX_ORDERS:
+                break
+            verb = raw[0]
+            if verb in ("HIRE", "BUY_LAND"):
+                cost = _fib(hires_today + sum(1 for o in orders if o[0] == "HIRE"))
+                if verb == "HIRE" and cost <= budget - 1:
+                    orders.append(["HIRE"])
+                    budget -= cost
+                continue
+            item = raw[1]
+            n = int(raw[2]) if len(raw) > 2 else 1
+            if verb == "SELL":
+                n = min(n, int(float(_get(shed, item))))
+                if n <= 0:
+                    continue
+                orders.append(["SELL", item, n])
+                budget += n * float(_get(prices, item, 0))
+                continue
+            if verb == "BUY_SEED":
+                unit = float(gd.CROPS[item]["seed_cost"])
+            elif verb == "BUY_ANIMAL":
+                unit = float(gd.ANIMALS[item]["cost"])
+            else:
+                unit = float(_get(prices, item, gd.MARKET_PARAMS[item]["base"]))
+            n = min(n, int(max(0.0, budget) // max(1.0, unit)))
+            if n <= 0:
+                continue
+            orders.append([verb, item, n])
+            budget -= n * unit
 
     # --- GUARD A: rebuild the crew every morning ------------------------
     # Hiring is Fibonacci-cheap (9 hands = 88 total) and the crew is wiped
@@ -240,6 +349,8 @@ def _market_orders(cache, obs, shed, money):
     # --- learned orders, cheapest-signal-last, all affordability checked --
     fire = np.where(emit > _MTHR)[0]
     fire = fire[np.argsort(-(emit[fire] - _MTHR[fire]))]
+    if step < OPENING_STEPS:
+        fire = []          # the script owns the opening capital plan
     have_sold = {o[1] for o in orders if o[0] == "SELL"}
 
     for k in fire:
@@ -298,6 +409,7 @@ def agent(obs, configuration=None):
     shared = glob @ _Wg + grid @ _Wr + _b
 
     ops = []
+    claimed = set()
     for i in range(n_units):
         vec = F.encode_unit(cache, i)
         if vec is None:
@@ -312,6 +424,13 @@ def agent(obs, configuration=None):
         if logits[choice] <= NEG / 2:
             ops.append(["PASS"])
             continue
+        name = F.UNIT_ACTIONS[choice]
+        if name in MOVE_SET:
+            carrying = sum(float(v) for v in (carried or {}).values())
+            better = _assign_move(cache, x, y, carrying, seeds, claimed)
+            if better is not None and logits[F.UNIT_ACTION_INDEX[better]] > NEG / 2:
+                ops.append([better])
+                continue
         ops.append(F.label_action(choice, 0))
 
     action = {

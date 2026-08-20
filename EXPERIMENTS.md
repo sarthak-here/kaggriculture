@@ -3271,6 +3271,62 @@ removes wasted turns; it cannot move the policy back into the training distribut
 **Do not add more legality guards expecting a score change.** The legal-action space is now
 correct; the problem is which legal action gets chosen, in states the expert never visited.
 
+### #67. Scripted opening + deterministic navigation — still ~6k against ~143k
+
+Option 2 from #66: hand the learned policy a farm at expert scale instead of asking it to
+build one. **It did not work either**, and the reason is now pinned down precisely.
+
+**First, the decisive control.** `analysis/verify_agent_path.py` replays corpus states
+through `bc_agent/main.py`'s OWN code path — same encoder, same weights, same legality mask —
+and scores the chosen action against the expert's:
+
+```
+ACCURACY THROUGH THE AGENT PATH: 0.9162     (trainer reported 0.8473)
+  HARVEST 0.984   FEED 0.997   CARE 1.000   WATER 0.973   PLANT|WHEAT 0.962
+  top confusions:  WEST->SOUTH 450,  EAST->SOUTH 443,  NORTH->WEST 322
+```
+
+**So the agent is wired correctly** — features, weights, label indices, unit ordering and
+mask all agree with training. Every remaining failure is distributional, not a bug. Run this
+control FIRST next time; it separates "mis-specialised policy" from "broken plumbing", which
+look identical from the outside and had cost two rounds of guessing.
+
+**Two interventions, both grounded, both ineffective:**
+
+1. **Scripted market opening** (`analysis/extract_opening.py`, `opening_schedule.json`).
+   Mined the dominant day-0 cluster (40 episodes): agreement **1.000 on days 0-2, 0.951 on
+   day 4**, 21 scheduled steps over 5 days. Only MARKET orders are replayed — they are
+   state-independent, so unlike a unit route they cannot desync. Result: **no change** (1/1/1).
+   The opening only buys ~20 seeds; scale was never set there.
+2. **Deterministic navigation.** Since the confusions are almost entirely MOVE-vs-MOVE, keep
+   the learned choice of WHAT to do on a tile and compute WHERE TO WALK by priority
+   (harvest > thirsty > plantable > animals), with claim-marking so the crew does not
+   converge on one tile. Result: **606 / 1 / 6,310** against v45's 172,645 / 158,441 /
+   142,974.
+
+**The best case is now legible, and it fails in a new place.** On seed 2003 the crew holds 9
+all game and **money recovers to ~6,000 by day 18** — the economy finally works. But planted
+tiles fall to **1-5**, and **82% of unit actions are moves** (corpus: ~44%), with WATER 222,
+HARVEST 97, PLANT 111 across a whole game.
+
+**The farm stops replanting while holding 6,000 in cash.** Experts run near zero because they
+reinvest continuously, so "6,000 in hand, 2 tiles planted" is a state the corpus never
+contains — and the market head, asked to extrapolate there, does not buy seed. Fixing the
+crew exposed the cash bug; fixing cash exposed the replanting bug. **Every intervention has
+fixed one failure and revealed another of exactly the same kind.**
+
+**Conclusion: stop patching.** Three rounds of guards (#66, #67 x2) each corrected a real
+defect and none moved the score, because the defect is never the mechanism — it is that the
+policy is being queried outside its support. The only remaining honest options are
+**DAgger-style relabelling** (roll out, collect visited states, label from nearest corpus
+behaviour, retrain — a real project, not a patch) or **abandoning BC** and keeping v45 as
+our line. Given the 2026-09-23 deadline, that is a call about how to spend the remaining
+weeks, not a technical question.
+
+**Kept regardless**: the corpus (373 episodes, 2.6M decisions), the encoder, both models, the
+scrape/audit tooling and `verify_agent_path.py` are all reusable and committed. The BC agent
+is NOT submitted and must not be — v45 remains our line.
+
 ## Reproducing
 
 ```bash
