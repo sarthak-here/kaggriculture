@@ -1,0 +1,205 @@
+"""
+Static game constants (from the Kaggriculture rules) and the price-prediction
+formula, kept separate from decision logic in main.py.
+
+These numbers are documented physical facts about the game, not decisions —
+per STRATEGY.md's "never hardcode, always compute" this applies to *choices*
+(which crop, when to sell), not to encoding the game's own fixed constants.
+"""
+import math
+
+# yield_per_tile_day matches the "Yield / tile / day" column in the rules
+# (unfertilized, watered daily, harvested at peak). max_yield is unfertilized.
+# Verified field-by-field against the engine's CROPS table
+# (.venv/.../kaggriculture/kaggriculture.py). Five values here were WRONG and
+# have been corrected -- see the notes. They were never read by main.py, which
+# uses only first_yield_day and seed_cost, so nothing behaved differently; but
+# any yield-aware logic MUST use these, so they are now correct.
+#
+# One-time crops accumulate yield in a window: window_start = (max_yield_day+1)//2
+# through max_yield_day, gaining +1 per watered day, +2 if also fertilised,
+# capped at max_yield. So wheat (window age 2-4, starting at 1 unit) reaches 4
+# on watering alone and 6 only with fertiliser -- the old max_yield of 4 was the
+# UNFERTILISED outcome recorded as if it were the cap.
+CROPS = {
+    "WHEAT":      {"kind": "one_time", "seed_cost": 10,  "base_price": 25,
+                    "first_yield_day": 2,  "max_yield_day": 4,  "max_yield": 6,
+                    "yield_per_tile_day": 0.80},          # max_yield was 4
+    "CARROT":     {"kind": "one_time", "seed_cost": 20,  "base_price": 35,
+                    "first_yield_day": 2,  "max_yield_day": 3,  "max_yield": 4,
+                    "yield_per_tile_day": 0.75},          # max_yield was 3
+    "TOMATO":     {"kind": "ongoing",  "seed_cost": 50,  "base_price": 60,
+                    "first_yield_day": 8,  "max_yield_day": 8,  "interval": 1,
+                    "max_yield": 4,                       # max_yield_day was 11
+                    "max_scheduled": 4, "yield_per_tile_day": 0.33},
+    "STRAWBERRY": {"kind": "ongoing",  "seed_cost": 100, "base_price": 120,
+                    "first_yield_day": 10, "max_yield_day": 10, "interval": 2,
+                    "max_yield": 4,                       # max_yield_day was 16
+                    "max_scheduled": 4, "yield_per_tile_day": 0.24},
+    "MELON":      {"kind": "one_time", "seed_cost": 80,  "base_price": 250,
+                    "first_yield_day": 10, "max_yield_day": 12, "max_yield": 6,
+                    "yield_per_tile_day": 0.55},          # max_yield_day was 10
+}
+
+ANIMALS = {
+    "GOOSE": {"product": "EGG",  "cost": 300, "base_price": 50,  "structure": "COOP",
+              "first_yield_day": 4, "interval": 1, "max_held": 4},
+    "COW":   {"product": "MILK", "cost": 400, "base_price": 160, "structure": "PASTURE",
+              "first_yield_day": 8, "interval": 2, "max_held": 6},
+    "SHEEP": {"product": "WOOL", "cost": 500, "base_price": 200, "structure": "PASTURE",
+              "first_yield_day": 6, "interval": 3, "max_held": 6},
+}
+
+LAND_COSTS = [1000, 2000, 4000]  # cost of the 1st/2nd/3rd extra quadrant bought
+
+# Which shops buy what. Since 1.32.6 (PR #1394) shops are drawn WITH
+# replacement, so a town can hold several copies of one shop and the demand for
+# a single product varies enormously game to game. A shop selling exactly one
+# product consumes it at 2x; every other shop consumes 1 of each of its
+# products per tick. Mirrors SHOPS in the engine.
+SHOPS = {
+    "BAKERY":         ["EGG", "WHEAT"],
+    "PIZZA_SHOP":     ["MILK", "TOMATO", "WHEAT"],
+    "BRUNCH_SPOT":    ["EGG", "WHEAT", "STRAWBERRY"],
+    "YARN_STORE":     ["WOOL"],
+    "ICE_CREAM_SHOP": ["STRAWBERRY", "MILK", "WHEAT"],
+    "PET_CAFE":       ["CARROT"],
+    "SMOOTHIE_SHOP":  ["STRAWBERRY", "MILK"],
+    "FARMERS_MARKET": ["WHEAT", "CARROT", "TOMATO", "STRAWBERRY"],
+}
+
+# Engine defaults: shops consume every 4th turn (6 ticks per 24-turn day) and
+# the town centre takes 1 of every non-fertilizer product once a day.
+SHOP_TICKS_PER_DAY = 6
+TOWN_CENTER_PER_DAY = 1
+
+
+def daily_demand(item, unlocked_shops):
+    """Units of `item` the town removes from the market per day.
+
+    Both the shop list and the schedule are observable, so this is exact for the
+    shops already unlocked rather than an estimate. It ignores shops that have
+    yet to unlock, which makes it a deliberate under-estimate late in the game
+    (by then the town is usually at its 8-shop cap anyway).
+    """
+    per_tick = sum(2 if len(SHOPS[s]) == 1 else 1
+                   for s in unlocked_shops
+                   if s in SHOPS and item in SHOPS[s])
+    centre = TOWN_CENTER_PER_DAY if item != "FERTILIZER" else 0
+    return per_tick * SHOP_TICKS_PER_DAY + centre
+
+QUADRANT_ORIGIN = {  # (x, y) of a quadrant's top-left corner, boardSize=10 assumed
+    "NW": (0, 0), "NE": (5, 0), "SW": (0, 5), "SE": (5, 5),
+}
+
+# Price function params (see competition rules "Price Function" table).
+# CARROT/TOMATO/EGG switched their scarcity branch to "hinge" in
+# kaggle-environments 1.32.7 (PR #1399): calm up to the knee at T, then a
+# quadratic term takes over, so a genuinely scarce product runs away in price.
+# HINGE_GAIN and the shape below are copied from the engine.
+MARKET_PARAMS = {
+    "WHEAT":      {"base": 25,  "I0": 10000, "T": 400, "below": "sqrt",   "below_target": 0.80, "above": "log",  "above_target": 0.20},
+    "CARROT":     {"base": 35,  "I0": 10000, "T": 450, "below": "hinge",  "below_target": 1.00, "above": "sqrt", "above_target": 0.70},
+    "TOMATO":     {"base": 60,  "I0": 10000, "T": 200, "below": "hinge",  "below_target": 0.40, "above": "sqrt", "above_target": 0.60},
+    "STRAWBERRY": {"base": 120, "I0": 10000, "T": 100, "below": "sqrt",   "below_target": 0.70, "above": "linear", "above_target": 1.60},
+    "MELON":      {"base": 250, "I0": 10000, "T": 300, "below": "log",    "below_target": 0.20, "above": "sq",   "above_target": 3.60},
+    "EGG":        {"base": 50,  "I0": 10000, "T": 332, "below": "hinge",  "below_target": 0.40, "above": "log",  "above_target": 0.20},
+    "MILK":       {"base": 160, "I0": 10000, "T": 122, "below": "sqrt",   "below_target": 0.60, "above": "linear", "above_target": 1.60},
+    "WOOL":       {"base": 200, "I0": 10000, "T": 105, "below": "log",    "below_target": 0.20, "above": "sq",   "above_target": 3.20},
+    "FERTILIZER": {"base": 100, "I0": 10000, "T": 200, "below": "linear", "below_target": 0.40, "above": "linear", "above_target": 0.40},
+}
+
+
+HINGE_GAIN = 8.0
+
+
+def _f(name, x, t=None):
+    if name == "linear":
+        return x
+    if name == "sq":
+        return x * x
+    if name == "sqrt":
+        return math.sqrt(x)
+    if name == "log":
+        return math.log(1 + x)
+    if name == "log10":
+        return math.log10(1 + x)
+    if name == "hinge":
+        # Degenerates to linear if t is missing, matching the engine.
+        if not t or t <= 0:
+            return x
+        u = x / t
+        return u + HINGE_GAIN * max(0.0, u - 1.0) ** 2
+    raise ValueError(f"unknown shape fn {name}")
+
+
+def predicted_price(item, inventory):
+    """Replica of the engine's price(inv) formula, used to predict prices
+    at hypothetical inventory levels (e.g. 'what will the price be after I
+    sell N units') without needing to step the real environment."""
+    p = MARKET_PARAMS[item]
+    base, i0, t = p["base"], p["I0"], p["T"]
+    diff = inventory - i0
+    if diff == 0:
+        return base
+    sign = 1 if diff < 0 else -1
+    shape = p["below"] if diff < 0 else p["above"]
+    target = p["below_target"] if diff < 0 else p["above_target"]
+    f_t = _f(shape, t, t)
+    amp = target * base / f_t if f_t else 0
+    price = base + sign * amp * _f(shape, abs(diff), t)
+    return max(1, round(price))
+
+
+def animal_daily_rate(animal):
+    """Steady-state products/day from disciplined daily FEED+CARE.
+
+    Engine mechanic (verified against kaggriculture.py, not the rules text):
+    pending_care_bonus increments by 1 only on a day where BOTH cared_today
+    AND fed_today are true; at each production checkpoint (every `interval`
+    days) yield_units += 1 (base) + bonus, and bonus resets to 0 regardless
+    of whether it was consumed (missing FEED specifically on the production
+    day forfeits the whole accumulated bonus, not just that day's share).
+    Since bonus can't exceed `interval` days of accrual before it's
+    consumed/reset at the next checkpoint, the achievable steady-state rate
+    with zero missed feed/care days is (1 + interval) / interval — e.g. a
+    COW (interval=2) yields ~1.5 milk/day, not the ~0.5/day a naive
+    "1 unit per interval" model assumes. yield_units itself is capped by
+    max_held, but that only affects harvest cadence, not the long-run rate.
+    """
+    spec = ANIMALS[animal]
+    return (1 + spec["interval"]) / spec["interval"]
+
+
+def land_cost(num_quadrants_owned):
+    """Cost of the next BUY_LAND purchase, given how many quadrants (incl.
+    the free starting NW) are currently owned."""
+    idx = num_quadrants_owned - 1
+    if idx < 0 or idx >= len(LAND_COSTS):
+        return None
+    return LAND_COSTS[idx]
+
+
+def sell_quantity(item, held, market_inventory, min_price_ratio=0.7):
+    """How many of `held` units of `item` to sell this turn, instead of
+    dumping everything: each unit sold pushes the item's market inventory
+    up and its price down (selling is processed one unit at a time), so
+    this walks the real price curve and stops once the marginal unit's
+    price would fall below `min_price_ratio` of the current price —
+    self-limiting per resource (steep-glut premium goods like strawberry/
+    melon/wool naturally get sold in smaller chunks than staples that
+    absorb oversupply gently). Any unsold remainder just carries over to
+    next turn, when town consumption may have pushed the price back up."""
+    if held <= 0 or item not in MARKET_PARAMS:
+        return held  # unknown item (e.g. FERTILIZER never sold): sell all, harmless
+    current_price = predicted_price(item, market_inventory)
+    floor = max(1, current_price * min_price_ratio)
+    inv = market_inventory
+    n = 0
+    for _ in range(held):
+        p = predicted_price(item, inv)
+        if p < floor:
+            break
+        n += 1
+        inv += 1
+    return n

@@ -227,8 +227,8 @@ def _hire_block_cost(already, want):
     return sum(_fib(already + i) for i in range(max(0, want)))
 
 
-CREW_TARGET = 9          # #52: bounded on both sides, 9 is optimal
-CASH_FLOOR = 150.0       # must survive the night; a 9-hand crew costs 88
+CREW_TARGET = 9          # A/B: 12 -> ~3k, 14 -> ~1k. Fibonacci wages. #52's 9 confirmed for BC too.
+CASH_FLOOR = 150.0       # sweep on 3 seeds was non-monotonic (100:11k 150:21k 200:11k 300:16k) = noise
 HIRE_LINES = 5           # of the 10 order slots, hiring may claim at most this many
 SELL_TRIGGER = 6         # sell whenever the shed holds this much; the corpus sells constantly
 NO_LIVESTOCK = False     # A/B: dropping livestock LOSES (15,482/12,172/18,029 vs

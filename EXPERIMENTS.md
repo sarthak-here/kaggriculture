@@ -3327,6 +3327,73 @@ weeks, not a technical question.
 scrape/audit tooling and `verify_agent_path.py` are all reusable and committed. The BC agent
 is NOT submitted and must not be — v45 remains our line.
 
+### #68. BC pushed 1 -> ~21k, still loses 0-12 to v45 — and the corpus finds a v45 bug
+
+**The BC agent went from ~1 to ~21,000 in one session.** The lever was not the policy:
+
+| change | seeds 2001/2002/2003 |
+|---|---|
+| #67 baseline | 606 / 1 / 6,310 |
+| **+ keep the land full** | **13,888 / 15,426 / 10,181** |
+| + cash-aware crop plan (wheat while poor, melon/strawberry when rich) + seed batch cap | **16,651 / 21,158 / 21,222** |
+
+Ryo Hasegawa (168,259) runs `empty` tiles at ZERO from day 3 — every seed bought is
+planted at once. Our agent sat on 25 idle tiles. That one capital rule was the whole 4x
+production gap, and it is a rule, not a policy subtlety.
+
+**Controlled A/Bs run against that baseline, all negative — record them so they are not
+retried:**
+
+| arm | result |
+|---|---|
+| buy land on the expert clock (Q2 day 6, Q3 day 10) | 4,632 / 7,704 / 5,205 — **worse, twice** |
+| drop livestock entirely | 15,482 / 12,172 / 18,029 — worse |
+| feed-first navigation priority | 14,986 / 10,506 / 4,401 — worse |
+| CREW_TARGET 12 / 14 | ~3k / ~1k — Fibonacci wages |
+| CASH_FLOOR 100/200/300/600 | 11k/11k/16k/7k vs 150's 21k — **non-monotonic = noise** |
+
+All six top episodes buy quadrant 2 on day 6-7 and quadrant 3 on day 10-11, without
+exception, and it STILL loses for us: we cannot afford it when they can. **#56 now holds
+for the BC agent as well as the hand-written one.**
+
+**Verdict on BC: `analysis/duel.py bc_agent/main.py main.py 6` gives 0-12, mean margin
+-116,820.** It does not beat our own line and will not in the time left. Parked, with the
+corpus, encoder, models and tooling all kept.
+
+### #69. The corpus as GROUND TRUTH — v45 stops replanting after day 12
+
+Since BC lost, the 373 episodes are worth more as a measuring stick than as training data.
+`analysis/v45_vs_corpus.py` profiles v45 against the top-20 episodes, day by day:
+
+| day | corpus plant | v45 plant | corpus quad | v45 quad | corpus money | v45 money |
+|---|---|---|---|---|---|---|
+| 3 | 17 | 18 | 1.0 | 1.0 | 157 | 94 |
+| 9 | 37 | 35 | 2.0 | 2.0 | 2,121 | 326 |
+| 12 | **56** | **33** | **3.0** | 2.0 | 11,702 | 13,308 |
+| 18 | **58** | **33** | 3.0 | 2.0 | 43,524 | 28,669 |
+| 24 | **53** | **24** | 3.0 | 2.0 | 105,197 | 60,051 |
+| 27 | **51** | **21** | 3.0 | 2.0 | 130,635 | 72,419 |
+
+**v45 tracks a 3,100-rated agent EXACTLY to day 9** (35 planted vs 37, both on 2 quadrants).
+Everything diverges after that, in two separate ways:
+
+1. **The corpus takes quadrant 3 at day 10-12 and jumps to 56 planted.** Known, and closed
+   for us on ~35 configurations (#48/#56, re-confirmed above).
+2. **NEW, and not explained by land: v45's planted count DECAYS from 33 at day 12 to 21 at
+   day 27, while the corpus holds 51-58 flat.** Animals only account for 3 of those tiles
+   (15 -> 18). v45 is letting roughly a dozen tiles fall out of production for the back half
+   of the game — on land it already owns and already paid for.
+
+**This is a gap the ledger has looked straight past.** #? measured weed ROT loss at
+$157/game and concluded weeds were not worth chasing. That accounted for the produce lost on
+the tile, and never for the OPPORTUNITY COST of the tile sitting fallow: ~12 tiles idle for
+~15 days, on a farm whose whole output is ~30 tiles. The rot is trivial; the vacancy is not.
+
+**Next, and it is on our REAL line, not the BC branch:** make v45 keep replanting through the
+back half — clear dead tiles and re-seed them instead of letting the farm shrink. Corpus
+says the target is flat 51-58 planted; v45 should at minimum hold its day-12 33 rather than
+sliding to 21. Measure with `duel.py` against current v45, promote on win rate.
+
 ## Reproducing
 
 ```bash
