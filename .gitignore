@@ -22,3 +22,4 @@ replays_top/
 bc_data/
 bc_model.npz
 opening_schedule.json
+bc_market.npz
