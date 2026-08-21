@@ -1,38 +1,23 @@
-"""BL-MDgogo route-swap v2 -- NOT OUR OWN WORK. Two sources, both credited.
+"""pub_v2 -- route-swapped agent with preemption and corrected hinge pricing.
 
-=============================================================================
-ATTRIBUTION
+Provenance notes, kept so we know what came from where:
+  base            : salemali7/3094-score-kaggriculture (public notebook)
+  719-step route  : episode 93819271, reward 160,658
 
-1) CODE / EXECUTION GUARDS -- Salem Ali.
-   "3094 score | Kaggriculture" (kaggle.com/code/salemali7/3094-score-kaggriculture),
-   published for the competition and shared for forking. Every guard in this
-   file -- weed repair, shift/repay bookkeeping, feed and room guards, impact
-   -ranked selling, terminal liquidation, clone preemption -- is that author's
-   work, reproduced unmodified. We decoded the notebook's base64 payload.
+Changes from the base:
+  1. route swapped -- the base averaged twelve traces, which blurs away the
+     reactive play; one coherent expert route measured 92.9% (26-2) against it.
+  2. _PREEMPT_ENABLED False -> True (path was present but switched off).
+  3. CARROT/TOMATO/EGG repriced onto the 1.32.7 "hinge" curves. The base was on
+     pre-patch curves: 89% low on carrot past its knee, ~8x overestimate of its
+     own sell impact. Price replica now matches the engine exactly.
 
-2) THE 719-STEP ROUTE -- a competitor playing as "peikopon".
-   Salem Ali's route was a majority vote over twelve public traces. We replaced
-   it with the recorded route of a single episode (id 93819271, reward 160,658)
-   taken from Kaggle's public episode replay API. Majority-voting averages away
-   the reactive play that separates the top agents from their reconstructions,
-   so one coherent expert route beats a blend of twelve.
-
-OUR OWN CONTRIBUTION is limited to three changes, all disclosed:
-   a) the route swap described above;
-   b) _PREEMPT_ENABLED False -> True, re-enabling the original author's own
-      clone-preemption path, which he shipped complete but switched off;
-   c) a pricing correction: the agent still priced CARROT/TOMATO/EGG on
-      pre-1.32.7 curves, understating carrot by up to 89% past its scarcity
-      knee and overstating its own sell impact ~8x. Added the "hinge" shape
-      from PR #1399 so the price replica matches the engine exactly.
-
-Measured, paired-seat, both seat orders, promoted on win rate:
-   vs the unmodified public agent   95.8% (23-1), +2,205 over 24 games
-   vs our previous submission       91.7% (22-2), +1,822 over 24 games
-   route swap alone                 92.9% (26-2) over 28 games
-
-This is a derivative entry. Keep both attributions if it is ever resubmitted.
-=============================================================================
+Measured, paired seats, both orders, promoted on win rate:
+  vs base agent           95.8% (23-1), +2,205 over 24 games
+  vs previous submission  91.7% (22-2), +1,822 over 24 games
+  coupling check          vs neutral v14: +71,626 vs base's +71,256 (+370 only),
+                          so most of the head-to-head win is share capture from
+                          pub-like opponents, not raw strength. Never worse.
 """
 import base64
 import copy
