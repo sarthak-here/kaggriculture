@@ -3599,6 +3599,49 @@ That is the first difference we have found that is not "a better recording", and
 most plausible explanation of the 2,693 -> 3,132 gap. Attacking the churn is the next move:
 stop selling wheat that will be repurchased as feed.
 
+### #76. The wheat churn is NOT fixable inside this agent family
+
+#75 found the structural gap: the #1 agent buys 86-143 feed units a game, we buy 837, because
+we grow ~1,800 wheat, sell it all, then buy ~840 units back to feed the herd. Two attacks,
+both negative, and together they close the question.
+
+**1. A sell-side guard reproduces the profile and loses.** `_wheat_churn_guard` keeps a
+rolling feed reserve (shed capacity is 100, so stockpiling is impossible) and skips a feed
+purchase while it is covered. It works mechanically -- feed **435 -> 222 units**, wheat sold
+**683 -> 317**, squarely in the top-2 band -- and then loses badly: 87,658 vs 120,163 and
+109,104 vs 143,207.
+
+The reason is instructive. Suppressing SELLs does not stop the route PLANTING ~1,800 wheat.
+With a 100-slot shed the unsold surplus simply goes nowhere. **The churn is a property of the
+route's crop mix, not of the sell logic.**
+
+**2. Low-churn routes do exist in our corpus -- and they do not transplant.** Scanning all 373
+episodes for feed volume (range 77 to 1,314, median 487) turns up the top-2 profile, and it
+belongs almost entirely to **Ryo Hasegawa, the current #1**:
+
+| episode | reward | feed | wheat sold | composition |
+|---|---|---|---|---|
+| 94406847 | 107,086 | 77 | 556 | 6C10S_3Q |
+| **94401941** | 97,451 | **84** | 385 | **10C4S_3Q** |
+| 94442170 | 147,301 | 83 | 227 | 7C4S_3Q |
+
+Dropped into our 10c4s slot -- including ep94401941, which matches the slot composition
+exactly, the condition that mattered in #73 -- all three collapse:
+
+| route | vs pf_all2 |
+|---|---|
+| ep94401941 (composition-matched) | **0-12, -146,033** |
+| ep94405973 | 0-12, -134,853 |
+| ep94461751 | 0-12, -134,787 |
+
+**Conclusion: the lean feed profile is a property of Ryo Hasegawa's WHOLE AGENT, not of a
+transplantable route.** Composition matching was necessary (#73) but is not sufficient; a
+route also depends on the guard stack it was recorded under. Within the BL-MDgogo family the
+churn is structural, and closing the 2,693 -> 3,132 gap needs that family replaced, not
+retuned.
+
+**Do not retry**: sell-side churn guards, or importing low-feed routes into BL-MDgogo slots.
+
 ## Reproducing
 
 ```bash
