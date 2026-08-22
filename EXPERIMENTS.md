@@ -3394,6 +3394,67 @@ back half — clear dead tiles and re-seed them instead of letting the farm shri
 says the target is flat 51-58 planted; v45 should at minimum hold its day-12 33 rather than
 sliding to 21. Measure with `duel.py` against current v45, promote on win rate.
 
+### #72. The meta moved to ROUTE PORTFOLIOS and we were optimising a single route
+
+We were stuck at ~1,900 while the top sits at ~3,136. The reason is architectural, and three
+independent public notebooks found it before we did.
+
+**Pulled and decoded five current public agents** (`kaggle kernels list --competition
+kaggriculture --sort-by voteCount`; each embeds its agent as a base64/b85+zlib payload, so
+decode with the same trick used on salemali7). All five are forks of the SAME
+`BL-MDgogo-10C4S-R0` base as our pub line.
+
+**Absolute strength -- margin vs a NEUTRAL third party (v14), 6 seeds, base 5000.** This is
+the measure that coupling cannot fake:
+
+| agent | vs neutral v14 |
+|---|---|
+| **prvsiyan (Frontier V113)** | **+80,016** |
+| flexonafft (multi-route) | +74,481 |
+| our pub_v3 | +74,348 |
+| indarkarhana ("Rank Top10") | +73,532 |
+| pub_v1 (base) | +73,532 |
+| pub_v2 | +73,440 |
+| boatlee (V16-RC5) | +70,756 |
+
+**pub_v2 is level with pub_v1 here (+73,440 vs +73,532), which independently confirms the
+#70 coupling warning: its ladder gain was share capture, not strength.** pub_v3 is +816 over
+base -- a real but small gain.
+
+**Head-to-head, 8 games each, seeds 5000+:**
+
+| | indarkarhana | flexonafft | prvsiyan | boatlee |
+|---|---|---|---|---|
+| pub_v1 | 50% | **0%** | **0%** | 100% |
+| pub_v2 | 100% | **0%** | **0%** | 100% |
+| pub_v3 | 100% | 75% | 50% | 75% |
+
+Our route-swap work was real -- 0% -> 75% against flexonafft -- but it caps there.
+
+**THE ARCHITECTURE WE ARE MISSING.** prvsiyan's V113 carries **five route tables** --
+`_ACTIONS_10C4S_3Q`, `_ACTIONS_6C12S_4Q_FIRST_YARN`, `_ACTIONS_6C12S_4Q_SECOND_YARN`,
+`_ACTIONS_6C8S_3Q`, `_ACTIONS_8C6S_3Q` -- and selects one at RUNTIME from the unlocked-shop
+sequence (`_kawa_route_label`), then layers reactive carrot/tomato arms, a late plan, and
+post-weed replant repair on top. flexonafft ("yarn-led, milk-supported, or balanced") and
+indarkarhana ("read the market, choose the farm") do the same thing.
+
+**We have been tuning ONE fixed route. The meta is portfolios keyed on the shop roll.** That
+is why the shop sequence matters so much: #53 showed demand composition decides which
+products pay, and PR #1394 draws shops WITH REPLACEMENT, so the right farm plan genuinely
+differs game to game. A single route cannot express that.
+
+**Both of our edges are already in prvsiyan** -- `_PREEMPT_ENABLED = True` and CARROT/TOMATO/
+EGG on the `hinge` curves. There is nothing of ours left to bolt on; it is ahead, not
+adjacent. (flexonafft, by contrast, has preempt but **zero** occurrences of "hinge" -- it
+still carries the carrot mispricing from #60.)
+
+**Where our unique asset still applies:** prvsiyan hand-built its five routes from public
+replays. We hold **373 episodes of the top ten** plus proven screening machinery
+(`analysis/route_search.py`), and #71 showed screened routes beat hand-picked ones and that
+episode reward is anti-predictive. The open move is to screen a better route PER
+SHOP-CONDITION CLUSTER and swap them into a portfolio agent -- the v1->v3 trick applied to an
+architecture that starts ~6,000 stronger.
+
 ## Reproducing
 
 ```bash
