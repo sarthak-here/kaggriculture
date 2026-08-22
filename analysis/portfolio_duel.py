@@ -14,6 +14,7 @@ Honours KAG_SEED_BASE like duel.py.
 """
 
 import collections
+import json
 import os
 import sys
 
@@ -25,6 +26,23 @@ from kaggle_environments import make  # noqa: E402
 from portfolio import label_for  # noqa: E402
 
 SEED_BASE = int(os.environ.get("KAG_SEED_BASE", 5000))
+
+# The rare buckets almost never come up on arbitrary seeds -- 10c4s covers ~48%
+# of them. KAG_BUCKET restricts the run to seeds that `portfolio.py` observed
+# landing in that bucket, so a 6c8s route can actually be judged where it is used.
+BUCKET = os.environ.get("KAG_BUCKET", "").strip()
+
+
+def seed_list(n):
+    if not BUCKET:
+        return [SEED_BASE + i for i in range(n)]
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                        "portfolio", "seed_label.json")
+    mapping = json.load(open(path))
+    seeds = sorted(int(k) for k, v in mapping.items() if v == BUCKET)
+    if not seeds:
+        raise SystemExit("no mapped seeds for bucket %r" % BUCKET)
+    return seeds[:n]
 
 
 def play(a, b, seed):
@@ -44,8 +62,9 @@ def main():
     per = collections.defaultdict(lambda: {"w": 0, "l": 0, "m": []})
     tot = {"w": 0, "l": 0, "m": []}
 
-    for i in range(n):
-        seed = SEED_BASE + i
+    seeds = seed_list(n)
+    print("seeds: %s%s" % (seeds[:8], " ..." if len(seeds) > 8 else ""))
+    for seed in seeds:
         for order in (0, 1):
             first, second = (a, b) if order == 0 else (b, a)
             try:
