@@ -3455,6 +3455,59 @@ episode reward is anti-predictive. The open move is to screen a better route PER
 SHOP-CONDITION CLUSTER and swap them into a portfolio agent -- the v1->v3 trick applied to an
 architecture that starts ~6,000 stronger.
 
+### #73. Portfolio build: the route slot is a FARM COMPOSITION, not a shop condition
+
+Started swapping our corpus routes into the portfolio agent (#72). The first attempt failed
+in a way that identifies the real constraint.
+
+**Setup.** The portfolio agent stores each route as its own b85+zlib blob
+(`_ACTIONS_10C4S_3Q`, `_ACTIONS_6C12S_4Q_FIRST_YARN`, ...), so one bucket can be replaced
+with the selector, the other four routes and every guard untouched -- a clean one-variable
+A/B. Tooling: `analysis/portfolio.py` (classify), `portfolio_swap.py` (swap),
+`portfolio_duel.py` (duel reporting win rate PER BUCKET).
+
+**A measurement design note worth keeping:** the shop roll is NOT a pure function of the
+seed. `_end_of_day` draws weed spawns from the same RNG *before* it picks a shop, so what the
+agents do changes which shops unlock. Pre-mapping seeds to buckets is therefore invalid;
+`portfolio_duel.py` records the bucket each game actually landed in and groups afterwards.
+
+**First attempt: classify corpus episodes by the shop roll they FACED.** All three swaps lost
+0-14, but the margins split sharply:
+
+| swapped route | source | margin in the 10c4s bucket |
+|---|---|---|
+| ep92777801 | ReCurSiON, 166,656 | **-103,473** |
+| ep94439800 | tetsuya, 165,467 | **-99,799** |
+| ep93819271 | peikopon, 160,658 | **-3,908** |
+
+**A -100k collapse is not a weak route, it is a broken agent.** The cause: `10c4s_3q` names a
+FARM COMPOSITION -- 10 cows, 4 sheep, 3 quadrants -- and the guards (feed guard, room guard,
+pen logic) act on the farm that route builds. Drop in a route that buys a different herd and
+the guards operate on a farm that does not exist.
+
+**Re-classified all 373 episodes by what the route actually BUILDS** (BUY_ANIMAL totals + max
+quadrants) rather than the shops it saw:
+
+| composition | episodes | best reward |
+|---|---|---|
+| **10C4S_3Q** | **143** | 160,658 |
+| 6C12S_4Q | 49 | 154,540 |
+| 9C4S_3Q | 37 | 166,656 |
+| 6C8S_3Q | 15 | 150,653 |
+| 8C6S_3Q | 12 | 124,324 |
+
+The two that collapsed were **9C4S_3Q** and **12C3S_3Q** -- wrong composition for the slot.
+The near-parity one was the best **10C4S_3Q** episode in the corpus. That is the whole
+explanation, and it maps our compositions onto four of the five slots directly.
+
+**Rule for any future route swap: match the slot's composition first. A route is not a
+portable recording; it is the thing the guards are written against.**
+
+**Open question the screen is answering:** prvsiyan's hand-built 10c4s route still beat the
+BEST composition-matched episode we have (-3,908). Its routes are evidently cleaned rather
+than raw recordings. Since #71 showed episode reward is anti-predictive, the screen now
+samples 12 candidates ACROSS the 143-episode reward range rather than taking the top.
+
 ## Reproducing
 
 ```bash
