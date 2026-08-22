@@ -29,6 +29,10 @@ from kaggle_environments.envs.kaggriculture.kaggriculture import MARKET_I0, mark
 
 TURNS_PER_DAY = 24
 
+# Discovery seeds overstate effects ~2x (EXPERIMENTS method rules), so a result
+# found on 2000+ must be re-confirmed on a disjoint set. Override with KAG_SEED_BASE.
+SEED_BASE = int(os.environ.get("KAG_SEED_BASE", 2000))
+
 
 def game_data_hash(agent_path):
     gd = os.path.join(os.path.dirname(os.path.abspath(agent_path)), "game_data.py")
@@ -101,7 +105,7 @@ def main():
     rows = []
 
     for i in range(n):
-        seed = 2000 + i
+        seed = SEED_BASE + i
         for order in (0, 1):
             # order 0: A in seat 0. order 1: B in seat 0. Same seed both ways.
             first, second = (agent_a, agent_b) if order == 0 else (agent_b, agent_a)
