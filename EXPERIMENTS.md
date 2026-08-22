@@ -3508,6 +3508,46 @@ BEST composition-matched episode we have (-3,908). Its routes are evidently clea
 than raw recordings. Since #71 showed episode reward is anti-predictive, the screen now
 samples 12 candidates ACROSS the 143-episode reward range rather than taking the top.
 
+### #74. Portfolio swap WORKS: our screened route beats the leading agent's own
+
+Composition-matched screening (#73) against prvsiyan's hand-built `_ACTIONS_10C4S_3Q`,
+scored per route bucket so the other four slots do not dilute the signal. 12 candidates
+sampled ACROSS the 143-episode reward range:
+
+| route | episode reward | in-bucket, discovery seeds |
+|---|---|---|
+| **ep94469751** | 135,608 | **10-0, +3,150** |
+| ep94397452 | 142,764 | 10-0, +2,022 |
+| ep93949700 | 131,799 | 10-0, +1,901 |
+| ep93491727 | 117,695 | 4-2, +1,455 |
+| **ep93819271** | **160,658 (corpus best)** | **0-4, -5,166** |
+| ep92772579 | 125,960 | 0-6, -14,705 |
+
+**Episode reward is anti-predictive AGAIN, and this time decisively: the highest-reward
+10C4S_3Q episode in the entire corpus LOSES, while three mid-reward ones beat the base
+10-0.** That is now three independent confirmations (#71 route search, #72 route ranking,
+this). Never pick a route by its episode score; screen it.
+
+**Winner confirmed on disjoint seeds:**
+
+| | in-bucket | overall |
+|---|---|---|
+| discovery 5000+ | 10-0, +3,150 | 17-1 (94.4%), +1,824 |
+| **FRESH 9000+** | **9-3 (75.0%), +1,183** | 15-5 (75.0%), +763 |
+
+The usual discovery shrinkage, and still a clear win. **This is the first time we have beaten
+the strongest available agent using something only we have** -- the 373-episode top-10 corpus
+plus screening. prvsiyan hand-built its five routes from public replays; one of ours is
+better than its best in the bucket that covers most games.
+
+Packaged as `submit_pf1/` -- base agent with exactly one route blob replaced, selector and
+guards untouched.
+
+**Remaining headroom:** the other three slots (6C12S_4Q with 49 corpus episodes, 6C8S_3Q with
+15, 8C6S_3Q with 12) are untouched, and 18 candidates are built. Screening them needs a
+seed -> bucket map, because those buckets almost never come up on arbitrary seeds -- 10c4s
+dominates. Each slot is independent, so the wins should stack.
+
 ## Reproducing
 
 ```bash
