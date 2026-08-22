@@ -3642,6 +3642,42 @@ retuned.
 
 **Do not retry**: sell-side churn guards, or importing low-feed routes into BL-MDgogo slots.
 
+### #77. Fertilizer "gap" was a measurement error -- SELL orders are requests, not sales
+
+Chasing why mandgeee (2,774) beat pf_all by 3,913, the SELL totals showed them moving 2,198
+fertilizer to our 1,624 and it looked like a real extraction gap worth ~$21k.
+
+**It is not real.** `COLLECT_FERTILIZER` yields exactly 1 unit
+(`_inv_add(inv, "FERTILIZER", 1)`), and both sides collected almost identically -- **352 vs
+346**. Fertilizer cannot exceed collections, so the 574-unit "gap" was impossible on its
+face.
+
+**Cause: I counted SELL ORDER QUANTITIES as units sold.** The engine fulfils a SELL only up
+to what is in the shed, so a 1,624-unit order total can sit on top of ~350 real units. This
+ledger already carries the rule -- "use per-step money deltas for cost/revenue claims;
+nominal per-order pricing lies" (#21b) -- and it was not applied.
+
+**Corrected with per-step money deltas:**
+
+| | us (pf_all) | mandgeee |
+|---|---|---|
+| income | **$163,882** | $142,493 |
+| spend | **$56,159** | $30,857 |
+| net | 107,723 | **111,636** |
+
+We earn **+$21,389** more and spend **+$25,302** more; net -3,913, matching the reported
+margin exactly. The verdict from #75 survives -- we lose on SPEND, dominated by feed -- but
+every revenue/units figure quoted in #75 and the Vibe Farmer analysis was inflated by this
+same error and should be re-derived from money deltas before being reused.
+
+**The feed finding itself is safe**, because it was counted from `BUY_PRODUCT` orders and
+buys ARE fulfilled when affordable -- and it is independently confirmed by simulation:
+pf_all 1,312 units, base 800-987, pf_all2 838.
+
+**Standing rule, restated because it keeps costing us: SELL order quantities are requests.
+Only per-step money deltas measure revenue. BUY orders are safe to count; SELL orders are
+not.**
+
 ## Reproducing
 
 ```bash
