@@ -3678,6 +3678,49 @@ pf_all 1,312 units, base 800-987, pf_all2 838.
 Only per-step money deltas measure revenue. BUY orders are safe to count; SELL orders are
 not.**
 
+### #78. Three ladder losses, two causes -- and the selector is NOT one of them
+
+All measured with per-step money deltas (#77), not order quantities.
+
+**Kaan Dinız (2,820), -2,840 -- the feed defect again.** Same family, same 4 quadrants and
+6C9S herd.
+
+| | us (pf_all) | Kaan |
+|---|---|---|
+| income | $138,827 | $132,894 |
+| spend | $57,528 | $48,755 |
+| feed | **1,312u / $56,550** | 970u / $42,076 |
+
++$5,933 more earned, +$8,773 more spent, net -2,840 exactly. Already fixed in pf_all2 (838
+feed units). This is now the THIRD loss traced to the same 1,312-unit route: Vibe Farmer,
+mandgeee, Kaan.
+
+**MiMi (2,725), -10,254 -- a different cause entirely.**
+
+| | us | MiMi |
+|---|---|---|
+| **quadrants** | **3** | **4** |
+| herd | 10C2S | 8C3S |
+| income | $110,269 | **$119,599** |
+| spend | $27,820 | $26,896 |
+| feed | 433u | 150u |
+
+**MiMi out-EARNED us by $9,330 on effectively the same spend**, running four quadrants where
+our selector chose a three-quadrant plan.
+
+**Tested whether the selector is at fault: it is not.** Rerouting the milk-support branch
+(`_KAWA_MILK_SUPPORT` -> `10c4s_3q`) to a 4-quadrant plan instead scored **3-13 (18.8%),
+-11,799** against pf_all2. Three quadrants is the right choice FOR OUR AGENT; MiMi's edge is
+that it can work a fourth profitably and we cannot.
+
+That is the same wall as #56 (land negative across ~35 of our configurations) and #76 (the
+lean-feed profile is a property of the #1's whole agent, not a transplantable route). Three
+independent probes -- land, feed, selector -- all land on the same conclusion: **the
+BL-MDgogo family has an architectural ceiling around 2,500-2,800, and the agents above it
+differ in what they can WORK, not in which recording they replay.**
+
+**Do not retry**: biasing the route selector toward more land.
+
 ## Reproducing
 
 ```bash
