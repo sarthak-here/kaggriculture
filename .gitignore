@@ -26,3 +26,5 @@ bc_market.npz
 variants/
 public_new/
 portfolio/
+top2/
+loss_analysis/

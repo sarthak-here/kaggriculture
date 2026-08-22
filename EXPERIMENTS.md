@@ -3548,6 +3548,57 @@ guards untouched.
 seed -> bucket map, because those buckets almost never come up on arbitrary seeds -- 10c4s
 dominates. Each slot is independent, so the wins should stack.
 
+### #75. RANK 31 -- and the #1/#2 replays show a structural gap: the wheat churn
+
+**Ladder, 2026-08-23: rank 31 of ~5,900, score 2,693.3.** `pf_all` (Frontier V113 with all
+five route slots corpus-screened) is 32-3 (**91.4%**) in 35 matches and still climbing;
+prvsiyan unmodified sits at 2,540.9 (76 matches, 75.7%). The corpus-screened routes are what
+took us past the top-100 target.
+
+**A real regression found from a ladder loss, and fixed.** Losing to "Vibe Farmer" (rated
+2,625) by 889 looked like bad luck; the replay showed it was not. Vibe Farmer is the SAME
+agent family -- identical 4 quadrants, 6C/12S herd, 12 melon, 42 strawberry. We out-SOLD it
+on nearly everything and our sell revenue was **+15,938 higher**, yet we lost, because:
+
+| category | us | Vibe Farmer |
+|---|---|---|
+| HIRE | $5,977 | $5,977 (identical) |
+| ANIMAL | $8,400 | $8,400 (identical) |
+| **FEED (BUY_PRODUCT)** | **$56,741** | **$28,611** |
+
+Our 6c12s route pick (ep94369942) bought **1,312 feed units** against the base's 800-987 --
+a fixed count baked into that recording. Rebuilt the slot with ep93867727 (838 feed):
+mean feed cost **$57,436 -> $37,181**, now BELOW the base's $39,711, and the stack improved
+from 78.6%/85.0% to **87.5% (21-3) on fresh seeds 47000+**.
+
+**Note the trap: lowest feed is NOT best.** ep93783010 uses the fewest feed units in the
+corpus (673, exactly matching Vibe Farmer) and collapsed **0-12, -36,172**. Feed volume is a
+symptom to check, never an objective to minimise.
+
+**THE STRUCTURAL GAP (from 5 head-to-head #1 vs #2 replays, episodes 96622153/96651842/
+96816183/96870933/96925730):**
+
+| | feed units | feed cost | wheat sold | quads | herd |
+|---|---|---|---|---|---|
+| **Ryo Hasegawa (#1, 3,132)** | **86-143** | **$3.0-5.8k** | 247-417 | 3 | 12C2S, 8C6S, 12C5S, 11C3S, 7C9S |
+| Subramanya N (#2, 3,055) | 166-300 | $6.4-11.9k | 217-383 | 3 | 9C10S, 4C8S, 11C2S, 8C7S |
+| **our pf_all2 (2,693)** | **837** | **$37,181** | **1,817** | 3-4 | fixed per slot |
+
+Two differences, both structural rather than route-quality:
+
+1. **We run a WHEAT CHURN and they do not.** We grow ~1,800 wheat, sell all of it, then buy
+   ~840 units back as feed. They grow modestly, sell 250-400, and barely buy feed. Every
+   churn cycle pays the market spread AND, at T=400, drives the wheat price down against our
+   own remaining sales. #52 said the game is a zero-sum race for a fixed demand pool; this is
+   us paying twice to move the same wheat through the market.
+2. **Their herd composition varies EVERY GAME** -- 12C2S, 4C8S, 9C10S, 11C3S, 7C9S. That is
+   adaptive, chosen on something finer than our five fixed compositions keyed on the shop
+   roll. Our portfolio commits to one of five recorded herds; theirs is computed.
+
+That is the first difference we have found that is not "a better recording", and it is the
+most plausible explanation of the 2,693 -> 3,132 gap. Attacking the churn is the next move:
+stop selling wheat that will be repurchased as feed.
+
 ## Reproducing
 
 ```bash
