@@ -3796,6 +3796,57 @@ the incumbent.
 candidates (26 of 143 now tested) found nothing better -- best was 50.0% at -340. That slot
 covers ~45% of games and is maxed.
 
+### #81. pf_all's loss pattern found and localised -- but no patch exists in our toolkit
+
+**pf_all's ladder record: 89 matches, 64-25 (71.9%).** Profiled its 12 worst losses against
+12 RATING-MATCHED wins (win opponents 2,759-2,843) so any pattern found is not just "we lose
+to strong agents". Everything from per-step money deltas (#77).
+
+**The pattern is the route bucket:**
+
+| bucket | losses | wins |
+|---|---|---|
+| 10c4s_3q | 4 | **8** |
+| **6c12s yarn (both)** | **6** | 3 |
+| 8c6s_3q | 2 | 1 |
+
+Losses skew hard to the yarn buckets, wins to 10c4s. Every yarn loss shows `feed 1312` --
+our spend $54-57k against opponents' $12-49k. Six losses, -41,777 total. Loss opponents
+average **2,672** rating, wins **2,301**. Nine of 25 losses are under 2,200 margin, so
+flipping the bucket would move 71.9% toward ~82%.
+
+**Three patches tried, all negative:**
+
+1. **Lower-feed yarn routes.** Against v14_neutral in the yarn bucket the low-feed routes
+   looked better (ep93867727 **+74,493** vs current **+73,232**). Against a PANEL of real
+   opponents they are clearly worse:
+
+   | 6c12s route | prvsiyan | flexonafft | indarkarhana | total |
+   |---|---|---|---|---|
+   | **current (1,312 feed)** | 60% | 60% | 80% | **66.7% (20-10)** |
+   | ep93867727 (838) | 40% | 40% | 70% | 50.0% (15-15) |
+
+2. **Reroute yarn rolls to the strong 10c4s slot**: **0-10 against all three opponents,
+   ~-21,000.** Composition beats route quality (#73) -- a 10C4S route cannot run a 6C12S_4Q
+   farm, whatever its quality.
+
+3. Biasing the selector toward more land was already 18.8% (#78).
+
+**A METHOD CORRECTION THAT MATTERS MORE THAN THE RESULT.** The neutral-opponent check and the
+panel DISAGREED, and the panel is right. `v14_neutral` is a weak, structurally different
+agent: it is the correct tool for detecting share-capture inflation (its whole purpose in
+#70/#72), but it is the WRONG tool for RANKING two candidates, because both beat it so
+decisively that the margin difference is noise about play we will never face.
+
+**Rank candidates on a PANEL of realistic opponents. Use the neutral only to ask "is this
+gain real or coupling?"** This also retroactively vindicates #80: pf_all2 lost the panel-like
+head-to-head, and the neutral test that seemed to contradict it was measuring the wrong thing.
+
+**Where this leaves pf_all: optimal for our approach.** Every lever is now exhausted --
+10c4s slot (26 of 143 candidates), 6c12s slot (6 candidates + panel), the selector (2
+modifications), feed guards, land, churn. We know precisely where it is weak (yarn buckets
+against 2,700+ opponents) and that our corpus contains no route that fixes it.
+
 ## Reproducing
 
 ```bash
