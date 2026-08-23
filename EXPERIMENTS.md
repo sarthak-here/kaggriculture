@@ -3721,6 +3721,48 @@ differ in what they can WORK, not in which recording they replay.**
 
 **Do not retry**: biasing the route selector toward more land.
 
+### #79. Five ladder losses dissected -- feed is architectural, and the corpus is bimodal
+
+All figures from per-step money deltas (#77).
+
+| opponent | rating | margin | cause |
+|---|---|---|---|
+| Vibe Farmer | 2,625 | -889 | 6c12s route buying 1,312 feed units -- **FIXED in pf_all2** |
+| mandgeee | 2,774 | -3,913 | same | 
+| Kaan Dinız | 2,820 | -2,840 | same |
+| MiMi | 2,725 | -10,254 | architectural: 4 quadrants worked profitably, we cannot (#78) |
+| fufufukakaka | 2,751 | -11,877 | **10c4s route feed floor -- NOT fixable** |
+
+**fufufukakaka is the informative one** because it is not the bug we fixed. Both farms ran 3
+quadrants and 3 planted tiles; income was near-identical ($81,449 vs $83,719). They ran MORE
+animals (15 v 12) on HALF the feed:
+
+| | us | fufufukakaka |
+|---|---|---|
+| spend | $27,925 | $18,318 |
+| feed | **433u / $18,570** | 229u / $8,780 |
+
+The $9,790 feed gap is essentially the whole 11,877 margin.
+
+**And it cannot be fixed by swapping routes.** Feed volume across the 143 corpus 10C4S_3Q
+routes is **bimodal with nothing in between**: one route at **84** units (Ryo Hasegawa's,
+which collapses at -146,033 when transplanted, #76) and everything else at **431-741**, with
+a large cluster at **exactly 434** -- every peikopon episode, identical regardless of seed.
+
+**Feed volume is a fixed property of the agent that recorded the route, not a situational
+choice.** Our current 10c4s route (ep94469751, 434) already sits at the floor of the
+workable cluster. There is no moderate-feed option to screen.
+
+**Also checked and rejected as a different lineage:** `nagatakengo/kaggriculture` decodes to
+a genuinely non-BL-MDgogo agent (13.7k chars, plain source) and loses **0%, -155,427**.
+`ameythakur20` decodes to a byte-size match for prvsiyan (same family).
+`kaitofukami/22-24-unseen-lineages-v41-sparse-closed-loop` (gzip payload) and
+`stevenleehans/kaggriculture-e284` (SOURCE_B85) did NOT extract with the current decoder and
+remain the two most promising unexplored candidates -- kaitofukami's title claims 22/24
+against unseen lineages, and "closed loop" implies reactive rather than replayed.
+
+**Do not retry**: screening 10c4s routes for lower feed.
+
 ## Reproducing
 
 ```bash
