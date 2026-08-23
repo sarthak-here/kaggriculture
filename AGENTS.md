@@ -17,8 +17,8 @@ Two rules that govern reading anything below:
 
 | build | file | ladder | what it is |
 |---|---|---|---|
-| **pf_all2** | `submit_pf_all2/main.py` | seeding 2026-08-23 | pf_all with the 6C12S slot fixed (feed 1,312u → 838u) |
-| **pf_all** | `submit_pf_all/main.py` | **2,810 (rank ~31)** | Frontier V113, all five route slots corpus-screened |
+| ~~pf_all2~~ | `submit_pf_all2/main.py` | **REGRESSION — do not use** | 6C12S swap that lowered feed cost but loses 17.9% to pf_all in that bucket (#80) |
+| **pf_all — BEST** | `submit_pf_all/main.py` | **2,810 (rank ~31)** | Frontier V113, all five route slots corpus-screened. 10c4s slot verified optimal across 26 of 143 candidates (#80) |
 | pf1 | `submit_pf1/main.py` | not submitted | first single-slot swap (10c4s only) |
 | prvsiyan | `submit_prvsiyan/main.py` | 2,547 | Frontier V113 reproduced unmodified |
 | pub_v3 | `submit_pub_v3/main.py` | 1,541 | pub base + route ep94493555 + preempt + hinge |

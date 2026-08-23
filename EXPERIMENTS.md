@@ -3763,6 +3763,39 @@ against unseen lineages, and "closed loop" implies reactive rather than replayed
 
 **Do not retry**: screening 10c4s routes for lower feed.
 
+### #80. pf_all2 was a REGRESSION -- I optimised a proxy instead of the outcome
+
+**pf_all remains our best build. pf_all2 is worse and should not be used.**
+
+| test | result |
+|---|---|
+| pf_all2 vs pf_all, **6c12s bucket** (the only slot they differ in) | **17.9% (5-23), -4,757** |
+| pf_all2 vs pf_all, all buckets, fresh seeds 77000+ | **33.3% (4-8), -857** |
+
+**How the error happened, because the shape of it will recur.** Three ladder losses (#75,
+#78) traced to pf_all's 6c12s route buying 1,312 feed units against opponents' 464-970. I
+formed the causal story "feed overspend loses games", found a 838-unit replacement, verified
+the feed cost fell ($57,436 -> $37,181), and shipped it.
+
+**I never A/B'd the two candidates against each other.** Both beat the prvsiyan base in the
+yarn bucket (ep94369942 9-1, ep93867727 12-0), which I read as interchangeable. Head to head
+inside pf_all, ep94369942 wins **23-5**. The high-feed route spends more and produces more
+than enough to cover it.
+
+An early pf_all2-vs-pf_all run showed 4-2 (+213) and I treated that as confirmation; it was
+six games and inside noise. The user spotted the regression from the ladder before the local
+tests did.
+
+**The rule this violates, stated so it is checkable:** a diagnosis explains a loss, it does
+not rank two candidates. **When replacing component X with X', the promotion test is X vs X'
+directly -- never "X' fixes the metric I blamed" and never "both beat a third party".**
+Feed cost, dead seed, wheat churn are all DIAGNOSTICS. The only objective is win rate against
+the incumbent.
+
+**Also settled: pf_all's 10c4s route is optimal for our corpus.** A widened screen of 14 more
+candidates (26 of 143 now tested) found nothing better -- best was 50.0% at -340. That slot
+covers ~45% of games and is maxed.
+
 ## Reproducing
 
 ```bash
