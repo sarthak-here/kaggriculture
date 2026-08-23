@@ -18,7 +18,7 @@ Two rules that govern reading anything below:
 | build | file | ladder | what it is |
 |---|---|---|---|
 | ~~pf_all2~~ | `submit_pf_all2/main.py` | **REGRESSION — do not use** | 6C12S swap that lowered feed cost but loses 17.9% to pf_all in that bucket (#80) |
-| **pf_all — BEST** | `submit_pf_all/main.py` | **2,810 (rank ~31)** | Frontier V113, all five route slots corpus-screened. 10c4s slot verified optimal across 26 of 143 candidates (#80) |
+| **pf_all — BEST** | `submit_pf_all/main.py` | **2,773.2 — RANK 15 of 6,041** | Frontier V113, all five route slots corpus-screened. 10c4s slot verified optimal across 26 of 143 candidates (#80). **Rating CONVERGED: +0.07/match over its last 20, 50% win rate vs mean opponent 2,781.** |
 | pf1 | `submit_pf1/main.py` | not submitted | first single-slot swap (10c4s only) |
 | prvsiyan | `submit_prvsiyan/main.py` | 2,547 | Frontier V113 reproduced unmodified |
 | pub_v3 | `submit_pub_v3/main.py` | 1,541 | pub base + route ep94493555 + preempt + hinge |
@@ -62,6 +62,39 @@ and **33.3% (4–8)** overall on fresh seeds (#80). pf_all is the better build.
 
 Coupling for reference: pf_all2 +77,242 vs prvsiyan's +76,826 — only **+416** is
 absolute strength; the rest is share capture from base-family opponents.
+
+---
+
+## The live board (2026-08-23) — and what a realistic target looks like
+
+$50,000 pool, final deadline **2026-09-30**. 6,041 teams.
+
+| # | team | score |
+|---|---|---|
+| 1 | Ryo Hasegawa | 3,134.2 |
+| 2 | Subramanya N | 3,037.2 |
+| 3 | Arman Tuganbaev | 2,952.4 |
+| 4 | MiMi | 2,952.1 |
+| 5 | Crop Dusta | 2,951.2 |
+| 6 | Izzoudine Mohamed KANTA | 2,906.3 |
+| 7 | ActiveMusyoku | 2,894.2 |
+| 8 | Kobe BRYANT | 2,875.3 |
+| — | *(cliff)* | |
+| 9 | shiiin9 | 2,730.7 |
+| **15** | **us — pf_all** | **2,773.2** |
+
+**The entire competitive band is ~360 points wide.** Rating goals stated in four figures
+are not achievable by anyone — +1,000 would put us 700 clear of the world #1. State targets
+in ranks, or in the **+178 to reach top-5**.
+
+**pf_all is converged**, so rank will not improve by waiting: last 20 matches pay
++0.07/match at a 50% win rate against mean opponent 2,781. Only a stronger agent moves it.
+
+### The promotion bar (user's rule, 2026-08-23)
+
+**A new build must beat every previous model >90% of the time before it ships.** Run the
+full `submit_*` ladder with `duel.py` on a fresh `KAG_SEED_BASE`, rank on a **panel of real
+opponents**, and never promote on the v14 neutral — that is a coupling check only (#81).
 
 ### The promotion rule this cost us
 
