@@ -45,7 +45,7 @@ All are forks of the same `BL-MDgogo-10C4S-R0` base.
 
 ---
 
-## Head-to-head record of our best (pf_all2, fresh seeds 60000+)
+## Head-to-head (pf_all2, fresh seeds 60000+) — kept for the record only
 
 | opponent | record | margin |
 |---|---|---|
@@ -54,10 +54,22 @@ All are forks of the same `BL-MDgogo-10C4S-R0` base.
 | pub_v2 | 12–0 | +9,177 |
 | prvsiyan | 12–0 | +2,844 |
 | pub_v3 | 9–3 | +3,054 |
-| pf_all | 4–2 | +213 |
+| pf_all | 4–2 | +213 ← **six games, inside noise. Misled us.** |
 
-Coupling: pf_all2 +77,242 vs prvsiyan's +76,826 — only **+416** is absolute
-strength; the rest is share capture from base-family opponents.
+**That last row is why pf_all2 shipped, and it was wrong.** On a proper sample
+pf_all2 loses to pf_all **17.9% (5–23)** in the 6c12s bucket where they differ,
+and **33.3% (4–8)** overall on fresh seeds (#80). pf_all is the better build.
+
+Coupling for reference: pf_all2 +77,242 vs prvsiyan's +76,826 — only **+416** is
+absolute strength; the rest is share capture from base-family opponents.
+
+### The promotion rule this cost us
+
+A diagnosis explains a loss; it does **not** rank two candidates. When replacing
+component X with X′, the test is **X vs X′ directly** — never "X′ fixes the
+metric I blamed for the loss", and never "both beat a third party". Feed cost,
+dead seed and wheat churn are all *diagnostics*. The only objective is win rate
+against the incumbent, on enough games to leave noise behind.
 
 ---
 
