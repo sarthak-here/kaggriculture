@@ -3918,3 +3918,37 @@ especially the feed-heavy yarn buckets, lose to strong policies that profitably 
 quadrants/animals. WHEAT churn captures deterministic town demand but does not repair that gap.
 
 No Kaggle submission was made. Untouched `submit_pf_all/main.py` remains unchanged.
+
+### #83. Top-loss architecture and WHEAT-threshold follow-up -- no promotion
+
+Profiled five representative pf_all losses to MiMi, Arman, Crop Dusta and
+fufufukakaka day by day. The winners do not share one scalar patch:
+
+- MiMi reaches Q4 on day 12 and runs 9 cows / 3 sheep.
+- Crop Dusta reaches Q3 on day 8 (pf_all day 11) with cows, sheep and geese.
+- Arman wins at Q3 with a lean 6-cow / 10-sheep economy.
+- fufufukakaka uses 12 hands and mixed 15-animal herds while pf_all's matching
+  losses use 9-12 hands and 14-18 animals.
+
+Rebuilt each opponent's complete 719-step route and screened it directly against
+pf_all. MiMi scored 1-3; Arman 0-4; Crop Dusta 0-4; fufufukakaka episode 97395540
+0-4. Episode 97144518 screened 4-0 but collapsed to **6-14 (30%, -76,411)** on
+ten fresh seeds. Restricting that route to pf_all's matching `10c4s_3q` bucket
+still scored **0-10 (-98,071)**. The route depends on finer seed state/reactivity,
+not merely shop bucket or farm composition.
+
+Tried to stabilize #82's 10-unit WHEAT expert by raising minimum predicted profit:
+
+| threshold | screen result |
+|---:|---:|
+| $5 | 6-4, -11 |
+| $10 | 2-2, 6 ties |
+| $15 | 2-2, 6 ties |
+| $25 | 1-1, 8 ties |
+| $50 | 2-2, 6 ties |
+| $100 | 2-2, 6 ties |
+
+Higher thresholds remove the profitable arm and expose pure seat symmetry. The original
+$1 threshold remains best, but its disjoint 16-4 confirmation still misses the >=90%
+promotion rule. `submit_pf_all/main.py` remains untouched and incumbent. No Kaggle
+submission was made.

@@ -159,3 +159,12 @@ route tuning.
 - The mechanism is real and leaves all five farm routes unchanged, but remains seed/seat
   sensitive and did not improve the 7-3 win count against prvsiyan on the matched panel.
 - Untouched `submit_pf_all/main.py` remains the production incumbent.
+
+## Experimental: reconstructed top-loss routes and WHEAT thresholds (#83)
+
+- `variants/toploss_ep*` preserves five full opponent routes reconstructed from saved losses.
+  Only episode 97144518 passed a 4-game screen; it failed confirmation 6-14 and failed its
+  matched portfolio bucket 0-10.
+- `variants/pf_all_mm_p{5,10,15,25,50,100}` preserves the WHEAT threshold sweep. None
+  improves on the $1 experimental setting; thresholds >=10 mostly tie pf_all.
+- Production incumbent remains untouched `submit_pf_all/main.py`.
