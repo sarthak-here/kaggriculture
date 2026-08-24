@@ -4057,3 +4057,33 @@ sheep. Corrected one-turn crossover probes both scored **0-6** against Kaito and
 almost no farm output, confirming immediate state divergence. A valid next architecture
 must optimize a new common opening that can branch later; frozen-policy switching is not a
 safe shortcut. `submit_pf_all/main.py` remains untouched. No Kaggle submission was made.
+### #87. “Unsold food” correction: terminal crops were never harvested
+
+The user correctly clarified that the visible food was not shed inventory; it was mature
+food left standing in the fields. `analysis/unharvested_profile.py` now measures terminal
+`yield_units`, ready tiles, final-price value, and last-day HARVEST actions.
+
+Both real v46 ladder losses show the same mechanism:
+
+| episode/opponent | our terminal ready crop | value | opponent ready crop |
+|---|---:|---:|---:|
+| 98663380 / Corgi | 27 WHEAT on 12 tiles | $1,188 | $0 |
+| 98683942 / John Stupid | 20 WHEAT + 4 CARROT on 11 tiles | $1,252 | $0 |
+
+On the same local worlds, v46 leaves roughly $948-$1,252 harvestable while pf_all leaves
+only $28-$70. Therefore this is a genuine v46 terminal-worker weakness and one reason the
+new submission underperformed pf_all.
+
+Six isolated repairs were tested against frozen `submit_v46_three_suffix` on both seeds
+in paired seats. Full terminal controllers beginning at 708, 704, 696, and 684 all scored
+**1-3**. A final-day surgical overlay and a WHEAT-only feasible-return overlay also scored
+**1-3**. Earlier takeovers recover more crop but abandon profitable animal work and alter
+market timing. The surgical versions still disturb validated worker paths and later CARROT
+collection. Engine inspection also corrected an assumption: WATER immediately increases
+non-ongoing crop yield, so replacing final-day WATER indiscriminately can create a larger
+terminal backlog.
+
+Conclusion: the diagnosis is valid, but a generic worker override is negative. The safe
+repair requires rebuilding the route's final-day movement schedule with joint assignments
+for harvest, animal work, shed return, and sale. pf_all already has effective terminal
+worker routing and does not need this transplant. No Kaggle submission was made.
