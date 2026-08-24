@@ -3999,3 +3999,28 @@ changes were rejected rather than overfit.
 This is the first candidate to clear the >90% unseen promotion bar against pf_all. It is
 kept separate; `submit_pf_all/main.py` is untouched. Submitted to Kaggle as **55751173**
 on 2026-08-25 with message `v46 three-suffix router 19-1 unseen`. Validation completed at the standard 600.0 initial rating; its first assigned episode was a tie at 64,149.
+
+### #85. Early ladder falsifies “categorically better than pf_all”
+
+Submission 55751173 reached **11-1-1 and 1,594.7** after 13 episodes, but its first real
+loss came after nine wins, at rating **1,499.0**. Episode 98663380 was a 65,317-69,168
+loss to Corgi-Samoyed submission 55743618, then rated 1,611.2. Corgi is not a hidden top
+agent: its 61-match record is 38-23 (62.3%) and its rating is converged near 1,614.
+
+The user's comparison was correct. Normalizing timestamps and excluding the one-agent
+seeding episode, pf_all won **27 consecutive duels** and first lost at rating **2,648.7**.
+Therefore the new agent's 19-1 paired-seat result against pf_all cannot be interpreted as
+general ladder dominance. It is a strong direct matchup, with family/market coupling, but
+pf_all had substantially better early-ladder coverage.
+
+Replay 98663380 localizes the loss. Our agent led by 8,471 on day 18, then lost the late
+game by 3,851. It ran 11 cows / 4 sheep against Corgi's leaner 7 cows / 4 sheep. Across
+money deltas, Corgi earned about 2,812 more and spent about 1,039 less, with much heavier
+late WHEAT turnover. On replay seed 1201036856, the submitted agent and pf_all split 1-1
+when directly paired, so the episode does not prove pf_all would beat Corgi on that exact
+world; it proves the new architecture has a seat-sensitive late-game matchup hole.
+
+**Method correction:** beating the incumbent is necessary but not sufficient. Promotion
+also needs dissimilar-opponent coverage and an early-ladder surrogate panel. Keep
+submission 55751173 as an experiment, not a proven universal replacement. No additional
+Kaggle submission was made.
