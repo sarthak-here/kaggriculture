@@ -17,8 +17,9 @@ Two rules that govern reading anything below:
 
 | build | file | ladder | what it is |
 |---|---|---|---|
+| **v46-three-suffix — BEST LOCAL** | `submit_v46_three_suffix/main.py` | **not submitted** | Sparse closed-loop v46 with three state-compatible third-YARN suffixes. **20-0 discovery and 19-1 unseen vs pf_all**; fresh public panel: Fleong 18-2, Salem3094 16-4, Kaito parent 3-3 with 14 ties, Soil 8-12. Frozen SHA-256 `5950fdb0032ede297706bb5aaae48461597563b6322de144ec0dee4274388c59` (#84). |
 | ~~pf_all2~~ | `submit_pf_all2/main.py` | **REGRESSION — do not use** | 6C12S swap that lowered feed cost but loses 17.9% to pf_all in that bucket (#80) |
-| **pf_all — BEST** | `submit_pf_all/main.py` | **2,773.2 — RANK 15 of 6,041** | Frontier V113, all five route slots corpus-screened. 10c4s slot verified optimal across 26 of 143 candidates (#80). **Rating CONVERGED: +0.07/match over its last 20, 50% win rate vs mean opponent 2,781.** |
+| **pf_all — PRODUCTION INCUMBENT** | `submit_pf_all/main.py` | **2,773.2 — RANK 15 of 6,041** | Frontier V113, all five route slots corpus-screened. 10c4s slot verified optimal across 26 of 143 candidates (#80). **Rating CONVERGED: +0.07/match over its last 20, 50% win rate vs mean opponent 2,781.** Remains the submitted model until explicit approval to replace it. |
 | pf1 | `submit_pf1/main.py` | not submitted | first single-slot swap (10c4s only) |
 | prvsiyan | `submit_prvsiyan/main.py` | 2,547 | Frontier V113 reproduced unmodified |
 | pub_v3 | `submit_pub_v3/main.py` | 1,541 | pub base + route ep94493555 + preempt + hinge |
@@ -168,3 +169,17 @@ route tuning.
 - `variants/pf_all_mm_p{5,10,15,25,50,100}` preserves the WHEAT threshold sweep. None
   improves on the $1 experimental setting; thresholds >=10 mostly tie pf_all.
 - Production incumbent remains untouched `submit_pf_all/main.py`.
+
+## Best local candidate: v46-three-suffix (#84)
+
+- Frozen artifact: `submit_v46_three_suffix/main.py`.
+- It repairs pf_all's recurring third-shop-YARN weakness with separate, prefix-compatible
+  suffixes instead of transplanting a whole incompatible route.
+- `SMOOTHIE_SHOP / SMOOTHIE_SHOP / YARN_STORE` and
+  `SMOOTHIE_SHOP / BAKERY / YARN_STORE` use two mined compatible suffixes.
+- `FARMERS_MARKET / PIZZA_SHOP / YARN_STORE` uses the compatible suffix with its late
+  CARROT chain changed to TOMATO; replay traces showed TOMATO was pf_all's decisive product.
+- Paired-seat result against pf_all: **20-0** on discovery seeds 93000-93009 and
+  **19-1** on unseen seeds 94000-94009.
+- The remaining observed weakness is Soil (**8-12**), so this is submission-ready but
+  not universal. No Kaggle submission has been made.

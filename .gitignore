@@ -29,3 +29,8 @@ portfolio/
 top2/
 loss_analysis/
 public_new2/
+# generated public-agent mining and duel caches
+public_candidates/
+route_mining/
+analysis/duel_*.json
+analysis/kaito_v46_routes.json

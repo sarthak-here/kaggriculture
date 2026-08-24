@@ -84,6 +84,48 @@ def candidate_blobs(src, minlen=1000):
         tree = ast.parse(src)
     except SyntaxError:
         return out
+    # Resolve literal fragment lists followed by "".join(PAYLOAD_PARTS).
+    # Only constants are evaluated; notebook code is never executed.
+    symbols = {}
+    for node in tree.body:
+        if not isinstance(node, (ast.Assign, ast.AnnAssign)):
+            continue
+        val = node.value
+        tgt = node.targets[0] if isinstance(node, ast.Assign) else node.target
+        name = getattr(tgt, "id", None)
+        if not name:
+            continue
+        try:
+            literal = ast.literal_eval(val)
+        except (ValueError, TypeError):
+            literal = None
+        if isinstance(literal, str):
+            symbols[name] = literal
+        elif isinstance(literal, (list, tuple)) and all(
+            isinstance(part, str) for part in literal
+        ):
+            symbols[name] = list(literal)
+        elif (
+            isinstance(val, ast.Call)
+            and isinstance(val.func, ast.Attribute)
+            and val.func.attr == "join"
+            and len(val.args) == 1
+            and isinstance(val.args[0], ast.Name)
+            and val.args[0].id in symbols
+        ):
+            try:
+                sep = ast.literal_eval(val.func.value)
+            except (ValueError, TypeError):
+                sep = None
+            parts = symbols[val.args[0].id]
+            if isinstance(sep, str) and isinstance(parts, list):
+                symbols[name] = sep.join(parts)
+
+    for name, value in symbols.items():
+        blob = "".join(value) if isinstance(value, list) else value
+        if len(blob) >= minlen:
+            out.append((name, blob))
+
     for node in ast.walk(tree):
         if not isinstance(node, (ast.Assign, ast.AnnAssign)):
             continue
@@ -93,7 +135,12 @@ def candidate_blobs(src, minlen=1000):
                 tgt = node.targets[0] if isinstance(node, ast.Assign) else node.target
                 name = getattr(tgt, "id", "?")
                 out.append((name, val.value))
-    return sorted(out, key=lambda kv: -len(kv[1]))
+    # De-duplicate aliases such as PAYLOAD_PARTS and AGENT_PAYLOAD.
+    unique = {}
+    for name, blob in out:
+        unique.setdefault(blob, name)
+    return sorted(((name, blob) for blob, name in unique.items()),
+                  key=lambda kv: -len(kv[1]))
 
 
 def as_python(data):
@@ -155,6 +202,14 @@ def main():
         return
 
     blobs = candidate_blobs(src)
+    # Cell magics can invalidate the concatenated source while the payload cell
+    # remains plain Python. Fall back to parsing each code cell independently.
+    if not blobs and path.endswith(".ipynb"):
+        nb = json.load(open(path, encoding="utf-8"))
+        for cell in nb.get("cells", []):
+            if cell.get("cell_type") == "code":
+                blobs.extend(candidate_blobs("".join(cell.get("source", []))))
+        blobs.sort(key=lambda kv: -len(kv[1]))
     print("candidate blobs: %s" % [(n, len(v)) for n, v in blobs[:6]])
 
     for name, blob in blobs:

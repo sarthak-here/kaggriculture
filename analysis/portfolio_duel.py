@@ -65,13 +65,15 @@ def main():
     seeds = seed_list(n)
     print("seeds: %s%s" % (seeds[:8], " ..." if len(seeds) > 8 else ""))
     for seed in seeds:
+        rolls = []
         for order in (0, 1):
             first, second = (a, b) if order == 0 else (b, a)
             try:
-                rewards, label, _ = play(first, second, seed)
+                rewards, label, shops = play(first, second, seed)
             except Exception as exc:                       # noqa: BLE001
                 print("  seed %d order %d FAILED: %s" % (seed, order, str(exc)[:70]))
                 continue
+            rolls.append("%d:%s:%s" % (order, label, ">".join(shops[:3])))
             ra, rb = (rewards[0], rewards[1]) if order == 0 else (rewards[1], rewards[0])
             margin = ra - rb
             bucket = per[label]
@@ -83,7 +85,7 @@ def main():
                 tot["l"] += 1
             bucket["m"].append(margin)
             tot["m"].append(margin)
-        print("  seed %d done" % seed, flush=True)
+        print("  seed %d done [%s]" % (seed, "; ".join(rolls)), flush=True)
 
     print("\n%-24s %6s %6s %9s %10s" % ("route bucket", "A win", "A loss", "win rate", "margin"))
     for label, d in sorted(per.items(), key=lambda kv: -(kv[1]["w"] + kv[1]["l"])):

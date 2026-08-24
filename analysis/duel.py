@@ -32,6 +32,8 @@ TURNS_PER_DAY = 24
 # Discovery seeds overstate effects ~2x (EXPERIMENTS method rules), so a result
 # found on 2000+ must be re-confirmed on a disjoint set. Override with KAG_SEED_BASE.
 SEED_BASE = int(os.environ.get("KAG_SEED_BASE", 2000))
+SEEDS_OVERRIDE = [int(value) for value in os.environ.get("KAG_SEEDS", "").split(",")
+                  if value.strip()]
 
 
 def game_data_hash(agent_path):
@@ -104,8 +106,8 @@ def main():
     spike_games = 0
     rows = []
 
-    for i in range(n):
-        seed = SEED_BASE + i
+    seeds = SEEDS_OVERRIDE or [SEED_BASE + i for i in range(n)]
+    for seed in seeds:
         for order in (0, 1):
             # order 0: A in seat 0. order 1: B in seat 0. Same seed both ways.
             first, second = (agent_a, agent_b) if order == 0 else (agent_b, agent_a)
@@ -145,7 +147,7 @@ def main():
         return 1
 
     print("\n" + "=" * 68)
-    print(f"RESULT over {total} paired-seat games ({n} seeds x 2 orders)")
+    print(f"RESULT over {total} paired-seat games ({len(seeds)} seeds x 2 orders)")
     print("=" * 68)
     decisive = a_wins + b_wins
     wr = 100 * a_wins / decisive if decisive else float("nan")

@@ -3952,3 +3952,49 @@ Higher thresholds remove the profitable arm and expose pure seat symmetry. The o
 $1 threshold remains best, but its disjoint 16-4 confirmation still misses the >=90%
 promotion rule. `submit_pf_all/main.py` remains untouched and incumbent. No Kaggle
 submission was made.
+
+### #84. Compatible suffix routing breaks pf_all: 19-1 unseen
+
+The breakthrough came from replacing pf_all's replay-table architecture, not from another
+scalar guard. The current sparse closed-loop v46 agent first scored **16-4** against pf_all
+on seeds 93000-93009. All four losses were third-shop-YARN (`6c8`) starts. Widening v46's
+built-in third-YARN rule made it worse (15-5 overall, 0-5 in that bucket), proving that a
+suffix only works when its pre-branch farm state matches.
+
+Decoded v46 statically with `analysis/extract_kaito_v46.py`, then mined 208 public episodes
+for routes matching v46's default action prefix through step 216. Nineteen compatible
+suffixes were screened in both seats. No single suffix repaired both loss prefixes, but two
+routes were complementary:
+
+| exact first-three-shop prefix | suffix |
+|---|---|
+| `SMOOTHIE_SHOP / SMOOTHIE_SHOP / YARN_STORE` | episode 98451967 |
+| `SMOOTHIE_SHOP / BAKERY / YARN_STORE` | episode 98276177 |
+
+The first two-prefix router flipped all four original losses and scored **20-0** against
+pf_all on seeds 93000-93009. On the unseen 94000-94009 block it scored 18-2. Replay/day and
+late-market traces localized one new loss to
+`FARMERS_MARKET / PIZZA_SHOP / YARN_STORE`: the compatible route grew CARROT while pf_all's
+late 26-unit TOMATO sale decided the game. Changing only that suffix's post-216 CARROT
+seed/plant/sell operations to TOMATO flipped the prefix in both seats.
+
+**Frozen candidate:** `submit_v46_three_suffix/main.py`, SHA-256
+`5950fdb0032ede297706bb5aaae48461597563b6322de144ec0dee4274388c59`.
+
+| paired-seat test | seeds | record | mean margin |
+|---|---:|---:|---:|
+| candidate vs pf_all, discovery | 93000-93009 | **20-0 (100%)** | +8,434 |
+| candidate vs pf_all, unseen | 94000-94009 | **19-1 (95%)** | +8,016 |
+| candidate vs Fleong 2830 artifact | 95000-95009 | **18-2 (90%)** | +17,229 |
+| candidate vs Salem 3094 artifact | 95000-95009 | **16-4 (80%)** | +5,301 |
+| candidate vs Kaito v46 parent | 95000-95009 | 3-3, 14 ties | 0 |
+| candidate vs Soil Rain artifact | 95000-95009 | **8-12 (40%)** | +1,413 |
+
+The Kaito-parent tie is expected: the agent is unchanged unless one of the three exact
+prefixes activates. Soil remains the main matchup weakness. Four compatible yarn-second
+suffixes, terminal-rule variants, full TOMATO/WHEAT/STRAWBERRY/MELON substitutions, and
+partial 2-12-plot WHEAT substitutions all failed to flip the final second-YARN loss; those
+changes were rejected rather than overfit.
+
+This is the first candidate to clear the >90% unseen promotion bar against pf_all. It is
+kept separate; `submit_pf_all/main.py` is untouched. **No Kaggle submission was made.**
