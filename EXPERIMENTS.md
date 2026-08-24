@@ -3889,3 +3889,32 @@ print([s['reward'] for s in env.steps[-1]])"
 
 Engine source is ground truth for all mechanics:
 `.venv/Lib/site-packages/kaggle_environments/envs/kaggriculture/kaggriculture.py`
+
+### #82. Reserve-safe WHEAT churn is real, but seed-sensitive -- keep separate from pf_all
+
+Decoded a genuinely distinct sparse closed-loop agent and isolated its one-tick WHEAT
+market-maker with the route held constant. The mechanism itself won **18-2 (90.0%)**
+on seeds 81000-81009, +108 mean margin. Ported only that wrapper onto the untouched
+five-route pf_all portfolio.
+
+**Direct promotion tests, paired seats:**
+
+| candidate vs untouched pf_all | seeds | record | mean margin |
+|---|---:|---:|---:|
+| pf_all + 10-unit WHEAT | 83000-83009 | **20-0 (100%)** | +468 |
+| pf_all + 10-unit WHEAT, disjoint confirmation | 86000-86009 | **16-4 (80%)** | +92 |
+| pf_all + 20-unit WHEAT | 85000-85004 | 7-3 (70%) | +555 |
+| pf_all + 40-unit WHEAT | 85000-85004 | 8-2 (80%) | +1,019 |
+
+Combined 10-unit evidence is **36-4 (90%) over 20 seeds**, but the disjoint block misses
+the required >=90% promotion bar. Larger batches raise mean margin but worsen seat-sensitive
+market coupling. Against prvsiyan on matched seeds 84000-84004, both patched and untouched
+pf_all scored **7-3**; the patch did not flip a game and changed mean margin from -2,160 to
+-2,428. Therefore this is an **experimental incremental candidate, not a pf_all replacement**.
+
+The saved MiMi replay was rendered to `loss_analysis/episode-97108196-replay.html`. Its exact
+step data confirms the larger ceiling remains architectural: pf_all's fixed compositions,
+especially the feed-heavy yarn buckets, lose to strong policies that profitably operate more
+quadrants/animals. WHEAT churn captures deterministic town demand but does not repair that gap.
+
+No Kaggle submission was made. Untouched `submit_pf_all/main.py` remains unchanged.

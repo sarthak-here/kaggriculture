@@ -149,3 +149,13 @@ independent probes all hit the same wall:
 Agents above this ceiling differ in what they can **work**, not in which
 recording they replay. Passing it needs a different lineage decoded, not more
 route tuning.
+
+## Experimental: pf_all + reserve-safe WHEAT market-maker (#82)
+
+- `variants/pf_all_mm/` — 10-unit WHEAT round trip; **36-4 combined** against pf_all
+  over two disjoint 10-seed blocks, but only **16-4 on confirmation**, so not promoted.
+- `variants/pf_all_mm20/` — 7-3 screen; not promoted.
+- `variants/pf_all_mm40/` — 8-2 screen, +1,019 mean margin; not promoted.
+- The mechanism is real and leaves all five farm routes unchanged, but remains seed/seat
+  sensitive and did not improve the 7-3 win count against prvsiyan on the matched panel.
+- Untouched `submit_pf_all/main.py` remains the production incumbent.
