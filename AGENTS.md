@@ -17,7 +17,7 @@ Two rules that govern reading anything below:
 
 | build | file | ladder | what it is |
 |---|---|---|---|
-| **v46-three-suffix — BEST LOCAL** | `submit_v46_three_suffix/main.py` | **not submitted** | Sparse closed-loop v46 with three state-compatible third-YARN suffixes. **20-0 discovery and 19-1 unseen vs pf_all**; fresh public panel: Fleong 18-2, Salem3094 16-4, Kaito parent 3-3 with 14 ties, Soil 8-12. Frozen SHA-256 `5950fdb0032ede297706bb5aaae48461597563b6322de144ec0dee4274388c59` (#84). |
+| **v46-three-suffix — BEST LOCAL** | `submit_v46_three_suffix/main.py` | **submission 55751173 — 600.0 initial** | Sparse closed-loop v46 with three state-compatible third-YARN suffixes. **20-0 discovery and 19-1 unseen vs pf_all**; fresh public panel: Fleong 18-2, Salem3094 16-4, Kaito parent 3-3 with 14 ties, Soil 8-12. Frozen SHA-256 `5950fdb0032ede297706bb5aaae48461597563b6322de144ec0dee4274388c59` (#84). |
 | ~~pf_all2~~ | `submit_pf_all2/main.py` | **REGRESSION — do not use** | 6C12S swap that lowered feed cost but loses 17.9% to pf_all in that bucket (#80) |
 | **pf_all — PRODUCTION INCUMBENT** | `submit_pf_all/main.py` | **2,773.2 — RANK 15 of 6,041** | Frontier V113, all five route slots corpus-screened. 10c4s slot verified optimal across 26 of 143 candidates (#80). **Rating CONVERGED: +0.07/match over its last 20, 50% win rate vs mean opponent 2,781.** Remains the submitted model until explicit approval to replace it. |
 | pf1 | `submit_pf1/main.py` | not submitted | first single-slot swap (10c4s only) |
@@ -181,5 +181,5 @@ route tuning.
   CARROT chain changed to TOMATO; replay traces showed TOMATO was pf_all's decisive product.
 - Paired-seat result against pf_all: **20-0** on discovery seeds 93000-93009 and
   **19-1** on unseen seeds 94000-94009.
-- The remaining observed weakness is Soil (**8-12**), so this is submission-ready but
-  not universal. No Kaggle submission has been made.
+- The remaining observed weakness is Soil (**8-12**), so this is not universal.
+- Submitted to Kaggle as **55751173** on 2026-08-25; validated COMPLETE at the standard 600.0 initial rating.

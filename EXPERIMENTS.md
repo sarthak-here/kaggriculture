@@ -3997,4 +3997,5 @@ partial 2-12-plot WHEAT substitutions all failed to flip the final second-YARN l
 changes were rejected rather than overfit.
 
 This is the first candidate to clear the >90% unseen promotion bar against pf_all. It is
-kept separate; `submit_pf_all/main.py` is untouched. **No Kaggle submission was made.**
+kept separate; `submit_pf_all/main.py` is untouched. Submitted to Kaggle as **55751173**
+on 2026-08-25 with message `v46 three-suffix router 19-1 unseen`. Validation completed at the standard 600.0 initial rating; its first assigned episode was a tie at 64,149.
