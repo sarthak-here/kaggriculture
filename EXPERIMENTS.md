@@ -4024,3 +4024,36 @@ world; it proves the new architecture has a seat-sensitive late-game matchup hol
 also needs dissimilar-opponent coverage and an early-ladder surrogate panel. Keep
 submission 55751173 as an experiment, not a proven universal replacement. No additional
 Kaggle submission was made.
+
+### #86. Food is sold; pf_all transplant and Kaito counter probes
+
+The apparent terminal inventory in the v46 replay was not unsold food. On the Corgi seed,
+the agent sold all sellable products during steps 718-719; the only remaining shed item was
+one SHEEP, which the engine does not allow as a `SELL` product. The real weakness was late
+liquidation: v46 held 74 WHEAT at step 696 and trickled it out, whereas pf_all sold 69 WHEAT
+at step 697 and already has a full terminal controller from step 708.
+
+Three state-compatible pf_all transplants were isolated:
+
+| variant | exact-loss seeds vs pf_all | fresh 106000-106009 vs pf_all |
+|---|---:|---:|
+| terminal takeover at 704 | 1-3 | rejected before confirmation |
+| v46 collision-ranked terminal sells at 708 | 3-1 | **13-5, 2 ties** |
+| both changes | 1-3 | rejected before confirmation |
+
+The collision result was coupling, not a field improvement. On identical 107000-107009
+panel seeds, collision-pf_all and untouched pf_all had exactly the same records: Fleong
+20-0, Salem 20-0, Kaito 4-16, Soil 20-0. It flipped **zero** panel outcomes and changed only
+small terminal dollar amounts. It is retained as a rejected variant, not promoted.
+
+The Kaito replay exposes pf_all's actual structural weakness. In the first-shop-YARN world
+at seed 107000, pf_all expands to four quadrants and 6 cows / 12 sheep; Kaito stops at three
+quadrants and 6 cows / 10 sheep, uses a lean strawberry/wheat farm, and leads by about
+$12,000 from day 17. This is not repairable by terminal ordering.
+
+The policies are incompatible from turn zero: pf_all opens with pasture + five hires + cow
++ two sheep, while Kaito opens with two hires + seven MELON seed + five WHEAT seed + four
+sheep. Corrected one-turn crossover probes both scored **0-6** against Kaito and produced
+almost no farm output, confirming immediate state divergence. A valid next architecture
+must optimize a new common opening that can branch later; frozen-policy switching is not a
+safe shortcut. `submit_pf_all/main.py` remains untouched. No Kaggle submission was made.
