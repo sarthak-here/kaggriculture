@@ -4087,3 +4087,54 @@ Conclusion: the diagnosis is valid, but a generic worker override is negative. T
 repair requires rebuilding the route's final-day movement schedule with joint assignments
 for harvest, animal work, shed return, and sale. pf_all already has effective terminal
 worker routing and does not need this transplant. No Kaggle submission was made.
+### #88. Full v46 ladder loss pattern: two failure families, not one shop bucket
+
+Pulled submission 55751173's complete current record: **88 matches, 72-12-4
+(85.7% decisive win rate), rating 2,286.8**. The recent 22-match win rate is 63.6%.
+Downloaded all twelve loss replays and compared them with twelve recent wins against
+rating-matched opponents (roughly 2,188-2,345).
+
+There is no dominant shop bucket:
+
+| first-three-shop bucket | losses | matched wins |
+|---|---:|---:|
+| no YARN | 7 | 8 |
+| YARN first | 2 | 2 |
+| YARN second | 2 | 1 |
+| YARN third | 1 | 1 |
+
+Terminal unharvested crop is a real v46 weakness but does not discriminate losses: our
+mean terminal ready value is $1,258 in losses and $1,143 in wins; relative to the opponent
+it is +$556 in losses and +$571 in wins. It should be repaired eventually, but it is not
+why a particular match becomes a loss.
+
+The economic mechanism is consistent. In losses we earn $6,688 less than the opponent but
+spend $4,353 less, netting the observed -$2,335 mean margin. In matched wins we earn only
+$924 less while spending $7,111 less, netting +$6,187. The model is a cost-saving policy;
+it loses when an opponent creates enough extra output to exceed those savings.
+
+The twelve losses divide into two practical families:
+
+1. **Clone/near-clone execution losses (six).** Boredom, AI After Hours, Akhil Chinta,
+   Kaipeng Zheng, Arda Ceylan, and CroDoc use the same or nearly the same herd/composition.
+   Most are close market/seat races. AI After Hours is the large exception (-$6,186): both
+   finish with 11 cows / 4 sheep, but our weed burden was 1,134 observation-turns versus
+   315 and we carried roughly four fewer strawberry plots from day 11 onward.
+2. **Different/leaner economy losses (six).** Corgi, John Stupid, Controlvector, Sebastien
+   Mametz, sana slama, and Lord Momo use different herd mixes. The strongest examples are
+   Corgi's 7 cows / 4 sheep and Lord Momo's 6 cows / 8 sheep against our 11 cows / 4 sheep.
+   Their late crop throughput overcomes our lower spending. Lord Momo wins by $8,897.
+
+Weed burden is a secondary but measurable signal: ours averages 996 observation-turns in
+losses versus 684 in matched wins; opponent-relative weed burden correlates -0.457 with
+margin across the 24-replay sample. It is not universal—several opponents carry more weeds
+and still lose—but it is actionable in clone matchups.
+
+Seat order also matters: the full record has 36 wins in each seat, but losses split 8 in
+seat 0 versus 4 in seat 1 (decisive win rates 81.8% vs 90.0%). Eight of twelve losses are
+under $2,000, consistent with market ordering and small execution differences deciding
+most failures.
+
+Next repair priorities are therefore (a) state-safe weed clearing for clone-like openings
+and (b) a separately validated lean-economy route/opening. Shop-prefix routing and generic
+terminal harvesting do not address the observed loss split. No Kaggle submission was made.
