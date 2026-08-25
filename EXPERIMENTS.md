@@ -4138,3 +4138,32 @@ most failures.
 Next repair priorities are therefore (a) state-safe weed clearing for clone-like openings
 and (b) a separately validated lean-economy route/opening. Shop-prefix routing and generic
 terminal harvesting do not address the observed loss split. No Kaggle submission was made.
+
+### #89. On-tile weed repair does not improve v46's win rate
+
+Replay profiling refined the weed signal from #88. Across the twelve v46 ladder losses,
+our units spent 902 actor-turns standing on weeds. Besides 239 existing DIG actions, the
+fixed routes attempted 114 WATER, 68 HARVEST, 29 FERTILIZE, and 21 PASS actions while on
+a weed. The existing sparse repair only catches PLANT/BUILD collisions, so these failed
+on-tile operations were a plausible closed-loop gap.
+
+Three isolated variants were built on frozen `submit_v46_three_suffix`, preserving every
+route, movement action, market action, selector, and the opening through step 159:
+
+| variant | extra on-weed DIG gate |
+|---|---|
+| `submit_v46_weed_core` | HARVEST/WATER/FERTILIZE/CARE/FEED |
+| `submit_v46_weed_idle` | PASS only |
+| `submit_v46_weed_broad` | union of core and idle |
+
+Against frozen v46 on seeds 109000-109009 in both seat orders, every variant finished
+**3-3 with 14 ties**. Against exact frozen `submit_pf_all` on independent seeds
+110000-110009, the unchanged v46 baseline and all three repairs each finished **15-5**.
+No repair converted a single outcome. Diagnostic mean margins were +$3,397 baseline,
++$3,272 core, +$3,172 idle, and +$3,272 broad.
+
+Conclusion: failed operations on weed tiles are real, but replacing them with DIG does
+not improve match wins and slightly reduces mean margin. Persistent weed burden is a
+symptom of fixed-route state drift, not a locally repairable cause. All three variants
+remain separate rejected artifacts; the frozen models are unchanged. No Kaggle
+submission was made.
