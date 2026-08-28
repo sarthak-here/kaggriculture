@@ -4244,3 +4244,62 @@ lean 6-cow/10-sheep herd and converts lower spending into a late crop-throughput
 This independently confirms that the current ladder weakness is the Kaito-like lean
 architecture identified in #90, not a new bug and not fixable by the rejected strict
 clone gate. No additional Kaggle submission was made.
+
+### #92. Kaito loss audit: a compatible suffix wins the mirror but does not solve Soil
+
+Pulled all **193** current matches for submitted Kaito descendant 55751173: **111 wins,
+64 losses, 18 ties**. All 64 losses were downloaded and profiled. Forty-five are
+NO-YARN/default-route games and 45 show a persistent close-clone streak. The complete
+loss sample earns $10,213 less than its opponent while spending $4,709 less. In the 26
+close losses, Kaito is level through day 18 and loses by only $861 on average; in the 19
+severe losses, income trails by $25,253 and the final deficit is $12,266. This confirms
+two families: late execution races against Kaito-like clones and structural losses to
+different lean routes.
+
+Mining the 64 winning opponents found only two suffixes with an exact Kaito-route prefix
+of at least 160 actions. The default-route continuation from episode 100606696 branches
+at step 243 and beat frozen submitted Kaito **33-3 with 4 ties (91.7% decisive)** over two
+fresh 10-seed blocks. The YARN-first continuation reached only **7-3 with 10 ties (70%)**
+and was rejected.
+
+The default suffix failed the required real-opponent panel on seeds 116000-116009:
+
+| opponent | default suffix | frozen submitted Kaito on identical seeds |
+|---|---:|---:|
+| pf_all | 17-3 (85%) | 17-3 (85%) |
+| raw Kaito | 15-5 | 7-7, 6 ties |
+| Salem | 16-4 (80%) | 16-4 (80%) |
+| Soil | **9-11 (45%)** | **10-10 (50%)** |
+| Fleong | 20-0 | not rerun |
+
+Thus the suffix is a genuine Kaito-family share-capture improvement, not a broad strength
+improvement. It changed no pf_all or Salem outcomes and made Soil one game worse. It is
+rejected despite clearing 90% against the submitted descendant.
+
+Full trajectories on the six Soil failure seeds localized the matchup. Frozen Kaito is
+ahead by **$1,715 at day 12 and $8,751 at day 18**, then finishes **$4,783 behind**: a
+roughly $13,500 late swing. Kaito harvests more (420 vs 390) and carries fewer weed
+observation-turns (385 vs 532), so neither generic harvesting nor weed repair explains
+the loss. It finishes with 11 cows / 4 sheep against Soil's lean 7-cow farm, but buys only
+105 wheat versus Soil's 189. Kaito's route schedules 234 FEED actions, indicating wheat
+availability can make planned work no-op.
+
+Two narrowly scoped repairs were tested on the known Soil failures:
+
+1. Four reserve-safe wheat top-up guards (start 160/240, batch 4/8, threshold 2/4) added
+   wheat only with livestock present, cash above a floor, and a free market slot. All
+   remained **0-8**; margins moved only slightly.
+2. Kaito's dormant debt-balanced non-clone preemption was activated for MILK and WHEAT
+   across four horizons/batches each. It only moves a real future sell earlier and removes
+   the same quantity from its original slot. Every variant remained **0-8**. The best
+   margin change was only about +$240.
+
+Static decoding explains why a direct Soil continuation cannot be transplanted: Soil and
+every Kaito route diverge at **action 0**. Soil's modal route is a different opening and
+late economy, not a compatible suffix. The immediate-feed and single-product queue-timing
+hypotheses are therefore closed. A future Soil repair needs a separately executable
+day-0 branch or a stronger opponent-family policy, not another global Kaito suffix.
+
+Frozen `submit_v46_three_suffix/main.py` remains byte-identical at SHA-256
+`5950FDB0032EDE297706BB5AAAE48461597563B6322DE144EC0DEE4274388C59`. No Kaggle submission
+was made.

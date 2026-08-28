@@ -1,0 +1,938 @@
+[
+  {
+    "seed": 116001,
+    "order": 0,
+    "result": "L",
+    "margin": -7719.0,
+    "prefix": "BRUNCH_SPOT>BAKERY>PIZZA_SHOP",
+    "bucket": "NO-YARN-3",
+    "day12_gap": 1831.0,
+    "day18_gap": 9002.0,
+    "max_lead": 9056.0,
+    "final_gap": -7719.0,
+    "us": {
+      "reward": 54099.0,
+      "income": 70494.0,
+      "spend": 19395.0,
+      "quads": 3,
+      "hands": 9,
+      "animals": 15,
+      "animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "crops": 12,
+      "crop_mix": {
+        "WHEAT": 12
+      },
+      "ready_value": 1188,
+      "shed_units": 0,
+      "harvests": 420,
+      "waters": 986,
+      "feed_units": 105,
+      "weed_burden": 299,
+      "max_weeds": 11,
+      "d12_animals": 15,
+      "d12_animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "d12_crops": 59,
+      "d12_crop_mix": {
+        "WHEAT": 7,
+        "STRAWBERRY": 40,
+        "CARROT": 8,
+        "MELON": 4
+      }
+    },
+    "op": {
+      "reward": 61818.0,
+      "income": 78910.0,
+      "spend": 20092.0,
+      "quads": 3,
+      "hands": 10,
+      "animals": 7,
+      "animal_mix": {
+        "COW": 7
+      },
+      "crops": 0,
+      "crop_mix": {},
+      "ready_value": 0,
+      "shed_units": 0,
+      "harvests": 390,
+      "waters": 1010,
+      "feed_units": 189,
+      "weed_burden": 387,
+      "max_weeds": 6,
+      "d12_animals": 11,
+      "d12_animal_mix": {
+        "SHEEP": 4,
+        "COW": 7
+      },
+      "d12_crops": 60,
+      "d12_crop_mix": {
+        "WHEAT": 12,
+        "STRAWBERRY": 36,
+        "MELON": 12
+      }
+    }
+  },
+  {
+    "seed": 116001,
+    "order": 1,
+    "result": "L",
+    "margin": -7719.0,
+    "prefix": "BRUNCH_SPOT>BAKERY>PIZZA_SHOP",
+    "bucket": "NO-YARN-3",
+    "day12_gap": 1831.0,
+    "day18_gap": 9002.0,
+    "max_lead": 9056.0,
+    "final_gap": -7719.0,
+    "us": {
+      "reward": 54099.0,
+      "income": 70494.0,
+      "spend": 19395.0,
+      "quads": 3,
+      "hands": 9,
+      "animals": 15,
+      "animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "crops": 12,
+      "crop_mix": {
+        "WHEAT": 12
+      },
+      "ready_value": 1188,
+      "shed_units": 0,
+      "harvests": 420,
+      "waters": 986,
+      "feed_units": 105,
+      "weed_burden": 299,
+      "max_weeds": 11,
+      "d12_animals": 15,
+      "d12_animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "d12_crops": 59,
+      "d12_crop_mix": {
+        "WHEAT": 7,
+        "STRAWBERRY": 40,
+        "CARROT": 8,
+        "MELON": 4
+      }
+    },
+    "op": {
+      "reward": 61818.0,
+      "income": 78910.0,
+      "spend": 20092.0,
+      "quads": 3,
+      "hands": 10,
+      "animals": 7,
+      "animal_mix": {
+        "COW": 7
+      },
+      "crops": 0,
+      "crop_mix": {},
+      "ready_value": 0,
+      "shed_units": 0,
+      "harvests": 390,
+      "waters": 1010,
+      "feed_units": 189,
+      "weed_burden": 387,
+      "max_weeds": 6,
+      "d12_animals": 11,
+      "d12_animal_mix": {
+        "SHEEP": 4,
+        "COW": 7
+      },
+      "d12_crops": 60,
+      "d12_crop_mix": {
+        "WHEAT": 12,
+        "STRAWBERRY": 36,
+        "MELON": 12
+      }
+    }
+  },
+  {
+    "seed": 116003,
+    "order": 0,
+    "result": "L",
+    "margin": -3035.0,
+    "prefix": "BRUNCH_SPOT>PET_CAFE>PET_CAFE",
+    "bucket": "NO-YARN-3",
+    "day12_gap": 1880.0,
+    "day18_gap": 9391.0,
+    "max_lead": 9715.0,
+    "final_gap": -3035.0,
+    "us": {
+      "reward": 60214.0,
+      "income": 76450.0,
+      "spend": 19236.0,
+      "quads": 3,
+      "hands": 9,
+      "animals": 15,
+      "animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "crops": 12,
+      "crop_mix": {
+        "WHEAT": 12
+      },
+      "ready_value": 864,
+      "shed_units": 0,
+      "harvests": 420,
+      "waters": 986,
+      "feed_units": 105,
+      "weed_burden": 323,
+      "max_weeds": 11,
+      "d12_animals": 15,
+      "d12_animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "d12_crops": 59,
+      "d12_crop_mix": {
+        "WHEAT": 7,
+        "STRAWBERRY": 40,
+        "CARROT": 8,
+        "MELON": 4
+      }
+    },
+    "op": {
+      "reward": 63249.0,
+      "income": 80003.0,
+      "spend": 19754.0,
+      "quads": 3,
+      "hands": 10,
+      "animals": 7,
+      "animal_mix": {
+        "COW": 7
+      },
+      "crops": 0,
+      "crop_mix": {},
+      "ready_value": 0,
+      "shed_units": 0,
+      "harvests": 390,
+      "waters": 1010,
+      "feed_units": 189,
+      "weed_burden": 363,
+      "max_weeds": 6,
+      "d12_animals": 11,
+      "d12_animal_mix": {
+        "SHEEP": 4,
+        "COW": 7
+      },
+      "d12_crops": 61,
+      "d12_crop_mix": {
+        "WHEAT": 13,
+        "STRAWBERRY": 36,
+        "MELON": 12
+      }
+    }
+  },
+  {
+    "seed": 116003,
+    "order": 1,
+    "result": "L",
+    "margin": -3035.0,
+    "prefix": "BRUNCH_SPOT>PET_CAFE>PET_CAFE",
+    "bucket": "NO-YARN-3",
+    "day12_gap": 1880.0,
+    "day18_gap": 9391.0,
+    "max_lead": 9715.0,
+    "final_gap": -3035.0,
+    "us": {
+      "reward": 60214.0,
+      "income": 76450.0,
+      "spend": 19236.0,
+      "quads": 3,
+      "hands": 9,
+      "animals": 15,
+      "animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "crops": 12,
+      "crop_mix": {
+        "WHEAT": 12
+      },
+      "ready_value": 864,
+      "shed_units": 0,
+      "harvests": 420,
+      "waters": 986,
+      "feed_units": 105,
+      "weed_burden": 299,
+      "max_weeds": 11,
+      "d12_animals": 15,
+      "d12_animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "d12_crops": 59,
+      "d12_crop_mix": {
+        "WHEAT": 7,
+        "STRAWBERRY": 40,
+        "CARROT": 8,
+        "MELON": 4
+      }
+    },
+    "op": {
+      "reward": 63249.0,
+      "income": 80003.0,
+      "spend": 19754.0,
+      "quads": 3,
+      "hands": 10,
+      "animals": 7,
+      "animal_mix": {
+        "COW": 7
+      },
+      "crops": 0,
+      "crop_mix": {},
+      "ready_value": 0,
+      "shed_units": 0,
+      "harvests": 390,
+      "waters": 1010,
+      "feed_units": 189,
+      "weed_burden": 387,
+      "max_weeds": 6,
+      "d12_animals": 11,
+      "d12_animal_mix": {
+        "SHEEP": 4,
+        "COW": 7
+      },
+      "d12_crops": 61,
+      "d12_crop_mix": {
+        "WHEAT": 13,
+        "STRAWBERRY": 36,
+        "MELON": 12
+      }
+    }
+  },
+  {
+    "seed": 116004,
+    "order": 0,
+    "result": "L",
+    "margin": -9680.0,
+    "prefix": "SMOOTHIE_SHOP>BAKERY>YARN_STORE",
+    "bucket": "YARN-3",
+    "day12_gap": 1415.0,
+    "day18_gap": 5686.0,
+    "max_lead": 5686.0,
+    "final_gap": -9680.0,
+    "us": {
+      "reward": 76039.0,
+      "income": 92096.0,
+      "spend": 19057.0,
+      "quads": 3,
+      "hands": 9,
+      "animals": 15,
+      "animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "crops": 12,
+      "crop_mix": {
+        "WHEAT": 12
+      },
+      "ready_value": 945,
+      "shed_units": 0,
+      "harvests": 419,
+      "waters": 978,
+      "feed_units": 105,
+      "weed_burden": 793,
+      "max_weeds": 11,
+      "d12_animals": 15,
+      "d12_animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "d12_crops": 53,
+      "d12_crop_mix": {
+        "STRAWBERRY": 35,
+        "WHEAT": 6,
+        "CARROT": 8,
+        "MELON": 4
+      }
+    },
+    "op": {
+      "reward": 85719.0,
+      "income": 101656.0,
+      "spend": 18937.0,
+      "quads": 3,
+      "hands": 10,
+      "animals": 7,
+      "animal_mix": {
+        "COW": 7
+      },
+      "crops": 0,
+      "crop_mix": {},
+      "ready_value": 0,
+      "shed_units": 0,
+      "harvests": 390,
+      "waters": 1009,
+      "feed_units": 189,
+      "weed_burden": 397,
+      "max_weeds": 6,
+      "d12_animals": 11,
+      "d12_animal_mix": {
+        "SHEEP": 4,
+        "COW": 7
+      },
+      "d12_crops": 61,
+      "d12_crop_mix": {
+        "WHEAT": 13,
+        "STRAWBERRY": 36,
+        "MELON": 12
+      }
+    }
+  },
+  {
+    "seed": 116004,
+    "order": 1,
+    "result": "W",
+    "margin": 175.0,
+    "prefix": "SMOOTHIE_SHOP>BAKERY>YARN_STORE",
+    "bucket": "YARN-3",
+    "day12_gap": 1339.0,
+    "day18_gap": 8264.0,
+    "max_lead": 8514.0,
+    "final_gap": 175.0,
+    "us": {
+      "reward": 105420.0,
+      "income": 121189.0,
+      "spend": 18769.0,
+      "quads": 3,
+      "hands": 9,
+      "animals": 15,
+      "animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "crops": 12,
+      "crop_mix": {
+        "WHEAT": 12
+      },
+      "ready_value": 945,
+      "shed_units": 0,
+      "harvests": 420,
+      "waters": 978,
+      "feed_units": 105,
+      "weed_burden": 714,
+      "max_weeds": 11,
+      "d12_animals": 15,
+      "d12_animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "d12_crops": 52,
+      "d12_crop_mix": {
+        "STRAWBERRY": 35,
+        "WHEAT": 6,
+        "CARROT": 7,
+        "MELON": 4
+      }
+    },
+    "op": {
+      "reward": 105245.0,
+      "income": 120449.0,
+      "spend": 18204.0,
+      "quads": 3,
+      "hands": 10,
+      "animals": 7,
+      "animal_mix": {
+        "COW": 7
+      },
+      "crops": 0,
+      "crop_mix": {},
+      "ready_value": 0,
+      "shed_units": 0,
+      "harvests": 390,
+      "waters": 1008,
+      "feed_units": 189,
+      "weed_burden": 814,
+      "max_weeds": 6,
+      "d12_animals": 11,
+      "d12_animal_mix": {
+        "SHEEP": 4,
+        "COW": 7
+      },
+      "d12_crops": 60,
+      "d12_crop_mix": {
+        "WHEAT": 13,
+        "STRAWBERRY": 35,
+        "MELON": 12
+      }
+    }
+  },
+  {
+    "seed": 116005,
+    "order": 0,
+    "result": "L",
+    "margin": -6832.0,
+    "prefix": "PET_CAFE>BAKERY>BRUNCH_SPOT",
+    "bucket": "NO-YARN-3",
+    "day12_gap": 1890.0,
+    "day18_gap": 6574.0,
+    "max_lead": 6574.0,
+    "final_gap": -6832.0,
+    "us": {
+      "reward": 53354.0,
+      "income": 69718.0,
+      "spend": 19364.0,
+      "quads": 3,
+      "hands": 9,
+      "animals": 15,
+      "animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "crops": 12,
+      "crop_mix": {
+        "WHEAT": 12
+      },
+      "ready_value": 837,
+      "shed_units": 0,
+      "harvests": 420,
+      "waters": 986,
+      "feed_units": 105,
+      "weed_burden": 334,
+      "max_weeds": 11,
+      "d12_animals": 15,
+      "d12_animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "d12_crops": 59,
+      "d12_crop_mix": {
+        "STRAWBERRY": 40,
+        "WHEAT": 7,
+        "CARROT": 8,
+        "MELON": 4
+      }
+    },
+    "op": {
+      "reward": 60186.0,
+      "income": 77004.0,
+      "spend": 19818.0,
+      "quads": 3,
+      "hands": 10,
+      "animals": 7,
+      "animal_mix": {
+        "COW": 7
+      },
+      "crops": 0,
+      "crop_mix": {},
+      "ready_value": 0,
+      "shed_units": 0,
+      "harvests": 390,
+      "waters": 1010,
+      "feed_units": 189,
+      "weed_burden": 397,
+      "max_weeds": 6,
+      "d12_animals": 11,
+      "d12_animal_mix": {
+        "SHEEP": 4,
+        "COW": 7
+      },
+      "d12_crops": 60,
+      "d12_crop_mix": {
+        "WHEAT": 13,
+        "STRAWBERRY": 35,
+        "MELON": 12
+      }
+    }
+  },
+  {
+    "seed": 116005,
+    "order": 1,
+    "result": "L",
+    "margin": -5764.0,
+    "prefix": "PIZZA_SHOP>BAKERY>FARMERS_MARKET",
+    "bucket": "NO-YARN-3",
+    "day12_gap": 1611.0,
+    "day18_gap": 8394.0,
+    "max_lead": 8497.0,
+    "final_gap": -5764.0,
+    "us": {
+      "reward": 61903.0,
+      "income": 78233.0,
+      "spend": 19330.0,
+      "quads": 3,
+      "hands": 9,
+      "animals": 15,
+      "animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "crops": 12,
+      "crop_mix": {
+        "WHEAT": 12
+      },
+      "ready_value": 1188,
+      "shed_units": 0,
+      "harvests": 420,
+      "waters": 986,
+      "feed_units": 105,
+      "weed_burden": 314,
+      "max_weeds": 11,
+      "d12_animals": 15,
+      "d12_animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "d12_crops": 59,
+      "d12_crop_mix": {
+        "WHEAT": 7,
+        "STRAWBERRY": 40,
+        "CARROT": 8,
+        "MELON": 4
+      }
+    },
+    "op": {
+      "reward": 67667.0,
+      "income": 84819.0,
+      "spend": 20152.0,
+      "quads": 3,
+      "hands": 10,
+      "animals": 7,
+      "animal_mix": {
+        "COW": 7
+      },
+      "crops": 0,
+      "crop_mix": {},
+      "ready_value": 0,
+      "shed_units": 0,
+      "harvests": 390,
+      "waters": 1009,
+      "feed_units": 189,
+      "weed_burden": 885,
+      "max_weeds": 6,
+      "d12_animals": 11,
+      "d12_animal_mix": {
+        "SHEEP": 4,
+        "COW": 7
+      },
+      "d12_crops": 59,
+      "d12_crop_mix": {
+        "WHEAT": 12,
+        "STRAWBERRY": 35,
+        "MELON": 12
+      }
+    }
+  },
+  {
+    "seed": 116006,
+    "order": 0,
+    "result": "L",
+    "margin": -6454.0,
+    "prefix": "PIZZA_SHOP>FARMERS_MARKET>BAKERY",
+    "bucket": "NO-YARN-3",
+    "day12_gap": 1611.0,
+    "day18_gap": 9677.0,
+    "max_lead": 9859.0,
+    "final_gap": -6454.0,
+    "us": {
+      "reward": 53791.0,
+      "income": 70130.0,
+      "spend": 19339.0,
+      "quads": 3,
+      "hands": 9,
+      "animals": 15,
+      "animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "crops": 12,
+      "crop_mix": {
+        "WHEAT": 12
+      },
+      "ready_value": 1215,
+      "shed_units": 0,
+      "harvests": 420,
+      "waters": 986,
+      "feed_units": 105,
+      "weed_burden": 299,
+      "max_weeds": 11,
+      "d12_animals": 15,
+      "d12_animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "d12_crops": 59,
+      "d12_crop_mix": {
+        "WHEAT": 7,
+        "STRAWBERRY": 40,
+        "CARROT": 8,
+        "MELON": 4
+      }
+    },
+    "op": {
+      "reward": 60245.0,
+      "income": 77590.0,
+      "spend": 20345.0,
+      "quads": 3,
+      "hands": 10,
+      "animals": 7,
+      "animal_mix": {
+        "COW": 7
+      },
+      "crops": 0,
+      "crop_mix": {},
+      "ready_value": 0,
+      "shed_units": 0,
+      "harvests": 390,
+      "waters": 1010,
+      "feed_units": 189,
+      "weed_burden": 496,
+      "max_weeds": 6,
+      "d12_animals": 11,
+      "d12_animal_mix": {
+        "SHEEP": 4,
+        "COW": 7
+      },
+      "d12_crops": 60,
+      "d12_crop_mix": {
+        "WHEAT": 12,
+        "STRAWBERRY": 36,
+        "MELON": 12
+      }
+    }
+  },
+  {
+    "seed": 116006,
+    "order": 1,
+    "result": "L",
+    "margin": -6515.0,
+    "prefix": "PIZZA_SHOP>FARMERS_MARKET>BAKERY",
+    "bucket": "NO-YARN-3",
+    "day12_gap": 1611.0,
+    "day18_gap": 9677.0,
+    "max_lead": 9859.0,
+    "final_gap": -6515.0,
+    "us": {
+      "reward": 53765.0,
+      "income": 70105.0,
+      "spend": 19340.0,
+      "quads": 3,
+      "hands": 9,
+      "animals": 15,
+      "animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "crops": 12,
+      "crop_mix": {
+        "WHEAT": 12
+      },
+      "ready_value": 1215,
+      "shed_units": 0,
+      "harvests": 420,
+      "waters": 986,
+      "feed_units": 105,
+      "weed_burden": 299,
+      "max_weeds": 11,
+      "d12_animals": 15,
+      "d12_animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "d12_crops": 59,
+      "d12_crop_mix": {
+        "WHEAT": 7,
+        "STRAWBERRY": 40,
+        "CARROT": 8,
+        "MELON": 4
+      }
+    },
+    "op": {
+      "reward": 60280.0,
+      "income": 77604.0,
+      "spend": 20324.0,
+      "quads": 3,
+      "hands": 10,
+      "animals": 7,
+      "animal_mix": {
+        "COW": 7
+      },
+      "crops": 0,
+      "crop_mix": {},
+      "ready_value": 0,
+      "shed_units": 0,
+      "harvests": 390,
+      "waters": 1010,
+      "feed_units": 189,
+      "weed_burden": 636,
+      "max_weeds": 6,
+      "d12_animals": 11,
+      "d12_animal_mix": {
+        "SHEEP": 4,
+        "COW": 7
+      },
+      "d12_crops": 60,
+      "d12_crop_mix": {
+        "WHEAT": 12,
+        "STRAWBERRY": 36,
+        "MELON": 12
+      }
+    }
+  },
+  {
+    "seed": 116009,
+    "order": 0,
+    "result": "W",
+    "margin": 235.0,
+    "prefix": "FARMERS_MARKET>FARMERS_MARKET>PET_CAFE",
+    "bucket": "NO-YARN-3",
+    "day12_gap": 1843.0,
+    "day18_gap": 9259.0,
+    "max_lead": 9259.0,
+    "final_gap": 235.0,
+    "us": {
+      "reward": 88640.0,
+      "income": 105048.0,
+      "spend": 19408.0,
+      "quads": 3,
+      "hands": 9,
+      "animals": 15,
+      "animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "crops": 12,
+      "crop_mix": {
+        "WHEAT": 12
+      },
+      "ready_value": 1053,
+      "shed_units": 0,
+      "harvests": 420,
+      "waters": 986,
+      "feed_units": 105,
+      "weed_burden": 338,
+      "max_weeds": 11,
+      "d12_animals": 15,
+      "d12_animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "d12_crops": 59,
+      "d12_crop_mix": {
+        "WHEAT": 7,
+        "STRAWBERRY": 40,
+        "CARROT": 8,
+        "MELON": 4
+      }
+    },
+    "op": {
+      "reward": 88405.0,
+      "income": 105496.0,
+      "spend": 20091.0,
+      "quads": 3,
+      "hands": 10,
+      "animals": 7,
+      "animal_mix": {
+        "COW": 7
+      },
+      "crops": 0,
+      "crop_mix": {},
+      "ready_value": 0,
+      "shed_units": 0,
+      "harvests": 390,
+      "waters": 1009,
+      "feed_units": 189,
+      "weed_burden": 784,
+      "max_weeds": 6,
+      "d12_animals": 11,
+      "d12_animal_mix": {
+        "SHEEP": 4,
+        "COW": 7
+      },
+      "d12_crops": 59,
+      "d12_crop_mix": {
+        "WHEAT": 12,
+        "STRAWBERRY": 35,
+        "MELON": 12
+      }
+    }
+  },
+  {
+    "seed": 116009,
+    "order": 1,
+    "result": "L",
+    "margin": -1050.0,
+    "prefix": "FARMERS_MARKET>FARMERS_MARKET>SMOOTHIE_SHOP",
+    "bucket": "NO-YARN-3",
+    "day12_gap": 1843.0,
+    "day18_gap": 10690.0,
+    "max_lead": 10690.0,
+    "final_gap": -1050.0,
+    "us": {
+      "reward": 104021.0,
+      "income": 120351.0,
+      "spend": 19330.0,
+      "quads": 3,
+      "hands": 9,
+      "animals": 15,
+      "animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "crops": 12,
+      "crop_mix": {
+        "WHEAT": 12
+      },
+      "ready_value": 1053,
+      "shed_units": 0,
+      "harvests": 420,
+      "waters": 986,
+      "feed_units": 105,
+      "weed_burden": 308,
+      "max_weeds": 11,
+      "d12_animals": 15,
+      "d12_animal_mix": {
+        "COW": 11,
+        "SHEEP": 4
+      },
+      "d12_crops": 59,
+      "d12_crop_mix": {
+        "WHEAT": 7,
+        "STRAWBERRY": 40,
+        "CARROT": 8,
+        "MELON": 4
+      }
+    },
+    "op": {
+      "reward": 105071.0,
+      "income": 122098.0,
+      "spend": 20027.0,
+      "quads": 3,
+      "hands": 10,
+      "animals": 7,
+      "animal_mix": {
+        "COW": 7
+      },
+      "crops": 0,
+      "crop_mix": {},
+      "ready_value": 0,
+      "shed_units": 0,
+      "harvests": 390,
+      "waters": 1010,
+      "feed_units": 189,
+      "weed_burden": 451,
+      "max_weeds": 6,
+      "d12_animals": 11,
+      "d12_animal_mix": {
+        "SHEEP": 4,
+        "COW": 7
+      },
+      "d12_crops": 60,
+      "d12_crop_mix": {
+        "WHEAT": 12,
+        "STRAWBERRY": 36,
+        "MELON": 12
+      }
+    }
+  }
+]

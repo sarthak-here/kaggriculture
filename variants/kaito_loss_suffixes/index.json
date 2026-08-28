@@ -1,0 +1,52 @@
+[
+  {
+    "name": "ep100606696_s0_default_p243",
+    "episode": 100606696,
+    "seat": 0,
+    "slot": "default",
+    "prefix": 243,
+    "own_prefix": 120,
+    "shops": [
+      "FARMERS_MARKET",
+      "BAKERY",
+      "SMOOTHIE_SHOP",
+      "SMOOTHIE_SHOP",
+      "BAKERY",
+      "BAKERY",
+      "FARMERS_MARKET",
+      "BRUNCH_SPOT"
+    ],
+    "margin": -143.0,
+    "opponent": "BurntPotato",
+    "op_family": "3q-11c-4s-0g",
+    "clone_streak2": 287,
+    "route_sha256": "d3add591927b6dfb3c49f0bc8e42e00943f747947455d177ac82f5c83ec6c74f",
+    "route_file": "route_mining\\kaito_loss_suffixes\\route-100606696-seat0.json.gz",
+    "path": "variants\\kaito_loss_suffixes\\ep100606696_s0_default_p243\\main.py"
+  },
+  {
+    "name": "ep99487002_s1_yarn_first_p214",
+    "episode": 99487002,
+    "seat": 1,
+    "slot": "yarn_first",
+    "prefix": 214,
+    "own_prefix": 214,
+    "shops": [
+      "YARN_STORE",
+      "YARN_STORE",
+      "ICE_CREAM_SHOP",
+      "BRUNCH_SPOT",
+      "YARN_STORE",
+      "BRUNCH_SPOT",
+      "FARMERS_MARKET",
+      "SMOOTHIE_SHOP"
+    ],
+    "margin": -546.0,
+    "opponent": "AAAMIKASA",
+    "op_family": "3q-6c-10s-0g",
+    "clone_streak2": 408,
+    "route_sha256": "cc89a38e28531915e474e5ba31fc38092c2fcd1abaca3baff2a440ef6593995d",
+    "route_file": "route_mining\\kaito_loss_suffixes\\route-99487002-seat1.json.gz",
+    "path": "variants\\kaito_loss_suffixes\\ep99487002_s1_yarn_first_p214\\main.py"
+  }
+]

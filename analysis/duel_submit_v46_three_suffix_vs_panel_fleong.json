@@ -1,0 +1,38 @@
+[
+ {
+  "seed": 1201036856,
+  "order": 0,
+  "a": 91762.0,
+  "b": 86387.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 36,
+   "final_carrot_deficit": 9
+  },
+  "b_carrot": {
+   "planted": 0,
+   "sold": 0,
+   "final_carrot_price": 36,
+   "final_carrot_deficit": 9
+  }
+ },
+ {
+  "seed": 1201036856,
+  "order": 1,
+  "a": 88926.0,
+  "b": 83952.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 29,
+   "final_carrot_deficit": -27
+  },
+  "b_carrot": {
+   "planted": 0,
+   "sold": 0,
+   "final_carrot_price": 29,
+   "final_carrot_deficit": -27
+  }
+ }
+]

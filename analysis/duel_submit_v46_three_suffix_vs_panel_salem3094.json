@@ -1,0 +1,362 @@
+[
+ {
+  "seed": 116000,
+  "order": 0,
+  "a": 60773.0,
+  "b": 52975.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 54,
+   "final_carrot_deficit": 246
+  },
+  "b_carrot": {
+   "planted": 6,
+   "sold": 15,
+   "final_carrot_price": 54,
+   "final_carrot_deficit": 246
+  }
+ },
+ {
+  "seed": 116000,
+  "order": 1,
+  "a": 56147.0,
+  "b": 49151.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 64,
+   "final_carrot_deficit": 372
+  },
+  "b_carrot": {
+   "planted": 6,
+   "sold": 15,
+   "final_carrot_price": 64,
+   "final_carrot_deficit": 372
+  }
+ },
+ {
+  "seed": 116001,
+  "order": 0,
+  "a": 75146.0,
+  "b": 70809.0,
+  "a_carrot": {
+   "planted": 12,
+   "sold": 24,
+   "final_carrot_price": 49,
+   "final_carrot_deficit": 182
+  },
+  "b_carrot": {
+   "planted": 2,
+   "sold": 4,
+   "final_carrot_price": 49,
+   "final_carrot_deficit": 182
+  }
+ },
+ {
+  "seed": 116001,
+  "order": 1,
+  "a": 73629.0,
+  "b": 69961.0,
+  "a_carrot": {
+   "planted": 12,
+   "sold": 24,
+   "final_carrot_price": 49,
+   "final_carrot_deficit": 182
+  },
+  "b_carrot": {
+   "planted": 2,
+   "sold": 4,
+   "final_carrot_price": 49,
+   "final_carrot_deficit": 182
+  }
+ },
+ {
+  "seed": 116002,
+  "order": 0,
+  "a": 89715.0,
+  "b": 78980.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 58,
+   "final_carrot_deficit": 300
+  },
+  "b_carrot": {
+   "planted": 6,
+   "sold": 15,
+   "final_carrot_price": 58,
+   "final_carrot_deficit": 300
+  }
+ },
+ {
+  "seed": 116002,
+  "order": 1,
+  "a": 89715.0,
+  "b": 78980.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 58,
+   "final_carrot_deficit": 300
+  },
+  "b_carrot": {
+   "planted": 6,
+   "sold": 15,
+   "final_carrot_price": 58,
+   "final_carrot_deficit": 300
+  }
+ },
+ {
+  "seed": 116003,
+  "order": 0,
+  "a": 63873.0,
+  "b": 66354.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 65,
+   "final_carrot_deficit": 390
+  },
+  "b_carrot": {
+   "planted": 6,
+   "sold": 15,
+   "final_carrot_price": 65,
+   "final_carrot_deficit": 390
+  }
+ },
+ {
+  "seed": 116003,
+  "order": 1,
+  "a": 63873.0,
+  "b": 66354.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 65,
+   "final_carrot_deficit": 390
+  },
+  "b_carrot": {
+   "planted": 6,
+   "sold": 15,
+   "final_carrot_price": 65,
+   "final_carrot_deficit": 390
+  }
+ },
+ {
+  "seed": 116004,
+  "order": 0,
+  "a": 61411.0,
+  "b": 52182.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 74,
+   "final_carrot_deficit": 480
+  },
+  "b_carrot": {
+   "planted": 6,
+   "sold": 15,
+   "final_carrot_price": 74,
+   "final_carrot_deficit": 480
+  }
+ },
+ {
+  "seed": 116004,
+  "order": 1,
+  "a": 44161.0,
+  "b": 41969.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 92,
+   "final_carrot_deficit": 552
+  },
+  "b_carrot": {
+   "planted": 6,
+   "sold": 15,
+   "final_carrot_price": 92,
+   "final_carrot_deficit": 552
+  }
+ },
+ {
+  "seed": 116005,
+  "order": 0,
+  "a": 106697.0,
+  "b": 99023.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 28,
+   "final_carrot_deficit": -42
+  },
+  "b_carrot": {
+   "planted": 6,
+   "sold": 15,
+   "final_carrot_price": 28,
+   "final_carrot_deficit": -42
+  }
+ },
+ {
+  "seed": 116005,
+  "order": 1,
+  "a": 99061.0,
+  "b": 105163.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 28,
+   "final_carrot_deficit": -42
+  },
+  "b_carrot": {
+   "planted": 6,
+   "sold": 15,
+   "final_carrot_price": 28,
+   "final_carrot_deficit": -42
+  }
+ },
+ {
+  "seed": 116006,
+  "order": 0,
+  "a": 132810.0,
+  "b": 94741.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 70,
+   "final_carrot_deficit": 447
+  },
+  "b_carrot": {
+   "planted": 6,
+   "sold": 15,
+   "final_carrot_price": 70,
+   "final_carrot_deficit": 447
+  }
+ },
+ {
+  "seed": 116006,
+  "order": 1,
+  "a": 126373.0,
+  "b": 117619.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 58,
+   "final_carrot_deficit": 300
+  },
+  "b_carrot": {
+   "planted": 6,
+   "sold": 15,
+   "final_carrot_price": 58,
+   "final_carrot_deficit": 300
+  }
+ },
+ {
+  "seed": 116007,
+  "order": 0,
+  "a": 89868.0,
+  "b": 91300.0,
+  "a_carrot": {
+   "planted": 12,
+   "sold": 24,
+   "final_carrot_price": 49,
+   "final_carrot_deficit": 182
+  },
+  "b_carrot": {
+   "planted": 2,
+   "sold": 4,
+   "final_carrot_price": 49,
+   "final_carrot_deficit": 182
+  }
+ },
+ {
+  "seed": 116007,
+  "order": 1,
+  "a": 59162.0,
+  "b": 49899.0,
+  "a_carrot": {
+   "planted": 12,
+   "sold": 24,
+   "final_carrot_price": 56,
+   "final_carrot_deficit": 272
+  },
+  "b_carrot": {
+   "planted": 2,
+   "sold": 4,
+   "final_carrot_price": 56,
+   "final_carrot_deficit": 272
+  }
+ },
+ {
+  "seed": 116008,
+  "order": 0,
+  "a": 112666.0,
+  "b": 104853.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 46,
+   "final_carrot_deficit": 138
+  },
+  "b_carrot": {
+   "planted": 6,
+   "sold": 15,
+   "final_carrot_price": 46,
+   "final_carrot_deficit": 138
+  }
+ },
+ {
+  "seed": 116008,
+  "order": 1,
+  "a": 112666.0,
+  "b": 104853.0,
+  "a_carrot": {
+   "planted": 20,
+   "sold": 57,
+   "final_carrot_price": 46,
+   "final_carrot_deficit": 138
+  },
+  "b_carrot": {
+   "planted": 6,
+   "sold": 15,
+   "final_carrot_price": 46,
+   "final_carrot_deficit": 138
+  }
+ },
+ {
+  "seed": 116009,
+  "order": 0,
+  "a": 101398.0,
+  "b": 92462.0,
+  "a_carrot": {
+   "planted": 12,
+   "sold": 27,
+   "final_carrot_price": 52,
+   "final_carrot_deficit": 215
+  },
+  "b_carrot": {
+   "planted": 2,
+   "sold": 4,
+   "final_carrot_price": 52,
+   "final_carrot_deficit": 215
+  }
+ },
+ {
+  "seed": 116009,
+  "order": 1,
+  "a": 114722.0,
+  "b": 82569.0,
+  "a_carrot": {
+   "planted": 12,
+   "sold": 27,
+   "final_carrot_price": 34,
+   "final_carrot_deficit": -1
+  },
+  "b_carrot": {
+   "planted": 2,
+   "sold": 4,
+   "final_carrot_price": 34,
+   "final_carrot_deficit": -1
+  }
+ }
+]

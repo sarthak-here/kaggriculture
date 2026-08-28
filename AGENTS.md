@@ -193,3 +193,18 @@ route tuning.
   seeds but changed **zero** outcomes on the fresh four-agent panel.
 - These artifacts are research memory, not promotion candidates. Production remains the
   byte-identical 'submit_pf_all/main.py'; no submission was made.
+## Experimental: Kaito loss suffixes and Soil probes (#92)
+
+- `variants/kaito_loss_suffixes/ep100606696_s0_default_p243/main.py` is a real
+  Kaito-family mirror improvement: **33-3 with 4 ties** against the frozen submitted
+  Kaito descendant. It is rejected because the fresh panel was only 85% vs pf_all,
+  80% vs Salem, and **45% vs Soil**.
+- `variants/kaito_feed_guard/` contains four reserve-safe feed-stock probes. All stayed
+  0-8 on the selected Soil failure worlds; do not promote or repeat.
+- `variants/kaito_soil_preempt/` contains debt-balanced MILK/WHEAT preemption probes.
+  All stayed 0-8 on the same worlds; do not promote or repeat.
+- Rebuild/profile tools: `analysis/build_kaito_loss_suffixes.py`,
+  `analysis/build_kaito_feed_guard.py`, `analysis/build_kaito_soil_preempt.py`, and
+  `analysis/kaito_soil_profile.py`.
+- Frozen submitted Kaito remains `submit_v46_three_suffix/main.py`, SHA-256
+  `5950fdb0032ede297706bb5aaae48461597563b6322de144ec0dee4274388c59`.
