@@ -183,3 +183,13 @@ route tuning.
   **19-1** on unseen seeds 94000-94009.
 - The remaining observed weakness is Soil (**8-12**), so this is not universal.
 - Submitted to Kaggle as **55751173** on 2026-08-25. Snapshot after 13 episodes: **11-1-1, rating 1,594.7**; see the early-ladder correction in #85.
+
+## Experimental: pf_all reliability audit and suffixes (#90)
+
+- 'submit_pf_all_{clone2,cap3,clone2_cap3,recent_gate}' preserves four strict-market-gate
+  probes. Best result was only **9-6 with 5 ties** against frozen pf_all; all are rejected.
+- 'variants/pfall_suffixes/' preserves 24 exact-prefix-compatible one-slot variants.
+  Twenty-three regress. The step-312 6c8s survivor reached **15-5** on ten bucket-matched
+  seeds but changed **zero** outcomes on the fresh four-agent panel.
+- These artifacts are research memory, not promotion candidates. Production remains the
+  byte-identical 'submit_pf_all/main.py'; no submission was made.

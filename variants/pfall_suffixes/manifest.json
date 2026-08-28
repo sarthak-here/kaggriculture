@@ -1,0 +1,386 @@
+[
+  {
+    "episode_id": 94415941,
+    "seat": 0,
+    "bucket": "6c8s_3q",
+    "prefix": 312,
+    "shops": [
+      "PIZZA_SHOP",
+      "PIZZA_SHOP",
+      "YARN_STORE"
+    ],
+    "reward": 95795.0,
+    "route_sha256": "5ee796088f903319a94323d356002c6c9d8a0352f0acf10bac7ec2f5dbf0aa63",
+    "route_file": "route_mining\\pfall_compatible\\route-94415941-seat0.json.gz",
+    "name": "ep94415941_s0_p312_6c8s_3q",
+    "agent": "variants\\pfall_suffixes\\ep94415941_s0_p312_6c8s_3q\\main.py"
+  },
+  {
+    "episode_id": 94354020,
+    "seat": 0,
+    "bucket": "6c12s_4q_second_yarn",
+    "prefix": 262,
+    "shops": [
+      "SMOOTHIE_SHOP",
+      "YARN_STORE",
+      "ICE_CREAM_SHOP"
+    ],
+    "reward": 143099.0,
+    "route_sha256": "3aada6df617e0897b5f16b9986f90aec8f9e6a1367c1b464f781722d7a1fabe4",
+    "route_file": "route_mining\\pfall_compatible\\route-94354020-seat0.json.gz",
+    "name": "ep94354020_s0_p262_6c12s_4q_second_yarn",
+    "agent": "variants\\pfall_suffixes\\ep94354020_s0_p262_6c12s_4q_second_yarn\\main.py"
+  },
+  {
+    "episode_id": 93844719,
+    "seat": 1,
+    "bucket": "10c4s_3q",
+    "prefix": 256,
+    "shops": [
+      "SMOOTHIE_SHOP",
+      "SMOOTHIE_SHOP",
+      "PIZZA_SHOP"
+    ],
+    "reward": 138736.0,
+    "route_sha256": "25f93eea47e95610c4fdb9ef210e527b9244872f8de239134cf13a87111fa278",
+    "route_file": "route_mining\\pfall_compatible\\route-93844719-seat1.json.gz",
+    "name": "ep93844719_s1_p256_10c4s_3q",
+    "agent": "variants\\pfall_suffixes\\ep93844719_s1_p256_10c4s_3q\\main.py"
+  },
+  {
+    "episode_id": 93830554,
+    "seat": 1,
+    "bucket": "10c4s_3q",
+    "prefix": 216,
+    "shops": [
+      "FARMERS_MARKET",
+      "SMOOTHIE_SHOP",
+      "SMOOTHIE_SHOP"
+    ],
+    "reward": 123699.0,
+    "route_sha256": "87cfc7ab8d7b05ee03c5b34b450a96a2395a9f0c6da375e1319bacaaf983a32a",
+    "route_file": "route_mining\\pfall_compatible\\route-93830554-seat1.json.gz",
+    "name": "ep93830554_s1_p216_10c4s_3q",
+    "agent": "variants\\pfall_suffixes\\ep93830554_s1_p216_10c4s_3q\\main.py"
+  },
+  {
+    "episode_id": 93843112,
+    "seat": 1,
+    "bucket": "10c4s_3q",
+    "prefix": 216,
+    "shops": [
+      "BAKERY",
+      "ICE_CREAM_SHOP",
+      "ICE_CREAM_SHOP"
+    ],
+    "reward": 106271.0,
+    "route_sha256": "1862de1fb3a70db645e5452a26277b8bb93d43a74c9a4aebf076c21eb048a21c",
+    "route_file": "route_mining\\pfall_compatible\\route-93843112-seat1.json.gz",
+    "name": "ep93843112_s1_p216_10c4s_3q",
+    "agent": "variants\\pfall_suffixes\\ep93843112_s1_p216_10c4s_3q\\main.py"
+  },
+  {
+    "episode_id": 93843824,
+    "seat": 0,
+    "bucket": "10c4s_3q",
+    "prefix": 216,
+    "shops": [
+      "FARMERS_MARKET",
+      "SMOOTHIE_SHOP",
+      "PIZZA_SHOP"
+    ],
+    "reward": 112659.0,
+    "route_sha256": "6c94e153a0fb7681e7edc43bb39ede427f030f22b933cb4fac7dcfad65f9c7f1",
+    "route_file": "route_mining\\pfall_compatible\\route-93843824-seat0.json.gz",
+    "name": "ep93843824_s0_p216_10c4s_3q",
+    "agent": "variants\\pfall_suffixes\\ep93843824_s0_p216_10c4s_3q\\main.py"
+  },
+  {
+    "episode_id": 93934642,
+    "seat": 0,
+    "bucket": "10c4s_3q",
+    "prefix": 216,
+    "shops": [
+      "SMOOTHIE_SHOP",
+      "FARMERS_MARKET",
+      "ICE_CREAM_SHOP"
+    ],
+    "reward": 132883.0,
+    "route_sha256": "5a3e3368ab520ec3c104ad2ab7927ad68d3e6b865f26afa9f000c010c90f6bc4",
+    "route_file": "route_mining\\pfall_compatible\\route-93934642-seat0.json.gz",
+    "name": "ep93934642_s0_p216_10c4s_3q",
+    "agent": "variants\\pfall_suffixes\\ep93934642_s0_p216_10c4s_3q\\main.py"
+  },
+  {
+    "episode_id": 94038537,
+    "seat": 0,
+    "bucket": "10c4s_3q",
+    "prefix": 216,
+    "shops": [
+      "FARMERS_MARKET",
+      "SMOOTHIE_SHOP",
+      "ICE_CREAM_SHOP"
+    ],
+    "reward": 115664.0,
+    "route_sha256": "2d4bd391901d4c4cadc9ddaa27195ecbc50a8d273239750c39545e39e806abf6",
+    "route_file": "route_mining\\pfall_compatible\\route-94038537-seat0.json.gz",
+    "name": "ep94038537_s0_p216_10c4s_3q",
+    "agent": "variants\\pfall_suffixes\\ep94038537_s0_p216_10c4s_3q\\main.py"
+  },
+  {
+    "episode_id": 94070176,
+    "seat": 0,
+    "bucket": "10c4s_3q",
+    "prefix": 216,
+    "shops": [
+      "FARMERS_MARKET",
+      "PIZZA_SHOP",
+      "SMOOTHIE_SHOP"
+    ],
+    "reward": 120827.0,
+    "route_sha256": "ca796561f4c9a33b971e489ed64c26e9468ade70ade6fccabe87d0b48f471337",
+    "route_file": "route_mining\\pfall_compatible\\route-94070176-seat0.json.gz",
+    "name": "ep94070176_s0_p216_10c4s_3q",
+    "agent": "variants\\pfall_suffixes\\ep94070176_s0_p216_10c4s_3q\\main.py"
+  },
+  {
+    "episode_id": 94359478,
+    "seat": 1,
+    "bucket": "10c4s_3q",
+    "prefix": 216,
+    "shops": [
+      "SMOOTHIE_SHOP",
+      "ICE_CREAM_SHOP",
+      "PIZZA_SHOP"
+    ],
+    "reward": 128621.0,
+    "route_sha256": "d714964de4b5a1662aad3b56caded2a67d44fa43aefd8c41970b75ca133d5d7d",
+    "route_file": "route_mining\\pfall_compatible\\route-94359478-seat1.json.gz",
+    "name": "ep94359478_s1_p216_10c4s_3q",
+    "agent": "variants\\pfall_suffixes\\ep94359478_s1_p216_10c4s_3q\\main.py"
+  },
+  {
+    "episode_id": 97169599,
+    "seat": 0,
+    "bucket": "10c4s_3q",
+    "prefix": 216,
+    "shops": [
+      "BAKERY",
+      "PIZZA_SHOP",
+      "PIZZA_SHOP"
+    ],
+    "reward": 60971.0,
+    "route_sha256": "3929cc082f0c622b4ca6f37d6471c3a6e279f061400f9c2bbba7d0f6f2754d66",
+    "route_file": "route_mining\\pfall_compatible\\route-97169599-seat0.json.gz",
+    "name": "ep97169599_s0_p216_10c4s_3q",
+    "agent": "variants\\pfall_suffixes\\ep97169599_s0_p216_10c4s_3q\\main.py"
+  },
+  {
+    "episode_id": 97696875,
+    "seat": 1,
+    "bucket": "10c4s_3q",
+    "prefix": 216,
+    "shops": [
+      "SMOOTHIE_SHOP",
+      "PET_CAFE",
+      "SMOOTHIE_SHOP"
+    ],
+    "reward": 90771.0,
+    "route_sha256": "814b1057b2704c296fdad31b5a4f7e239567bc8c44abd4575e12f79c9572c071",
+    "route_file": "route_mining\\pfall_compatible\\route-97696875-seat1.json.gz",
+    "name": "ep97696875_s1_p216_10c4s_3q",
+    "agent": "variants\\pfall_suffixes\\ep97696875_s1_p216_10c4s_3q\\main.py"
+  },
+  {
+    "episode_id": 97776793,
+    "seat": 0,
+    "bucket": "10c4s_3q",
+    "prefix": 216,
+    "shops": [
+      "BAKERY",
+      "FARMERS_MARKET",
+      "SMOOTHIE_SHOP"
+    ],
+    "reward": 67028.0,
+    "route_sha256": "ef69f9e3b221a8f37c0e16da784ec7f52334b8ec06ca2ac4d16dfa5859d3b440",
+    "route_file": "route_mining\\pfall_compatible\\route-97776793-seat0.json.gz",
+    "name": "ep97776793_s0_p216_10c4s_3q",
+    "agent": "variants\\pfall_suffixes\\ep97776793_s0_p216_10c4s_3q\\main.py"
+  },
+  {
+    "episode_id": 94113312,
+    "seat": 0,
+    "bucket": "6c8s_3q",
+    "prefix": 216,
+    "shops": [
+      "ICE_CREAM_SHOP",
+      "PIZZA_SHOP",
+      "YARN_STORE"
+    ],
+    "reward": 120679.0,
+    "route_sha256": "96545a51d48259b6f99907ff73820cce3944afb31ec7e1ae3b0c74accc9a4d01",
+    "route_file": "route_mining\\pfall_compatible\\route-94113312-seat0.json.gz",
+    "name": "ep94113312_s0_p216_6c8s_3q",
+    "agent": "variants\\pfall_suffixes\\ep94113312_s0_p216_6c8s_3q\\main.py"
+  },
+  {
+    "episode_id": 94399140,
+    "seat": 1,
+    "bucket": "10c4s_3q",
+    "prefix": 206,
+    "shops": [
+      "SMOOTHIE_SHOP",
+      "PIZZA_SHOP",
+      "SMOOTHIE_SHOP"
+    ],
+    "reward": 132982.0,
+    "route_sha256": "9f483c1950b1b76d31f9b066e302246904dad43f21441d1481f0977b2766867b",
+    "route_file": "route_mining\\pfall_compatible\\route-94399140-seat1.json.gz",
+    "name": "ep94399140_s1_p206_10c4s_3q",
+    "agent": "variants\\pfall_suffixes\\ep94399140_s1_p206_10c4s_3q\\main.py"
+  },
+  {
+    "episode_id": 93833225,
+    "seat": 1,
+    "bucket": "10c4s_3q",
+    "prefix": 203,
+    "shops": [
+      "ICE_CREAM_SHOP",
+      "PIZZA_SHOP",
+      "PET_CAFE"
+    ],
+    "reward": 105858.0,
+    "route_sha256": "c84dba12d30c594cdc31370107c08c39aa9e2318e70b07ddb27d1da643125bb2",
+    "route_file": "route_mining\\pfall_compatible\\route-93833225-seat1.json.gz",
+    "name": "ep93833225_s1_p203_10c4s_3q",
+    "agent": "variants\\pfall_suffixes\\ep93833225_s1_p203_10c4s_3q\\main.py"
+  },
+  {
+    "episode_id": 94354894,
+    "seat": 0,
+    "bucket": "6c12s_4q_first_yarn",
+    "prefix": 190,
+    "shops": [
+      "YARN_STORE",
+      "PET_CAFE",
+      "ICE_CREAM_SHOP"
+    ],
+    "reward": 100679.0,
+    "route_sha256": "a1fe9b9be99355fa85fae266963784858dd615b0ebdc61b0a5b9ab8edbe29ec6",
+    "route_file": "route_mining\\pfall_compatible\\route-94354894-seat0.json.gz",
+    "name": "ep94354894_s0_p190_6c12s_4q_first_yarn",
+    "agent": "variants\\pfall_suffixes\\ep94354894_s0_p190_6c12s_4q_first_yarn\\main.py"
+  },
+  {
+    "episode_id": 94368166,
+    "seat": 0,
+    "bucket": "6c12s_4q_first_yarn",
+    "prefix": 190,
+    "shops": [
+      "YARN_STORE",
+      "BRUNCH_SPOT",
+      "BRUNCH_SPOT"
+    ],
+    "reward": 90345.0,
+    "route_sha256": "e8e6f9e73a9cac08883e78602d9984a89ca1330e6071246998841c26af066d93",
+    "route_file": "route_mining\\pfall_compatible\\route-94368166-seat0.json.gz",
+    "name": "ep94368166_s0_p190_6c12s_4q_first_yarn",
+    "agent": "variants\\pfall_suffixes\\ep94368166_s0_p190_6c12s_4q_first_yarn\\main.py"
+  },
+  {
+    "episode_id": 94377910,
+    "seat": 1,
+    "bucket": "6c12s_4q_first_yarn",
+    "prefix": 190,
+    "shops": [
+      "YARN_STORE",
+      "SMOOTHIE_SHOP",
+      "YARN_STORE"
+    ],
+    "reward": 104573.0,
+    "route_sha256": "ac6308f434e348f2e2541680548fe035986bfd1a2c022984c6b586de14870b20",
+    "route_file": "route_mining\\pfall_compatible\\route-94377910-seat1.json.gz",
+    "name": "ep94377910_s1_p190_6c12s_4q_first_yarn",
+    "agent": "variants\\pfall_suffixes\\ep94377910_s1_p190_6c12s_4q_first_yarn\\main.py"
+  },
+  {
+    "episode_id": 94363716,
+    "seat": 0,
+    "bucket": "6c12s_4q_second_yarn",
+    "prefix": 145,
+    "shops": [
+      "FARMERS_MARKET",
+      "YARN_STORE",
+      "SMOOTHIE_SHOP"
+    ],
+    "reward": 101977.0,
+    "route_sha256": "67a44c89d28164edc5642f2ed5866783aed733613fbd6e1f7665489ff6570bef",
+    "route_file": "route_mining\\pfall_compatible\\route-94363716-seat0.json.gz",
+    "name": "ep94363716_s0_p145_6c12s_4q_second_yarn",
+    "agent": "variants\\pfall_suffixes\\ep94363716_s0_p145_6c12s_4q_second_yarn\\main.py"
+  },
+  {
+    "episode_id": 94370827,
+    "seat": 0,
+    "bucket": "6c12s_4q_second_yarn",
+    "prefix": 145,
+    "shops": [
+      "ICE_CREAM_SHOP",
+      "YARN_STORE",
+      "ICE_CREAM_SHOP"
+    ],
+    "reward": 113452.0,
+    "route_sha256": "8b5bcdd2c286f31fabc9c473b5269dd5a48f768b887eb3e4831d894d60a2be35",
+    "route_file": "route_mining\\pfall_compatible\\route-94370827-seat0.json.gz",
+    "name": "ep94370827_s0_p145_6c12s_4q_second_yarn",
+    "agent": "variants\\pfall_suffixes\\ep94370827_s0_p145_6c12s_4q_second_yarn\\main.py"
+  },
+  {
+    "episode_id": 94396475,
+    "seat": 0,
+    "bucket": "6c12s_4q_second_yarn",
+    "prefix": 145,
+    "shops": [
+      "ICE_CREAM_SHOP",
+      "YARN_STORE",
+      "BAKERY"
+    ],
+    "reward": 95082.0,
+    "route_sha256": "891492d69fc355829618b00ad5bc29de0a3abaa9c5bf13645487bd1170720391",
+    "route_file": "route_mining\\pfall_compatible\\route-94396475-seat0.json.gz",
+    "name": "ep94396475_s0_p145_6c12s_4q_second_yarn",
+    "agent": "variants\\pfall_suffixes\\ep94396475_s0_p145_6c12s_4q_second_yarn\\main.py"
+  },
+  {
+    "episode_id": 93874804,
+    "seat": 0,
+    "bucket": "10c4s_3q",
+    "prefix": 120,
+    "shops": [
+      "FARMERS_MARKET",
+      "FARMERS_MARKET",
+      "ICE_CREAM_SHOP"
+    ],
+    "reward": 110644.0,
+    "route_sha256": "3f2b2d38b167f7373bbf05ee581559d84aa7f32cf9c3a62f3609ce0064703826",
+    "route_file": "route_mining\\pfall_compatible\\route-93874804-seat0.json.gz",
+    "name": "ep93874804_s0_p120_10c4s_3q",
+    "agent": "variants\\pfall_suffixes\\ep93874804_s0_p120_10c4s_3q\\main.py"
+  },
+  {
+    "episode_id": 93591196,
+    "seat": 1,
+    "bucket": "6c8s_3q",
+    "prefix": 120,
+    "shops": [
+      "SMOOTHIE_SHOP",
+      "PIZZA_SHOP",
+      "YARN_STORE"
+    ],
+    "reward": 116659.0,
+    "route_sha256": "fe1c215ec9980821cf8fc831e3f47d587462148e18a9c4591d852e39be5858bb",
+    "route_file": "route_mining\\pfall_compatible\\route-93591196-seat1.json.gz",
+    "name": "ep93591196_s1_p120_6c8s_3q",
+    "agent": "variants\\pfall_suffixes\\ep93591196_s1_p120_6c8s_3q\\main.py"
+  }
+]

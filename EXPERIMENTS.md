@@ -4167,3 +4167,53 @@ not improve match wins and slightly reduces mean margin. Persistent weed burden 
 symptom of fixed-route state drift, not a locally repairable cause. All three variants
 remain separate rejected artifacts; the frozen models are unchanged. No Kaggle
 submission was made.
+
+### #90. Full pf_all loss audit and recent-method transplants do not clear the reliability bar
+
+Pulled submission 55697862's complete record: **137 matches, 79 wins and 58 losses**.
+One loss was an ambiguous pf_all self-match, leaving **57 real opponent losses**. All 57
+replays were downloaded and profiled rather than extrapolating from the old 12-loss sample.
+
+The losses are two different failure families:
+
+| family | count | identifying evidence |
+|---|---:|---|
+| close losses (margin <= $2,500) | 21 | 17 in seat 0; 15 have a persistent 24-turn clone-distance <=2 streak |
+| severe losses (margin >= $8,000) | 18 | zero persistent clone-distance <=2 streaks; day-12 lead becomes a day-29 deficit |
+
+Across all losses, pf_all leads by $3,311 at day 12 but trails by $5,534 at day 29.
+In the severe family it earns $9,873 more than the opponent but spends $21,047 more,
+buys 643 more feed units, carries 1,148 more weed observation-turns, and moves from
++$5,265 on day 12 to -$11,321 on day 29. It finishes with 14.3 standing crops against
+33.9. The severe failures are leaner, structurally different economies, not mirror races.
+
+Four state-compatible versions of the recent strict clone gate were tested directly
+against frozen pf_all on seeds 111000-111009 in both seats:
+
+| variant | record | decisive win rate |
+|---|---:|---:|
+| clone distance 2 | 6-6, 8 ties | 50.0% |
+| adaptive horizon capped at 3 | 6-8, 6 ties | 42.9% |
+| both changes | 6-8, 6 ties | 42.9% |
+| full recent gate (distance 2, start 160, batch 10, horizon 3) | 9-6, 5 ties | 60.0% |
+
+The strongest recent gate is still far below the >90% reliability requirement.
+
+The top-player corpus plus all pf_all losses yielded **24 exact-prefix-compatible
+suffixes** across four route buckets (longest branch points: 312 for 6c8s, 262 for
+second-YARN, and 256 for 10c4s). Every suffix was built as an isolated pf_all variant
+and bucket-screened. Twenty-three were regressions. The sole survivor,
+'ep94415941_s0_p312_6c8s_3q', initially scored 4-0 with 6 ties, then 15-5 on ten disjoint
+bucket-matched seeds. Its five raw losses all canceled in the opposite seat and the
+paired mean margin was only +$5: non-inferior, but not dominant.
+
+On fresh seeds 113000-113009, the survivor and frozen pf_all produced **identical rewards
+in every panel game**: Fleong 20-0, Salem 20-0, Kaito 4-16, and Soil 20-0. It flipped zero
+field outcomes. Therefore it does not repair pf_all's real Kaito/lean-economy weakness.
+
+Conclusion: pf_all loses close mirror races through market/seat ordering and loses severe
+matches to lean architectures that are incompatible before a safe suffix branch. The
+recent strict market gate and compatible-suffix techniques cannot fill that structural
+gap on top of pf_all. Frozen 'submit_pf_all/main.py' remains byte-identical at SHA-256
+'9F9718CFA6E3FF822FAFAF12414CC34EF6BDBF67BFDBAD92662A42D0CCFDC0BF'. No Kaggle
+submission was made.
