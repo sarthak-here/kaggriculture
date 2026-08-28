@@ -4217,3 +4217,30 @@ recent strict market gate and compatible-suffix techniques cannot fill that stru
 gap on top of pf_all. Frozen 'submit_pf_all/main.py' remains byte-identical at SHA-256
 '9F9718CFA6E3FF822FAFAF12414CC34EF6BDBF67BFDBAD92662A42D0CCFDC0BF'. No Kaggle
 submission was made.
+### #91. pf_all rerun first genuine loss reproduces the severe lean-economy failure
+
+Frozen pf_all was resubmitted as Kaggle submission 55847309 after explicit approval.
+The initial recorded loss was a self-match and was excluded. The first external run went
+5-0 before losing episode 101790539 to ikevayansky by $16,099 at rating 1,158.7.
+
+This is not a clone race. Clone distance never reached 6 after turn 120. It is the severe
+structural family from #90:
+
+| metric | pf_all | opponent | delta |
+|---|---:|---:|---:|
+| route/farm | second-YARN, 4 quadrants | 3 quadrants, 6 cows / 10 sheep | |
+| total income | $115,786 | $86,075 | +$29,711 |
+| total spending | $61,760 | $15,950 | **+$45,810** |
+| feed units | 1,312 | 135 | **+1,177** |
+| weed observation-turns | 3,685 | 1,256 | **+2,429** |
+| day-12 money gap | | | +$2,966 |
+| day-18 money gap | | | -$10,688 |
+| day-29 money gap | | | -$12,618 |
+| day-29 standing crops | 23 | 35 | -12 |
+
+pf_all again earns more but destroys the advantage by expanding to quadrant four and
+funding its 1,312-feed second-YARN route. The opponent stays on three quadrants with a
+lean 6-cow/10-sheep herd and converts lower spending into a late crop-throughput lead.
+This independently confirms that the current ladder weakness is the Kaito-like lean
+architecture identified in #90, not a new bug and not fixable by the rejected strict
+clone gate. No additional Kaggle submission was made.

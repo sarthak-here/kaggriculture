@@ -4,13 +4,14 @@ from __future__ import annotations
 
 import sys
 
+import argparse
 import collections
 import json
 import statistics
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-CORPUS = ROOT / "loss_analysis" / "pfall_current"
+DEFAULT_CORPUS = ROOT / "loss_analysis" / "pfall_current"
 KEYS = tuple(sorted(("WHEAT", "CARROT", "TOMATO", "STRAWBERRY", "MELON",
                      "COW", "SHEEP", "GOOSE", "PASTURE", "COOP", "WEED")))
 
@@ -40,10 +41,14 @@ def distance(obs):
 def main():
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-    profiles = json.load(open(CORPUS / "profiles.json", encoding="utf-8"))
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--corpus", type=Path, default=DEFAULT_CORPUS)
+    args = parser.parse_args()
+    corpus = args.corpus
+    profiles = json.load(open(corpus / "profiles.json", encoding="utf-8"))
     by_episode = {row["episode"]: row for row in profiles}
     rows = []
-    for path in CORPUS.glob("episode-*-replay.json"):
+    for path in corpus.glob("episode-*-replay.json"):
         episode = int(path.name.split("-")[1])
         replay = json.load(open(path, encoding="utf-8"))
         values = []
@@ -67,6 +72,8 @@ def main():
         ("10C4S", [row for row in rows if row["bucket"] == "10c4s_3q"]),
         ("YARN", [row for row in rows if "6c12s" in row["bucket"]]),
     ):
+        if not group:
+            continue
         print(label, len(group),
               "any<=6", sum(row["turns"][6] > 0 for row in group),
               "any<=2", sum(row["turns"][2] > 0 for row in group),

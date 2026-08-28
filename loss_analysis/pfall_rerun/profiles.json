@@ -1,0 +1,219 @@
+[
+  {
+    "episode": 101790539,
+    "end": "2026-08-28T15:46:29.089219300Z",
+    "seat": 0,
+    "ours": 57026.0,
+    "theirs": 73125.0,
+    "margin": -16099.0,
+    "our_score": 1099.550228529799,
+    "opponent_submission": 55847231,
+    "opponent_score": 1385.6371274718501,
+    "opponent": "ikevayansky",
+    "seed": 1661997720,
+    "shops": [
+      "FARMERS_MARKET",
+      "YARN_STORE",
+      "BAKERY",
+      "FARMERS_MARKET",
+      "FARMERS_MARKET",
+      "PET_CAFE",
+      "ICE_CREAM_SHOP",
+      "PET_CAFE"
+    ],
+    "prefix": "FARMERS_MARKET>YARN_STORE>BAKERY",
+    "bucket": "6c12s_4q_second_yarn",
+    "op_family": "3q-6c-10s-0g",
+    "us": {
+      "income": 115786.0,
+      "spend": 61760.0,
+      "weed_burden": 3685,
+      "feed_units": 1312,
+      "days": {
+        "8": {
+          "money": 266.0,
+          "quads": 2,
+          "hands": 0,
+          "crops": 23,
+          "crop_mix": {
+            "STRAWBERRY": 8,
+            "MELON": 12,
+            "WHEAT": 3
+          },
+          "animals": 10,
+          "animal_mix": {
+            "COW": 6,
+            "SHEEP": 4
+          },
+          "weeds": 0,
+          "ready": 45
+        },
+        "12": {
+          "money": 11750.0,
+          "quads": 3,
+          "hands": 0,
+          "crops": 51,
+          "crop_mix": {
+            "STRAWBERRY": 34,
+            "WHEAT": 17
+          },
+          "animals": 14,
+          "animal_mix": {
+            "COW": 6,
+            "SHEEP": 8
+          },
+          "weeds": 0,
+          "ready": 25
+        },
+        "18": {
+          "money": 24864.0,
+          "quads": 4,
+          "hands": 0,
+          "crops": 63,
+          "crop_mix": {
+            "STRAWBERRY": 42,
+            "WHEAT": 21
+          },
+          "animals": 18,
+          "animal_mix": {
+            "COW": 6,
+            "SHEEP": 12
+          },
+          "weeds": 1,
+          "ready": 54
+        },
+        "24": {
+          "money": 51100.0,
+          "quads": 4,
+          "hands": 0,
+          "crops": 53,
+          "crop_mix": {
+            "WHEAT": 19,
+            "STRAWBERRY": 33,
+            "CARROT": 1
+          },
+          "animals": 18,
+          "animal_mix": {
+            "COW": 6,
+            "SHEEP": 12
+          },
+          "weeds": 12,
+          "ready": 51
+        },
+        "29": {
+          "money": 52931.0,
+          "quads": 4,
+          "hands": 0,
+          "crops": 23,
+          "crop_mix": {
+            "WHEAT": 17,
+            "STRAWBERRY": 6
+          },
+          "animals": 15,
+          "animal_mix": {
+            "COW": 6,
+            "SHEEP": 9
+          },
+          "weeds": 26,
+          "ready": 33
+        }
+      }
+    },
+    "op": {
+      "income": 86075.0,
+      "spend": 15950.0,
+      "weed_burden": 1256,
+      "feed_units": 135,
+      "days": {
+        "8": {
+          "money": 939.0,
+          "quads": 2,
+          "hands": 0,
+          "crops": 31,
+          "crop_mix": {
+            "STRAWBERRY": 15,
+            "WHEAT": 9,
+            "MELON": 7
+          },
+          "animals": 10,
+          "animal_mix": {
+            "COW": 5,
+            "SHEEP": 5
+          },
+          "weeds": 0,
+          "ready": 39
+        },
+        "12": {
+          "money": 8784.0,
+          "quads": 3,
+          "hands": 0,
+          "crops": 42,
+          "crop_mix": {
+            "STRAWBERRY": 35,
+            "WHEAT": 5,
+            "MELON": 2
+          },
+          "animals": 16,
+          "animal_mix": {
+            "COW": 6,
+            "SHEEP": 10
+          },
+          "weeds": 1,
+          "ready": 11
+        },
+        "18": {
+          "money": 35552.0,
+          "quads": 3,
+          "hands": 0,
+          "crops": 55,
+          "crop_mix": {
+            "STRAWBERRY": 35,
+            "WHEAT": 16,
+            "MELON": 4
+          },
+          "animals": 16,
+          "animal_mix": {
+            "COW": 6,
+            "SHEEP": 10
+          },
+          "weeds": 1,
+          "ready": 59
+        },
+        "24": {
+          "money": 62184.0,
+          "quads": 3,
+          "hands": 0,
+          "crops": 47,
+          "crop_mix": {
+            "WHEAT": 26,
+            "STRAWBERRY": 21
+          },
+          "animals": 16,
+          "animal_mix": {
+            "COW": 6,
+            "SHEEP": 10
+          },
+          "weeds": 8,
+          "ready": 64
+        },
+        "29": {
+          "money": 65549.0,
+          "quads": 3,
+          "hands": 0,
+          "crops": 35,
+          "crop_mix": {
+            "WHEAT": 23,
+            "CARROT": 12
+          },
+          "animals": 16,
+          "animal_mix": {
+            "COW": 6,
+            "SHEEP": 10
+          },
+          "weeds": 7,
+          "ready": 62
+        }
+      }
+    }
+  }
+]

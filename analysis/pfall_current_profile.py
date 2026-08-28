@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import argparse
 import collections
 import json
 import statistics
@@ -10,7 +11,7 @@ from pathlib import Path
 from portfolio import label_for
 
 ROOT = Path(__file__).resolve().parents[1]
-CORPUS = ROOT / "loss_analysis" / "pfall_current"
+DEFAULT_CORPUS = ROOT / "loss_analysis" / "pfall_current"
 
 
 def farm_stats(farm):
@@ -76,10 +77,14 @@ def side_profile(steps, seat):
 
 
 def main():
-    manifest = json.load(open(CORPUS / "manifest.json", encoding="utf-8"))
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--corpus", type=Path, default=DEFAULT_CORPUS)
+    args = parser.parse_args()
+    corpus = args.corpus
+    manifest = json.load(open(corpus / "manifest.json", encoding="utf-8"))
     metadata = {row["episode"]: row for row in manifest}
     rows = []
-    for path in sorted(CORPUS.glob("episode-*-replay.json")):
+    for path in sorted(corpus.glob("episode-*-replay.json")):
         episode_id = int(path.name.split("-")[1])
         replay = json.load(open(path, encoding="utf-8"))
         steps = replay.get("steps") or []
@@ -106,7 +111,7 @@ def main():
             "us": us,
             "op": op,
         })
-    json.dump(rows, open(CORPUS / "profiles.json", "w", encoding="utf-8"), indent=2)
+    json.dump(rows, open(corpus / "profiles.json", "w", encoding="utf-8"), indent=2)
     print("losses", len(rows))
     print("seat", dict(collections.Counter(row["seat"] for row in rows)))
     print("bucket", dict(collections.Counter(row["bucket"] for row in rows)))
@@ -117,6 +122,8 @@ def main():
     severe = [row for row in rows if row["margin"] <= -8000]
     print("close <=2500", len(close), "severe >=8000", len(severe))
     for label, group in (("ALL", rows), ("CLOSE", close), ("SEVERE", severe)):
+        if not group:
+            continue
         print("\n", label, len(group))
         print(" buckets", dict(collections.Counter(row["bucket"] for row in group)))
         print(" seats", dict(collections.Counter(row["seat"] for row in group)))
