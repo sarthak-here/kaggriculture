@@ -1,0 +1,691 @@
+[
+  {
+    "name": "ep99920128_s1_p72",
+    "episode": 99920128,
+    "seat": 1,
+    "prefix": 72,
+    "reward": 104875.0,
+    "opponent_reward": 99596.0,
+    "margin": 5279.0,
+    "shops": [
+      "FARMERS_MARKET",
+      "BRUNCH_SPOT",
+      "ICE_CREAM_SHOP",
+      "SMOOTHIE_SHOP",
+      "PET_CAFE",
+      "PET_CAFE",
+      "PIZZA_SHOP",
+      "PIZZA_SHOP"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 8,
+      "animals": {
+        "COW": 8,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "WHEAT": 5
+      }
+    },
+    "route_sha256": "97e7c49dce37dbf32ce37276219c2fc672ef3798532c4abd082311d6b5ffcb93",
+    "route_file": "route_mining/kaito_early_branches/route-99920128-seat1.json.gz"
+  },
+  {
+    "name": "ep94456186_s1_p44",
+    "episode": 94456186,
+    "seat": 1,
+    "prefix": 44,
+    "reward": 114865.0,
+    "opponent_reward": 84018.0,
+    "margin": 30847.0,
+    "shops": [
+      "FARMERS_MARKET",
+      "PIZZA_SHOP",
+      "FARMERS_MARKET",
+      "SMOOTHIE_SHOP",
+      "PET_CAFE",
+      "ICE_CREAM_SHOP",
+      "PIZZA_SHOP",
+      "FARMERS_MARKET"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 9,
+      "animals": {
+        "COW": 8,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "WHEAT": 9,
+        "TOMATO": 11
+      }
+    },
+    "route_sha256": "f77d8b6d4ae49feed795667e9b6718bf0c91b5b8f2888a17a454b02f7d1f9f02",
+    "route_file": "route_mining/kaito_early_branches/route-94456186-seat1.json.gz"
+  },
+  {
+    "name": "ep94470415_s0_p44",
+    "episode": 94470415,
+    "seat": 0,
+    "prefix": 44,
+    "reward": 104175.0,
+    "opponent_reward": 82840.0,
+    "margin": 21335.0,
+    "shops": [
+      "FARMERS_MARKET",
+      "BRUNCH_SPOT",
+      "PIZZA_SHOP",
+      "FARMERS_MARKET",
+      "BRUNCH_SPOT",
+      "BRUNCH_SPOT",
+      "SMOOTHIE_SHOP",
+      "SMOOTHIE_SHOP"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 9,
+      "animals": {
+        "COW": 8,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "WHEAT": 7,
+        "TOMATO": 11
+      }
+    },
+    "route_sha256": "72bc456816a5ea8de09b428a949d7d63772f9977a72d679876b73730e591930a",
+    "route_file": "route_mining/kaito_early_branches/route-94470415-seat0.json.gz"
+  },
+  {
+    "name": "ep94442170_s1_p24",
+    "episode": 94442170,
+    "seat": 1,
+    "prefix": 24,
+    "reward": 147301.0,
+    "opponent_reward": 10936.0,
+    "margin": 136365.0,
+    "shops": [
+      "PET_CAFE",
+      "SMOOTHIE_SHOP",
+      "PIZZA_SHOP",
+      "PIZZA_SHOP",
+      "SMOOTHIE_SHOP",
+      "PIZZA_SHOP",
+      "FARMERS_MARKET",
+      "FARMERS_MARKET"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 10,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "WHEAT": 13,
+        "TOMATO": 12,
+        "STRAWBERRY": 3
+      }
+    },
+    "route_sha256": "c1d6f65c5aad3698e38ecfe85eeb42beadef4a152008db9d767d02b32ba8b802",
+    "route_file": "route_mining/kaito_early_branches/route-94442170-seat1.json.gz"
+  },
+  {
+    "name": "ep96925631_s0_p24",
+    "episode": 96925631,
+    "seat": 0,
+    "prefix": 24,
+    "reward": 178015.0,
+    "opponent_reward": 91658.0,
+    "margin": 86357.0,
+    "shops": [
+      "PIZZA_SHOP",
+      "PIZZA_SHOP",
+      "FARMERS_MARKET",
+      "FARMERS_MARKET",
+      "PIZZA_SHOP",
+      "PET_CAFE",
+      "FARMERS_MARKET",
+      "BRUNCH_SPOT"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 8,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "WHEAT": 8,
+        "TOMATO": 19,
+        "STRAWBERRY": 1
+      }
+    },
+    "route_sha256": "e3b73817add4d0c8d6865a0c629b640c9619746432e6716cae67e9b19b354acb",
+    "route_file": "route_mining/kaito_early_branches/route-96925631-seat0.json.gz"
+  },
+  {
+    "name": "ep94443017_s1_p24",
+    "episode": 94443017,
+    "seat": 1,
+    "prefix": 24,
+    "reward": 125492.0,
+    "opponent_reward": 46231.0,
+    "margin": 79261.0,
+    "shops": [
+      "FARMERS_MARKET",
+      "BRUNCH_SPOT",
+      "PIZZA_SHOP",
+      "FARMERS_MARKET",
+      "PET_CAFE",
+      "YARN_STORE",
+      "FARMERS_MARKET",
+      "BAKERY"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 10,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "WHEAT": 6,
+        "TOMATO": 12,
+        "STRAWBERRY": 3
+      }
+    },
+    "route_sha256": "6d913097608b6bd535a915638c1ba8590f3dbc72b689738f5d2f2bf3fa11b856",
+    "route_file": "route_mining/kaito_early_branches/route-94443017-seat1.json.gz"
+  },
+  {
+    "name": "ep94443883_s1_p24",
+    "episode": 94443883,
+    "seat": 1,
+    "prefix": 24,
+    "reward": 117085.0,
+    "opponent_reward": 75225.0,
+    "margin": 41860.0,
+    "shops": [
+      "ICE_CREAM_SHOP",
+      "BAKERY",
+      "FARMERS_MARKET",
+      "BRUNCH_SPOT",
+      "FARMERS_MARKET",
+      "YARN_STORE",
+      "YARN_STORE",
+      "BRUNCH_SPOT"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 7,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "WHEAT": 12,
+        "STRAWBERRY": 3
+      }
+    },
+    "route_sha256": "2b2831ecdc3f5250562946bcfb5b4d9b7ac3952a519a43dd42179653f49c5d74",
+    "route_file": "route_mining/kaito_early_branches/route-94443883-seat1.json.gz"
+  },
+  {
+    "name": "ep94498749_s0_p24",
+    "episode": 94498749,
+    "seat": 0,
+    "prefix": 24,
+    "reward": 124004.0,
+    "opponent_reward": 94408.0,
+    "margin": 29596.0,
+    "shops": [
+      "BRUNCH_SPOT",
+      "ICE_CREAM_SHOP",
+      "PET_CAFE",
+      "SMOOTHIE_SHOP",
+      "YARN_STORE",
+      "YARN_STORE",
+      "FARMERS_MARKET",
+      "FARMERS_MARKET"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 8,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "WHEAT": 10,
+        "STRAWBERRY": 3
+      }
+    },
+    "route_sha256": "745d6d8d079a3798e1656ac8476dd3cfa5266c796d95bf41f24cc237a8052a94",
+    "route_file": "route_mining/kaito_early_branches/route-94498749-seat0.json.gz"
+  },
+  {
+    "name": "ep94446494_s0_p24",
+    "episode": 94446494,
+    "seat": 0,
+    "prefix": 24,
+    "reward": 99307.0,
+    "opponent_reward": 69818.0,
+    "margin": 29489.0,
+    "shops": [
+      "BRUNCH_SPOT",
+      "PET_CAFE",
+      "PIZZA_SHOP",
+      "SMOOTHIE_SHOP",
+      "ICE_CREAM_SHOP",
+      "PIZZA_SHOP",
+      "PIZZA_SHOP",
+      "YARN_STORE"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 8,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "WHEAT": 7,
+        "STRAWBERRY": 2
+      }
+    },
+    "route_sha256": "0b57c39f6e8b24c3dcc4a54bca5b28c9c4c8b5b15792359bef3125a0f53de30f",
+    "route_file": "route_mining/kaito_early_branches/route-94446494-seat0.json.gz"
+  },
+  {
+    "name": "ep100399022_s0_p24",
+    "episode": 100399022,
+    "seat": 0,
+    "prefix": 24,
+    "reward": 119369.0,
+    "opponent_reward": 92063.0,
+    "margin": 27306.0,
+    "shops": [
+      "FARMERS_MARKET",
+      "FARMERS_MARKET",
+      "PIZZA_SHOP",
+      "ICE_CREAM_SHOP",
+      "PET_CAFE",
+      "SMOOTHIE_SHOP",
+      "FARMERS_MARKET",
+      "YARN_STORE"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 10,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "WHEAT": 7,
+        "TOMATO": 12,
+        "STRAWBERRY": 3
+      }
+    },
+    "route_sha256": "be6cd962b6a0436be8405fe5b84a18ba4fd5d7f2bc277a730d813b5f2d683e3d",
+    "route_file": "route_mining/kaito_early_branches/route-100399022-seat0.json.gz"
+  },
+  {
+    "name": "ep94445621_s1_p24",
+    "episode": 94445621,
+    "seat": 1,
+    "prefix": 24,
+    "reward": 101966.0,
+    "opponent_reward": 77644.0,
+    "margin": 24322.0,
+    "shops": [
+      "BRUNCH_SPOT",
+      "ICE_CREAM_SHOP",
+      "FARMERS_MARKET",
+      "PET_CAFE",
+      "FARMERS_MARKET",
+      "PET_CAFE",
+      "PET_CAFE",
+      "YARN_STORE"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 11,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "CARROT": 7,
+        "WHEAT": 9,
+        "STRAWBERRY": 3
+      }
+    },
+    "route_sha256": "8846620c6da3711ddda5c2e0fe40ea5746d6d7c177adcdbdc96bde292892e560",
+    "route_file": "route_mining/kaito_early_branches/route-94445621-seat1.json.gz"
+  },
+  {
+    "name": "ep94450000_s0_p24",
+    "episode": 94450000,
+    "seat": 0,
+    "prefix": 24,
+    "reward": 102952.0,
+    "opponent_reward": 80035.0,
+    "margin": 22917.0,
+    "shops": [
+      "SMOOTHIE_SHOP",
+      "SMOOTHIE_SHOP",
+      "PET_CAFE",
+      "BAKERY",
+      "BAKERY",
+      "PIZZA_SHOP",
+      "PIZZA_SHOP",
+      "PIZZA_SHOP"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 7,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "WHEAT": 11,
+        "STRAWBERRY": 3
+      }
+    },
+    "route_sha256": "cb43496153578978fa3909b6f18d3acc98e6a57171dca53eeeec8cb7a090e2d2",
+    "route_file": "route_mining/kaito_early_branches/route-94450000-seat0.json.gz"
+  },
+  {
+    "name": "ep94449118_s1_p24",
+    "episode": 94449118,
+    "seat": 1,
+    "prefix": 24,
+    "reward": 107027.0,
+    "opponent_reward": 86486.0,
+    "margin": 20541.0,
+    "shops": [
+      "PIZZA_SHOP",
+      "PET_CAFE",
+      "SMOOTHIE_SHOP",
+      "ICE_CREAM_SHOP",
+      "SMOOTHIE_SHOP",
+      "PET_CAFE",
+      "BRUNCH_SPOT",
+      "ICE_CREAM_SHOP"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 9,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "CARROT": 5,
+        "WHEAT": 9,
+        "STRAWBERRY": 2
+      }
+    },
+    "route_sha256": "41ac0ee20c46dada4f898280969141886ad2a5d9fa7b416752889552f4fc2cf2",
+    "route_file": "route_mining/kaito_early_branches/route-94449118-seat1.json.gz"
+  },
+  {
+    "name": "ep97577978_s0_p24",
+    "episode": 97577978,
+    "seat": 0,
+    "prefix": 24,
+    "reward": 51502.0,
+    "opponent_reward": 42232.0,
+    "margin": 9270.0,
+    "shops": [
+      "FARMERS_MARKET",
+      "BAKERY",
+      "PET_CAFE",
+      "PIZZA_SHOP",
+      "BAKERY",
+      "SMOOTHIE_SHOP",
+      "SMOOTHIE_SHOP",
+      "BAKERY"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 7,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "WHEAT": 12,
+        "STRAWBERRY": 3
+      }
+    },
+    "route_sha256": "4d584f1aea05aacd8d02c5c295883426671ef896b96eb0f66892dda7e5dff159",
+    "route_file": "route_mining/kaito_early_branches/route-97577978-seat0.json.gz"
+  },
+  {
+    "name": "ep96927904_s0_p24",
+    "episode": 96927904,
+    "seat": 0,
+    "prefix": 24,
+    "reward": 61226.0,
+    "opponent_reward": 57979.0,
+    "margin": 3247.0,
+    "shops": [
+      "BRUNCH_SPOT",
+      "PET_CAFE",
+      "BRUNCH_SPOT",
+      "PET_CAFE",
+      "BRUNCH_SPOT",
+      "PET_CAFE",
+      "BAKERY",
+      "FARMERS_MARKET"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 9,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "WHEAT": 9,
+        "STRAWBERRY": 3,
+        "CARROT": 7
+      }
+    },
+    "route_sha256": "edd84f5594d39a3e432b9f3a284f3a931544f825bf191914d720eae6d7e239de",
+    "route_file": "route_mining/kaito_early_branches/route-96927904-seat0.json.gz"
+  },
+  {
+    "name": "ep94485464_s1_p24",
+    "episode": 94485464,
+    "seat": 1,
+    "prefix": 24,
+    "reward": 98280.0,
+    "opponent_reward": 96148.0,
+    "margin": 2132.0,
+    "shops": [
+      "SMOOTHIE_SHOP",
+      "PET_CAFE",
+      "PIZZA_SHOP",
+      "PIZZA_SHOP",
+      "PIZZA_SHOP",
+      "YARN_STORE",
+      "SMOOTHIE_SHOP",
+      "FARMERS_MARKET"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 10,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "WHEAT": 10,
+        "TOMATO": 12,
+        "STRAWBERRY": 3
+      }
+    },
+    "route_sha256": "a3d13b24d86d920130481aa2a87c84dc0aef072e8599fbcb3335813691a99e15",
+    "route_file": "route_mining/kaito_early_branches/route-94485464-seat1.json.gz"
+  },
+  {
+    "name": "ep97981999_s0_p24",
+    "episode": 97981999,
+    "seat": 0,
+    "prefix": 24,
+    "reward": 70703.0,
+    "opponent_reward": 71104.0,
+    "margin": -401.0,
+    "shops": [
+      "PET_CAFE",
+      "ICE_CREAM_SHOP",
+      "BAKERY",
+      "PIZZA_SHOP",
+      "ICE_CREAM_SHOP",
+      "PET_CAFE",
+      "BAKERY",
+      "BRUNCH_SPOT"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 10,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "CARROT": 2,
+        "WHEAT": 9,
+        "STRAWBERRY": 3
+      }
+    },
+    "route_sha256": "d12c640a12eed896e5b99b59a58f936509366e325e9f504f2078bcdd211d7f59",
+    "route_file": "route_mining/kaito_early_branches/route-97981999-seat0.json.gz"
+  },
+  {
+    "name": "ep97619181_s0_p24",
+    "episode": 97619181,
+    "seat": 0,
+    "prefix": 24,
+    "reward": 95156.0,
+    "opponent_reward": 97636.0,
+    "margin": -2480.0,
+    "shops": [
+      "SMOOTHIE_SHOP",
+      "FARMERS_MARKET",
+      "PET_CAFE",
+      "BRUNCH_SPOT",
+      "BRUNCH_SPOT",
+      "FARMERS_MARKET",
+      "PET_CAFE",
+      "ICE_CREAM_SHOP"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 9,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "CARROT": 3,
+        "WHEAT": 9,
+        "STRAWBERRY": 3
+      }
+    },
+    "route_sha256": "3ee300467dfde322f29f53f3dff1de2826f9ae0ff0b6cfa3e1e58ca5f694af0b",
+    "route_file": "route_mining/kaito_early_branches/route-97619181-seat0.json.gz"
+  },
+  {
+    "name": "ep97587125_s0_p24",
+    "episode": 97587125,
+    "seat": 0,
+    "prefix": 24,
+    "reward": 97894.0,
+    "opponent_reward": 107766.0,
+    "margin": -9872.0,
+    "shops": [
+      "ICE_CREAM_SHOP",
+      "PET_CAFE",
+      "FARMERS_MARKET",
+      "BRUNCH_SPOT",
+      "ICE_CREAM_SHOP",
+      "SMOOTHIE_SHOP",
+      "BAKERY",
+      "PET_CAFE"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 9,
+      "animals": {
+        "COW": 7,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "CARROT": 3,
+        "STRAWBERRY": 3,
+        "WHEAT": 9
+      }
+    },
+    "route_sha256": "84a9abb382dfc98e4b2de27e11a11f2b6d5ab06a9d9e9f29b761822d4df512a3",
+    "route_file": "route_mining/kaito_early_branches/route-97587125-seat0.json.gz"
+  },
+  {
+    "name": "ep98713629_s1_p4",
+    "episode": 98713629,
+    "seat": 1,
+    "prefix": 4,
+    "reward": 61787.0,
+    "opponent_reward": 60996.0,
+    "margin": 791.0,
+    "shops": [
+      "PET_CAFE",
+      "BAKERY",
+      "PIZZA_SHOP",
+      "PIZZA_SHOP",
+      "ICE_CREAM_SHOP",
+      "PIZZA_SHOP",
+      "BAKERY",
+      "FARMERS_MARKET"
+    ],
+    "family": {
+      "quadrants": 3,
+      "hands": 6,
+      "animals": {
+        "COW": 8,
+        "SHEEP": 4,
+        "GOOSE": 0
+      },
+      "crops": {
+        "WHEAT": 8
+      }
+    },
+    "route_sha256": "603d306a712c2d47edcb4ebbfa108dd899d9ee3f5d441f75088942693d82f59c",
+    "route_file": "route_mining/kaito_early_branches/route-98713629-seat1.json.gz"
+  }
+]

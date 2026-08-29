@@ -4303,3 +4303,41 @@ day-0 branch or a stronger opponent-family policy, not another global Kaito suff
 Frozen `submit_v46_three_suffix/main.py` remains byte-identical at SHA-256
 `5950FDB0032EDE297706BB5AAAE48461597563B6322DE144EC0DEE4274388C59`. No Kaggle submission
 was made.
+
+### #93. Observable day-0 routing closes Kaito's Soil failure without a global regression
+
+Mining 1,426 replay seats for routes compatible with Kaito's exact opening found 20
+lean branches. The strongest, episode 94498749 seat 0, matches Kaito through action 24
+and then runs a 3-quadrant 7-cow/4-sheep economy. It beat Soil 20-0 in discovery and
+19-1 on fresh seeds 119000-119009, but as a global replacement it lost 13-7 to Kaito
+and 20-0 to both pf_all and Salem. It is a specialist, not a replacement.
+
+Soil exposes a unique public opening signature at observation step 1: five hands, one
+quadrant, and at most $10 remaining. In the measured panel, pf_all also has five hands
+but $1,452, Salem has five hands but $20, and Kaito/Fleong have two hands. A router was
+built that emits frozen Kaito's identical step-0 action, latches the lean policy only on
+that observable signature at step 1, and otherwise remains on frozen Kaito. No team name,
+submission identity, or private information is used.
+
+Validation on paired seats:
+
+| opponent / check | seeds | result |
+|---|---:|---:|
+| Soil block 1 | 119000-119009 | 19-1, +$6,873 |
+| Soil block 2 | 120000-120009 | 18-2, +$4,115 |
+| pf_all | 120000-120009 | 19-1, +$8,573 |
+| Salem | 120000-120009 | 19-1, +$8,085 |
+| Fleong | 120000-120009 | 20-0, +$21,112 |
+| frozen Kaito no-op check | 119000-119009 | 4-4, 12 ties, exactly $0 paired margin |
+
+Router and lean specialist produced identical final rewards on all 20 Soil block-1 games,
+proving the branch fired in both seat orders. Against Kaito, every non-tie reward exactly
+swapped with seat order and the paired margin was zero, proving the detector-off path
+retains Kaito behavior. Combined Soil result is **37-3 (92.5%)**.
+
+This is the first Kaito patch to close a documented structural loss family while passing
+the broad real-opponent panel. It remains an experimental candidate because the standing
+promotion rule requires the full previous-model ladder before any submission. Frozen
+Kaito is unchanged at SHA-256
+`5950FDB0032EDE297706BB5AAAE48461597563B6322DE144EC0DEE4274388C59`. No Kaggle submission
+was made.

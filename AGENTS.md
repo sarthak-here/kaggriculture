@@ -208,3 +208,14 @@ route tuning.
   `analysis/kaito_soil_profile.py`.
 - Frozen submitted Kaito remains `submit_v46_three_suffix/main.py`, SHA-256
   `5950fdb0032ede297706bb5aaae48461597563b6322de144ec0dee4274388c59`.
+## Experimental: Kaito observable Soil router (#93)
+
+- `variants/kaito_soil_router/main.py` keeps frozen Kaito unless the opponent's public
+  step-1 state is exactly the Soil-family opening: 5 hands, 1 quadrant, money <= $10.
+- The selected lean branch is episode 94498749 seat 0 after Kaito-compatible action 24.
+- Combined fresh Soil result: **37-3 (92.5%)** across seeds 119000-120009.
+- Fresh panel: **19-1 pf_all, 19-1 Salem, 20-0 Fleong**.
+- No-op proof against frozen Kaito: **4-4 with 12 ties and exactly zero paired margin**;
+  every non-tie reward swaps with seat order.
+- This is a validated experimental candidate, not submitted. Run the full previous-model
+  ladder before asking for promotion. Frozen Kaito remains byte-identical.
