@@ -4336,8 +4336,10 @@ swapped with seat order and the paired margin was zero, proving the detector-off
 retains Kaito behavior. Combined Soil result is **37-3 (92.5%)**.
 
 This is the first Kaito patch to close a documented structural loss family while passing
-the broad real-opponent panel. It remains an experimental candidate because the standing
-promotion rule requires the full previous-model ladder before any submission. Frozen
-Kaito is unchanged at SHA-256
-`5950FDB0032EDE297706BB5AAAE48461597563B6322DE144EC0DEE4274388C59`. No Kaggle submission
-was made.
+the broad real-opponent panel. After explicit user approval, the router was submitted to
+Kaggle as **55871991** on 2026-08-29. The uploaded archive was 141,459 bytes with a
+top-level `main.py`; that file's SHA-256 is
+`CCEE4DE0F1EFCBB82FFB31672A4984B0811F46FB7C70A78ADE913ECB36766262` and its last function
+is `_kaggle_submission_entrypoint(obs, configuration)`. Initial status: PENDING. Frozen
+Kaito remains unchanged at SHA-256
+`5950FDB0032EDE297706BB5AAAE48461597563B6322DE144EC0DEE4274388C59`.

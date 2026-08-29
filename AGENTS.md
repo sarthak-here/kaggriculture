@@ -217,5 +217,7 @@ route tuning.
 - Fresh panel: **19-1 pf_all, 19-1 Salem, 20-0 Fleong**.
 - No-op proof against frozen Kaito: **4-4 with 12 ties and exactly zero paired margin**;
   every non-tie reward swaps with seat order.
-- This is a validated experimental candidate, not submitted. Run the full previous-model
-  ladder before asking for promotion. Frozen Kaito remains byte-identical.
+- Submitted after explicit approval as **55871991** on 2026-08-29; initial status PENDING.
+  Uploaded `main.py` SHA-256:
+  `ccee4de0f1efcbb82ffb31672a4984b0811f46fb7c70a78ade913ecb36766262`.
+- Frozen Kaito remains byte-identical.
