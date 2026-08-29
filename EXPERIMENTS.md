@@ -4381,3 +4381,13 @@ unfixed because its YARN-2 slot does not use the default suffix; this candidate 
 the dominant NO-YARN clone family, not YARN or non-clone structural losses. Candidate
 SHA-256 is `0BDEF3B06CA7BAA1F78B4BE714D27B9238F9908DB0D2A3C34C2E0006B83A3066`.
 No Kaggle submission was made.
+
+
+### #95. Clone-targeted Kaito router submission
+
+After explicit approval, `variants/kaito_clone_soil_router/main.py` was packaged as
+`submission_kaito_clone_soil_router.tar.gz` with a top-level `main.py` and submitted to
+Kaggriculture as **55874991**. Source SHA-256:
+`0BDEF3B06CA7BAA1F78B4BE714D27B9238F9908DB0D2A3C34C2E0006B83A3066`; archive SHA-256:
+`883060840941EE321E6E5BD349046EE07658AE8E900C7F257996CA317A3EDA34`. Initial status:
+PENDING. Three submissions remained for the day after upload.

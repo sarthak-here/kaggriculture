@@ -234,4 +234,6 @@ route tuning.
   same seeds. Soil retention: **10-0**.
 - Scope limit: reconstructed Gronk remains **1-11** because its YARN slot is unchanged.
 - SHA-256: `0BDEF3B06CA7BAA1F78B4BE714D27B9238F9908DB0D2A3C34C2E0006B83A3066`.
-- Not submitted to Kaggle.
+- Submitted with explicit approval as Kaggle submission **55874991**; initial status
+  PENDING. Archive SHA-256:
+  `883060840941EE321E6E5BD349046EE07658AE8E900C7F257996CA317A3EDA34`.
