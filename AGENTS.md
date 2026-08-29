@@ -221,3 +221,17 @@ route tuning.
   Uploaded `main.py` SHA-256:
   `ccee4de0f1efcbb82ffb31672a4984b0811f46fb7c70a78ade913ecb36766262`.
 - Frozen Kaito remains byte-identical.
+
+
+## Candidate: Kaito clone + Soil router (#94)
+
+- `variants/kaito_clone_soil_router/main.py` keeps the submitted Soil detector and
+  remembers any 24-turn public close-clone streak before step 243.
+- Only confirmed clones receive the episode-100606696 default suffix; non-clones retain
+  the submitted policy exactly.
+- Mirror validation: **33-3 with 4 ties (91.7% decisive)** over 40 paired games.
+- pf_all no-op proof: **9-1 with every reward identical** to the submitted router on the
+  same seeds. Soil retention: **10-0**.
+- Scope limit: reconstructed Gronk remains **1-11** because its YARN slot is unchanged.
+- SHA-256: `0BDEF3B06CA7BAA1F78B4BE714D27B9238F9908DB0D2A3C34C2E0006B83A3066`.
+- Not submitted to Kaggle.

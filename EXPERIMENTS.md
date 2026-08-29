@@ -4343,3 +4343,41 @@ top-level `main.py`; that file's SHA-256 is
 is `_kaggle_submission_entrypoint(obs, configuration)`. Initial status: PENDING. Frozen
 Kaito remains unchanged at SHA-256
 `5950FDB0032EDE297706BB5AAAE48461597563B6322DE144EC0DEE4274388C59`.
+
+
+### #94. Live Kaito rerun losses are mostly seat-1 clone races; a clone-only suffix clears the mirror bar
+
+Downloaded and profiled all 16 losses then visible for submitted Kaito/Soil router
+55871991. The Soil opening detector fired in **0/16**, so these are frozen-Kaito
+losses rather than router false positives. Thirteen losses are from seat 1, twelve are
+NO-YARN/default openings, and eleven contain a persistent farm-distance-at-most-two
+clone streak. Eight of those clone streaks occur in NO-YARN games. The full sample earns
+$10,838 less than its opponent while spending $4,541 less; close losses are mostly level
+through day 12 and severe losses already trail by $3,129 at day 12. This reproduces #92's
+two families: late default-route clone races and unrelated lean structural losses.
+
+The default suffix from episode 100606696 was first stacked globally with the Soil
+router. It was rejected after two pf_all blocks disagreed: 10-0 followed by 5-5, only
+15-5 combined. A second router therefore advances the suffix policy silently through
+step 243 and latches it only after any 24 consecutive public observations with farm
+distance at most two. Soil retains priority at step 1; non-clones remain on the submitted
+policy. The first implementation incorrectly required the clone streak to end exactly at
+step 243; the corrected latch remembers an earlier confirmed streak.
+
+Paired-seat validation of `variants/kaito_clone_soil_router/main.py`:
+
+| opponent / check | seeds | result |
+|---|---:|---:|
+| submitted Kaito/Soil router | 125000-125004 | 9-1 |
+| submitted Kaito/Soil router | 126000-126009 | 19-1 |
+| submitted Kaito/Soil router | 127000-127004 | 5-1, 4 ties |
+| pf_all no-op check | 125100-125104 | 9-1, every reward identical to incumbent |
+| Soil specialist retention | 125200-125204 | 10-0 |
+| reconstructed Gronk | six replay-derived seeds | 1-11, unchanged |
+
+The mirror total is **33-3 with 4 ties (91.7% decisive)**, clearing the historical 90%
+bar. The exact pf_all reward match proves the clone branch stayed off there. Gronk remains
+unfixed because its YARN-2 slot does not use the default suffix; this candidate addresses
+the dominant NO-YARN clone family, not YARN or non-clone structural losses. Candidate
+SHA-256 is `0BDEF3B06CA7BAA1F78B4BE714D27B9238F9908DB0D2A3C34C2E0006B83A3066`.
+No Kaggle submission was made.
