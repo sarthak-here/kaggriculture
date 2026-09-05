@@ -2,6 +2,7 @@
 
 import json
 import sys
+from pathlib import Path
 
 import requests
 
@@ -59,7 +60,14 @@ def main():
                                              Counter((row["seat"], row["result"])
                                                      for row in rows).items()}}, indent=2))
         return
-    print(json.dumps(rows, indent=2))
+    payload = json.dumps(rows, indent=2)
+    if "--out" in sys.argv:
+        target = Path(sys.argv[sys.argv.index("--out") + 1])
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(payload + "\n", encoding="utf-8")
+        print(f"wrote {len(rows)} rows to {target}")
+    else:
+        print(payload)
 
 
 if __name__ == "__main__":

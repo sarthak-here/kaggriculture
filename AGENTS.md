@@ -237,3 +237,18 @@ route tuning.
 - Submitted with explicit approval as Kaggle submission **55874991**; initial status
   PENDING. Archive SHA-256:
   `883060840941EE321E6E5BD349046EE07658AE8E900C7F257996CA317A3EDA34`.
+
+## Candidate: reconstructed WHEAT-13 base (#96)
+
+- 'variants/panel_wheat13/main.py' is episode 105165498 seat 1's fixed
+  9-cow/8-sheep route rebuilt inside frozen Kaito guards.
+- Route identity was independently confirmed across eleven recent replays,
+  including four first-shop-YARN worlds; most matched all 719 actions.
+- Fresh results: **20-0 pf_all**, 12-0 each against Gronk, Soil, Salem and
+  Fleong; 16-4 against original Kaito; 16-4 against Kaito+Soil; **35-5** over
+  two blocks against the submitted clone/Soil router.
+- It is preserved but **not promoted**: 87.5% against the latest router and 80%
+  against two earlier Kaito builds fail the >90%-against-every-model rule.
+- Its remaining failures concentrate in first-shop-YARN games. A Kaito suffix
+  is not state-compatible because the two bases diverge at action 0.
+- No Kaggle submission was made.

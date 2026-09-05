@@ -4391,3 +4391,61 @@ Kaggriculture as **55874991**. Source SHA-256:
 `0BDEF3B06CA7BAA1F78B4BE714D27B9238F9908DB0D2A3C34C2E0006B83A3066`; archive SHA-256:
 `883060840941EE321E6E5BD349046EE07658AE8E900C7F257996CA317A3EDA34`. Initial status:
 PENDING. Three submissions remained for the day after upload.
+
+### #96. Submission 55874991 regression audit and Wheat-13 base reconstruction
+
+The submitted clone/Soil router completed 319 visible matches at **131 wins, 184
+losses, 4 ties**, public score **1546.2**. Its all-game win rate is 41.1% (41.6%
+of decisive games), and its recent 80-match sample is 23-56-1. This live result
+rejects the earlier mirror-only promotion evidence.
+
+A stratified replay sample (eight recent severe losses, six recent close losses,
+six recent wins) localized the current failure distribution. Ten of fourteen
+sampled losses had an opponent with zero hands after step 0 and only a WHEAT
+reserve purchase; four used 'BUY_PRODUCT WHEAT 13'. Five losses ended against a
+3-quadrant 9-cow/8-sheep farm. In the eight severe losses the opponent earned
+$25,506 more, spent $8,578 more, bought 430 more feed units, and led by $11,887
+at day 18. The Soil detector fired in 0/20 samples; the clone latch fired in six,
+but changed the selected route in only three. The live regression is therefore
+mostly a different-lineage structural failure, not detector false positives.
+
+Four WHEAT-13 opponent routes were extracted. Two from different submissions and
+different shop rolls matched for 717/719 actions; twelve additional recent
+replays from submission 55983621 included four YARN-first rolls and eleven routes
+that matched the selected route for all 719 actions. This is a fixed, repeatable
+9-cow/8-sheep policy rather than replay noise. Episode 105165498 seat 1 was rebuilt
+inside the frozen Kaito execution guards as 'variants/panel_wheat13/main.py'.
+
+Paired-seat results, with failed games counted explicitly:
+
+| opponent | result |
+|---|---:|
+| pf_all, fresh 10 seeds | **20-0** |
+| reconstructed Gronk | **12-0** |
+| Soil | **12-0** |
+| Salem | **12-0** |
+| Fleong | **12-0** |
+| original Kaito | 16-4 |
+| Kaito + Soil | 16-4 |
+| submitted clone/Soil router, two 10-seed blocks | **35-5 (87.5%)** |
+
+An alternate WHEAT-13 trace with a step-2 divergence regressed to 4-16; two
+near-identical traces reproduced 17-3. The remaining Kaito-family losses are
+concentrated in first-shop-YARN worlds: 10 of 13 reproduced losses. WHEAT-13
+plants nine and sells fourteen carrots per game, while Kaito's winning YARN-first
+schedule buys twelve late carrot seeds and sells roughly twenty-seven. A direct
+transplant is unsafe: the policies differ at action 0, and Kaito's 'align_hands'
+only truncates/extends the worker action list; it does not remap workers or farm
+state. The source submission itself converged near 2285, another warning that
+the 20-0 pf_all result may include interaction effects.
+
+Conclusion: this is the strongest broad different-lineage base found so far and
+closes the reconstructed Gronk hole, but it does **not** clear the user's >90%
+bar against every previous model. Preserve it as a candidate, do not submit it.
+The next valid patch must be a state-aware WHEAT-13 YARN-first continuation, not
+a Kaito suffix splice. No Kaggle submission was made.
+
+Evaluation harness correction: 'analysis/duel.py' now records exceptions and
+invalid rewards as failures, writes failure rows even when zero games complete,
+returns non-zero on partial failure, reports wins over all completed games beside
+decisive-only win rate, and stores each game's shop roll and route bucket.

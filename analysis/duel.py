@@ -26,6 +26,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from kaggle_environments import make
 from kaggle_environments.envs.kaggriculture.kaggriculture import MARKET_I0, market_price
+from portfolio import label_for
 
 TURNS_PER_DAY = 24
 
@@ -84,6 +85,23 @@ def play(agent_a, agent_b, seed):
     return env, rewards
 
 
+def result_path(agent_a, agent_b):
+    """Use a pairing-specific dump so parallel duels cannot overwrite each other."""
+    def slug(path):
+        directory = os.path.basename(os.path.dirname(os.path.abspath(path)))
+        return directory if directory not in ("", ".") \
+            else os.path.splitext(os.path.basename(path))[0]
+
+    return os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        f"duel_{slug(agent_a)}_vs_{slug(agent_b)}.json")
+
+
+def write_rows(agent_a, agent_b, rows):
+    out = result_path(agent_a, agent_b)
+    with open(out, "w") as handle:
+        json.dump(rows, handle, indent=1)
+    print(f"\nwrote {out}")
+
 def main():
     if len(sys.argv) < 3:
         print(__doc__)
@@ -100,7 +118,7 @@ def main():
         return 2
     print("game_data.py identical - safe to mix in one process\n")
 
-    a_wins = b_wins = ties = 0
+    a_wins = b_wins = ties = failures = 0
     margins = []
     mech = {"A": Counter(), "B": Counter()}
     spike_games = 0
@@ -115,10 +133,19 @@ def main():
                 env, rewards = play(first, second, seed)
             except Exception as e:
                 print(f"  seed {seed} order {order} FAILED: {type(e).__name__}: {e}")
+                failures += 1
+                rows.append({"seed": seed, "order": order, "status": "FAILED",
+                             "error": f"{type(e).__name__}: {e}"})
                 continue
             a_seat = 0 if order == 0 else 1
             b_seat = 1 - a_seat
             ra, rb = rewards[a_seat], rewards[b_seat]
+            if not isinstance(ra, (int, float)) or not isinstance(rb, (int, float)):
+                print(f"  seed {seed} order {order} FAILED: invalid rewards {rewards!r}")
+                failures += 1
+                rows.append({"seed": seed, "order": order, "status": "FAILED",
+                             "error": f"invalid rewards {rewards!r}"})
+                continue
             if ra > rb:
                 a_wins += 1
             elif rb > ra:
@@ -129,12 +156,15 @@ def main():
 
             sa = carrot_stats(env, a_seat)
             sb = carrot_stats(env, b_seat)
+            final_obs = env.steps[-1][0]["observation"]
+            shops = list((final_obs.get("town") or {}).get("unlocked_shops") or [])
             for k in ("planted", "sold"):
                 mech["A"][k] += sa[k]
                 mech["B"][k] += sb[k]
             if sa["final_carrot_deficit"] > 450:
                 spike_games += 1
             rows.append({"seed": seed, "order": order, "a": ra, "b": rb,
+                         "shops": shops, "bucket": label_for(shops),
                          "a_carrot": sa, "b_carrot": sb})
             print(f"  seed {seed} order {order}: A {ra:>9,.0f}  B {rb:>9,.0f}"
                   f"  {'A' if ra>rb else ('B' if rb>ra else '=')}"
@@ -142,17 +172,24 @@ def main():
                   f"   carrot ${sa['final_carrot_price']:<5}")
 
     total = a_wins + b_wins + ties
+    expected = len(seeds) * 2
     if not total:
-        print("no games completed")
-        return 1
+        print(f"\nRESULT over 0/{expected} completed paired-seat games")
+        print(f"  failed games: {failures}/{expected}")
+        write_rows(agent_a, agent_b, rows)
+        return 3 if failures else 1
 
     print("\n" + "=" * 68)
-    print(f"RESULT over {total} paired-seat games ({len(seeds)} seeds x 2 orders)")
+    print(f"RESULT over {total}/{expected} completed paired-seat games "
+          f"({len(seeds)} seeds x 2 orders)")
     print("=" * 68)
     decisive = a_wins + b_wins
     wr = 100 * a_wins / decisive if decisive else float("nan")
+    all_wr = 100 * a_wins / total
     print(f"  A wins {a_wins}   B wins {b_wins}   ties {ties}")
-    print(f"  A WIN RATE (decisive games): {wr:.1f}%     <-- promotion criterion")
+    print(f"  A WINS / ALL COMPLETED: {a_wins}/{total} = {all_wr:.1f}%")
+    print(f"  A WIN RATE (decisive only): {a_wins}/{decisive} = {wr:.1f}%")
+    print(f"  failed games: {failures}/{expected}")
     print(f"  mean margin (diagnostic only): {sum(margins)/len(margins):>+,.0f}")
     print(f"\n  MECHANISM  A: carrot planted {mech['A']['planted']:>4}"
           f"  sold {mech['A']['sold']:>4}")
@@ -164,18 +201,8 @@ def main():
         print("\n  WARNING: both agents planted the same amount of carrot.")
         print("  The lever did not move - do not read anything into the score.")
 
-    # Name the dump after the pairing: two duels run in parallel would otherwise
-    # both write duel_results.json and the loser of the race would be lost.
-    def slug(p):
-        d = os.path.basename(os.path.dirname(os.path.abspath(p)))
-        return d if d not in ("", ".") else os.path.splitext(os.path.basename(p))[0]
-
-    out = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                       f"duel_{slug(agent_a)}_vs_{slug(agent_b)}.json")
-    with open(out, "w") as f:
-        json.dump(rows, f, indent=1)
-    print(f"\nwrote {out}")
-    return 0
+    write_rows(agent_a, agent_b, rows)
+    return 3 if failures else 0
 
 
 if __name__ == "__main__":
