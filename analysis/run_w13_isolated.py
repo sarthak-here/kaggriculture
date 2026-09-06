@@ -86,11 +86,17 @@ def play(a,b,seed,order):
         if action_errors or any(s!='DONE' for s in statuses) or any(not isinstance(x,(int,float)) for x in rewards):
             raise RuntimeError(str({'statuses':statuses,'rewards':rewards,'errors':action_errors}))
         ai=order;bi=1-order
+        def farm_summary(seat):
+            farm=env.state[0].observation.farms[seat]
+            animals=collections.Counter(tile.get('animal') for row in farm['tiles'] for tile in row
+                                        if isinstance(tile,dict) and tile.get('animal'))
+            return {'quadrants':len(farm.get('unlocked_quadrants',[])),'animals':dict(animals)}
         agent_telemetry=[]
         for conn in connections:
             conn.send('telemetry')
             agent_telemetry.append(conn.recv() if conn.poll(5) else {'error':'telemetry timeout'})
         return {'seed':seed,'order':order,'status':'DONE','a':rewards[ai],'b':rewards[bi],
+                'a_final_farm':farm_summary(ai),'b_final_farm':farm_summary(bi),
                 'a_telemetry':agent_telemetry[ai],'b_telemetry':agent_telemetry[bi],
                 'a_fills':dict(fills[ai]),'b_fills':dict(fills[bi]),
                 'a_workers_sha256':hashes[ai].hexdigest(),'b_workers_sha256':hashes[bi].hexdigest(),

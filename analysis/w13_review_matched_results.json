@@ -1,0 +1,86 @@
+{
+  "kaito_142000": {
+    "expected_matches": 20,
+    "failed_or_incomplete_matches": 0,
+    "groups": {
+      "all": {
+        "matched_games": 20,
+        "base": {
+          "wins": 11,
+          "losses": 9,
+          "ties": 0,
+          "mean_margin": 1128.2
+        },
+        "candidate": {
+          "wins": 11,
+          "losses": 9,
+          "ties": 0,
+          "mean_margin": 528.65
+        },
+        "outcome_flips": 0,
+        "worker_hash_matches": 20,
+        "shop_sequence_matches": 20
+      },
+      "both_runs_sheep_heavy": {
+        "matched_games": 6,
+        "base": {
+          "wins": 4,
+          "losses": 2,
+          "ties": 0,
+          "mean_margin": 3738.0
+        },
+        "candidate": {
+          "wins": 4,
+          "losses": 2,
+          "ties": 0,
+          "mean_margin": 3063.6666666666665
+        },
+        "outcome_flips": 0,
+        "worker_hash_matches": 6,
+        "shop_sequence_matches": 6
+      }
+    }
+  },
+  "gronk_230300": {
+    "expected_matches": 10,
+    "failed_or_incomplete_matches": 0,
+    "groups": {
+      "all": {
+        "matched_games": 10,
+        "base": {
+          "wins": 10,
+          "losses": 0,
+          "ties": 0,
+          "mean_margin": 29135.9
+        },
+        "candidate": {
+          "wins": 10,
+          "losses": 0,
+          "ties": 0,
+          "mean_margin": 28927.9
+        },
+        "outcome_flips": 0,
+        "worker_hash_matches": 10,
+        "shop_sequence_matches": 10
+      },
+      "both_runs_sheep_heavy": {
+        "matched_games": 10,
+        "base": {
+          "wins": 10,
+          "losses": 0,
+          "ties": 0,
+          "mean_margin": 29135.9
+        },
+        "candidate": {
+          "wins": 10,
+          "losses": 0,
+          "ties": 0,
+          "mean_margin": 28927.9
+        },
+        "outcome_flips": 0,
+        "worker_hash_matches": 10,
+        "shop_sequence_matches": 10
+      }
+    }
+  }
+}

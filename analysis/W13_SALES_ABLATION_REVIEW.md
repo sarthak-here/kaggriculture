@@ -130,6 +130,58 @@ python analysis/summarize_w13_sales.py
 ```
 
 Runner outputs are exclusive: existing files are never silently overwritten.
+The summarizer starts from the committed gzip archive and merges local runs by
+experiment filename and `(seed, order)`. A clean checkout needs no `w13_runs/`
+directory. Conflicting results or provenance require a new experiment filename;
+empty input and corrupt evidence are rejected before either output is changed.
+Do not run concurrent summarizers. Writes are atomic per file, not across both
+output paths as a single transaction.
 Use new, predeclared seeds for further confirmation. Raw evidence is in
 `analysis/w13_sales_raw_runs.json.gz`; gunzip and parse the dictionary keyed by
 experiment filename. The summary contains its SHA-256.
+
+## Review follow-up (2026-09-06)
+
+The external local-Codex review reported baseline W13 11-9 (+1,128 mean
+margin) and strawberry-only 11-9 (+529) on the original 142000 seed block,
+with zero outcome flips and identical worker actions in all twenty games.
+These review-supplied aggregates are recorded as reported evidence, not
+fabricated per-game rows. They agree with the matched-baseline interpretation:
+the 11-9 record alone did not establish a patch-induced regression, but the
+roughly 600-coin margin reduction still does not support broad improvement.
+
+The summarizer's clean-checkout data-loss defect is fixed. Eight added tests
+cover preservation, repeated runs, archive/local merging, disjoint row extension,
+conflicting results/provenance, empty local input and corrupt archives. The nine
+controller tests still pass. A temporary clean checkout containing the actual
+committed archive and summary reproduces both files byte for byte.
+
+### Independent reproduction and sheep-heavy screen
+
+The original block has now been independently rerun here on seeds
+142000-142009 in both seats. Successful-fill records, hashes and final herd
+counts are merged into the durable archive, under `review_*` experiment names.
+
+| Matched opponent/block | Baseline W13 | Strawberry-only | Baseline mean margin | Candidate mean margin | Outcome flips |
+|---|---:|---:|---:|---:|---:|
+| Kaito, 142000-142009 | 11-9 | 11-9 | +1,128.20 | +528.65 | 0 |
+| Kaito sheep-heavy subset (6 games) | 4-2 | 4-2 | +3,738.00 | +3,063.67 | 0 |
+| Gronk, 230300-230304 | 10-0 | 10-0 | +29,135.90 | +28,927.90 | 0 |
+
+All 60 new games completed without failures or ties. Baseline/candidate worker
+hashes and shop sequences match in all thirty comparisons. Gronk's route requests
+6 cows/10 sheep and finishes with 5 cows/10 sheep in all ten tested games. The
+Kaito subset is classified retrospectively by at most six cows and at least
+nine sheep in both matched games; final composition is NOT an online detector.
+This is a narrow panel of committed reconstructions, not a replacement for the
+eight distinct live sheep-heavy submissions from the user's earlier losses.
+
+`python analysis/compare_w13_review.py` reproduces the matched table directly from
+the committed gzip archive. It needs no untracked local run files. The machine
+readable output is `analysis/w13_review_matched_results.json`.
+
+**Decision:** keep PR #1 as a research draft. The summarizer blocker is fixed,
+but these experiments provide no new wins against sheep-heavy counters and show
+lower margins. Do not submit or present strawberry-only as broadly stronger.
+The next meaningful evaluation needs the actual live counter artifacts/replays,
+rather than more tests against an already-beaten Gronk reconstruction.
