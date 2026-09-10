@@ -273,6 +273,7 @@ route tuning.
 - Two disjoint paired ten-seed blocks: **36–4 Suliman**, versus control **6–34**.
 - Matched Kaito and original pf_all remain 18–2, 3정훈 reconstruction 10–10;
   no changed rewards against those three. Direct prior-model mirror: 1–1–18.
-- **Confirmed matchup improvement, not promoted or submitted.** 220 evaluation
+- **Submitted experiment: 56139834**, explicitly approved on 2026-09-10 after
+  validation; initial status PENDING, no score yet. Not top-10 validated. 220 evaluation
   games, zero failures; sixteen tests pass. Fixed routes are not live policies.
 - Full mechanism, evidence and next investigation: `analysis/W13_OPENING_NET_REPORT.md`.

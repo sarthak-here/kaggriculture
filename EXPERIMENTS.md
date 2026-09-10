@@ -4503,3 +4503,11 @@ Next lead: the second top-route's close losses have a carrot-sales gap; examine
 state-compatible short crop cycles without sacrificing feed or sale timing.
 Wool-heavy towns remain another weakness. Do not repeat generic herd/harvest
 patches without a distinct, tested mechanism. Five-hour continuation is updated.
+
+Submission follow-up, 2026-09-10: after reviewing #98, the user explicitly
+approved uploading the exact candidate. Submitted **56139834** at 07:24:55 UTC,
+initial status PENDING with no score. SHA-256 remains
+`a6a512cdac1a54ff4941ab410dd3b28a14ec0e88c598be541719dc86aeb0ad9a`.
+Validation commit `27a22f6`; receipt in
+`analysis/submission_w13_opening_net_56139834.json`. This is an approved experiment,
+not a claim that the historical promotion bar or top-10 target has been met.

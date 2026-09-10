@@ -115,4 +115,12 @@ Builders and match runners refuse existing output files; choose new paths.
 .venv/Scripts/python.exe analysis/summarize_w13_opening_net.py
 ```
 
-No Kaggle submission is authorized or made by this experiment.
+## Approved submission
+
+After reviewing these results, the user explicitly requested submission.
+The unchanged tested artifact was uploaded as **56139834** on
+2026-09-10 at 07:24:55 UTC; initial verified status **PENDING**, score unavailable.
+The artifact hash above was checked before and after upload. Validation commit:
+`27a22f6865823b84f3a19e975f3b6493decc6619`. This approved experimental submission
+does not change the evidence limitations or authorize another submission.
+Machine-readable receipt: `submission_w13_opening_net_56139834.json`.

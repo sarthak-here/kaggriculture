@@ -1,0 +1,13 @@
+{
+  "competition": "kaggriculture",
+  "submission_id": 56139834,
+  "submitted_at_utc": "2026-09-10T07:24:55.200000Z",
+  "status_at_verification": "PENDING",
+  "artifact": "variants/w13_opening_net/main.py",
+  "artifact_sha256": "a6a512cdac1a54ff4941ab410dd3b28a14ec0e88c598be541719dc86aeb0ad9a",
+  "validated_commit": "27a22f6865823b84f3a19e975f3b6493decc6619",
+  "description": "W13 opening-net: preserve opening hiring cash; crop response and demand trading",
+  "authorization": "User explicitly requested submission after reviewing the validation results.",
+  "validation_report": "analysis/W13_OPENING_NET_REPORT.md",
+  "public_score_at_verification": null
+}
