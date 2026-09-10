@@ -4474,3 +4474,32 @@ The original incumbents are unchanged; no Kaggle submission was made.
 The top-50 cash audit reproduces 47 complete games and flags three terminal-step
 discrepancies. It also disproves a prior inference: SpaTaro's requested purchases
 of products other than WHEAT/FERTILIZER are not legal fills in the official engine.
+
+### #98. Opening wheat netting repairs Suliman's capital trap (2026-09-10)
+
+`variants/w13_opening_net/main.py` cancels matched WHEAT sell/buy requests only
+at steps 2–23 on top of frozen `w13_crop_demand`. The diagnostic at 317002 shows
+eight round trips actually losing 21 coins. Day-1 cash falls to 3, only two of
+four hands are hired, and an unfed cow escapes. Netting retains 24 coins, hires
+four hands, keeps the cow and raises day-12 strawberry plants from 28 to 33.
+No day-zero worker actions change. The diagnostic flips −20,902 to +10,699,
+but its shop sequence changes too; do not attribute the full margin to output.
+
+Fresh Suliman blocks: **18–2 vs control 2–18** on 318100–318109, and independent
+**18–2 vs control 4–16** on 319000–319009, each in both seats. Combined **36–4
+versus 6–34**, thirty favorable outcome flips and zero unfavorable ones. Every
+Suliman shop sequence changes. Kaito and original pf_all remain 18–2 each,
+3정훈 reconstruction remains 10–10; their matched rewards are exactly unchanged.
+Direct combined-model mirror is 1–1–18 with zero paired mean margin.
+
+This is a confirmed matchup repair, **not top-10 validation or promotion**.
+220 evaluation games plus three diagnostic repeats, zero failures. Sixteen
+controller/reporting tests pass; candidate rebuild is byte-identical, SHA-256
+`a6a512cdac1a54ff4941ab410dd3b28a14ec0e88c598be541719dc86aeb0ad9a`.
+See `analysis/W13_OPENING_NET_REPORT.md`, archived paired results and production
+profiles. Incumbents remain unchanged and no Kaggle submission was made.
+
+Next lead: the second top-route's close losses have a carrot-sales gap; examine
+state-compatible short crop cycles without sacrificing feed or sale timing.
+Wool-heavy towns remain another weakness. Do not repeat generic herd/harvest
+patches without a distinct, tested mechanism. Five-hour continuation is updated.

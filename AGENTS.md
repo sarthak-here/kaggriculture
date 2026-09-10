@@ -264,3 +264,15 @@ route tuning.
   18-2; Suliman reconstruction stays 4-16; original pf_all/Gronk/Soil stay 20-0.
 - **Research only; not top-10 validated or promoted.** No Kaggle submission.
 - See `analysis/W13_RESPONSE_REPORT.md` and `analysis/w13_response_results.json`.
+
+## Research checkpoint: W13 opening-net repair (#98, 2026-09-10)
+
+- `variants/w13_opening_net/main.py`, SHA-256
+  `a6a512cdac1a54ff4941ab410dd3b28a14ec0e88c598be541719dc86aeb0ad9a`.
+- Cancels matched opening wheat trades that drain hiring cash against Suliman.
+- Two disjoint paired ten-seed blocks: **36–4 Suliman**, versus control **6–34**.
+- Matched Kaito and original pf_all remain 18–2, 3정훈 reconstruction 10–10;
+  no changed rewards against those three. Direct prior-model mirror: 1–1–18.
+- **Confirmed matchup improvement, not promoted or submitted.** 220 evaluation
+  games, zero failures; sixteen tests pass. Fixed routes are not live policies.
+- Full mechanism, evidence and next investigation: `analysis/W13_OPENING_NET_REPORT.md`.

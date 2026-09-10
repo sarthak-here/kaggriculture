@@ -1,0 +1,168 @@
+{
+  "experiments": {
+    "mirror": {
+      "total": 20,
+      "completed": 20,
+      "failures": 0,
+      "wins": 1,
+      "losses": 1,
+      "ties": 18,
+      "wins_over_total": 0.05,
+      "decisive_win_rate": 0.5,
+      "mean_margin": 0.0
+    },
+    "suliman": {
+      "total": 20,
+      "completed": 20,
+      "failures": 0,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "wins_over_total": 0.9,
+      "decisive_win_rate": 0.9,
+      "mean_margin": 7567.5
+    },
+    "suliman_control": {
+      "total": 20,
+      "completed": 20,
+      "failures": 0,
+      "wins": 2,
+      "losses": 18,
+      "ties": 0,
+      "wins_over_total": 0.1,
+      "decisive_win_rate": 0.1,
+      "mean_margin": -15665.85
+    },
+    "kaito": {
+      "total": 20,
+      "completed": 20,
+      "failures": 0,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "wins_over_total": 0.9,
+      "decisive_win_rate": 0.9,
+      "mean_margin": 10576.9
+    },
+    "kaito_control": {
+      "total": 20,
+      "completed": 20,
+      "failures": 0,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "wins_over_total": 0.9,
+      "decisive_win_rate": 0.9,
+      "mean_margin": 10576.9
+    },
+    "suliman_confirm": {
+      "total": 20,
+      "completed": 20,
+      "failures": 0,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "wins_over_total": 0.9,
+      "decisive_win_rate": 0.9,
+      "mean_margin": 11637.1
+    },
+    "suliman_confirm_control": {
+      "total": 20,
+      "completed": 20,
+      "failures": 0,
+      "wins": 4,
+      "losses": 16,
+      "ties": 0,
+      "wins_over_total": 0.2,
+      "decisive_win_rate": 0.2,
+      "mean_margin": -9615.05
+    },
+    "pfall": {
+      "total": 20,
+      "completed": 20,
+      "failures": 0,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "wins_over_total": 0.9,
+      "decisive_win_rate": 0.9,
+      "mean_margin": 16302.85
+    },
+    "pfall_control": {
+      "total": 20,
+      "completed": 20,
+      "failures": 0,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "wins_over_total": 0.9,
+      "decisive_win_rate": 0.9,
+      "mean_margin": 16302.85
+    },
+    "top2": {
+      "total": 20,
+      "completed": 20,
+      "failures": 0,
+      "wins": 10,
+      "losses": 10,
+      "ties": 0,
+      "wins_over_total": 0.5,
+      "decisive_win_rate": 0.5,
+      "mean_margin": 13048.4
+    },
+    "top2_control": {
+      "total": 20,
+      "completed": 20,
+      "failures": 0,
+      "wins": 10,
+      "losses": 10,
+      "ties": 0,
+      "wins_over_total": 0.5,
+      "decisive_win_rate": 0.5,
+      "mean_margin": 13048.4
+    }
+  },
+  "matched": {
+    "suliman": {
+      "improved_outcomes": 16,
+      "worsened_outcomes": 0,
+      "failed_pairs": 0,
+      "compared_pairs": 20,
+      "changed_shop_sequences": 20,
+      "mean_margin_delta": 23233.35
+    },
+    "kaito": {
+      "improved_outcomes": 0,
+      "worsened_outcomes": 0,
+      "failed_pairs": 0,
+      "compared_pairs": 20,
+      "changed_shop_sequences": 0,
+      "mean_margin_delta": 0.0
+    },
+    "suliman_confirm": {
+      "improved_outcomes": 14,
+      "worsened_outcomes": 0,
+      "failed_pairs": 0,
+      "compared_pairs": 20,
+      "changed_shop_sequences": 20,
+      "mean_margin_delta": 21252.15
+    },
+    "pfall": {
+      "improved_outcomes": 0,
+      "worsened_outcomes": 0,
+      "failed_pairs": 0,
+      "compared_pairs": 20,
+      "changed_shop_sequences": 0,
+      "mean_margin_delta": 0.0
+    },
+    "top2": {
+      "improved_outcomes": 0,
+      "worsened_outcomes": 0,
+      "failed_pairs": 0,
+      "compared_pairs": 20,
+      "changed_shop_sequences": 0,
+      "mean_margin_delta": 0.0
+    }
+  },
+  "total_games": 220
+}
