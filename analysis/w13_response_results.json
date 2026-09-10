@@ -1,0 +1,359 @@
+{
+  "experiments": {
+    "base_gronk_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 19598.1,
+      "crop_active_games": 0,
+      "a_sha256": "e77dea99e4bb085ee4984ab1b2d21727eb49841a544ebe18b7e85ce376beab96",
+      "b_sha256": "c780f313edda4a8a68e91ec65557f2822744231a563d19b555b78dfcdeabe189"
+    },
+    "base_kaito_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 10807.4,
+      "crop_active_games": 0,
+      "a_sha256": "e77dea99e4bb085ee4984ab1b2d21727eb49841a544ebe18b7e85ce376beab96",
+      "b_sha256": "d76ee615ef72c3ff8437c86b05f258d1ec7a6fb0dbe38339b0848cfb4149c394"
+    },
+    "base_pfall_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 17317.95,
+      "crop_active_games": 0,
+      "a_sha256": "e77dea99e4bb085ee4984ab1b2d21727eb49841a544ebe18b7e85ce376beab96",
+      "b_sha256": "9f9718cfa6e3ff822fafaf12414cc34ef6bdbf67bfdbad92662a42d0ccfdc0bf"
+    },
+    "base_soil_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 20885.55,
+      "crop_active_games": 0,
+      "a_sha256": "e77dea99e4bb085ee4984ab1b2d21727eb49841a544ebe18b7e85ce376beab96",
+      "b_sha256": "ad75b63b65633b53f6b35ca78382e8815861c996f3364b69be18ea4fe2539938"
+    },
+    "base_suliman_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 4,
+      "losses": 16,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": -8318.05,
+      "crop_active_games": 0,
+      "a_sha256": "e77dea99e4bb085ee4984ab1b2d21727eb49841a544ebe18b7e85ce376beab96",
+      "b_sha256": "fe0dbfba997092998c319b4c40ef74709bc073999547bafe7dace77e8863b97e"
+    },
+    "base_top2_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 16,
+      "losses": 4,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 19275.85,
+      "crop_active_games": 0,
+      "a_sha256": "e77dea99e4bb085ee4984ab1b2d21727eb49841a544ebe18b7e85ce376beab96",
+      "b_sha256": "27097d4813bac786240f54ad1fe3139ce8e337b589e45438143f649fd5083173"
+    },
+    "combined_gronk_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 23327.6,
+      "crop_active_games": 2,
+      "a_sha256": "92fc560beab623fe4ad682f8ed2d3088160ee83591120dfb7e818402e6c75beb",
+      "b_sha256": "c780f313edda4a8a68e91ec65557f2822744231a563d19b555b78dfcdeabe189",
+      "matched_baseline": {
+        "games": 20,
+        "improved_outcomes": 0,
+        "worsened_outcomes": 0,
+        "margin_delta": 3729.5
+      }
+    },
+    "combined_kaito_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 11026.3,
+      "crop_active_games": 0,
+      "a_sha256": "92fc560beab623fe4ad682f8ed2d3088160ee83591120dfb7e818402e6c75beb",
+      "b_sha256": "d76ee615ef72c3ff8437c86b05f258d1ec7a6fb0dbe38339b0848cfb4149c394",
+      "matched_baseline": {
+        "games": 20,
+        "improved_outcomes": 0,
+        "worsened_outcomes": 0,
+        "margin_delta": 218.9
+      }
+    },
+    "combined_pfall_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 18140.9,
+      "crop_active_games": 4,
+      "a_sha256": "92fc560beab623fe4ad682f8ed2d3088160ee83591120dfb7e818402e6c75beb",
+      "b_sha256": "9f9718cfa6e3ff822fafaf12414cc34ef6bdbf67bfdbad92662a42d0ccfdc0bf",
+      "matched_baseline": {
+        "games": 20,
+        "improved_outcomes": 0,
+        "worsened_outcomes": 0,
+        "margin_delta": 822.95
+      }
+    },
+    "combined_soil_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 21633.8,
+      "crop_active_games": 4,
+      "a_sha256": "92fc560beab623fe4ad682f8ed2d3088160ee83591120dfb7e818402e6c75beb",
+      "b_sha256": "ad75b63b65633b53f6b35ca78382e8815861c996f3364b69be18ea4fe2539938",
+      "matched_baseline": {
+        "games": 20,
+        "improved_outcomes": 0,
+        "worsened_outcomes": 0,
+        "margin_delta": 748.25
+      }
+    },
+    "combined_suliman_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 4,
+      "losses": 16,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": -6630.05,
+      "crop_active_games": 6,
+      "a_sha256": "92fc560beab623fe4ad682f8ed2d3088160ee83591120dfb7e818402e6c75beb",
+      "b_sha256": "fe0dbfba997092998c319b4c40ef74709bc073999547bafe7dace77e8863b97e",
+      "matched_baseline": {
+        "games": 20,
+        "improved_outcomes": 0,
+        "worsened_outcomes": 0,
+        "margin_delta": 1688.0
+      }
+    },
+    "combined_top2_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 16,
+      "losses": 4,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 19429.5,
+      "crop_active_games": 0,
+      "a_sha256": "92fc560beab623fe4ad682f8ed2d3088160ee83591120dfb7e818402e6c75beb",
+      "b_sha256": "27097d4813bac786240f54ad1fe3139ce8e337b589e45438143f649fd5083173",
+      "matched_baseline": {
+        "games": 20,
+        "improved_outcomes": 0,
+        "worsened_outcomes": 0,
+        "margin_delta": 153.65
+      }
+    },
+    "combined_w13_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 1669.1,
+      "crop_active_games": 6,
+      "a_sha256": "92fc560beab623fe4ad682f8ed2d3088160ee83591120dfb7e818402e6c75beb",
+      "b_sha256": "e77dea99e4bb085ee4984ab1b2d21727eb49841a544ebe18b7e85ce376beab96"
+    },
+    "crop_kaito_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 10807.15,
+      "crop_active_games": 0,
+      "a_sha256": "d56a2466201326d87840e6cc7e034c11ac063b9c7697b1c77924965aa30394d3",
+      "b_sha256": "d76ee615ef72c3ff8437c86b05f258d1ec7a6fb0dbe38339b0848cfb4149c394",
+      "matched_baseline": {
+        "games": 20,
+        "improved_outcomes": 0,
+        "worsened_outcomes": 0,
+        "margin_delta": -0.25
+      }
+    },
+    "crop_pfall_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 18070.6,
+      "crop_active_games": 4,
+      "a_sha256": "d56a2466201326d87840e6cc7e034c11ac063b9c7697b1c77924965aa30394d3",
+      "b_sha256": "9f9718cfa6e3ff822fafaf12414cc34ef6bdbf67bfdbad92662a42d0ccfdc0bf",
+      "matched_baseline": {
+        "games": 20,
+        "improved_outcomes": 0,
+        "worsened_outcomes": 0,
+        "margin_delta": 752.65
+      }
+    },
+    "crop_w13_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 6,
+      "losses": 0,
+      "ties": 14,
+      "failures": 0,
+      "mean_margin": 1514.9,
+      "crop_active_games": 6,
+      "a_sha256": "d56a2466201326d87840e6cc7e034c11ac063b9c7697b1c77924965aa30394d3",
+      "b_sha256": "e77dea99e4bb085ee4984ab1b2d21727eb49841a544ebe18b7e85ce376beab96"
+    },
+    "crop_w13_screen.json": {
+      "games": 4,
+      "seeds": 2,
+      "wins": 2,
+      "losses": 0,
+      "ties": 2,
+      "failures": 0,
+      "mean_margin": 4166.5,
+      "crop_active_games": 2,
+      "a_sha256": "d56a2466201326d87840e6cc7e034c11ac063b9c7697b1c77924965aa30394d3",
+      "b_sha256": "e77dea99e4bb085ee4984ab1b2d21727eb49841a544ebe18b7e85ce376beab96"
+    },
+    "gated_kaito_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 11026.55,
+      "crop_active_games": 0,
+      "a_sha256": "e2f1b9c1b4cc6b41354ec0199a8c84cad9c931dfda6f34aadca67e5e2826e229",
+      "b_sha256": "d76ee615ef72c3ff8437c86b05f258d1ec7a6fb0dbe38339b0848cfb4149c394",
+      "matched_baseline": {
+        "games": 20,
+        "improved_outcomes": 0,
+        "worsened_outcomes": 0,
+        "margin_delta": 219.15
+      }
+    },
+    "gated_pfall_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 17388.65,
+      "crop_active_games": 0,
+      "a_sha256": "e2f1b9c1b4cc6b41354ec0199a8c84cad9c931dfda6f34aadca67e5e2826e229",
+      "b_sha256": "9f9718cfa6e3ff822fafaf12414cc34ef6bdbf67bfdbad92662a42d0ccfdc0bf",
+      "matched_baseline": {
+        "games": 20,
+        "improved_outcomes": 0,
+        "worsened_outcomes": 0,
+        "margin_delta": 70.7
+      }
+    },
+    "gated_w13_discovery.json": {
+      "games": 4,
+      "seeds": 2,
+      "wins": 4,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 231.5,
+      "crop_active_games": 0,
+      "a_sha256": "e2f1b9c1b4cc6b41354ec0199a8c84cad9c931dfda6f34aadca67e5e2826e229",
+      "b_sha256": "e77dea99e4bb085ee4984ab1b2d21727eb49841a544ebe18b7e85ce376beab96"
+    },
+    "gated_w13_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 174.7,
+      "crop_active_games": 0,
+      "a_sha256": "e2f1b9c1b4cc6b41354ec0199a8c84cad9c931dfda6f34aadca67e5e2826e229",
+      "b_sha256": "e77dea99e4bb085ee4984ab1b2d21727eb49841a544ebe18b7e85ce376beab96"
+    },
+    "ungated_kaito_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 11040.7,
+      "crop_active_games": 0,
+      "a_sha256": "0b51c843a01e9acda1fd34fd8660729c7d19b05aa0da92133488751a4c5da66f",
+      "b_sha256": "d76ee615ef72c3ff8437c86b05f258d1ec7a6fb0dbe38339b0848cfb4149c394",
+      "matched_baseline": {
+        "games": 20,
+        "improved_outcomes": 0,
+        "worsened_outcomes": 0,
+        "margin_delta": 233.3
+      }
+    },
+    "ungated_w13_discovery.json": {
+      "games": 4,
+      "seeds": 2,
+      "wins": 4,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 285.5,
+      "crop_active_games": 0,
+      "a_sha256": "0b51c843a01e9acda1fd34fd8660729c7d19b05aa0da92133488751a4c5da66f",
+      "b_sha256": "e77dea99e4bb085ee4984ab1b2d21727eb49841a544ebe18b7e85ce376beab96"
+    },
+    "ungated_w13_fresh.json": {
+      "games": 20,
+      "seeds": 10,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 206.1,
+      "crop_active_games": 0,
+      "a_sha256": "0b51c843a01e9acda1fd34fd8660729c7d19b05aa0da92133488751a4c5da66f",
+      "b_sha256": "e77dea99e4bb085ee4984ab1b2d21727eb49841a544ebe18b7e85ce376beab96"
+    }
+  },
+  "raw_sha256": "c5a52b99ae2e3000c02a37c7992a62df8c09c1749611e86ea538b7ebc3b72b96"
+}

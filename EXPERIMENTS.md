@@ -4449,3 +4449,28 @@ Evaluation harness correction: 'analysis/duel.py' now records exceptions and
 invalid rewards as failures, writes failure rows even when zero games complete,
 returns non-zero on partial failure, reports wins over all completed games beside
 decisive-only win rate, and stores each game's shop roll and route bucket.
+
+### #97. W13 demand trading and price-gated crop cycles (2026-09-10)
+
+`variants/w13_crop_demand/main.py` combines gated wheat trading with 61 eligible
+three-day crop cycles that switch from wheat to carrots when observed prices
+justify the extra seed and replacement feed. On ten fresh paired seeds it beats
+repaired W13 20-0 (+1,669 mean). Crop-only is 6-0-14 on the same block. Direct
+execution audit verifies 24 successful plants and harvests, 71 carrots, and all
+770 late wheat purchases filled in both seats of the representative +9,754 game.
+
+Do not promote on that mirror result. Matched baseline/candidate records are
+identical across six opponents: Kaito 18-2, original pf_all 20-0, Gronk 20-0,
+Soil 20-0, Suliman fixed reconstruction 4-16, and the 3정훈 fixed reconstruction
+16-4. All six have improved average margins but **zero outcome flips**. No live
+top-10 claim is justified. Replacement feed is still tracked at order issuance;
+the successful representative audit does not prove universal settlement safety.
+
+There are 432 evaluation games and four audit repeats, zero execution failures.
+Nine controller tests pass and four candidates rebuild byte-identically. Full
+results, limitations and reproduction: `analysis/W13_RESPONSE_REPORT.md`.
+The original incumbents are unchanged; no Kaggle submission was made.
+
+The top-50 cash audit reproduces 47 complete games and flags three terminal-step
+discrepancies. It also disproves a prior inference: SpaTaro's requested purchases
+of products other than WHEAT/FERTILIZER are not legal fills in the official engine.

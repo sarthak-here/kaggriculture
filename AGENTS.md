@@ -252,3 +252,15 @@ route tuning.
 - Its remaining failures concentrate in first-shop-YARN games. A Kaito suffix
   is not state-compatible because the two bases diverge at action 0.
 - No Kaggle submission was made.
+
+## Research checkpoint: W13 crop response + demand trading (2026-09-10)
+
+- `variants/w13_crop_demand/main.py`, SHA-256
+  `92fc560beab623fe4ad682f8ed2d3088160ee83591120dfb7e818402e6c75beb`.
+- Combines price-gated three-day carrot substitutions and reserve-aware wheat
+  trading on `variants/w13_zero_replay/main.py`. Separate controls remain saved.
+- Ten fresh paired seeds against repaired W13: **20-0**, +1,669 mean coins.
+- Six-family matched panel: **zero outcome flips** versus baseline. Kaito stays
+  18-2; Suliman reconstruction stays 4-16; original pf_all/Gronk/Soil stay 20-0.
+- **Research only; not top-10 validated or promoted.** No Kaggle submission.
+- See `analysis/W13_RESPONSE_REPORT.md` and `analysis/w13_response_results.json`.
