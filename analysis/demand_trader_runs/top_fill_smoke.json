@@ -1,0 +1,54 @@
+{
+  "rows": [
+    {
+      "episode": 106284557,
+      "team": "ymg_aq",
+      "seat": 1,
+      "transitions": 719,
+      "cash_mismatches": [],
+      "requested_buy_products": {
+        "WHEAT": 889,
+        "FERTILIZER": 5
+      },
+      "successful_fills": {
+        "BUY_PRODUCT:WHEAT:units": 889,
+        "BUY_PRODUCT:WHEAT:value": 30634,
+        "SELL:WHEAT:units": 977,
+        "SELL:WHEAT:value": 33909,
+        "BUY_ANIMAL:COW:units": 11,
+        "BUY_ANIMAL:COW:value": 4400,
+        "BUY_ANIMAL:SHEEP:units": 2,
+        "BUY_ANIMAL:SHEEP:value": 1000,
+        "BUY_SEED:WHEAT:units": 110,
+        "BUY_SEED:WHEAT:value": 1100,
+        "BUY_SEED:MELON:units": 11,
+        "BUY_SEED:MELON:value": 880,
+        "SELL:FERTILIZER:units": 173,
+        "SELL:FERTILIZER:value": 14404,
+        "BUY_SEED:STRAWBERRY:units": 46,
+        "BUY_SEED:STRAWBERRY:value": 4600,
+        "SELL:WOOL:units": 68,
+        "SELL:WOOL:value": 13094,
+        "SELL:MILK:units": 270,
+        "SELL:MILK:value": 64841,
+        "SELL:MELON:units": 66,
+        "SELL:MELON:value": 13006,
+        "SELL:STRAWBERRY:units": 326,
+        "SELL:STRAWBERRY:value": 69576,
+        "BUY_SEED:TOMATO:units": 6,
+        "BUY_SEED:TOMATO:value": 300,
+        "BUY_SEED:CARROT:units": 68,
+        "BUY_SEED:CARROT:value": 1360,
+        "BUY_PRODUCT:FERTILIZER:units": 5,
+        "BUY_PRODUCT:FERTILIZER:value": 409,
+        "SELL:CARROT:units": 204,
+        "SELL:CARROT:value": 14408,
+        "SELL:TOMATO:units": 40,
+        "SELL:TOMATO:value": 3704
+      },
+      "replay_sha256": "0902a38f956f432e1a65e315b930dca486fca7fbaf83fa6303c61d2a2966767e"
+    }
+  ],
+  "engine_sha256": "bc8a54879ef02c7ea64b8b333d6a976f0ea65c4949149d01f463f23bccee653e",
+  "valid": true
+}
