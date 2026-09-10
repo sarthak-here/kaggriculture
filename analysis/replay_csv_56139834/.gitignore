@@ -1,0 +1,9 @@
+*
+!.gitignore
+!manifest.json
+!summary.json
+!archive_index.json
+!*.csv
+!replay_corpus.zip
+!csv_tables.zip
+!public_notebook_sources.zip

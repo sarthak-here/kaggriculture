@@ -1,0 +1,14 @@
+{
+  "replay_corpus.zip": {
+    "sha256": "f2a3f17b287137d1e9c3ede6f567aeb9f1ad39b8bf2c495f4756b6228f540842",
+    "bytes": 21540200
+  },
+  "csv_tables.zip": {
+    "sha256": "3d0bd60562c81e7faf634f8d715acc4b2fa9373f82bb2424955896780f725444",
+    "bytes": 7382662
+  },
+  "public_notebook_sources.zip": {
+    "sha256": "3c973ed987f801c8bdad0e8df45be2e3ea59574339efacb51d678306f6d56bb4",
+    "bytes": 924583
+  }
+}

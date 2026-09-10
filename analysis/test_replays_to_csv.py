@@ -6,14 +6,19 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
-from replays_to_csv import load_replay, safe_cell, farm_stats, observations, export_one
+import zipfile
+from replays_to_csv import load_replay, safe_cell, farm_stats, observations, export_one, reconstruct
 
-FIXTURE=Path(__file__).resolve().parents[1]/'replays_top/episode-106284557-replay.json.gz'
+CORPUS=Path(__file__).resolve().parent/'replay_csv_56139834'
+FIXTURE='replays/episode-107405585-replay.json.gz'
 
 
 class ExportTests(unittest.TestCase):
     @classmethod
-    def setUpClass(cls):cls.replay=load_replay(FIXTURE)
+    def setUpClass(cls):
+        if (CORPUS/FIXTURE).exists():cls.replay=load_replay(CORPUS/FIXTURE)
+        else:
+            with zipfile.ZipFile(CORPUS/'replay_corpus.zip') as z:cls.replay=json.loads(gzip.decompress(z.read(FIXTURE)))
 
     def test_formula_escape(self):
         self.assertEqual(safe_cell(' =1+1'),"' =1+1")
@@ -52,6 +57,26 @@ class ExportTests(unittest.TestCase):
             result=export_one((str(path),[],tmp,False))
             self.assertEqual(result['status'],'FAILED')
             self.assertIn('KeyError',result['error'])
+
+    def test_successful_cash_ledger_includes_atomic_orders(self):
+        from kaggle_environments.envs.kaggriculture import kaggriculture as eng
+        before=observations(self.replay['steps'][0]);after=observations(self.replay['steps'][1])
+        actions=[r['action'] for r in self.replay['steps'][1]]
+        fills,_,verified=reconstruct(before,actions,after,self.replay['configuration'],eng)
+        self.assertEqual(verified,[True,True])
+        for seat in (0,1):
+            delta=sum(v*(1 if op=='SELL' else -1) for (s,op,item,metric),v in fills.items() if s==seat and metric=='value')
+            self.assertEqual(delta,after[seat]['farms'][seat]['money']-before[seat]['farms'][seat]['money'])
+
+    def test_requested_quantity_is_not_filled_quantity(self):
+        from kaggle_environments.envs.kaggriculture import kaggriculture as eng
+        before=observations(copy.deepcopy(self.replay['steps'][0]));after=observations(self.replay['steps'][1])
+        before[0]['private']['shed']={'WHEAT':3}
+        actions=[{'farmer':['PASS'],'market':[['SELL','WHEAT',99999]]},{'farmer':['PASS']}]
+        originals=eng._commit_unit,eng._do_hire,eng._do_buy_land
+        fills,_,_=reconstruct(before,actions,after,self.replay['configuration'],eng)
+        self.assertEqual(fills[0,'SELL','WHEAT','units'],3)
+        self.assertEqual(originals,(eng._commit_unit,eng._do_hire,eng._do_buy_land))
 
 
 if __name__=='__main__':unittest.main()

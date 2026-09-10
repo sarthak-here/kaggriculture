@@ -99,7 +99,7 @@ def main():
             assert gzip.decompress(gz.read_bytes())==data
             assert raw.resolve().parent==replaydir.resolve()
             raw.unlink()
-        snapshot['replays'].append(dict(path=str(gz.resolve()),labels=labels))
+        snapshot['replays'].append(dict(path=gz.relative_to(out).as_posix(),labels=labels))
         (out/'manifest.json').write_text(json.dumps(snapshot,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
         print('downloaded',episode,len(snapshot['replays']),'/',len(chosen),flush=True)
     (out/'episode_service_snapshot.json').write_text(json.dumps(own,ensure_ascii=False),encoding='utf-8')

@@ -76,6 +76,13 @@ def reconstruct(before, actions, after, cfg, eng):
     state[1].observation.farms=obs.farms;state[1].observation.market=obs.market
     ids={id(f):s for s,f in enumerate(obs.farms)}
     fills=Counter(); harvests={}; original=eng._commit_unit
+    original_hire=eng._do_hire;original_land=eng._do_buy_land
+    def atomic(operation,fn,farm,*args):
+        cash=farm['money'];result=fn(farm,*args);cost=cash-farm['money']
+        if cost>0:
+            fills[ids[id(farm)],operation,'', 'units']+=1
+            fills[ids[id(farm)],operation,'', 'value']+=cost
+        return result
     def commit(op,item,price,farm,private,market,shed_capacity=100):
         ok=original(op,item,price,farm,private,market,shed_capacity)
         if ok:
@@ -83,6 +90,8 @@ def reconstruct(before, actions, after, cfg, eng):
             fills[ids[id(farm)],op,item,'value']+=price
         return ok
     eng._commit_unit=commit
+    eng._do_hire=lambda farm,*args:atomic('HIRE',original_hire,farm,*args)
+    eng._do_buy_land=lambda farm,*args:atomic('BUY_LAND',original_land,farm,*args)
     try:
         for s in (0,1):
             private=state[s].observation.private
@@ -101,7 +110,8 @@ def reconstruct(before, actions, after, cfg, eng):
         eng._process_market(state,structify({'configuration':cfg}))
         verified=[abs(obs.farms[s]['money']-after[s]['farms'][s]['money'])<.001 for s in (0,1)]
         return fills,harvests,verified
-    finally:eng._commit_unit=original
+    finally:
+        eng._commit_unit=original;eng._do_hire=original_hire;eng._do_buy_land=original_land
 
 
 def export_one(job):
@@ -198,6 +208,8 @@ def main():
     args=ap.parse_args()
     if args.output.exists():raise FileExistsError(args.output)
     records=json.loads(args.manifest.read_text(encoding='utf-8'))['replays'] if args.manifest else [dict(path=str(p),labels=[]) for p in args.inputs]
+    if args.manifest:
+        records=[dict(r,path=str(Path(r['path']) if Path(r['path']).is_absolute() else args.manifest.parent/r['path'])) for r in records]
     if not records:raise ValueError('No replays supplied')
     identifiers=[int(r['labels'][0]['episode_id']) if r.get('labels') else int(Path(r['path']).name.split('-')[1]) for r in records]
     if len(set(identifiers))!=len(identifiers):raise ValueError('Duplicate episode IDs supplied')

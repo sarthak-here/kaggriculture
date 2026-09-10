@@ -4511,3 +4511,34 @@ initial status PENDING with no score. SHA-256 remains
 Validation commit `27a22f6`; receipt in
 `analysis/submission_w13_opening_net_56139834.json`. This is an approved experiment,
 not a claim that the historical promotion bar or top-10 target has been met.
+
+## #99 — Current live losses and top-ten replay CSV audit (2026-09-10)
+
+User requested replay-to-CSV code, current loss diagnosis and top-ten/public-model
+research. Submission 56139834 snapshot: COMPLETE, 1665.5, **38–35 external**;
+one self-play excluded. Team rank 1760/1680.4 belongs to its better active score.
+Collected all 35 losses, eight recent wins and two observations per top-ten team:
+60 unique replays. Exporter produces six CSV tables; official engine reproduces
+all **86,280 cash transitions**, zero mismatches. Includes successful atomic
+HIRE/BUY_LAND; complete cash decomposition residual zero. Seven tests pass.
+
+All 43 candidate games reach 9 cows/8 sheep. In 33/35 losses we sell 9 carrots;
+all losses sell zero eggs and 195 wool. Largest net-receipt shortfalls: carrots
+11, eggs 8, wool 7, strawberries 5, milk 3, wheat 1. Accounting categories are not
+causal ablations. Roman Svet loss -21,877 includes carrots 27 vs 294, eggs 0 vs
+184. Egor Trushin loss -18,610 includes wool 195 vs 251. Near-clone sale-price
+losses also remain. Ten loss opponents match a sampled top-ten worker trace at
+>=90%, three exactly; market policies/source identity are not inferred.
+
+No own weed-blocked work in losses; six no-wheat FEED requests total. Each loss
+ends with six **immature** wheat tiles and one harvest-ready wool unit, not six
+missed mature harvests. Terminal stocks are similar in win controls. Gross
+trading turnover must be netted before diagnosing costs.
+
+Refreshed public Shop0909, Moon and local-rank-inversion notebooks plus relevant
+discussions. Most relevant next baseline: Shop Router 0909's shop-specific
+production, kept separate and evaluated unchanged before adapting. Published
+notebook not verified identical to author's top-ten submission. No new agent
+changes, duels or Kaggle submission. Full report: `analysis/REPLAY_CSV_LOSS_REPORT_56139834.md`;
+data dictionary: `analysis/REPLAY_CSV_README.md`; verified archives and CSV summaries
+under `analysis/replay_csv_56139834/`. Preserve all incumbents.
