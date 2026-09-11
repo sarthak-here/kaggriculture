@@ -1,0 +1,14 @@
+{
+  "competition": "kaggriculture",
+  "submission_id": 56159253,
+  "submitted_at_utc": "2026-09-11T05:31:13.390000Z",
+  "status_at_verification": "PENDING",
+  "artifact": "analysis/shop0909_panel/agent.zip",
+  "artifact_sha256": "9fa78bee25ec86381f59c10025b1713bb5f37294320ca009eb3ab91a99851dde",
+  "validated_commit": "ff85c47",
+  "validation_report": "analysis/SHOP0909_BASELINE_REPORT.md",
+  "authorization": "User explicitly requested submission after the 180-game validation report: go ahed submit.",
+  "description": "Shop0909: shop-conditioned production plans; paired local panel validated",
+  "remaining_submissions_today_reported_by_cli": 4,
+  "public_score_at_verification": null
+}

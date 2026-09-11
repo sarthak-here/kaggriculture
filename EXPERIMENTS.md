@@ -4573,3 +4573,10 @@ Report: `analysis/SHOP0909_BASELINE_REPORT.md`. Rebuild, tests, protocol and
 verified raw archive under `analysis/shop0909_panel/`; `agent.zip` contains
 the exact unchanged tested files. No Kaggle submission; fresh exact-artifact
 approval remains mandatory. All incumbents remain unchanged.
+
+Submission follow-up (2026-09-11): user approved the exact validated Shop0909
+archive after the report. Submitted **56159253**, 05:31:13 UTC, initially PENDING.
+Archive SHA-256 `9fa78bee25ec86381f59c10025b1713bb5f37294320ca009eb3ab91a99851dde`
+matches validation commit `ff85c47`; ZIP members and final agent callable checked.
+CLI reported four submissions remaining today. Receipt:
+`analysis/submission_shop0909_56159253.json`. No further submission authorized.

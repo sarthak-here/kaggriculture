@@ -291,3 +291,6 @@ route tuning.
 - Not submitted or universally promoted. Remaining wool and milk/strawberry
   allocation losses documented in `analysis/SHOP0909_BASELINE_REPORT.md`.
 - W13 submission 56139834 and original pf_all remain byte-identical.
+- Submission follow-up: explicitly approved and submitted as **56159253** on
+  2026-09-11 at 05:31:13 UTC. Initially PENDING; exact tested archive unchanged.
+  Receipt: `analysis/submission_shop0909_56159253.json`. No live strength claim yet.
