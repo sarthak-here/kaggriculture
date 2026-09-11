@@ -277,3 +277,17 @@ route tuning.
   validation; initial status PENDING, no score yet. Not top-10 validated. 220 evaluation
   games, zero failures; sixteen tests pass. Fixed routes are not live policies.
 - Full mechanism, evidence and next investigation: `analysis/W13_OPENING_NET_REPORT.md`.
+
+## Separate research baseline: Shop Router 0909 (#100, 2026-09-11)
+
+- Unchanged inspected public snapshot: `public_candidates/shop0909_20260910/main.py`
+  with sibling `actions.json`; reproduce via `analysis/build_shop0909_baseline.py`.
+- Saved tested bundle: `analysis/shop0909_panel/agent.zip`, SHA-256
+  `9fa78bee25ec86381f59c10025b1713bb5f37294320ca009eb3ab91a99851dde`.
+- Ten fresh seeds, paired seats: 20–0 vs W13 opening-net (+13,202 mean),
+  20–0 Kaito, 20–0 original pf_all, 18–2 Suliman fixed, 14–6 3정훈 fixed.
+- Shared panel 72–8 versus incumbent 68–12: four gained wins, no lost wins;
+  180 games total including controls, zero ties/failures; five tests pass.
+- Not submitted or universally promoted. Remaining wool and milk/strawberry
+  allocation losses documented in `analysis/SHOP0909_BASELINE_REPORT.md`.
+- W13 submission 56139834 and original pf_all remain byte-identical.

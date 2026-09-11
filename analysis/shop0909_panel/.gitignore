@@ -1,0 +1,7 @@
+*
+!.gitignore
+!protocol.json
+!summary.json
+!validated_details.json
+!raw_results.json.gz
+!agent.zip

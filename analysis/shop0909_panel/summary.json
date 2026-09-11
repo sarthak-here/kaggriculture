@@ -1,0 +1,112 @@
+{
+  "results": [
+    {
+      "job": "direct",
+      "returncode": 0,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "completed": 20
+    },
+    {
+      "job": "shop_kaito",
+      "returncode": 0,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "completed": 20
+    },
+    {
+      "job": "w13_kaito",
+      "returncode": 0,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "completed": 20
+    },
+    {
+      "job": "shop_pf_all",
+      "returncode": 0,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "completed": 20
+    },
+    {
+      "job": "w13_pf_all",
+      "returncode": 0,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "completed": 20
+    },
+    {
+      "job": "shop_suliman_fixed",
+      "returncode": 0,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "completed": 20
+    },
+    {
+      "job": "w13_suliman_fixed",
+      "returncode": 0,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "completed": 20
+    },
+    {
+      "job": "shop_top2_fixed",
+      "returncode": 0,
+      "wins": 14,
+      "losses": 6,
+      "ties": 0,
+      "failures": 0,
+      "completed": 20
+    },
+    {
+      "job": "w13_top2_fixed",
+      "returncode": 0,
+      "wins": 12,
+      "losses": 8,
+      "ties": 0,
+      "failures": 0,
+      "completed": 20
+    }
+  ],
+  "comparisons": {
+    "kaito": {
+      "gained_wins": 2,
+      "lost_wins": 0,
+      "changed_shops": 16,
+      "mean_margin_delta": 5465.35
+    },
+    "pf_all": {
+      "gained_wins": 0,
+      "lost_wins": 0,
+      "changed_shops": 0,
+      "mean_margin_delta": 9905.65
+    },
+    "suliman_fixed": {
+      "gained_wins": 0,
+      "lost_wins": 0,
+      "changed_shops": 2,
+      "mean_margin_delta": 10396.1
+    },
+    "top2_fixed": {
+      "gained_wins": 2,
+      "lost_wins": 0,
+      "changed_shops": 0,
+      "mean_margin_delta": 3494.6
+    }
+  },
+  "games": 180
+}

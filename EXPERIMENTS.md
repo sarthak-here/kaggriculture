@@ -4542,3 +4542,34 @@ notebook not verified identical to author's top-ten submission. No new agent
 changes, duels or Kaggle submission. Full report: `analysis/REPLAY_CSV_LOSS_REPORT_56139834.md`;
 data dictionary: `analysis/REPLAY_CSV_README.md`; verified archives and CSV summaries
 under `analysis/replay_csv_56139834/`. Preserve all incumbents.
+
+## #100 — Unchanged Shop0909 baseline, fresh matched panel (2026-09-11)
+
+Following #99 and user approval to proceed, extracted the inspected public
+Shop Router 0909 without executing notebook cells. Main/data/license hashes
+match the publication exactly. Kept separate from W13 and original pf_all.
+Five source/behavior contract tests pass. Protocol checkpoint pushed before
+completion as `2d43b82`; seeds 39117000–39117009, both seats, 180 full games.
+
+Direct vs submitted W13 opening-net: **20–0**, +13,202 mean, +3,340 minimum.
+Shared panel: Shop0909 **72–8** vs W13 **68–12**; four favorable outcome flips,
+zero lost incumbent wins. Kaito 20–0 vs 18–2; original pf_all 20–0 vs 20–0;
+Suliman fixed 18–2 vs 18–2; 3정훈 fixed 14–6 vs 12–8. Zero ties/failures.
+Changed candidate/control shops: Kaito 16/20, pf_all 0, Suliman 2, 3정훈 0.
+Do not interpret fixed-route opponents as recovered live top-player policies.
+
+Direct sales average 83.1 carrots/54.6 eggs vs W13 9/0, while milk/strawberry
+volumes are slightly lower. This supports a broader production baseline, not
+an isolated proof of any one crop. Six routing IDs exercised, not all plans.
+
+Retained losses: Suliman 39117007 with third-shop Yarn, wool 161 vs 242;
+3정훈 39117001/004/009, with higher opponent carrot/milk/strawberry output.
+Worst 3정훈 deficit remains -15,088. Therefore this is a promising separate
+baseline, not top-ten validation or universal promotion. The next mechanism
+must address allocation and safe state-compatible branching, not blindly
+switch between unrelated tapes. No new crop controller implemented this round.
+
+Report: `analysis/SHOP0909_BASELINE_REPORT.md`. Rebuild, tests, protocol and
+verified raw archive under `analysis/shop0909_panel/`; `agent.zip` contains
+the exact unchanged tested files. No Kaggle submission; fresh exact-artifact
+approval remains mandatory. All incumbents remain unchanged.

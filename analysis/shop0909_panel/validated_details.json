@@ -1,0 +1,600 @@
+{
+  "source_protocol_sha256": "4a550def6c88a44cd6ec0a259cfe8a6acf377a27e60455d72972a81bba963bdc",
+  "details": {
+    "direct": {
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "win_fraction_total": 1.0,
+      "mean_margin": 13202.4,
+      "worst_margin": 3340.0,
+      "loss_cases": [],
+      "shop0909_route_counts": {
+        "0": 14,
+        "7": 2,
+        "3": 2,
+        "9": 2
+      },
+      "mean_sales": {
+        "a": {
+          "CARROT": 83.1,
+          "EGG": 54.6,
+          "MILK": 228.8,
+          "WOOL": 195.0,
+          "STRAWBERRY": 247.9
+        },
+        "b": {
+          "CARROT": 9.0,
+          "EGG": 0.0,
+          "MILK": 242.1,
+          "WOOL": 195.0,
+          "STRAWBERRY": 258.65
+        }
+      }
+    },
+    "shop_kaito": {
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "win_fraction_total": 1.0,
+      "mean_margin": 16667.3,
+      "worst_margin": 4020.0,
+      "loss_cases": [],
+      "shop0909_route_counts": {
+        "0": 12,
+        "7": 2,
+        "3": 2,
+        "1": 2,
+        "9": 2
+      },
+      "mean_sales": {
+        "a": {
+          "CARROT": 83.1,
+          "EGG": 46.8,
+          "MILK": 222.4,
+          "WOOL": 203.6,
+          "STRAWBERRY": 247.7
+        },
+        "b": {
+          "CARROT": 44.4,
+          "EGG": 0.0,
+          "MILK": 219.95,
+          "WOOL": 183.35,
+          "STRAWBERRY": 286.6
+        }
+      }
+    },
+    "w13_kaito": {
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "win_fraction_total": 0.9,
+      "mean_margin": 11201.95,
+      "worst_margin": -1535.0,
+      "loss_cases": [
+        {
+          "seed": 39117006,
+          "order": 0,
+          "a": 109712.0,
+          "b": 111247.0,
+          "shops": [
+            "YARN_STORE",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 39117006,
+          "order": 1,
+          "a": 109712.0,
+          "b": 111247.0,
+          "shops": [
+            "YARN_STORE",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT"
+          ]
+        }
+      ],
+      "shop0909_route_counts": null,
+      "mean_sales": {
+        "a": {
+          "CARROT": 9.0,
+          "EGG": 0.0,
+          "MILK": 261.0,
+          "WOOL": 195.0,
+          "STRAWBERRY": 262.0
+        },
+        "b": {
+          "CARROT": 51.0,
+          "EGG": 0.0,
+          "MILK": 240.25,
+          "WOOL": 155.55,
+          "STRAWBERRY": 290.2
+        }
+      }
+    },
+    "shop_pf_all": {
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "win_fraction_total": 1.0,
+      "mean_margin": 24975.9,
+      "worst_margin": 12623.0,
+      "loss_cases": [],
+      "shop0909_route_counts": {
+        "0": 14,
+        "3": 2,
+        "8": 2,
+        "9": 2
+      },
+      "mean_sales": {
+        "a": {
+          "CARROT": 83.1,
+          "EGG": 54.6,
+          "MILK": 228.8,
+          "WOOL": 195.0,
+          "STRAWBERRY": 247.9
+        },
+        "b": {
+          "CARROT": 9.0,
+          "EGG": 0.0,
+          "MILK": 237.15,
+          "WOOL": 173.7,
+          "STRAWBERRY": 266.7
+        }
+      }
+    },
+    "w13_pf_all": {
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "win_fraction_total": 1.0,
+      "mean_margin": 15070.25,
+      "worst_margin": 819.0,
+      "loss_cases": [],
+      "shop0909_route_counts": null,
+      "mean_sales": {
+        "a": {
+          "CARROT": 9.0,
+          "EGG": 0.0,
+          "MILK": 247.5,
+          "WOOL": 195.0,
+          "STRAWBERRY": 260.45
+        },
+        "b": {
+          "CARROT": 9.0,
+          "EGG": 0.0,
+          "MILK": 237.15,
+          "WOOL": 173.7,
+          "STRAWBERRY": 266.7
+        }
+      }
+    },
+    "shop_suliman_fixed": {
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "win_fraction_total": 0.9,
+      "mean_margin": 30873.95,
+      "worst_margin": -4299.0,
+      "loss_cases": [
+        {
+          "seed": 39117007,
+          "order": 0,
+          "a": 90014.0,
+          "b": 94313.0,
+          "shops": [
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE",
+            "BAKERY",
+            "BAKERY",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 39117007,
+          "order": 1,
+          "a": 90084.0,
+          "b": 93710.0,
+          "shops": [
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE",
+            "BAKERY",
+            "BAKERY",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE"
+          ]
+        }
+      ],
+      "shop0909_route_counts": {
+        "0": 14,
+        "7": 2,
+        "3": 2,
+        "9": 2
+      },
+      "mean_sales": {
+        "a": {
+          "CARROT": 83.1,
+          "EGG": 54.6,
+          "MILK": 228.8,
+          "WOOL": 195.0,
+          "STRAWBERRY": 247.9
+        },
+        "b": {
+          "CARROT": 12.2,
+          "EGG": 0.0,
+          "MILK": 163.6,
+          "WOOL": 213.0,
+          "STRAWBERRY": 226.2
+        }
+      }
+    },
+    "w13_suliman_fixed": {
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "win_fraction_total": 0.9,
+      "mean_margin": 20477.85,
+      "worst_margin": -9152.0,
+      "loss_cases": [
+        {
+          "seed": 39117007,
+          "order": 0,
+          "a": 78050.0,
+          "b": 87202.0,
+          "shops": [
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE",
+            "BAKERY",
+            "BAKERY",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 39117007,
+          "order": 1,
+          "a": 78724.0,
+          "b": 86519.0,
+          "shops": [
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE",
+            "BAKERY",
+            "BAKERY",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE"
+          ]
+        }
+      ],
+      "shop0909_route_counts": null,
+      "mean_sales": {
+        "a": {
+          "CARROT": 9.0,
+          "EGG": 0.0,
+          "MILK": 261.0,
+          "WOOL": 195.0,
+          "STRAWBERRY": 262.0
+        },
+        "b": {
+          "CARROT": 12.2,
+          "EGG": 0.0,
+          "MILK": 163.8,
+          "WOOL": 220.5,
+          "STRAWBERRY": 228.8
+        }
+      }
+    },
+    "shop_top2_fixed": {
+      "wins": 14,
+      "losses": 6,
+      "ties": 0,
+      "failures": 0,
+      "win_fraction_total": 0.7,
+      "mean_margin": 20701.6,
+      "worst_margin": -15088.0,
+      "loss_cases": [
+        {
+          "seed": 39117001,
+          "order": 0,
+          "a": 116891.0,
+          "b": 122751.0,
+          "shops": [
+            "PIZZA_SHOP",
+            "PIZZA_SHOP",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "BAKERY"
+          ]
+        },
+        {
+          "seed": 39117001,
+          "order": 1,
+          "a": 116891.0,
+          "b": 122751.0,
+          "shops": [
+            "PIZZA_SHOP",
+            "PIZZA_SHOP",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "BAKERY"
+          ]
+        },
+        {
+          "seed": 39117004,
+          "order": 0,
+          "a": 117131.0,
+          "b": 123261.0,
+          "shops": [
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BAKERY",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 39117004,
+          "order": 1,
+          "a": 117131.0,
+          "b": 123261.0,
+          "shops": [
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BAKERY",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 39117009,
+          "order": 0,
+          "a": 130128.0,
+          "b": 145216.0,
+          "shops": [
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY"
+          ]
+        },
+        {
+          "seed": 39117009,
+          "order": 1,
+          "a": 130128.0,
+          "b": 145216.0,
+          "shops": [
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY"
+          ]
+        }
+      ],
+      "shop0909_route_counts": {
+        "0": 14,
+        "7": 2,
+        "3": 2,
+        "9": 2
+      },
+      "mean_sales": {
+        "a": {
+          "CARROT": 83.1,
+          "EGG": 54.6,
+          "MILK": 228.8,
+          "WOOL": 195.0,
+          "STRAWBERRY": 247.9
+        },
+        "b": {
+          "CARROT": 87.1,
+          "EGG": 20.3,
+          "MILK": 232.1,
+          "WOOL": 94.9,
+          "STRAWBERRY": 271.4
+        }
+      }
+    },
+    "w13_top2_fixed": {
+      "wins": 12,
+      "losses": 8,
+      "ties": 0,
+      "failures": 0,
+      "win_fraction_total": 0.6,
+      "mean_margin": 17207.0,
+      "worst_margin": -14711.0,
+      "loss_cases": [
+        {
+          "seed": 39117000,
+          "order": 0,
+          "a": 78636.0,
+          "b": 80111.0,
+          "shops": [
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP"
+          ]
+        },
+        {
+          "seed": 39117000,
+          "order": 1,
+          "a": 78636.0,
+          "b": 80111.0,
+          "shops": [
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP"
+          ]
+        },
+        {
+          "seed": 39117001,
+          "order": 0,
+          "a": 110879.0,
+          "b": 123965.0,
+          "shops": [
+            "PIZZA_SHOP",
+            "PIZZA_SHOP",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "BAKERY"
+          ]
+        },
+        {
+          "seed": 39117001,
+          "order": 1,
+          "a": 110879.0,
+          "b": 123965.0,
+          "shops": [
+            "PIZZA_SHOP",
+            "PIZZA_SHOP",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "BAKERY"
+          ]
+        },
+        {
+          "seed": 39117004,
+          "order": 0,
+          "a": 101211.0,
+          "b": 103940.0,
+          "shops": [
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BAKERY",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 39117004,
+          "order": 1,
+          "a": 101211.0,
+          "b": 103940.0,
+          "shops": [
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BAKERY",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 39117009,
+          "order": 0,
+          "a": 116050.0,
+          "b": 130761.0,
+          "shops": [
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY"
+          ]
+        },
+        {
+          "seed": 39117009,
+          "order": 1,
+          "a": 116050.0,
+          "b": 130761.0,
+          "shops": [
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY"
+          ]
+        }
+      ],
+      "shop0909_route_counts": null,
+      "mean_sales": {
+        "a": {
+          "CARROT": 9.0,
+          "EGG": 0.0,
+          "MILK": 261.0,
+          "WOOL": 195.0,
+          "STRAWBERRY": 262.0
+        },
+        "b": {
+          "CARROT": 87.1,
+          "EGG": 20.3,
+          "MILK": 248.1,
+          "WOOL": 94.0,
+          "STRAWBERRY": 278.6
+        }
+      }
+    }
+  },
+  "package_sha256": "9fa78bee25ec86381f59c10025b1713bb5f37294320ca009eb3ab91a99851dde"
+}
