@@ -1,0 +1,64 @@
+{
+  "seed_start": 39117000,
+  "pairs": 10,
+  "seats": [
+    0,
+    1
+  ],
+  "jobs": [
+    [
+      "direct",
+      "public_candidates/shop0909_20260910/main.py",
+      "variants/w13_opening_net/main.py"
+    ],
+    [
+      "shop_kaito",
+      "public_candidates/shop0909_20260910/main.py",
+      "submit_v46_three_suffix/main.py"
+    ],
+    [
+      "w13_kaito",
+      "variants/w13_opening_net/main.py",
+      "submit_v46_three_suffix/main.py"
+    ],
+    [
+      "shop_pf_all",
+      "public_candidates/shop0909_20260910/main.py",
+      "submit_pf_all/main.py"
+    ],
+    [
+      "w13_pf_all",
+      "variants/w13_opening_net/main.py",
+      "submit_pf_all/main.py"
+    ],
+    [
+      "shop_suliman_fixed",
+      "public_candidates/shop0909_20260910/main.py",
+      "variants/current_top_routes/06_suliman_tadros/main.py"
+    ],
+    [
+      "w13_suliman_fixed",
+      "variants/w13_opening_net/main.py",
+      "variants/current_top_routes/06_suliman_tadros/main.py"
+    ],
+    [
+      "shop_top2_fixed",
+      "public_candidates/shop0909_20260910/main.py",
+      "variants/current_top_routes/02_3/main.py"
+    ],
+    [
+      "w13_top2_fixed",
+      "variants/w13_opening_net/main.py",
+      "variants/current_top_routes/02_3/main.py"
+    ]
+  ],
+  "hashes": {
+    "public_candidates/shop0909_20260910/actions.json": "17d503f2fd20d59f9c0f14024d1e74a8add8bb9b5561d4d908b45deecb5495ef",
+    "public_candidates/shop0909_20260910/main.py": "d6d74997dc5b483db63d8e39cafa1afeec0f366824e75107e109123f111e866b",
+    "submit_pf_all/main.py": "9f9718cfa6e3ff822fafaf12414cc34ef6bdbf67bfdbad92662a42d0ccfdc0bf",
+    "submit_v46_three_suffix/main.py": "5950fdb0032ede297706bb5aaae48461597563b6322de144ec0dee4274388c59",
+    "variants/current_top_routes/02_3/main.py": "27097d4813bac786240f54ad1fe3139ce8e337b589e45438143f649fd5083173",
+    "variants/current_top_routes/06_suliman_tadros/main.py": "fe0dbfba997092998c319b4c40ef74709bc073999547bafe7dace77e8863b97e",
+    "variants/w13_opening_net/main.py": "a6a512cdac1a54ff4941ab410dd3b28a14ec0e88c598be541719dc86aeb0ad9a"
+  }
+}
