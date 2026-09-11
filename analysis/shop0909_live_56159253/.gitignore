@@ -1,0 +1,6 @@
+*
+!.gitignore
+!opening_diagnosis.json
+!episode_service_snapshot.json
+!*.json.gz
+!REPORT.md

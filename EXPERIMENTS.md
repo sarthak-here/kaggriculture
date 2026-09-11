@@ -4580,3 +4580,19 @@ Archive SHA-256 `9fa78bee25ec86381f59c10025b1713bb5f37294320ca009eb3ab91a99851dd
 matches validation commit `ff85c47`; ZIP members and final agent callable checked.
 CLI reported four submissions remaining today. Receipt:
 `analysis/submission_shop0909_56159253.json`. No further submission authorized.
+
+## #101 — Shop0909 live capital-collapse diagnosis (2026-09-11)
+
+Scheduled checkpoint inspected latest state before launching old W13 work.
+Shop0909 56159253 COMPLETE at 2162.3 vs W13 1591.9. External record 52–20–13.
+Two severe losses, 107774237 (-85,020) and 107764291 (-76,597), share a pre-shop
+capital collapse: cash zero by step17, zero day1 hires, both cows gone by step48,
+only one quadrant/213 coins at step144. This is not the late crop-mix mechanism.
+
+Official-engine saved-state step0 counterfactual replacing BUY13/SELL13/BUY13
+WHEAT with BUY13 preserves 13 net wheat and saves 52 coins in both cases.
+**One transition only, not a full-game improvement or validated patch.**
+The W13 opening-net wrapper excludes step0, so cannot simply be transferred.
+No model changed, no full games rerun, no submission. Diagnosis and compressed
+replays: `analysis/shop0909_live_56159253/REPORT.md`. Older scheduled W13 crop
+implementation remains unperformed; latest submitted baseline is Shop0909.

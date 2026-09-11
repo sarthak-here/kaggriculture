@@ -1,0 +1,258 @@
+{
+  "retrieved_at_utc": "2026-09-11T10:34:34.855694+00:00",
+  "cases": [
+    {
+      "episode_id": 107774237,
+      "seat": 0,
+      "replay_sha256": "6cbe77e73710fe9f45b0f4ed0881be7f3d25ec708b9c141a82a2abf47240f417",
+      "original_step0_orders": [
+        [
+          "BUY_PRODUCT",
+          "WHEAT",
+          13
+        ],
+        [
+          "SELL",
+          "WHEAT",
+          13
+        ],
+        [
+          "BUY_PRODUCT",
+          "WHEAT",
+          13
+        ]
+      ],
+      "counterfactual_step0_orders": [
+        [
+          "BUY_PRODUCT",
+          "WHEAT",
+          13
+        ]
+      ],
+      "original_step1_money": 2578.0,
+      "counterfactual_step1_money": 2630.0,
+      "one_turn_cash_gain": 52.0,
+      "original_net_wheat_units": 13,
+      "counterfactual_net_wheat_units": 13,
+      "checkpoints": [
+        {
+          "step": 0,
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {}
+        },
+        {
+          "step": 1,
+          "money": 2578.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {}
+        },
+        {
+          "step": 2,
+          "money": 1000.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {}
+        },
+        {
+          "step": 23,
+          "money": 0.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          }
+        },
+        {
+          "step": 24,
+          "money": 0.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          }
+        },
+        {
+          "step": 25,
+          "money": 0.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          }
+        },
+        {
+          "step": 48,
+          "money": 12.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2
+          }
+        },
+        {
+          "step": 72,
+          "money": 203.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2
+          }
+        },
+        {
+          "step": 144,
+          "money": 213.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2
+          }
+        },
+        {
+          "step": 719,
+          "money": 38020.0,
+          "hands": 11,
+          "quadrants": 3,
+          "herd": {
+            "GOOSE": 1,
+            "SHEEP": 3,
+            "COW": 1
+          }
+        }
+      ],
+      "full_game_counterfactual_tested": false
+    },
+    {
+      "episode_id": 107764291,
+      "seat": 1,
+      "replay_sha256": "fa73c8d4c848344ce931941af8010fbbcd198c5b817dcef5378581481bed0915",
+      "original_step0_orders": [
+        [
+          "BUY_PRODUCT",
+          "WHEAT",
+          13
+        ],
+        [
+          "SELL",
+          "WHEAT",
+          13
+        ],
+        [
+          "BUY_PRODUCT",
+          "WHEAT",
+          13
+        ]
+      ],
+      "counterfactual_step0_orders": [
+        [
+          "BUY_PRODUCT",
+          "WHEAT",
+          13
+        ]
+      ],
+      "original_step1_money": 2578.0,
+      "counterfactual_step1_money": 2630.0,
+      "one_turn_cash_gain": 52.0,
+      "original_net_wheat_units": 13,
+      "counterfactual_net_wheat_units": 13,
+      "checkpoints": [
+        {
+          "step": 0,
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {}
+        },
+        {
+          "step": 1,
+          "money": 2578.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {}
+        },
+        {
+          "step": 2,
+          "money": 1000.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {}
+        },
+        {
+          "step": 23,
+          "money": 0.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          }
+        },
+        {
+          "step": 24,
+          "money": 0.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          }
+        },
+        {
+          "step": 25,
+          "money": 0.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          }
+        },
+        {
+          "step": 48,
+          "money": 12.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2
+          }
+        },
+        {
+          "step": 72,
+          "money": 203.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2
+          }
+        },
+        {
+          "step": 144,
+          "money": 213.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2
+          }
+        },
+        {
+          "step": 719,
+          "money": 34902.0,
+          "hands": 11,
+          "quadrants": 3,
+          "herd": {
+            "GOOSE": 1,
+            "SHEEP": 3,
+            "COW": 1
+          }
+        }
+      ],
+      "full_game_counterfactual_tested": false
+    }
+  ],
+  "engine_sha256": "bc8a54879ef02c7ea64b8b333d6a976f0ea65c4949149d01f463f23bccee653e"
+}
