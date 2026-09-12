@@ -10,9 +10,10 @@ OPP={'kaito':'submit_v46_three_suffix/main.py','pf_all':'submit_pf_all/main.py',
      'top2_fixed':'variants/current_top_routes/02_3/main.py'}
 def main():
     p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--seed',type=int,default=39119000);p.add_argument('--pairs',type=int,default=10)
+    p.add_argument('--candidate',default=CAND);p.add_argument('--base',default=BASE)
     a=p.parse_args();out=a.output;out.mkdir(parents=True,exist_ok=False)
-    jobs=[('direct',CAND,BASE)]+[(arm+'_'+name,path,opp) for name,opp in OPP.items() for arm,path in [('candidate',CAND),('base',BASE)]]
-    paths={s for _,x,y in jobs for s in (x,y)}|{'variants/shop0909_opening_net/actions.json','public_candidates/shop0909_20260910/actions.json','analysis/run_w13_isolated.py'}
+    jobs=[('direct',a.candidate,a.base)]+[(arm+'_'+name,path,opp) for name,opp in OPP.items() for arm,path in [('candidate',a.candidate),('base',a.base)]]
+    paths={s for _,x,y in jobs for s in (x,y)}|{str(Path(a.candidate).with_name('actions.json')),str(Path(a.base).with_name('actions.json')),'analysis/run_w13_isolated.py'}
     protocol=dict(seed=a.seed,pairs=a.pairs,jobs=jobs,hashes={s:hashlib.sha256((ROOT/s).read_bytes()).hexdigest() for s in sorted(paths)})
     (out/'protocol.json').write_text(json.dumps(protocol,indent=2)+'\n')
     def run(job):

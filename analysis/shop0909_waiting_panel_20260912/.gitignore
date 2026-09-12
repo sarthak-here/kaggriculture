@@ -1,0 +1,6 @@
+*
+!.gitignore
+!protocol.json
+!REPORT.md
+!summary.json
+!raw_results.json.gz

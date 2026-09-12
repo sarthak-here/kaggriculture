@@ -1,0 +1,345 @@
+{
+  "episode_id": 107749417,
+  "seat": 1,
+  "worker_changes": 0,
+  "changed_steps": 23,
+  "events": [
+    {
+      "step": 357,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "WOOL",
+          3
+        ]
+      ]
+    },
+    {
+      "step": 390,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "MILK",
+          3
+        ]
+      ]
+    },
+    {
+      "step": 391,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "MILK",
+          3
+        ]
+      ]
+    },
+    {
+      "step": 394,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "WOOL",
+          14
+        ]
+      ]
+    },
+    {
+      "step": 398,
+      "before": [
+        [
+          "SELL",
+          "FERTILIZER",
+          2
+        ]
+      ],
+      "after": [
+        [
+          "SELL",
+          "FERTILIZER",
+          2
+        ],
+        [
+          "SELL",
+          "STRAWBERRY",
+          4
+        ]
+      ]
+    },
+    {
+      "step": 399,
+      "before": [
+        [
+          "SELL",
+          "WOOL",
+          6
+        ]
+      ],
+      "after": [
+        [
+          "SELL",
+          "WOOL",
+          6
+        ],
+        [
+          "SELL",
+          "STRAWBERRY",
+          4
+        ]
+      ]
+    },
+    {
+      "step": 449,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "MILK",
+          6
+        ],
+        [
+          "SELL",
+          "WOOL",
+          2
+        ]
+      ]
+    },
+    {
+      "step": 467,
+      "before": [
+        [
+          "SELL",
+          "WHEAT",
+          3
+        ]
+      ],
+      "after": [
+        [
+          "SELL",
+          "WHEAT",
+          3
+        ],
+        [
+          "SELL",
+          "MILK",
+          3
+        ]
+      ]
+    },
+    {
+      "step": 470,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "STRAWBERRY",
+          8
+        ]
+      ]
+    },
+    {
+      "step": 471,
+      "before": [
+        []
+      ],
+      "after": [
+        [],
+        [
+          "SELL",
+          "STRAWBERRY",
+          8
+        ]
+      ]
+    },
+    {
+      "step": 474,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "STRAWBERRY",
+          2
+        ]
+      ]
+    },
+    {
+      "step": 490,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "STRAWBERRY",
+          8
+        ]
+      ]
+    },
+    {
+      "step": 495,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "STRAWBERRY",
+          6
+        ]
+      ]
+    },
+    {
+      "step": 499,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "STRAWBERRY",
+          8
+        ],
+        [
+          "SELL",
+          "MILK",
+          8
+        ]
+      ]
+    },
+    {
+      "step": 510,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "STRAWBERRY",
+          6
+        ]
+      ]
+    },
+    {
+      "step": 518,
+      "before": [
+        [
+          "SELL",
+          "STRAWBERRY",
+          2
+        ]
+      ],
+      "after": [
+        [
+          "SELL",
+          "STRAWBERRY",
+          2
+        ],
+        [
+          "SELL",
+          "WOOL",
+          8
+        ]
+      ]
+    },
+    {
+      "step": 519,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "WOOL",
+          8
+        ]
+      ]
+    },
+    {
+      "step": 547,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "MILK",
+          8
+        ],
+        [
+          "SELL",
+          "WOOL",
+          9
+        ]
+      ]
+    },
+    {
+      "step": 562,
+      "before": [
+        [
+          "SELL",
+          "STRAWBERRY",
+          4
+        ]
+      ],
+      "after": [
+        [
+          "SELL",
+          "STRAWBERRY",
+          4
+        ],
+        [
+          "SELL",
+          "MILK",
+          3
+        ]
+      ]
+    },
+    {
+      "step": 570,
+      "before": [
+        [
+          "SELL",
+          "MILK",
+          6
+        ]
+      ],
+      "after": [
+        [
+          "SELL",
+          "MILK",
+          6
+        ],
+        [
+          "SELL",
+          "WOOL",
+          8
+        ]
+      ]
+    },
+    {
+      "step": 593,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "STRAWBERRY",
+          10
+        ]
+      ]
+    },
+    {
+      "step": 633,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "WOOL",
+          7
+        ]
+      ]
+    },
+    {
+      "step": 637,
+      "before": [],
+      "after": [
+        [
+          "SELL",
+          "MILK",
+          11
+        ]
+      ]
+    }
+  ]
+}

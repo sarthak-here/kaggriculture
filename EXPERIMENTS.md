@@ -4652,3 +4652,15 @@ once: submission56182426,2026-09-12T09:02:16.353Z, PENDING at verification.
 Archive SHA remains a63d56e478203b281b9560df3224abef322f34fcb81dee812f707720593758fb.
 Four daily submissions remain. No sale-timing or production experiment is
 included in this upload. Receipt: analysis/submission_shop0909_opening_56182426.json.
+
+## #104 — Waiting-stock sale timing discovery (2026-09-12; held-out panel pending)
+
+Separate Shop0909_h3 candidate adds held-stock sales scheduled2–3 turns later,
+with no worker changes. Four tests pass. Same-observation probe on107749417
+changes23 market steps, including a14-wool request at394 instead of waiting
+until397; this is activation evidence, not a full-game counterfactual.
+Discovery seeds39121000/001, paired seats:4–0, mean margin2537, no failures.
+Only two seeds, so not a promotion result. A180-game held-out panel on ten
+unused seeds39122000–009 is running in analysis/shop0909_waiting_panel_20260912.
+No new submission. Checkpoint: analysis/SHOP0909_WAITING_SALES_CHECKPOINT.md.
+The five-hour resume automation now tracks this panel instead of stale W13 work.
