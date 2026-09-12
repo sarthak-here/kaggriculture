@@ -1,0 +1,11 @@
+{
+  "base_archive_sha256": "9fa78bee25ec86381f59c10025b1713bb5f37294320ca009eb3ab91a99851dde",
+  "change": "Exact step0 BUY13/SELL13/BUY13 WHEAT -> BUY13 WHEAT only",
+  "files": {
+    "main.py": "011e4c47c183185f14966e211deadffe1227eab46fe704b3dbcaae19cd5412d7",
+    "actions.json": "17d503f2fd20d59f9c0f14024d1e74a8add8bb9b5561d4d908b45deecb5495ef",
+    "LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "archive_sha256": "a63d56e478203b281b9560df3224abef322f34fcb81dee812f707720593758fb",
+  "submitted": false
+}

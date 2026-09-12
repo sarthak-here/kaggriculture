@@ -1,0 +1,8 @@
+*
+!.gitignore
+!REPORT.md
+!protocol.json
+!summary.json
+!raw_results.json.gz
+!candidate.zip
+!candidate_manifest.json

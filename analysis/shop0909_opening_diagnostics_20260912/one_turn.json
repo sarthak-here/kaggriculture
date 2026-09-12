@@ -1,0 +1,292 @@
+[
+  {
+    "episode_id": 107730391,
+    "seat": 0,
+    "cohort": "submission_loss",
+    "opponent": "Berat Egemen Gök",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107737091,
+    "seat": 1,
+    "cohort": "submission_loss",
+    "opponent": "tc-al",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107749417,
+    "seat": 1,
+    "cohort": "submission_loss",
+    "opponent": "ibr mo sal",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107750404,
+    "seat": 1,
+    "cohort": "submission_loss",
+    "opponent": "加油",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107758332,
+    "seat": 0,
+    "cohort": "submission_loss",
+    "opponent": "Phi",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107759663,
+    "seat": 0,
+    "cohort": "submission_loss",
+    "opponent": "Ayaan Ghosh",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107761294,
+    "seat": 1,
+    "cohort": "submission_loss",
+    "opponent": "Vishal Kishore",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107762260,
+    "seat": 0,
+    "cohort": "submission_loss",
+    "opponent": "Giord Frank",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107762301,
+    "seat": 1,
+    "cohort": "submission_loss",
+    "opponent": "Vishal Kishore",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107763297,
+    "seat": 1,
+    "cohort": "submission_loss",
+    "opponent": "mmwstudy",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107764291,
+    "seat": 1,
+    "cohort": "submission_loss",
+    "opponent": "グレイラットルーデウス",
+    "original_cash": 2578.0,
+    "candidate_cash": 2630.0,
+    "gain": 52.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107766205,
+    "seat": 0,
+    "cohort": "submission_loss",
+    "opponent": "老乡",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107768272,
+    "seat": 0,
+    "cohort": "submission_loss",
+    "opponent": "beijijun",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107771254,
+    "seat": 0,
+    "cohort": "submission_loss",
+    "opponent": "HananFish",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107774237,
+    "seat": 0,
+    "cohort": "submission_loss",
+    "opponent": "bhundreds",
+    "original_cash": 2578.0,
+    "candidate_cash": 2630.0,
+    "gain": 52.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107779199,
+    "seat": 1,
+    "cohort": "submission_loss",
+    "opponent": "way to you",
+    "original_cash": 2604.0,
+    "candidate_cash": 2630.0,
+    "gain": 26.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107784173,
+    "seat": 1,
+    "cohort": "submission_loss",
+    "opponent": "infamemconculcemus",
+    "original_cash": 2578.0,
+    "candidate_cash": 2630.0,
+    "gain": 52.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107787165,
+    "seat": 0,
+    "cohort": "submission_loss",
+    "opponent": "DeeSaa",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107788563,
+    "seat": 1,
+    "cohort": "submission_loss",
+    "opponent": "way to you",
+    "original_cash": 2604.0,
+    "candidate_cash": 2630.0,
+    "gain": 26.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107791164,
+    "seat": 0,
+    "cohort": "submission_loss",
+    "opponent": "Wufang Hong",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107793153,
+    "seat": 0,
+    "cohort": "submission_loss",
+    "opponent": "fufufukakaka",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107781402,
+    "seat": 0,
+    "cohort": "submission_win_control",
+    "opponent": "PeterDreamHan",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107782187,
+    "seat": 1,
+    "cohort": "submission_win_control",
+    "opponent": "Daniel Harkin",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107785406,
+    "seat": 1,
+    "cohort": "submission_win_control",
+    "opponent": "안녕하세요이세입니다잘부탁드립니다",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107789155,
+    "seat": 1,
+    "cohort": "submission_win_control",
+    "opponent": "kobayasi",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107790301,
+    "seat": 1,
+    "cohort": "submission_win_control",
+    "opponent": "Ian lin",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107790139,
+    "seat": 1,
+    "cohort": "submission_win_control",
+    "opponent": "linchenge",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107792167,
+    "seat": 0,
+    "cohort": "submission_win_control",
+    "opponent": "안녕하세요이세입니다잘부탁드립니다",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  },
+  {
+    "episode_id": 107795171,
+    "seat": 0,
+    "cohort": "submission_win_control",
+    "opponent": "Sumukh M G",
+    "original_cash": 2630.0,
+    "candidate_cash": 2630.0,
+    "gain": 0.0,
+    "net_wheat": 13
+  }
+]

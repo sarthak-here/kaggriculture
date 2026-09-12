@@ -1,0 +1,141 @@
+{
+  "complete": true,
+  "results": [
+    {
+      "job": "direct",
+      "returncode": 0,
+      "completed": 20,
+      "expected": 20,
+      "wins": 0,
+      "losses": 0,
+      "ties": 20,
+      "failures": 0
+    },
+    {
+      "job": "candidate_kaito",
+      "returncode": 0,
+      "completed": 20,
+      "expected": 20,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0
+    },
+    {
+      "job": "base_kaito",
+      "returncode": 0,
+      "completed": 20,
+      "expected": 20,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0
+    },
+    {
+      "job": "candidate_pf_all",
+      "returncode": 0,
+      "completed": 20,
+      "expected": 20,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0
+    },
+    {
+      "job": "base_pf_all",
+      "returncode": 0,
+      "completed": 20,
+      "expected": 20,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0
+    },
+    {
+      "job": "candidate_suliman_fixed",
+      "returncode": 0,
+      "completed": 20,
+      "expected": 20,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0
+    },
+    {
+      "job": "base_suliman_fixed",
+      "returncode": 0,
+      "completed": 20,
+      "expected": 20,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0
+    },
+    {
+      "job": "candidate_top2_fixed",
+      "returncode": 0,
+      "completed": 20,
+      "expected": 20,
+      "wins": 16,
+      "losses": 4,
+      "ties": 0,
+      "failures": 0
+    },
+    {
+      "job": "base_top2_fixed",
+      "returncode": 0,
+      "completed": 20,
+      "expected": 20,
+      "wins": 16,
+      "losses": 4,
+      "ties": 0,
+      "failures": 0
+    }
+  ],
+  "comparisons": {
+    "kaito": {
+      "gained_wins": 0,
+      "lost_wins": 0,
+      "changed_shops": 0,
+      "changed_own_worker_traces": 0,
+      "mean_margin_delta": 0.0,
+      "day1_understaffed_candidate": 0,
+      "day1_understaffed_base": 0,
+      "identical_rewards": 20,
+      "identical_opening_checkpoints": 20
+    },
+    "pf_all": {
+      "gained_wins": 0,
+      "lost_wins": 0,
+      "changed_shops": 0,
+      "changed_own_worker_traces": 0,
+      "mean_margin_delta": 0.0,
+      "day1_understaffed_candidate": 0,
+      "day1_understaffed_base": 0,
+      "identical_rewards": 20,
+      "identical_opening_checkpoints": 20
+    },
+    "suliman_fixed": {
+      "gained_wins": 0,
+      "lost_wins": 0,
+      "changed_shops": 0,
+      "changed_own_worker_traces": 0,
+      "mean_margin_delta": 0.0,
+      "day1_understaffed_candidate": 0,
+      "day1_understaffed_base": 0,
+      "identical_rewards": 20,
+      "identical_opening_checkpoints": 20
+    },
+    "top2_fixed": {
+      "gained_wins": 0,
+      "lost_wins": 0,
+      "changed_shops": 0,
+      "changed_own_worker_traces": 0,
+      "mean_margin_delta": 0.0,
+      "day1_understaffed_candidate": 0,
+      "day1_understaffed_base": 0,
+      "identical_rewards": 20,
+      "identical_opening_checkpoints": 20
+    }
+  }
+}

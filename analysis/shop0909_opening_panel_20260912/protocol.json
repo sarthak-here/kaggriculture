@@ -1,0 +1,62 @@
+{
+  "seed": 39119000,
+  "pairs": 10,
+  "jobs": [
+    [
+      "direct",
+      "variants/shop0909_opening_net/main.py",
+      "public_candidates/shop0909_20260910/main.py"
+    ],
+    [
+      "candidate_kaito",
+      "variants/shop0909_opening_net/main.py",
+      "submit_v46_three_suffix/main.py"
+    ],
+    [
+      "base_kaito",
+      "public_candidates/shop0909_20260910/main.py",
+      "submit_v46_three_suffix/main.py"
+    ],
+    [
+      "candidate_pf_all",
+      "variants/shop0909_opening_net/main.py",
+      "submit_pf_all/main.py"
+    ],
+    [
+      "base_pf_all",
+      "public_candidates/shop0909_20260910/main.py",
+      "submit_pf_all/main.py"
+    ],
+    [
+      "candidate_suliman_fixed",
+      "variants/shop0909_opening_net/main.py",
+      "variants/current_top_routes/06_suliman_tadros/main.py"
+    ],
+    [
+      "base_suliman_fixed",
+      "public_candidates/shop0909_20260910/main.py",
+      "variants/current_top_routes/06_suliman_tadros/main.py"
+    ],
+    [
+      "candidate_top2_fixed",
+      "variants/shop0909_opening_net/main.py",
+      "variants/current_top_routes/02_3/main.py"
+    ],
+    [
+      "base_top2_fixed",
+      "public_candidates/shop0909_20260910/main.py",
+      "variants/current_top_routes/02_3/main.py"
+    ]
+  ],
+  "hashes": {
+    "analysis/run_w13_isolated.py": "27b5b826bce9eebb2d8994717bbf7033b2437e4de2365cc0503ba633fa3f5f50",
+    "public_candidates/shop0909_20260910/actions.json": "17d503f2fd20d59f9c0f14024d1e74a8add8bb9b5561d4d908b45deecb5495ef",
+    "public_candidates/shop0909_20260910/main.py": "d6d74997dc5b483db63d8e39cafa1afeec0f366824e75107e109123f111e866b",
+    "submit_pf_all/main.py": "9f9718cfa6e3ff822fafaf12414cc34ef6bdbf67bfdbad92662a42d0ccfdc0bf",
+    "submit_v46_three_suffix/main.py": "5950fdb0032ede297706bb5aaae48461597563b6322de144ec0dee4274388c59",
+    "variants/current_top_routes/02_3/main.py": "27097d4813bac786240f54ad1fe3139ce8e337b589e45438143f649fd5083173",
+    "variants/current_top_routes/06_suliman_tadros/main.py": "fe0dbfba997092998c319b4c40ef74709bc073999547bafe7dace77e8863b97e",
+    "variants/shop0909_opening_net/actions.json": "17d503f2fd20d59f9c0f14024d1e74a8add8bb9b5561d4d908b45deecb5495ef",
+    "variants/shop0909_opening_net/main.py": "011e4c47c183185f14966e211deadffe1227eab46fe704b3dbcaae19cd5412d7"
+  }
+}

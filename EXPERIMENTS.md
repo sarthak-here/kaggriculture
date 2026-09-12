@@ -4615,3 +4615,32 @@ three later Yarn shops after the first-two-shop selector stays on plan0.
 All are hypotheses for paired held-out tests, not validated agent fixes.
 Full 21-match report and archived CSV/replays:
 `analysis/shop0909_all_losses_20260911/REPORT.md`.
+
+## #103 — Shop0909 exact step0 net purchase: defensive candidate (2026-09-12)
+
+Built separately from the exact submitted56159253 ZIP. Only the exact initial
+BUY13/SELL13/BUY13 wheat sequence becomes BUY13. All action tapes, licenses,
+later rules and the frozen incumbent remain unchanged. Ten policy tests pass.
+
+Across29 saved opening observations, the net wheat remains13 in every case:
+five improve cash (26–52 coins),24 are unchanged, none worsen. Full-game
+diagnostics using the five affected opponent action tapes at new seed39120000
+give baseline0–5 vs candidate2–3. Both zero-hire/cow-collapse cases reverse,
+with three day1 hands and both cows alive at step48. Original live seeds are
+unknown: these are fixed-tape diagnostics, not exact live reruns or held-out
+matchup-strength estimates. Three losses remain.
+
+Fresh paired panel: ten unused seeds39119000–39119009,180 games, zero failures.
+Direct candidate vs unchanged Shop0909:0W/0L/20T. Each arm scores20–0 vs Kaito,
+20–0 vs original pf_all,20–0 vs Suliman fixed,16–4 vs top2 fixed:76–4 each.
+All80 matched opponent games have identical reward pairs, worker hashes and
+shop sequences. No broad strength gain, no lost wins and no promotion claim.
+
+Total190 full games plus29 one-turn audits. Candidate ZIP SHA256:
+`a63d56e478203b281b9560df3224abef322f34fcb81dee812f707720593758fb`.
+Report/protocol/raw results/package:
+`analysis/shop0909_opening_panel_20260912/REPORT.md`.
+Saved opening diagnostics:
+`analysis/shop0909_opening_diagnostics_20260912/`.
+No Kaggle submission. Retain as a narrow defensive option; the vegetable,
+late-Yarn and near-clone sale-timing deficits remain unresolved.

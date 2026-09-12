@@ -43,7 +43,7 @@ def play(a,b,seed,order):
     paths=[a,b] if order==0 else [b,a]
     hashes=[hashlib.sha256(),hashlib.sha256()]
     fills=[collections.Counter(),collections.Counter()]
-    action_errors=[]; market_count=[0,0]; timeline=[]
+    action_errors=[]; market_count=[0,0]; timeline=[]; checkpoints=[{},{}]
     active_farms={}; active_step=0
     original_commit=engine._commit_unit; original_market=engine._process_market
     def market(state,env):
@@ -66,6 +66,14 @@ def play(a,b,seed,order):
             parent,kid=ctx.Pipe();p=ctx.Process(target=child,args=(kid,path));p.start();kid.close()
             processes.append(p);connections.append(parent)
             def policy(obs,config,seat=seat,conn=parent):
+                if obs.step in (1,2,17,24,25,48,72,144):
+                    farm=obs.farms[seat]
+                    herd=collections.Counter(t.get('animal') for row in farm['tiles'] for t in row if isinstance(t,dict) and t.get('animal'))
+                    checkpoints[seat][str(obs.step)]={'money':farm['money'],'hands':len(farm['hands']),
+                        'quadrants':len(farm['unlocked_quadrants']),'herd':dict(herd),
+                        'seeds':dict(obs.private.get('seeds',{})),
+                        'positions':[list(farm['farmer']),*[list(p) for p in farm['hands']]],
+                        'inventories':[dict(i) for i in obs.private.get('inventories',[])]}
                 conn.send((obs,config))
                 if not conn.poll(5):
                     action_errors.append([seat,obs.step,'timeout']);raise TimeoutError('agent IPC exceeded 5 seconds')
@@ -96,6 +104,7 @@ def play(a,b,seed,order):
             conn.send('telemetry')
             agent_telemetry.append(conn.recv() if conn.poll(5) else {'error':'telemetry timeout'})
         return {'seed':seed,'order':order,'status':'DONE','a':rewards[ai],'b':rewards[bi],
+                'a_checkpoints':checkpoints[ai],'b_checkpoints':checkpoints[bi],
                 'a_final_farm':farm_summary(ai),'b_final_farm':farm_summary(bi),
                 'a_telemetry':agent_telemetry[ai],'b_telemetry':agent_telemetry[bi],
                 'a_fills':dict(fills[ai]),'b_fills':dict(fills[bi]),
