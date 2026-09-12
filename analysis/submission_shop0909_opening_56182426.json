@@ -1,0 +1,12 @@
+{
+  "competition": "kaggriculture",
+  "submission_id": 56182426,
+  "submitted_at_utc": "2026-09-12T09:02:16.353000Z",
+  "status_at_verification": "PENDING",
+  "artifact": "analysis/shop0909_opening_panel_20260912/candidate.zip",
+  "artifact_sha256": "a63d56e478203b281b9560df3224abef322f34fcb81dee812f707720593758fb",
+  "validated_commit": "15e8839",
+  "validation_report": "analysis/shop0909_opening_panel_20260912/REPORT.md",
+  "authorization": "User explicitly confirmed: Yes, submit that candidate to Kaggle",
+  "remaining_submissions_today_reported_by_cli": 4
+}
