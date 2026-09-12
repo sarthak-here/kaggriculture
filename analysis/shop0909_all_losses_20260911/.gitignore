@@ -1,0 +1,13 @@
+*
+!.gitignore
+!REPORT.md
+!manifest.json
+!summary.json
+!review_details.json
+!archive_index.json
+!*.zip
+!loss_review.csv
+!control_review.csv
+!match_summary.csv
+!ladder_record.csv
+!terminal_tiles.csv

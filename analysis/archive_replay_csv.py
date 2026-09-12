@@ -16,6 +16,8 @@ def main():
             'public_notebook_sources.zip':list((root/'notebooks').rglob('*'))}
     index={}
     for name,paths in groups.items():
+        if not any(p.is_file() for p in paths):
+            continue
         target=root/name
         if target.exists():raise FileExistsError(target)
         with zipfile.ZipFile(target,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:

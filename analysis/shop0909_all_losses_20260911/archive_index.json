@@ -1,0 +1,10 @@
+{
+  "replay_corpus.zip": {
+    "sha256": "d8571258bba65e0177540dd2d0b3e881c6a1f2e606094103378cf01b1f27a439",
+    "bytes": 9059852
+  },
+  "csv_tables.zip": {
+    "sha256": "af9d9408b33d01d6b5de91ea0ac59fd7421813639f176958e4c16fa550d213c9",
+    "bytes": 3161928
+  }
+}

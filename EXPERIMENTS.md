@@ -4596,3 +4596,22 @@ The W13 opening-net wrapper excludes step0, so cannot simply be transferred.
 No model changed, no full games rerun, no submission. Diagnosis and compressed
 replays: `analysis/shop0909_live_56159253/REPORT.md`. Older scheduled W13 crop
 implementation remains unperformed; latest submitted baseline is Shop0909.
+
+## #102 — Shop0909 all-loss CSV review (2026-09-11)
+
+Frozen 10:43 UTC record for 56159253: 53W/21L/14T, excluding self-play.
+Every loss plus eight recent wins audited: 41,702 cash transitions, zero
+mismatches or failed exports; seven exporter tests pass. No model changes.
+
+Disjoint descriptive groups: five opening cash/seed shortfalls, eight
+near-clone sale-price/timing losses, eight different-production-mix losses.
+Two severe openings explain 161,617 lost coins, but only two of 21 losses.
+All 21 own terminal states have zero stock and zero crop yield left on tiles.
+No support for a blanket endgame harvest patch from this cohort.
+
+Specific leads: opening purchase resilience; actual clone sell timing;
+fufufukakaka's 12 tomatoes earn 8,049 while ours earns zero; Phi exploits
+three later Yarn shops after the first-two-shop selector stays on plan0.
+All are hypotheses for paired held-out tests, not validated agent fixes.
+Full 21-match report and archived CSV/replays:
+`analysis/shop0909_all_losses_20260911/REPORT.md`.

@@ -32,6 +32,8 @@ def main():
         losses.extend(x for x in entry['labels'] if x['cohort']=='submission_loss')
     family=[]
     for loss in losses:
+        if not leaders:
+            break
         opponent=traces[loss['episode_id'],1-loss['seat']]
         def agreement(top):
             other=traces[top['episode_id'],top['seat']]

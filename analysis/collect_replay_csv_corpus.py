@@ -20,6 +20,7 @@ def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--submission',type=int,required=True)
     ap.add_argument('--output',type=Path,required=True)
+    ap.add_argument('--top-count',type=int,default=10,choices=range(11))
     args=ap.parse_args(); out=args.output;out.mkdir(parents=True,exist_ok=True)
     session=requests.Session(); payloads={}
     cached=out/'api';cached.mkdir(exist_ok=True)
@@ -33,11 +34,13 @@ def main():
                 cache.write_text(json.dumps(payloads[sub],ensure_ascii=False),encoding='utf-8');time.sleep(1)
         return payloads[sub]
     lbdir=out/'leaderboard'
-    if not (lbdir/'kaggriculture.zip').exists():
+    if args.top_count and not (lbdir/'kaggriculture.zip').exists():
         subprocess.run(['kaggle','competitions','leaderboard','kaggriculture','-d','-p',str(lbdir)],check=True)
-    with zipfile.ZipFile(lbdir/'kaggriculture.zip') as z:
-        lb=list(csv.DictReader(io.TextIOWrapper(z.open(z.namelist()[0]),encoding='utf-8-sig')))
-    top=lb[:10]; mappings={};ratings={}
+    lb=[]
+    if args.top_count:
+        with zipfile.ZipFile(lbdir/'kaggriculture.zip') as z:
+            lb=list(csv.DictReader(io.TextIOWrapper(z.open(z.namelist()[0]),encoding='utf-8-sig')))
+    top=lb[:args.top_count]; mappings={};ratings={}
     old=ROOT/'replays_top/discovery.json'
     if old.exists():
         d=json.loads(old.read_text());mappings.update(d['team_to_sub']);ratings.update(d['episode_rating'])
