@@ -4,3 +4,6 @@
 !REPORT.md
 !summary.json
 !raw_results.json.gz
+!audit.json
+!candidate.zip
+!candidate_manifest.json

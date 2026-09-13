@@ -4664,3 +4664,19 @@ Only two seeds, so not a promotion result. A180-game held-out panel on ten
 unused seeds39122000–009 is running in analysis/shop0909_waiting_panel_20260912.
 No new submission. Checkpoint: analysis/SHOP0909_WAITING_SALES_CHECKPOINT.md.
 The five-hour resume automation now tracks this panel instead of stale W13 work.
+
+### #104 completed held-out validation — September 13, 2026
+
+All180 games completed, zero failures or ties. Ten fresh seeds39122000–009,
+paired seats. h3 vs submitted guard20–0 (mean+1487.50,min+578,max+3130).
+Distinct-opponent panel: both78–2 (Kaito20–0,pf_all20–0,Suliman18–2,top2 20–0).
+No outcome flips. Mean margin changes:+191.15,-186.40,+38.45,+78.10 respectively.
+Every matched game's own successful filled-unit totals, own/opponent worker
+hashes and shops are unchanged. Average panel margin improvement only+30.33.
+Direct gains come from milk/wool/strawberry receipts at equal sold quantities.
+Suliman39122008 remains a loss in both seats (-7198 vs control-7466).
+Verdict: demonstrated clone-matchup edge, no broad win-rate improvement. Keep
+separate and unsubmitted. Four tests pass. Completed evidence and frozen ZIP:
+analysis/shop0909_waiting_panel_20260912/REPORT.md. No games duplicated.
+Focused scheduled round complete; recurring wakeup stopped. Tomato and later
+Yarn production gaps remain for a separately chosen research round.
