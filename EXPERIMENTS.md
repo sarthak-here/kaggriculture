@@ -4709,3 +4709,29 @@ baseline0-10,tomato2-8,h3 sales2-8; all30games valid. Skyspace gap-37042 becomes
 Fresh seed39131000-009 paired panel is running. Direct5W/1L/14T; Kaito20-0
 for both arms so far. No promotion and no Kaggle upload. Builders and diagnostic
 results are saved separately; original submitted artifact remains unchanged.
+
+### #105 held-out panel completed
+
+180games, zero failures. Direct5W/1L/14T, mean+1908.6; tomatoes produced in4/20.
+The +/-160 non-tomato seat pair nets zero and is not a tomato-branch result.
+Both arms score78-2 on the four-opponent panel, zero outcome flips. Margin
+deltas: Kaito+1516.1,pf_all+1289,Suliman+1083.1,top2-408.3. Candidate changes
+later shops in4/20 per family because environment randomness is coupled to
+farm actions; this is not a fixed-shop price-only comparison.
+Activation on169 saved external games:69 eligible (25W/16T/28L), zero
+pre-432 action mismatches. Additional fresh Skyspace-recording checks running.
+Frozen tomato ZIP SHA2566675155bf551cdeb547028cd226ed7d6c935c6bfeda636dec7c202495cf08195.
+Report: analysis/tomato_panel_20260913/REPORT.md. No submission or rank claim.
+
+### #105 completed independent Skyspace check
+
+Ten further fresh seeds39133000-009, both seats,40games/0failures. Against the
+fixed Skyspace action recording, tomato9-11 vs submitted baseline8-12: one
+gained win, no lost wins, mean margin improvement2243.7. Shops change8/20.
+This is a modest targeted improvement, not the live opponent or top10 proof.
+Total250 candidate/control games plus20 rejected rank-one route probes and
+one exact full-replay seed verification. Eight guard tests pass; all169 saved
+external prefixes match the submitted model until432. Frozen package root
+main.py/actions.json/tomato.json/LICENSE.txt matches the tested files, last
+top-level def is agent. Retain separate; no Kaggle submission. All work for
+this replay-comparison/build round is complete, and no evaluation is pending.

@@ -1,0 +1,1199 @@
+{
+  "total": 169,
+  "eligible_by_result": {
+    "W": 25,
+    "T": 16,
+    "L": 28
+  },
+  "total_by_result": {
+    "W": 54,
+    "T": 47,
+    "L": 68
+  },
+  "prefix_action_mismatches": 0,
+  "rows": [
+    {
+      "episode": 108124520,
+      "result": "W",
+      "margin": 72504,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108125520,
+      "result": "W",
+      "margin": 75979,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108126484,
+      "result": "W",
+      "margin": 44023,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108127462,
+      "result": "W",
+      "margin": 22775,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108128452,
+      "result": "W",
+      "margin": 10760,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108129435,
+      "result": "W",
+      "margin": 20145,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108130435,
+      "result": "W",
+      "margin": 28472,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108131419,
+      "result": "W",
+      "margin": 32022,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108132410,
+      "result": "W",
+      "margin": 14852,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108133050,
+      "result": "W",
+      "margin": 17987,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108133401,
+      "result": "W",
+      "margin": 12614,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108134397,
+      "result": "W",
+      "margin": 3787,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108135381,
+      "result": "W",
+      "margin": 3593,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108136379,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108137378,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108138380,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108139399,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108139486,
+      "result": "L",
+      "margin": -4931,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108140422,
+      "result": "L",
+      "margin": -4847,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108141440,
+      "result": "W",
+      "margin": 5568,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108142496,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108143468,
+      "result": "L",
+      "margin": -13768,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108144483,
+      "result": "W",
+      "margin": 2153,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108145550,
+      "result": "L",
+      "margin": -37042,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108146517,
+      "result": "W",
+      "margin": 1926,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108147389,
+      "result": "L",
+      "margin": -1789,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108147542,
+      "result": "W",
+      "margin": 2266,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108148551,
+      "result": "W",
+      "margin": 4001,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108149590,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108150598,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108151615,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108152601,
+      "result": "W",
+      "margin": 1789,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108153582,
+      "result": "L",
+      "margin": -24,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108154598,
+      "result": "W",
+      "margin": 21968,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108155602,
+      "result": "L",
+      "margin": -750,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108156619,
+      "result": "L",
+      "margin": -769,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108157626,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108158623,
+      "result": "L",
+      "margin": -5,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108159633,
+      "result": "L",
+      "margin": -4873,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108160651,
+      "result": "W",
+      "margin": 9818,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108161641,
+      "result": "W",
+      "margin": 4142,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108162677,
+      "result": "L",
+      "margin": -8402,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108163715,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108164815,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108164716,
+      "result": "L",
+      "margin": -4593,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108165625,
+      "result": "L",
+      "margin": -8372,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108166692,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108167694,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108168684,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108169680,
+      "result": "W",
+      "margin": 14273,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108170675,
+      "result": "W",
+      "margin": 2779,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108171686,
+      "result": "L",
+      "margin": -5,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108172691,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108173685,
+      "result": "W",
+      "margin": 11226,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108174699,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108175702,
+      "result": "L",
+      "margin": -6572,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108176698,
+      "result": "L",
+      "margin": -35,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108177751,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108178700,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108179709,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108180714,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108181711,
+      "result": "W",
+      "margin": 4249,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108182680,
+      "result": "L",
+      "margin": -6,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108182687,
+      "result": "W",
+      "margin": 6107,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108183760,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108184739,
+      "result": "L",
+      "margin": -5,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108185753,
+      "result": "L",
+      "margin": -5,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108186760,
+      "result": "W",
+      "margin": 1267,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108187787,
+      "result": "W",
+      "margin": 4284,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108187765,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108187759,
+      "result": "L",
+      "margin": -8002,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108188775,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108189787,
+      "result": "L",
+      "margin": -8631,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108191359,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108190809,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108191810,
+      "result": "L",
+      "margin": -155,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108192821,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108194042,
+      "result": "L",
+      "margin": -4183,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108194821,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108195817,
+      "result": "L",
+      "margin": -3541,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108196817,
+      "result": "L",
+      "margin": -1259,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108197821,
+      "result": "W",
+      "margin": 5509,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108198826,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108199827,
+      "result": "L",
+      "margin": -6379,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108200835,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108201131,
+      "result": "L",
+      "margin": -1520,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108201853,
+      "result": "W",
+      "margin": 8257,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108202867,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108202824,
+      "result": "L",
+      "margin": -13539,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108203891,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108204892,
+      "result": "W",
+      "margin": 3305,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108205917,
+      "result": "L",
+      "margin": -140,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108207436,
+      "result": "L",
+      "margin": -5237,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108207861,
+      "result": "L",
+      "margin": -3639,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108208930,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108209420,
+      "result": "L",
+      "margin": -1849,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108209952,
+      "result": "W",
+      "margin": 1361,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108210962,
+      "result": "W",
+      "margin": 8619,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108211979,
+      "result": "L",
+      "margin": -1662,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108212983,
+      "result": "W",
+      "margin": 560,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108214006,
+      "result": "L",
+      "margin": -21023,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108215023,
+      "result": "W",
+      "margin": 5069,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108216041,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108217051,
+      "result": "L",
+      "margin": -4184,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108218077,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108219073,
+      "result": "L",
+      "margin": -5,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108220091,
+      "result": "L",
+      "margin": -209,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108221214,
+      "result": "W",
+      "margin": 4542,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108221804,
+      "result": "L",
+      "margin": -4650,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108222113,
+      "result": "W",
+      "margin": 3265,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108223140,
+      "result": "L",
+      "margin": -10,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108222982,
+      "result": "L",
+      "margin": -190,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108229324,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108231502,
+      "result": "W",
+      "margin": 2381,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108233302,
+      "result": "L",
+      "margin": -3653,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108235913,
+      "result": "L",
+      "margin": -261,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108238626,
+      "result": "L",
+      "margin": -7459,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108244520,
+      "result": "L",
+      "margin": -4209,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108250184,
+      "result": "L",
+      "margin": -5,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108250102,
+      "result": "W",
+      "margin": 895,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108252373,
+      "result": "L",
+      "margin": -3611,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108252565,
+      "result": "W",
+      "margin": 3330,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108256082,
+      "result": "L",
+      "margin": -1899,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108258979,
+      "result": "L",
+      "margin": -2352,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108264523,
+      "result": "W",
+      "margin": 4825,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108270400,
+      "result": "W",
+      "margin": 326,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108275597,
+      "result": "L",
+      "margin": -8983,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108276524,
+      "result": "L",
+      "margin": -1767,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108279624,
+      "result": "L",
+      "margin": -6488,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108284637,
+      "result": "W",
+      "margin": 3926,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108289656,
+      "result": "W",
+      "margin": 3643,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108289589,
+      "result": "W",
+      "margin": 3768,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108294555,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108296103,
+      "result": "L",
+      "margin": -3518,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108298536,
+      "result": "W",
+      "margin": 3577,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108301763,
+      "result": "W",
+      "margin": 1279,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108304704,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108309465,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108311702,
+      "result": "L",
+      "margin": -2951,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108313710,
+      "result": "L",
+      "margin": -5,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108315781,
+      "result": "W",
+      "margin": 4579,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108318819,
+      "result": "L",
+      "margin": -5,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108319928,
+      "result": "L",
+      "margin": -8594,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108321050,
+      "result": "L",
+      "margin": -8540,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108325686,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108325645,
+      "result": "L",
+      "margin": -15392,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108327339,
+      "result": "L",
+      "margin": -1324,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108331733,
+      "result": "L",
+      "margin": -1,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108333863,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108337956,
+      "result": "L",
+      "margin": -8101,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108340945,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108342903,
+      "result": "W",
+      "margin": 3976,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108347008,
+      "result": "L",
+      "margin": -5,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108351769,
+      "result": "W",
+      "margin": 8800,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108354104,
+      "result": "L",
+      "margin": -5140,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108358878,
+      "result": "L",
+      "margin": -15313,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108363158,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108365255,
+      "result": "L",
+      "margin": -17597,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108369989,
+      "result": "W",
+      "margin": 1815,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108374134,
+      "result": "T",
+      "margin": 0,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108374132,
+      "result": "L",
+      "margin": -8033,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108378824,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108383012,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108385373,
+      "result": "L",
+      "margin": -5273,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108388132,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108390077,
+      "result": "W",
+      "margin": 375,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108390972,
+      "result": "L",
+      "margin": -7,
+      "active": true,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108394092,
+      "result": "T",
+      "margin": 0,
+      "active": false,
+      "prefix_action_mismatches": 0
+    },
+    {
+      "episode": 108398443,
+      "result": "W",
+      "margin": 113,
+      "active": false,
+      "prefix_action_mismatches": 0
+    }
+  ]
+}

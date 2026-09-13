@@ -1,0 +1,154 @@
+{
+  "total_games": 180,
+  "failures": 0,
+  "direct_mean_margin": 1908.6,
+  "direct_tomato_production_games": 4,
+  "direct_margins": [
+    {
+      "seed": 39131000,
+      "seat": 0,
+      "margin": 417.0,
+      "tomatoes": 80
+    },
+    {
+      "seed": 39131000,
+      "seat": 1,
+      "margin": 417.0,
+      "tomatoes": 80
+    },
+    {
+      "seed": 39131001,
+      "seat": 0,
+      "margin": 0.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131001,
+      "seat": 1,
+      "margin": 0.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131002,
+      "seat": 0,
+      "margin": 0.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131002,
+      "seat": 1,
+      "margin": 0.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131003,
+      "seat": 0,
+      "margin": 0.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131003,
+      "seat": 1,
+      "margin": 0.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131004,
+      "seat": 0,
+      "margin": 0.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131004,
+      "seat": 1,
+      "margin": 0.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131005,
+      "seat": 0,
+      "margin": 0.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131005,
+      "seat": 1,
+      "margin": 0.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131006,
+      "seat": 0,
+      "margin": 0.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131006,
+      "seat": 1,
+      "margin": 0.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131007,
+      "seat": 0,
+      "margin": 0.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131007,
+      "seat": 1,
+      "margin": 0.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131008,
+      "seat": 0,
+      "margin": -160.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131008,
+      "seat": 1,
+      "margin": 160.0,
+      "tomatoes": 0
+    },
+    {
+      "seed": 39131009,
+      "seat": 0,
+      "margin": 18669.0,
+      "tomatoes": 80
+    },
+    {
+      "seed": 39131009,
+      "seat": 1,
+      "margin": 18669.0,
+      "tomatoes": 80
+    }
+  ],
+  "opponents": {
+    "kaito": {
+      "tomato_production_games": 4,
+      "own_mean_cash_gain": 22.0,
+      "own_mean_tomato_units_gain": 16.0,
+      "changed_outcomes": []
+    },
+    "pf_all": {
+      "tomato_production_games": 4,
+      "own_mean_cash_gain": 1349.8,
+      "own_mean_tomato_units_gain": 16.0,
+      "changed_outcomes": []
+    },
+    "suliman_fixed": {
+      "tomato_production_games": 4,
+      "own_mean_cash_gain": 2112.4,
+      "own_mean_tomato_units_gain": 16.0,
+      "changed_outcomes": []
+    },
+    "top2_fixed": {
+      "tomato_production_games": 4,
+      "own_mean_cash_gain": -350.8,
+      "own_mean_tomato_units_gain": 16.0,
+      "changed_outcomes": []
+    }
+  }
+}

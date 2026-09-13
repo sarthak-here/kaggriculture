@@ -68,7 +68,19 @@ The complete continuation is kept together through the final day, including harv
 
 Ten actual loss scenarios,30 games across baseline/tomato/h3: baseline0–10; tomato2–8; h3 sale-timing2–8. The tomato candidate changes Skyspace from-37042 to-460, JAZ COLD HORN from-17597 to+2120, and ansheng jhang from-4209 to+700. These selected losses are diagnostic, not a held-out promotion panel.
 
-**Fresh paired-seat panel is still running. No Kaggle upload.** Results will be recorded separately in `analysis/tomato_panel_20260913`.
+The180-game fresh paired-seat panel completed with zero failures. Direct:
+5W/1L/14T, mean margin+1908.6. Distinct opponents:78–2 for both arms, no
+win/loss flips. Margins improve against Kaito, pf_all and Suliman but fall
+against historical top2. This does not establish a broad win-rate gain.
+Full results and frozen package: `analysis/tomato_panel_20260913/REPORT.md`.
+
+An observation-only activation audit finds69/169 eligible external games
+(25 wins,16 ties,28 losses), with zero pre-432 action mismatches. Eligibility
+does not prove that the counterfactual game would improve. Additional fresh
+Skyspace-recording tests on10 seeds, both seats: candidate9–11 versus baseline
+8–12, one gained win and no lost wins, average margin change+2243.7. All40
+games completed without failures. This is a modest targeted gain, not a
+top-ten model claim. **No Kaggle upload.**
 
 ## Reproduction
 

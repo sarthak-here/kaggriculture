@@ -1,0 +1,30 @@
+{
+  "gained_wins": 1,
+  "lost_wins": 0,
+  "mean_margin_delta": 2243.7,
+  "changed_shops": 8,
+  "records": {
+    "candidate": {
+      "wins": 9,
+      "losses": 11,
+      "ties": 0
+    },
+    "base": {
+      "wins": 8,
+      "losses": 12,
+      "ties": 0
+    }
+  },
+  "completed": 40,
+  "failures": 0,
+  "hashes": {
+    "variants/shop0909_tomato432/main.py": "5ea79dd45d9f01c2de1ab13f714e89151ea94216e4218291d278d0d3f961b158",
+    "variants/shop0909_tomato432/tomato.json": "f97239ac3ee662d84c71b41a4b300849f2f682cc46ebc6d0403d8dceff7b8ec4",
+    "variants/shop0909_tomato432/actions.json": "17d503f2fd20d59f9c0f14024d1e74a8add8bb9b5561d4d908b45deecb5495ef",
+    "variants/shop0909_opening_net/main.py": "011e4c47c183185f14966e211deadffe1227eab46fe704b3dbcaae19cd5412d7",
+    "analysis/tomato_diagnostics_20260913/108145550/main.py": "0d5230b7e042fcae34eb1bd1260cb47619fe6ff2e1c9b6ab7865822fcf566fc6",
+    "analysis/tomato_diagnostics_20260913/108145550/tape.json": "aab87e9bcf8ad1f74a565c88d79051b1a7cb7577140359f990263e58a87938ed",
+    "analysis/run_w13_isolated.py": "27b5b826bce9eebb2d8994717bbf7033b2437e4de2365cc0503ba633fa3f5f50"
+  },
+  "scope": "Ten fresh seeds, both seats, fixed recorded Skyspace actions; not the live policy."
+}
