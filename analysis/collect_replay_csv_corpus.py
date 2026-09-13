@@ -7,6 +7,7 @@ import json
 import subprocess
 import time
 import zipfile
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 import requests
@@ -21,6 +22,8 @@ def main():
     ap.add_argument('--submission',type=int,required=True)
     ap.add_argument('--output',type=Path,required=True)
     ap.add_argument('--top-count',type=int,default=10,choices=range(11))
+    ap.add_argument('--all-own',action='store_true',help='Download all completed own games, including ties and self-play')
+    ap.add_argument('--top-replays',type=int,default=2)
     args=ap.parse_args(); out=args.output;out.mkdir(parents=True,exist_ok=True)
     session=requests.Session(); payloads={}
     cached=out/'api';cached.mkdir(exist_ok=True)
@@ -74,10 +77,15 @@ def main():
                 opponent_rating=opp.get('initialScore'),own_rating=mine.get('updatedScore')))
         return sorted(result,key=lambda r:r['end'] or '')
     ownrows=rows(own,args.submission)
+    if args.all_own:
+        for row in ownrows:
+            cohort=('submission_self_play' if row['self_play'] else
+                    {'L':'submission_loss','W':'submission_win_control','T':'submission_tie'}[row['result']])
+            chosen[row['episode_id']]=[dict(row,cohort=cohort)]
     for row in ownrows:
-        if row['result']=='L' and not row['self_play']:
+        if not args.all_own and row['result']=='L' and not row['self_play']:
             chosen.setdefault(row['episode_id'],[]).append(dict(row,cohort='submission_loss'))
-    for row in [r for r in ownrows if r['result']=='W' and not r['self_play']][-8:]:
+    for row in ([] if args.all_own else [r for r in ownrows if r['result']=='W' and not r['self_play']][-8:]):
         chosen.setdefault(row['episode_id'],[]).append(dict(row,cohort='submission_win_control'))
     for team in top:
         tid=team['TeamId']
@@ -85,13 +93,16 @@ def main():
             metadata.append(dict(team,status='unresolved'));continue
         payload=get(mappings[tid]['sub']);harvest(payload,mappings,ratings)
         sub=mappings[tid]['sub'];payload=get(sub)
-        recent=rows(payload,sub)[-2:]
+        recent=rows(payload,sub)[-args.top_replays:]
         metadata.append(dict(team,status='resolved',submission=sub,selected_episodes=[r['episode_id'] for r in recent]))
         for row in recent:chosen.setdefault(row['episode_id'],[]).append(dict(row,cohort='top10',rank=int(team['Rank'])))
     snapshot=dict(retrieved_at=datetime.now(timezone.utc).isoformat(),submission=args.submission,
-                  episodes=ownrows,top10=metadata,replays=[])
+                  episodes=ownrows,top10=metadata,replays=[],all_own=args.all_own,
+                  available_own_episode_count=len(own.get('episodes',[])),
+                  excluded_episodes=[e for e in own.get('episodes',[]) if e['id'] not in {r['episode_id'] for r in ownrows}])
     replaydir=out/'replays';replaydir.mkdir(exist_ok=True)
-    for episode,labels in chosen.items():
+    def download(item):
+        episode,labels=item
         gz=replaydir/f'episode-{episode}-replay.json.gz'
         raw=replaydir/f'episode-{episode}-replay.json'
         if not gz.exists():
@@ -102,9 +113,12 @@ def main():
             assert gzip.decompress(gz.read_bytes())==data
             assert raw.resolve().parent==replaydir.resolve()
             raw.unlink()
-        snapshot['replays'].append(dict(path=gz.relative_to(out).as_posix(),labels=labels))
-        (out/'manifest.json').write_text(json.dumps(snapshot,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
-        print('downloaded',episode,len(snapshot['replays']),'/',len(chosen),flush=True)
+        return dict(path=gz.relative_to(out).as_posix(),labels=labels)
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        for entry in pool.map(download,chosen.items()):
+            snapshot['replays'].append(entry)
+            (out/'manifest.json').write_text(json.dumps(snapshot,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+            print('downloaded',entry['labels'][0]['episode_id'],len(snapshot['replays']),'/',len(chosen),flush=True)
     (out/'episode_service_snapshot.json').write_text(json.dumps(own,ensure_ascii=False),encoding='utf-8')
     print('COMPLETE',len(snapshot['replays']),flush=True)
 

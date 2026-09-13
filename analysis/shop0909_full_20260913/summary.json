@@ -1,0 +1,62 @@
+{
+  "submission_loss": {
+    "n": 68,
+    "opponent_structures": {
+      "mixed/small": 52,
+      "sheep-heavy": 14,
+      "cattle-heavy": 1,
+      "goose-heavy": 1
+    },
+    "largest_negative_components": {
+      "MILK_net_receipts": 8,
+      "WOOL_net_receipts": 16,
+      "TOMATO_net_receipts": 7,
+      "WHEAT_net_receipts": 9,
+      "STRAWBERRY_net_receipts": 9,
+      "FERTILIZER_net_receipts": 13,
+      "CARROT_net_receipts": 5,
+      "EGG_net_receipts": 1
+    },
+    "near_worker_clone_ge_90pct": 37,
+    "any_cash_mismatch": 0,
+    "means": {
+      "margin": -4813.029411764706,
+      "own_feed_without_wheat": 0.5147058823529411,
+      "opp_feed_without_wheat": 0.6470588235294118,
+      "own_weed_blocked_work": 0.0,
+      "opp_weed_blocked_work": 0.07352941176470588,
+      "own_terminal_stock_units": 0.0,
+      "opp_terminal_stock_units": 0.0
+    }
+  },
+  "submission_win_control": {
+    "n": 54,
+    "opponent_structures": {
+      "mixed/small": 43,
+      "cattle-heavy": 5,
+      "sheep-heavy": 6
+    },
+    "largest_negative_components": {
+      "TOMATO_net_receipts": 19,
+      "other_expenses": 3,
+      "MILK_net_receipts": 5,
+      "STRAWBERRY_net_receipts": 2,
+      "WHEAT_net_receipts": 15,
+      "CARROT_net_receipts": 3,
+      "WOOL_net_receipts": 3,
+      "EGG_net_receipts": 2,
+      "FERTILIZER_net_receipts": 2
+    },
+    "near_worker_clone_ge_90pct": 24,
+    "any_cash_mismatch": 0,
+    "means": {
+      "margin": 10100.444444444445,
+      "own_feed_without_wheat": 0.24074074074074073,
+      "opp_feed_without_wheat": 1.2037037037037037,
+      "own_weed_blocked_work": 0.0,
+      "opp_weed_blocked_work": 0.3148148148148148,
+      "own_terminal_stock_units": 0.0,
+      "opp_terminal_stock_units": 3.6666666666666665
+    }
+  }
+}

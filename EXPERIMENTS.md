@@ -4680,3 +4680,32 @@ separate and unsubmitted. Four tests pass. Completed evidence and frozen ZIP:
 analysis/shop0909_waiting_panel_20260912/REPORT.md. No games duplicated.
 Focused scheduled round complete; recurring wakeup stopped. Tomato and later
 Yarn production gaps remain for a separately chosen research round.
+
+## #105 — Full latest-submission audit and compatible tomato continuation (2026-09-13)
+
+Downloaded all170 available episodes of56182426 plus five recent rank-one
+Majkel1337 games. External record54W/68L/47T; one self-play tie excluded.
+All175 exports succeed:251650 cash transitions, zero mismatches. Loss groups:
+40 different-production,27 near-clone pricing/timing,1 seed shortfall, and no
+day-one staffing collapses. All68 losses end with zero crop yield and no stock.
+Full evidence: analysis/shop0909_full_20260913/REPORT.md and two verified archives.
+
+Correction: replay info.seed is available even when configuration.seed is null.
+Replayed rank-one108381189 exactly (all720 farm/market/town/private states),
+then reproduced both rewards for ten actual own-loss scenarios using the frozen
+submitted policy and recorded opponent actions. Opponent adaptation remains
+unmodeled in candidate counterfactuals.
+
+Five coherent rank-one route probes lose all20 new-seed discovery games. They
+are recorded-route proxies, not the live rank-one policy. Reject those probes.
+
+Skyspace108145550 has identical non-cash farm/private state to ours at432.
+Its continuation buys land and10 tomato seeds and eventually sells80 tomatoes.
+Built separate tomato432 candidate with exact state/queue/plan guards, cash
+threshold10000 and >=2 Farmer/Pizza shops. Eight tests pass. Ten actual losses:
+baseline0-10,tomato2-8,h3 sales2-8; all30games valid. Skyspace gap-37042 becomes
+-460, JAZ COLD HORN-17597 becomes+2120, ansheng jhang-4209 becomes+700.
+
+Fresh seed39131000-009 paired panel is running. Direct5W/1L/14T; Kaito20-0
+for both arms so far. No promotion and no Kaggle upload. Builders and diagnostic
+results are saved separately; original submitted artifact remains unchanged.

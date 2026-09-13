@@ -30,6 +30,8 @@ def main():
                and any(isinstance(t,ast.Name) and t.id=='SHOP_PLANS' for t in n.targets))
     output=[]; details=[]
     for entry in manifest['replays']:
+        if entry['labels'][0]['cohort'] in ('top10','submission_self_play'):
+            continue
         label=entry['labels'][0]; ep=label['episode_id']; seat=label['seat']; k=(ep,seat)
         r=summary[k]; replay=load_replay(root/entry['path'])
         commands=[[(record[s].get('action') or {}) for record in replay['steps'][1:]] for s in (0,1)]

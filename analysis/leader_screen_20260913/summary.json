@@ -1,0 +1,57 @@
+[
+  {
+    "episode": 108381189,
+    "returncode": 0,
+    "expected": 4,
+    "completed": 4,
+    "failures": 0,
+    "wins": 0,
+    "losses": 4,
+    "ties": 0,
+    "mean_margin": -24983.5
+  },
+  {
+    "episode": 108385318,
+    "returncode": 0,
+    "expected": 4,
+    "completed": 4,
+    "failures": 0,
+    "wins": 0,
+    "losses": 4,
+    "ties": 0,
+    "mean_margin": -37053.0
+  },
+  {
+    "episode": 108390115,
+    "returncode": 0,
+    "expected": 4,
+    "completed": 4,
+    "failures": 0,
+    "wins": 0,
+    "losses": 4,
+    "ties": 0,
+    "mean_margin": -23356.5
+  },
+  {
+    "episode": 108395112,
+    "returncode": 0,
+    "expected": 4,
+    "completed": 4,
+    "failures": 0,
+    "wins": 0,
+    "losses": 4,
+    "ties": 0,
+    "mean_margin": -23500.0
+  },
+  {
+    "episode": 108399446,
+    "returncode": 0,
+    "expected": 4,
+    "completed": 4,
+    "failures": 0,
+    "wins": 0,
+    "losses": 4,
+    "ties": 0,
+    "mean_margin": -41539.0
+  }
+]

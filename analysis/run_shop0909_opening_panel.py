@@ -14,6 +14,9 @@ def main():
     a=p.parse_args();out=a.output;out.mkdir(parents=True,exist_ok=False)
     jobs=[('direct',a.candidate,a.base)]+[(arm+'_'+name,path,opp) for name,opp in OPP.items() for arm,path in [('candidate',a.candidate),('base',a.base)]]
     paths={s for _,x,y in jobs for s in (x,y)}|{str(Path(a.candidate).with_name('actions.json')),str(Path(a.base).with_name('actions.json')),'analysis/run_w13_isolated.py'}
+    for source in (a.candidate,a.base):
+        extra=Path(source).with_name('tomato.json')
+        if (ROOT/extra).exists():paths.add(str(extra))
     protocol=dict(seed=a.seed,pairs=a.pairs,jobs=jobs,hashes={s:hashlib.sha256((ROOT/s).read_bytes()).hexdigest() for s in sorted(paths)})
     (out/'protocol.json').write_text(json.dumps(protocol,indent=2)+'\n')
     def run(job):
