@@ -1,0 +1,94 @@
+{
+  "kaito": {
+    "base": {
+      "total": 20,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "wins_over_total": 1.0,
+      "decisive_win_rate": 1.0
+    },
+    "candidate": {
+      "total": 20,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "wins_over_total": 1.0,
+      "decisive_win_rate": 1.0
+    },
+    "matched": 20,
+    "gained_wins": 0,
+    "lost_wins": 0
+  },
+  "pf_all": {
+    "base": {
+      "total": 20,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "wins_over_total": 1.0,
+      "decisive_win_rate": 1.0
+    },
+    "candidate": {
+      "total": 20,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "wins_over_total": 1.0,
+      "decisive_win_rate": 1.0
+    },
+    "matched": 20,
+    "gained_wins": 0,
+    "lost_wins": 0
+  },
+  "suliman_fixed": {
+    "base": {
+      "total": 20,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "wins_over_total": 1.0,
+      "decisive_win_rate": 1.0
+    },
+    "candidate": {
+      "total": 20,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "wins_over_total": 1.0,
+      "decisive_win_rate": 1.0
+    },
+    "matched": 20,
+    "gained_wins": 0,
+    "lost_wins": 0
+  },
+  "top2_fixed": {
+    "base": {
+      "total": 20,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "wins_over_total": 0.9,
+      "decisive_win_rate": 0.9
+    },
+    "candidate": {
+      "total": 20,
+      "wins": 18,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "wins_over_total": 0.9,
+      "decisive_win_rate": 0.9
+    },
+    "matched": 20,
+    "gained_wins": 0,
+    "lost_wins": 0
+  }
+}

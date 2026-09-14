@@ -49,6 +49,16 @@ original pf_all (not pf_all2), Suliman fixed recording, and historical top-2 fix
 recording: 160 games. The latter two are not current live competitors.
 Protocol, source/asset hashes, failures, ties, per-family records and matched
 gained/lost wins are saved under analysis/protected_panel_20260914.
-The panel is running; no conclusion is drawn from partial results.
+The panel completed: 160 games, zero failures. Both arms achieved 20-0 against
+Kaito, 20-0 against original pf_all, 20-0 against Suliman's fixed recording and
+18-2 against the historical top-2 fixed recording. There were zero gained or
+lost wins on this panel. It does not demonstrate broader strength.
+
+On expanding the tournament, the harness's preference for `_V44_POLICY` was
+found to bypass outer routing in newer Kaito routers. The four-family panel
+did not include those newer routers. The harness now selects the last top-level
+def, matching the submission contract; three entrypoint-selection tests pass.
+Internally caught exceptions remain part of an agent's submitted behavior.
+The expanded 18-model tournament runs all models through that entrypoint.
 
 No further Kaggle submission is authorized or made.

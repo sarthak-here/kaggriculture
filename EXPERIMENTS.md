@@ -4780,3 +4780,20 @@ Standalone crop-only adaptive_agent was a mistaken direction and is parked:
 0W/4L in smoke testing. The proven public base remains the development foundation.
 Matched four-family held-out panel is running on39162000-009, paired seats,
 both baseline/candidate (160games). No submission or broad-strength claim.
+
+### #107 completed four-family panel and expanded tournament
+
+The160-game matched panel completed with zero failures. Both arms78W/2L;
+Kaito20-0, original pf_all20-0, Suliman fixed20-0, historical top2 fixed18-2.
+Zero gained/lost wins. Results do not support a broad-strength improvement.
+
+User requested all our top models. Added an18-checkpoint tournament on fresh
+seeds39163000-009, both seats,360games. Includes original pf_all, Kaito routers,
+Astra strawberry, full-market W13, repaired/opening/crop W13, Shop0909 variants,
+late Yarn, prvsiyan and pub_v3. Excludes rejected pf_all2 and crop-only prototype.
+Status: running. Protocol/source/asset hashes: analysis/top_models_20260914.
+
+Harness correction before this expanded run: selecting _V44_POLICY bypassed
+outer router logic in newer Kaito wrappers. Now calls the last top-level def.
+Three selector tests pass. Prior four-family panel used original Kaito, not the
+newer router wrappers. No agent files changed; no Kaggle submission.
