@@ -4752,3 +4752,18 @@ pass. Six original-seed diagnostics valid; original baseline rewards reproduce.
 Deficits change -15313 -> -39 (tomato baseline -10902) and -13768 -> -5.
 Neither is a win, and the opponents are fixed recordings. Fresh panel required.
 Research details: analysis/RESEARCH_20260914.md. Both experiments stay separate.
+
+## #107 — Current tomato losses and protected portfolio (2026-09-14)
+
+Submission56226432 score1960.3; snapshot40W/33L/2T. Downloaded all33 losses
+and8 recent wins. JSON engine audit:58958 verified cash transitions,0mismatches.
+15 near-clone losses,18 other cases. Yusuke Hayashi108886864 reveals residual
+opening collapse: cash0 at24, no hands, final-70665. Prior netting is insufficient.
+
+Built separate day1_recovery and protected_portfolio variants. Recovery prepends
+SELL WHEAT1 before exact threeHIRE orders only with cash<4 and projectedstock>=2.
+Portfolio adds exact-state sheep continuations and delays h3 until after432 on
+fallback branches only. Seven guard tests pass. All33losses/8controls paired
+against recorded opponents at original seeds are running (83games with recovery
+ablation); ten fresh paired seeds39151000-009 also running. No new submission.
+Evidence: analysis/tomato_losses_20260914/REPORT.md and audited replay archive.
