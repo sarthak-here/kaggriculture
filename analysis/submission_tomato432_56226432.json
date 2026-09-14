@@ -1,0 +1,12 @@
+{
+  "competition": "kaggriculture",
+  "submission_id": 56226432,
+  "submitted_at_utc": "2026-09-14T08:31:32.093000Z",
+  "status_at_verification": "COMPLETE",
+  "initial_public_score": 600.0,
+  "artifact": "analysis/tomato_panel_20260913/candidate.zip",
+  "artifact_sha256": "6675155bf551cdeb547028cd226ed7d6c935c6bfeda636dec7c202495cf08195",
+  "validated_commit": "36d9423",
+  "authorization": "User: go ahead and push it to kaggle and start on top 10 breakthrough",
+  "remaining_submissions_today_reported_by_cli": 4
+}

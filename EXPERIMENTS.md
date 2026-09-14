@@ -4735,3 +4735,20 @@ external prefixes match the submitted model until432. Frozen package root
 main.py/actions.json/tomato.json/LICENSE.txt matches the tested files, last
 top-level def is agent. Retain separate; no Kaggle submission. All work for
 this replay-comparison/build round is complete, and no evaluation is pending.
+
+## #106 — Authorized tomato submission and two complementary probes (2026-09-14)
+
+Submitted approved frozen tomato432 ZIP once:56226432, COMPLETE, initial600.
+Receipt: analysis/submission_tomato432_56226432.json. No further upload approved.
+
+Combined h3/tomato discovery seeds39140000-009, paired seats:19-1/20validgames.
+The loss is material (-9702): candidate loses tomato activation and sells0 vs80.
+Do not promote. Next ablation should preserve the pre432 prefix before enabling
+h3 on fallback branches, but that ablation is not yet implemented/tested.
+
+Built two exact-state-gated day12 sheep continuations from108358878/108143468,
+requiring two Yarn shops and10000cash. Six guard tests plus two prefix checks
+pass. Six original-seed diagnostics valid; original baseline rewards reproduce.
+Deficits change -15313 -> -39 (tomato baseline -10902) and -13768 -> -5.
+Neither is a win, and the opponents are fixed recordings. Fresh panel required.
+Research details: analysis/RESEARCH_20260914.md. Both experiments stay separate.
