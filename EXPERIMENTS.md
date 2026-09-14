@@ -4767,3 +4767,16 @@ fallback branches only. Seven guard tests pass. All33losses/8controls paired
 against recorded opponents at original seeds are running (83games with recovery
 ablation); ten fresh paired seeds39151000-009 also running. No new submission.
 Evidence: analysis/tomato_losses_20260914/REPORT.md and audited replay archive.
+
+### #107 completed diagnostics and next matched panel
+
+All83 diagnostic games completed, zero failures; all41 baseline reward pairs
+exactly reproduce. Four of33 losses become wins and all8 winning controls remain
+wins. Worst Yusuke deficit -70665 becomes -15596, still a loss; recovery alone
+reaches -15760. Fresh direct10seeds39151000-009:14W/0L/6T, zero failures.
+Seven guard tests pass. Evidence: analysis/PROTECTED_PORTFOLIO_REPORT.md.
+
+Standalone crop-only adaptive_agent was a mistaken direction and is parked:
+0W/4L in smoke testing. The proven public base remains the development foundation.
+Matched four-family held-out panel is running on39162000-009, paired seats,
+both baseline/candidate (160games). No submission or broad-strength claim.

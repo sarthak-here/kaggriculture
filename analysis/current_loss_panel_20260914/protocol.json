@@ -1,0 +1,19 @@
+{
+  "jobs": 83,
+  "hashes": {
+    "analysis/run_w13_isolated.py": "27b5b826bce9eebb2d8994717bbf7033b2437e4de2365cc0503ba633fa3f5f50",
+    "variants\\day1_recovery\\actions.json": "17d503f2fd20d59f9c0f14024d1e74a8add8bb9b5561d4d908b45deecb5495ef",
+    "variants\\day1_recovery\\main.py": "0bc463af59801c835878385defc25259ca48436f1d7a7848a2e268fca6159922",
+    "variants\\day1_recovery\\provenance.json": "f958de7c42bb8736292919625b1089e51063c1cbd982142e7afe877799f0229a",
+    "variants\\day1_recovery\\tomato.json": "f97239ac3ee662d84c71b41a4b300849f2f682cc46ebc6d0403d8dceff7b8ec4",
+    "variants\\protected_portfolio\\actions.json": "17d503f2fd20d59f9c0f14024d1e74a8add8bb9b5561d4d908b45deecb5495ef",
+    "variants\\protected_portfolio\\main.py": "4b9ec4b752555dbb6026abd1f9171b3d7fa91286729e9684ccc0d9304e25c847",
+    "variants\\protected_portfolio\\provenance.json": "334ade371b33951f75a7ebeeb7ff148f714ec07f1e0cb5e1bda9fd4f2211b019",
+    "variants\\protected_portfolio\\tomato.json": "f97239ac3ee662d84c71b41a4b300849f2f682cc46ebc6d0403d8dceff7b8ec4",
+    "variants\\protected_portfolio\\yarn.json": "d0fe793811b3447691325e8450fd15ac83c82e6f93c9d4d5aeda766c2bee639f",
+    "variants\\shop0909_tomato432\\actions.json": "17d503f2fd20d59f9c0f14024d1e74a8add8bb9b5561d4d908b45deecb5495ef",
+    "variants\\shop0909_tomato432\\main.py": "5ea79dd45d9f01c2de1ab13f714e89151ea94216e4218291d278d0d3f961b158",
+    "variants\\shop0909_tomato432\\provenance.json": "da9a69c3940326bfbf7e87465d68ec104eee349b0a83431e71b79ca570e3f5b3",
+    "variants\\shop0909_tomato432\\tomato.json": "f97239ac3ee662d84c71b41a4b300849f2f682cc46ebc6d0403d8dceff7b8ec4"
+  }
+}
