@@ -1,0 +1,26 @@
+{
+  "protected": {
+    "wins": 3,
+    "losses": 1,
+    "ties": 16,
+    "failures": 0,
+    "completed": 20,
+    "expected": 20
+  },
+  "unprotected_h3": {
+    "wins": 1,
+    "losses": 17,
+    "ties": 2,
+    "failures": 0,
+    "completed": 20,
+    "expected": 20
+  },
+  "submitted": {
+    "wins": 15,
+    "losses": 1,
+    "ties": 4,
+    "failures": 0,
+    "completed": 20,
+    "expected": 20
+  }
+}

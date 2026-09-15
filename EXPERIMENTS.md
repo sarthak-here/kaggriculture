@@ -4808,3 +4808,18 @@ is not a universal improvement. Early sales versus production compatibility is
 the central conflict; prior early-sales tomato regression remains a veto case.
 Design and evidence: analysis/NEXT_MODEL_DESIGN_20260915.md. No model changes
 or submission; trace production compatibility before implementation.
+
+## #109 — Branch-aware sale-window candidate (2026-09-15)
+
+Built variants/branch_aware_sales from protected_portfolio. Nondefault plans
+resume h3 at289, after the Yarn decision; plan0 stays protected through432.
+Active specialists retain their market schedules. No state equality is relaxed.
+Six tests pass, including AST identity of production guards and worker repair.
+Frozen ZIP: analysis/branch_aware_sales_20260915/candidate.zip.
+
+Completed60games on fresh39165000-009, both seats,0failures:
+protected3W/1L/16T; unprotected tomato+h3 1W/17L/2T; submitted15W/1L/4T.
+REJECT as a promotion candidate: safe control-flow release alone does not resolve
+the earlier-market deficit. Do not submit. Full results/protocol saved in the
+same analysis directory. This experiment changed code and completed its screen;
+it is not evidence of a breakthrough or of broad opponent-panel improvement.
