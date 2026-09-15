@@ -1,0 +1,50 @@
+{
+  "candidate": "variants\\branch_aware_sales\\main.py",
+  "opponents": {
+    "protected": "variants/protected_portfolio/main.py",
+    "unprotected_h3": "variants/tomato_h3_20260914/main.py",
+    "submitted": "variants/shop0909_tomato432/main.py"
+  },
+  "seeds": [
+    39165000,
+    39165001,
+    39165002,
+    39165003,
+    39165004,
+    39165005,
+    39165006,
+    39165007,
+    39165008,
+    39165009
+  ],
+  "seats": [
+    0,
+    1
+  ],
+  "hashes": {
+    "analysis\\run_branch_aware_sales.py": "6140bd1f586b400c0151196d71a67ecb9c466fb913b4c4a13ecd1e3437406a14",
+    "analysis\\run_w13_isolated.py": "f1b4742be8bdcba1df66591d89b483ab8aba9d637a8daadc2f9adac093ebaec8",
+    "variants\\branch_aware_sales\\actions.json": "17d503f2fd20d59f9c0f14024d1e74a8add8bb9b5561d4d908b45deecb5495ef",
+    "variants\\branch_aware_sales\\LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "variants\\branch_aware_sales\\main.py": "62f3b2d1b4d392b7b27630d953a3ac2f7bd691831d5d4c9b39796e35af2cbf2f",
+    "variants\\branch_aware_sales\\provenance.json": "0819bc5de116a1a547b9248d9c5c5e59ab20394df55617f6a6f5fddfe9ec1eaf",
+    "variants\\branch_aware_sales\\tomato.json": "f97239ac3ee662d84c71b41a4b300849f2f682cc46ebc6d0403d8dceff7b8ec4",
+    "variants\\branch_aware_sales\\yarn.json": "d0fe793811b3447691325e8450fd15ac83c82e6f93c9d4d5aeda766c2bee639f",
+    "variants\\protected_portfolio\\actions.json": "17d503f2fd20d59f9c0f14024d1e74a8add8bb9b5561d4d908b45deecb5495ef",
+    "variants\\protected_portfolio\\LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "variants\\protected_portfolio\\main.py": "4b9ec4b752555dbb6026abd1f9171b3d7fa91286729e9684ccc0d9304e25c847",
+    "variants\\protected_portfolio\\provenance.json": "334ade371b33951f75a7ebeeb7ff148f714ec07f1e0cb5e1bda9fd4f2211b019",
+    "variants\\protected_portfolio\\tomato.json": "f97239ac3ee662d84c71b41a4b300849f2f682cc46ebc6d0403d8dceff7b8ec4",
+    "variants\\protected_portfolio\\yarn.json": "d0fe793811b3447691325e8450fd15ac83c82e6f93c9d4d5aeda766c2bee639f",
+    "variants\\shop0909_tomato432\\actions.json": "17d503f2fd20d59f9c0f14024d1e74a8add8bb9b5561d4d908b45deecb5495ef",
+    "variants\\shop0909_tomato432\\LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "variants\\shop0909_tomato432\\main.py": "5ea79dd45d9f01c2de1ab13f714e89151ea94216e4218291d278d0d3f961b158",
+    "variants\\shop0909_tomato432\\provenance.json": "da9a69c3940326bfbf7e87465d68ec104eee349b0a83431e71b79ca570e3f5b3",
+    "variants\\shop0909_tomato432\\tomato.json": "f97239ac3ee662d84c71b41a4b300849f2f682cc46ebc6d0403d8dceff7b8ec4",
+    "variants\\tomato_h3_20260914\\actions.json": "17d503f2fd20d59f9c0f14024d1e74a8add8bb9b5561d4d908b45deecb5495ef",
+    "variants\\tomato_h3_20260914\\LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "variants\\tomato_h3_20260914\\main.py": "b9d2a288da214e7edbbe38915eae6b06796f98c1890f50575b216beb7c46b40e",
+    "variants\\tomato_h3_20260914\\provenance.json": "16eca1a5d2a788fbca9f6eae96f2cc1935f4c316c588e9871f08b080d1ed509f",
+    "variants\\tomato_h3_20260914\\tomato.json": "f97239ac3ee662d84c71b41a4b300849f2f682cc46ebc6d0403d8dceff7b8ec4"
+  }
+}
