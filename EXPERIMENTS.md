@@ -4797,3 +4797,14 @@ Harness correction before this expanded run: selecting _V44_POLICY bypassed
 outer router logic in newer Kaito wrappers. Now calls the last top-level def.
 Three selector tests pass. Prior four-family panel used original Kaito, not the
 newer router wrappers. No agent files changed; no Kaggle submission.
+
+## #108 — Completed 18-model tournament and design checkpoint (2026-09-15)
+
+360 completed games,306W/42L/12T,0failures. Original pf_all20-0 (+26604mean),
+Astra strawberry20-0 (+13017); submitted tomato13-1-6; h3 only4-16 despite
+positive244.65 mean margin; unprotected tomato+h3 beats candidate20-0.
+30 losses have identical worker hashes and sold quantities. This local candidate
+is not a universal improvement. Early sales versus production compatibility is
+the central conflict; prior early-sales tomato regression remains a veto case.
+Design and evidence: analysis/NEXT_MODEL_DESIGN_20260915.md. No model changes
+or submission; trace production compatibility before implementation.

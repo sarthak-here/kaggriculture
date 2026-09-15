@@ -1,0 +1,434 @@
+{
+  "submitted_tomato432": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 13,
+    "losses": 1,
+    "ties": 6,
+    "failures": 0,
+    "wins_over_total": 0.65,
+    "decisive_win_rate": 0.9285714285714286,
+    "mean_margin": 939.45,
+    "losses_detail": [
+      {
+        "seed": 39163004,
+        "seat": 0,
+        "margin": -63.0
+      }
+    ]
+  },
+  "shop0909_opening": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 18,
+    "losses": 2,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 0.9,
+    "decisive_win_rate": 0.9,
+    "mean_margin": 1523.05,
+    "losses_detail": [
+      {
+        "seed": 39163002,
+        "seat": 0,
+        "margin": -144.0
+      },
+      {
+        "seed": 39163002,
+        "seat": 1,
+        "margin": -144.0
+      }
+    ]
+  },
+  "shop0909_original": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 18,
+    "losses": 2,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 0.9,
+    "decisive_win_rate": 0.9,
+    "mean_margin": 1523.05,
+    "losses_detail": [
+      {
+        "seed": 39163002,
+        "seat": 0,
+        "margin": -144.0
+      },
+      {
+        "seed": 39163002,
+        "seat": 1,
+        "margin": -144.0
+      }
+    ]
+  },
+  "shop0909_h3": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 4,
+    "losses": 16,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 0.2,
+    "decisive_win_rate": 0.2,
+    "mean_margin": 244.65,
+    "losses_detail": [
+      {
+        "seed": 39163000,
+        "seat": 0,
+        "margin": -118.0
+      },
+      {
+        "seed": 39163000,
+        "seat": 1,
+        "margin": -118.0
+      },
+      {
+        "seed": 39163002,
+        "seat": 0,
+        "margin": -493.0
+      },
+      {
+        "seed": 39163002,
+        "seat": 1,
+        "margin": -493.0
+      },
+      {
+        "seed": 39163003,
+        "seat": 0,
+        "margin": -242.0
+      },
+      {
+        "seed": 39163003,
+        "seat": 1,
+        "margin": -242.0
+      },
+      {
+        "seed": 39163004,
+        "seat": 0,
+        "margin": -250.0
+      },
+      {
+        "seed": 39163004,
+        "seat": 1,
+        "margin": -7.0
+      },
+      {
+        "seed": 39163005,
+        "seat": 0,
+        "margin": -988.0
+      },
+      {
+        "seed": 39163005,
+        "seat": 1,
+        "margin": -988.0
+      },
+      {
+        "seed": 39163006,
+        "seat": 0,
+        "margin": -41.0
+      },
+      {
+        "seed": 39163006,
+        "seat": 1,
+        "margin": -41.0
+      },
+      {
+        "seed": 39163007,
+        "seat": 0,
+        "margin": -20.0
+      },
+      {
+        "seed": 39163007,
+        "seat": 1,
+        "margin": -20.0
+      },
+      {
+        "seed": 39163008,
+        "seat": 0,
+        "margin": -56.0
+      },
+      {
+        "seed": 39163008,
+        "seat": 1,
+        "margin": -56.0
+      }
+    ]
+  },
+  "late_yarn": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 13,
+    "losses": 1,
+    "ties": 6,
+    "failures": 0,
+    "wins_over_total": 0.65,
+    "decisive_win_rate": 0.9285714285714286,
+    "mean_margin": 939.45,
+    "losses_detail": [
+      {
+        "seed": 39163004,
+        "seat": 0,
+        "margin": -63.0
+      }
+    ]
+  },
+  "tomato_h3_unprotected": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 0,
+    "losses": 20,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 0.0,
+    "decisive_win_rate": 0.0,
+    "mean_margin": -230.5,
+    "losses_detail": [
+      {
+        "seed": 39163000,
+        "seat": 0,
+        "margin": -118.0
+      },
+      {
+        "seed": 39163000,
+        "seat": 1,
+        "margin": -118.0
+      },
+      {
+        "seed": 39163001,
+        "seat": 0,
+        "margin": -315.0
+      },
+      {
+        "seed": 39163001,
+        "seat": 1,
+        "margin": -315.0
+      },
+      {
+        "seed": 39163002,
+        "seat": 0,
+        "margin": -140.0
+      },
+      {
+        "seed": 39163002,
+        "seat": 1,
+        "margin": -140.0
+      },
+      {
+        "seed": 39163003,
+        "seat": 0,
+        "margin": -242.0
+      },
+      {
+        "seed": 39163003,
+        "seat": 1,
+        "margin": -242.0
+      },
+      {
+        "seed": 39163004,
+        "seat": 0,
+        "margin": -133.0
+      },
+      {
+        "seed": 39163004,
+        "seat": 1,
+        "margin": -7.0
+      },
+      {
+        "seed": 39163005,
+        "seat": 0,
+        "margin": -988.0
+      },
+      {
+        "seed": 39163005,
+        "seat": 1,
+        "margin": -988.0
+      },
+      {
+        "seed": 39163006,
+        "seat": 0,
+        "margin": -41.0
+      },
+      {
+        "seed": 39163006,
+        "seat": 1,
+        "margin": -41.0
+      },
+      {
+        "seed": 39163007,
+        "seat": 0,
+        "margin": -20.0
+      },
+      {
+        "seed": 39163007,
+        "seat": 1,
+        "margin": -20.0
+      },
+      {
+        "seed": 39163008,
+        "seat": 0,
+        "margin": -56.0
+      },
+      {
+        "seed": 39163008,
+        "seat": 1,
+        "margin": -56.0
+      },
+      {
+        "seed": 39163009,
+        "seat": 0,
+        "margin": -315.0
+      },
+      {
+        "seed": 39163009,
+        "seat": 1,
+        "margin": -315.0
+      }
+    ]
+  },
+  "astra_strawberry": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "decisive_win_rate": 1.0,
+    "mean_margin": 13017.1,
+    "losses_detail": []
+  },
+  "w13_full_market": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "decisive_win_rate": 1.0,
+    "mean_margin": 13178.15,
+    "losses_detail": []
+  },
+  "w13_opening": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "decisive_win_rate": 1.0,
+    "mean_margin": 9667.4,
+    "losses_detail": []
+  },
+  "w13_crop_demand": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "decisive_win_rate": 1.0,
+    "mean_margin": 9667.4,
+    "losses_detail": []
+  },
+  "w13_repaired": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "decisive_win_rate": 1.0,
+    "mean_margin": 10584.6,
+    "losses_detail": []
+  },
+  "kaito": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "decisive_win_rate": 1.0,
+    "mean_margin": 16427.0,
+    "losses_detail": []
+  },
+  "kaito_soil": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "decisive_win_rate": 1.0,
+    "mean_margin": 16427.0,
+    "losses_detail": []
+  },
+  "kaito_clone_soil": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "decisive_win_rate": 1.0,
+    "mean_margin": 16427.0,
+    "losses_detail": []
+  },
+  "kaito_gronk_early": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "decisive_win_rate": 1.0,
+    "mean_margin": 33827.65,
+    "losses_detail": []
+  },
+  "pf_all_original": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "decisive_win_rate": 1.0,
+    "mean_margin": 26604.2,
+    "losses_detail": []
+  },
+  "prvsiyan": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "decisive_win_rate": 1.0,
+    "mean_margin": 26440.15,
+    "losses_detail": []
+  },
+  "pub_v3": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "decisive_win_rate": 1.0,
+    "mean_margin": 32158.3,
+    "losses_detail": []
+  }
+}
