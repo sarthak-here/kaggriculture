@@ -37,7 +37,7 @@ def child(connection, path):
             request=connection.recv()
             if request is None: break
             if request=='telemetry':
-                connection.send(getattr(fn,'delay_telemetry',{}));continue
+                connection.send(getattr(fn,'delay_telemetry',getattr(fn,'telemetry',{})));continue
             obs, config=request
             connection.send(('ok',fn(obs,config) if accepts_config else fn(obs)))
     except BaseException:

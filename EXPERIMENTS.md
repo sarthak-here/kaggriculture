@@ -4823,3 +4823,15 @@ REJECT as a promotion candidate: safe control-flow release alone does not resolv
 the earlier-market deficit. Do not submit. Full results/protocol saved in the
 same analysis directory. This experiment changed code and completed its screen;
 it is not evidence of a breakthrough or of broad opponent-panel improvement.
+
+## #110 — V45 strict-clone proactive reservations (2026-09-16)
+
+Built separate variants/v45_proactive on unchanged imported V45. Six exact
+worker-position observations and exact production-layout match proactively
+enable the existing24-turn reservation horizon; all reservation safeguards and
+the opening remain unchanged. Six tests pass. Harness captures ordinary telemetry.
+
+Discovery8games:6W/2L,mean+73.25. Independent10seeds paired:16W/4L,mean+399.6,
+worst-113. Combined22W/6L. Matched small external panel:both16W/0L, identical
+margins; no broad outcome gains.60games total,0failures. Not top10 validated,
+not greater-than90% dominant, not submitted. Full report analysis/V45_PROACTIVE_REPORT.md.

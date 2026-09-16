@@ -1,0 +1,140 @@
+{
+  "jobs": [
+    [
+      "candidate",
+      "parent",
+      39168000,
+      0
+    ],
+    [
+      "candidate",
+      "parent",
+      39168000,
+      1
+    ],
+    [
+      "candidate",
+      "parent",
+      39168001,
+      0
+    ],
+    [
+      "candidate",
+      "parent",
+      39168001,
+      1
+    ],
+    [
+      "candidate",
+      "parent",
+      39168002,
+      0
+    ],
+    [
+      "candidate",
+      "parent",
+      39168002,
+      1
+    ],
+    [
+      "candidate",
+      "parent",
+      39168003,
+      0
+    ],
+    [
+      "candidate",
+      "parent",
+      39168003,
+      1
+    ],
+    [
+      "candidate",
+      "parent",
+      39168004,
+      0
+    ],
+    [
+      "candidate",
+      "parent",
+      39168004,
+      1
+    ],
+    [
+      "candidate",
+      "parent",
+      39168005,
+      0
+    ],
+    [
+      "candidate",
+      "parent",
+      39168005,
+      1
+    ],
+    [
+      "candidate",
+      "parent",
+      39168006,
+      0
+    ],
+    [
+      "candidate",
+      "parent",
+      39168006,
+      1
+    ],
+    [
+      "candidate",
+      "parent",
+      39168007,
+      0
+    ],
+    [
+      "candidate",
+      "parent",
+      39168007,
+      1
+    ],
+    [
+      "candidate",
+      "parent",
+      39168008,
+      0
+    ],
+    [
+      "candidate",
+      "parent",
+      39168008,
+      1
+    ],
+    [
+      "candidate",
+      "parent",
+      39168009,
+      0
+    ],
+    [
+      "candidate",
+      "parent",
+      39168009,
+      1
+    ]
+  ],
+  "hashes": {
+    "analysis\\run_w13_isolated.py": "a8efc47999aeb8806f24379da22774fbd793564fad5a818265a2a78f2c0e59f0",
+    "analysis\\screen_v45_proactive.py": "00835a6039ad6fca8a7bda812975acb7afbaafe35ace28452f6277c01e322a44",
+    "public_candidates\\cloning_v45_20260916\\main.py": "2536d41ed5a00c75204b6350f1c76c54259c774cb065ba2a3a0072eedf210d94",
+    "public_candidates\\cloning_v45_20260916\\manifest.json": "8a65293373284f10045d4b555545b5e2e6001a877295ea0d6f6bd6bc370de72e",
+    "public_candidates\\cloning_v45_20260916\\static_calls.json": "ed8ff1f157abcf59579aae87dbe62979a4e85c6c95c40b44bb3f9cb1ab2d0ae7",
+    "submit_pf_all\\main.py": "9f9718cfa6e3ff822fafaf12414cc34ef6bdbf67bfdbad92662a42d0ccfdc0bf",
+    "variants\\current_top_routes\\02_3\\main.py": "27097d4813bac786240f54ad1fe3139ce8e337b589e45438143f649fd5083173",
+    "variants\\tomato_h3_20260914\\actions.json": "17d503f2fd20d59f9c0f14024d1e74a8add8bb9b5561d4d908b45deecb5495ef",
+    "variants\\tomato_h3_20260914\\main.py": "b9d2a288da214e7edbbe38915eae6b06796f98c1890f50575b216beb7c46b40e",
+    "variants\\tomato_h3_20260914\\provenance.json": "16eca1a5d2a788fbca9f6eae96f2cc1935f4c316c588e9871f08b080d1ed509f",
+    "variants\\tomato_h3_20260914\\tomato.json": "f97239ac3ee662d84c71b41a4b300849f2f682cc46ebc6d0403d8dceff7b8ec4",
+    "variants\\v45_proactive\\main.py": "831dcc2cba277f12947966a38e25f04fb7854c3116f9669a04c0d00cf611b87f",
+    "variants\\v45_proactive\\provenance.json": "5242a96fcb82b409416ea2ee0b37c76a71049f0697997692128df5521ca95849",
+    "variants\\w13_add_strawberry\\main.py": "10863f13fb058085178faea83b652f86d43712378db85054bbfb18f3c819f098"
+  }
+}

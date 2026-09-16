@@ -1,0 +1,65 @@
+{
+  "base/astra": {
+    "wins": 4,
+    "losses": 0,
+    "ties": 0,
+    "mean_margin": 18121.0,
+    "proactive_escalations": 0
+  },
+  "base/pf_all": {
+    "wins": 4,
+    "losses": 0,
+    "ties": 0,
+    "mean_margin": 21828.0,
+    "proactive_escalations": 0
+  },
+  "base/tomato_h3": {
+    "wins": 4,
+    "losses": 0,
+    "ties": 0,
+    "mean_margin": 9518.5,
+    "proactive_escalations": 0
+  },
+  "base/top2_fixed": {
+    "wins": 4,
+    "losses": 0,
+    "ties": 0,
+    "mean_margin": 15983.0,
+    "proactive_escalations": 0
+  },
+  "candidate/astra": {
+    "wins": 4,
+    "losses": 0,
+    "ties": 0,
+    "mean_margin": 18121.0,
+    "proactive_escalations": 0
+  },
+  "candidate/parent": {
+    "wins": 6,
+    "losses": 2,
+    "ties": 0,
+    "mean_margin": 73.25,
+    "proactive_escalations": 8
+  },
+  "candidate/pf_all": {
+    "wins": 4,
+    "losses": 0,
+    "ties": 0,
+    "mean_margin": 21828.0,
+    "proactive_escalations": 0
+  },
+  "candidate/tomato_h3": {
+    "wins": 4,
+    "losses": 0,
+    "ties": 0,
+    "mean_margin": 9518.5,
+    "proactive_escalations": 2
+  },
+  "candidate/top2_fixed": {
+    "wins": 4,
+    "losses": 0,
+    "ties": 0,
+    "mean_margin": 15983.0,
+    "proactive_escalations": 0
+  }
+}
