@@ -4843,3 +4843,18 @@ User explicitly approved after results. Uploaded tested main.py once on
 Exact tested SHA831dcc2cba277f12947966a38e25f04fb7854c3116f9669a04c0d00cf611b87f.
 Six preflight tests passed. Kaggle reported4 submissions remaining.
 Receipt: analysis/submission_v45_proactive_56278443.json. No live strength claim.
+
+## #111 — Latest V45 replay and top10 audit (2026-09-16)
+
+56278443 score2703.1 at query.81 completed:60W/20L external plus1selfplay loss.
+Downloaded96unique replays:all81own and15additional covering2games/top10team.
+Current downloaded cutoff3017.9, leader3179.0.138048cash transitions reconcile.
+14/20losses meet nearclone screen,15under500coins; all20zero terminal crop yield.
+Roxy/Kong:11vs12melons day1,66vs72sold. Rasmus:5vs3geese,153vs82eggs,128vs94carrots.
+
+40original-seed control games:all20 submitted reward pairs reproduce exactly.
+OriginalV45 wins Kong(+109 vs-511) and Hai Dang(+755 vs-324); proactive improves
+15loss margins,worsens3,unchanged2. Loss-selected fixed recordings do not rank
+policies globally. Fix selective-sale regressions plus opening funding before
+testing demand-aware complete herd/crop service schedules. No new model or upload.
+Evidence: analysis/v45_live_20260916/REPORT.md and v45_loss_controls_20260916.

@@ -1,0 +1,128 @@
+{
+  "reproduced": 20,
+  "expected_reproductions": 20,
+  "original_wins": 2,
+  "original_ties": 0,
+  "comparisons": [
+    {
+      "episode": 109692610,
+      "submitted": -423.0,
+      "original": -423.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109693771,
+      "submitted": -151.0,
+      "original": -729.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109705534,
+      "submitted": -60.0,
+      "original": -216.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109705764,
+      "submitted": -338.0,
+      "original": -146.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109709013,
+      "submitted": -27.0,
+      "original": -165.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109716339,
+      "submitted": -48.0,
+      "original": -425.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109717409,
+      "submitted": -2813.0,
+      "original": -2813.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109719576,
+      "submitted": -12.0,
+      "original": -73.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109721707,
+      "submitted": -2.0,
+      "original": -861.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109724805,
+      "submitted": -149.0,
+      "original": -306.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109724642,
+      "submitted": -131.0,
+      "original": -898.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109724919,
+      "submitted": -511.0,
+      "original": 109.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109726067,
+      "submitted": -1211.0,
+      "original": -1219.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109727079,
+      "submitted": -1388.0,
+      "original": -1524.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109728165,
+      "submitted": -324.0,
+      "original": 755.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109728004,
+      "submitted": -299.0,
+      "original": -565.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109729255,
+      "submitted": -780.0,
+      "original": -1724.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109730342,
+      "submitted": -104.0,
+      "original": -429.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109735695,
+      "submitted": -107.0,
+      "original": -442.0,
+      "reproduced": true
+    },
+    {
+      "episode": 109736811,
+      "submitted": -127.0,
+      "original": -437.0,
+      "reproduced": true
+    }
+  ]
+}
