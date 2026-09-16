@@ -1,0 +1,17 @@
+{
+  "source_notebook_sha256": "c58f84876f3e552ebaa3f13b22db82d2720ffd6b8e58883f4125050350349b2c",
+  "main_sha256": "2536d41ed5a00c75204b6350f1c76c54259c774cb065ba2a3a0072eedf210d94",
+  "archive_sha256": "b8c2f5aab88faf2332e45f721ec83e5f9e7bec3d0a995cc0dce318badd884ed0",
+  "imports": [
+    "__future__",
+    "base64",
+    "copy",
+    "itertools",
+    "json",
+    "math",
+    "time",
+    "zlib"
+  ],
+  "embedded_sources": 3,
+  "validation": "Pinned source and archive verified; notebook code not executed; local smoke 2W/0L/0T/0 failures against submitted tomato432 on one paired seed; broad strength unverified"
+}
