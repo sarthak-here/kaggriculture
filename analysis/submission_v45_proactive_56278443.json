@@ -1,0 +1,13 @@
+{
+  "submission_id": 56278443,
+  "competition": "kaggriculture",
+  "submitted_at_utc": "2026-09-16T12:24:18.973000Z",
+  "status_at_check": "PENDING",
+  "file": "variants/v45_proactive/main.py",
+  "sha256": "831dcc2cba277f12947966a38e25f04fb7854c3116f9669a04c0d00cf611b87f",
+  "approval": "User explicitly requested upload after validation results were shown",
+  "description": "V45 proactive clone reservations: strict clone confirmation, preserved production guards; 16-4 fresh paired validation",
+  "preflight": "Exact tested hash, syntax and final agent entrypoint verified; six tests passed",
+  "validation": "16W/4L fresh paired direct confirmation; no added wins on small external panel",
+  "submissions_remaining_reported": 4
+}
