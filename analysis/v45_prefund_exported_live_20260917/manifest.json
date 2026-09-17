@@ -1,0 +1,886 @@
+{
+  "retrieved_at": "2026-09-17T12:23:41.555875+00:00",
+  "submission": 56302715,
+  "episodes": [
+    {
+      "episode_id": 110021573,
+      "seat": 0,
+      "end": "2026-09-17T10:58:34.619607Z",
+      "submission": 56302715,
+      "opponent_submission": 56302715,
+      "team": "Sarthak Sharma ",
+      "opponent": "Sarthak Sharma ",
+      "ours": 67783,
+      "theirs": 68429,
+      "margin": -646,
+      "result": "L",
+      "self_play": true,
+      "opponent_rating": null,
+      "own_rating": 600
+    },
+    {
+      "episode_id": 110022806,
+      "seat": 1,
+      "end": "2026-09-17T11:04:13.398669100Z",
+      "submission": 56302715,
+      "opponent_submission": 55842542,
+      "team": "Sarthak Sharma ",
+      "opponent": "Jarbas Camurça",
+      "ours": 139937,
+      "theirs": 34575,
+      "margin": 105362,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 563.1130006632939,
+      "own_rating": 698.1351230474158
+    },
+    {
+      "episode_id": 110023875,
+      "seat": 0,
+      "end": "2026-09-17T11:07:51.355612100Z",
+      "submission": 56302715,
+      "opponent_submission": 55682376,
+      "team": "Sarthak Sharma ",
+      "opponent": "Manuel Ramos",
+      "ours": 114834,
+      "theirs": 48696,
+      "margin": 66138,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 575.4958192571918,
+      "own_rating": 773.459792472709
+    },
+    {
+      "episode_id": 110024915,
+      "seat": 0,
+      "end": "2026-09-17T11:08:42.224340900Z",
+      "submission": 56302715,
+      "opponent_submission": 55326478,
+      "team": "Sarthak Sharma ",
+      "opponent": "Tamerlan Dadashov",
+      "ours": 179137,
+      "theirs": 52235,
+      "margin": 126902,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 589.9037138756917,
+      "own_rating": 834.4154984345078
+    },
+    {
+      "episode_id": 110025950,
+      "seat": 1,
+      "end": "2026-09-17T11:15:00.184890400Z",
+      "submission": 56302715,
+      "opponent_submission": 55242413,
+      "team": "Sarthak Sharma ",
+      "opponent": "Gena",
+      "ours": 108342,
+      "theirs": 66054,
+      "margin": 42288,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 751.6902709170287,
+      "own_rating": 919.9986662734682
+    },
+    {
+      "episode_id": 110027019,
+      "seat": 1,
+      "end": "2026-09-17T11:17:29.705810400Z",
+      "submission": 56302715,
+      "opponent_submission": 56301920,
+      "team": "Sarthak Sharma ",
+      "opponent": "Hemant Kumar",
+      "ours": 143554,
+      "theirs": 80894,
+      "margin": 62660,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 702.5268977790522,
+      "own_rating": 973.4140525178506
+    },
+    {
+      "episode_id": 110028065,
+      "seat": 1,
+      "end": "2026-09-17T11:24:37.160238500Z",
+      "submission": 56302715,
+      "opponent_submission": 56270005,
+      "team": "Sarthak Sharma ",
+      "opponent": "Young MacDonald",
+      "ours": 74755,
+      "theirs": 54523,
+      "margin": 20232,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 915.2242523754583,
+      "own_rating": 1065.4324091746269
+    },
+    {
+      "episode_id": 110029140,
+      "seat": 0,
+      "end": "2026-09-17T11:25:04.257567500Z",
+      "submission": 56302715,
+      "opponent_submission": 56300674,
+      "team": "Sarthak Sharma ",
+      "opponent": "Marti",
+      "ours": 68737,
+      "theirs": 23937,
+      "margin": 44800,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 1078.803509574186,
+      "own_rating": 1177.2165000781104
+    },
+    {
+      "episode_id": 110030180,
+      "seat": 1,
+      "end": "2026-09-17T11:31:31.218017Z",
+      "submission": 56302715,
+      "opponent_submission": 56252038,
+      "team": "Sarthak Sharma ",
+      "opponent": "xiaoBOSS97",
+      "ours": 148964,
+      "theirs": 128927,
+      "margin": 20037,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 1151.7676719403607,
+      "own_rating": 1278.6059292155933
+    },
+    {
+      "episode_id": 110031250,
+      "seat": 1,
+      "end": "2026-09-17T11:34:35.882334900Z",
+      "submission": 56302715,
+      "opponent_submission": 55698631,
+      "team": "Sarthak Sharma ",
+      "opponent": "Paul Nassiri",
+      "ours": 113632,
+      "theirs": 78679,
+      "margin": 34953,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 1109.0070926128044,
+      "own_rating": 1342.7117195539
+    },
+    {
+      "episode_id": 110032297,
+      "seat": 0,
+      "end": "2026-09-17T11:38:34.208858900Z",
+      "submission": 56302715,
+      "opponent_submission": 56299007,
+      "team": "Sarthak Sharma ",
+      "opponent": "Aashka Kapadia",
+      "ours": 113727,
+      "theirs": 64172,
+      "margin": 49555,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 1281.8533084132541,
+      "own_rating": 1433.9671625663566
+    },
+    {
+      "episode_id": 110033369,
+      "seat": 0,
+      "end": "2026-09-17T11:42:01.464332600Z",
+      "submission": 56302715,
+      "opponent_submission": 56142790,
+      "team": "Sarthak Sharma ",
+      "opponent": "Paul Pawletta",
+      "ours": 110745,
+      "theirs": 107955,
+      "margin": 2790,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 1484.3679567739582,
+      "own_rating": 1558.0825292203247
+    },
+    {
+      "episode_id": 110034428,
+      "seat": 1,
+      "end": "2026-09-17T11:46:37.743896700Z",
+      "submission": 56302715,
+      "opponent_submission": 56071701,
+      "team": "Sarthak Sharma ",
+      "opponent": "Scott Kirila",
+      "ours": 123398,
+      "theirs": 118631,
+      "margin": 4767,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 1433.036980853317,
+      "own_rating": 1632.809587345637
+    },
+    {
+      "episode_id": 110035493,
+      "seat": 1,
+      "end": "2026-09-17T11:49:59.412760600Z",
+      "submission": 56302715,
+      "opponent_submission": 56139662,
+      "team": "Sarthak Sharma ",
+      "opponent": "JackGong",
+      "ours": 88563,
+      "theirs": 81933,
+      "margin": 6630,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 1544.6953881852837,
+      "own_rating": 1716.970297034248
+    },
+    {
+      "episode_id": 110036562,
+      "seat": 0,
+      "end": "2026-09-17T11:53:50.682584Z",
+      "submission": 56302715,
+      "opponent_submission": 56249550,
+      "team": "Sarthak Sharma ",
+      "opponent": "Alexey Kuznetsov",
+      "ours": 138319,
+      "theirs": 133802,
+      "margin": 4517,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 1737.6331725841876,
+      "own_rating": 1831.9462391221825
+    },
+    {
+      "episode_id": 110037623,
+      "seat": 0,
+      "end": "2026-09-17T11:59:36.571699900Z",
+      "submission": 56302715,
+      "opponent_submission": 56156457,
+      "team": "Sarthak Sharma ",
+      "opponent": "Just a Farmer",
+      "ours": 105675,
+      "theirs": 100055,
+      "margin": 5620,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 1749.4007696531696,
+      "own_rating": 1917.5770528672965
+    },
+    {
+      "episode_id": 110038691,
+      "seat": 1,
+      "end": "2026-09-17T12:05:49.796659600Z",
+      "submission": 56302715,
+      "opponent_submission": 56238378,
+      "team": "Sarthak Sharma ",
+      "opponent": "Azat Akhtyamov",
+      "ours": 104467,
+      "theirs": 104294,
+      "margin": 173,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 1821.6296361409409,
+      "own_rating": 1999.690693262501
+    },
+    {
+      "episode_id": 110039757,
+      "seat": 0,
+      "end": "2026-09-17T12:06:22.342441600Z",
+      "submission": 56302715,
+      "opponent_submission": 56182891,
+      "team": "Sarthak Sharma ",
+      "opponent": "Marko Rupnik",
+      "ours": 93718,
+      "theirs": 89869,
+      "margin": 3849,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 1902.8890444337949,
+      "own_rating": 2081.582579168457
+    },
+    {
+      "episode_id": 110040737,
+      "seat": 1,
+      "end": "2026-09-17T12:07:48.252930800Z",
+      "submission": 56302715,
+      "opponent_submission": 56226625,
+      "team": "Sarthak Sharma ",
+      "opponent": "Yang Kuang Ou",
+      "ours": 135566,
+      "theirs": 127833,
+      "margin": 7733,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 1926.3666427640396,
+      "own_rating": 2149.023938633784
+    },
+    {
+      "episode_id": 110040845,
+      "seat": 0,
+      "end": "2026-09-17T12:12:07.339982500Z",
+      "submission": 56302715,
+      "opponent_submission": 56301818,
+      "team": "Sarthak Sharma ",
+      "opponent": "Shawn404",
+      "ours": 101429,
+      "theirs": 102727,
+      "margin": -1298,
+      "result": "L",
+      "self_play": false,
+      "opponent_rating": 2103.551841678313,
+      "own_rating": 2042.1324018638502
+    },
+    {
+      "episode_id": 110041931,
+      "seat": 0,
+      "end": "2026-09-17T12:15:45.222753300Z",
+      "submission": 56302715,
+      "opponent_submission": 56233986,
+      "team": "Sarthak Sharma ",
+      "opponent": "Mforg",
+      "ours": 58094,
+      "theirs": 55563,
+      "margin": 2531,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 2167.436219001464,
+      "own_rating": 2159.267252264672
+    },
+    {
+      "episode_id": 110043025,
+      "seat": 0,
+      "end": "2026-09-17T12:19:25.317667200Z",
+      "submission": 56302715,
+      "opponent_submission": 56197578,
+      "team": "Sarthak Sharma ",
+      "opponent": "tllswelp",
+      "ours": 126304,
+      "theirs": 125251,
+      "margin": 1053,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 2014.2262248366997,
+      "own_rating": 2203.2926267182656
+    },
+    {
+      "episode_id": 110044119,
+      "seat": 0,
+      "end": "2026-09-17T12:20:59.666320200Z",
+      "submission": 56302715,
+      "opponent_submission": 56244561,
+      "team": "Sarthak Sharma ",
+      "opponent": "Yeswanthperni",
+      "ours": 99701,
+      "theirs": 95263,
+      "margin": 4438,
+      "result": "W",
+      "self_play": false,
+      "opponent_rating": 2297.407286381798,
+      "own_rating": 2284.2179798579104
+    }
+  ],
+  "top10": [],
+  "replays": [
+    {
+      "path": "replays/episode-110021573-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110021573,
+          "seat": 0,
+          "end": "2026-09-17T10:58:34.619607Z",
+          "submission": 56302715,
+          "opponent_submission": 56302715,
+          "team": "Sarthak Sharma ",
+          "opponent": "Sarthak Sharma ",
+          "ours": 67783,
+          "theirs": 68429,
+          "margin": -646,
+          "result": "L",
+          "self_play": true,
+          "opponent_rating": null,
+          "own_rating": 600,
+          "cohort": "submission_self_play"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110022806-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110022806,
+          "seat": 1,
+          "end": "2026-09-17T11:04:13.398669100Z",
+          "submission": 56302715,
+          "opponent_submission": 55842542,
+          "team": "Sarthak Sharma ",
+          "opponent": "Jarbas Camurça",
+          "ours": 139937,
+          "theirs": 34575,
+          "margin": 105362,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 563.1130006632939,
+          "own_rating": 698.1351230474158,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110023875-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110023875,
+          "seat": 0,
+          "end": "2026-09-17T11:07:51.355612100Z",
+          "submission": 56302715,
+          "opponent_submission": 55682376,
+          "team": "Sarthak Sharma ",
+          "opponent": "Manuel Ramos",
+          "ours": 114834,
+          "theirs": 48696,
+          "margin": 66138,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 575.4958192571918,
+          "own_rating": 773.459792472709,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110024915-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110024915,
+          "seat": 0,
+          "end": "2026-09-17T11:08:42.224340900Z",
+          "submission": 56302715,
+          "opponent_submission": 55326478,
+          "team": "Sarthak Sharma ",
+          "opponent": "Tamerlan Dadashov",
+          "ours": 179137,
+          "theirs": 52235,
+          "margin": 126902,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 589.9037138756917,
+          "own_rating": 834.4154984345078,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110025950-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110025950,
+          "seat": 1,
+          "end": "2026-09-17T11:15:00.184890400Z",
+          "submission": 56302715,
+          "opponent_submission": 55242413,
+          "team": "Sarthak Sharma ",
+          "opponent": "Gena",
+          "ours": 108342,
+          "theirs": 66054,
+          "margin": 42288,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 751.6902709170287,
+          "own_rating": 919.9986662734682,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110027019-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110027019,
+          "seat": 1,
+          "end": "2026-09-17T11:17:29.705810400Z",
+          "submission": 56302715,
+          "opponent_submission": 56301920,
+          "team": "Sarthak Sharma ",
+          "opponent": "Hemant Kumar",
+          "ours": 143554,
+          "theirs": 80894,
+          "margin": 62660,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 702.5268977790522,
+          "own_rating": 973.4140525178506,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110028065-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110028065,
+          "seat": 1,
+          "end": "2026-09-17T11:24:37.160238500Z",
+          "submission": 56302715,
+          "opponent_submission": 56270005,
+          "team": "Sarthak Sharma ",
+          "opponent": "Young MacDonald",
+          "ours": 74755,
+          "theirs": 54523,
+          "margin": 20232,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 915.2242523754583,
+          "own_rating": 1065.4324091746269,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110029140-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110029140,
+          "seat": 0,
+          "end": "2026-09-17T11:25:04.257567500Z",
+          "submission": 56302715,
+          "opponent_submission": 56300674,
+          "team": "Sarthak Sharma ",
+          "opponent": "Marti",
+          "ours": 68737,
+          "theirs": 23937,
+          "margin": 44800,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 1078.803509574186,
+          "own_rating": 1177.2165000781104,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110030180-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110030180,
+          "seat": 1,
+          "end": "2026-09-17T11:31:31.218017Z",
+          "submission": 56302715,
+          "opponent_submission": 56252038,
+          "team": "Sarthak Sharma ",
+          "opponent": "xiaoBOSS97",
+          "ours": 148964,
+          "theirs": 128927,
+          "margin": 20037,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 1151.7676719403607,
+          "own_rating": 1278.6059292155933,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110031250-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110031250,
+          "seat": 1,
+          "end": "2026-09-17T11:34:35.882334900Z",
+          "submission": 56302715,
+          "opponent_submission": 55698631,
+          "team": "Sarthak Sharma ",
+          "opponent": "Paul Nassiri",
+          "ours": 113632,
+          "theirs": 78679,
+          "margin": 34953,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 1109.0070926128044,
+          "own_rating": 1342.7117195539,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110032297-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110032297,
+          "seat": 0,
+          "end": "2026-09-17T11:38:34.208858900Z",
+          "submission": 56302715,
+          "opponent_submission": 56299007,
+          "team": "Sarthak Sharma ",
+          "opponent": "Aashka Kapadia",
+          "ours": 113727,
+          "theirs": 64172,
+          "margin": 49555,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 1281.8533084132541,
+          "own_rating": 1433.9671625663566,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110033369-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110033369,
+          "seat": 0,
+          "end": "2026-09-17T11:42:01.464332600Z",
+          "submission": 56302715,
+          "opponent_submission": 56142790,
+          "team": "Sarthak Sharma ",
+          "opponent": "Paul Pawletta",
+          "ours": 110745,
+          "theirs": 107955,
+          "margin": 2790,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 1484.3679567739582,
+          "own_rating": 1558.0825292203247,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110034428-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110034428,
+          "seat": 1,
+          "end": "2026-09-17T11:46:37.743896700Z",
+          "submission": 56302715,
+          "opponent_submission": 56071701,
+          "team": "Sarthak Sharma ",
+          "opponent": "Scott Kirila",
+          "ours": 123398,
+          "theirs": 118631,
+          "margin": 4767,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 1433.036980853317,
+          "own_rating": 1632.809587345637,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110035493-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110035493,
+          "seat": 1,
+          "end": "2026-09-17T11:49:59.412760600Z",
+          "submission": 56302715,
+          "opponent_submission": 56139662,
+          "team": "Sarthak Sharma ",
+          "opponent": "JackGong",
+          "ours": 88563,
+          "theirs": 81933,
+          "margin": 6630,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 1544.6953881852837,
+          "own_rating": 1716.970297034248,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110036562-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110036562,
+          "seat": 0,
+          "end": "2026-09-17T11:53:50.682584Z",
+          "submission": 56302715,
+          "opponent_submission": 56249550,
+          "team": "Sarthak Sharma ",
+          "opponent": "Alexey Kuznetsov",
+          "ours": 138319,
+          "theirs": 133802,
+          "margin": 4517,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 1737.6331725841876,
+          "own_rating": 1831.9462391221825,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110037623-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110037623,
+          "seat": 0,
+          "end": "2026-09-17T11:59:36.571699900Z",
+          "submission": 56302715,
+          "opponent_submission": 56156457,
+          "team": "Sarthak Sharma ",
+          "opponent": "Just a Farmer",
+          "ours": 105675,
+          "theirs": 100055,
+          "margin": 5620,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 1749.4007696531696,
+          "own_rating": 1917.5770528672965,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110038691-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110038691,
+          "seat": 1,
+          "end": "2026-09-17T12:05:49.796659600Z",
+          "submission": 56302715,
+          "opponent_submission": 56238378,
+          "team": "Sarthak Sharma ",
+          "opponent": "Azat Akhtyamov",
+          "ours": 104467,
+          "theirs": 104294,
+          "margin": 173,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 1821.6296361409409,
+          "own_rating": 1999.690693262501,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110039757-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110039757,
+          "seat": 0,
+          "end": "2026-09-17T12:06:22.342441600Z",
+          "submission": 56302715,
+          "opponent_submission": 56182891,
+          "team": "Sarthak Sharma ",
+          "opponent": "Marko Rupnik",
+          "ours": 93718,
+          "theirs": 89869,
+          "margin": 3849,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 1902.8890444337949,
+          "own_rating": 2081.582579168457,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110040737-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110040737,
+          "seat": 1,
+          "end": "2026-09-17T12:07:48.252930800Z",
+          "submission": 56302715,
+          "opponent_submission": 56226625,
+          "team": "Sarthak Sharma ",
+          "opponent": "Yang Kuang Ou",
+          "ours": 135566,
+          "theirs": 127833,
+          "margin": 7733,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 1926.3666427640396,
+          "own_rating": 2149.023938633784,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110040845-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110040845,
+          "seat": 0,
+          "end": "2026-09-17T12:12:07.339982500Z",
+          "submission": 56302715,
+          "opponent_submission": 56301818,
+          "team": "Sarthak Sharma ",
+          "opponent": "Shawn404",
+          "ours": 101429,
+          "theirs": 102727,
+          "margin": -1298,
+          "result": "L",
+          "self_play": false,
+          "opponent_rating": 2103.551841678313,
+          "own_rating": 2042.1324018638502,
+          "cohort": "submission_loss"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110041931-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110041931,
+          "seat": 0,
+          "end": "2026-09-17T12:15:45.222753300Z",
+          "submission": 56302715,
+          "opponent_submission": 56233986,
+          "team": "Sarthak Sharma ",
+          "opponent": "Mforg",
+          "ours": 58094,
+          "theirs": 55563,
+          "margin": 2531,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 2167.436219001464,
+          "own_rating": 2159.267252264672,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110043025-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110043025,
+          "seat": 0,
+          "end": "2026-09-17T12:19:25.317667200Z",
+          "submission": 56302715,
+          "opponent_submission": 56197578,
+          "team": "Sarthak Sharma ",
+          "opponent": "tllswelp",
+          "ours": 126304,
+          "theirs": 125251,
+          "margin": 1053,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 2014.2262248366997,
+          "own_rating": 2203.2926267182656,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-110044119-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 110044119,
+          "seat": 0,
+          "end": "2026-09-17T12:20:59.666320200Z",
+          "submission": 56302715,
+          "opponent_submission": 56244561,
+          "team": "Sarthak Sharma ",
+          "opponent": "Yeswanthperni",
+          "ours": 99701,
+          "theirs": 95263,
+          "margin": 4438,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 2297.407286381798,
+          "own_rating": 2284.2179798579104,
+          "cohort": "submission_win_control"
+        }
+      ]
+    }
+  ],
+  "all_own": true,
+  "available_own_episode_count": 23,
+  "excluded_episodes": []
+}

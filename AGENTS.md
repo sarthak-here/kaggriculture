@@ -312,3 +312,18 @@ route tuning.
 - Submission follow-up: explicitly approved and submitted as **56159253** on
   2026-09-11 at 05:31:13 UTC. Initially PENDING; exact tested archive unchanged.
   Receipt: `analysis/submission_shop0909_56159253.json`. No live strength claim yet.
+
+## Candidate: jaxa623 2780 market controller (#115, 2026-09-18)
+
+- Frozen hash-verified single file: `public_candidates/jaxa2780_20260917/main.py`.
+- SHA-256: `4757f3f5b28db8a2f4614bb08993a8a567a7d49bae1ac324fbcfbcc1af60e95e`.
+- Public source notebook: `jaxa623/2780-beyond-48-0-128-128-worlds-with-95-cis`.
+- Generic market controller: safe SELL front-loading, two-turn sale advance,
+  24-turn reservation horizon, and a step-0 wheat round trip over a V43 parent.
+- Fresh eight-family panel: **154–6 (96.25%)**, zero ties/failures. It is 14–6
+  against corrected V45 prefund and 20–0 against each of seven other strong lines,
+  including original `pf_all` and the Kaito routers.
+- Fixed Shawn404 replay: +18,070 in both seat orders. This validates the identified
+  market-timing mechanism but is not a reactive-opponent ranking.
+- Strongest broad candidate currently tested; **not submitted**. Full evidence:
+  `analysis/SHAWN404_AND_JAXA2780_REPORT_20260918.md`.

@@ -1,0 +1,319 @@
+{
+  "detector": "opponent cash 2865 at step1, 152 at step2; FM/FM prefix; equal sorted worker positions at step145",
+  "rows": [
+    {
+      "episode": 110021573,
+      "seat": 0,
+      "opponent": "Sarthak Sharma",
+      "cash1": 2864,
+      "cash2": 1052,
+      "shops": [
+        "BAKERY",
+        "PET_CAFE"
+      ],
+      "same_positions_step145": true,
+      "matches": false
+    },
+    {
+      "episode": 110022806,
+      "seat": 1,
+      "opponent": "Jarbas Camur\u00e7a",
+      "cash1": 2839,
+      "cash2": 2458,
+      "shops": [
+        "ICE_CREAM_SHOP",
+        "YARN_STORE"
+      ],
+      "same_positions_step145": false,
+      "matches": false
+    },
+    {
+      "episode": 110023875,
+      "seat": 0,
+      "opponent": "Manuel Ramos",
+      "cash1": 188,
+      "cash2": 20,
+      "shops": [
+        "BAKERY",
+        "YARN_STORE"
+      ],
+      "same_positions_step145": false,
+      "matches": false
+    },
+    {
+      "episode": 110024915,
+      "seat": 0,
+      "opponent": "Tamerlan Dadashov",
+      "cash1": 230,
+      "cash2": 209,
+      "shops": [
+        "ICE_CREAM_SHOP",
+        "YARN_STORE"
+      ],
+      "same_positions_step145": false,
+      "matches": false
+    },
+    {
+      "episode": 110025950,
+      "seat": 1,
+      "opponent": "Gena",
+      "cash1": 2058,
+      "cash2": 1438,
+      "shops": [
+        "PET_CAFE",
+        "BRUNCH_SPOT"
+      ],
+      "same_positions_step145": false,
+      "matches": false
+    },
+    {
+      "episode": 110027019,
+      "seat": 1,
+      "opponent": "Hemant Kumar",
+      "cash1": 2580,
+      "cash2": 2180,
+      "shops": [
+        "SMOOTHIE_SHOP",
+        "YARN_STORE"
+      ],
+      "same_positions_step145": false,
+      "matches": false
+    },
+    {
+      "episode": 110028065,
+      "seat": 1,
+      "opponent": "Young MacDonald",
+      "cash1": 163,
+      "cash2": 163,
+      "shops": [
+        "BAKERY",
+        "PIZZA_SHOP"
+      ],
+      "same_positions_step145": false,
+      "matches": false
+    },
+    {
+      "episode": 110029140,
+      "seat": 0,
+      "opponent": "Marti",
+      "cash1": 2460,
+      "cash2": 581,
+      "shops": [
+        "PIZZA_SHOP",
+        "BAKERY"
+      ],
+      "same_positions_step145": false,
+      "matches": false
+    },
+    {
+      "episode": 110030180,
+      "seat": 1,
+      "opponent": "xiaoBOSS97",
+      "cash1": 200,
+      "cash2": 47,
+      "shops": [
+        "ICE_CREAM_SHOP",
+        "FARMERS_MARKET"
+      ],
+      "same_positions_step145": false,
+      "matches": false
+    },
+    {
+      "episode": 110031250,
+      "seat": 1,
+      "opponent": "Paul Nassiri",
+      "cash1": 19,
+      "cash2": 103,
+      "shops": [
+        "SMOOTHIE_SHOP",
+        "YARN_STORE"
+      ],
+      "same_positions_step145": false,
+      "matches": false
+    },
+    {
+      "episode": 110032297,
+      "seat": 0,
+      "opponent": "Aashka Kapadia",
+      "cash1": 3000,
+      "cash2": 18,
+      "shops": [
+        "BAKERY",
+        "YARN_STORE"
+      ],
+      "same_positions_step145": false,
+      "matches": false
+    },
+    {
+      "episode": 110033369,
+      "seat": 0,
+      "opponent": "Paul Pawletta",
+      "cash1": 2630,
+      "cash2": 979,
+      "shops": [
+        "SMOOTHIE_SHOP",
+        "PET_CAFE"
+      ],
+      "same_positions_step145": false,
+      "matches": false
+    },
+    {
+      "episode": 110034428,
+      "seat": 1,
+      "opponent": "Scott Kirila",
+      "cash1": 2110,
+      "cash2": 14,
+      "shops": [
+        "YARN_STORE",
+        "ICE_CREAM_SHOP"
+      ],
+      "same_positions_step145": true,
+      "matches": false
+    },
+    {
+      "episode": 110035493,
+      "seat": 1,
+      "opponent": "JackGong",
+      "cash1": 2632,
+      "cash2": 1051,
+      "shops": [
+        "BAKERY",
+        "SMOOTHIE_SHOP"
+      ],
+      "same_positions_step145": true,
+      "matches": false
+    },
+    {
+      "episode": 110036562,
+      "seat": 0,
+      "opponent": "Alexey Kuznetsov",
+      "cash1": 2632,
+      "cash2": 1051,
+      "shops": [
+        "SMOOTHIE_SHOP",
+        "SMOOTHIE_SHOP"
+      ],
+      "same_positions_step145": true,
+      "matches": false
+    },
+    {
+      "episode": 110037623,
+      "seat": 0,
+      "opponent": "Just a Farmer",
+      "cash1": 2632,
+      "cash2": 1051,
+      "shops": [
+        "SMOOTHIE_SHOP",
+        "SMOOTHIE_SHOP"
+      ],
+      "same_positions_step145": true,
+      "matches": false
+    },
+    {
+      "episode": 110038691,
+      "seat": 1,
+      "opponent": "Azat Akhtyamov",
+      "cash1": 396,
+      "cash2": 325,
+      "shops": [
+        "BAKERY",
+        "YARN_STORE"
+      ],
+      "same_positions_step145": false,
+      "matches": false
+    },
+    {
+      "episode": 110039757,
+      "seat": 0,
+      "opponent": "Marko Rupnik",
+      "cash1": 3002,
+      "cash2": 1042,
+      "shops": [
+        "YARN_STORE",
+        "SMOOTHIE_SHOP"
+      ],
+      "same_positions_step145": true,
+      "matches": false
+    },
+    {
+      "episode": 110040737,
+      "seat": 1,
+      "opponent": "Yang Kuang Ou",
+      "cash1": 2960,
+      "cash2": 1036,
+      "shops": [
+        "ICE_CREAM_SHOP",
+        "PIZZA_SHOP"
+      ],
+      "same_positions_step145": true,
+      "matches": false
+    },
+    {
+      "episode": 110040845,
+      "seat": 0,
+      "opponent": "Shawn404",
+      "cash1": 2865,
+      "cash2": 152,
+      "shops": [
+        "FARMERS_MARKET",
+        "FARMERS_MARKET"
+      ],
+      "same_positions_step145": true,
+      "matches": true
+    },
+    {
+      "episode": 110041931,
+      "seat": 0,
+      "opponent": "Mforg",
+      "cash1": 3001,
+      "cash2": 1049,
+      "shops": [
+        "BAKERY",
+        "PET_CAFE"
+      ],
+      "same_positions_step145": true,
+      "matches": false
+    },
+    {
+      "episode": 110043025,
+      "seat": 0,
+      "opponent": "tllswelp",
+      "cash1": 2628,
+      "cash2": 1047,
+      "shops": [
+        "PIZZA_SHOP",
+        "FARMERS_MARKET"
+      ],
+      "same_positions_step145": true,
+      "matches": false
+    },
+    {
+      "episode": 110044119,
+      "seat": 0,
+      "opponent": "Yeswanthperni",
+      "cash1": 3001,
+      "cash2": 1049,
+      "shops": [
+        "YARN_STORE",
+        "PET_CAFE"
+      ],
+      "same_positions_step145": true,
+      "matches": false
+    }
+  ],
+  "matches": [
+    {
+      "episode": 110040845,
+      "seat": 0,
+      "opponent": "Shawn404",
+      "cash1": 2865,
+      "cash2": 152,
+      "shops": [
+        "FARMERS_MARKET",
+        "FARMERS_MARKET"
+      ],
+      "same_positions_step145": true,
+      "matches": true
+    }
+  ]
+}

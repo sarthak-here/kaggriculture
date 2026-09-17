@@ -4924,3 +4924,34 @@ Submitted exact corrected SHA1a9c3a3ef6902d958d6269421a196aa683492e927f660f566c3
 once as56302715 at2026-09-17T10:54:30.807000Z; initially PENDING. Kaggle's
 actual loader selected `agent`;10preflight tests passed. Kaggle reported3
 submissions remaining. Receipt: analysis/submission_v45_prefund_exported_56302715.json.
+
+## #115 — Shawn404 diagnosis and 2780 market-controller breakthrough (2026-09-18)
+
+Corrected prefund submission56302715 lost episode110040845 to Shawn404 by1298
+(101429–102727). Both farms finished with the same6cow/6sheep/5goose,
+3quadrants,11hands, zero weeds, zero crop yield left and no unsold shed/cargo.
+Worker actions agree100%; this was not a harvesting failure. Gross sale receipts
+trail by1059, led by wool−660 despite both selling134 units. The mechanism is
+market timing and queue position.
+
+A generic consumption guard improved the fixed-tape deficit only to−1120 and is
+rejected. Copying Shawn's post-step150 market schedule reduced it to−85. Five
+isolated wool timing probes found one positive move: advance the12-wool step436
+batch to435, yielding+35 in both seats. The exact detector matches only Shawn in
+the23-replay live corpus. This is a replay-specific diagnostic, not a promotion.
+
+User supplied jaxa623/2780-beyond-48-0-128-128-worlds-with-95-cis. Extracted its
+embedded single-file artifact and verified SHA2564757f3f5...f60e95e. It applies
+safe market front-loading, two-turn pure-cash sale advance, a24-turn reservation
+horizon and a step0 wheat round trip—the generic form of the Shawn mechanism.
+Fresh paired tests:18–2 vs corrected prefund,20–0 pf_all,20–0 Kaito. Eight-family
+panel on seeds420400–409:154W/6L/0T, zero failures. Per family:14–6 corrected
+prefund and20–0 against V45 proactive, Kaito, pf_all, protected portfolio,
+Shop0909 tomato, Astra strawberry and Kaito-Gronk. Mean margins respectively
++35,+2347,+21448,+33045,+7562,+7293,+22358,+39035. Against Shawn's fixed tape
+it wins by18070 in both seats.
+
+This is the strongest broad candidate tested locally. It is still a public
+artifact and the panel is10 fresh worlds, not a live-ladder guarantee. Frozen at
+public_candidates/jaxa2780_20260917; no Kaggle submission made. Evidence and
+limitations: analysis/SHAWN404_AND_JAXA2780_REPORT_20260918.md.

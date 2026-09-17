@@ -1,0 +1,19 @@
+{
+  "episode": 110040845,
+  "seed": 1006079789,
+  "seat": 0,
+  "arms": {
+    "corrected_prefund": "variants/v45_prefund_10_exported/main.py",
+    "v45_proactive": "variants/v45_proactive/main.py",
+    "v45_original": "public_candidates/cloning_v45_20260916/main.py",
+    "consumption_guard": "variants/v45_consumption_guard/main.py"
+  },
+  "hashes": {
+    "variants/v45_prefund_10_exported/main.py": "1a9c3a3ef6902d958d6269421a196aa683492e927f660f566c3029698498bf04",
+    "variants/v45_proactive/main.py": "831dcc2cba277f12947966a38e25f04fb7854c3116f9669a04c0d00cf611b87f",
+    "public_candidates/cloning_v45_20260916/main.py": "2536d41ed5a00c75204b6350f1c76c54259c774cb065ba2a3a0072eedf210d94",
+    "variants/v45_consumption_guard/main.py": "17160c6402dbedd89973db3b8b0e17326872b9b0e75d5a4f0e6a5c8bb6b46a70",
+    "replay": "6f9da689d7e931a8132ca913a8e9cd9cdca03e7436e0fc1c6733bc7db6d3b22e"
+  },
+  "limitation": "Opponent actions fixed; valid causal diagnostic, not a reactive-policy ranking."
+}

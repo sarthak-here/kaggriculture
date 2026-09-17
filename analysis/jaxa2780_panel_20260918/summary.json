@@ -1,0 +1,82 @@
+{
+  "current_prefund": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 14,
+    "losses": 6,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 0.7,
+    "mean_margin": 34.9
+  },
+  "v45_proactive": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 2347.2
+  },
+  "kaito": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 21447.7
+  },
+  "pf_all": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 33045.0
+  },
+  "protected_portfolio": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 7561.6
+  },
+  "shop0909_tomato": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 7293.05
+  },
+  "astra_strawberry": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 22357.95
+  },
+  "kaito_gronk": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 39035.0
+  }
+}

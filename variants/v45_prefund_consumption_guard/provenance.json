@@ -1,0 +1,5 @@
+{
+  "base_sha256": "1a9c3a3ef6902d958d6269421a196aa683492e927f660f566c3029698498bf04",
+  "main_sha256": "a4d725d575cbde05646b057701cfb8c9ab00e219104a3c51270953ef4788dbc6",
+  "hypothesis": "Keep corrected prefund opening; decline >8-turn strict-clone reservations when known town consumption covers an equal competing batch."
+}

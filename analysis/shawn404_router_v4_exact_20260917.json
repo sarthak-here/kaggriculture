@@ -1,0 +1,6558 @@
+{
+  "a": "variants\\v45_shawn_router_v4\\main.py",
+  "b": "analysis\\shawn404_110040845_controls_20260917\\main.py",
+  "engine": "1.32.7",
+  "a_sha256": "464df8ef4dc2aa9522a90fd762816e40e9e229e9062d500d5425c78ff8970304",
+  "b_sha256": "c1b605d229ef58e0a4921ac0fe2f09867d30bde2f422cb642326edf064ba3b0f",
+  "runner_sha256": "ebf403d04e5ab8eee07b0dc7cf3ab840e312d940927f98aed3f3c849c726e96b",
+  "rows": [
+    {
+      "seed": 1006079789,
+      "order": 0,
+      "status": "DONE",
+      "a": 101030.0,
+      "b": 101115.0,
+      "a_checkpoints": {
+        "1": {
+          "money": 2863.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "2": {
+          "money": 1051.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        },
+        "17": {
+          "money": 211.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 1,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "inventories": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        },
+        "24": {
+          "money": 21.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "25": {
+          "money": 17.0,
+          "hands": 3,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "inventories": [
+            {
+              "WHEAT": 1
+            },
+            {},
+            {},
+            {}
+          ]
+        },
+        "48": {
+          "money": 80.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "72": {
+          "money": 193.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "COW": 3,
+            "SHEEP": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "144": {
+          "money": 796.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "COW": 4,
+            "SHEEP": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        }
+      },
+      "b_checkpoints": {
+        "1": {
+          "money": 2865.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "2": {
+          "money": 152.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        },
+        "17": {
+          "money": 213.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 1,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "inventories": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        },
+        "24": {
+          "money": 23.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "25": {
+          "money": 19.0,
+          "hands": 3,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "inventories": [
+            {
+              "WHEAT": 1
+            },
+            {},
+            {},
+            {}
+          ]
+        },
+        "48": {
+          "money": 82.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "72": {
+          "money": 195.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "COW": 3,
+            "SHEEP": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "144": {
+          "money": 798.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "COW": 4,
+            "SHEEP": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        }
+      },
+      "a_final_farm": {
+        "quadrants": 3,
+        "animals": {
+          "GOOSE": 5,
+          "COW": 6,
+          "SHEEP": 6
+        }
+      },
+      "b_final_farm": {
+        "quadrants": 3,
+        "animals": {
+          "GOOSE": 5,
+          "COW": 6,
+          "SHEEP": 6
+        }
+      },
+      "a_telemetry": {
+        "shawn_checks": 1,
+        "shawn_activations": 1,
+        "shawn_turns": 569,
+        "shawn_errors": 0,
+        "prefund_openings": 1,
+        "prefund_held_feed": 1,
+        "open_turns": 1,
+        "open_errors": 0,
+        "race_clone_turns": 476,
+        "race_horizon_turns": 476,
+        "race_lost_races": 0,
+        "race_escalations": 0,
+        "race_errors": 0,
+        "overflow_turns": 1,
+        "overflow_units_reclaimed": 5,
+        "overflow_quote_exposure": 230,
+        "overflow_contract_checks": 0,
+        "overflow_contract_errors": 1,
+        "atomic_turns": 0,
+        "atomic_kept_requests": 0,
+        "atomic_removed_requests": 0,
+        "seed_prefund_turns": 0,
+        "seed_prefund_units": 0,
+        "targeted_errors": 0,
+        "service_requested_units": 0,
+        "service_confirmed_units": 0,
+        "service_idle_preloads": 0,
+        "service_swaps_started": 0,
+        "service_swaps_completed": 0,
+        "service_capacity_declines": 0,
+        "service_arrival_errors": 0,
+        "service_swap_errors": 0,
+        "sale_credit_orders": 0,
+        "sale_credit_lower_bound": 0,
+        "sale_credit_grain_units": 0,
+        "sale_credit_confirmed_units": 0,
+        "sale_credit_errors": 0,
+        "service_errors": 0,
+        "last_hour_plants_dropped": 1,
+        "priority_grain_orders": 0,
+        "priority_grain_units": 0,
+        "priority_grain_confirmed": 0,
+        "priority_grain_shortfalls": 0,
+        "priority_contract_errors": 0,
+        "opening_seed_budget_units": 0,
+        "opening_seed_budget_cost": 0,
+        "opening_atomic_dropped": 0,
+        "opening_atomic_rescued_requests": 0,
+        "opening_atomic_rescued_confirmed": 0,
+        "opening_atomic_plant_errors": 0,
+        "opening_day1_cash": 21.0,
+        "opening_day1_hires_requested": 3,
+        "opening_day1_hires_confirmed": 3,
+        "opening_day1_hire_shortfalls": 0,
+        "opening_contract_errors": 0,
+        "supply_guard_changes": 0,
+        "supply_grain_protected": 0,
+        "supply_buy_units": 0,
+        "supply_early_changes": 0,
+        "supply_early_units": 0,
+        "supply_prefund_changes": 0,
+        "supply_prefund_units": 0,
+        "supply_slot_declines": 0,
+        "supply_capacity_declines": 0,
+        "supply_budget_declines": 2,
+        "supply_errors": 0,
+        "replenishment_trim_turns": 3,
+        "replenishment_trim_units": 13,
+        "replenishment_errors": 0,
+        "feed_skips": 59,
+        "fert_sale_turns": 1,
+        "fert_sale_units": 6,
+        "economic_overlay_errors": 0,
+        "parent_input_guard_turns": 0,
+        "parent_input_guard_extra_units": 0,
+        "parent_input_requests": 0,
+        "parent_input_confirmed": 0,
+        "parent_input_shortfalls": 0,
+        "parent_input_errors": 0,
+        "parent_input_capacity_declines": 0,
+        "warehouse_changed_turns": 2,
+        "warehouse_extra_sales": 7,
+        "warehouse_projected_unresolved": 34,
+        "warehouse_errors": 0,
+        "input_hire_requests": 2,
+        "input_confirmed_hires": 2,
+        "input_hire_errors": 0,
+        "input_purchase_requests": 14,
+        "input_loaded_units": 14,
+        "input_stock_shortfalls": 0,
+        "input_application_requests": 14,
+        "input_confirmed_applications": 14,
+        "input_application_errors": 0,
+        "input_errors": 0,
+        "input_forecast_wheat": 16,
+        "input_forecast_carrot": 6,
+        "sale_reserved_units": 281,
+        "sale_reservations": 54,
+        "sale_errors": 0,
+        "commitments": 0,
+        "hire_requests": 0,
+        "confirmed_workers": 0,
+        "hire_shortfalls": 0,
+        "plant_requests": 0,
+        "confirmed_plants": 0,
+        "water_requests": 0,
+        "fertilize_requests": 0,
+        "harvest_requests": 0,
+        "confirmed_harvest_units": 0,
+        "drop_requests": 0,
+        "tomato_sale_requests": 0,
+        "budget_declines": 0,
+        "lost_plants": 0,
+        "extra_fertilizer_days": 0,
+        "reordered_market_turns": 132,
+        "errors": 0,
+        "cattle_confirmed": 0,
+        "cattle_reserved": 0,
+        "cattle_requested": 0,
+        "cattle_failed_purchase_units": 0,
+        "cattle_picked": 0,
+        "cattle_placed": 0,
+        "cattle_failed_placements": 0,
+        "cattle_extra_milk_harvested": 0,
+        "cattle_extra_milk_sale_requests": 0,
+        "cattle_milk_credit": 0,
+        "cattle_carried_pending": 0,
+        "quote_reordered_turns": 32,
+        "three_turn_calls": 312,
+        "nocturne_errors": 0,
+        "probe_matches": 1,
+        "probe_four_turn_calls": 195,
+        "probe_errors": 0,
+        "release_errors": 0,
+        "sheep_commit_requests": 0,
+        "sheep_committed": 0,
+        "sheep_hire_requests": 0,
+        "sheep_workers_confirmed": 0,
+        "sheep_hire_shortfalls": 0,
+        "sheep_budget_declines": 0,
+        "sheep_capacity_declines": 0,
+        "sheep_purchase_shortfalls": 0,
+        "sheep_feed_buy_requests": 0,
+        "sheep_wool_harvested": 0,
+        "sheep_fert_collected": 0,
+        "sheep_extra_wool_sales": 0,
+        "sheep_extra_fert_sales": 0,
+        "sheep_rescue_feed_requests": 0,
+        "labor_requests": 0,
+        "labor_hires_avoided": 0,
+        "labor_spawn_errors": 0,
+        "labor_confirmed": 0,
+        "labor_day26": 0,
+        "labor_day27": 0,
+        "labor_day28": 0,
+        "local_proactive_escalations": 1
+      },
+      "b_telemetry": {},
+      "a_fills": {
+        "BUY_PRODUCT:WHEAT:units": 476,
+        "BUY_PRODUCT:WHEAT:value": 20320,
+        "SELL:WHEAT:units": 773,
+        "SELL:WHEAT:value": 33563,
+        "BUY_ANIMAL:COW:units": 6,
+        "BUY_ANIMAL:COW:value": 2400,
+        "BUY_ANIMAL:SHEEP:units": 6,
+        "BUY_ANIMAL:SHEEP:value": 3000,
+        "BUY_SEED:MELON:units": 12,
+        "BUY_SEED:MELON:value": 960,
+        "BUY_SEED:WHEAT:units": 163,
+        "BUY_SEED:WHEAT:value": 1630,
+        "SELL:FERTILIZER:units": 335,
+        "SELL:FERTILIZER:value": 14952,
+        "BUY_SEED:STRAWBERRY:units": 33,
+        "BUY_SEED:STRAWBERRY:value": 3300,
+        "SELL:WOOL:units": 131,
+        "SELL:WOOL:value": 9285,
+        "BUY_PRODUCT:FERTILIZER:units": 83,
+        "BUY_PRODUCT:FERTILIZER:value": 2385,
+        "BUY_ANIMAL:GOOSE:units": 5,
+        "BUY_ANIMAL:GOOSE:value": 1500,
+        "SELL:MILK:units": 144,
+        "SELL:MILK:value": 6925,
+        "SELL:MELON:units": 72,
+        "SELL:MELON:value": 14267,
+        "SELL:EGG:units": 143,
+        "SELL:EGG:value": 6885,
+        "SELL:STRAWBERRY:units": 247,
+        "SELL:STRAWBERRY:value": 50761,
+        "BUY_SEED:CARROT:units": 31,
+        "BUY_SEED:CARROT:value": 620,
+        "SELL:CARROT:units": 92,
+        "SELL:CARROT:value": 4904
+      },
+      "b_fills": {
+        "BUY_PRODUCT:WHEAT:units": 517,
+        "BUY_PRODUCT:WHEAT:value": 21796,
+        "SELL:WHEAT:units": 808,
+        "SELL:WHEAT:value": 34724,
+        "BUY_ANIMAL:COW:units": 6,
+        "BUY_ANIMAL:COW:value": 2400,
+        "BUY_ANIMAL:SHEEP:units": 6,
+        "BUY_ANIMAL:SHEEP:value": 3000,
+        "BUY_SEED:MELON:units": 12,
+        "BUY_SEED:MELON:value": 960,
+        "BUY_SEED:WHEAT:units": 163,
+        "BUY_SEED:WHEAT:value": 1630,
+        "SELL:FERTILIZER:units": 335,
+        "SELL:FERTILIZER:value": 14952,
+        "BUY_SEED:STRAWBERRY:units": 33,
+        "BUY_SEED:STRAWBERRY:value": 3300,
+        "SELL:WOOL:units": 134,
+        "SELL:WOOL:value": 9365,
+        "BUY_PRODUCT:FERTILIZER:units": 83,
+        "BUY_PRODUCT:FERTILIZER:value": 2385,
+        "BUY_ANIMAL:GOOSE:units": 5,
+        "BUY_ANIMAL:GOOSE:value": 1500,
+        "SELL:MILK:units": 141,
+        "SELL:MILK:value": 6898,
+        "SELL:MELON:units": 72,
+        "SELL:MELON:value": 14267,
+        "SELL:EGG:units": 143,
+        "SELL:EGG:value": 6885,
+        "SELL:STRAWBERRY:units": 249,
+        "SELL:STRAWBERRY:value": 51108,
+        "BUY_SEED:CARROT:units": 31,
+        "BUY_SEED:CARROT:value": 620,
+        "SELL:CARROT:units": 92,
+        "SELL:CARROT:value": 4904
+      },
+      "a_workers_sha256": "5f610b870029e1152fa4bbc4ef998936d426cf7695185f768e9125900bfaa702",
+      "b_workers_sha256": "b7eaa4a9e687af22b9823251ad3804d340fbe5ac91cb3f2f16b5f5e0401e1967",
+      "strawberry_fills": [
+        [
+          382,
+          0,
+          239
+        ],
+        [
+          382,
+          1,
+          239
+        ],
+        [
+          382,
+          0,
+          239
+        ],
+        [
+          382,
+          1,
+          239
+        ],
+        [
+          382,
+          0,
+          238
+        ],
+        [
+          382,
+          1,
+          238
+        ],
+        [
+          382,
+          0,
+          238
+        ],
+        [
+          382,
+          1,
+          238
+        ],
+        [
+          382,
+          0,
+          237
+        ],
+        [
+          382,
+          1,
+          237
+        ],
+        [
+          382,
+          0,
+          236
+        ],
+        [
+          382,
+          1,
+          236
+        ],
+        [
+          382,
+          0,
+          236
+        ],
+        [
+          382,
+          1,
+          236
+        ],
+        [
+          382,
+          0,
+          235
+        ],
+        [
+          382,
+          1,
+          235
+        ],
+        [
+          398,
+          0,
+          240
+        ],
+        [
+          398,
+          1,
+          240
+        ],
+        [
+          398,
+          0,
+          239
+        ],
+        [
+          398,
+          1,
+          239
+        ],
+        [
+          398,
+          0,
+          238
+        ],
+        [
+          398,
+          1,
+          238
+        ],
+        [
+          398,
+          0,
+          238
+        ],
+        [
+          398,
+          1,
+          238
+        ],
+        [
+          402,
+          0,
+          238
+        ],
+        [
+          402,
+          1,
+          238
+        ],
+        [
+          402,
+          0,
+          238
+        ],
+        [
+          402,
+          1,
+          238
+        ],
+        [
+          402,
+          0,
+          237
+        ],
+        [
+          402,
+          1,
+          237
+        ],
+        [
+          402,
+          0,
+          237
+        ],
+        [
+          402,
+          1,
+          237
+        ],
+        [
+          402,
+          0,
+          236
+        ],
+        [
+          402,
+          1,
+          236
+        ],
+        [
+          402,
+          0,
+          235
+        ],
+        [
+          402,
+          1,
+          235
+        ],
+        [
+          403,
+          0,
+          235
+        ],
+        [
+          403,
+          1,
+          235
+        ],
+        [
+          403,
+          0,
+          234
+        ],
+        [
+          403,
+          1,
+          234
+        ],
+        [
+          403,
+          0,
+          234
+        ],
+        [
+          403,
+          1,
+          234
+        ],
+        [
+          403,
+          0,
+          233
+        ],
+        [
+          403,
+          1,
+          233
+        ],
+        [
+          403,
+          0,
+          232
+        ],
+        [
+          403,
+          1,
+          232
+        ],
+        [
+          403,
+          0,
+          232
+        ],
+        [
+          403,
+          1,
+          232
+        ],
+        [
+          427,
+          0,
+          239
+        ],
+        [
+          427,
+          1,
+          239
+        ],
+        [
+          427,
+          0,
+          238
+        ],
+        [
+          427,
+          1,
+          238
+        ],
+        [
+          427,
+          0,
+          238
+        ],
+        [
+          427,
+          1,
+          238
+        ],
+        [
+          427,
+          0,
+          237
+        ],
+        [
+          427,
+          1,
+          237
+        ],
+        [
+          427,
+          0,
+          236
+        ],
+        [
+          427,
+          1,
+          236
+        ],
+        [
+          427,
+          0,
+          236
+        ],
+        [
+          427,
+          1,
+          236
+        ],
+        [
+          429,
+          0,
+          236
+        ],
+        [
+          429,
+          1,
+          236
+        ],
+        [
+          429,
+          0,
+          236
+        ],
+        [
+          429,
+          1,
+          236
+        ],
+        [
+          429,
+          0,
+          235
+        ],
+        [
+          429,
+          1,
+          235
+        ],
+        [
+          429,
+          0,
+          235
+        ],
+        [
+          429,
+          1,
+          235
+        ],
+        [
+          429,
+          0,
+          234
+        ],
+        [
+          429,
+          1,
+          234
+        ],
+        [
+          429,
+          0,
+          233
+        ],
+        [
+          429,
+          1,
+          233
+        ],
+        [
+          429,
+          0,
+          233
+        ],
+        [
+          429,
+          1,
+          233
+        ],
+        [
+          429,
+          0,
+          232
+        ],
+        [
+          429,
+          1,
+          232
+        ],
+        [
+          429,
+          0,
+          231
+        ],
+        [
+          429,
+          1,
+          231
+        ],
+        [
+          429,
+          0,
+          231
+        ],
+        [
+          429,
+          1,
+          231
+        ],
+        [
+          450,
+          0,
+          237
+        ],
+        [
+          450,
+          1,
+          237
+        ],
+        [
+          450,
+          0,
+          236
+        ],
+        [
+          450,
+          1,
+          236
+        ],
+        [
+          450,
+          0,
+          235
+        ],
+        [
+          450,
+          1,
+          235
+        ],
+        [
+          450,
+          0,
+          235
+        ],
+        [
+          450,
+          1,
+          235
+        ],
+        [
+          450,
+          0,
+          234
+        ],
+        [
+          450,
+          1,
+          234
+        ],
+        [
+          450,
+          0,
+          234
+        ],
+        [
+          450,
+          1,
+          234
+        ],
+        [
+          452,
+          0,
+          233
+        ],
+        [
+          452,
+          1,
+          233
+        ],
+        [
+          452,
+          0,
+          232
+        ],
+        [
+          452,
+          1,
+          232
+        ],
+        [
+          452,
+          0,
+          232
+        ],
+        [
+          452,
+          1,
+          232
+        ],
+        [
+          452,
+          0,
+          231
+        ],
+        [
+          452,
+          1,
+          231
+        ],
+        [
+          452,
+          0,
+          230
+        ],
+        [
+          452,
+          1,
+          230
+        ],
+        [
+          452,
+          0,
+          230
+        ],
+        [
+          452,
+          1,
+          230
+        ],
+        [
+          452,
+          0,
+          229
+        ],
+        [
+          452,
+          1,
+          229
+        ],
+        [
+          452,
+          0,
+          229
+        ],
+        [
+          452,
+          1,
+          229
+        ],
+        [
+          452,
+          0,
+          228
+        ],
+        [
+          452,
+          1,
+          228
+        ],
+        [
+          452,
+          0,
+          227
+        ],
+        [
+          452,
+          1,
+          227
+        ],
+        [
+          457,
+          0,
+          230
+        ],
+        [
+          457,
+          1,
+          230
+        ],
+        [
+          457,
+          0,
+          229
+        ],
+        [
+          457,
+          1,
+          229
+        ],
+        [
+          457,
+          0,
+          228
+        ],
+        [
+          457,
+          1,
+          228
+        ],
+        [
+          457,
+          0,
+          228
+        ],
+        [
+          457,
+          1,
+          228
+        ],
+        [
+          457,
+          0,
+          227
+        ],
+        [
+          457,
+          1,
+          227
+        ],
+        [
+          457,
+          0,
+          226
+        ],
+        [
+          457,
+          1,
+          226
+        ],
+        [
+          457,
+          0,
+          226
+        ],
+        [
+          457,
+          1,
+          226
+        ],
+        [
+          457,
+          0,
+          225
+        ],
+        [
+          457,
+          1,
+          225
+        ],
+        [
+          473,
+          0,
+          230
+        ],
+        [
+          473,
+          1,
+          230
+        ],
+        [
+          473,
+          0,
+          229
+        ],
+        [
+          473,
+          1,
+          229
+        ],
+        [
+          477,
+          0,
+          230
+        ],
+        [
+          477,
+          1,
+          230
+        ],
+        [
+          477,
+          0,
+          229
+        ],
+        [
+          477,
+          1,
+          229
+        ],
+        [
+          477,
+          0,
+          228
+        ],
+        [
+          477,
+          1,
+          228
+        ],
+        [
+          477,
+          0,
+          228
+        ],
+        [
+          477,
+          1,
+          228
+        ],
+        [
+          477,
+          0,
+          227
+        ],
+        [
+          477,
+          1,
+          227
+        ],
+        [
+          477,
+          0,
+          226
+        ],
+        [
+          477,
+          1,
+          226
+        ],
+        [
+          477,
+          0,
+          226
+        ],
+        [
+          477,
+          1,
+          226
+        ],
+        [
+          477,
+          0,
+          225
+        ],
+        [
+          477,
+          1,
+          225
+        ],
+        [
+          481,
+          0,
+          226
+        ],
+        [
+          481,
+          1,
+          226
+        ],
+        [
+          481,
+          0,
+          225
+        ],
+        [
+          481,
+          1,
+          225
+        ],
+        [
+          481,
+          0,
+          225
+        ],
+        [
+          481,
+          1,
+          225
+        ],
+        [
+          481,
+          0,
+          224
+        ],
+        [
+          481,
+          1,
+          224
+        ],
+        [
+          481,
+          0,
+          223
+        ],
+        [
+          481,
+          1,
+          223
+        ],
+        [
+          481,
+          0,
+          223
+        ],
+        [
+          481,
+          1,
+          223
+        ],
+        [
+          495,
+          0,
+          226
+        ],
+        [
+          495,
+          1,
+          226
+        ],
+        [
+          495,
+          0,
+          225
+        ],
+        [
+          495,
+          1,
+          225
+        ],
+        [
+          495,
+          0,
+          225
+        ],
+        [
+          495,
+          1,
+          225
+        ],
+        [
+          495,
+          0,
+          224
+        ],
+        [
+          495,
+          1,
+          224
+        ],
+        [
+          495,
+          0,
+          223
+        ],
+        [
+          495,
+          1,
+          223
+        ],
+        [
+          495,
+          0,
+          223
+        ],
+        [
+          495,
+          1,
+          223
+        ],
+        [
+          498,
+          0,
+          223
+        ],
+        [
+          498,
+          1,
+          223
+        ],
+        [
+          498,
+          0,
+          223
+        ],
+        [
+          498,
+          1,
+          223
+        ],
+        [
+          498,
+          0,
+          222
+        ],
+        [
+          498,
+          1,
+          222
+        ],
+        [
+          498,
+          0,
+          221
+        ],
+        [
+          498,
+          1,
+          221
+        ],
+        [
+          498,
+          0,
+          220
+        ],
+        [
+          498,
+          1,
+          220
+        ],
+        [
+          498,
+          0,
+          220
+        ],
+        [
+          498,
+          1,
+          220
+        ],
+        [
+          498,
+          0,
+          219
+        ],
+        [
+          498,
+          1,
+          219
+        ],
+        [
+          498,
+          0,
+          218
+        ],
+        [
+          498,
+          1,
+          218
+        ],
+        [
+          499,
+          0,
+          218
+        ],
+        [
+          499,
+          1,
+          218
+        ],
+        [
+          499,
+          0,
+          217
+        ],
+        [
+          499,
+          1,
+          217
+        ],
+        [
+          499,
+          0,
+          216
+        ],
+        [
+          499,
+          1,
+          216
+        ],
+        [
+          499,
+          0,
+          215
+        ],
+        [
+          499,
+          1,
+          215
+        ],
+        [
+          505,
+          0,
+          218
+        ],
+        [
+          505,
+          1,
+          218
+        ],
+        [
+          505,
+          0,
+          217
+        ],
+        [
+          505,
+          1,
+          217
+        ],
+        [
+          505,
+          0,
+          217
+        ],
+        [
+          505,
+          1,
+          217
+        ],
+        [
+          505,
+          0,
+          216
+        ],
+        [
+          505,
+          1,
+          216
+        ],
+        [
+          505,
+          0,
+          215
+        ],
+        [
+          505,
+          1,
+          215
+        ],
+        [
+          505,
+          0,
+          214
+        ],
+        [
+          505,
+          1,
+          214
+        ],
+        [
+          517,
+          0,
+          218
+        ],
+        [
+          517,
+          1,
+          218
+        ],
+        [
+          517,
+          0,
+          217
+        ],
+        [
+          517,
+          1,
+          217
+        ],
+        [
+          517,
+          0,
+          217
+        ],
+        [
+          517,
+          1,
+          217
+        ],
+        [
+          517,
+          0,
+          216
+        ],
+        [
+          517,
+          1,
+          216
+        ],
+        [
+          517,
+          0,
+          215
+        ],
+        [
+          517,
+          1,
+          215
+        ],
+        [
+          517,
+          0,
+          214
+        ],
+        [
+          517,
+          1,
+          214
+        ],
+        [
+          517,
+          0,
+          214
+        ],
+        [
+          517,
+          1,
+          214
+        ],
+        [
+          517,
+          0,
+          213
+        ],
+        [
+          517,
+          1,
+          213
+        ],
+        [
+          523,
+          0,
+          214
+        ],
+        [
+          523,
+          1,
+          214
+        ],
+        [
+          523,
+          0,
+          213
+        ],
+        [
+          523,
+          1,
+          213
+        ],
+        [
+          523,
+          0,
+          212
+        ],
+        [
+          523,
+          1,
+          212
+        ],
+        [
+          523,
+          0,
+          211
+        ],
+        [
+          523,
+          1,
+          211
+        ],
+        [
+          523,
+          0,
+          210
+        ],
+        [
+          523,
+          1,
+          210
+        ],
+        [
+          523,
+          0,
+          210
+        ],
+        [
+          523,
+          1,
+          210
+        ],
+        [
+          523,
+          0,
+          209
+        ],
+        [
+          523,
+          1,
+          209
+        ],
+        [
+          523,
+          0,
+          208
+        ],
+        [
+          523,
+          1,
+          208
+        ],
+        [
+          523,
+          0,
+          207
+        ],
+        [
+          523,
+          1,
+          207
+        ],
+        [
+          523,
+          0,
+          206
+        ],
+        [
+          523,
+          1,
+          206
+        ],
+        [
+          523,
+          0,
+          206
+        ],
+        [
+          523,
+          1,
+          206
+        ],
+        [
+          523,
+          0,
+          205
+        ],
+        [
+          523,
+          1,
+          205
+        ],
+        [
+          523,
+          0,
+          204
+        ],
+        [
+          523,
+          1,
+          204
+        ],
+        [
+          523,
+          0,
+          203
+        ],
+        [
+          523,
+          1,
+          203
+        ],
+        [
+          523,
+          0,
+          202
+        ],
+        [
+          523,
+          1,
+          202
+        ],
+        [
+          523,
+          0,
+          201
+        ],
+        [
+          523,
+          1,
+          201
+        ],
+        [
+          528,
+          0,
+          202
+        ],
+        [
+          528,
+          1,
+          202
+        ],
+        [
+          528,
+          0,
+          201
+        ],
+        [
+          528,
+          1,
+          201
+        ],
+        [
+          528,
+          0,
+          201
+        ],
+        [
+          528,
+          1,
+          201
+        ],
+        [
+          528,
+          0,
+          200
+        ],
+        [
+          528,
+          1,
+          200
+        ],
+        [
+          528,
+          0,
+          199
+        ],
+        [
+          528,
+          1,
+          199
+        ],
+        [
+          528,
+          0,
+          198
+        ],
+        [
+          528,
+          1,
+          198
+        ],
+        [
+          528,
+          0,
+          197
+        ],
+        [
+          528,
+          1,
+          197
+        ],
+        [
+          528,
+          0,
+          196
+        ],
+        [
+          528,
+          1,
+          196
+        ],
+        [
+          528,
+          0,
+          195
+        ],
+        [
+          528,
+          1,
+          195
+        ],
+        [
+          528,
+          0,
+          194
+        ],
+        [
+          528,
+          1,
+          194
+        ],
+        [
+          528,
+          0,
+          193
+        ],
+        [
+          528,
+          1,
+          193
+        ],
+        [
+          528,
+          0,
+          192
+        ],
+        [
+          528,
+          1,
+          192
+        ],
+        [
+          528,
+          0,
+          191
+        ],
+        [
+          528,
+          1,
+          191
+        ],
+        [
+          542,
+          0,
+          198
+        ],
+        [
+          542,
+          1,
+          198
+        ],
+        [
+          542,
+          0,
+          197
+        ],
+        [
+          542,
+          1,
+          197
+        ],
+        [
+          542,
+          0,
+          197
+        ],
+        [
+          542,
+          1,
+          197
+        ],
+        [
+          542,
+          0,
+          196
+        ],
+        [
+          542,
+          1,
+          196
+        ],
+        [
+          543,
+          0,
+          195
+        ],
+        [
+          543,
+          1,
+          195
+        ],
+        [
+          543,
+          0,
+          194
+        ],
+        [
+          543,
+          1,
+          194
+        ],
+        [
+          543,
+          0,
+          193
+        ],
+        [
+          543,
+          1,
+          193
+        ],
+        [
+          543,
+          0,
+          192
+        ],
+        [
+          543,
+          1,
+          192
+        ],
+        [
+          552,
+          0,
+          195
+        ],
+        [
+          552,
+          1,
+          195
+        ],
+        [
+          552,
+          0,
+          194
+        ],
+        [
+          552,
+          1,
+          194
+        ],
+        [
+          552,
+          0,
+          193
+        ],
+        [
+          552,
+          1,
+          193
+        ],
+        [
+          552,
+          0,
+          192
+        ],
+        [
+          552,
+          1,
+          192
+        ],
+        [
+          552,
+          0,
+          191
+        ],
+        [
+          552,
+          1,
+          191
+        ],
+        [
+          552,
+          0,
+          190
+        ],
+        [
+          552,
+          1,
+          190
+        ],
+        [
+          552,
+          0,
+          189
+        ],
+        [
+          552,
+          1,
+          189
+        ],
+        [
+          552,
+          0,
+          188
+        ],
+        [
+          552,
+          1,
+          188
+        ],
+        [
+          552,
+          0,
+          187
+        ],
+        [
+          552,
+          1,
+          187
+        ],
+        [
+          552,
+          0,
+          186
+        ],
+        [
+          552,
+          1,
+          186
+        ],
+        [
+          552,
+          0,
+          185
+        ],
+        [
+          552,
+          1,
+          185
+        ],
+        [
+          552,
+          0,
+          183
+        ],
+        [
+          552,
+          1,
+          183
+        ],
+        [
+          552,
+          0,
+          182
+        ],
+        [
+          552,
+          1,
+          182
+        ],
+        [
+          557,
+          0,
+          186
+        ],
+        [
+          557,
+          1,
+          186
+        ],
+        [
+          557,
+          0,
+          185
+        ],
+        [
+          557,
+          1,
+          185
+        ],
+        [
+          557,
+          0,
+          184
+        ],
+        [
+          557,
+          1,
+          184
+        ],
+        [
+          557,
+          0,
+          183
+        ],
+        [
+          557,
+          1,
+          183
+        ],
+        [
+          566,
+          0,
+          186
+        ],
+        [
+          566,
+          1,
+          186
+        ],
+        [
+          566,
+          0,
+          185
+        ],
+        [
+          566,
+          1,
+          185
+        ],
+        [
+          566,
+          0,
+          184
+        ],
+        [
+          566,
+          1,
+          184
+        ],
+        [
+          566,
+          0,
+          183
+        ],
+        [
+          566,
+          1,
+          183
+        ],
+        [
+          577,
+          0,
+          189
+        ],
+        [
+          577,
+          1,
+          189
+        ],
+        [
+          577,
+          0,
+          188
+        ],
+        [
+          577,
+          1,
+          188
+        ],
+        [
+          577,
+          0,
+          187
+        ],
+        [
+          577,
+          1,
+          187
+        ],
+        [
+          577,
+          0,
+          186
+        ],
+        [
+          577,
+          1,
+          186
+        ],
+        [
+          577,
+          0,
+          185
+        ],
+        [
+          577,
+          1,
+          185
+        ],
+        [
+          577,
+          0,
+          184
+        ],
+        [
+          577,
+          1,
+          184
+        ],
+        [
+          577,
+          0,
+          183
+        ],
+        [
+          577,
+          1,
+          183
+        ],
+        [
+          577,
+          0,
+          182
+        ],
+        [
+          577,
+          1,
+          182
+        ],
+        [
+          577,
+          0,
+          181
+        ],
+        [
+          577,
+          1,
+          181
+        ],
+        [
+          577,
+          0,
+          179
+        ],
+        [
+          577,
+          1,
+          179
+        ],
+        [
+          577,
+          0,
+          178
+        ],
+        [
+          577,
+          1,
+          178
+        ],
+        [
+          577,
+          0,
+          177
+        ],
+        [
+          577,
+          1,
+          177
+        ],
+        [
+          577,
+          0,
+          176
+        ],
+        [
+          577,
+          1,
+          176
+        ],
+        [
+          577,
+          0,
+          174
+        ],
+        [
+          577,
+          1,
+          174
+        ],
+        [
+          577,
+          0,
+          173
+        ],
+        [
+          577,
+          1,
+          173
+        ],
+        [
+          577,
+          0,
+          172
+        ],
+        [
+          577,
+          1,
+          172
+        ],
+        [
+          577,
+          0,
+          170
+        ],
+        [
+          577,
+          1,
+          170
+        ],
+        [
+          577,
+          0,
+          169
+        ],
+        [
+          577,
+          1,
+          169
+        ],
+        [
+          577,
+          0,
+          168
+        ],
+        [
+          577,
+          1,
+          168
+        ],
+        [
+          577,
+          0,
+          166
+        ],
+        [
+          577,
+          1,
+          166
+        ],
+        [
+          577,
+          0,
+          164
+        ],
+        [
+          577,
+          1,
+          164
+        ],
+        [
+          600,
+          0,
+          180
+        ],
+        [
+          600,
+          1,
+          180
+        ],
+        [
+          600,
+          0,
+          179
+        ],
+        [
+          600,
+          1,
+          179
+        ],
+        [
+          600,
+          0,
+          178
+        ],
+        [
+          600,
+          1,
+          178
+        ],
+        [
+          600,
+          0,
+          176
+        ],
+        [
+          600,
+          1,
+          176
+        ],
+        [
+          600,
+          0,
+          175
+        ],
+        [
+          600,
+          1,
+          175
+        ],
+        [
+          600,
+          1,
+          174
+        ],
+        [
+          600,
+          1,
+          173
+        ],
+        [
+          605,
+          0,
+          179
+        ],
+        [
+          605,
+          1,
+          179
+        ],
+        [
+          605,
+          0,
+          178
+        ],
+        [
+          605,
+          1,
+          178
+        ],
+        [
+          605,
+          0,
+          177
+        ],
+        [
+          605,
+          1,
+          177
+        ],
+        [
+          605,
+          0,
+          176
+        ],
+        [
+          605,
+          1,
+          176
+        ],
+        [
+          625,
+          0,
+          189
+        ],
+        [
+          625,
+          1,
+          189
+        ],
+        [
+          625,
+          0,
+          188
+        ],
+        [
+          625,
+          1,
+          188
+        ],
+        [
+          625,
+          0,
+          187
+        ],
+        [
+          625,
+          1,
+          187
+        ],
+        [
+          625,
+          0,
+          186
+        ],
+        [
+          625,
+          1,
+          186
+        ],
+        [
+          625,
+          0,
+          185
+        ],
+        [
+          625,
+          1,
+          185
+        ],
+        [
+          625,
+          0,
+          184
+        ],
+        [
+          625,
+          1,
+          184
+        ],
+        [
+          625,
+          0,
+          183
+        ],
+        [
+          625,
+          1,
+          183
+        ],
+        [
+          625,
+          0,
+          182
+        ],
+        [
+          625,
+          1,
+          182
+        ],
+        [
+          625,
+          0,
+          181
+        ],
+        [
+          625,
+          1,
+          181
+        ],
+        [
+          625,
+          0,
+          179
+        ],
+        [
+          625,
+          1,
+          179
+        ],
+        [
+          625,
+          0,
+          178
+        ],
+        [
+          625,
+          1,
+          178
+        ],
+        [
+          625,
+          0,
+          177
+        ],
+        [
+          625,
+          1,
+          177
+        ],
+        [
+          625,
+          0,
+          176
+        ],
+        [
+          625,
+          1,
+          176
+        ],
+        [
+          625,
+          0,
+          174
+        ],
+        [
+          625,
+          1,
+          174
+        ],
+        [
+          625,
+          0,
+          173
+        ],
+        [
+          625,
+          1,
+          173
+        ],
+        [
+          625,
+          0,
+          172
+        ],
+        [
+          625,
+          1,
+          172
+        ],
+        [
+          625,
+          0,
+          170
+        ],
+        [
+          625,
+          1,
+          170
+        ],
+        [
+          625,
+          0,
+          169
+        ],
+        [
+          625,
+          1,
+          169
+        ],
+        [
+          625,
+          0,
+          168
+        ],
+        [
+          625,
+          1,
+          168
+        ],
+        [
+          625,
+          0,
+          166
+        ],
+        [
+          625,
+          1,
+          166
+        ],
+        [
+          625,
+          0,
+          164
+        ],
+        [
+          625,
+          1,
+          164
+        ],
+        [
+          668,
+          0,
+          194
+        ],
+        [
+          668,
+          1,
+          194
+        ],
+        [
+          668,
+          0,
+          193
+        ],
+        [
+          668,
+          1,
+          193
+        ],
+        [
+          668,
+          0,
+          192
+        ],
+        [
+          668,
+          1,
+          192
+        ],
+        [
+          668,
+          0,
+          191
+        ],
+        [
+          668,
+          1,
+          191
+        ],
+        [
+          668,
+          0,
+          190
+        ],
+        [
+          668,
+          1,
+          190
+        ],
+        [
+          668,
+          0,
+          189
+        ],
+        [
+          668,
+          1,
+          189
+        ],
+        [
+          672,
+          0,
+          190
+        ],
+        [
+          672,
+          1,
+          190
+        ],
+        [
+          672,
+          0,
+          189
+        ],
+        [
+          672,
+          1,
+          189
+        ],
+        [
+          672,
+          0,
+          188
+        ],
+        [
+          672,
+          1,
+          188
+        ],
+        [
+          672,
+          0,
+          187
+        ],
+        [
+          672,
+          1,
+          187
+        ],
+        [
+          672,
+          0,
+          186
+        ],
+        [
+          672,
+          1,
+          186
+        ],
+        [
+          672,
+          0,
+          185
+        ],
+        [
+          672,
+          1,
+          185
+        ],
+        [
+          672,
+          0,
+          184
+        ],
+        [
+          672,
+          1,
+          184
+        ],
+        [
+          672,
+          0,
+          183
+        ],
+        [
+          672,
+          1,
+          183
+        ],
+        [
+          672,
+          0,
+          182
+        ],
+        [
+          672,
+          1,
+          182
+        ],
+        [
+          672,
+          0,
+          181
+        ],
+        [
+          672,
+          1,
+          181
+        ],
+        [
+          672,
+          0,
+          179
+        ],
+        [
+          672,
+          1,
+          179
+        ],
+        [
+          672,
+          0,
+          178
+        ],
+        [
+          672,
+          1,
+          178
+        ],
+        [
+          672,
+          0,
+          177
+        ],
+        [
+          672,
+          1,
+          177
+        ],
+        [
+          672,
+          0,
+          176
+        ],
+        [
+          672,
+          1,
+          176
+        ],
+        [
+          672,
+          0,
+          174
+        ],
+        [
+          672,
+          1,
+          174
+        ],
+        [
+          672,
+          0,
+          173
+        ],
+        [
+          672,
+          1,
+          173
+        ],
+        [
+          672,
+          0,
+          172
+        ],
+        [
+          672,
+          1,
+          172
+        ],
+        [
+          672,
+          0,
+          170
+        ],
+        [
+          672,
+          1,
+          170
+        ],
+        [
+          672,
+          0,
+          169
+        ],
+        [
+          672,
+          1,
+          169
+        ],
+        [
+          672,
+          0,
+          168
+        ],
+        [
+          672,
+          1,
+          168
+        ]
+      ],
+      "shops": [
+        "FARMERS_MARKET",
+        "FARMERS_MARKET",
+        "ICE_CREAM_SHOP",
+        "BAKERY",
+        "BRUNCH_SPOT",
+        "YARN_STORE",
+        "BAKERY",
+        "BRUNCH_SPOT"
+      ]
+    },
+    {
+      "seed": 1006079789,
+      "order": 1,
+      "status": "DONE",
+      "a": 101030.0,
+      "b": 101115.0,
+      "a_checkpoints": {
+        "1": {
+          "money": 2863.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "2": {
+          "money": 1051.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        },
+        "17": {
+          "money": 211.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 1,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "inventories": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        },
+        "24": {
+          "money": 21.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "25": {
+          "money": 17.0,
+          "hands": 3,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "inventories": [
+            {
+              "WHEAT": 1
+            },
+            {},
+            {},
+            {}
+          ]
+        },
+        "48": {
+          "money": 80.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "72": {
+          "money": 193.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "COW": 3,
+            "SHEEP": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "144": {
+          "money": 796.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "COW": 4,
+            "SHEEP": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        }
+      },
+      "b_checkpoints": {
+        "1": {
+          "money": 2865.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "2": {
+          "money": 152.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        },
+        "17": {
+          "money": 213.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 1,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "inventories": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        },
+        "24": {
+          "money": 23.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "25": {
+          "money": 19.0,
+          "hands": 3,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "inventories": [
+            {
+              "WHEAT": 1
+            },
+            {},
+            {},
+            {}
+          ]
+        },
+        "48": {
+          "money": 82.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "72": {
+          "money": 195.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "COW": 3,
+            "SHEEP": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "144": {
+          "money": 798.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "COW": 4,
+            "SHEEP": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        }
+      },
+      "a_final_farm": {
+        "quadrants": 3,
+        "animals": {
+          "GOOSE": 5,
+          "COW": 6,
+          "SHEEP": 6
+        }
+      },
+      "b_final_farm": {
+        "quadrants": 3,
+        "animals": {
+          "GOOSE": 5,
+          "COW": 6,
+          "SHEEP": 6
+        }
+      },
+      "a_telemetry": {
+        "shawn_checks": 1,
+        "shawn_activations": 1,
+        "shawn_turns": 569,
+        "shawn_errors": 0,
+        "prefund_openings": 1,
+        "prefund_held_feed": 1,
+        "open_turns": 1,
+        "open_errors": 0,
+        "race_clone_turns": 476,
+        "race_horizon_turns": 476,
+        "race_lost_races": 0,
+        "race_escalations": 0,
+        "race_errors": 0,
+        "overflow_turns": 1,
+        "overflow_units_reclaimed": 5,
+        "overflow_quote_exposure": 230,
+        "overflow_contract_checks": 0,
+        "overflow_contract_errors": 1,
+        "atomic_turns": 0,
+        "atomic_kept_requests": 0,
+        "atomic_removed_requests": 0,
+        "seed_prefund_turns": 0,
+        "seed_prefund_units": 0,
+        "targeted_errors": 0,
+        "service_requested_units": 0,
+        "service_confirmed_units": 0,
+        "service_idle_preloads": 0,
+        "service_swaps_started": 0,
+        "service_swaps_completed": 0,
+        "service_capacity_declines": 0,
+        "service_arrival_errors": 0,
+        "service_swap_errors": 0,
+        "sale_credit_orders": 0,
+        "sale_credit_lower_bound": 0,
+        "sale_credit_grain_units": 0,
+        "sale_credit_confirmed_units": 0,
+        "sale_credit_errors": 0,
+        "service_errors": 0,
+        "last_hour_plants_dropped": 1,
+        "priority_grain_orders": 0,
+        "priority_grain_units": 0,
+        "priority_grain_confirmed": 0,
+        "priority_grain_shortfalls": 0,
+        "priority_contract_errors": 0,
+        "opening_seed_budget_units": 0,
+        "opening_seed_budget_cost": 0,
+        "opening_atomic_dropped": 0,
+        "opening_atomic_rescued_requests": 0,
+        "opening_atomic_rescued_confirmed": 0,
+        "opening_atomic_plant_errors": 0,
+        "opening_day1_cash": 21.0,
+        "opening_day1_hires_requested": 3,
+        "opening_day1_hires_confirmed": 3,
+        "opening_day1_hire_shortfalls": 0,
+        "opening_contract_errors": 0,
+        "supply_guard_changes": 0,
+        "supply_grain_protected": 0,
+        "supply_buy_units": 0,
+        "supply_early_changes": 0,
+        "supply_early_units": 0,
+        "supply_prefund_changes": 0,
+        "supply_prefund_units": 0,
+        "supply_slot_declines": 0,
+        "supply_capacity_declines": 0,
+        "supply_budget_declines": 2,
+        "supply_errors": 0,
+        "replenishment_trim_turns": 3,
+        "replenishment_trim_units": 13,
+        "replenishment_errors": 0,
+        "feed_skips": 59,
+        "fert_sale_turns": 1,
+        "fert_sale_units": 6,
+        "economic_overlay_errors": 0,
+        "parent_input_guard_turns": 0,
+        "parent_input_guard_extra_units": 0,
+        "parent_input_requests": 0,
+        "parent_input_confirmed": 0,
+        "parent_input_shortfalls": 0,
+        "parent_input_errors": 0,
+        "parent_input_capacity_declines": 0,
+        "warehouse_changed_turns": 2,
+        "warehouse_extra_sales": 7,
+        "warehouse_projected_unresolved": 34,
+        "warehouse_errors": 0,
+        "input_hire_requests": 2,
+        "input_confirmed_hires": 2,
+        "input_hire_errors": 0,
+        "input_purchase_requests": 14,
+        "input_loaded_units": 14,
+        "input_stock_shortfalls": 0,
+        "input_application_requests": 14,
+        "input_confirmed_applications": 14,
+        "input_application_errors": 0,
+        "input_errors": 0,
+        "input_forecast_wheat": 16,
+        "input_forecast_carrot": 6,
+        "sale_reserved_units": 281,
+        "sale_reservations": 54,
+        "sale_errors": 0,
+        "commitments": 0,
+        "hire_requests": 0,
+        "confirmed_workers": 0,
+        "hire_shortfalls": 0,
+        "plant_requests": 0,
+        "confirmed_plants": 0,
+        "water_requests": 0,
+        "fertilize_requests": 0,
+        "harvest_requests": 0,
+        "confirmed_harvest_units": 0,
+        "drop_requests": 0,
+        "tomato_sale_requests": 0,
+        "budget_declines": 0,
+        "lost_plants": 0,
+        "extra_fertilizer_days": 0,
+        "reordered_market_turns": 132,
+        "errors": 0,
+        "cattle_confirmed": 0,
+        "cattle_reserved": 0,
+        "cattle_requested": 0,
+        "cattle_failed_purchase_units": 0,
+        "cattle_picked": 0,
+        "cattle_placed": 0,
+        "cattle_failed_placements": 0,
+        "cattle_extra_milk_harvested": 0,
+        "cattle_extra_milk_sale_requests": 0,
+        "cattle_milk_credit": 0,
+        "cattle_carried_pending": 0,
+        "quote_reordered_turns": 32,
+        "three_turn_calls": 312,
+        "nocturne_errors": 0,
+        "probe_matches": 1,
+        "probe_four_turn_calls": 195,
+        "probe_errors": 0,
+        "release_errors": 0,
+        "sheep_commit_requests": 0,
+        "sheep_committed": 0,
+        "sheep_hire_requests": 0,
+        "sheep_workers_confirmed": 0,
+        "sheep_hire_shortfalls": 0,
+        "sheep_budget_declines": 0,
+        "sheep_capacity_declines": 0,
+        "sheep_purchase_shortfalls": 0,
+        "sheep_feed_buy_requests": 0,
+        "sheep_wool_harvested": 0,
+        "sheep_fert_collected": 0,
+        "sheep_extra_wool_sales": 0,
+        "sheep_extra_fert_sales": 0,
+        "sheep_rescue_feed_requests": 0,
+        "labor_requests": 0,
+        "labor_hires_avoided": 0,
+        "labor_spawn_errors": 0,
+        "labor_confirmed": 0,
+        "labor_day26": 0,
+        "labor_day27": 0,
+        "labor_day28": 0,
+        "local_proactive_escalations": 1
+      },
+      "b_telemetry": {},
+      "a_fills": {
+        "BUY_PRODUCT:WHEAT:units": 476,
+        "BUY_PRODUCT:WHEAT:value": 20320,
+        "SELL:WHEAT:units": 773,
+        "SELL:WHEAT:value": 33563,
+        "BUY_ANIMAL:COW:units": 6,
+        "BUY_ANIMAL:COW:value": 2400,
+        "BUY_ANIMAL:SHEEP:units": 6,
+        "BUY_ANIMAL:SHEEP:value": 3000,
+        "BUY_SEED:MELON:units": 12,
+        "BUY_SEED:MELON:value": 960,
+        "BUY_SEED:WHEAT:units": 163,
+        "BUY_SEED:WHEAT:value": 1630,
+        "SELL:FERTILIZER:units": 335,
+        "SELL:FERTILIZER:value": 14952,
+        "BUY_SEED:STRAWBERRY:units": 33,
+        "BUY_SEED:STRAWBERRY:value": 3300,
+        "SELL:WOOL:units": 131,
+        "SELL:WOOL:value": 9285,
+        "BUY_PRODUCT:FERTILIZER:units": 83,
+        "BUY_PRODUCT:FERTILIZER:value": 2385,
+        "BUY_ANIMAL:GOOSE:units": 5,
+        "BUY_ANIMAL:GOOSE:value": 1500,
+        "SELL:MILK:units": 144,
+        "SELL:MILK:value": 6925,
+        "SELL:MELON:units": 72,
+        "SELL:MELON:value": 14267,
+        "SELL:EGG:units": 143,
+        "SELL:EGG:value": 6885,
+        "SELL:STRAWBERRY:units": 247,
+        "SELL:STRAWBERRY:value": 50761,
+        "BUY_SEED:CARROT:units": 31,
+        "BUY_SEED:CARROT:value": 620,
+        "SELL:CARROT:units": 92,
+        "SELL:CARROT:value": 4904
+      },
+      "b_fills": {
+        "BUY_PRODUCT:WHEAT:units": 517,
+        "BUY_PRODUCT:WHEAT:value": 21796,
+        "SELL:WHEAT:units": 808,
+        "SELL:WHEAT:value": 34724,
+        "BUY_ANIMAL:COW:units": 6,
+        "BUY_ANIMAL:COW:value": 2400,
+        "BUY_ANIMAL:SHEEP:units": 6,
+        "BUY_ANIMAL:SHEEP:value": 3000,
+        "BUY_SEED:MELON:units": 12,
+        "BUY_SEED:MELON:value": 960,
+        "BUY_SEED:WHEAT:units": 163,
+        "BUY_SEED:WHEAT:value": 1630,
+        "SELL:FERTILIZER:units": 335,
+        "SELL:FERTILIZER:value": 14952,
+        "BUY_SEED:STRAWBERRY:units": 33,
+        "BUY_SEED:STRAWBERRY:value": 3300,
+        "SELL:WOOL:units": 134,
+        "SELL:WOOL:value": 9365,
+        "BUY_PRODUCT:FERTILIZER:units": 83,
+        "BUY_PRODUCT:FERTILIZER:value": 2385,
+        "BUY_ANIMAL:GOOSE:units": 5,
+        "BUY_ANIMAL:GOOSE:value": 1500,
+        "SELL:MILK:units": 141,
+        "SELL:MILK:value": 6898,
+        "SELL:MELON:units": 72,
+        "SELL:MELON:value": 14267,
+        "SELL:EGG:units": 143,
+        "SELL:EGG:value": 6885,
+        "SELL:STRAWBERRY:units": 249,
+        "SELL:STRAWBERRY:value": 51108,
+        "BUY_SEED:CARROT:units": 31,
+        "BUY_SEED:CARROT:value": 620,
+        "SELL:CARROT:units": 92,
+        "SELL:CARROT:value": 4904
+      },
+      "a_workers_sha256": "5f610b870029e1152fa4bbc4ef998936d426cf7695185f768e9125900bfaa702",
+      "b_workers_sha256": "b7eaa4a9e687af22b9823251ad3804d340fbe5ac91cb3f2f16b5f5e0401e1967",
+      "strawberry_fills": [
+        [
+          382,
+          0,
+          239
+        ],
+        [
+          382,
+          1,
+          239
+        ],
+        [
+          382,
+          0,
+          239
+        ],
+        [
+          382,
+          1,
+          239
+        ],
+        [
+          382,
+          0,
+          238
+        ],
+        [
+          382,
+          1,
+          238
+        ],
+        [
+          382,
+          0,
+          238
+        ],
+        [
+          382,
+          1,
+          238
+        ],
+        [
+          382,
+          0,
+          237
+        ],
+        [
+          382,
+          1,
+          237
+        ],
+        [
+          382,
+          0,
+          236
+        ],
+        [
+          382,
+          1,
+          236
+        ],
+        [
+          382,
+          0,
+          236
+        ],
+        [
+          382,
+          1,
+          236
+        ],
+        [
+          382,
+          0,
+          235
+        ],
+        [
+          382,
+          1,
+          235
+        ],
+        [
+          398,
+          0,
+          240
+        ],
+        [
+          398,
+          1,
+          240
+        ],
+        [
+          398,
+          0,
+          239
+        ],
+        [
+          398,
+          1,
+          239
+        ],
+        [
+          398,
+          0,
+          238
+        ],
+        [
+          398,
+          1,
+          238
+        ],
+        [
+          398,
+          0,
+          238
+        ],
+        [
+          398,
+          1,
+          238
+        ],
+        [
+          402,
+          0,
+          238
+        ],
+        [
+          402,
+          1,
+          238
+        ],
+        [
+          402,
+          0,
+          238
+        ],
+        [
+          402,
+          1,
+          238
+        ],
+        [
+          402,
+          0,
+          237
+        ],
+        [
+          402,
+          1,
+          237
+        ],
+        [
+          402,
+          0,
+          237
+        ],
+        [
+          402,
+          1,
+          237
+        ],
+        [
+          402,
+          0,
+          236
+        ],
+        [
+          402,
+          1,
+          236
+        ],
+        [
+          402,
+          0,
+          235
+        ],
+        [
+          402,
+          1,
+          235
+        ],
+        [
+          403,
+          0,
+          235
+        ],
+        [
+          403,
+          1,
+          235
+        ],
+        [
+          403,
+          0,
+          234
+        ],
+        [
+          403,
+          1,
+          234
+        ],
+        [
+          403,
+          0,
+          234
+        ],
+        [
+          403,
+          1,
+          234
+        ],
+        [
+          403,
+          0,
+          233
+        ],
+        [
+          403,
+          1,
+          233
+        ],
+        [
+          403,
+          0,
+          232
+        ],
+        [
+          403,
+          1,
+          232
+        ],
+        [
+          403,
+          0,
+          232
+        ],
+        [
+          403,
+          1,
+          232
+        ],
+        [
+          427,
+          0,
+          239
+        ],
+        [
+          427,
+          1,
+          239
+        ],
+        [
+          427,
+          0,
+          238
+        ],
+        [
+          427,
+          1,
+          238
+        ],
+        [
+          427,
+          0,
+          238
+        ],
+        [
+          427,
+          1,
+          238
+        ],
+        [
+          427,
+          0,
+          237
+        ],
+        [
+          427,
+          1,
+          237
+        ],
+        [
+          427,
+          0,
+          236
+        ],
+        [
+          427,
+          1,
+          236
+        ],
+        [
+          427,
+          0,
+          236
+        ],
+        [
+          427,
+          1,
+          236
+        ],
+        [
+          429,
+          0,
+          236
+        ],
+        [
+          429,
+          1,
+          236
+        ],
+        [
+          429,
+          0,
+          236
+        ],
+        [
+          429,
+          1,
+          236
+        ],
+        [
+          429,
+          0,
+          235
+        ],
+        [
+          429,
+          1,
+          235
+        ],
+        [
+          429,
+          0,
+          235
+        ],
+        [
+          429,
+          1,
+          235
+        ],
+        [
+          429,
+          0,
+          234
+        ],
+        [
+          429,
+          1,
+          234
+        ],
+        [
+          429,
+          0,
+          233
+        ],
+        [
+          429,
+          1,
+          233
+        ],
+        [
+          429,
+          0,
+          233
+        ],
+        [
+          429,
+          1,
+          233
+        ],
+        [
+          429,
+          0,
+          232
+        ],
+        [
+          429,
+          1,
+          232
+        ],
+        [
+          429,
+          0,
+          231
+        ],
+        [
+          429,
+          1,
+          231
+        ],
+        [
+          429,
+          0,
+          231
+        ],
+        [
+          429,
+          1,
+          231
+        ],
+        [
+          450,
+          0,
+          237
+        ],
+        [
+          450,
+          1,
+          237
+        ],
+        [
+          450,
+          0,
+          236
+        ],
+        [
+          450,
+          1,
+          236
+        ],
+        [
+          450,
+          0,
+          235
+        ],
+        [
+          450,
+          1,
+          235
+        ],
+        [
+          450,
+          0,
+          235
+        ],
+        [
+          450,
+          1,
+          235
+        ],
+        [
+          450,
+          0,
+          234
+        ],
+        [
+          450,
+          1,
+          234
+        ],
+        [
+          450,
+          0,
+          234
+        ],
+        [
+          450,
+          1,
+          234
+        ],
+        [
+          452,
+          0,
+          233
+        ],
+        [
+          452,
+          1,
+          233
+        ],
+        [
+          452,
+          0,
+          232
+        ],
+        [
+          452,
+          1,
+          232
+        ],
+        [
+          452,
+          0,
+          232
+        ],
+        [
+          452,
+          1,
+          232
+        ],
+        [
+          452,
+          0,
+          231
+        ],
+        [
+          452,
+          1,
+          231
+        ],
+        [
+          452,
+          0,
+          230
+        ],
+        [
+          452,
+          1,
+          230
+        ],
+        [
+          452,
+          0,
+          230
+        ],
+        [
+          452,
+          1,
+          230
+        ],
+        [
+          452,
+          0,
+          229
+        ],
+        [
+          452,
+          1,
+          229
+        ],
+        [
+          452,
+          0,
+          229
+        ],
+        [
+          452,
+          1,
+          229
+        ],
+        [
+          452,
+          0,
+          228
+        ],
+        [
+          452,
+          1,
+          228
+        ],
+        [
+          452,
+          0,
+          227
+        ],
+        [
+          452,
+          1,
+          227
+        ],
+        [
+          457,
+          0,
+          230
+        ],
+        [
+          457,
+          1,
+          230
+        ],
+        [
+          457,
+          0,
+          229
+        ],
+        [
+          457,
+          1,
+          229
+        ],
+        [
+          457,
+          0,
+          228
+        ],
+        [
+          457,
+          1,
+          228
+        ],
+        [
+          457,
+          0,
+          228
+        ],
+        [
+          457,
+          1,
+          228
+        ],
+        [
+          457,
+          0,
+          227
+        ],
+        [
+          457,
+          1,
+          227
+        ],
+        [
+          457,
+          0,
+          226
+        ],
+        [
+          457,
+          1,
+          226
+        ],
+        [
+          457,
+          0,
+          226
+        ],
+        [
+          457,
+          1,
+          226
+        ],
+        [
+          457,
+          0,
+          225
+        ],
+        [
+          457,
+          1,
+          225
+        ],
+        [
+          473,
+          0,
+          230
+        ],
+        [
+          473,
+          1,
+          230
+        ],
+        [
+          473,
+          0,
+          229
+        ],
+        [
+          473,
+          1,
+          229
+        ],
+        [
+          477,
+          0,
+          230
+        ],
+        [
+          477,
+          1,
+          230
+        ],
+        [
+          477,
+          0,
+          229
+        ],
+        [
+          477,
+          1,
+          229
+        ],
+        [
+          477,
+          0,
+          228
+        ],
+        [
+          477,
+          1,
+          228
+        ],
+        [
+          477,
+          0,
+          228
+        ],
+        [
+          477,
+          1,
+          228
+        ],
+        [
+          477,
+          0,
+          227
+        ],
+        [
+          477,
+          1,
+          227
+        ],
+        [
+          477,
+          0,
+          226
+        ],
+        [
+          477,
+          1,
+          226
+        ],
+        [
+          477,
+          0,
+          226
+        ],
+        [
+          477,
+          1,
+          226
+        ],
+        [
+          477,
+          0,
+          225
+        ],
+        [
+          477,
+          1,
+          225
+        ],
+        [
+          481,
+          0,
+          226
+        ],
+        [
+          481,
+          1,
+          226
+        ],
+        [
+          481,
+          0,
+          225
+        ],
+        [
+          481,
+          1,
+          225
+        ],
+        [
+          481,
+          0,
+          225
+        ],
+        [
+          481,
+          1,
+          225
+        ],
+        [
+          481,
+          0,
+          224
+        ],
+        [
+          481,
+          1,
+          224
+        ],
+        [
+          481,
+          0,
+          223
+        ],
+        [
+          481,
+          1,
+          223
+        ],
+        [
+          481,
+          0,
+          223
+        ],
+        [
+          481,
+          1,
+          223
+        ],
+        [
+          495,
+          0,
+          226
+        ],
+        [
+          495,
+          1,
+          226
+        ],
+        [
+          495,
+          0,
+          225
+        ],
+        [
+          495,
+          1,
+          225
+        ],
+        [
+          495,
+          0,
+          225
+        ],
+        [
+          495,
+          1,
+          225
+        ],
+        [
+          495,
+          0,
+          224
+        ],
+        [
+          495,
+          1,
+          224
+        ],
+        [
+          495,
+          0,
+          223
+        ],
+        [
+          495,
+          1,
+          223
+        ],
+        [
+          495,
+          0,
+          223
+        ],
+        [
+          495,
+          1,
+          223
+        ],
+        [
+          498,
+          0,
+          223
+        ],
+        [
+          498,
+          1,
+          223
+        ],
+        [
+          498,
+          0,
+          223
+        ],
+        [
+          498,
+          1,
+          223
+        ],
+        [
+          498,
+          0,
+          222
+        ],
+        [
+          498,
+          1,
+          222
+        ],
+        [
+          498,
+          0,
+          221
+        ],
+        [
+          498,
+          1,
+          221
+        ],
+        [
+          498,
+          0,
+          220
+        ],
+        [
+          498,
+          1,
+          220
+        ],
+        [
+          498,
+          0,
+          220
+        ],
+        [
+          498,
+          1,
+          220
+        ],
+        [
+          498,
+          0,
+          219
+        ],
+        [
+          498,
+          1,
+          219
+        ],
+        [
+          498,
+          0,
+          218
+        ],
+        [
+          498,
+          1,
+          218
+        ],
+        [
+          499,
+          0,
+          218
+        ],
+        [
+          499,
+          1,
+          218
+        ],
+        [
+          499,
+          0,
+          217
+        ],
+        [
+          499,
+          1,
+          217
+        ],
+        [
+          499,
+          0,
+          216
+        ],
+        [
+          499,
+          1,
+          216
+        ],
+        [
+          499,
+          0,
+          215
+        ],
+        [
+          499,
+          1,
+          215
+        ],
+        [
+          505,
+          0,
+          218
+        ],
+        [
+          505,
+          1,
+          218
+        ],
+        [
+          505,
+          0,
+          217
+        ],
+        [
+          505,
+          1,
+          217
+        ],
+        [
+          505,
+          0,
+          217
+        ],
+        [
+          505,
+          1,
+          217
+        ],
+        [
+          505,
+          0,
+          216
+        ],
+        [
+          505,
+          1,
+          216
+        ],
+        [
+          505,
+          0,
+          215
+        ],
+        [
+          505,
+          1,
+          215
+        ],
+        [
+          505,
+          0,
+          214
+        ],
+        [
+          505,
+          1,
+          214
+        ],
+        [
+          517,
+          0,
+          218
+        ],
+        [
+          517,
+          1,
+          218
+        ],
+        [
+          517,
+          0,
+          217
+        ],
+        [
+          517,
+          1,
+          217
+        ],
+        [
+          517,
+          0,
+          217
+        ],
+        [
+          517,
+          1,
+          217
+        ],
+        [
+          517,
+          0,
+          216
+        ],
+        [
+          517,
+          1,
+          216
+        ],
+        [
+          517,
+          0,
+          215
+        ],
+        [
+          517,
+          1,
+          215
+        ],
+        [
+          517,
+          0,
+          214
+        ],
+        [
+          517,
+          1,
+          214
+        ],
+        [
+          517,
+          0,
+          214
+        ],
+        [
+          517,
+          1,
+          214
+        ],
+        [
+          517,
+          0,
+          213
+        ],
+        [
+          517,
+          1,
+          213
+        ],
+        [
+          523,
+          0,
+          214
+        ],
+        [
+          523,
+          1,
+          214
+        ],
+        [
+          523,
+          0,
+          213
+        ],
+        [
+          523,
+          1,
+          213
+        ],
+        [
+          523,
+          0,
+          212
+        ],
+        [
+          523,
+          1,
+          212
+        ],
+        [
+          523,
+          0,
+          211
+        ],
+        [
+          523,
+          1,
+          211
+        ],
+        [
+          523,
+          0,
+          210
+        ],
+        [
+          523,
+          1,
+          210
+        ],
+        [
+          523,
+          0,
+          210
+        ],
+        [
+          523,
+          1,
+          210
+        ],
+        [
+          523,
+          0,
+          209
+        ],
+        [
+          523,
+          1,
+          209
+        ],
+        [
+          523,
+          0,
+          208
+        ],
+        [
+          523,
+          1,
+          208
+        ],
+        [
+          523,
+          0,
+          207
+        ],
+        [
+          523,
+          1,
+          207
+        ],
+        [
+          523,
+          0,
+          206
+        ],
+        [
+          523,
+          1,
+          206
+        ],
+        [
+          523,
+          0,
+          206
+        ],
+        [
+          523,
+          1,
+          206
+        ],
+        [
+          523,
+          0,
+          205
+        ],
+        [
+          523,
+          1,
+          205
+        ],
+        [
+          523,
+          0,
+          204
+        ],
+        [
+          523,
+          1,
+          204
+        ],
+        [
+          523,
+          0,
+          203
+        ],
+        [
+          523,
+          1,
+          203
+        ],
+        [
+          523,
+          0,
+          202
+        ],
+        [
+          523,
+          1,
+          202
+        ],
+        [
+          523,
+          0,
+          201
+        ],
+        [
+          523,
+          1,
+          201
+        ],
+        [
+          528,
+          0,
+          202
+        ],
+        [
+          528,
+          1,
+          202
+        ],
+        [
+          528,
+          0,
+          201
+        ],
+        [
+          528,
+          1,
+          201
+        ],
+        [
+          528,
+          0,
+          201
+        ],
+        [
+          528,
+          1,
+          201
+        ],
+        [
+          528,
+          0,
+          200
+        ],
+        [
+          528,
+          1,
+          200
+        ],
+        [
+          528,
+          0,
+          199
+        ],
+        [
+          528,
+          1,
+          199
+        ],
+        [
+          528,
+          0,
+          198
+        ],
+        [
+          528,
+          1,
+          198
+        ],
+        [
+          528,
+          0,
+          197
+        ],
+        [
+          528,
+          1,
+          197
+        ],
+        [
+          528,
+          0,
+          196
+        ],
+        [
+          528,
+          1,
+          196
+        ],
+        [
+          528,
+          0,
+          195
+        ],
+        [
+          528,
+          1,
+          195
+        ],
+        [
+          528,
+          0,
+          194
+        ],
+        [
+          528,
+          1,
+          194
+        ],
+        [
+          528,
+          0,
+          193
+        ],
+        [
+          528,
+          1,
+          193
+        ],
+        [
+          528,
+          0,
+          192
+        ],
+        [
+          528,
+          1,
+          192
+        ],
+        [
+          528,
+          0,
+          191
+        ],
+        [
+          528,
+          1,
+          191
+        ],
+        [
+          542,
+          0,
+          198
+        ],
+        [
+          542,
+          1,
+          198
+        ],
+        [
+          542,
+          0,
+          197
+        ],
+        [
+          542,
+          1,
+          197
+        ],
+        [
+          542,
+          0,
+          197
+        ],
+        [
+          542,
+          1,
+          197
+        ],
+        [
+          542,
+          0,
+          196
+        ],
+        [
+          542,
+          1,
+          196
+        ],
+        [
+          543,
+          0,
+          195
+        ],
+        [
+          543,
+          1,
+          195
+        ],
+        [
+          543,
+          0,
+          194
+        ],
+        [
+          543,
+          1,
+          194
+        ],
+        [
+          543,
+          0,
+          193
+        ],
+        [
+          543,
+          1,
+          193
+        ],
+        [
+          543,
+          0,
+          192
+        ],
+        [
+          543,
+          1,
+          192
+        ],
+        [
+          552,
+          0,
+          195
+        ],
+        [
+          552,
+          1,
+          195
+        ],
+        [
+          552,
+          0,
+          194
+        ],
+        [
+          552,
+          1,
+          194
+        ],
+        [
+          552,
+          0,
+          193
+        ],
+        [
+          552,
+          1,
+          193
+        ],
+        [
+          552,
+          0,
+          192
+        ],
+        [
+          552,
+          1,
+          192
+        ],
+        [
+          552,
+          0,
+          191
+        ],
+        [
+          552,
+          1,
+          191
+        ],
+        [
+          552,
+          0,
+          190
+        ],
+        [
+          552,
+          1,
+          190
+        ],
+        [
+          552,
+          0,
+          189
+        ],
+        [
+          552,
+          1,
+          189
+        ],
+        [
+          552,
+          0,
+          188
+        ],
+        [
+          552,
+          1,
+          188
+        ],
+        [
+          552,
+          0,
+          187
+        ],
+        [
+          552,
+          1,
+          187
+        ],
+        [
+          552,
+          0,
+          186
+        ],
+        [
+          552,
+          1,
+          186
+        ],
+        [
+          552,
+          0,
+          185
+        ],
+        [
+          552,
+          1,
+          185
+        ],
+        [
+          552,
+          0,
+          183
+        ],
+        [
+          552,
+          1,
+          183
+        ],
+        [
+          552,
+          0,
+          182
+        ],
+        [
+          552,
+          1,
+          182
+        ],
+        [
+          557,
+          0,
+          186
+        ],
+        [
+          557,
+          1,
+          186
+        ],
+        [
+          557,
+          0,
+          185
+        ],
+        [
+          557,
+          1,
+          185
+        ],
+        [
+          557,
+          0,
+          184
+        ],
+        [
+          557,
+          1,
+          184
+        ],
+        [
+          557,
+          0,
+          183
+        ],
+        [
+          557,
+          1,
+          183
+        ],
+        [
+          566,
+          0,
+          186
+        ],
+        [
+          566,
+          1,
+          186
+        ],
+        [
+          566,
+          0,
+          185
+        ],
+        [
+          566,
+          1,
+          185
+        ],
+        [
+          566,
+          0,
+          184
+        ],
+        [
+          566,
+          1,
+          184
+        ],
+        [
+          566,
+          0,
+          183
+        ],
+        [
+          566,
+          1,
+          183
+        ],
+        [
+          577,
+          0,
+          189
+        ],
+        [
+          577,
+          1,
+          189
+        ],
+        [
+          577,
+          0,
+          188
+        ],
+        [
+          577,
+          1,
+          188
+        ],
+        [
+          577,
+          0,
+          187
+        ],
+        [
+          577,
+          1,
+          187
+        ],
+        [
+          577,
+          0,
+          186
+        ],
+        [
+          577,
+          1,
+          186
+        ],
+        [
+          577,
+          0,
+          185
+        ],
+        [
+          577,
+          1,
+          185
+        ],
+        [
+          577,
+          0,
+          184
+        ],
+        [
+          577,
+          1,
+          184
+        ],
+        [
+          577,
+          0,
+          183
+        ],
+        [
+          577,
+          1,
+          183
+        ],
+        [
+          577,
+          0,
+          182
+        ],
+        [
+          577,
+          1,
+          182
+        ],
+        [
+          577,
+          0,
+          181
+        ],
+        [
+          577,
+          1,
+          181
+        ],
+        [
+          577,
+          0,
+          179
+        ],
+        [
+          577,
+          1,
+          179
+        ],
+        [
+          577,
+          0,
+          178
+        ],
+        [
+          577,
+          1,
+          178
+        ],
+        [
+          577,
+          0,
+          177
+        ],
+        [
+          577,
+          1,
+          177
+        ],
+        [
+          577,
+          0,
+          176
+        ],
+        [
+          577,
+          1,
+          176
+        ],
+        [
+          577,
+          0,
+          174
+        ],
+        [
+          577,
+          1,
+          174
+        ],
+        [
+          577,
+          0,
+          173
+        ],
+        [
+          577,
+          1,
+          173
+        ],
+        [
+          577,
+          0,
+          172
+        ],
+        [
+          577,
+          1,
+          172
+        ],
+        [
+          577,
+          0,
+          170
+        ],
+        [
+          577,
+          1,
+          170
+        ],
+        [
+          577,
+          0,
+          169
+        ],
+        [
+          577,
+          1,
+          169
+        ],
+        [
+          577,
+          0,
+          168
+        ],
+        [
+          577,
+          1,
+          168
+        ],
+        [
+          577,
+          0,
+          166
+        ],
+        [
+          577,
+          1,
+          166
+        ],
+        [
+          577,
+          0,
+          164
+        ],
+        [
+          577,
+          1,
+          164
+        ],
+        [
+          600,
+          0,
+          180
+        ],
+        [
+          600,
+          1,
+          180
+        ],
+        [
+          600,
+          0,
+          179
+        ],
+        [
+          600,
+          1,
+          179
+        ],
+        [
+          600,
+          0,
+          178
+        ],
+        [
+          600,
+          1,
+          178
+        ],
+        [
+          600,
+          0,
+          176
+        ],
+        [
+          600,
+          1,
+          176
+        ],
+        [
+          600,
+          0,
+          175
+        ],
+        [
+          600,
+          1,
+          175
+        ],
+        [
+          600,
+          0,
+          174
+        ],
+        [
+          600,
+          0,
+          173
+        ],
+        [
+          605,
+          0,
+          179
+        ],
+        [
+          605,
+          1,
+          179
+        ],
+        [
+          605,
+          0,
+          178
+        ],
+        [
+          605,
+          1,
+          178
+        ],
+        [
+          605,
+          0,
+          177
+        ],
+        [
+          605,
+          1,
+          177
+        ],
+        [
+          605,
+          0,
+          176
+        ],
+        [
+          605,
+          1,
+          176
+        ],
+        [
+          625,
+          0,
+          189
+        ],
+        [
+          625,
+          1,
+          189
+        ],
+        [
+          625,
+          0,
+          188
+        ],
+        [
+          625,
+          1,
+          188
+        ],
+        [
+          625,
+          0,
+          187
+        ],
+        [
+          625,
+          1,
+          187
+        ],
+        [
+          625,
+          0,
+          186
+        ],
+        [
+          625,
+          1,
+          186
+        ],
+        [
+          625,
+          0,
+          185
+        ],
+        [
+          625,
+          1,
+          185
+        ],
+        [
+          625,
+          0,
+          184
+        ],
+        [
+          625,
+          1,
+          184
+        ],
+        [
+          625,
+          0,
+          183
+        ],
+        [
+          625,
+          1,
+          183
+        ],
+        [
+          625,
+          0,
+          182
+        ],
+        [
+          625,
+          1,
+          182
+        ],
+        [
+          625,
+          0,
+          181
+        ],
+        [
+          625,
+          1,
+          181
+        ],
+        [
+          625,
+          0,
+          179
+        ],
+        [
+          625,
+          1,
+          179
+        ],
+        [
+          625,
+          0,
+          178
+        ],
+        [
+          625,
+          1,
+          178
+        ],
+        [
+          625,
+          0,
+          177
+        ],
+        [
+          625,
+          1,
+          177
+        ],
+        [
+          625,
+          0,
+          176
+        ],
+        [
+          625,
+          1,
+          176
+        ],
+        [
+          625,
+          0,
+          174
+        ],
+        [
+          625,
+          1,
+          174
+        ],
+        [
+          625,
+          0,
+          173
+        ],
+        [
+          625,
+          1,
+          173
+        ],
+        [
+          625,
+          0,
+          172
+        ],
+        [
+          625,
+          1,
+          172
+        ],
+        [
+          625,
+          0,
+          170
+        ],
+        [
+          625,
+          1,
+          170
+        ],
+        [
+          625,
+          0,
+          169
+        ],
+        [
+          625,
+          1,
+          169
+        ],
+        [
+          625,
+          0,
+          168
+        ],
+        [
+          625,
+          1,
+          168
+        ],
+        [
+          625,
+          0,
+          166
+        ],
+        [
+          625,
+          1,
+          166
+        ],
+        [
+          625,
+          0,
+          164
+        ],
+        [
+          625,
+          1,
+          164
+        ],
+        [
+          668,
+          0,
+          194
+        ],
+        [
+          668,
+          1,
+          194
+        ],
+        [
+          668,
+          0,
+          193
+        ],
+        [
+          668,
+          1,
+          193
+        ],
+        [
+          668,
+          0,
+          192
+        ],
+        [
+          668,
+          1,
+          192
+        ],
+        [
+          668,
+          0,
+          191
+        ],
+        [
+          668,
+          1,
+          191
+        ],
+        [
+          668,
+          0,
+          190
+        ],
+        [
+          668,
+          1,
+          190
+        ],
+        [
+          668,
+          0,
+          189
+        ],
+        [
+          668,
+          1,
+          189
+        ],
+        [
+          672,
+          0,
+          190
+        ],
+        [
+          672,
+          1,
+          190
+        ],
+        [
+          672,
+          0,
+          189
+        ],
+        [
+          672,
+          1,
+          189
+        ],
+        [
+          672,
+          0,
+          188
+        ],
+        [
+          672,
+          1,
+          188
+        ],
+        [
+          672,
+          0,
+          187
+        ],
+        [
+          672,
+          1,
+          187
+        ],
+        [
+          672,
+          0,
+          186
+        ],
+        [
+          672,
+          1,
+          186
+        ],
+        [
+          672,
+          0,
+          185
+        ],
+        [
+          672,
+          1,
+          185
+        ],
+        [
+          672,
+          0,
+          184
+        ],
+        [
+          672,
+          1,
+          184
+        ],
+        [
+          672,
+          0,
+          183
+        ],
+        [
+          672,
+          1,
+          183
+        ],
+        [
+          672,
+          0,
+          182
+        ],
+        [
+          672,
+          1,
+          182
+        ],
+        [
+          672,
+          0,
+          181
+        ],
+        [
+          672,
+          1,
+          181
+        ],
+        [
+          672,
+          0,
+          179
+        ],
+        [
+          672,
+          1,
+          179
+        ],
+        [
+          672,
+          0,
+          178
+        ],
+        [
+          672,
+          1,
+          178
+        ],
+        [
+          672,
+          0,
+          177
+        ],
+        [
+          672,
+          1,
+          177
+        ],
+        [
+          672,
+          0,
+          176
+        ],
+        [
+          672,
+          1,
+          176
+        ],
+        [
+          672,
+          0,
+          174
+        ],
+        [
+          672,
+          1,
+          174
+        ],
+        [
+          672,
+          0,
+          173
+        ],
+        [
+          672,
+          1,
+          173
+        ],
+        [
+          672,
+          0,
+          172
+        ],
+        [
+          672,
+          1,
+          172
+        ],
+        [
+          672,
+          0,
+          170
+        ],
+        [
+          672,
+          1,
+          170
+        ],
+        [
+          672,
+          0,
+          169
+        ],
+        [
+          672,
+          1,
+          169
+        ],
+        [
+          672,
+          0,
+          168
+        ],
+        [
+          672,
+          1,
+          168
+        ]
+      ],
+      "shops": [
+        "FARMERS_MARKET",
+        "FARMERS_MARKET",
+        "ICE_CREAM_SHOP",
+        "BAKERY",
+        "BRUNCH_SPOT",
+        "YARN_STORE",
+        "BAKERY",
+        "BRUNCH_SPOT"
+      ]
+    }
+  ]
+}

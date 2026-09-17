@@ -1,0 +1,8 @@
+{
+  "base_sha256": "1a9c3a3ef6902d958d6269421a196aa683492e927f660f566c3029698498bf04",
+  "main_sha256": "b45bbb7272a39c1d9cc3ed296229b3ce1ef75dcc83d9244a4efd7a78c155c109",
+  "source_episode": 110040845,
+  "activation": "opponent cash 2865 at step1, 152 at step2; FM/FM prefix and exact worker positions at step145",
+  "market_override_steps": "150-718",
+  "timing_probe": "move 12 wool from step 436 to step 435"
+}
