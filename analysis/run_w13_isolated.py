@@ -6,7 +6,6 @@ agents. Use engine 1.32.7. Each JSON output is exclusive to one experiment.
 """
 from __future__ import annotations
 import argparse
-import ast
 import collections
 import hashlib
 import importlib.metadata
@@ -18,11 +17,16 @@ import time
 import traceback
 
 def submission_entrypoint(namespace, source):
-    """Match Kaggle's last top-level def, never bypass outer router wrappers."""
-    definitions = [n for n in ast.parse(source).body if isinstance(n, ast.FunctionDef)]
-    if not definitions:
-        raise ValueError('Submission has no top-level function')
-    return namespace[definitions[-1].name]
+    """Match kaggle_environments.agent.get_last_callable exactly.
+
+    Kaggle selects by namespace insertion order, not by the final AST def. A
+    wrapper that rebinds an existing ``agent`` key must pop/reinsert it after
+    declaring any helper callables, or Kaggle can execute the helper instead.
+    """
+    callables = [value for value in namespace.values() if callable(value)]
+    if not callables:
+        raise ValueError('Submission has no callable')
+    return callables[-1]
 
 def child(connection, path):
     namespace = {'__name__':'w13_isolated_agent', '__file__':path}

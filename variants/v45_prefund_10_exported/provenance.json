@@ -1,0 +1,6 @@
+{
+  "base_sha256": "baeffa728ffdad24db7799d8962e2328ae606d87c77032bcac33654d13fc18a0",
+  "main_sha256": "1a9c3a3ef6902d958d6269421a196aa683492e927f660f566c3029698498bf04",
+  "change": "append agent=globals().pop('agent') so Kaggle selects the policy instead of _local_prefund_action",
+  "broken_submission": 56294314
+}

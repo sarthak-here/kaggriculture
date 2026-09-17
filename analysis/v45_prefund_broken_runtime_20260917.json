@@ -1,0 +1,3854 @@
+{
+  "a": "variants/v45_prefund_10/main.py",
+  "b": "variants/v45_proactive/main.py",
+  "engine": "1.32.7",
+  "a_sha256": "baeffa728ffdad24db7799d8962e2328ae606d87c77032bcac33654d13fc18a0",
+  "b_sha256": "831dcc2cba277f12947966a38e25f04fb7854c3116f9669a04c0d00cf611b87f",
+  "runner_sha256": "a763e6bab93df1e942e20e3cf1507a6f07023d565c08135489e246732bd93e52",
+  "rows": [
+    {
+      "seed": 39172000,
+      "order": 0,
+      "status": "DONE",
+      "a": 3000.0,
+      "b": 171791.0,
+      "a_checkpoints": {
+        "1": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "2": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "17": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "24": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "25": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "48": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "72": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "144": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        }
+      },
+      "b_checkpoints": {
+        "1": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "2": {
+          "money": 1054.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        },
+        "17": {
+          "money": 214.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 1,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "inventories": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        },
+        "24": {
+          "money": 24.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "25": {
+          "money": 20.0,
+          "hands": 3,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "inventories": [
+            {
+              "WHEAT": 1
+            },
+            {},
+            {},
+            {}
+          ]
+        },
+        "48": {
+          "money": 93.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "72": {
+          "money": 209.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "COW": 3,
+            "SHEEP": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "144": {
+          "money": 852.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "COW": 4,
+            "SHEEP": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        }
+      },
+      "a_final_farm": {
+        "quadrants": 1,
+        "animals": {}
+      },
+      "b_final_farm": {
+        "quadrants": 4,
+        "animals": {
+          "GOOSE": 5,
+          "COW": 6,
+          "SHEEP": 6
+        }
+      },
+      "a_telemetry": {},
+      "b_telemetry": {
+        "open_turns": 1,
+        "open_errors": 0,
+        "race_clone_turns": 0,
+        "race_horizon_turns": 0,
+        "race_lost_races": 0,
+        "race_escalations": 0,
+        "race_errors": 0,
+        "overflow_turns": 0,
+        "overflow_units_reclaimed": 0,
+        "overflow_quote_exposure": 0,
+        "overflow_contract_checks": 0,
+        "overflow_contract_errors": 0,
+        "atomic_turns": 0,
+        "atomic_kept_requests": 0,
+        "atomic_removed_requests": 0,
+        "seed_prefund_turns": 0,
+        "seed_prefund_units": 0,
+        "targeted_errors": 0,
+        "service_requested_units": 0,
+        "service_confirmed_units": 0,
+        "service_idle_preloads": 0,
+        "service_swaps_started": 0,
+        "service_swaps_completed": 0,
+        "service_capacity_declines": 0,
+        "service_arrival_errors": 0,
+        "service_swap_errors": 0,
+        "sale_credit_orders": 0,
+        "sale_credit_lower_bound": 0,
+        "sale_credit_grain_units": 0,
+        "sale_credit_confirmed_units": 0,
+        "sale_credit_errors": 0,
+        "service_errors": 0,
+        "last_hour_plants_dropped": 1,
+        "priority_grain_orders": 0,
+        "priority_grain_units": 0,
+        "priority_grain_confirmed": 0,
+        "priority_grain_shortfalls": 0,
+        "priority_contract_errors": 0,
+        "opening_seed_budget_units": 0,
+        "opening_seed_budget_cost": 0,
+        "opening_atomic_dropped": 0,
+        "opening_atomic_rescued_requests": 0,
+        "opening_atomic_rescued_confirmed": 0,
+        "opening_atomic_plant_errors": 0,
+        "opening_day1_cash": 24.0,
+        "opening_day1_hires_requested": 3,
+        "opening_day1_hires_confirmed": 3,
+        "opening_day1_hire_shortfalls": 0,
+        "opening_contract_errors": 0,
+        "supply_guard_changes": 0,
+        "supply_grain_protected": 0,
+        "supply_buy_units": 0,
+        "supply_early_changes": 0,
+        "supply_early_units": 0,
+        "supply_prefund_changes": 0,
+        "supply_prefund_units": 0,
+        "supply_slot_declines": 0,
+        "supply_capacity_declines": 0,
+        "supply_budget_declines": 1,
+        "supply_errors": 0,
+        "replenishment_trim_turns": 0,
+        "replenishment_trim_units": 0,
+        "replenishment_errors": 0,
+        "feed_skips": 8,
+        "fert_sale_turns": 0,
+        "fert_sale_units": 0,
+        "economic_overlay_errors": 0,
+        "parent_input_guard_turns": 0,
+        "parent_input_guard_extra_units": 0,
+        "parent_input_requests": 10,
+        "parent_input_confirmed": 10,
+        "parent_input_shortfalls": 0,
+        "parent_input_errors": 0,
+        "parent_input_capacity_declines": 1,
+        "warehouse_changed_turns": 1,
+        "warehouse_extra_sales": 7,
+        "warehouse_projected_unresolved": 4,
+        "warehouse_errors": 0,
+        "input_hire_requests": 0,
+        "input_confirmed_hires": 0,
+        "input_hire_errors": 0,
+        "input_purchase_requests": 0,
+        "input_loaded_units": 0,
+        "input_stock_shortfalls": 0,
+        "input_application_requests": 0,
+        "input_confirmed_applications": 0,
+        "input_application_errors": 0,
+        "input_errors": 0,
+        "input_forecast_wheat": 0,
+        "input_forecast_carrot": 0,
+        "sale_reserved_units": 309,
+        "sale_reservations": 78,
+        "sale_errors": 0,
+        "commitments": 1,
+        "hire_requests": 21,
+        "confirmed_workers": 21,
+        "hire_shortfalls": 0,
+        "plant_requests": 10,
+        "confirmed_plants": 10,
+        "water_requests": 110,
+        "fertilize_requests": 10,
+        "harvest_requests": 40,
+        "confirmed_harvest_units": 60,
+        "drop_requests": 0,
+        "tomato_sale_requests": 50,
+        "budget_declines": 0,
+        "lost_plants": 0,
+        "extra_fertilizer_days": 0,
+        "reordered_market_turns": 125,
+        "errors": 0,
+        "cattle_confirmed": 0,
+        "cattle_reserved": 0,
+        "cattle_requested": 0,
+        "cattle_failed_purchase_units": 0,
+        "cattle_picked": 0,
+        "cattle_placed": 0,
+        "cattle_failed_placements": 0,
+        "cattle_extra_milk_harvested": 0,
+        "cattle_extra_milk_sale_requests": 0,
+        "cattle_milk_credit": 0,
+        "cattle_carried_pending": 0,
+        "quote_reordered_turns": 40,
+        "three_turn_calls": 0,
+        "nocturne_errors": 0,
+        "probe_matches": 0,
+        "probe_four_turn_calls": 0,
+        "probe_errors": 0,
+        "release_errors": 0,
+        "sheep_commit_requests": 0,
+        "sheep_committed": 0,
+        "sheep_hire_requests": 0,
+        "sheep_workers_confirmed": 0,
+        "sheep_hire_shortfalls": 0,
+        "sheep_budget_declines": 0,
+        "sheep_capacity_declines": 0,
+        "sheep_purchase_shortfalls": 0,
+        "sheep_feed_buy_requests": 0,
+        "sheep_wool_harvested": 0,
+        "sheep_fert_collected": 0,
+        "sheep_extra_wool_sales": 0,
+        "sheep_extra_fert_sales": 0,
+        "sheep_rescue_feed_requests": 0,
+        "labor_requests": 2,
+        "labor_hires_avoided": 2,
+        "labor_spawn_errors": 0,
+        "labor_confirmed": 2,
+        "labor_day26": 0,
+        "labor_day27": 1,
+        "labor_day28": 1
+      },
+      "a_fills": {},
+      "b_fills": {
+        "BUY_PRODUCT:WHEAT:units": 1563,
+        "BUY_PRODUCT:WHEAT:value": 64713,
+        "SELL:WHEAT:units": 1757,
+        "SELL:WHEAT:value": 75061,
+        "BUY_ANIMAL:COW:units": 6,
+        "BUY_ANIMAL:COW:value": 2400,
+        "BUY_ANIMAL:SHEEP:units": 6,
+        "BUY_ANIMAL:SHEEP:value": 3000,
+        "BUY_SEED:MELON:units": 12,
+        "BUY_SEED:MELON:value": 960,
+        "BUY_SEED:WHEAT:units": 163,
+        "BUY_SEED:WHEAT:value": 1630,
+        "SELL:FERTILIZER:units": 339,
+        "SELL:FERTILIZER:value": 24069,
+        "BUY_SEED:STRAWBERRY:units": 33,
+        "BUY_SEED:STRAWBERRY:value": 3300,
+        "SELL:WOOL:units": 154,
+        "SELL:WOOL:value": 20593,
+        "BUY_ANIMAL:GOOSE:units": 5,
+        "BUY_ANIMAL:GOOSE:value": 1500,
+        "BUY_PRODUCT:FERTILIZER:units": 72,
+        "BUY_PRODUCT:FERTILIZER:value": 4471,
+        "SELL:MILK:units": 192,
+        "SELL:MILK:value": 40070,
+        "SELL:MELON:units": 72,
+        "SELL:MELON:value": 17440,
+        "SELL:EGG:units": 145,
+        "SELL:EGG:value": 7747,
+        "SELL:STRAWBERRY:units": 251,
+        "SELL:STRAWBERRY:value": 66587,
+        "BUY_SEED:TOMATO:units": 10,
+        "BUY_SEED:TOMATO:value": 500,
+        "BUY_SEED:CARROT:units": 31,
+        "BUY_SEED:CARROT:value": 620,
+        "SELL:TOMATO:units": 60,
+        "SELL:TOMATO:value": 9951,
+        "SELL:CARROT:units": 91,
+        "SELL:CARROT:value": 4924
+      },
+      "a_workers_sha256": "190312301ecc5315235163844c329ee901ef510af58fdccedf78180f14c35459",
+      "b_workers_sha256": "906319475d0cf86a99374e1d5a123d4275b557e40908e3c87491ed0706b353ea",
+      "strawberry_fills": [
+        [
+          382,
+          1,
+          246
+        ],
+        [
+          382,
+          1,
+          246
+        ],
+        [
+          382,
+          1,
+          246
+        ],
+        [
+          382,
+          1,
+          245
+        ],
+        [
+          382,
+          1,
+          245
+        ],
+        [
+          382,
+          1,
+          245
+        ],
+        [
+          382,
+          1,
+          245
+        ],
+        [
+          382,
+          1,
+          244
+        ],
+        [
+          398,
+          1,
+          250
+        ],
+        [
+          398,
+          1,
+          250
+        ],
+        [
+          398,
+          1,
+          249
+        ],
+        [
+          398,
+          1,
+          249
+        ],
+        [
+          402,
+          1,
+          250
+        ],
+        [
+          402,
+          1,
+          250
+        ],
+        [
+          402,
+          1,
+          250
+        ],
+        [
+          402,
+          1,
+          249
+        ],
+        [
+          402,
+          1,
+          249
+        ],
+        [
+          402,
+          1,
+          249
+        ],
+        [
+          403,
+          1,
+          248
+        ],
+        [
+          403,
+          1,
+          248
+        ],
+        [
+          403,
+          1,
+          248
+        ],
+        [
+          403,
+          1,
+          248
+        ],
+        [
+          403,
+          1,
+          247
+        ],
+        [
+          403,
+          1,
+          247
+        ],
+        [
+          427,
+          1,
+          255
+        ],
+        [
+          427,
+          1,
+          255
+        ],
+        [
+          427,
+          1,
+          255
+        ],
+        [
+          427,
+          1,
+          254
+        ],
+        [
+          427,
+          1,
+          254
+        ],
+        [
+          427,
+          1,
+          254
+        ],
+        [
+          429,
+          1,
+          255
+        ],
+        [
+          429,
+          1,
+          255
+        ],
+        [
+          429,
+          1,
+          254
+        ],
+        [
+          429,
+          1,
+          254
+        ],
+        [
+          429,
+          1,
+          254
+        ],
+        [
+          429,
+          1,
+          254
+        ],
+        [
+          429,
+          1,
+          253
+        ],
+        [
+          429,
+          1,
+          253
+        ],
+        [
+          429,
+          1,
+          253
+        ],
+        [
+          429,
+          1,
+          253
+        ],
+        [
+          450,
+          1,
+          259
+        ],
+        [
+          450,
+          1,
+          259
+        ],
+        [
+          450,
+          1,
+          259
+        ],
+        [
+          450,
+          1,
+          258
+        ],
+        [
+          450,
+          1,
+          258
+        ],
+        [
+          450,
+          1,
+          258
+        ],
+        [
+          452,
+          1,
+          258
+        ],
+        [
+          452,
+          1,
+          257
+        ],
+        [
+          452,
+          1,
+          257
+        ],
+        [
+          452,
+          1,
+          257
+        ],
+        [
+          452,
+          1,
+          256
+        ],
+        [
+          452,
+          1,
+          256
+        ],
+        [
+          452,
+          1,
+          256
+        ],
+        [
+          452,
+          1,
+          256
+        ],
+        [
+          452,
+          1,
+          255
+        ],
+        [
+          452,
+          1,
+          255
+        ],
+        [
+          465,
+          1,
+          260
+        ],
+        [
+          465,
+          1,
+          260
+        ],
+        [
+          465,
+          1,
+          260
+        ],
+        [
+          465,
+          1,
+          260
+        ],
+        [
+          465,
+          1,
+          259
+        ],
+        [
+          465,
+          1,
+          259
+        ],
+        [
+          465,
+          1,
+          259
+        ],
+        [
+          465,
+          1,
+          259
+        ],
+        [
+          473,
+          1,
+          261
+        ],
+        [
+          473,
+          1,
+          261
+        ],
+        [
+          477,
+          1,
+          262
+        ],
+        [
+          477,
+          1,
+          261
+        ],
+        [
+          477,
+          1,
+          261
+        ],
+        [
+          477,
+          1,
+          261
+        ],
+        [
+          477,
+          1,
+          261
+        ],
+        [
+          477,
+          1,
+          260
+        ],
+        [
+          477,
+          1,
+          260
+        ],
+        [
+          477,
+          1,
+          260
+        ],
+        [
+          489,
+          1,
+          264
+        ],
+        [
+          489,
+          1,
+          263
+        ],
+        [
+          489,
+          1,
+          263
+        ],
+        [
+          489,
+          1,
+          263
+        ],
+        [
+          489,
+          1,
+          263
+        ],
+        [
+          489,
+          1,
+          262
+        ],
+        [
+          496,
+          1,
+          263
+        ],
+        [
+          496,
+          1,
+          263
+        ],
+        [
+          496,
+          1,
+          263
+        ],
+        [
+          496,
+          1,
+          263
+        ],
+        [
+          496,
+          1,
+          262
+        ],
+        [
+          496,
+          1,
+          262
+        ],
+        [
+          497,
+          1,
+          263
+        ],
+        [
+          497,
+          1,
+          263
+        ],
+        [
+          497,
+          1,
+          263
+        ],
+        [
+          497,
+          1,
+          262
+        ],
+        [
+          498,
+          1,
+          262
+        ],
+        [
+          498,
+          1,
+          262
+        ],
+        [
+          498,
+          1,
+          262
+        ],
+        [
+          498,
+          1,
+          261
+        ],
+        [
+          502,
+          1,
+          262
+        ],
+        [
+          502,
+          1,
+          262
+        ],
+        [
+          502,
+          1,
+          262
+        ],
+        [
+          502,
+          1,
+          262
+        ],
+        [
+          505,
+          1,
+          263
+        ],
+        [
+          505,
+          1,
+          263
+        ],
+        [
+          505,
+          1,
+          262
+        ],
+        [
+          505,
+          1,
+          262
+        ],
+        [
+          505,
+          1,
+          262
+        ],
+        [
+          505,
+          1,
+          262
+        ],
+        [
+          517,
+          1,
+          265
+        ],
+        [
+          517,
+          1,
+          265
+        ],
+        [
+          517,
+          1,
+          265
+        ],
+        [
+          517,
+          1,
+          264
+        ],
+        [
+          517,
+          1,
+          264
+        ],
+        [
+          517,
+          1,
+          264
+        ],
+        [
+          517,
+          1,
+          264
+        ],
+        [
+          517,
+          1,
+          263
+        ],
+        [
+          523,
+          1,
+          264
+        ],
+        [
+          523,
+          1,
+          264
+        ],
+        [
+          523,
+          1,
+          264
+        ],
+        [
+          523,
+          1,
+          264
+        ],
+        [
+          523,
+          1,
+          263
+        ],
+        [
+          523,
+          1,
+          263
+        ],
+        [
+          523,
+          1,
+          263
+        ],
+        [
+          523,
+          1,
+          263
+        ],
+        [
+          523,
+          1,
+          262
+        ],
+        [
+          523,
+          1,
+          262
+        ],
+        [
+          523,
+          1,
+          262
+        ],
+        [
+          523,
+          1,
+          262
+        ],
+        [
+          523,
+          1,
+          261
+        ],
+        [
+          523,
+          1,
+          261
+        ],
+        [
+          523,
+          1,
+          261
+        ],
+        [
+          523,
+          1,
+          261
+        ],
+        [
+          528,
+          1,
+          262
+        ],
+        [
+          528,
+          1,
+          261
+        ],
+        [
+          528,
+          1,
+          261
+        ],
+        [
+          528,
+          1,
+          261
+        ],
+        [
+          528,
+          1,
+          261
+        ],
+        [
+          528,
+          1,
+          260
+        ],
+        [
+          528,
+          1,
+          260
+        ],
+        [
+          528,
+          1,
+          260
+        ],
+        [
+          528,
+          1,
+          260
+        ],
+        [
+          528,
+          1,
+          259
+        ],
+        [
+          528,
+          1,
+          259
+        ],
+        [
+          528,
+          1,
+          259
+        ],
+        [
+          528,
+          1,
+          259
+        ],
+        [
+          538,
+          1,
+          262
+        ],
+        [
+          542,
+          1,
+          263
+        ],
+        [
+          542,
+          1,
+          263
+        ],
+        [
+          542,
+          1,
+          263
+        ],
+        [
+          543,
+          1,
+          263
+        ],
+        [
+          544,
+          1,
+          262
+        ],
+        [
+          544,
+          1,
+          262
+        ],
+        [
+          544,
+          1,
+          262
+        ],
+        [
+          548,
+          1,
+          263
+        ],
+        [
+          552,
+          1,
+          264
+        ],
+        [
+          552,
+          1,
+          264
+        ],
+        [
+          552,
+          1,
+          263
+        ],
+        [
+          553,
+          1,
+          265
+        ],
+        [
+          553,
+          1,
+          264
+        ],
+        [
+          553,
+          1,
+          264
+        ],
+        [
+          553,
+          1,
+          264
+        ],
+        [
+          553,
+          1,
+          264
+        ],
+        [
+          553,
+          1,
+          263
+        ],
+        [
+          553,
+          1,
+          263
+        ],
+        [
+          553,
+          1,
+          263
+        ],
+        [
+          554,
+          1,
+          263
+        ],
+        [
+          555,
+          1,
+          262
+        ],
+        [
+          557,
+          1,
+          263
+        ],
+        [
+          557,
+          1,
+          263
+        ],
+        [
+          557,
+          1,
+          263
+        ],
+        [
+          558,
+          1,
+          263
+        ],
+        [
+          566,
+          1,
+          265
+        ],
+        [
+          566,
+          1,
+          265
+        ],
+        [
+          566,
+          1,
+          264
+        ],
+        [
+          566,
+          1,
+          264
+        ],
+        [
+          578,
+          1,
+          268
+        ],
+        [
+          578,
+          1,
+          268
+        ],
+        [
+          578,
+          1,
+          267
+        ],
+        [
+          578,
+          1,
+          267
+        ],
+        [
+          578,
+          1,
+          267
+        ],
+        [
+          578,
+          1,
+          267
+        ],
+        [
+          578,
+          1,
+          266
+        ],
+        [
+          578,
+          1,
+          266
+        ],
+        [
+          578,
+          1,
+          266
+        ],
+        [
+          578,
+          1,
+          266
+        ],
+        [
+          583,
+          1,
+          267
+        ],
+        [
+          583,
+          1,
+          267
+        ],
+        [
+          583,
+          1,
+          266
+        ],
+        [
+          583,
+          1,
+          266
+        ],
+        [
+          583,
+          1,
+          266
+        ],
+        [
+          583,
+          1,
+          266
+        ],
+        [
+          583,
+          1,
+          265
+        ],
+        [
+          583,
+          1,
+          265
+        ],
+        [
+          583,
+          1,
+          265
+        ],
+        [
+          584,
+          1,
+          265
+        ],
+        [
+          585,
+          1,
+          266
+        ],
+        [
+          597,
+          1,
+          270
+        ],
+        [
+          605,
+          1,
+          273
+        ],
+        [
+          609,
+          1,
+          274
+        ],
+        [
+          610,
+          1,
+          274
+        ],
+        [
+          610,
+          1,
+          274
+        ],
+        [
+          610,
+          1,
+          273
+        ],
+        [
+          610,
+          1,
+          273
+        ],
+        [
+          610,
+          1,
+          273
+        ],
+        [
+          610,
+          1,
+          273
+        ],
+        [
+          610,
+          1,
+          272
+        ],
+        [
+          611,
+          1,
+          272
+        ],
+        [
+          623,
+          1,
+          276
+        ],
+        [
+          642,
+          1,
+          283
+        ],
+        [
+          642,
+          1,
+          282
+        ],
+        [
+          647,
+          1,
+          284
+        ],
+        [
+          647,
+          1,
+          283
+        ],
+        [
+          647,
+          1,
+          283
+        ],
+        [
+          647,
+          1,
+          283
+        ],
+        [
+          647,
+          1,
+          283
+        ],
+        [
+          647,
+          1,
+          282
+        ],
+        [
+          647,
+          1,
+          282
+        ],
+        [
+          647,
+          1,
+          282
+        ],
+        [
+          647,
+          1,
+          282
+        ],
+        [
+          647,
+          1,
+          282
+        ],
+        [
+          647,
+          1,
+          281
+        ],
+        [
+          647,
+          1,
+          281
+        ],
+        [
+          647,
+          1,
+          281
+        ],
+        [
+          647,
+          1,
+          281
+        ],
+        [
+          647,
+          1,
+          280
+        ],
+        [
+          647,
+          1,
+          280
+        ],
+        [
+          647,
+          1,
+          280
+        ],
+        [
+          647,
+          1,
+          280
+        ],
+        [
+          647,
+          1,
+          280
+        ],
+        [
+          668,
+          1,
+          286
+        ],
+        [
+          668,
+          1,
+          286
+        ],
+        [
+          668,
+          1,
+          286
+        ],
+        [
+          668,
+          1,
+          285
+        ],
+        [
+          668,
+          1,
+          285
+        ],
+        [
+          668,
+          1,
+          285
+        ],
+        [
+          672,
+          1,
+          286
+        ],
+        [
+          672,
+          1,
+          286
+        ],
+        [
+          672,
+          1,
+          286
+        ],
+        [
+          695,
+          1,
+          293
+        ],
+        [
+          695,
+          1,
+          293
+        ],
+        [
+          695,
+          1,
+          293
+        ],
+        [
+          695,
+          1,
+          293
+        ],
+        [
+          695,
+          1,
+          292
+        ],
+        [
+          695,
+          1,
+          292
+        ],
+        [
+          695,
+          1,
+          292
+        ],
+        [
+          695,
+          1,
+          292
+        ],
+        [
+          695,
+          1,
+          292
+        ],
+        [
+          695,
+          1,
+          291
+        ],
+        [
+          695,
+          1,
+          291
+        ],
+        [
+          695,
+          1,
+          291
+        ],
+        [
+          695,
+          1,
+          291
+        ],
+        [
+          695,
+          1,
+          291
+        ],
+        [
+          695,
+          1,
+          290
+        ],
+        [
+          695,
+          1,
+          290
+        ],
+        [
+          695,
+          1,
+          290
+        ]
+      ],
+      "shops": [
+        "FARMERS_MARKET",
+        "BRUNCH_SPOT",
+        "ICE_CREAM_SHOP",
+        "FARMERS_MARKET",
+        "ICE_CREAM_SHOP",
+        "PIZZA_SHOP",
+        "YARN_STORE",
+        "BRUNCH_SPOT"
+      ]
+    },
+    {
+      "seed": 39172000,
+      "order": 1,
+      "status": "DONE",
+      "a": 3000.0,
+      "b": 171791.0,
+      "a_checkpoints": {
+        "1": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "2": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "17": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "24": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "25": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "48": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "72": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "144": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        }
+      },
+      "b_checkpoints": {
+        "1": {
+          "money": 3000.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "2": {
+          "money": 1054.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {},
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        },
+        "17": {
+          "money": 214.0,
+          "hands": 5,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 1,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "inventories": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        },
+        "24": {
+          "money": 24.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "25": {
+          "money": 20.0,
+          "hands": 3,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "inventories": [
+            {
+              "WHEAT": 1
+            },
+            {},
+            {},
+            {}
+          ]
+        },
+        "48": {
+          "money": 93.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "SHEEP": 2,
+            "COW": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "72": {
+          "money": 209.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "COW": 3,
+            "SHEEP": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        },
+        "144": {
+          "money": 852.0,
+          "hands": 0,
+          "quadrants": 1,
+          "herd": {
+            "COW": 4,
+            "SHEEP": 2
+          },
+          "seeds": {
+            "WHEAT": 0,
+            "CARROT": 0,
+            "TOMATO": 0,
+            "STRAWBERRY": 0,
+            "MELON": 0
+          },
+          "positions": [
+            [
+              4,
+              4
+            ]
+          ],
+          "inventories": [
+            {}
+          ]
+        }
+      },
+      "a_final_farm": {
+        "quadrants": 1,
+        "animals": {}
+      },
+      "b_final_farm": {
+        "quadrants": 4,
+        "animals": {
+          "GOOSE": 5,
+          "COW": 6,
+          "SHEEP": 6
+        }
+      },
+      "a_telemetry": {},
+      "b_telemetry": {
+        "open_turns": 1,
+        "open_errors": 0,
+        "race_clone_turns": 0,
+        "race_horizon_turns": 0,
+        "race_lost_races": 0,
+        "race_escalations": 0,
+        "race_errors": 0,
+        "overflow_turns": 0,
+        "overflow_units_reclaimed": 0,
+        "overflow_quote_exposure": 0,
+        "overflow_contract_checks": 0,
+        "overflow_contract_errors": 0,
+        "atomic_turns": 0,
+        "atomic_kept_requests": 0,
+        "atomic_removed_requests": 0,
+        "seed_prefund_turns": 0,
+        "seed_prefund_units": 0,
+        "targeted_errors": 0,
+        "service_requested_units": 0,
+        "service_confirmed_units": 0,
+        "service_idle_preloads": 0,
+        "service_swaps_started": 0,
+        "service_swaps_completed": 0,
+        "service_capacity_declines": 0,
+        "service_arrival_errors": 0,
+        "service_swap_errors": 0,
+        "sale_credit_orders": 0,
+        "sale_credit_lower_bound": 0,
+        "sale_credit_grain_units": 0,
+        "sale_credit_confirmed_units": 0,
+        "sale_credit_errors": 0,
+        "service_errors": 0,
+        "last_hour_plants_dropped": 1,
+        "priority_grain_orders": 0,
+        "priority_grain_units": 0,
+        "priority_grain_confirmed": 0,
+        "priority_grain_shortfalls": 0,
+        "priority_contract_errors": 0,
+        "opening_seed_budget_units": 0,
+        "opening_seed_budget_cost": 0,
+        "opening_atomic_dropped": 0,
+        "opening_atomic_rescued_requests": 0,
+        "opening_atomic_rescued_confirmed": 0,
+        "opening_atomic_plant_errors": 0,
+        "opening_day1_cash": 24.0,
+        "opening_day1_hires_requested": 3,
+        "opening_day1_hires_confirmed": 3,
+        "opening_day1_hire_shortfalls": 0,
+        "opening_contract_errors": 0,
+        "supply_guard_changes": 0,
+        "supply_grain_protected": 0,
+        "supply_buy_units": 0,
+        "supply_early_changes": 0,
+        "supply_early_units": 0,
+        "supply_prefund_changes": 0,
+        "supply_prefund_units": 0,
+        "supply_slot_declines": 0,
+        "supply_capacity_declines": 0,
+        "supply_budget_declines": 1,
+        "supply_errors": 0,
+        "replenishment_trim_turns": 0,
+        "replenishment_trim_units": 0,
+        "replenishment_errors": 0,
+        "feed_skips": 8,
+        "fert_sale_turns": 0,
+        "fert_sale_units": 0,
+        "economic_overlay_errors": 0,
+        "parent_input_guard_turns": 0,
+        "parent_input_guard_extra_units": 0,
+        "parent_input_requests": 10,
+        "parent_input_confirmed": 10,
+        "parent_input_shortfalls": 0,
+        "parent_input_errors": 0,
+        "parent_input_capacity_declines": 1,
+        "warehouse_changed_turns": 1,
+        "warehouse_extra_sales": 7,
+        "warehouse_projected_unresolved": 4,
+        "warehouse_errors": 0,
+        "input_hire_requests": 0,
+        "input_confirmed_hires": 0,
+        "input_hire_errors": 0,
+        "input_purchase_requests": 0,
+        "input_loaded_units": 0,
+        "input_stock_shortfalls": 0,
+        "input_application_requests": 0,
+        "input_confirmed_applications": 0,
+        "input_application_errors": 0,
+        "input_errors": 0,
+        "input_forecast_wheat": 0,
+        "input_forecast_carrot": 0,
+        "sale_reserved_units": 309,
+        "sale_reservations": 78,
+        "sale_errors": 0,
+        "commitments": 1,
+        "hire_requests": 21,
+        "confirmed_workers": 21,
+        "hire_shortfalls": 0,
+        "plant_requests": 10,
+        "confirmed_plants": 10,
+        "water_requests": 110,
+        "fertilize_requests": 10,
+        "harvest_requests": 40,
+        "confirmed_harvest_units": 60,
+        "drop_requests": 0,
+        "tomato_sale_requests": 50,
+        "budget_declines": 0,
+        "lost_plants": 0,
+        "extra_fertilizer_days": 0,
+        "reordered_market_turns": 125,
+        "errors": 0,
+        "cattle_confirmed": 0,
+        "cattle_reserved": 0,
+        "cattle_requested": 0,
+        "cattle_failed_purchase_units": 0,
+        "cattle_picked": 0,
+        "cattle_placed": 0,
+        "cattle_failed_placements": 0,
+        "cattle_extra_milk_harvested": 0,
+        "cattle_extra_milk_sale_requests": 0,
+        "cattle_milk_credit": 0,
+        "cattle_carried_pending": 0,
+        "quote_reordered_turns": 40,
+        "three_turn_calls": 0,
+        "nocturne_errors": 0,
+        "probe_matches": 0,
+        "probe_four_turn_calls": 0,
+        "probe_errors": 0,
+        "release_errors": 0,
+        "sheep_commit_requests": 0,
+        "sheep_committed": 0,
+        "sheep_hire_requests": 0,
+        "sheep_workers_confirmed": 0,
+        "sheep_hire_shortfalls": 0,
+        "sheep_budget_declines": 0,
+        "sheep_capacity_declines": 0,
+        "sheep_purchase_shortfalls": 0,
+        "sheep_feed_buy_requests": 0,
+        "sheep_wool_harvested": 0,
+        "sheep_fert_collected": 0,
+        "sheep_extra_wool_sales": 0,
+        "sheep_extra_fert_sales": 0,
+        "sheep_rescue_feed_requests": 0,
+        "labor_requests": 2,
+        "labor_hires_avoided": 2,
+        "labor_spawn_errors": 0,
+        "labor_confirmed": 2,
+        "labor_day26": 0,
+        "labor_day27": 1,
+        "labor_day28": 1
+      },
+      "a_fills": {},
+      "b_fills": {
+        "BUY_PRODUCT:WHEAT:units": 1563,
+        "BUY_PRODUCT:WHEAT:value": 64713,
+        "SELL:WHEAT:units": 1757,
+        "SELL:WHEAT:value": 75061,
+        "BUY_ANIMAL:COW:units": 6,
+        "BUY_ANIMAL:COW:value": 2400,
+        "BUY_ANIMAL:SHEEP:units": 6,
+        "BUY_ANIMAL:SHEEP:value": 3000,
+        "BUY_SEED:MELON:units": 12,
+        "BUY_SEED:MELON:value": 960,
+        "BUY_SEED:WHEAT:units": 163,
+        "BUY_SEED:WHEAT:value": 1630,
+        "SELL:FERTILIZER:units": 339,
+        "SELL:FERTILIZER:value": 24069,
+        "BUY_SEED:STRAWBERRY:units": 33,
+        "BUY_SEED:STRAWBERRY:value": 3300,
+        "SELL:WOOL:units": 154,
+        "SELL:WOOL:value": 20593,
+        "BUY_ANIMAL:GOOSE:units": 5,
+        "BUY_ANIMAL:GOOSE:value": 1500,
+        "BUY_PRODUCT:FERTILIZER:units": 72,
+        "BUY_PRODUCT:FERTILIZER:value": 4471,
+        "SELL:MILK:units": 192,
+        "SELL:MILK:value": 40070,
+        "SELL:MELON:units": 72,
+        "SELL:MELON:value": 17440,
+        "SELL:EGG:units": 145,
+        "SELL:EGG:value": 7747,
+        "SELL:STRAWBERRY:units": 251,
+        "SELL:STRAWBERRY:value": 66587,
+        "BUY_SEED:TOMATO:units": 10,
+        "BUY_SEED:TOMATO:value": 500,
+        "BUY_SEED:CARROT:units": 31,
+        "BUY_SEED:CARROT:value": 620,
+        "SELL:TOMATO:units": 60,
+        "SELL:TOMATO:value": 9951,
+        "SELL:CARROT:units": 91,
+        "SELL:CARROT:value": 4924
+      },
+      "a_workers_sha256": "190312301ecc5315235163844c329ee901ef510af58fdccedf78180f14c35459",
+      "b_workers_sha256": "906319475d0cf86a99374e1d5a123d4275b557e40908e3c87491ed0706b353ea",
+      "strawberry_fills": [
+        [
+          382,
+          0,
+          246
+        ],
+        [
+          382,
+          0,
+          246
+        ],
+        [
+          382,
+          0,
+          246
+        ],
+        [
+          382,
+          0,
+          245
+        ],
+        [
+          382,
+          0,
+          245
+        ],
+        [
+          382,
+          0,
+          245
+        ],
+        [
+          382,
+          0,
+          245
+        ],
+        [
+          382,
+          0,
+          244
+        ],
+        [
+          398,
+          0,
+          250
+        ],
+        [
+          398,
+          0,
+          250
+        ],
+        [
+          398,
+          0,
+          249
+        ],
+        [
+          398,
+          0,
+          249
+        ],
+        [
+          402,
+          0,
+          250
+        ],
+        [
+          402,
+          0,
+          250
+        ],
+        [
+          402,
+          0,
+          250
+        ],
+        [
+          402,
+          0,
+          249
+        ],
+        [
+          402,
+          0,
+          249
+        ],
+        [
+          402,
+          0,
+          249
+        ],
+        [
+          403,
+          0,
+          248
+        ],
+        [
+          403,
+          0,
+          248
+        ],
+        [
+          403,
+          0,
+          248
+        ],
+        [
+          403,
+          0,
+          248
+        ],
+        [
+          403,
+          0,
+          247
+        ],
+        [
+          403,
+          0,
+          247
+        ],
+        [
+          427,
+          0,
+          255
+        ],
+        [
+          427,
+          0,
+          255
+        ],
+        [
+          427,
+          0,
+          255
+        ],
+        [
+          427,
+          0,
+          254
+        ],
+        [
+          427,
+          0,
+          254
+        ],
+        [
+          427,
+          0,
+          254
+        ],
+        [
+          429,
+          0,
+          255
+        ],
+        [
+          429,
+          0,
+          255
+        ],
+        [
+          429,
+          0,
+          254
+        ],
+        [
+          429,
+          0,
+          254
+        ],
+        [
+          429,
+          0,
+          254
+        ],
+        [
+          429,
+          0,
+          254
+        ],
+        [
+          429,
+          0,
+          253
+        ],
+        [
+          429,
+          0,
+          253
+        ],
+        [
+          429,
+          0,
+          253
+        ],
+        [
+          429,
+          0,
+          253
+        ],
+        [
+          450,
+          0,
+          259
+        ],
+        [
+          450,
+          0,
+          259
+        ],
+        [
+          450,
+          0,
+          259
+        ],
+        [
+          450,
+          0,
+          258
+        ],
+        [
+          450,
+          0,
+          258
+        ],
+        [
+          450,
+          0,
+          258
+        ],
+        [
+          452,
+          0,
+          258
+        ],
+        [
+          452,
+          0,
+          257
+        ],
+        [
+          452,
+          0,
+          257
+        ],
+        [
+          452,
+          0,
+          257
+        ],
+        [
+          452,
+          0,
+          256
+        ],
+        [
+          452,
+          0,
+          256
+        ],
+        [
+          452,
+          0,
+          256
+        ],
+        [
+          452,
+          0,
+          256
+        ],
+        [
+          452,
+          0,
+          255
+        ],
+        [
+          452,
+          0,
+          255
+        ],
+        [
+          465,
+          0,
+          260
+        ],
+        [
+          465,
+          0,
+          260
+        ],
+        [
+          465,
+          0,
+          260
+        ],
+        [
+          465,
+          0,
+          260
+        ],
+        [
+          465,
+          0,
+          259
+        ],
+        [
+          465,
+          0,
+          259
+        ],
+        [
+          465,
+          0,
+          259
+        ],
+        [
+          465,
+          0,
+          259
+        ],
+        [
+          473,
+          0,
+          261
+        ],
+        [
+          473,
+          0,
+          261
+        ],
+        [
+          477,
+          0,
+          262
+        ],
+        [
+          477,
+          0,
+          261
+        ],
+        [
+          477,
+          0,
+          261
+        ],
+        [
+          477,
+          0,
+          261
+        ],
+        [
+          477,
+          0,
+          261
+        ],
+        [
+          477,
+          0,
+          260
+        ],
+        [
+          477,
+          0,
+          260
+        ],
+        [
+          477,
+          0,
+          260
+        ],
+        [
+          489,
+          0,
+          264
+        ],
+        [
+          489,
+          0,
+          263
+        ],
+        [
+          489,
+          0,
+          263
+        ],
+        [
+          489,
+          0,
+          263
+        ],
+        [
+          489,
+          0,
+          263
+        ],
+        [
+          489,
+          0,
+          262
+        ],
+        [
+          496,
+          0,
+          263
+        ],
+        [
+          496,
+          0,
+          263
+        ],
+        [
+          496,
+          0,
+          263
+        ],
+        [
+          496,
+          0,
+          263
+        ],
+        [
+          496,
+          0,
+          262
+        ],
+        [
+          496,
+          0,
+          262
+        ],
+        [
+          497,
+          0,
+          263
+        ],
+        [
+          497,
+          0,
+          263
+        ],
+        [
+          497,
+          0,
+          263
+        ],
+        [
+          497,
+          0,
+          262
+        ],
+        [
+          498,
+          0,
+          262
+        ],
+        [
+          498,
+          0,
+          262
+        ],
+        [
+          498,
+          0,
+          262
+        ],
+        [
+          498,
+          0,
+          261
+        ],
+        [
+          502,
+          0,
+          262
+        ],
+        [
+          502,
+          0,
+          262
+        ],
+        [
+          502,
+          0,
+          262
+        ],
+        [
+          502,
+          0,
+          262
+        ],
+        [
+          505,
+          0,
+          263
+        ],
+        [
+          505,
+          0,
+          263
+        ],
+        [
+          505,
+          0,
+          262
+        ],
+        [
+          505,
+          0,
+          262
+        ],
+        [
+          505,
+          0,
+          262
+        ],
+        [
+          505,
+          0,
+          262
+        ],
+        [
+          517,
+          0,
+          265
+        ],
+        [
+          517,
+          0,
+          265
+        ],
+        [
+          517,
+          0,
+          265
+        ],
+        [
+          517,
+          0,
+          264
+        ],
+        [
+          517,
+          0,
+          264
+        ],
+        [
+          517,
+          0,
+          264
+        ],
+        [
+          517,
+          0,
+          264
+        ],
+        [
+          517,
+          0,
+          263
+        ],
+        [
+          523,
+          0,
+          264
+        ],
+        [
+          523,
+          0,
+          264
+        ],
+        [
+          523,
+          0,
+          264
+        ],
+        [
+          523,
+          0,
+          264
+        ],
+        [
+          523,
+          0,
+          263
+        ],
+        [
+          523,
+          0,
+          263
+        ],
+        [
+          523,
+          0,
+          263
+        ],
+        [
+          523,
+          0,
+          263
+        ],
+        [
+          523,
+          0,
+          262
+        ],
+        [
+          523,
+          0,
+          262
+        ],
+        [
+          523,
+          0,
+          262
+        ],
+        [
+          523,
+          0,
+          262
+        ],
+        [
+          523,
+          0,
+          261
+        ],
+        [
+          523,
+          0,
+          261
+        ],
+        [
+          523,
+          0,
+          261
+        ],
+        [
+          523,
+          0,
+          261
+        ],
+        [
+          528,
+          0,
+          262
+        ],
+        [
+          528,
+          0,
+          261
+        ],
+        [
+          528,
+          0,
+          261
+        ],
+        [
+          528,
+          0,
+          261
+        ],
+        [
+          528,
+          0,
+          261
+        ],
+        [
+          528,
+          0,
+          260
+        ],
+        [
+          528,
+          0,
+          260
+        ],
+        [
+          528,
+          0,
+          260
+        ],
+        [
+          528,
+          0,
+          260
+        ],
+        [
+          528,
+          0,
+          259
+        ],
+        [
+          528,
+          0,
+          259
+        ],
+        [
+          528,
+          0,
+          259
+        ],
+        [
+          528,
+          0,
+          259
+        ],
+        [
+          538,
+          0,
+          262
+        ],
+        [
+          542,
+          0,
+          263
+        ],
+        [
+          542,
+          0,
+          263
+        ],
+        [
+          542,
+          0,
+          263
+        ],
+        [
+          543,
+          0,
+          263
+        ],
+        [
+          544,
+          0,
+          262
+        ],
+        [
+          544,
+          0,
+          262
+        ],
+        [
+          544,
+          0,
+          262
+        ],
+        [
+          548,
+          0,
+          263
+        ],
+        [
+          552,
+          0,
+          264
+        ],
+        [
+          552,
+          0,
+          264
+        ],
+        [
+          552,
+          0,
+          263
+        ],
+        [
+          553,
+          0,
+          265
+        ],
+        [
+          553,
+          0,
+          264
+        ],
+        [
+          553,
+          0,
+          264
+        ],
+        [
+          553,
+          0,
+          264
+        ],
+        [
+          553,
+          0,
+          264
+        ],
+        [
+          553,
+          0,
+          263
+        ],
+        [
+          553,
+          0,
+          263
+        ],
+        [
+          553,
+          0,
+          263
+        ],
+        [
+          554,
+          0,
+          263
+        ],
+        [
+          555,
+          0,
+          262
+        ],
+        [
+          557,
+          0,
+          263
+        ],
+        [
+          557,
+          0,
+          263
+        ],
+        [
+          557,
+          0,
+          263
+        ],
+        [
+          558,
+          0,
+          263
+        ],
+        [
+          566,
+          0,
+          265
+        ],
+        [
+          566,
+          0,
+          265
+        ],
+        [
+          566,
+          0,
+          264
+        ],
+        [
+          566,
+          0,
+          264
+        ],
+        [
+          578,
+          0,
+          268
+        ],
+        [
+          578,
+          0,
+          268
+        ],
+        [
+          578,
+          0,
+          267
+        ],
+        [
+          578,
+          0,
+          267
+        ],
+        [
+          578,
+          0,
+          267
+        ],
+        [
+          578,
+          0,
+          267
+        ],
+        [
+          578,
+          0,
+          266
+        ],
+        [
+          578,
+          0,
+          266
+        ],
+        [
+          578,
+          0,
+          266
+        ],
+        [
+          578,
+          0,
+          266
+        ],
+        [
+          583,
+          0,
+          267
+        ],
+        [
+          583,
+          0,
+          267
+        ],
+        [
+          583,
+          0,
+          266
+        ],
+        [
+          583,
+          0,
+          266
+        ],
+        [
+          583,
+          0,
+          266
+        ],
+        [
+          583,
+          0,
+          266
+        ],
+        [
+          583,
+          0,
+          265
+        ],
+        [
+          583,
+          0,
+          265
+        ],
+        [
+          583,
+          0,
+          265
+        ],
+        [
+          584,
+          0,
+          265
+        ],
+        [
+          585,
+          0,
+          266
+        ],
+        [
+          597,
+          0,
+          270
+        ],
+        [
+          605,
+          0,
+          273
+        ],
+        [
+          609,
+          0,
+          274
+        ],
+        [
+          610,
+          0,
+          274
+        ],
+        [
+          610,
+          0,
+          274
+        ],
+        [
+          610,
+          0,
+          273
+        ],
+        [
+          610,
+          0,
+          273
+        ],
+        [
+          610,
+          0,
+          273
+        ],
+        [
+          610,
+          0,
+          273
+        ],
+        [
+          610,
+          0,
+          272
+        ],
+        [
+          611,
+          0,
+          272
+        ],
+        [
+          623,
+          0,
+          276
+        ],
+        [
+          642,
+          0,
+          283
+        ],
+        [
+          642,
+          0,
+          282
+        ],
+        [
+          647,
+          0,
+          284
+        ],
+        [
+          647,
+          0,
+          283
+        ],
+        [
+          647,
+          0,
+          283
+        ],
+        [
+          647,
+          0,
+          283
+        ],
+        [
+          647,
+          0,
+          283
+        ],
+        [
+          647,
+          0,
+          282
+        ],
+        [
+          647,
+          0,
+          282
+        ],
+        [
+          647,
+          0,
+          282
+        ],
+        [
+          647,
+          0,
+          282
+        ],
+        [
+          647,
+          0,
+          282
+        ],
+        [
+          647,
+          0,
+          281
+        ],
+        [
+          647,
+          0,
+          281
+        ],
+        [
+          647,
+          0,
+          281
+        ],
+        [
+          647,
+          0,
+          281
+        ],
+        [
+          647,
+          0,
+          280
+        ],
+        [
+          647,
+          0,
+          280
+        ],
+        [
+          647,
+          0,
+          280
+        ],
+        [
+          647,
+          0,
+          280
+        ],
+        [
+          647,
+          0,
+          280
+        ],
+        [
+          668,
+          0,
+          286
+        ],
+        [
+          668,
+          0,
+          286
+        ],
+        [
+          668,
+          0,
+          286
+        ],
+        [
+          668,
+          0,
+          285
+        ],
+        [
+          668,
+          0,
+          285
+        ],
+        [
+          668,
+          0,
+          285
+        ],
+        [
+          672,
+          0,
+          286
+        ],
+        [
+          672,
+          0,
+          286
+        ],
+        [
+          672,
+          0,
+          286
+        ],
+        [
+          695,
+          0,
+          293
+        ],
+        [
+          695,
+          0,
+          293
+        ],
+        [
+          695,
+          0,
+          293
+        ],
+        [
+          695,
+          0,
+          293
+        ],
+        [
+          695,
+          0,
+          292
+        ],
+        [
+          695,
+          0,
+          292
+        ],
+        [
+          695,
+          0,
+          292
+        ],
+        [
+          695,
+          0,
+          292
+        ],
+        [
+          695,
+          0,
+          292
+        ],
+        [
+          695,
+          0,
+          291
+        ],
+        [
+          695,
+          0,
+          291
+        ],
+        [
+          695,
+          0,
+          291
+        ],
+        [
+          695,
+          0,
+          291
+        ],
+        [
+          695,
+          0,
+          291
+        ],
+        [
+          695,
+          0,
+          290
+        ],
+        [
+          695,
+          0,
+          290
+        ],
+        [
+          695,
+          0,
+          290
+        ]
+      ],
+      "shops": [
+        "FARMERS_MARKET",
+        "BRUNCH_SPOT",
+        "ICE_CREAM_SHOP",
+        "FARMERS_MARKET",
+        "ICE_CREAM_SHOP",
+        "PIZZA_SHOP",
+        "YARN_STORE",
+        "BRUNCH_SPOT"
+      ]
+    }
+  ]
+}

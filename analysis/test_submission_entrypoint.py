@@ -14,6 +14,18 @@ class EntryTests(unittest.TestCase):
         exec(source, ns)
         self.assertEqual(submission_entrypoint(ns, source)({}), 3)
 
+    def test_rebound_agent_requires_reinsertion(self):
+        broken = ('def agent(obs, config=None): return "policy"\n'
+                  'def helper(obs, action, config=None): return action\n'
+                  'def agent(obs, config=None): return "wrapped"\n')
+        ns = {}
+        exec(broken, ns)
+        self.assertEqual(submission_entrypoint(ns, broken).__name__, 'helper')
+        fixed = broken + "agent=globals().pop('agent')\n"
+        ns = {}
+        exec(fixed, ns)
+        self.assertEqual(submission_entrypoint(ns, fixed)({}, {}), 'wrapped')
+
     def test_no_function_rejected(self):
         with self.assertRaises(ValueError):
             submission_entrypoint({}, 'x=1')

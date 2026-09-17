@@ -2,10 +2,12 @@
 
 ## Current checkpoint — 2026-09-17
 
-Latest submitted model is `variants/v45_prefund_10/main.py`, submission56294314,
-uploaded with explicit approval on September17; initially PENDING.
-It went20–0 fresh paired vs previous `v45_proactive` (56278443), but the matched
-external panel was8–0 for BOTH. Not top10 validated; previous model stays frozen.
+Latest submission `variants/v45_prefund_10/main.py` (56294314) is **BROKEN**:
+Kaggle selected its helper instead of its policy, all nine games ended at3,000,
+and its score was339.4. Do not reuse. The corrected but unsubmitted export is
+`variants/v45_prefund_10_exported/main.py`; Kaggle-matching validation is19–1
+against previous `v45_proactive` on ten new paired seeds, not top10 validation.
+The last functioning submission remains `v45_proactive` (56278443).
 `variants/v45_consumption_guard/main.py` is rejected. See Experiment112 and
 `analysis/V45_PREFUND_REPORT_20260917.md`; the older production labels below are
 historical snapshots, not the current submitted model.

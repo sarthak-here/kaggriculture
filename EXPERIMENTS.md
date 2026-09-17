@@ -4883,3 +4883,22 @@ baeffa728ffdad24db7799d8962e2328ae606d87c77032bcac33654d13fc18a0.
 Nine preflight tests passed; syntax and final agent entrypoint verified.
 Kaggle reported4 submissions remaining. Receipt:
 analysis/submission_v45_prefund_56294314.json. No live-strength claim.
+
+## #113 — Submission 56294314 packaging failure and harness repair (2026-09-17)
+
+56294314 completed at score339.4. All9available ladder games ended at exactly
+3,000: the agent did nothing. Replay109999028 shows our action was the Kaggle
+configuration dictionary plus PASS/empty orders. Root cause: the prefund wrapper
+declared `_local_prefund_action` after the inherited `agent` key, then rebound
+`agent` without pop/reinsert. Kaggle `get_last_callable` selects the last callable
+in namespace insertion order, so it selected `_local_prefund_action`. The local
+harness incorrectly selected the last AST function definition and tested `agent`.
+
+Fixed the harness to match Kaggle's loader and added a regression test. Preserved
+the broken submitted artifact; built separate `v45_prefund_10_exported` with only
+`agent=globals().pop('agent')` appended. Exact-loader check selects helper for the
+broken SHA and agent for corrected SHA1a9c3a3e... Corrected harness reproduces
+broken0–2 at3,000 vs171,791 and measures corrected19–1 on10new paired seeds,
+mean+142.5,0failures. One seat loses−640 while reverse seat wins+926, so this is
+not universal dominance. Corrected file NOT submitted; fresh approval required.
+Evidence: analysis/V45_PREFUND_EXPORT_INCIDENT_20260917.md and saved result JSONs.

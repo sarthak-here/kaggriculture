@@ -32,6 +32,7 @@ def agent(observation,configuration=None):
     _LOCAL_PREFUND_REPORT.update(getattr(_LOCAL_PREFUND_PARENT,'telemetry',{}))
     return result
 agent.telemetry=_LOCAL_PREFUND_REPORT
+agent=globals().pop('agent')
 '''
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--quantity',type=int,required=True)

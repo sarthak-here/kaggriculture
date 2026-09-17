@@ -1,0 +1,14 @@
+{
+  "submission": 56294314,
+  "public_score": 339.4,
+  "ladder_games_observed": 9,
+  "ladder_rewards": [3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000, 3000],
+  "diagnostic_replay": 109999028,
+  "kaggle_selected_broken_callable": "_local_prefund_action",
+  "kaggle_selected_corrected_callable": "agent",
+  "broken_sha256": "baeffa728ffdad24db7799d8962e2328ae606d87c77032bcac33654d13fc18a0",
+  "corrected_sha256": "1a9c3a3ef6902d958d6269421a196aa683492e927f660f566c3029698498bf04",
+  "broken_local_runtime": {"wins": 0, "losses": 2, "ties": 0, "mean_margin": -168791.0},
+  "corrected_confirmation": {"wins": 19, "losses": 1, "ties": 0, "mean_margin": 142.5, "seeds": "39172000-39172009", "paired_seats": true},
+  "corrected_submitted": false
+}
