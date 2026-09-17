@@ -4874,3 +4874,12 @@ completed.97attempts across arms/validation,96completed;21unit tests pass.
 Consumption-aware long-sale gate rejected:5repairs/5regressions,20worse margins.
 Rasmus/Justin/daulet remain losses, each117worse; whole service schedule needed.
 Report: analysis/V45_PREFUND_REPORT_20260917.md. Candidate: variants/v45_prefund_10.
+
+### #112 authorized submission
+
+User approved after validation results. Uploaded the exact tested main.py once:
+56294314 at2026-09-17T04:09:21.067000Z, initially PENDING. SHA256
+baeffa728ffdad24db7799d8962e2328ae606d87c77032bcac33654d13fc18a0.
+Nine preflight tests passed; syntax and final agent entrypoint verified.
+Kaggle reported4 submissions remaining. Receipt:
+analysis/submission_v45_prefund_56294314.json. No live-strength claim.

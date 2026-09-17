@@ -2,9 +2,10 @@
 
 ## Current checkpoint — 2026-09-17
 
-Latest submitted model remains `variants/v45_proactive/main.py`, submission56278443.
-Separate candidate `variants/v45_prefund_10/main.py`:20–0 fresh paired vs submitted,
-but matched external panel8–0 for BOTH. Not top10 validated or submitted.
+Latest submitted model is `variants/v45_prefund_10/main.py`, submission56294314,
+uploaded with explicit approval on September17; initially PENDING.
+It went20–0 fresh paired vs previous `v45_proactive` (56278443), but the matched
+external panel was8–0 for BOTH. Not top10 validated; previous model stays frozen.
 `variants/v45_consumption_guard/main.py` is rejected. See Experiment112 and
 `analysis/V45_PREFUND_REPORT_20260917.md`; the older production labels below are
 historical snapshots, not the current submitted model.
