@@ -1,0 +1,264 @@
+{
+  "initial_attempts": 30,
+  "initial_failures": [
+    {
+      "episode": 109735695,
+      "expected": [
+        56770,
+        56877
+      ],
+      "seed": 487305132,
+      "order": 0,
+      "status": "FAILED",
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\sarthak\\Desktop\\projects\\kaggriculture\\analysis\\run_w13_isolated.py\", line 103, in play\n    raise RuntimeError(str({'statuses':statuses,'rewards':rewards,'errors':action_errors}))\nRuntimeError: {'statuses': ['DONE', 'DONE'], 'rewards': [3000.0, 130151.0], 'errors': [[0, 0, 'timeout']]}\n"
+    }
+  ],
+  "retry_count": 1,
+  "completed_after_retry": 30,
+  "wins": 22,
+  "repairs": 13,
+  "regressions": 1,
+  "changed_shop_sequences": 20,
+  "comparisons": [
+    {
+      "episode": 109705764,
+      "opponent": "datatuu",
+      "before": -338,
+      "after": -2999.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109692610,
+      "opponent": "daulettoibazar",
+      "before": -423,
+      "after": -540.0,
+      "shops_changed": false,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109693771,
+      "opponent": "Ayaan Ghosh",
+      "before": -151,
+      "after": 18168.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109705534,
+      "opponent": "shenjj02",
+      "before": -60,
+      "after": 7468.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109707705,
+      "opponent": "Sergey Kutepov",
+      "before": 164,
+      "after": 10099.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109709013,
+      "opponent": "qhapaq49",
+      "before": -27,
+      "after": 9211.0,
+      "shops_changed": false,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109711934,
+      "opponent": "Teddy Tennant",
+      "before": 145,
+      "after": 163.0,
+      "shops_changed": false,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109713111,
+      "opponent": "GURU Prasaatha S",
+      "before": 33,
+      "after": 1693.0,
+      "shops_changed": false,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109716339,
+      "opponent": "Pablo César Ruíz",
+      "before": -48,
+      "after": -561.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109717409,
+      "opponent": "Rasmus Hulthe",
+      "before": -2813,
+      "after": -2930.0,
+      "shops_changed": false,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109719576,
+      "opponent": "BEIKE YAN",
+      "before": -12,
+      "after": 9762.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109720646,
+      "opponent": "Mathurin Ache",
+      "before": 184,
+      "after": 3564.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109721707,
+      "opponent": "David Wang",
+      "before": -2,
+      "after": 15141.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109723836,
+      "opponent": "Adam Plow",
+      "before": 111,
+      "after": 15335.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109724805,
+      "opponent": "CornHub Premium",
+      "before": -149,
+      "after": 22010.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109724642,
+      "opponent": "Jules",
+      "before": -131,
+      "after": 3247.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109724919,
+      "opponent": "KongKongDe",
+      "before": -511,
+      "after": 840.0,
+      "shops_changed": false,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109726067,
+      "opponent": "Roxy",
+      "before": -1211,
+      "after": -199.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109725912,
+      "opponent": "futabato",
+      "before": 101,
+      "after": 9212.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109727079,
+      "opponent": "Justin Yang",
+      "before": -1388,
+      "after": -1505.0,
+      "shops_changed": false,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109728165,
+      "opponent": "Hai Dang",
+      "before": -324,
+      "after": 259.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109728004,
+      "opponent": "BobtheBot369",
+      "before": -299,
+      "after": 29227.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109729255,
+      "opponent": "yang zhang",
+      "before": -780,
+      "after": 33782.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109730342,
+      "opponent": "vorlian",
+      "before": -104,
+      "after": 3843.0,
+      "shops_changed": false,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109735695,
+      "opponent": "MD. Nazmus Sakib Anik",
+      "before": -107,
+      "after": 86554.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109734454,
+      "opponent": "kowalskii",
+      "before": 74,
+      "after": 2652.0,
+      "shops_changed": false,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109734619,
+      "opponent": "kunihiro",
+      "before": 174,
+      "after": 6236.0,
+      "shops_changed": false,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109736035,
+      "opponent": "t3l3kin3sis",
+      "before": 30,
+      "after": 626.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109736811,
+      "opponent": "CornHub Premium",
+      "before": -127,
+      "after": -67.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    },
+    {
+      "episode": 109740898,
+      "opponent": "Alperen Söylen",
+      "before": 75,
+      "after": -193.0,
+      "shops_changed": true,
+      "melon_units_sold": 72
+    }
+  ]
+}

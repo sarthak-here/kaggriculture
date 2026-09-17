@@ -1,0 +1,151 @@
+{
+  "games": 30,
+  "failed": 1,
+  "comparisons": [
+    {
+      "episode": 109705764,
+      "before": -338,
+      "after": -2999.0
+    },
+    {
+      "episode": 109692610,
+      "before": -423,
+      "after": -540.0
+    },
+    {
+      "episode": 109693771,
+      "before": -151,
+      "after": 18168.0
+    },
+    {
+      "episode": 109705534,
+      "before": -60,
+      "after": 7468.0
+    },
+    {
+      "episode": 109707705,
+      "before": 164,
+      "after": 10099.0
+    },
+    {
+      "episode": 109709013,
+      "before": -27,
+      "after": 9211.0
+    },
+    {
+      "episode": 109711934,
+      "before": 145,
+      "after": 163.0
+    },
+    {
+      "episode": 109713111,
+      "before": 33,
+      "after": 1693.0
+    },
+    {
+      "episode": 109716339,
+      "before": -48,
+      "after": -561.0
+    },
+    {
+      "episode": 109717409,
+      "before": -2813,
+      "after": -2930.0
+    },
+    {
+      "episode": 109719576,
+      "before": -12,
+      "after": 9762.0
+    },
+    {
+      "episode": 109720646,
+      "before": 184,
+      "after": 3564.0
+    },
+    {
+      "episode": 109721707,
+      "before": -2,
+      "after": 15141.0
+    },
+    {
+      "episode": 109723836,
+      "before": 111,
+      "after": 15335.0
+    },
+    {
+      "episode": 109724805,
+      "before": -149,
+      "after": 22010.0
+    },
+    {
+      "episode": 109724642,
+      "before": -131,
+      "after": 3247.0
+    },
+    {
+      "episode": 109724919,
+      "before": -511,
+      "after": 840.0
+    },
+    {
+      "episode": 109726067,
+      "before": -1211,
+      "after": -199.0
+    },
+    {
+      "episode": 109725912,
+      "before": 101,
+      "after": 9212.0
+    },
+    {
+      "episode": 109727079,
+      "before": -1388,
+      "after": -1505.0
+    },
+    {
+      "episode": 109728165,
+      "before": -324,
+      "after": 259.0
+    },
+    {
+      "episode": 109728004,
+      "before": -299,
+      "after": 29227.0
+    },
+    {
+      "episode": 109729255,
+      "before": -780,
+      "after": 33782.0
+    },
+    {
+      "episode": 109730342,
+      "before": -104,
+      "after": 3843.0
+    },
+    {
+      "episode": 109734454,
+      "before": 74,
+      "after": 2652.0
+    },
+    {
+      "episode": 109734619,
+      "before": 174,
+      "after": 6236.0
+    },
+    {
+      "episode": 109736035,
+      "before": 30,
+      "after": 626.0
+    },
+    {
+      "episode": 109736811,
+      "before": -127,
+      "after": -67.0
+    },
+    {
+      "episode": 109740898,
+      "before": 75,
+      "after": -193.0
+    }
+  ]
+}

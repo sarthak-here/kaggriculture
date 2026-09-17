@@ -1,5 +1,14 @@
 # Agent registry
 
+## Current checkpoint — 2026-09-17
+
+Latest submitted model remains `variants/v45_proactive/main.py`, submission56278443.
+Separate candidate `variants/v45_prefund_10/main.py`:20–0 fresh paired vs submitted,
+but matched external panel8–0 for BOTH. Not top10 validated or submitted.
+`variants/v45_consumption_guard/main.py` is rejected. See Experiment112 and
+`analysis/V45_PREFUND_REPORT_20260917.md`; the older production labels below are
+historical snapshots, not the current submitted model.
+
 Every agent we have built, submitted, or decoded — what it is, where it came from,
 what it measured, and how to get it back. Ladder scores drift and ratings seed at
 600 (#62), so treat every score here as a snapshot with its date.

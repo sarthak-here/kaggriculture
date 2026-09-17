@@ -1,0 +1,5 @@
+{
+  "base_sha256": "831dcc2cba277f12947966a38e25f04fb7854c3116f9669a04c0d00cf611b87f",
+  "main_sha256": "17160c6402dbedd89973db3b8b0e17326872b9b0e75d5a4f0e6a5c8bb6b46a70",
+  "hypothesis": "Decline >8-turn strict-clone reservations if known town consumption covers a same-size competing batch."
+}

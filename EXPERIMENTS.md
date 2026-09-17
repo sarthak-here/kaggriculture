@@ -4858,3 +4858,19 @@ OriginalV45 wins Kong(+109 vs-511) and Hai Dang(+755 vs-324); proactive improves
 policies globally. Fix selective-sale regressions plus opening funding before
 testing demand-aware complete herd/crop service schedules. No new model or upload.
 Evidence: analysis/v45_live_20260916/REPORT.md and v45_loss_controls_20260916.
+
+## #112 — V45 feed prefunding and rejected consumption guard (2026-09-17)
+
+Built separate arms from frozen submitted V45; no upload. Retain five feed wheat
+from turn0 instead of sell/rebuy turn1. Quantity10: minimum setup cash1051 across
+29 recorded opening types/both seats, five feed/five hands preserved; budget1034.
+Ordinary round-trip maximin1026. Quantity100 is NOT feasible (zero feed).
+Fresh10seeds paired vs submitted:20W/0L,mean+142.2. Matched4-family panel:
+candidate8W/0L,submitted8W/0L; no broader outcome gain. Historical top2 is fixed.
+All20losses+10narrowwins fixed diagnostics:22W/8L after separately recorded retry;
+13loss repairs,1win regression,20/30shop sequences changed. Do not promote from
+counterfactual windfalls. Initial step0 process timeout retained; serial retry
+completed.97attempts across arms/validation,96completed;21unit tests pass.
+Consumption-aware long-sale gate rejected:5repairs/5regressions,20worse margins.
+Rasmus/Justin/daulet remain losses, each117worse; whole service schedule needed.
+Report: analysis/V45_PREFUND_REPORT_20260917.md. Candidate: variants/v45_prefund_10.

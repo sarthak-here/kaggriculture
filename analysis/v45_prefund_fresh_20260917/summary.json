@@ -1,0 +1,74 @@
+{
+  "candidate/astra": {
+    "total": 2,
+    "failed": 0,
+    "wins": 2,
+    "ties": 0,
+    "losses": 0,
+    "mean_margin": 17013.0
+  },
+  "candidate/original": {
+    "total": 2,
+    "failed": 0,
+    "wins": 2,
+    "ties": 0,
+    "losses": 0,
+    "mean_margin": 175.0
+  },
+  "candidate/pf_all": {
+    "total": 2,
+    "failed": 0,
+    "wins": 2,
+    "ties": 0,
+    "losses": 0,
+    "mean_margin": 27509.0
+  },
+  "candidate/submitted": {
+    "total": 20,
+    "failed": 0,
+    "wins": 20,
+    "ties": 0,
+    "losses": 0,
+    "mean_margin": 142.2
+  },
+  "candidate/top2_fixed": {
+    "total": 2,
+    "failed": 0,
+    "wins": 2,
+    "ties": 0,
+    "losses": 0,
+    "mean_margin": 12260.0
+  },
+  "submitted/astra": {
+    "total": 2,
+    "failed": 0,
+    "wins": 2,
+    "ties": 0,
+    "losses": 0,
+    "mean_margin": 15073.0
+  },
+  "submitted/original": {
+    "total": 2,
+    "failed": 0,
+    "wins": 2,
+    "ties": 0,
+    "losses": 0,
+    "mean_margin": 16.0
+  },
+  "submitted/pf_all": {
+    "total": 2,
+    "failed": 0,
+    "wins": 2,
+    "ties": 0,
+    "losses": 0,
+    "mean_margin": 27514.0
+  },
+  "submitted/top2_fixed": {
+    "total": 2,
+    "failed": 0,
+    "wins": 2,
+    "ties": 0,
+    "losses": 0,
+    "mean_margin": 17204.0
+  }
+}

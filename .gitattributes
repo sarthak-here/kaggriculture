@@ -1,3 +1,5 @@
 public_candidates/cloning_v45_20260916/main.py -text
 public_candidates/cloning_v45_20260916/source.ipynb -text
 variants/v45_proactive/main.py -text
+variants/v45_prefund_10/main.py -text
+variants/v45_consumption_guard/main.py -text
