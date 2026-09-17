@@ -11,7 +11,9 @@ Expanded fresh previous-best panel is160–0:20–0 each against V45 proactive,
 originalV45,pf_all,Kaito clone+Soil,reconstructedW13,AstraW13,W13 opening-net,
 and Shop0909 tomato432. Six opponent startup timeouts were preserved and serially
 retried. Strongest local candidate, still not proof of current top10 performance.
-The last functioning submission remains `v45_proactive` (56278443).
+Corrected export was submitted with explicit approval as56302715 after the160–0
+panel; initially PENDING. Until it completes a real game, the last proven functioning
+submission remains `v45_proactive` (56278443).
 `variants/v45_consumption_guard/main.py` is rejected. See Experiment112 and
 `analysis/V45_PREFUND_REPORT_20260917.md`; the older production labels below are
 historical snapshots, not the current submitted model.

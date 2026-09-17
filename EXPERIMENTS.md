@@ -4916,3 +4916,11 @@ and had0failures. Exact serial retries all completed as candidate wins. No candi
 telemetry errors. Kaggle-matching loader used. This clears previous-model testing,
 but frozen models do not prove current top10 strength. No submission.
 Report: analysis/V45_PREFUND_PREVIOUS_BEST_REPORT_20260917.md.
+
+### #114 authorized submission
+
+After seeing the160–0 previous-best panel, user explicitly approved an upload.
+Submitted exact corrected SHA1a9c3a3ef6902d958d6269421a196aa683492e927f660f566c3029698498bf04
+once as56302715 at2026-09-17T10:54:30.807000Z; initially PENDING. Kaggle's
+actual loader selected `agent`;10preflight tests passed. Kaggle reported3
+submissions remaining. Receipt: analysis/submission_v45_prefund_exported_56302715.json.

@@ -1,0 +1,13 @@
+{
+  "submission_id": 56302715,
+  "competition": "kaggriculture",
+  "submitted_at_utc": "2026-09-17T10:54:30.807000Z",
+  "status_at_check": "PENDING",
+  "file": "variants/v45_prefund_10_exported/main.py",
+  "sha256": "1a9c3a3ef6902d958d6269421a196aa683492e927f660f566c3029698498bf04",
+  "approval": "User explicitly requested: go ahead submit it to kaggle, after the 160-0 previous-best result was shown",
+  "description": "V45 feed prefunding corrected export: exact Kaggle callable verified; 160-0 across eight previous-best models",
+  "preflight": "Exact hash and syntax verified; kaggle_environments.agent.get_last_callable selected agent; four export tests and six prefund tests passed",
+  "validation": "160W/0L/0T resolved across eight frozen previous-best models, ten fresh seeds and both seats; candidate had zero execution failures; not proof of current top-10 strength",
+  "submissions_remaining_reported": 3
+}
