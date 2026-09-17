@@ -1,0 +1,29 @@
+{
+  "candidate": "variants/v45_prefund_10_exported/main.py",
+  "candidate_sha256": "1a9c3a3ef6902d958d6269421a196aa683492e927f660f566c3029698498bf04",
+  "seeds": "39173000-39173009",
+  "paired_seats": true,
+  "resolved_games": 160,
+  "wins": 160,
+  "losses": 0,
+  "ties": 0,
+  "candidate_failures": 0,
+  "initial_opponent_startup_timeouts": 6,
+  "serial_retries_completed": 6,
+  "by_opponent": {
+    "v45_proactive": {"wins": 20, "losses": 0, "ties": 0, "mean_margin": 143.6, "worst_margin": 55.0},
+    "v45_original": {"wins": 20, "losses": 0, "ties": 0, "mean_margin": 150.3, "worst_margin": 32.0},
+    "pf_all": {"wins": 20, "losses": 0, "ties": 0, "mean_margin": 33331.1, "worst_margin": 24195.0},
+    "kaito_clone_soil": {"wins": 20, "losses": 0, "ties": 0, "mean_margin": 25274.05, "worst_margin": 8711.0},
+    "w13_reconstructed": {"wins": 20, "losses": 0, "ties": 0, "mean_margin": 20367.25, "worst_margin": 9887.0},
+    "w13_astra": {"wins": 20, "losses": 0, "ties": 0, "mean_margin": 20832.8, "worst_margin": 10162.0},
+    "w13_opening_net": {"wins": 20, "losses": 0, "ties": 0, "mean_margin": 17371.6, "worst_margin": 9778.0},
+    "shop0909_tomato432": {"wins": 20, "losses": 0, "ties": 0, "mean_margin": 6528.95, "worst_margin": 3346.0}
+  },
+  "limitations": [
+    "These are local direct matches against frozen previous models, not live ladder opponents.",
+    "The V45 mirror advantage is small and deterministic on most seeds.",
+    "This does not prove top-10 performance against current leaderboard policies."
+  ],
+  "submitted": false
+}

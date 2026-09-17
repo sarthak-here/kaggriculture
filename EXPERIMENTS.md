@@ -4902,3 +4902,17 @@ broken0–2 at3,000 vs171,791 and measures corrected19–1 on10new paired seeds,
 mean+142.5,0failures. One seat loses−640 while reverse seat wins+926, so this is
 not universal dominance. Corrected file NOT submitted; fresh approval required.
 Evidence: analysis/V45_PREFUND_EXPORT_INCIDENT_20260917.md and saved result JSONs.
+
+## #114 — Corrected prefund versus eight previous bests (2026-09-17)
+
+Preregistered eight frozen families,10fresh seeds39173000–009,both seats each.
+Resolved result:160W/0L/0T. Per family all20–0: v45proactive mean+143.6
+(worst+55), originalV45+150.3(+32), pf_all+33331(+24195), Kaito clone+Soil
++25274(+8711), reconstructedW13+20367(+9887), AstraW13+20833(+10162),
+W13opening-net+17372(+9778), Shop0909tomato432+6529(+3346).
+
+Initial parallel run preserved6Kaito seat-zero step0 timeouts; candidate was seat1
+and had0failures. Exact serial retries all completed as candidate wins. No candidate
+telemetry errors. Kaggle-matching loader used. This clears previous-model testing,
+but frozen models do not prove current top10 strength. No submission.
+Report: analysis/V45_PREFUND_PREVIOUS_BEST_REPORT_20260917.md.

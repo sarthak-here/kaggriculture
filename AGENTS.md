@@ -7,6 +7,10 @@ Kaggle selected its helper instead of its policy, all nine games ended at3,000,
 and its score was339.4. Do not reuse. The corrected but unsubmitted export is
 `variants/v45_prefund_10_exported/main.py`; Kaggle-matching validation is19–1
 against previous `v45_proactive` on ten new paired seeds, not top10 validation.
+Expanded fresh previous-best panel is160–0:20–0 each against V45 proactive,
+originalV45,pf_all,Kaito clone+Soil,reconstructedW13,AstraW13,W13 opening-net,
+and Shop0909 tomato432. Six opponent startup timeouts were preserved and serially
+retried. Strongest local candidate, still not proof of current top10 performance.
 The last functioning submission remains `v45_proactive` (56278443).
 `variants/v45_consumption_guard/main.py` is rejected. See Experiment112 and
 `analysis/V45_PREFUND_REPORT_20260917.md`; the older production labels below are

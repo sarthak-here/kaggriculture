@@ -1,0 +1,91 @@
+{
+  "aggregate": {
+    "games": 160,
+    "failures": 6,
+    "wins": 154,
+    "losses": 0,
+    "ties": 0
+  },
+  "by_opponent": {
+    "v45_proactive": {
+      "games": 20,
+      "failures": 0,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "win_rate_all_games": 1.0,
+      "mean_margin": 143.6,
+      "worst_margin": 55.0
+    },
+    "v45_original": {
+      "games": 20,
+      "failures": 0,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "win_rate_all_games": 1.0,
+      "mean_margin": 150.3,
+      "worst_margin": 32.0
+    },
+    "pf_all": {
+      "games": 20,
+      "failures": 0,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "win_rate_all_games": 1.0,
+      "mean_margin": 33331.1,
+      "worst_margin": 24195.0
+    },
+    "kaito_clone_soil": {
+      "games": 20,
+      "failures": 6,
+      "wins": 14,
+      "losses": 0,
+      "ties": 0,
+      "win_rate_all_games": 0.7,
+      "mean_margin": 24864.928571428572,
+      "worst_margin": 8711.0
+    },
+    "w13_reconstructed": {
+      "games": 20,
+      "failures": 0,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "win_rate_all_games": 1.0,
+      "mean_margin": 20367.25,
+      "worst_margin": 9887.0
+    },
+    "w13_astra": {
+      "games": 20,
+      "failures": 0,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "win_rate_all_games": 1.0,
+      "mean_margin": 20832.8,
+      "worst_margin": 10162.0
+    },
+    "w13_opening_net": {
+      "games": 20,
+      "failures": 0,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "win_rate_all_games": 1.0,
+      "mean_margin": 17371.6,
+      "worst_margin": 9778.0
+    },
+    "shop0909_tomato432": {
+      "games": 20,
+      "failures": 0,
+      "wins": 20,
+      "losses": 0,
+      "ties": 0,
+      "win_rate_all_games": 1.0,
+      "mean_margin": 6528.95,
+      "worst_margin": 3346.0
+    }
+  }
+}
