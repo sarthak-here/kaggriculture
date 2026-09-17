@@ -325,5 +325,6 @@ route tuning.
   including original `pf_all` and the Kaito routers.
 - Fixed Shawn404 replay: +18,070 in both seat orders. This validates the identified
   market-timing mechanism but is not a reactive-opponent ranking.
-- Strongest broad candidate currently tested; **not submitted**. Full evidence:
-  `analysis/SHAWN404_AND_JAXA2780_REPORT_20260918.md`.
+- Strongest broad candidate currently tested. Explicitly approved and submitted
+  unchanged to Kaggle as **56312585** on 2026-09-17 at 19:46:02 UTC; initially
+  PENDING. Full evidence: `analysis/SHAWN404_AND_JAXA2780_REPORT_20260918.md`.

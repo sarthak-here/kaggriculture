@@ -4953,5 +4953,7 @@ it wins by18070 in both seats.
 
 This is the strongest broad candidate tested locally. It is still a public
 artifact and the panel is10 fresh worlds, not a live-ladder guarantee. Frozen at
-public_candidates/jaxa2780_20260917; no Kaggle submission made. Evidence and
-limitations: analysis/SHAWN404_AND_JAXA2780_REPORT_20260918.md.
+public_candidates/jaxa2780_20260917. After explicit approval, the exact frozen
+file was submitted to Kaggle as **56312585** on 2026-09-17 at 19:46:02 UTC;
+initial status PENDING. Evidence and limitations:
+analysis/SHAWN404_AND_JAXA2780_REPORT_20260918.md.
