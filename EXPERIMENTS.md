@@ -4957,3 +4957,32 @@ public_candidates/jaxa2780_20260917. After explicit approval, the exact frozen
 file was submitted to Kaggle as **56312585** on 2026-09-17 at 19:46:02 UTC;
 initial status PENDING. Evidence and limitations:
 analysis/SHAWN404_AND_JAXA2780_REPORT_20260918.md.
+
+## #116 — V48 clear-the-queue broad validation (2026-09-18)
+
+Imported the user-provided `kaggriculture-v48-clear-the-queue.ipynb` by parsing
+its embedded byte chunks. The extracted single file exactly matches pinned
+SHA-256 `4b5402888feeb4170dce38f34bebe56788b62ca287139fce7db72df8eb89bb96`;
+the final callable is `_e335_agent`. Its change preserves V47's route and
+production policy while removing non-executable sale slots and merging repeated
+cash-product sales without shifting purchases.
+
+On fresh seeds 430000–430009, paired seats, isolated processes, engine 1.32.7,
+V48 went **180–0** across nine families. Per family it was 20–0 against 2780
+(+1,274.6 mean), corrected prefund (+1,346.2), proactive V45 (+1,399.8), Kaito
+(+42,746.5), pf_all (+32,772.1), protected portfolio (+9,469.6), Shop0909
+tomato (+9,432.5), Astra strawberry (+22,292.1), and Kaito-Gronk (+39,892.3).
+Minimum direct margins were +520 vs 2780 and +181 vs corrected prefund.
+
+An independent 10-seed direct confirmation against 2780 was 19–1. Combined
+direct evidence is **39–1**; the exception was seed 430109, seat 1, YARN-first,
+margin -4,744, while the opposite seat won by +2,034. A narrow mechanism probe
+that disabled queue compaction only for seat 1 with YARN first worsened the loss
+to -5,147 and was rejected. Against Shawn404's frozen tape, V48 remains -1,105;
+this is a causal diagnostic against a fixed opponent, not a reactive ranking.
+
+A separate PASS-policy shop-prefix seed probe produced 17–3 vs 2780, but actual
+shop sequences changed under the competing policies because engine RNG use is
+action-dependent; it is retained as a stress diagnostic, not labelled a clean
+FM/FM panel. No modification beat V48 and no Kaggle submission was made.
+Evidence: `analysis/V48_CLEAR_QUEUE_REPORT_20260918.md`.

@@ -1,0 +1,7 @@
+{
+  "parent": "public_candidates\\v48_clear_queue_20260918\\main.py",
+  "parent_sha256": "4b5402888feeb4170dce38f34bebe56788b62ca287139fce7db72df8eb89bb96",
+  "candidate_sha256": "d1979743194c37d915f8bcaa4596695a0cdac1055e994b8c6064d9fa5cc4ddea",
+  "hypothesis": "Disable V48 queue compaction only for seat 1 while YARN_STORE is the first unlocked shop.",
+  "status": "probe; not promoted"
+}

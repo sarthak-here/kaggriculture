@@ -1,0 +1,24 @@
+{
+  "a": "public_candidates\\v48_clear_queue_20260918\\main.py",
+  "b": "public_candidates\\jaxa2780_20260917\\main.py",
+  "seeds": [
+    440021,
+    440106,
+    440262,
+    440269,
+    440351,
+    440396,
+    440399,
+    440454,
+    440549,
+    440566
+  ],
+  "shop_prefix": [
+    "FARMERS_MARKET",
+    "FARMERS_MARKET"
+  ],
+  "paired_seats": true,
+  "a_sha256": "4b5402888feeb4170dce38f34bebe56788b62ca287139fce7db72df8eb89bb96",
+  "b_sha256": "4757f3f5b28db8a2f4614bb08993a8a567a7d49bae1ac324fbcfbcc1af60e95e",
+  "engine": "1.32.7"
+}

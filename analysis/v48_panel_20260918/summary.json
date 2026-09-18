@@ -1,0 +1,92 @@
+{
+  "jaxa2780": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 1274.6
+  },
+  "current_prefund": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 1346.15
+  },
+  "v45_proactive": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 1399.8
+  },
+  "kaito": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 42746.5
+  },
+  "pf_all": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 32772.1
+  },
+  "protected_portfolio": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 9469.6
+  },
+  "shop0909_tomato": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 9432.5
+  },
+  "astra_strawberry": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 22292.1
+  },
+  "kaito_gronk": {
+    "completed": 20,
+    "expected": 20,
+    "wins": 20,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "wins_over_total": 1.0,
+    "mean_margin": 39892.25
+  }
+}

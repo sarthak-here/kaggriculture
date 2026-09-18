@@ -328,3 +328,20 @@ route tuning.
 - Strongest broad candidate currently tested. Explicitly approved and submitted
   unchanged to Kaggle as **56312585** on 2026-09-17 at 19:46:02 UTC; initially
   PENDING. Full evidence: `analysis/SHAWN404_AND_JAXA2780_REPORT_20260918.md`.
+
+## Best local candidate: V48 clear-the-queue (#116, 2026-09-18)
+
+- Frozen hash-verified single file: `public_candidates/v48_clear_queue_20260918/main.py`.
+- SHA-256: `4b5402888feeb4170dce38f34bebe56788b62ca287139fce7db72df8eb89bb96`.
+- Final Kaggle callable: `_e335_agent`.
+- Mechanism: preserve V47 production and purchases, remove market-sale slots that
+  cannot execute, merge repeated cash-product sales, and use the freed sale slots.
+- Fresh nine-family paired panel: **180–0**, including 20–0 against submitted
+  2780, corrected prefund, proactive V45, Kaito, pf_all, protected portfolio,
+  Shop0909 tomato, Astra strawberry, and Kaito-Gronk.
+- Independent direct confirmation against 2780: 19–1. Combined direct evidence
+  is **39–1**, with one seat-sensitive YARN opening loss.
+- A narrow seat-1 YARN fallback was tested and rejected because it worsened that
+  loss from -4,744 to -5,147.
+- Strongest agent tested locally; **not submitted**. Full evidence:
+  `analysis/V48_CLEAR_QUEUE_REPORT_20260918.md`.
