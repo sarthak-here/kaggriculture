@@ -61,5 +61,6 @@ FM/FM conditional estimate.
 
 ## Decision
 
-V48 is the strongest locally tested candidate. No modification was promoted and
-no Kaggle submission was made.
+V48 is the strongest locally tested candidate. No modification was promoted.
+After explicit approval, the exact frozen artifact was submitted unchanged to
+Kaggle as **56325431** on 2026-09-18 at 08:28:19 UTC; initial status PENDING.

@@ -343,5 +343,6 @@ route tuning.
   is **39–1**, with one seat-sensitive YARN opening loss.
 - A narrow seat-1 YARN fallback was tested and rejected because it worsened that
   loss from -4,744 to -5,147.
-- Strongest agent tested locally; **not submitted**. Full evidence:
-  `analysis/V48_CLEAR_QUEUE_REPORT_20260918.md`.
+- Strongest agent tested locally. Explicitly approved and submitted unchanged to
+  Kaggle as **56325431** on 2026-09-18 at 08:28:19 UTC; initially PENDING.
+  Full evidence: `analysis/V48_CLEAR_QUEUE_REPORT_20260918.md`.

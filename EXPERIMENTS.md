@@ -4984,5 +4984,7 @@ this is a causal diagnostic against a fixed opponent, not a reactive ranking.
 A separate PASS-policy shop-prefix seed probe produced 17–3 vs 2780, but actual
 shop sequences changed under the competing policies because engine RNG use is
 action-dependent; it is retained as a stress diagnostic, not labelled a clean
-FM/FM panel. No modification beat V48 and no Kaggle submission was made.
-Evidence: `analysis/V48_CLEAR_QUEUE_REPORT_20260918.md`.
+FM/FM panel. No modification beat V48. After explicit approval, the exact frozen
+file was submitted unchanged to Kaggle as **56325431** on 2026-09-18 at
+08:28:19 UTC; initial status PENDING. Evidence:
+`analysis/V48_CLEAR_QUEUE_REPORT_20260918.md`.
