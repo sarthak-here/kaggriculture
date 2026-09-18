@@ -5045,3 +5045,34 @@ refined: V48 did trail in combined wheat/strawberry economics, but its late
 carrot block was profitable and was not interchangeable with wheat. Any future
 crop response must optimize a complete plant-water-harvest-sale schedule against
 realized prices, not rename seed/plant commands inside a fixed route.
+
+## #119 — V48 MINGXI-family state-compatible specialist (2026-09-18)
+
+The failed crop substitution prompted a search for a complete compatible policy,
+not another local action rename. Against episode110380424's frozen MINGXI tape,
+V45 prefund wins strongly while V48 loses. Prefix comparison proved both agents'
+own physical state remains identical through observation step1; their state first
+diverges at step2. A router can therefore emit V48 at step0, inspect the rival at
+step1, and transfer the entire remaining policy to prefund without rewinding or
+mixing incompatible midgame states.
+
+Downloaded nine additional recent public replays for MINGXI submission56318693.
+Its verified step1 opening family has no hands, one quadrant, farmer at[4,4], and
+cash in {2445,2455,2461,2467}. That complete signature produced **0 collisions**
+in846 rival-opening observations from423 top-player replays. The unused prefund
+policy is not evaluated at step0: an early version did so and perturbed shared
+module state, producing1–1–8 versus V48. Removing warm-up restored exact inactive
+equivalence.
+
+Final router results:
+
+- exact source loss tape: **117,968–41,484**, +76,484 instead of V48's -1,616;
+- nine additional MINGXI tapes: **9–0**, mean +95,877, minimum +35,029;
+- frozen V48, five fresh seeds/both seats: **0–0–10**, zero activations/errors;
+- Jaxa2780: **10–0**; pf_all: **10–0**, zero activations/errors in both panels.
+
+All nine MINGXI tapes activated exactly once with zero errors. Fixed tapes cannot
+react to the changed policy, so9–0 demonstrates compatibility and a large causal
+advantage, not guaranteed live-policy dominance. Candidate SHA256
+`54630e9957d095edf9553ef3ce907abd797f677cf19596b5ae28a7f2c8b387ae`.
+No Kaggle submission; fresh explicit approval remains required.

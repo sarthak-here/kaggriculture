@@ -1,0 +1,8 @@
+{
+  "experiment": 337,
+  "v48_sha256": "4b5402888feeb4170dce38f34bebe56788b62ca287139fce7db72df8eb89bb96",
+  "prefund_sha256": "1a9c3a3ef6902d958d6269421a196aa683492e927f660f566c3029698498bf04",
+  "main_sha256": "54630e9957d095edf9553ef3ce907abd797f677cf19596b5ae28a7f2c8b387ae",
+  "activation": "step 1 rival money in {2445,2455,2461,2467}, no hands, one quadrant, farmer=[4,4]",
+  "compatibility": "V48 and prefund own physical state equal through observation step 1 on episode 110380424"
+}

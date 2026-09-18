@@ -1,0 +1,140 @@
+{
+  "replays": 9,
+  "observed_openings": 18,
+  "distinct_signatures": 10,
+  "target_money": 2461.0,
+  "hit_count": 1,
+  "hits": [
+    {
+      "episode": 110436776,
+      "seat": 1,
+      "teams": [
+        "MINGXI LIU",
+        "FlameZywoo"
+      ],
+      "path": "analysis\\mingxi_56318693_sample\\episode-110436776-replay.json"
+    }
+  ],
+  "most_common": [
+    {
+      "signature": [
+        2643.0,
+        0,
+        1,
+        [
+          4,
+          4
+        ]
+      ],
+      "count": 4
+    },
+    {
+      "signature": [
+        2455.0,
+        0,
+        1,
+        [
+          4,
+          4
+        ]
+      ],
+      "count": 4
+    },
+    {
+      "signature": [
+        2467.0,
+        0,
+        1,
+        [
+          4,
+          4
+        ]
+      ],
+      "count": 3
+    },
+    {
+      "signature": [
+        3000.0,
+        0,
+        1,
+        [
+          4,
+          4
+        ]
+      ],
+      "count": 1
+    },
+    {
+      "signature": [
+        10.0,
+        4,
+        1,
+        [
+          4,
+          4
+        ]
+      ],
+      "count": 1
+    },
+    {
+      "signature": [
+        2445.0,
+        0,
+        1,
+        [
+          4,
+          4
+        ]
+      ],
+      "count": 1
+    },
+    {
+      "signature": [
+        2140.0,
+        0,
+        1,
+        [
+          4,
+          3
+        ]
+      ],
+      "count": 1
+    },
+    {
+      "signature": [
+        280.0,
+        6,
+        1,
+        [
+          4,
+          4
+        ]
+      ],
+      "count": 1
+    },
+    {
+      "signature": [
+        2867.0,
+        0,
+        1,
+        [
+          4,
+          4
+        ]
+      ],
+      "count": 1
+    },
+    {
+      "signature": [
+        2461.0,
+        0,
+        1,
+        [
+          4,
+          4
+        ]
+      ],
+      "count": 1
+    }
+  ]
+}
