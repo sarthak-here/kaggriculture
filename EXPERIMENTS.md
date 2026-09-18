@@ -5076,3 +5076,12 @@ react to the changed policy, so9–0 demonstrates compatibility and a large caus
 advantage, not guaranteed live-policy dominance. Candidate SHA256
 `54630e9957d095edf9553ef3ce907abd797f677cf19596b5ae28a7f2c8b387ae`.
 No Kaggle submission; fresh explicit approval remains required.
+
+### #119 authorized submission
+
+After reviewing the validation results, the user explicitly approved one upload.
+Submitted exact tested SHA256
+`54630e9957d095edf9553ef3ce907abd797f677cf19596b5ae28a7f2c8b387ae`
+as Kaggle submission **56332430** at 2026-09-18 14:24:51 UTC. Initial status
+PENDING; Kaggle reported three submissions remaining today. Receipt:
+`analysis/submission_v48_mingxi_router_56332430.json`.

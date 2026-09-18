@@ -1,0 +1,18 @@
+{
+  "competition": "kaggriculture",
+  "submission_id": 56332430,
+  "submitted_at": "2026-09-18T14:24:51.173000Z",
+  "file": "variants/v48_mingxi_prefund_router/main.py",
+  "sha256": "54630e9957d095edf9553ef3ce907abd797f677cf19596b5ae28a7f2c8b387ae",
+  "description": "V48 state-compatible opening specialist: 9-0 target tapes, 10 ties vs V48, 10-0 vs 2780 and pf_all",
+  "initial_status": "PENDING",
+  "submissions_remaining_today": 3,
+  "validation": {
+    "mingxi_additional_tapes": "9-0",
+    "frozen_v48": "0-0-10",
+    "jaxa2780": "10-0",
+    "pf_all": "10-0",
+    "detector_collisions": "0/846",
+    "runtime_errors": 0
+  }
+}
