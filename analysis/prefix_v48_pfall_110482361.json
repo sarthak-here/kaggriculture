@@ -1,0 +1,11 @@
+{
+  "episode": 110482361,
+  "seed": 1288102098,
+  "candidate_seat": 0,
+  "left": "public_candidates\\v48_clear_queue_20260918\\main.py",
+  "right": "submit_pf_all\\main.py",
+  "first_state_divergence": 1,
+  "first_action_divergence": 1,
+  "left_reward": 156904.0,
+  "right_reward": 84013.0
+}

@@ -5085,3 +5085,35 @@ Submitted exact tested SHA256
 as Kaggle submission **56332430** at 2026-09-18 14:24:51 UTC. Initial status
 PENDING; Kaggle reported three submissions remaining today. Receipt:
 `analysis/submission_v48_mingxi_router_56332430.json`.
+
+## #120 — Submission 56332430 early ladder losses (2026-09-18)
+
+Submission56332430 completed its initial ladder at score1710.9 after23 total
+matches. Excluding one same-submission self-match, its record was **20–3 (87%)**.
+The three external losses were episode110475735 to kitano0104 by66,
+110482361 to yf D by3,147, and110483441 to Zain96 by3,306.
+
+All three rival step1 signatures were outside the MINGXI gate: respectively
+cash2864/no hands, cash5/two hands, and cash2131/no hands. Exact fixed-tape
+reproduction showed the submitted router and frozen V48 returned identical
+rewards in every loss, with zero activations and zero errors. Therefore these
+are V48 matchup losses, not false-positive routing or packaging regressions.
+The lower public score is an early rating from only22 external games and is not
+directly comparable with V48's later score after a longer ladder run.
+
+Loss families:
+
+- kitano0104 is a near-clone market-timing tie: identical herd, feed and harvest
+  counts; the final margin is only-66.
+- yf D overcame a V48 lead as large as+42,675 using a diversified23-animal late
+  economy; V48 finished with17 animals and lost-3,147.
+- Zain96 exposed overinvestment: V48 bought635 feed units against257 and spent
+  $18,057 more while earning only$14,751 more, ending-3,306.
+
+Full-policy fixed-tape screens found Jaxa2780 at+9,065 versus kitano and+66,361
+versus Zain96; pf_all scored+1,135 versus yf D. However, prefix checks showed
+each winning specialist's physical state diverges from V48 at observation step1.
+The opponent is not distinguishable at step0, so these complete policies cannot
+be safely routed after detection. The next implementation must retain V48's
+opening and replace later YARN-family schedules, not stack incompatible agents.
+No submission was made.
