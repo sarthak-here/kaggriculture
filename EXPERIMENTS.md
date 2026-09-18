@@ -4988,3 +4988,31 @@ FM/FM panel. No modification beat V48. After explicit approval, the exact frozen
 file was submitted unchanged to Kaggle as **56325431** on 2026-09-18 at
 08:28:19 UTC; initial status PENDING. Evidence:
 `analysis/V48_CLEAR_QUEUE_REPORT_20260918.md`.
+
+## #117 — V48 first genuine external loss: crop-demand mismatch (2026-09-18)
+
+Queried submission 56325431 and distinguished its initial self-match from real
+opponents. The first row, episode 110369563, is V48 against the same submission
+ID and is not an external loss. Downloaded only the first genuine external loss,
+episode **110380424**, seed 1213639111, V48 seat 1 versus MINGXI LIU submission
+56318693. Result: 93,561–95,177, margin **-1,616**.
+
+Audited engine reconstruction matched all 719 transitions. V48 ended with zero
+weeds and zero crop yield left, so this is not missed harvesting. It earned
+$118,669 gross sales versus $118,179 (+$490), proving clear-the-queue did not
+lose the game. It spent $28,108 versus $26,002 (+$2,106), exactly producing the
+-1,616 net result.
+
+Economic decomposition: V48's crop economy was **-$6,141** relative to the
+opponent. In a world ending SMOOTHIE, SMOOTHIE, BAKERY, FARMERS_MARKET, BAKERY,
+BAKERY, ICE_CREAM, PIZZA, V48 bought 31 carrot seeds against 6 despite carrot
+having only farmers-market support; it bought 163 wheat seeds against 216 and
+sold 251 strawberries against 268. Fertilizer trading (+$3,263), animal-product
+net (+$230), and cheaper hiring (+$1,032) recovered $4,525, leaving -$1,616.
+
+Fixed-tape controls reproduced V48 exactly. Jaxa2780 and proactive V45 also lost
+(-2,010 and -1,974); prefund and pf_all won against the frozen tape, but because
+the opponent cannot react these are causal diagnostics, not policy rankings.
+Conclusion: missing shop-aware crop allocation is the bug; queue clearing,
+terminal harvesting, and animal sales are not the failure mechanism. Evidence:
+`analysis/V48_FIRST_EXTERNAL_LOSS_110380424.md`.

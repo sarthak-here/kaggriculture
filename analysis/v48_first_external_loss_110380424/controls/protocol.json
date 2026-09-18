@@ -1,0 +1,22 @@
+{
+  "episode": 110380424,
+  "seed": 1213639111,
+  "candidate_seat": 1,
+  "opponent": "MINGXI LIU fixed replay actions",
+  "arms": {
+    "v48": "public_candidates/v48_clear_queue_20260918/main.py",
+    "jaxa2780": "public_candidates/jaxa2780_20260917/main.py",
+    "v45_prefund": "variants/v45_prefund_10_exported/main.py",
+    "v45_proactive": "variants/v45_proactive/main.py",
+    "pf_all": "submit_pf_all/main.py"
+  },
+  "hashes": {
+    "v48": "4b5402888feeb4170dce38f34bebe56788b62ca287139fce7db72df8eb89bb96",
+    "jaxa2780": "4757f3f5b28db8a2f4614bb08993a8a567a7d49bae1ac324fbcfbcc1af60e95e",
+    "v45_prefund": "1a9c3a3ef6902d958d6269421a196aa683492e927f660f566c3029698498bf04",
+    "v45_proactive": "831dcc2cba277f12947966a38e25f04fb7854c3116f9669a04c0d00cf611b87f",
+    "pf_all": "9f9718cfa6e3ff822fafaf12414cc34ef6bdbf67bfdbad92662a42d0ccfdc0bf"
+  },
+  "replay_sha256": "6a7dfae8845044a6314800669a746d480e5f609a620361bd9764c59c8e18bcad",
+  "limitation": "Opponent actions are fixed; causal diagnostic only, not reactive-policy ranking."
+}

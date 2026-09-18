@@ -343,6 +343,10 @@ route tuning.
   is **39–1**, with one seat-sensitive YARN opening loss.
 - A narrow seat-1 YARN fallback was tested and rejected because it worsened that
   loss from -4,744 to -5,147.
+- First genuine live loss, episode 110380424 versus MINGXI LIU: -1,616. V48
+  earned $490 more gross but spent $2,106 more. The exact deficit is a $6,141
+  crop-economy gap (too much carrot, too little wheat/strawberry) partly recovered
+  by fertilizer, animal-product, and hiring advantages. Not a queue/harvest bug.
 - Strongest agent tested locally. Explicitly approved and submitted unchanged to
   Kaggle as **56325431** on 2026-09-18 at 08:28:19 UTC; initially PENDING.
   Full evidence: `analysis/V48_CLEAR_QUEUE_REPORT_20260918.md`.
