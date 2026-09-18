@@ -5013,6 +5013,35 @@ net (+$230), and cheaper hiring (+$1,032) recovered $4,525, leaving -$1,616.
 Fixed-tape controls reproduced V48 exactly. Jaxa2780 and proactive V45 also lost
 (-2,010 and -1,974); prefund and pf_all won against the frozen tape, but because
 the opponent cannot react these are causal diagnostics, not policy rankings.
-Conclusion: missing shop-aware crop allocation is the bug; queue clearing,
-terminal harvesting, and animal sales are not the failure mechanism. Evidence:
+Conclusion at this stage was a shop-aware crop-allocation hypothesis; queue
+clearing, terminal harvesting, and animal sales were ruled out. Experiment #118
+then falsified the direct carrot-to-wheat interpretation. Evidence:
 `analysis/V48_FIRST_EXTERNAL_LOSS_110380424.md`.
+
+## #118 — V48 late crop-demand guard falsification (2026-09-18)
+
+Built a guarded overlay on the exact frozen V48 SHA. It preserved route paths,
+market slots, order quantities and timing, changing only day-24/25 CARROT seed
+purchases and matching PLANT commands to WHEAT after all eight shops were known.
+The gate required no PET_CAFE, at most one FARMERS_MARKET, and at least four
+wheat-supporting shops. The selected block was inventory-closed and ended before
+late wheat maturity became impossible.
+
+The exact MINGXI fixed-tape loss disproved the mechanism. V48's margin worsened
+from **-1,616 to -2,277**. The overlay converted 18 seed buys and 18 plants with
+zero errors. Wheat sales rose 404->465 units (+$1,333), but carrot sales fell
+91->36 (-$2,211); the $180 seed saving could not cover the lost carrot receipts.
+Thus shop-count support alone is not a valid crop-allocation objective: actual
+price, route harvest timing, and realized yield dominate the nominal shop mix.
+
+Fresh paired panel, five seeds/two seats per opponent: **0-4-6 vs frozen V48**,
+**10-0 vs 2780**, **10-0 vs pf_all**, and **10-0 vs V45 prefund**. The gate did
+not activate in the 2780 or pf_all sets, activated in two V45-prefund games, and
+activated in all four non-tied V48 games; every changed V48 outcome was a loss.
+No failures or telemetry errors occurred in the corrected run.
+
+The candidate is rejected and must not be submitted. The earlier diagnosis is
+refined: V48 did trail in combined wheat/strawberry economics, but its late
+carrot block was profitable and was not interchangeable with wheat. Any future
+crop response must optimize a complete plant-water-harvest-sale schedule against
+realized prices, not rename seed/plant commands inside a fixed route.

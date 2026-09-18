@@ -1,0 +1,8 @@
+{
+  "source": "public_candidates\\v48_clear_queue_20260918\\main.py",
+  "source_sha256": "4b5402888feeb4170dce38f34bebe56788b62ca287139fce7db72df8eb89bb96",
+  "output": "variants\\v48_crop_demand_guard\\main.py",
+  "output_sha256": "409e5a75837bd223e242a7a4c359ec13e22704bf5e8e465814b80ea55efde0d7",
+  "experiment": 336,
+  "change": "After all eight shops are known, convert the inventory-closed day-24/25 carrot block to wheat when carrot support is weak and wheat support is broad."
+}
