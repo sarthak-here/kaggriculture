@@ -1,5 +1,5 @@
 # Kaggriculture — Handoff Document
-*Written 2026-08-07. Self-contained — read this instead of re-deriving context.*
+*Written 2026-08-07. Self-contained — read this instead of re-deriving context*
 
 ## TL;DR
 
