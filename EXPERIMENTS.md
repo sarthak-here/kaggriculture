@@ -5148,3 +5148,18 @@ Winner: `variants/panel23_demand_full/main.py`, SHA256
 `2de0327db1917b98e0b587527a1a5267b1a43367e4840f87ef2ce015a60dc429`.
 No Kaggle submission was made; fresh explicit approval is still required.
 Full report: `analysis/CODE_PANEL_20260923_REPORT.md`.
+
+### #121 authorized submission
+
+After reviewing the 40-0 broad-panel validation, the user explicitly approved
+one upload. The Windows checkout had converted the worktree file to CRLF, so the
+submission preflight refused those altered bytes. Packaging normalized the file
+back to LF and reproduced the exact tested SHA256
+`2de0327db1917b98e0b587527a1a5267b1a43367e4840f87ef2ce015a60dc429`.
+Kaggle-compatible loading selected `_panel23_submission_entry`; the archive
+contained only root-level `main.py`.
+
+Submitted once as Kaggle submission **56496586** at
+2026-09-23T14:55:57.670000Z. Initial status PENDING; Kaggle reported four daily
+submissions remaining. Receipt:
+`analysis/submission_panel23_demand_full_56496586.json`.

@@ -1,0 +1,16 @@
+{
+  "competition": "kaggriculture",
+  "submission_id": 56496586,
+  "submitted_at": "2026-09-23T14:55:57.670000Z",
+  "status_at_receipt": "PENDING",
+  "file_name": "submission.tar.gz",
+  "archive_sha256": "3f4786b9499532c265b6384b36420516d9324639b05d274f1966e151b715a675",
+  "archive_bytes": 185415,
+  "archive_members": [
+    "main.py"
+  ],
+  "main_sha256": "2de0327db1917b98e0b587527a1a5267b1a43367e4840f87ef2ce015a60dc429",
+  "entrypoint": "_panel23_submission_entry",
+  "description": "Demand v350 full: 40-0 held-out panel; robust ordering, fertilizer netting, post-net reorder",
+  "remaining_daily_submissions_after_upload": 4
+}
