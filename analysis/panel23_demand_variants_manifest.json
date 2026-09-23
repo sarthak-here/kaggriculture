@@ -1,0 +1,22 @@
+{
+  "source": "variants\\panel23_demand350\\main.py",
+  "source_sha256": "939c445771d83901f27478561d0cc3137133e2233b3ef266f26277aa0b2c7714",
+  "branches": {
+    "panel23_demand_full": {
+      "path": "variants\\panel23_demand_full\\main.py",
+      "sha256": "2de0327db1917b98e0b587527a1a5267b1a43367e4840f87ef2ce015a60dc429"
+    },
+    "panel23_demand_net_only": {
+      "path": "variants\\panel23_demand_net_only\\main.py",
+      "sha256": "0e335afd4547c5ba833315898535ea681cb48b7ab91e6e84adac28499aeec9fb"
+    },
+    "panel23_demand_reorder_only": {
+      "path": "variants\\panel23_demand_reorder_only\\main.py",
+      "sha256": "1250d4d7d8603457e6b6cd28254c1d10a917f06f9a59bff92e2407257455f165"
+    },
+    "panel23_demand_guarded_supply": {
+      "path": "variants\\panel23_demand_guarded_supply\\main.py",
+      "sha256": "ed90ee4916bf12fcbd6867bf9baeb7ad947ca77eb29b694d2f7056998a5c7ab3"
+    }
+  }
+}
