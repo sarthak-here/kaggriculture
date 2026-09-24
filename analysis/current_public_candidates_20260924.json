@@ -1,0 +1,32 @@
+{
+  "demand_timing": {
+    "notebook": "public_candidates\\incoming_20260924\\demand_timing\\demand-preserving-turn-sale-timing.ipynb",
+    "path": "public_candidates\\current_20260924\\demand_timing\\main.py",
+    "sha256": "178ae0f727641cf4b618ebb98ade7aa1a1bed7517281aab9849de82a59d8ed3a",
+    "bytes": 1046403
+  },
+  "population_robust": {
+    "notebook": "public_candidates\\incoming_20260924\\population_robust\\kaggriculture-population-robust-economy.ipynb",
+    "path": "public_candidates\\current_20260924\\population_robust\\main.py",
+    "sha256": "5b6297c51c96f2bd92fe5b8558335f585363f9d96aecb9cb9d4e759d170f13f3",
+    "bytes": 978331
+  },
+  "rescue7": {
+    "notebook": "public_candidates\\incoming_20260924\\rescue7\\kaggriculture-7-turn-rescue-historical-lb-2800.ipynb",
+    "path": "public_candidates\\current_20260924\\rescue7\\main.py",
+    "sha256": "4889137f1adf1f9266b2ad5a6ac6700c40e9be6dfe3654e39db375fb55b71341",
+    "bytes": 1033759
+  },
+  "shepherd_ledger": {
+    "notebook": "public_candidates\\incoming_20260924\\shepherd_ledger\\the-shepherds-ledger-herd-safe-sovereign.ipynb",
+    "path": "public_candidates\\current_20260924\\shepherd_ledger\\main.py",
+    "sha256": "ae44d83baf39ae2cf203d3617d0e9d7846d4a8b379b00c3ebd3734f1cfb5fbf3",
+    "bytes": 1038953
+  },
+  "v57_funding": {
+    "notebook": "public_candidates\\incoming_20260924\\v57_funding\\kaggriculture-v57-funding-order-invariant.ipynb",
+    "path": "public_candidates\\current_20260924\\v57_funding\\main.py",
+    "sha256": "2ee689fdc58f38b7bf6b80b8d3f48129d19b47201dbee51fdcbd977498a5106f",
+    "bytes": 1067076
+  }
+}

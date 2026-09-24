@@ -5163,3 +5163,37 @@ Submitted once as Kaggle submission **56496586** at
 2026-09-23T14:55:57.670000Z. Initial status PENDING; Kaggle reported four daily
 submissions remaining. Receipt:
 `analysis/submission_panel23_demand_full_56496586.json`.
+
+## #122 — Current-policy foundation search and demand-timing promotion (2026-09-24)
+
+Static cloning of 20 current rank-1 replay routes failed **0-40** against the
+live demand350 controller even after applying the complete modern guard stack
+(mean -49,823.675). This rules out another route-tape transplant: rank-1's
+advantage is observation-conditioned.
+
+Safely extracted and hash-verified five current public controllers. Initial
+screens favored v57 8-2 and demand-timing 7-3, but disjoint confirmation reduced
+v57 to 10-10 versus the incumbent and it lost 2-18 directly to demand-timing.
+Demand-timing was therefore advanced to a family panel instead of selecting the
+largest discovery score.
+
+On one matched 60-game panel, demand-timing scored **54-6** while the exact live
+controller scored **35-25** against the same six opponents and worlds: +19 wins.
+On a fully disjoint 160-game confirmation (seeds 980000-980009, both seats,
+isolated processes), demand-timing scored **145-15 (90.625%)** with zero
+failures: 20-0 vs pf_all, V48, Jaxa and Thomas; 19-1 vs latepurchase and
+response; 17-3 vs hybrid; and 10-10 vs exact live demand350.
+
+Four final SELL-optimizer timing gates all produced the same 6-4 hybrid result.
+The independent opening 20/15->8/3 cash correction beat demand-timing 19-1 by
+only eight coins average, then changed zero outcomes on matched close-family
+controls (6-14 vs live and 18-2 vs hybrid for both patched and unmodified).
+Those patches are rejected.
+
+Winner: exact unmodified
+`public_candidates/current_20260924/demand_timing/main.py`, SHA256
+`178ae0f727641cf4b618ebb98ade7aa1a1bed7517281aab9849de82a59d8ed3a`.
+It is the strongest local foundation, not a guaranteed top-10 agent: the exact
+live matchup remains seed-sensitive. No Kaggle submission was made; fresh
+explicit approval is required. Full report:
+`analysis/TOP10_BREAKTHROUGH_20260924.md`.

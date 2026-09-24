@@ -1,0 +1,39 @@
+{
+  "candidate": "public_candidates/current_20260924/demand_timing/main.py",
+  "models": {
+    "live_demand350": "variants/panel23_demand_full/main.py",
+    "hybrid2965": "variants/panel23_hybrid2965/main.py",
+    "thomas2944": "variants/panel23_thomas2944/main.py",
+    "latepurchase16": "variants/panel23_latepurchase16/main.py",
+    "response_v3": "variants/orderbook_20260923/response_v3/main.py",
+    "v48_clear_queue": "public_candidates/v48_clear_queue_20260918/main.py",
+    "jaxa2780": "public_candidates/jaxa2780_20260917/main.py",
+    "pf_all": "submit_pf_all/main.py"
+  },
+  "seeds": [
+    980000,
+    980001,
+    980002,
+    980003,
+    980004,
+    980005,
+    980006,
+    980007,
+    980008,
+    980009
+  ],
+  "jobs": 160,
+  "engine": "1.32.7",
+  "hashes": {
+    "public_candidates\\current_20260924\\demand_timing\\main.py": "178ae0f727641cf4b618ebb98ade7aa1a1bed7517281aab9849de82a59d8ed3a",
+    "variants\\panel23_demand_full\\main.py": "0e808e25bff51d6ebd777e2157b9223d64edcdbf398f59ff2f65a6afda162d83",
+    "variants\\panel23_hybrid2965\\main.py": "661d35ff851282875e9a1a1eb9d430b21198e338ba6d3e41a50acd20aaf6e137",
+    "variants\\panel23_thomas2944\\main.py": "8d725e624815088c6d2b2b02a5c6197db4341abccc93a4ad13a1caba9595c951",
+    "variants\\panel23_latepurchase16\\main.py": "e5943e46fe6b71811acfb39b7f8bee22de2f744756e916d0ddc943126d99ba82",
+    "variants\\orderbook_20260923\\response_v3\\main.py": "8045c8872406044cb0b6bf9f80e440f07c250e325618894f4a91141af6d3b6ad",
+    "public_candidates\\v48_clear_queue_20260918\\main.py": "4b5402888feeb4170dce38f34bebe56788b62ca287139fce7db72df8eb89bb96",
+    "public_candidates\\jaxa2780_20260917\\main.py": "4757f3f5b28db8a2f4614bb08993a8a567a7d49bae1ac324fbcfbcc1af60e95e",
+    "submit_pf_all\\main.py": "9f9718cfa6e3ff822fafaf12414cc34ef6bdbf67bfdbad92662a42d0ccfdc0bf"
+  },
+  "purpose": "held-out broad-family promotion panel; win rate ranks candidates"
+}
