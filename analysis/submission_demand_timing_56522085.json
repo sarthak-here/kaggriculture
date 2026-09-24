@@ -1,0 +1,16 @@
+{
+  "competition": "kaggriculture",
+  "submission_id": 56522085,
+  "submitted_at": "2026-09-24T13:12:46.453000Z",
+  "status_at_receipt": "PENDING",
+  "file_name": "submission.tar.gz",
+  "archive_sha256": "f7ad11e601525f65870cec481d4dc4fc2a92a3c90392082b1c5081f00fa26148",
+  "archive_bytes": 633327,
+  "archive_members": [
+    "main.py"
+  ],
+  "main_sha256": "178ae0f727641cf4b618ebb98ade7aa1a1bed7517281aab9849de82a59d8ed3a",
+  "entrypoint": "_final_sell_block_reorder_entrypoint",
+  "description": "Demand timing foundation: 145-15 held-out eight-family panel, 20-0 vs pf_all",
+  "remaining_daily_submissions_after_upload": 4
+}

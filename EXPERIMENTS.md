@@ -5197,3 +5197,16 @@ It is the strongest local foundation, not a guaranteed top-10 agent: the exact
 live matchup remains seed-sensitive. No Kaggle submission was made; fresh
 explicit approval is required. Full report:
 `analysis/TOP10_BREAKTHROUGH_20260924.md`.
+
+### #122 authorized submission
+
+After reviewing the complete validation, the user explicitly approved one
+upload. Preflight verified the exact tested main.py SHA256
+`178ae0f727641cf4b618ebb98ade7aa1a1bed7517281aab9849de82a59d8ed3a`,
+one root-level archive member (`main.py`), and Kaggle final callable
+`_final_sell_block_reorder_entrypoint`.
+
+Submitted once as Kaggle submission **56522085** at
+2026-09-24T13:12:46.453000Z. Initial status PENDING; Kaggle reported four daily
+submissions remaining. Receipt:
+`analysis/submission_demand_timing_56522085.json`.

@@ -7,8 +7,9 @@ SHA-256 `178ae0f727641cf4b618ebb98ade7aa1a1bed7517281aab9849de82a59d8ed3a`.
 It scored **145-15 (90.625%)** on a disjoint eight-family, 160-game paired-seat
 panel with zero failures: 20-0 versus pf_all, V48, Jaxa and Thomas; 19-1 versus
 latepurchase and response; 17-3 versus hybrid; 10-10 versus the exact live
-demand350 agent. It is not yet submitted and is not claimed as guaranteed top
-10. Timing-gate and opening-cash overlays were rejected because they changed no
+demand350 agent. It was submitted unchanged with explicit approval as
+**56522085** and is not claimed as guaranteed top 10. Timing-gate and
+opening-cash overlays were rejected because they changed no
 matched close-family outcomes. See Experiment #122 and
 `analysis/TOP10_BREAKTHROUGH_20260924.md`.
 
