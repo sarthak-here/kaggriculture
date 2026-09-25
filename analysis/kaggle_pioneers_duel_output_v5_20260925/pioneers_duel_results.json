@@ -1,0 +1,191 @@
+{
+  "summary": {
+    "kaggle_environments": "1.32.7",
+    "seeds": [
+      1021000,
+      1021001,
+      1021002,
+      1021003,
+      1021004
+    ],
+    "completed": 10,
+    "failures": 0,
+    "pioneers_wins": 2,
+    "demand_timing_wins": 8,
+    "ties": 0,
+    "mean_margin": -351.4,
+    "elapsed_seconds": 135.36615300178528
+  },
+  "rows": [
+    {
+      "seed": 1021000,
+      "order": 0,
+      "status": "DONE",
+      "pioneers": 93262.0,
+      "demand_timing": 91297.0,
+      "margin": 1965.0,
+      "raw_rewards": [
+        93262.0,
+        91297.0
+      ],
+      "steps": 720,
+      "agent_statuses": [
+        "DONE",
+        "DONE"
+      ]
+    },
+    {
+      "seed": 1021000,
+      "order": 1,
+      "status": "DONE",
+      "pioneers": 93262.0,
+      "demand_timing": 91297.0,
+      "margin": 1965.0,
+      "raw_rewards": [
+        91297.0,
+        93262.0
+      ],
+      "steps": 720,
+      "agent_statuses": [
+        "DONE",
+        "DONE"
+      ]
+    },
+    {
+      "seed": 1021001,
+      "order": 0,
+      "status": "DONE",
+      "pioneers": 61826.0,
+      "demand_timing": 62119.0,
+      "margin": -293.0,
+      "raw_rewards": [
+        61826.0,
+        62119.0
+      ],
+      "steps": 720,
+      "agent_statuses": [
+        "DONE",
+        "DONE"
+      ]
+    },
+    {
+      "seed": 1021001,
+      "order": 1,
+      "status": "DONE",
+      "pioneers": 61826.0,
+      "demand_timing": 62119.0,
+      "margin": -293.0,
+      "raw_rewards": [
+        62119.0,
+        61826.0
+      ],
+      "steps": 720,
+      "agent_statuses": [
+        "DONE",
+        "DONE"
+      ]
+    },
+    {
+      "seed": 1021002,
+      "order": 0,
+      "status": "DONE",
+      "pioneers": 111434.0,
+      "demand_timing": 111840.0,
+      "margin": -406.0,
+      "raw_rewards": [
+        111434.0,
+        111840.0
+      ],
+      "steps": 720,
+      "agent_statuses": [
+        "DONE",
+        "DONE"
+      ]
+    },
+    {
+      "seed": 1021002,
+      "order": 1,
+      "status": "DONE",
+      "pioneers": 111434.0,
+      "demand_timing": 111840.0,
+      "margin": -406.0,
+      "raw_rewards": [
+        111840.0,
+        111434.0
+      ],
+      "steps": 720,
+      "agent_statuses": [
+        "DONE",
+        "DONE"
+      ]
+    },
+    {
+      "seed": 1021003,
+      "order": 0,
+      "status": "DONE",
+      "pioneers": 63450.0,
+      "demand_timing": 65864.0,
+      "margin": -2414.0,
+      "raw_rewards": [
+        63450.0,
+        65864.0
+      ],
+      "steps": 720,
+      "agent_statuses": [
+        "DONE",
+        "DONE"
+      ]
+    },
+    {
+      "seed": 1021003,
+      "order": 1,
+      "status": "DONE",
+      "pioneers": 63450.0,
+      "demand_timing": 65864.0,
+      "margin": -2414.0,
+      "raw_rewards": [
+        65864.0,
+        63450.0
+      ],
+      "steps": 720,
+      "agent_statuses": [
+        "DONE",
+        "DONE"
+      ]
+    },
+    {
+      "seed": 1021004,
+      "order": 0,
+      "status": "DONE",
+      "pioneers": 130060.0,
+      "demand_timing": 130669.0,
+      "margin": -609.0,
+      "raw_rewards": [
+        130060.0,
+        130669.0
+      ],
+      "steps": 720,
+      "agent_statuses": [
+        "DONE",
+        "DONE"
+      ]
+    },
+    {
+      "seed": 1021004,
+      "order": 1,
+      "status": "DONE",
+      "pioneers": 130060.0,
+      "demand_timing": 130669.0,
+      "margin": -609.0,
+      "raw_rewards": [
+        130669.0,
+        130060.0
+      ],
+      "steps": 720,
+      "agent_statuses": [
+        "DONE",
+        "DONE"
+      ]
+    }
+  ]
+}

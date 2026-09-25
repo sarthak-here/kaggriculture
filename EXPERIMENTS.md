@@ -5249,9 +5249,17 @@ using identical fresh seeds and eight opponent families, the exact base and h4
 candidate both scored **42-6** with zero failures. H4's mean margin was lower in
 all eight families. It is rejected and must not be submitted.
 
-Conclusion: static queue priority is exhausted. A breakthrough requires a
-different compatible production/economy parent or a state-conditioned policy
-that changes quantities and production jointly. The complete Pioneers controller
-is the next concrete lead because its More-Wheat parent and FlowLayer were built
-together; running downloaded packed controllers locally remains blocked pending
-explicit informed approval. No Kaggle submission was made.
+The complete Pioneers controller was then tested in a private Kaggle kernel so
+its packed source never executed locally. The first hosted runs exposed an
+engine mismatch: Kaggle's image produced terminal cash of only0-28. Pinning the
+kernel to the verified competition engine1.32.7 restored normal scores. On five
+fresh seeds in both seats, every game reached720 steps with both statuses DONE.
+Pioneers lost **2-8** to exact demand_timing with mean margin **-351.4**; its only
+winning world was seed1021000. The coupled More-Wheat/Flow policy is therefore
+also rejected.
+
+Conclusion: static queue priority is exhausted, and neither adaptive sale
+thresholds nor the complete Pioneers economy surpasses the incumbent. A
+breakthrough requires a different compatible production/economy parent or a
+state-conditioned policy that changes quantities and production jointly. No
+Kaggle competition submission was made.
