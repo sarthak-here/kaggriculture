@@ -1,0 +1,79 @@
+{
+  "public_candidates\\current_20260925\\cha22\\main.py": {
+    "characters": 494061,
+    "findings": [],
+    "safe_for_local_test": true
+  },
+  "public_candidates\\current_20260925\\pioneers2\\main.py": {
+    "characters": 1190724,
+    "findings": [
+      {
+        "kind": "sensitive_import",
+        "source": "public_candidates\\current_20260925\\pioneers2\\main.py:exec@8",
+        "line": 2901,
+        "detail": "os"
+      },
+      {
+        "kind": "sensitive_import",
+        "source": "public_candidates\\current_20260925\\pioneers2\\main.py:exec@8",
+        "line": 3065,
+        "detail": "os"
+      },
+      {
+        "kind": "sensitive_call",
+        "source": "public_candidates\\current_20260925\\pioneers2\\main.py:exec@8",
+        "line": 3082,
+        "detail": "open"
+      }
+    ],
+    "safe_for_local_test": false
+  },
+  "public_candidates\\current_20260925\\shepherd_refresh\\main.py": {
+    "characters": 1051849,
+    "findings": [
+      {
+        "kind": "sensitive_import",
+        "source": "public_candidates\\current_20260925\\shepherd_refresh\\main.py",
+        "line": 3405,
+        "detail": "os"
+      },
+      {
+        "kind": "sensitive_import",
+        "source": "public_candidates\\current_20260925\\shepherd_refresh\\main.py",
+        "line": 3575,
+        "detail": "os"
+      },
+      {
+        "kind": "sensitive_call",
+        "source": "public_candidates\\current_20260925\\shepherd_refresh\\main.py",
+        "line": 3592,
+        "detail": "open"
+      }
+    ],
+    "safe_for_local_test": false
+  },
+  "public_candidates\\current_20260925\\hybrid_refresh\\main.py": {
+    "characters": 1045228,
+    "findings": [
+      {
+        "kind": "sensitive_import",
+        "source": "public_candidates\\current_20260925\\hybrid_refresh\\main.py",
+        "line": 3406,
+        "detail": "os"
+      },
+      {
+        "kind": "sensitive_import",
+        "source": "public_candidates\\current_20260925\\hybrid_refresh\\main.py",
+        "line": 3576,
+        "detail": "os"
+      },
+      {
+        "kind": "sensitive_call",
+        "source": "public_candidates\\current_20260925\\hybrid_refresh\\main.py",
+        "line": 3593,
+        "detail": "open"
+      }
+    ],
+    "safe_for_local_test": false
+  }
+}

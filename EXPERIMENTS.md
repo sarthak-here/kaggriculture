@@ -5210,3 +5210,48 @@ Submitted once as Kaggle submission **56522085** at
 2026-09-24T13:12:46.453000Z. Initial status PENDING; Kaggle reported four daily
 submissions remaining. Receipt:
 `analysis/submission_demand_timing_56522085.json`.
+
+## #123 — Demand-timing live failure audit and adaptive-sale probes (2026-09-25)
+
+Submission56522085 completed at roughly2266 after137 recorded matches:
+69 wins,58 losses and10 ties. Its recent34-match win rate was only38.2%, so the
+145-15 local panel did not transfer to the live ladder. All137 own replays plus
+20 top-player samples were exported to audited CSV with zero cash-reconstruction
+mismatches.
+
+The57 external losses were dominated by close worker clones:46/57 had at least
+90% worker-action agreement, versus53/69 wins. These were not physical cleanup
+failures: no systematic weed bug, missed terminal harvest, or terminal stock was
+found. In close-clone losses the average margin was-1,646; our revenue trailed by
+$3,893 while expenses trailed by$2,247. Relative product-value gaps concentrated
+in MILK (-$1,235), STRAWBERRY (-$783), TOMATO (-$730), WOOL (-$544) and CARROT
+(-$449). The loss cohort sold almost the same quantities at almost the same times
+as the win cohort, but received materially worse prices: strawberry$104.99 vs
+$109.12, milk$95.30 vs$102.56, and wool$120.69 vs$133.32. This localizes the
+remaining failure to coupled quantity/timing and production, not unsold crops.
+
+Three existing-order reorder variants were evaluated on12 fixed loss tapes and8
+win controls. They recovered only+$2 to+$4 average on losses and preserved the
+controls. The best cross-slot variant then beat the exact incumbent19-1 on fresh
+self-play but by only+$64 average. This is another warning that close-clone
+self-play amplifies tiny priority effects.
+
+A public adaptive FlowLayer was decoded without executing its notebook, then
+attached transparently to the exact incumbent. It estimates rival hidden stock,
+forecasts premium supply, and optimizes sale thresholds. It failed **0-6** against
+the exact incumbent with mean margin **-10,956**, despite identical carrot
+production. The mechanism is incompatible with this parent and is rejected.
+
+Three narrower variants advanced only already-planned MILK/WOOL/STRAWBERRY sales
+by1,2 or4 turns. The four-turn variant won the discovery screen4-2 and fresh
+confirmation **12-6-2**, but with only+$29 mean margin. On a matched96-game panel
+using identical fresh seeds and eight opponent families, the exact base and h4
+candidate both scored **42-6** with zero failures. H4's mean margin was lower in
+all eight families. It is rejected and must not be submitted.
+
+Conclusion: static queue priority is exhausted. A breakthrough requires a
+different compatible production/economy parent or a state-conditioned policy
+that changes quantities and production jointly. The complete Pioneers controller
+is the next concrete lead because its More-Wheat parent and FlowLayer were built
+together; running downloaded packed controllers locally remains blocked pending
+explicit informed approval. No Kaggle submission was made.

@@ -1,0 +1,812 @@
+{
+  "clone_threshold": 0.9,
+  "cohort_games": {
+    "near_clone_win": 53,
+    "near_clone_loss": 46,
+    "top10": 20
+  },
+  "cohorts": {
+    "near_clone_win": {
+      "WHEAT": {
+        "units_per_game": 718.83,
+        "value_per_game": 29171.736,
+        "realized_price": 40.582,
+        "mean_sale_step": 481.105,
+        "fill_rows_per_game": 57.717,
+        "units_per_game_by_day_window": {
+          "00-04": 23.0,
+          "05-09": 18.906,
+          "10-14": 95.774,
+          "15-19": 192.679,
+          "20-24": 189.585,
+          "25-29": 198.887
+        }
+      },
+      "CARROT": {
+        "units_per_game": 137.34,
+        "value_per_game": 7260.925,
+        "realized_price": 52.868,
+        "mean_sale_step": 682.265,
+        "fill_rows_per_game": 11.811,
+        "units_per_game_by_day_window": {
+          "05-09": 0.151,
+          "10-14": 0.151,
+          "15-19": 1.377,
+          "20-24": 4.113,
+          "25-29": 131.547
+        }
+      },
+      "TOMATO": {
+        "units_per_game": 6.038,
+        "value_per_game": 964.434,
+        "realized_price": 159.734,
+        "mean_sale_step": 680.45,
+        "fill_rows_per_game": 0.585,
+        "units_per_game_by_day_window": {
+          "25-29": 6.038
+        }
+      },
+      "STRAWBERRY": {
+        "units_per_game": 247.604,
+        "value_per_game": 27017.491,
+        "realized_price": 109.116,
+        "mean_sale_step": 530.386,
+        "fill_rows_per_game": 34.226,
+        "units_per_game_by_day_window": {
+          "15-19": 74.623,
+          "20-24": 116.038,
+          "25-29": 56.943
+        }
+      },
+      "MELON": {
+        "units_per_game": 72.0,
+        "value_per_game": 14267.981,
+        "realized_price": 198.166,
+        "mean_sale_step": 253.23,
+        "fill_rows_per_game": 7.245,
+        "units_per_game_by_day_window": {
+          "10-14": 72.0
+        }
+      },
+      "EGG": {
+        "units_per_game": 76.34,
+        "value_per_game": 3941.453,
+        "realized_price": 51.63,
+        "mean_sale_step": 521.863,
+        "fill_rows_per_game": 19.094,
+        "units_per_game_by_day_window": {
+          "10-14": 4.887,
+          "15-19": 22.811,
+          "20-24": 24.717,
+          "25-29": 23.925
+        }
+      },
+      "MILK": {
+        "units_per_game": 198.302,
+        "value_per_game": 20338.113,
+        "realized_price": 102.561,
+        "mean_sale_step": 469.577,
+        "fill_rows_per_game": 39.151,
+        "units_per_game_by_day_window": {
+          "05-09": 12.0,
+          "10-14": 39.151,
+          "15-19": 52.264,
+          "20-24": 39.472,
+          "25-29": 55.415
+        }
+      },
+      "WOOL": {
+        "units_per_game": 170.472,
+        "value_per_game": 22726.453,
+        "realized_price": 133.315,
+        "mean_sale_step": 468.114,
+        "fill_rows_per_game": 35.151,
+        "units_per_game_by_day_window": {
+          "05-09": 20.0,
+          "10-14": 22.698,
+          "15-19": 42.057,
+          "20-24": 44.811,
+          "25-29": 40.906
+        }
+      },
+      "FERTILIZER": {
+        "units_per_game": 335.019,
+        "value_per_game": 14849.377,
+        "realized_price": 44.324,
+        "mean_sale_step": 417.395,
+        "fill_rows_per_game": 83.17,
+        "units_per_game_by_day_window": {
+          "00-04": 18.0,
+          "05-09": 45.283,
+          "10-14": 69.094,
+          "15-19": 58.679,
+          "20-24": 68.717,
+          "25-29": 75.245
+        }
+      }
+    },
+    "near_clone_loss": {
+      "WHEAT": {
+        "units_per_game": 387.043,
+        "value_per_game": 14826.609,
+        "realized_price": 38.307,
+        "mean_sale_step": 506.889,
+        "fill_rows_per_game": 56.174,
+        "units_per_game_by_day_window": {
+          "00-04": 23.0,
+          "05-09": 19.0,
+          "10-14": 37.5,
+          "15-19": 44.087,
+          "20-24": 93.848,
+          "25-29": 169.609
+        }
+      },
+      "CARROT": {
+        "units_per_game": 128.13,
+        "value_per_game": 6634.0,
+        "realized_price": 51.775,
+        "mean_sale_step": 689.33,
+        "fill_rows_per_game": 11.0,
+        "units_per_game_by_day_window": {
+          "15-19": 0.326,
+          "20-24": 1.457,
+          "25-29": 126.348
+        }
+      },
+      "TOMATO": {
+        "units_per_game": 15.63,
+        "value_per_game": 2920.913,
+        "realized_price": 186.873,
+        "mean_sale_step": 680.449,
+        "fill_rows_per_game": 1.457,
+        "units_per_game_by_day_window": {
+          "25-29": 15.63
+        }
+      },
+      "STRAWBERRY": {
+        "units_per_game": 246.609,
+        "value_per_game": 25891.609,
+        "realized_price": 104.991,
+        "mean_sale_step": 530.775,
+        "fill_rows_per_game": 36.0,
+        "units_per_game_by_day_window": {
+          "15-19": 74.304,
+          "20-24": 116.022,
+          "25-29": 56.283
+        }
+      },
+      "MELON": {
+        "units_per_game": 72.0,
+        "value_per_game": 14267.0,
+        "realized_price": 198.153,
+        "mean_sale_step": 253.203,
+        "fill_rows_per_game": 7.174,
+        "units_per_game_by_day_window": {
+          "10-14": 72.0
+        }
+      },
+      "EGG": {
+        "units_per_game": 71.391,
+        "value_per_game": 3717.804,
+        "realized_price": 52.076,
+        "mean_sale_step": 522.818,
+        "fill_rows_per_game": 18.152,
+        "units_per_game_by_day_window": {
+          "10-14": 4.674,
+          "15-19": 21.217,
+          "20-24": 22.804,
+          "25-29": 22.696
+        }
+      },
+      "MILK": {
+        "units_per_game": 199.522,
+        "value_per_game": 19013.696,
+        "realized_price": 95.296,
+        "mean_sale_step": 472.586,
+        "fill_rows_per_game": 41.217,
+        "units_per_game_by_day_window": {
+          "05-09": 11.739,
+          "10-14": 38.978,
+          "15-19": 51.348,
+          "20-24": 40.413,
+          "25-29": 57.043
+        }
+      },
+      "WOOL": {
+        "units_per_game": 165.087,
+        "value_per_game": 19923.543,
+        "realized_price": 120.685,
+        "mean_sale_step": 466.276,
+        "fill_rows_per_game": 35.174,
+        "units_per_game_by_day_window": {
+          "05-09": 19.957,
+          "10-14": 21.783,
+          "15-19": 41.891,
+          "20-24": 43.935,
+          "25-29": 37.522
+        }
+      },
+      "FERTILIZER": {
+        "units_per_game": 333.587,
+        "value_per_game": 14995.652,
+        "realized_price": 44.953,
+        "mean_sale_step": 416.805,
+        "fill_rows_per_game": 84.152,
+        "units_per_game_by_day_window": {
+          "00-04": 17.652,
+          "05-09": 45.196,
+          "10-14": 68.804,
+          "15-19": 59.391,
+          "20-24": 68.848,
+          "25-29": 73.696
+        }
+      }
+    },
+    "top10": {
+      "WHEAT": {
+        "units_per_game": 956.95,
+        "value_per_game": 31583.45,
+        "realized_price": 33.004,
+        "mean_sale_step": 444.128,
+        "fill_rows_per_game": 132.9,
+        "units_per_game_by_day_window": {
+          "00-04": 44.6,
+          "05-09": 99.65,
+          "10-14": 211.95,
+          "15-19": 159.0,
+          "20-24": 157.2,
+          "25-29": 284.55
+        }
+      },
+      "CARROT": {
+        "units_per_game": 192.55,
+        "value_per_game": 7938.3,
+        "realized_price": 41.227,
+        "mean_sale_step": 584.035,
+        "fill_rows_per_game": 23.0,
+        "units_per_game_by_day_window": {
+          "00-04": 0.9,
+          "10-14": 11.1,
+          "15-19": 31.15,
+          "20-24": 39.4,
+          "25-29": 110.0
+        }
+      },
+      "TOMATO": {
+        "units_per_game": 110.2,
+        "value_per_game": 7569.55,
+        "realized_price": 68.689,
+        "mean_sale_step": 592.744,
+        "fill_rows_per_game": 14.3,
+        "units_per_game_by_day_window": {
+          "15-19": 8.0,
+          "20-24": 54.2,
+          "25-29": 48.0
+        }
+      },
+      "STRAWBERRY": {
+        "units_per_game": 192.75,
+        "value_per_game": 26418.95,
+        "realized_price": 137.063,
+        "mean_sale_step": 517.452,
+        "fill_rows_per_game": 44.45,
+        "units_per_game_by_day_window": {
+          "10-14": 10.35,
+          "15-19": 73.1,
+          "20-24": 56.95,
+          "25-29": 52.35
+        }
+      },
+      "MELON": {
+        "units_per_game": 79.85,
+        "value_per_game": 15171.5,
+        "realized_price": 190.0,
+        "mean_sale_step": 348.457,
+        "fill_rows_per_game": 10.35,
+        "units_per_game_by_day_window": {
+          "10-14": 55.35,
+          "15-19": 9.35,
+          "20-24": 7.6,
+          "25-29": 7.55
+        }
+      },
+      "EGG": {
+        "units_per_game": 212.35,
+        "value_per_game": 9628.25,
+        "realized_price": 45.341,
+        "mean_sale_step": 513.146,
+        "fill_rows_per_game": 37.5,
+        "units_per_game_by_day_window": {
+          "05-09": 3.8,
+          "10-14": 27.25,
+          "15-19": 54.7,
+          "20-24": 60.15,
+          "25-29": 66.45
+        }
+      },
+      "MILK": {
+        "units_per_game": 205.65,
+        "value_per_game": 23159.85,
+        "realized_price": 112.618,
+        "mean_sale_step": 480.313,
+        "fill_rows_per_game": 49.0,
+        "units_per_game_by_day_window": {
+          "05-09": 14.1,
+          "10-14": 36.85,
+          "15-19": 50.95,
+          "20-24": 49.7,
+          "25-29": 54.05
+        }
+      },
+      "WOOL": {
+        "units_per_game": 97.1,
+        "value_per_game": 14327.85,
+        "realized_price": 147.558,
+        "mean_sale_step": 434.39,
+        "fill_rows_per_game": 24.85,
+        "units_per_game_by_day_window": {
+          "05-09": 26.45,
+          "10-14": 12.55,
+          "15-19": 12.45,
+          "20-24": 18.15,
+          "25-29": 27.5
+        }
+      },
+      "FERTILIZER": {
+        "units_per_game": 434.1,
+        "value_per_game": 18907.35,
+        "realized_price": 43.555,
+        "mean_sale_step": 409.848,
+        "fill_rows_per_game": 140.55,
+        "units_per_game_by_day_window": {
+          "00-04": 23.75,
+          "05-09": 57.9,
+          "10-14": 96.7,
+          "15-19": 91.6,
+          "20-24": 81.35,
+          "25-29": 82.8
+        }
+      }
+    }
+  },
+  "paired_sale_comparison": {
+    "near_clone_win": {
+      "WHEAT": {
+        "own": {
+          "units_per_game": 718.83,
+          "value_per_game": 29171.736,
+          "realized_price": 40.582,
+          "mean_sale_step": 481.105
+        },
+        "opponent": {
+          "units_per_game": 723.623,
+          "value_per_game": 29378.132,
+          "realized_price": 40.599,
+          "mean_sale_step": 481.244
+        },
+        "own_minus_opponent_units_per_game": -4.793,
+        "own_minus_opponent_value_per_game": -206.396
+      },
+      "CARROT": {
+        "own": {
+          "units_per_game": 137.34,
+          "value_per_game": 7260.925,
+          "realized_price": 52.868,
+          "mean_sale_step": 682.265
+        },
+        "opponent": {
+          "units_per_game": 138.283,
+          "value_per_game": 7302.887,
+          "realized_price": 52.811,
+          "mean_sale_step": 676.546
+        },
+        "own_minus_opponent_units_per_game": -0.943,
+        "own_minus_opponent_value_per_game": -41.962
+      },
+      "TOMATO": {
+        "own": {
+          "units_per_game": 6.038,
+          "value_per_game": 964.434,
+          "realized_price": 159.734,
+          "mean_sale_step": 680.45
+        },
+        "opponent": {
+          "units_per_game": 6.038,
+          "value_per_game": 963.094,
+          "realized_price": 159.512,
+          "mean_sale_step": 680.45
+        },
+        "own_minus_opponent_units_per_game": 0.0,
+        "own_minus_opponent_value_per_game": 1.34
+      },
+      "STRAWBERRY": {
+        "own": {
+          "units_per_game": 247.604,
+          "value_per_game": 27017.491,
+          "realized_price": 109.116,
+          "mean_sale_step": 530.386
+        },
+        "opponent": {
+          "units_per_game": 247.132,
+          "value_per_game": 26840.453,
+          "realized_price": 108.608,
+          "mean_sale_step": 530.359
+        },
+        "own_minus_opponent_units_per_game": 0.472,
+        "own_minus_opponent_value_per_game": 177.038
+      },
+      "MELON": {
+        "own": {
+          "units_per_game": 72.0,
+          "value_per_game": 14267.981,
+          "realized_price": 198.166,
+          "mean_sale_step": 253.23
+        },
+        "opponent": {
+          "units_per_game": 72.0,
+          "value_per_game": 14269.245,
+          "realized_price": 198.184,
+          "mean_sale_step": 253.709
+        },
+        "own_minus_opponent_units_per_game": 0.0,
+        "own_minus_opponent_value_per_game": -1.264
+      },
+      "EGG": {
+        "own": {
+          "units_per_game": 76.34,
+          "value_per_game": 3941.453,
+          "realized_price": 51.63,
+          "mean_sale_step": 521.863
+        },
+        "opponent": {
+          "units_per_game": 76.377,
+          "value_per_game": 3936.019,
+          "realized_price": 51.534,
+          "mean_sale_step": 523.984
+        },
+        "own_minus_opponent_units_per_game": -0.037,
+        "own_minus_opponent_value_per_game": 5.434
+      },
+      "MILK": {
+        "own": {
+          "units_per_game": 198.302,
+          "value_per_game": 20338.113,
+          "realized_price": 102.561,
+          "mean_sale_step": 469.577
+        },
+        "opponent": {
+          "units_per_game": 197.811,
+          "value_per_game": 20156.925,
+          "realized_price": 101.9,
+          "mean_sale_step": 469.874
+        },
+        "own_minus_opponent_units_per_game": 0.491,
+        "own_minus_opponent_value_per_game": 181.188
+      },
+      "WOOL": {
+        "own": {
+          "units_per_game": 170.472,
+          "value_per_game": 22726.453,
+          "realized_price": 133.315,
+          "mean_sale_step": 468.114
+        },
+        "opponent": {
+          "units_per_game": 170.472,
+          "value_per_game": 22515.17,
+          "realized_price": 132.076,
+          "mean_sale_step": 468.314
+        },
+        "own_minus_opponent_units_per_game": 0.0,
+        "own_minus_opponent_value_per_game": 211.283
+      },
+      "FERTILIZER": {
+        "own": {
+          "units_per_game": 335.019,
+          "value_per_game": 14849.377,
+          "realized_price": 44.324,
+          "mean_sale_step": 417.395
+        },
+        "opponent": {
+          "units_per_game": 342.585,
+          "value_per_game": 14957.755,
+          "realized_price": 43.661,
+          "mean_sale_step": 421.363
+        },
+        "own_minus_opponent_units_per_game": -7.566,
+        "own_minus_opponent_value_per_game": -108.378
+      }
+    },
+    "near_clone_loss": {
+      "WHEAT": {
+        "own": {
+          "units_per_game": 387.043,
+          "value_per_game": 14826.609,
+          "realized_price": 38.307,
+          "mean_sale_step": 506.889
+        },
+        "opponent": {
+          "units_per_game": 394.174,
+          "value_per_game": 15117.457,
+          "realized_price": 38.352,
+          "mean_sale_step": 497.969
+        },
+        "own_minus_opponent_units_per_game": -7.131,
+        "own_minus_opponent_value_per_game": -290.848
+      },
+      "CARROT": {
+        "own": {
+          "units_per_game": 128.13,
+          "value_per_game": 6634.0,
+          "realized_price": 51.775,
+          "mean_sale_step": 689.33
+        },
+        "opponent": {
+          "units_per_game": 135.196,
+          "value_per_game": 7024.87,
+          "realized_price": 51.961,
+          "mean_sale_step": 681.945
+        },
+        "own_minus_opponent_units_per_game": -7.066,
+        "own_minus_opponent_value_per_game": -390.87
+      },
+      "TOMATO": {
+        "own": {
+          "units_per_game": 15.63,
+          "value_per_game": 2920.913,
+          "realized_price": 186.873,
+          "mean_sale_step": 680.449
+        },
+        "opponent": {
+          "units_per_game": 15.609,
+          "value_per_game": 2909.087,
+          "realized_price": 186.376,
+          "mean_sale_step": 680.493
+        },
+        "own_minus_opponent_units_per_game": 0.021,
+        "own_minus_opponent_value_per_game": 11.826
+      },
+      "STRAWBERRY": {
+        "own": {
+          "units_per_game": 246.609,
+          "value_per_game": 25891.609,
+          "realized_price": 104.991,
+          "mean_sale_step": 530.775
+        },
+        "opponent": {
+          "units_per_game": 247.565,
+          "value_per_game": 26411.674,
+          "realized_price": 106.686,
+          "mean_sale_step": 530.238
+        },
+        "own_minus_opponent_units_per_game": -0.956,
+        "own_minus_opponent_value_per_game": -520.065
+      },
+      "MELON": {
+        "own": {
+          "units_per_game": 72.0,
+          "value_per_game": 14267.0,
+          "realized_price": 198.153,
+          "mean_sale_step": 253.203
+        },
+        "opponent": {
+          "units_per_game": 72.0,
+          "value_per_game": 14267.0,
+          "realized_price": 198.153,
+          "mean_sale_step": 253.203
+        },
+        "own_minus_opponent_units_per_game": 0.0,
+        "own_minus_opponent_value_per_game": 0.0
+      },
+      "EGG": {
+        "own": {
+          "units_per_game": 71.391,
+          "value_per_game": 3717.804,
+          "realized_price": 52.076,
+          "mean_sale_step": 522.818
+        },
+        "opponent": {
+          "units_per_game": 71.63,
+          "value_per_game": 3730.196,
+          "realized_price": 52.076,
+          "mean_sale_step": 523.549
+        },
+        "own_minus_opponent_units_per_game": -0.239,
+        "own_minus_opponent_value_per_game": -12.392
+      },
+      "MILK": {
+        "own": {
+          "units_per_game": 199.522,
+          "value_per_game": 19013.696,
+          "realized_price": 95.296,
+          "mean_sale_step": 472.586
+        },
+        "opponent": {
+          "units_per_game": 204.152,
+          "value_per_game": 19698.478,
+          "realized_price": 96.489,
+          "mean_sale_step": 471.945
+        },
+        "own_minus_opponent_units_per_game": -4.63,
+        "own_minus_opponent_value_per_game": -684.782
+      },
+      "WOOL": {
+        "own": {
+          "units_per_game": 165.087,
+          "value_per_game": 19923.543,
+          "realized_price": 120.685,
+          "mean_sale_step": 466.276
+        },
+        "opponent": {
+          "units_per_game": 166.326,
+          "value_per_game": 20348.326,
+          "realized_price": 122.34,
+          "mean_sale_step": 466.172
+        },
+        "own_minus_opponent_units_per_game": -1.239,
+        "own_minus_opponent_value_per_game": -424.783
+      },
+      "FERTILIZER": {
+        "own": {
+          "units_per_game": 333.587,
+          "value_per_game": 14995.652,
+          "realized_price": 44.953,
+          "mean_sale_step": 416.805
+        },
+        "opponent": {
+          "units_per_game": 371.522,
+          "value_per_game": 16576.326,
+          "realized_price": 44.617,
+          "mean_sale_step": 421.44
+        },
+        "own_minus_opponent_units_per_game": -37.935,
+        "own_minus_opponent_value_per_game": -1580.674
+      }
+    },
+    "top10": {
+      "WHEAT": {
+        "own": {
+          "units_per_game": 605.9,
+          "value_per_game": 19908.2,
+          "realized_price": 32.857,
+          "mean_sale_step": 467.693
+        },
+        "opponent": {
+          "units_per_game": 754.95,
+          "value_per_game": 24547.6,
+          "realized_price": 32.516,
+          "mean_sale_step": 454.268
+        },
+        "own_minus_opponent_units_per_game": -149.05,
+        "own_minus_opponent_value_per_game": -4639.4
+      },
+      "CARROT": {
+        "own": {
+          "units_per_game": 149.65,
+          "value_per_game": 6094.4,
+          "realized_price": 40.724,
+          "mean_sale_step": 589.898
+        },
+        "opponent": {
+          "units_per_game": 157.15,
+          "value_per_game": 6621.4,
+          "realized_price": 42.134,
+          "mean_sale_step": 559.778
+        },
+        "own_minus_opponent_units_per_game": -7.5,
+        "own_minus_opponent_value_per_game": -527.0
+      },
+      "TOMATO": {
+        "own": {
+          "units_per_game": 90.6,
+          "value_per_game": 6236.95,
+          "realized_price": 68.841,
+          "mean_sale_step": 586.802
+        },
+        "opponent": {
+          "units_per_game": 56.05,
+          "value_per_game": 3669.9,
+          "realized_price": 65.475,
+          "mean_sale_step": 603.583
+        },
+        "own_minus_opponent_units_per_game": 34.55,
+        "own_minus_opponent_value_per_game": 2567.05
+      },
+      "STRAWBERRY": {
+        "own": {
+          "units_per_game": 143.0,
+          "value_per_game": 19908.9,
+          "realized_price": 139.223,
+          "mean_sale_step": 515.678
+        },
+        "opponent": {
+          "units_per_game": 136.95,
+          "value_per_game": 19066.2,
+          "realized_price": 139.22,
+          "mean_sale_step": 513.192
+        },
+        "own_minus_opponent_units_per_game": 6.05,
+        "own_minus_opponent_value_per_game": 842.7
+      },
+      "MELON": {
+        "own": {
+          "units_per_game": 60.4,
+          "value_per_game": 11418.55,
+          "realized_price": 189.049,
+          "mean_sale_step": 359.546
+        },
+        "opponent": {
+          "units_per_game": 57.15,
+          "value_per_game": 11164.85,
+          "realized_price": 195.36,
+          "mean_sale_step": 327.098
+        },
+        "own_minus_opponent_units_per_game": 3.25,
+        "own_minus_opponent_value_per_game": 253.7
+      },
+      "EGG": {
+        "own": {
+          "units_per_game": 153.0,
+          "value_per_game": 6941.15,
+          "realized_price": 45.367,
+          "mean_sale_step": 512.941
+        },
+        "opponent": {
+          "units_per_game": 174.9,
+          "value_per_game": 7936.6,
+          "realized_price": 45.378,
+          "mean_sale_step": 517.119
+        },
+        "own_minus_opponent_units_per_game": -21.9,
+        "own_minus_opponent_value_per_game": -995.45
+      },
+      "MILK": {
+        "own": {
+          "units_per_game": 141.55,
+          "value_per_game": 14779.7,
+          "realized_price": 104.413,
+          "mean_sale_step": 474.868
+        },
+        "opponent": {
+          "units_per_game": 144.95,
+          "value_per_game": 15924.95,
+          "realized_price": 109.865,
+          "mean_sale_step": 472.512
+        },
+        "own_minus_opponent_units_per_game": -3.4,
+        "own_minus_opponent_value_per_game": -1145.25
+      },
+      "WOOL": {
+        "own": {
+          "units_per_game": 79.45,
+          "value_per_game": 12027.2,
+          "realized_price": 151.381,
+          "mean_sale_step": 443.676
+        },
+        "opponent": {
+          "units_per_game": 71.95,
+          "value_per_game": 10697.0,
+          "realized_price": 148.673,
+          "mean_sale_step": 415.671
+        },
+        "own_minus_opponent_units_per_game": 7.5,
+        "own_minus_opponent_value_per_game": 1330.2
+      },
+      "FERTILIZER": {
+        "own": {
+          "units_per_game": 284.45,
+          "value_per_game": 12939.2,
+          "realized_price": 45.488,
+          "mean_sale_step": 400.857
+        },
+        "opponent": {
+          "units_per_game": 358.9,
+          "value_per_game": 15073.65,
+          "realized_price": 42.0,
+          "mean_sale_step": 420.055
+        },
+        "own_minus_opponent_units_per_game": -74.45,
+        "own_minus_opponent_value_per_game": -2134.45
+      }
+    }
+  }
+}

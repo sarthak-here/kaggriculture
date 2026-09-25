@@ -143,6 +143,65 @@ def candidate_blobs(src, minlen=1000):
                   key=lambda kv: -len(kv[1]))
 
 
+def literal_payload(node):
+    """Evaluate only nested literal codec calls used by public notebooks.
+
+    This deliberately supports no names, imports, filesystem calls, or general
+    Python evaluation. It handles bytes joins and the same base64/compression
+    codecs that ``decode`` already accepts.
+    """
+    if isinstance(node, ast.Constant) and isinstance(node.value, (str, bytes)):
+        return node.value
+    if isinstance(node, (ast.List, ast.Tuple)):
+        return [literal_payload(item) for item in node.elts]
+    if not isinstance(node, ast.Call) or not isinstance(node.func, ast.Attribute):
+        raise ValueError("unsupported payload expression")
+    if node.func.attr == "join" and len(node.args) == 1:
+        separator = literal_payload(node.func.value)
+        parts = literal_payload(node.args[0])
+        if not isinstance(parts, list) or not all(isinstance(x, type(separator)) for x in parts):
+            raise ValueError("invalid literal join")
+        return separator.join(parts)
+    module = getattr(node.func.value, "id", None)
+    codecs = {
+        ("base64", "b85decode"): base64.b85decode,
+        ("base64", "b64decode"): base64.b64decode,
+        ("zlib", "decompress"): zlib.decompress,
+        ("gzip", "decompress"): gzip.decompress,
+        ("lzma", "decompress"): lzma.decompress,
+        ("bz2", "decompress"): bz2.decompress,
+    }
+    fn = codecs.get((module, node.func.attr))
+    if fn is None or len(node.args) != 1 or node.keywords:
+        raise ValueError("unsupported literal codec")
+    value = literal_payload(node.args[0])
+    if isinstance(value, str):
+        value = value.encode("ascii")
+    if not isinstance(value, bytes):
+        raise ValueError("codec input is not bytes")
+    return fn(value)
+
+
+def candidate_literal_payloads(src, minlen=1000):
+    """Return byte payloads from whitelisted literal-only expressions."""
+    try:
+        tree = ast.parse(src)
+    except SyntaxError:
+        return []
+    out = []
+    for node in tree.body:
+        if not isinstance(node, (ast.Assign, ast.AnnAssign)):
+            continue
+        target = node.targets[0] if isinstance(node, ast.Assign) else node.target
+        try:
+            value = literal_payload(node.value)
+        except (ValueError, TypeError, OSError, EOFError):
+            continue
+        if isinstance(value, bytes) and len(value) >= minlen:
+            out.append((getattr(target, "id", "?"), value))
+    return sorted(out, key=lambda pair: -len(pair[1]))
+
+
 def as_python(data):
     """Return decoded text if `data` is compilable Python, else None."""
     try:
@@ -199,6 +258,24 @@ def main():
     if plain and as_python(plain.encode("utf-8")):
         open(out, "w", encoding="utf-8").write(plain)
         print("PLAIN %%writefile main.py -> wrote %s (%d chars)" % (out, len(plain)))
+        return
+
+    payloads = candidate_literal_payloads(src)
+    if not payloads and path.endswith(".ipynb"):
+        nb = json.load(open(path, encoding="utf-8"))
+        for cell in nb.get("cells", []):
+            if cell.get("cell_type") == "code":
+                payloads.extend(candidate_literal_payloads("".join(cell.get("source", []))))
+        payloads.sort(key=lambda pair: -len(pair[1]))
+    print("candidate literal payloads: %s" % [(n, len(v)) for n, v in payloads[:6]])
+    for name, data in payloads:
+        text = as_python(data) or from_tar(data)
+        if not text:
+            continue
+        print("DECODED literal %s -> %d bytes, sha256 %s"
+              % (name, len(data), hashlib.sha256(data).hexdigest()[:16]))
+        open(out, "w", encoding="utf-8", newline="").write(text)
+        print("wrote %s (%d chars)" % (out, len(text)))
         return
 
     blobs = candidate_blobs(src)

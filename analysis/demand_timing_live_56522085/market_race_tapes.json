@@ -1,0 +1,731 @@
+{
+  "retrieved_at": "2026-09-25T06:24:20.935005+00:00",
+  "submission": 56522085,
+  "selection": {
+    "rule": "6 worst + 6 closest near-clone losses; 4 closest + 4 largest near-clone wins",
+    "matches": [
+      {
+        "episode": 113006349,
+        "result": "loss",
+        "seat": 1,
+        "opponent": "kuroko1t",
+        "margin": -21748.0,
+        "worker_agreement": 0.9374130737134909,
+        "market_agreement": 0.7732962447844228,
+        "market_multiset_agreement": 0.7746870653685675,
+        "order_only_turns": 1,
+        "order_only_cash_advantage": -150.0,
+        "first_worker_divergence": 25,
+        "first_market_divergence": 0
+      },
+      {
+        "episode": 112907236,
+        "result": "loss",
+        "seat": 1,
+        "opponent": "herens",
+        "margin": -16834.0,
+        "worker_agreement": 0.9429763560500696,
+        "market_agreement": 0.8303198887343533,
+        "market_multiset_agreement": 0.8358831710709318,
+        "order_only_turns": 4,
+        "order_only_cash_advantage": -1034.0,
+        "first_worker_divergence": 25,
+        "first_market_divergence": 0
+      },
+      {
+        "episode": 113149388,
+        "result": "loss",
+        "seat": 1,
+        "opponent": "Yin Li",
+        "margin": -7469.0,
+        "worker_agreement": 0.9026425591098748,
+        "market_agreement": 0.7788595271210014,
+        "market_multiset_agreement": 0.7969401947148818,
+        "order_only_turns": 13,
+        "order_only_cash_advantage": 31.0,
+        "first_worker_divergence": 440,
+        "first_market_divergence": 0
+      },
+      {
+        "episode": 113151826,
+        "result": "loss",
+        "seat": 0,
+        "opponent": "Yeswanthperni",
+        "margin": -1949.0,
+        "worker_agreement": 0.972183588317107,
+        "market_agreement": 0.7552155771905424,
+        "market_multiset_agreement": 0.7705146036161336,
+        "order_only_turns": 11,
+        "order_only_cash_advantage": 32.0,
+        "first_worker_divergence": 499,
+        "first_market_divergence": 0
+      },
+      {
+        "episode": 113151213,
+        "result": "loss",
+        "seat": 1,
+        "opponent": "Suliman Tadros",
+        "margin": -1940.0,
+        "worker_agreement": 1.0,
+        "market_agreement": 0.8525730180806675,
+        "market_multiset_agreement": 0.8525730180806675,
+        "order_only_turns": 0,
+        "order_only_cash_advantage": 0.0,
+        "first_worker_divergence": null,
+        "first_market_divergence": 153
+      },
+      {
+        "episode": 112970178,
+        "result": "loss",
+        "seat": 1,
+        "opponent": "loss volos",
+        "margin": -1729.0,
+        "worker_agreement": 0.9763560500695411,
+        "market_agreement": 0.8428372739916551,
+        "market_multiset_agreement": 0.8442280945757997,
+        "order_only_turns": 1,
+        "order_only_cash_advantage": -14.0,
+        "first_worker_divergence": 166,
+        "first_market_divergence": 1
+      },
+      {
+        "episode": 112920242,
+        "result": "loss",
+        "seat": 1,
+        "opponent": "Kavinkumar M",
+        "margin": -93.0,
+        "worker_agreement": 0.9763560500695411,
+        "market_agreement": 0.7426981919332406,
+        "market_multiset_agreement": 0.7566063977746871,
+        "order_only_turns": 10,
+        "order_only_cash_advantage": -29.0,
+        "first_worker_divergence": 166,
+        "first_market_divergence": 121
+      },
+      {
+        "episode": 113169141,
+        "result": "loss",
+        "seat": 1,
+        "opponent": "Yunho Hwang",
+        "margin": -89.0,
+        "worker_agreement": 0.9930458970792768,
+        "market_agreement": 0.7816411682892906,
+        "market_multiset_agreement": 0.7927677329624478,
+        "order_only_turns": 8,
+        "order_only_cash_advantage": 5.0,
+        "first_worker_divergence": 187,
+        "first_market_divergence": 0
+      },
+      {
+        "episode": 112902537,
+        "result": "loss",
+        "seat": 1,
+        "opponent": "rin2401",
+        "margin": -76.0,
+        "worker_agreement": 0.9972183588317107,
+        "market_agreement": 0.9930458970792768,
+        "market_multiset_agreement": 0.9930458970792768,
+        "order_only_turns": 0,
+        "order_only_cash_advantage": 0.0,
+        "first_worker_divergence": 182,
+        "first_market_divergence": 406
+      },
+      {
+        "episode": 113067293,
+        "result": "loss",
+        "seat": 1,
+        "opponent": "Matt",
+        "margin": -76.0,
+        "worker_agreement": 1.0,
+        "market_agreement": 0.7885952712100139,
+        "market_multiset_agreement": 0.8052851182197497,
+        "order_only_turns": 12,
+        "order_only_cash_advantage": -39.0,
+        "first_worker_divergence": null,
+        "first_market_divergence": 0
+      },
+      {
+        "episode": 112970229,
+        "result": "loss",
+        "seat": 0,
+        "opponent": "xthixsl_ml",
+        "margin": -69.0,
+        "worker_agreement": 0.9930458970792768,
+        "market_agreement": 0.7983310152990264,
+        "market_multiset_agreement": 0.8136300417246175,
+        "order_only_turns": 11,
+        "order_only_cash_advantage": -33.0,
+        "first_worker_divergence": 656,
+        "first_market_divergence": 121
+      },
+      {
+        "episode": 112937860,
+        "result": "loss",
+        "seat": 0,
+        "opponent": "Agent 0",
+        "margin": -39.0,
+        "worker_agreement": 0.9902642559109874,
+        "market_agreement": 0.866481223922114,
+        "market_multiset_agreement": 0.8776077885952712,
+        "order_only_turns": 8,
+        "order_only_cash_advantage": 6.0,
+        "first_worker_divergence": 469,
+        "first_market_divergence": 121
+      },
+      {
+        "episode": 112920230,
+        "result": "win",
+        "seat": 1,
+        "opponent": "Semih Temiz",
+        "margin": 9.0,
+        "worker_agreement": 0.9902642559109874,
+        "market_agreement": 0.8191933240611962,
+        "market_multiset_agreement": 0.8358831710709318,
+        "order_only_turns": 12,
+        "order_only_cash_advantage": 34.0,
+        "first_worker_divergence": 566,
+        "first_market_divergence": 0
+      },
+      {
+        "episode": 113042625,
+        "result": "win",
+        "seat": 1,
+        "opponent": "juisajdiasd",
+        "margin": 12.0,
+        "worker_agreement": 0.9916550764951322,
+        "market_agreement": 0.9374130737134909,
+        "market_multiset_agreement": 0.9374130737134909,
+        "order_only_turns": 0,
+        "order_only_cash_advantage": 0.0,
+        "first_worker_divergence": 712,
+        "first_market_divergence": 1
+      },
+      {
+        "episode": 113157016,
+        "result": "win",
+        "seat": 0,
+        "opponent": "Sufi Afifi",
+        "margin": 51.0,
+        "worker_agreement": 1.0,
+        "market_agreement": 0.9986091794158554,
+        "market_multiset_agreement": 1.0,
+        "order_only_turns": 1,
+        "order_only_cash_advantage": 51.0,
+        "first_worker_divergence": null,
+        "first_market_divergence": 649
+      },
+      {
+        "episode": 113060173,
+        "result": "win",
+        "seat": 1,
+        "opponent": "oQo",
+        "margin": 108.0,
+        "worker_agreement": 0.9986091794158554,
+        "market_agreement": 0.7941585535465925,
+        "market_multiset_agreement": 0.8136300417246175,
+        "order_only_turns": 14,
+        "order_only_cash_advantage": 46.0,
+        "first_worker_divergence": 625,
+        "first_market_divergence": 0
+      },
+      {
+        "episode": 113097741,
+        "result": "win",
+        "seat": 0,
+        "opponent": "liu bo",
+        "margin": 1887.0,
+        "worker_agreement": 0.9735744089012517,
+        "market_agreement": 0.8372739916550765,
+        "market_multiset_agreement": 0.8400556328233658,
+        "order_only_turns": 2,
+        "order_only_cash_advantage": -21.0,
+        "first_worker_divergence": 320,
+        "first_market_divergence": 91
+      },
+      {
+        "episode": 112941419,
+        "result": "win",
+        "seat": 0,
+        "opponent": "BorisV",
+        "margin": 2215.0,
+        "worker_agreement": 0.9833101529902643,
+        "market_agreement": 0.7663421418636995,
+        "market_multiset_agreement": 0.7691237830319889,
+        "order_only_turns": 2,
+        "order_only_cash_advantage": 28.0,
+        "first_worker_divergence": 33,
+        "first_market_divergence": 91
+      },
+      {
+        "episode": 112948491,
+        "result": "win",
+        "seat": 1,
+        "opponent": "Ziming Wu",
+        "margin": 3036.0,
+        "worker_agreement": 0.9972183588317107,
+        "market_agreement": 0.8025034770514604,
+        "market_multiset_agreement": 0.8247566063977747,
+        "order_only_turns": 16,
+        "order_only_cash_advantage": 48.0,
+        "first_worker_divergence": 598,
+        "first_market_divergence": 0
+      },
+      {
+        "episode": 113088676,
+        "result": "win",
+        "seat": 1,
+        "opponent": "洛希边际",
+        "margin": 3271.0,
+        "worker_agreement": 0.9986091794158554,
+        "market_agreement": 0.8289290681502086,
+        "market_multiset_agreement": 0.8636995827538247,
+        "order_only_turns": 25,
+        "order_only_cash_advantage": 2529.0,
+        "first_worker_divergence": 625,
+        "first_market_divergence": 0
+      }
+    ]
+  },
+  "replays": [
+    {
+      "path": "replays/episode-112902537-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 112902537,
+          "seat": 1,
+          "end": "2026-09-24T14:41:06.227559700Z",
+          "submission": 56522085,
+          "opponent_submission": 56502617,
+          "team": "Sarthak Sharma ",
+          "opponent": "rin2401",
+          "ours": 85174,
+          "theirs": 85250,
+          "margin": -76,
+          "result": "L",
+          "self_play": false,
+          "opponent_rating": 2404.4409786159636,
+          "own_rating": 2233.8229662436192,
+          "cohort": "submission_loss"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-112907236-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 112907236,
+          "seat": 1,
+          "end": "2026-09-24T14:55:31.994451800Z",
+          "submission": 56522085,
+          "opponent_submission": 56518662,
+          "team": "Sarthak Sharma ",
+          "opponent": "herens",
+          "ours": 117566,
+          "theirs": 134400,
+          "margin": -16834,
+          "result": "L",
+          "self_play": false,
+          "opponent_rating": 2340.78967754374,
+          "own_rating": 2246.7114973000635,
+          "cohort": "submission_loss"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-112920242-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 112920242,
+          "seat": 1,
+          "end": "2026-09-24T15:39:53.210356900Z",
+          "submission": 56522085,
+          "opponent_submission": 56517105,
+          "team": "Sarthak Sharma ",
+          "opponent": "Kavinkumar M",
+          "ours": 81004,
+          "theirs": 81097,
+          "margin": -93,
+          "result": "L",
+          "self_play": false,
+          "opponent_rating": 2229.332842953302,
+          "own_rating": 2269.451081259742,
+          "cohort": "submission_loss"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-112920230-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 112920230,
+          "seat": 1,
+          "end": "2026-09-24T15:41:04.757552700Z",
+          "submission": 56522085,
+          "opponent_submission": 56522216,
+          "team": "Sarthak Sharma ",
+          "opponent": "Semih Temiz",
+          "ours": 100831,
+          "theirs": 100822,
+          "margin": 9,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 2265.804374892365,
+          "own_rating": 2279.5831283801813,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-112937860-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 112937860,
+          "seat": 0,
+          "end": "2026-09-24T16:41:32.042585600Z",
+          "submission": 56522085,
+          "opponent_submission": 56473268,
+          "team": "Sarthak Sharma ",
+          "opponent": "Agent 0",
+          "ours": 112019,
+          "theirs": 112058,
+          "margin": -39,
+          "result": "L",
+          "self_play": false,
+          "opponent_rating": 2245.00365091008,
+          "own_rating": 2298.5140854662523,
+          "cohort": "submission_loss"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-112941419-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 112941419,
+          "seat": 0,
+          "end": "2026-09-24T16:51:57.085290900Z",
+          "submission": 56522085,
+          "opponent_submission": 56495021,
+          "team": "Sarthak Sharma ",
+          "opponent": "BorisV",
+          "ours": 70272,
+          "theirs": 68057,
+          "margin": 2215,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 2333.718909044065,
+          "own_rating": 2305.283018019009,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-112948491-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 112948491,
+          "seat": 1,
+          "end": "2026-09-24T17:15:54.143756800Z",
+          "submission": 56522085,
+          "opponent_submission": 56480663,
+          "team": "Sarthak Sharma ",
+          "opponent": "Ziming Wu",
+          "ours": 113676,
+          "theirs": 110640,
+          "margin": 3036,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 2320.099313048375,
+          "own_rating": 2294.9223349856516,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-112970229-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 112970229,
+          "seat": 0,
+          "end": "2026-09-24T18:31:49.619195600Z",
+          "submission": 56522085,
+          "opponent_submission": 56483235,
+          "team": "Sarthak Sharma ",
+          "opponent": "xthixsl_ml",
+          "ours": 106325,
+          "theirs": 106394,
+          "margin": -69,
+          "result": "L",
+          "self_play": false,
+          "opponent_rating": 2267.1812303308157,
+          "own_rating": 2273.992010039143,
+          "cohort": "submission_loss"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-112970178-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 112970178,
+          "seat": 1,
+          "end": "2026-09-24T18:35:01.621424300Z",
+          "submission": 56522085,
+          "opponent_submission": 56523676,
+          "team": "Sarthak Sharma ",
+          "opponent": "loss volos",
+          "ours": 93255,
+          "theirs": 94984,
+          "margin": -1729,
+          "result": "L",
+          "self_play": false,
+          "opponent_rating": 2246.5833743641947,
+          "own_rating": 2269.0416121132953,
+          "cohort": "submission_loss"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-113006349-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 113006349,
+          "seat": 1,
+          "end": "2026-09-24T20:42:12.579141400Z",
+          "submission": 56522085,
+          "opponent_submission": 56529942,
+          "team": "Sarthak Sharma ",
+          "opponent": "kuroko1t",
+          "ours": 91413,
+          "theirs": 113161,
+          "margin": -21748,
+          "result": "L",
+          "self_play": false,
+          "opponent_rating": 2282.5465097607826,
+          "own_rating": 2276.675426584439,
+          "cohort": "submission_loss"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-113042625-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 113042625,
+          "seat": 1,
+          "end": "2026-09-24T22:44:29.818038300Z",
+          "submission": 56522085,
+          "opponent_submission": 56513115,
+          "team": "Sarthak Sharma ",
+          "opponent": "juisajdiasd",
+          "ours": 125058,
+          "theirs": 125046,
+          "margin": 12,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 2318.675784933923,
+          "own_rating": 2280.394334431222,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-113060173-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 113060173,
+          "seat": 1,
+          "end": "2026-09-24T23:44:30.140861700Z",
+          "submission": 56522085,
+          "opponent_submission": 56502870,
+          "team": "Sarthak Sharma ",
+          "opponent": "oQo",
+          "ours": 65588,
+          "theirs": 65480,
+          "margin": 108,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 2245.8093464403196,
+          "own_rating": 2269.2312112076415,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-113067293-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 113067293,
+          "seat": 1,
+          "end": "2026-09-25T00:09:44.352717400Z",
+          "submission": 56522085,
+          "opponent_submission": 56495454,
+          "team": "Sarthak Sharma ",
+          "opponent": "Matt",
+          "ours": 68421,
+          "theirs": 68497,
+          "margin": -76,
+          "result": "L",
+          "self_play": false,
+          "opponent_rating": 2277.5484382679833,
+          "own_rating": 2263.9275822163168,
+          "cohort": "submission_loss"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-113088676-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 113088676,
+          "seat": 1,
+          "end": "2026-09-25T01:23:16.239886800Z",
+          "submission": 56522085,
+          "opponent_submission": 56511838,
+          "team": "Sarthak Sharma ",
+          "opponent": "洛希边际",
+          "ours": 105689,
+          "theirs": 102418,
+          "margin": 3271,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 2285.0435763751066,
+          "own_rating": 2278.413526359505,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-113097741-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 113097741,
+          "seat": 0,
+          "end": "2026-09-25T01:53:19.323574800Z",
+          "submission": 56522085,
+          "opponent_submission": 56512445,
+          "team": "Sarthak Sharma ",
+          "opponent": "liu bo",
+          "ours": 83286,
+          "theirs": 81399,
+          "margin": 1887,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 2278.6057312667153,
+          "own_rating": 2279.7629307480966,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-113149388-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 113149388,
+          "seat": 1,
+          "end": "2026-09-25T04:53:44.900116600Z",
+          "submission": 56522085,
+          "opponent_submission": 56538222,
+          "team": "Sarthak Sharma ",
+          "opponent": "Yin Li",
+          "ours": 73850,
+          "theirs": 81319,
+          "margin": -7469,
+          "result": "L",
+          "self_play": false,
+          "opponent_rating": 2223.6286432913635,
+          "own_rating": 2254.441998052202,
+          "cohort": "submission_loss"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-113151213-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 113151213,
+          "seat": 1,
+          "end": "2026-09-25T04:59:26.795021400Z",
+          "submission": 56522085,
+          "opponent_submission": 56534585,
+          "team": "Sarthak Sharma ",
+          "opponent": "Suliman Tadros",
+          "ours": 66738,
+          "theirs": 68678,
+          "margin": -1940,
+          "result": "L",
+          "self_play": false,
+          "opponent_rating": 2263.273963935189,
+          "own_rating": 2250.0947290935273,
+          "cohort": "submission_loss"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-113151826-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 113151826,
+          "seat": 0,
+          "end": "2026-09-25T05:01:33.436330700Z",
+          "submission": 56522085,
+          "opponent_submission": 56536833,
+          "team": "Sarthak Sharma ",
+          "opponent": "Yeswanthperni",
+          "ours": 64044,
+          "theirs": 65993,
+          "margin": -1949,
+          "result": "L",
+          "self_play": false,
+          "opponent_rating": 2235.763434181052,
+          "own_rating": 2245.403475487474,
+          "cohort": "submission_loss"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-113157016-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 113157016,
+          "seat": 0,
+          "end": "2026-09-25T05:18:16.648910600Z",
+          "submission": 56522085,
+          "opponent_submission": 56470717,
+          "team": "Sarthak Sharma ",
+          "opponent": "Sufi Afifi",
+          "ours": 72701,
+          "theirs": 72650,
+          "margin": 51,
+          "result": "W",
+          "self_play": false,
+          "opponent_rating": 2283.48304705589,
+          "own_rating": 2254.2628346758283,
+          "cohort": "submission_win_control"
+        }
+      ]
+    },
+    {
+      "path": "replays/episode-113169141-replay.json.gz",
+      "labels": [
+        {
+          "episode_id": 113169141,
+          "seat": 1,
+          "end": "2026-09-25T05:59:55.687995700Z",
+          "submission": 56522085,
+          "opponent_submission": 56539871,
+          "team": "Sarthak Sharma ",
+          "opponent": "Yunho Hwang",
+          "ours": 93552,
+          "theirs": 93641,
+          "margin": -89,
+          "result": "L",
+          "self_play": false,
+          "opponent_rating": 2311.349789138674,
+          "own_rating": 2256.3758906820376,
+          "cohort": "submission_loss"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "base": {
+    "live_demand350": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 4,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": -36.833333333333336
+    },
+    "hybrid2965": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 5,
+      "losses": 1,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 1183.0
+    },
+    "thomas2944": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 5,
+      "losses": 1,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 1592.3333333333333
+    },
+    "latepurchase16": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 5,
+      "losses": 1,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 641.0
+    },
+    "response_v3": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 5,
+      "losses": 1,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 1165.0
+    },
+    "v48_clear_queue": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 6,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 4032.1666666666665
+    },
+    "jaxa2780": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 6,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 8724.0
+    },
+    "pf_all": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 6,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 33784.666666666664
+    },
+    "TOTAL": {
+      "completed": 48,
+      "expected": 48,
+      "wins": 42,
+      "losses": 6,
+      "ties": 0,
+      "failures": 0
+    }
+  },
+  "preempt_h4": {
+    "live_demand350": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 4,
+      "losses": 2,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": -83.33333333333333
+    },
+    "hybrid2965": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 5,
+      "losses": 1,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 1162.3333333333333
+    },
+    "thomas2944": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 5,
+      "losses": 1,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 1553.3333333333333
+    },
+    "latepurchase16": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 5,
+      "losses": 1,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 616.3333333333334
+    },
+    "response_v3": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 5,
+      "losses": 1,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 1125.6666666666667
+    },
+    "v48_clear_queue": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 6,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 4028.8333333333335
+    },
+    "jaxa2780": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 6,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 8720.0
+    },
+    "pf_all": {
+      "completed": 6,
+      "expected": 6,
+      "wins": 6,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 33497.833333333336
+    },
+    "TOTAL": {
+      "completed": 48,
+      "expected": 48,
+      "wins": 42,
+      "losses": 6,
+      "ties": 0,
+      "failures": 0
+    }
+  }
+}

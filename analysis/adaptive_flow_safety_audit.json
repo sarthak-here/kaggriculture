@@ -1,0 +1,26 @@
+{
+  "variants\\adaptive_flow_20260925\\main.py": {
+    "characters": 1071236,
+    "findings": [
+      {
+        "kind": "sensitive_import",
+        "source": "variants\\adaptive_flow_20260925\\main.py",
+        "line": 3409,
+        "detail": "os"
+      },
+      {
+        "kind": "sensitive_import",
+        "source": "variants\\adaptive_flow_20260925\\main.py",
+        "line": 3579,
+        "detail": "os"
+      },
+      {
+        "kind": "sensitive_call",
+        "source": "variants\\adaptive_flow_20260925\\main.py",
+        "line": 3596,
+        "detail": "open"
+      }
+    ],
+    "safe_for_local_test": false
+  }
+}
