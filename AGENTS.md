@@ -1,5 +1,16 @@
 # Agent registry
 
+## Current checkpoint — 2026-09-25
+
+Strongest local candidate: `public_candidates/current_20260925/cha22/main.py`,
+SHA-256 `127ed3e62988c0474d386db6527ae8ca9de9bb1fe7004128557ddef67126c652`.
+After a recursive static safety audit, it scored **18-2** against exact
+demand_timing on ten fresh paired seeds, then **78-2** against eight strong
+saved families on disjoint seeds: **96-4 over 100 games** combined, zero
+failures. Its advantage changes production (more carrots planted and sold), not
+only queue order. This is the current local promotion winner, not a guaranteed
+leaderboard result. See Experiment #124. No Kaggle submission has been made.
+
 ## Current checkpoint — 2026-09-24
 
 Strongest local foundation: `public_candidates/current_20260924/demand_timing/main.py`,

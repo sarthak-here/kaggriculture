@@ -1,0 +1,34 @@
+{
+  "candidate": "public_candidates/current_20260925/cha22/main.py",
+  "sha256": "127ed3e62988c0474d386db6527ae8ca9de9bb1fe7004128557ddef67126c652",
+  "bytes": 501543,
+  "engine": "1.32.7",
+  "safety_audit": "PASS",
+  "incumbent_confirmation": {
+    "opponent": "public_candidates/current_20260924/demand_timing/main.py",
+    "seeds": [1023000, 1023001, 1023002, 1023003, 1023004, 1023005, 1023006, 1023007, 1023008, 1023009],
+    "wins": 18,
+    "losses": 2,
+    "ties": 0,
+    "failures": 0,
+    "mean_margin": 1291
+  },
+  "broad_panel": {
+    "results": {
+      "live_demand350": {"wins": 10, "losses": 0, "mean_margin": 2917},
+      "hybrid2965": {"wins": 10, "losses": 0, "mean_margin": 1438},
+      "thomas2944": {"wins": 10, "losses": 0, "mean_margin": 2628},
+      "latepurchase16": {"wins": 8, "losses": 2, "mean_margin": 684},
+      "response_v3": {"wins": 10, "losses": 0, "mean_margin": 1260},
+      "v48_clear_queue": {"wins": 10, "losses": 0, "mean_margin": 3525},
+      "jaxa2780": {"wins": 10, "losses": 0, "mean_margin": 3059},
+      "pf_all": {"wins": 10, "losses": 0, "mean_margin": 34946}
+    },
+    "wins": 78,
+    "losses": 2,
+    "ties": 0,
+    "failures": 0
+  },
+  "combined_confirmation": {"wins": 96, "losses": 4, "ties": 0, "failures": 0},
+  "submitted_to_competition": false
+}

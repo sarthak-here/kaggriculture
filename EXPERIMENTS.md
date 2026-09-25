@@ -5263,3 +5263,32 @@ thresholds nor the complete Pioneers economy surpasses the incumbent. A
 breakthrough requires a different compatible production/economy parent or a
 state-conditioned policy that changes quantities and production jointly. No
 Kaggle competition submission was made.
+
+## #124 — Cha22 production parent local promotion (2026-09-25)
+
+The four current public candidates were recursively unpacked and statically
+audited before local execution. Cha22 contained no filesystem, network or
+process operations and passed the audit. Pioneers, Shepherd and Hybrid contained
+only disabled `path=None` file-read branches and unused `os` imports.
+
+On three fresh discovery seeds in both seats, Cha22 beat the exact submitted
+demand-timing parent **6-0** with mean margin +544. A disjoint ten-seed
+confirmation scored **18-2 (90.0%)**, mean margin +1,291. Unlike the rejected
+queue-only changes in #123, the production lever moved: Cha22 planted 734
+carrots versus the incumbent's 668 and sold 2,304 versus 2,142.
+
+Cha22 then played five new seeds in both seats against eight previously strong
+families. It scored **78-2 (97.5%)** with zero failures: 10-0 against live
+demand350, hybrid2965, Thomas2944, response-v3, V48, Jaxa and pf_all, and 8-2
+against latepurchase16. Combining the disjoint incumbent confirmation and broad
+panel gives **96-4 over 100 games**. The weaker current candidates were rejected:
+Hybrid scored 12-8 against demand_timing with only +154 mean margin, and
+Shepherd scored 3-3 with -698.
+
+Promoted local candidate: exact
+`public_candidates/current_20260925/cha22/main.py`, SHA256
+`127ed3e62988c0474d386db6527ae8ca9de9bb1fe7004128557ddef67126c652`,
+501,543 bytes. The source retains its Apache-2.0 notices. This is the strongest
+local evidence in the project, but local lineage panels have failed to predict
+the live ladder before, so it is not described as guaranteed top 10. No Kaggle
+competition submission was made; fresh explicit approval is required.
