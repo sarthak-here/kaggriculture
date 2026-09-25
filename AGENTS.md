@@ -9,7 +9,8 @@ demand_timing on ten fresh paired seeds, then **78-2** against eight strong
 saved families on disjoint seeds: **96-4 over 100 games** combined, zero
 failures. Its advantage changes production (more carrots planted and sold), not
 only queue order. This is the current local promotion winner, not a guaranteed
-leaderboard result. See Experiment #124. No Kaggle submission has been made.
+leaderboard result. See Experiment #124. Submitted unchanged with explicit
+approval as **56556133**; initial status PENDING.
 
 ## Current checkpoint — 2026-09-24
 

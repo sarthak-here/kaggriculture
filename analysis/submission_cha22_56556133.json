@@ -1,0 +1,14 @@
+{
+  "competition": "kaggriculture",
+  "submission_id": 56556133,
+  "submitted_at": "2026-09-25T17:09:20.730000Z",
+  "status_at_receipt": "PENDING",
+  "file_name": "submission.tar.gz",
+  "archive_sha256": "0e0984fa9600f63d507b384a6a1d53ec4dd55abf6820d81e7c2a926b67f1284b",
+  "archive_bytes": 179335,
+  "archive_members": ["main.py"],
+  "main_sha256": "127ed3e62988c0474d386db6527ae8ca9de9bb1fe7004128557ddef67126c652",
+  "entrypoint": "ig_agent",
+  "description": "Cha22 production breakthrough: 96-4 local paired-seat validation",
+  "remaining_daily_submissions_after_upload": 4
+}

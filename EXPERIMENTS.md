@@ -5292,3 +5292,14 @@ Promoted local candidate: exact
 local evidence in the project, but local lineage panels have failed to predict
 the live ladder before, so it is not described as guaranteed top 10. No Kaggle
 competition submission was made; fresh explicit approval is required.
+
+### #124 authorized submission
+
+After reviewing the 96-4 local validation, the user explicitly approved one
+competition upload. Preflight verified the exact tested `main.py` SHA256
+`127ed3e62988c0474d386db6527ae8ca9de9bb1fe7004128557ddef67126c652`,
+one root-level archive member (`main.py`), recursive safety audit PASS, syntax,
+and Kaggle callable selection (`ig_agent`). Submitted once as Kaggle submission
+**56556133** at 2026-09-25T17:09:20.730000Z. Initial status PENDING; Kaggle
+reported four daily submissions remaining. Receipt:
+`analysis/submission_cha22_56556133.json`.
