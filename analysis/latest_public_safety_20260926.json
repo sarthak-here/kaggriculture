@@ -1,0 +1,89 @@
+{
+  "kaggle_downloads\\latest_20260926\\kaggriculture-2887-score-fieldcraft-agent\\output\\fieldcraft_release\\main.py": {
+    "characters": 19935,
+    "findings": [],
+    "safe_for_local_test": true
+  },
+  "kaggle_downloads\\latest_20260926\\kaggriculture-2900\\output\\main.py": {
+    "characters": 18499,
+    "findings": [],
+    "safe_for_local_test": true
+  },
+  "kaggle_downloads\\latest_20260926\\kaggriculture-harvest-ledger\\output\\main.py": {
+    "characters": 1011867,
+    "findings": [
+      {
+        "kind": "sensitive_import",
+        "source": "kaggle_downloads\\latest_20260926\\kaggriculture-harvest-ledger\\output\\main.py",
+        "line": 3406,
+        "detail": "os"
+      },
+      {
+        "kind": "sensitive_import",
+        "source": "kaggle_downloads\\latest_20260926\\kaggriculture-harvest-ledger\\output\\main.py",
+        "line": 3576,
+        "detail": "os"
+      },
+      {
+        "kind": "sensitive_call",
+        "source": "kaggle_downloads\\latest_20260926\\kaggriculture-harvest-ledger\\output\\main.py",
+        "line": 3593,
+        "detail": "open"
+      }
+    ],
+    "safe_for_local_test": false
+  },
+  "kaggle_downloads\\latest_20260926\\kaggriculture-top-2-master-engine-v4\\output\\main.py": {
+    "characters": 1047774,
+    "findings": [
+      {
+        "kind": "sensitive_import",
+        "source": "kaggle_downloads\\latest_20260926\\kaggriculture-top-2-master-engine-v4\\output\\main.py",
+        "line": 3412,
+        "detail": "os"
+      },
+      {
+        "kind": "sensitive_import",
+        "source": "kaggle_downloads\\latest_20260926\\kaggriculture-top-2-master-engine-v4\\output\\main.py",
+        "line": 3582,
+        "detail": "os"
+      },
+      {
+        "kind": "sensitive_call",
+        "source": "kaggle_downloads\\latest_20260926\\kaggriculture-top-2-master-engine-v4\\output\\main.py",
+        "line": 3599,
+        "detail": "open"
+      }
+    ],
+    "safe_for_local_test": false
+  },
+  "kaggle_downloads\\latest_20260926\\kaggriculture-version-31-26-09-bronze-going-up\\output\\main.py": {
+    "characters": 494061,
+    "findings": [],
+    "safe_for_local_test": true
+  },
+  "kaggle_downloads\\latest_20260926\\the-2950-peak-farm\\output\\main.py": {
+    "characters": 1010931,
+    "findings": [
+      {
+        "kind": "sensitive_import",
+        "source": "kaggle_downloads\\latest_20260926\\the-2950-peak-farm\\output\\main.py",
+        "line": 3403,
+        "detail": "os"
+      },
+      {
+        "kind": "sensitive_import",
+        "source": "kaggle_downloads\\latest_20260926\\the-2950-peak-farm\\output\\main.py",
+        "line": 3573,
+        "detail": "os"
+      },
+      {
+        "kind": "sensitive_call",
+        "source": "kaggle_downloads\\latest_20260926\\the-2950-peak-farm\\output\\main.py",
+        "line": 3590,
+        "detail": "open"
+      }
+    ],
+    "safe_for_local_test": false
+  }
+}

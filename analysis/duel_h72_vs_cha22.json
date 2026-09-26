@@ -1,0 +1,60 @@
+[
+ {
+  "seed": 1030420,
+  "order": 0,
+  "a": 103542.0,
+  "b": 103542.0,
+  "shops": [
+   "ICE_CREAM_SHOP",
+   "BAKERY",
+   "FARMERS_MARKET",
+   "FARMERS_MARKET",
+   "FARMERS_MARKET",
+   "ICE_CREAM_SHOP",
+   "BAKERY",
+   "FARMERS_MARKET"
+  ],
+  "bucket": "10c4s_3q",
+  "a_carrot": {
+   "planted": 41,
+   "sold": 122,
+   "final_carrot_price": 47,
+   "final_carrot_deficit": 154
+  },
+  "b_carrot": {
+   "planted": 41,
+   "sold": 122,
+   "final_carrot_price": 47,
+   "final_carrot_deficit": 154
+  }
+ },
+ {
+  "seed": 1030420,
+  "order": 1,
+  "a": 103542.0,
+  "b": 103542.0,
+  "shops": [
+   "ICE_CREAM_SHOP",
+   "BAKERY",
+   "FARMERS_MARKET",
+   "FARMERS_MARKET",
+   "FARMERS_MARKET",
+   "ICE_CREAM_SHOP",
+   "BAKERY",
+   "FARMERS_MARKET"
+  ],
+  "bucket": "10c4s_3q",
+  "a_carrot": {
+   "planted": 41,
+   "sold": 122,
+   "final_carrot_price": 47,
+   "final_carrot_deficit": 154
+  },
+  "b_carrot": {
+   "planted": 41,
+   "sold": 122,
+   "final_carrot_price": 47,
+   "final_carrot_deficit": 154
+  }
+ }
+]

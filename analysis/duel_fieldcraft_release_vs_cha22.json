@@ -1,0 +1,176 @@
+[
+ {
+  "seed": 1030340,
+  "order": 0,
+  "a": 92511.0,
+  "b": 97987.0,
+  "shops": [
+   "PET_CAFE",
+   "FARMERS_MARKET",
+   "FARMERS_MARKET",
+   "ICE_CREAM_SHOP",
+   "BRUNCH_SPOT",
+   "BAKERY",
+   "ICE_CREAM_SHOP",
+   "BAKERY"
+  ],
+  "bucket": "8c6s_3q",
+  "a_carrot": {
+   "planted": 31,
+   "sold": 18040,
+   "final_carrot_price": 59,
+   "final_carrot_deficit": 310
+  },
+  "b_carrot": {
+   "planted": 70,
+   "sold": 225,
+   "final_carrot_price": 59,
+   "final_carrot_deficit": 310
+  }
+ },
+ {
+  "seed": 1030340,
+  "order": 1,
+  "a": 92511.0,
+  "b": 97987.0,
+  "shops": [
+   "PET_CAFE",
+   "FARMERS_MARKET",
+   "FARMERS_MARKET",
+   "ICE_CREAM_SHOP",
+   "BRUNCH_SPOT",
+   "BAKERY",
+   "ICE_CREAM_SHOP",
+   "BAKERY"
+  ],
+  "bucket": "8c6s_3q",
+  "a_carrot": {
+   "planted": 31,
+   "sold": 18040,
+   "final_carrot_price": 59,
+   "final_carrot_deficit": 310
+  },
+  "b_carrot": {
+   "planted": 70,
+   "sold": 225,
+   "final_carrot_price": 59,
+   "final_carrot_deficit": 310
+  }
+ },
+ {
+  "seed": 1030341,
+  "order": 0,
+  "a": 118135.0,
+  "b": 122553.0,
+  "shops": [
+   "ICE_CREAM_SHOP",
+   "PIZZA_SHOP",
+   "SMOOTHIE_SHOP",
+   "YARN_STORE",
+   "BAKERY",
+   "PIZZA_SHOP",
+   "BRUNCH_SPOT",
+   "BRUNCH_SPOT"
+  ],
+  "bucket": "10c4s_3q",
+  "a_carrot": {
+   "planted": 31,
+   "sold": 18040,
+   "final_carrot_price": 21,
+   "final_carrot_deficit": -145
+  },
+  "b_carrot": {
+   "planted": 31,
+   "sold": 93,
+   "final_carrot_price": 21,
+   "final_carrot_deficit": -145
+  }
+ },
+ {
+  "seed": 1030341,
+  "order": 1,
+  "a": 118135.0,
+  "b": 122553.0,
+  "shops": [
+   "ICE_CREAM_SHOP",
+   "PIZZA_SHOP",
+   "SMOOTHIE_SHOP",
+   "YARN_STORE",
+   "BAKERY",
+   "PIZZA_SHOP",
+   "BRUNCH_SPOT",
+   "BRUNCH_SPOT"
+  ],
+  "bucket": "10c4s_3q",
+  "a_carrot": {
+   "planted": 31,
+   "sold": 18040,
+   "final_carrot_price": 21,
+   "final_carrot_deficit": -145
+  },
+  "b_carrot": {
+   "planted": 31,
+   "sold": 93,
+   "final_carrot_price": 21,
+   "final_carrot_deficit": -145
+  }
+ },
+ {
+  "seed": 1030342,
+  "order": 0,
+  "a": 69815.0,
+  "b": 73421.0,
+  "shops": [
+   "YARN_STORE",
+   "FARMERS_MARKET",
+   "PET_CAFE",
+   "BAKERY",
+   "BAKERY",
+   "BAKERY",
+   "PET_CAFE",
+   "BAKERY"
+  ],
+  "bucket": "6c12s_4q_first_yarn",
+  "a_carrot": {
+   "planted": 31,
+   "sold": 18040,
+   "final_carrot_price": 52,
+   "final_carrot_deficit": 220
+  },
+  "b_carrot": {
+   "planted": 71,
+   "sold": 221,
+   "final_carrot_price": 52,
+   "final_carrot_deficit": 220
+  }
+ },
+ {
+  "seed": 1030342,
+  "order": 1,
+  "a": 69815.0,
+  "b": 73421.0,
+  "shops": [
+   "YARN_STORE",
+   "FARMERS_MARKET",
+   "PET_CAFE",
+   "BAKERY",
+   "BAKERY",
+   "BAKERY",
+   "PET_CAFE",
+   "BAKERY"
+  ],
+  "bucket": "6c12s_4q_first_yarn",
+  "a_carrot": {
+   "planted": 31,
+   "sold": 18040,
+   "final_carrot_price": 52,
+   "final_carrot_deficit": 220
+  },
+  "b_carrot": {
+   "planted": 71,
+   "sold": 221,
+   "final_carrot_price": 52,
+   "final_carrot_deficit": 220
+  }
+ }
+]

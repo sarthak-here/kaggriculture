@@ -1,0 +1,60 @@
+[
+ {
+  "seed": 1030410,
+  "order": 0,
+  "a": 76340.0,
+  "b": 76340.0,
+  "shops": [
+   "FARMERS_MARKET",
+   "PIZZA_SHOP",
+   "BAKERY",
+   "SMOOTHIE_SHOP",
+   "BAKERY",
+   "SMOOTHIE_SHOP",
+   "YARN_STORE",
+   "FARMERS_MARKET"
+  ],
+  "bucket": "10c4s_3q",
+  "a_carrot": {
+   "planted": 40,
+   "sold": 120,
+   "final_carrot_price": 33,
+   "final_carrot_deficit": -4
+  },
+  "b_carrot": {
+   "planted": 40,
+   "sold": 120,
+   "final_carrot_price": 33,
+   "final_carrot_deficit": -4
+  }
+ },
+ {
+  "seed": 1030410,
+  "order": 1,
+  "a": 76340.0,
+  "b": 76340.0,
+  "shops": [
+   "FARMERS_MARKET",
+   "PIZZA_SHOP",
+   "BAKERY",
+   "SMOOTHIE_SHOP",
+   "BAKERY",
+   "SMOOTHIE_SHOP",
+   "YARN_STORE",
+   "FARMERS_MARKET"
+  ],
+  "bucket": "10c4s_3q",
+  "a_carrot": {
+   "planted": 40,
+   "sold": 120,
+   "final_carrot_price": 33,
+   "final_carrot_deficit": -4
+  },
+  "b_carrot": {
+   "planted": 40,
+   "sold": 120,
+   "final_carrot_price": 33,
+   "final_carrot_deficit": -4
+  }
+ }
+]

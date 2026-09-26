@@ -5303,3 +5303,33 @@ and Kaggle callable selection (`ig_agent`). Submitted once as Kaggle submission
 **56556133** at 2026-09-25T17:09:20.730000Z. Initial status PENDING; Kaggle
 reported four daily submissions remaining. Receipt:
 `analysis/submission_cha22_56556133.json`.
+
+## #125 — Latest public-code and discussion search (2026-09-26)
+
+Reviewed the newest 200 competition notebooks and current discussions, then
+downloaded, hash-verified, compiled, and safety-audited the strongest-looking
+current releases. A new literal-only multi-file extractor was added for the
+God's Mode notebook bundle; it validates every publisher-provided SHA-256 and
+does not execute notebook code.
+
+Four-Turn Forecast v2 is a genuine improvement over the old portfolio line:
+it beat frozen `pf_all` **20-0** on ten fresh paired seeds with +30,009 mean
+margin and materially higher carrot production. It is not an improvement over
+the current checkpoint: exact Cha22 beat it **9-1**. Top-2 Master V4 (0-6),
+2950 Peak (2-4), Salem 2900 (0-6), Fieldcraft 2887 (0-6), and the released
+God's Mode overlay (0-6) also failed against Cha22. V31 Bronze produced six
+exact ties with identical production, showing that it is behaviorally the same
+policy on the tested worlds.
+
+The shop-seed paper's released controller does not implement directed control:
+its posterior prediction records `acted: False`; the only live action change
+is a bounded delay of sales after shops are already revealed. The paper's own
+forced-PET_CAFE campaign reversed four winning margins into losses, so the
+mechanism is not promoted from causal research to competition strategy.
+
+Cha22 already has clone detection, adaptive sale reservation, and lockstep SELL
+ordering. Raising only its confirmed-mirror reservation horizon from 24 to 32,
+48, or 72 produced exact ties/no action effect in ten activation-check games.
+Those variants are rejected. No Kaggle submission was made. Full source list,
+seed ranges, results, and reproduction notes are in
+`analysis/LATEST_PUBLIC_SEARCH_20260926.md`.

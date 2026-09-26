@@ -1,5 +1,17 @@
 # Agent registry
 
+## Current checkpoint — 2026-09-26
+
+Searched the newest 200 competition notebooks and current discussions, safely
+extracted the strongest-looking releases, and screened them against exact
+Cha22. Four-Turn Forecast v2 genuinely crushes historical `pf_all` **20-0** on
+ten fresh paired seeds (+30,009 mean), but loses **1-9** to Cha22. Top-2 V4,
+2950 Peak, Salem 2900, Fieldcraft 2887, and the released God's Mode overlay all
+lost to Cha22; V31 Bronze produced six exact ties and is behaviorally identical
+on the tested worlds. Cha22 mirror-horizon variants 32/48/72 were exact no-ops.
+No candidate was promoted and no Kaggle submission was made. Full evidence:
+`analysis/LATEST_PUBLIC_SEARCH_20260926.md`.
+
 ## Current checkpoint — 2026-09-25
 
 Strongest local candidate: `public_candidates/current_20260925/cha22/main.py`,
