@@ -1,0 +1,11 @@
+{
+  "source": "public_candidates\\current_20260925\\cha22\\main.py",
+  "source_sha256": "36812d632b181fee7e0f249fa3a1eb364e0d373d6e4211f4e49803e8dd3582aa",
+  "candidate": "variants\\cha22_slot_schedule_v1_20260927\\main.py",
+  "candidate_sha256": "2ee70d3c2b7372a8cd04d714d4d45a1f9c1c53d107d1941b29a5a94ece49cf18",
+  "gate": "public farm similarity >= .90",
+  "schedule": {
+    "196": "move existing SELL MILK to slot 0",
+    "250": "move existing SELL MELON to slot 0"
+  }
+}

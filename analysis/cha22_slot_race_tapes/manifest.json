@@ -1,0 +1,68 @@
+[
+  {
+    "episode": 113382736,
+    "seed": 212656668,
+    "own_seat": 0,
+    "opponent_seat": 1,
+    "result": "W",
+    "live_margin": 2638.0,
+    "opponent": "Lan_Sky",
+    "tape": "analysis\\cha22_slot_race_tapes\\113382736\\main.py",
+    "sha256": "00a367622a57ee91146b964b79869a163b97c9b1dd5a4fe5ddffa6d4e9b3da0f"
+  },
+  {
+    "episode": 113418129,
+    "seed": 2032659432,
+    "own_seat": 1,
+    "opponent_seat": 0,
+    "result": "L",
+    "live_margin": -1929.0,
+    "opponent": "LoveB4Sunrise",
+    "tape": "analysis\\cha22_slot_race_tapes\\113418129\\main.py",
+    "sha256": "4b944e5e56113ca3f62197771332330a2ce59c58335ec34a032e490b0eff1709"
+  },
+  {
+    "episode": 113426386,
+    "seed": 1151947342,
+    "own_seat": 1,
+    "opponent_seat": 0,
+    "result": "L",
+    "live_margin": -513.0,
+    "opponent": "KingDellaFarm",
+    "tape": "analysis\\cha22_slot_race_tapes\\113426386\\main.py",
+    "sha256": "dfec19049497093856d56e2e489a1c3b68ca7636966494b65a179bc52bd71a3e"
+  },
+  {
+    "episode": 113449554,
+    "seed": 39520372,
+    "own_seat": 0,
+    "opponent_seat": 1,
+    "result": "W",
+    "live_margin": 517.0,
+    "opponent": "AdamJonesJohnson",
+    "tape": "analysis\\cha22_slot_race_tapes\\113449554\\main.py",
+    "sha256": "cb6b5899f8b2324c08b58805f53822f2ea8eb8db7ced0e8150fc631cf1852864"
+  },
+  {
+    "episode": 113471121,
+    "seed": 1198731547,
+    "own_seat": 0,
+    "opponent_seat": 1,
+    "result": "L",
+    "live_margin": -1856.0,
+    "opponent": "Shiji Zheng",
+    "tape": "analysis\\cha22_slot_race_tapes\\113471121\\main.py",
+    "sha256": "3babc40c40057929b380fa004f543521843897dd90522b548e5228112eb0572c"
+  },
+  {
+    "episode": 113593430,
+    "seed": 721397150,
+    "own_seat": 1,
+    "opponent_seat": 0,
+    "result": "L",
+    "live_margin": -224.0,
+    "opponent": "jiggly buns",
+    "tape": "analysis\\cha22_slot_race_tapes\\113593430\\main.py",
+    "sha256": "89e3f14002c82d52b304b02eccb17b4a126f11a49efc5a1fbfcb9f25558ec8dd"
+  }
+]

@@ -24,6 +24,8 @@ def main():
     ap.add_argument('--top-count',type=int,default=10,choices=range(11))
     ap.add_argument('--all-own',action='store_true',help='Download all completed own games, including ties and self-play')
     ap.add_argument('--top-replays',type=int,default=2)
+    ap.add_argument('--workers',type=int,default=2)
+    ap.add_argument('--retries',type=int,default=5)
     args=ap.parse_args(); out=args.output;out.mkdir(parents=True,exist_ok=True)
     session=requests.Session(); payloads={}
     cached=out/'api';cached.mkdir(exist_ok=True)
@@ -106,15 +108,31 @@ def main():
         gz=replaydir/f'episode-{episode}-replay.json.gz'
         raw=replaydir/f'episode-{episode}-replay.json'
         if not gz.exists():
-            subprocess.run(['kaggle','competitions','replay',str(episode),'-p',str(replaydir),'-q'],check=True)
-            data=raw.read_bytes();json.loads(data)
+            last_error=None
+            for attempt in range(args.retries):
+                try:
+                    result=subprocess.run(
+                        ['kaggle','competitions','replay',str(episode),'-p',str(replaydir),'-q'],
+                        check=False,capture_output=True,text=True)
+                    if result.returncode:
+                        raise RuntimeError(result.stderr.strip() or result.stdout.strip()
+                                           or f'kaggle exit {result.returncode}')
+                    data=raw.read_bytes();json.loads(data)
+                    break
+                except Exception as exc:
+                    last_error=exc
+                    # Remove only this replay's incomplete raw download.
+                    if raw.exists():raw.unlink()
+                    if attempt+1<args.retries:time.sleep(min(20,2**attempt))
+            else:
+                raise RuntimeError(f'episode {episode} failed after {args.retries} attempts: {last_error}')
             gz.write_bytes(gzip.compress(data,mtime=0))
             # Only remove the exact just-downloaded raw duplicate after verifying gzip.
             assert gzip.decompress(gz.read_bytes())==data
             assert raw.resolve().parent==replaydir.resolve()
             raw.unlink()
         return dict(path=gz.relative_to(out).as_posix(),labels=labels)
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    with ThreadPoolExecutor(max_workers=args.workers) as pool:
         for entry in pool.map(download,chosen.items()):
             snapshot['replays'].append(entry)
             (out/'manifest.json').write_text(json.dumps(snapshot,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')

@@ -5333,3 +5333,33 @@ ordering. Raising only its confirmed-mirror reservation horizon from 24 to 32,
 Those variants are rejected. No Kaggle submission was made. Full source list,
 seed ranges, results, and reproduction notes are in
 `analysis/LATEST_PUBLIC_SEARCH_20260926.md`.
+
+## #126 — Cha22 live replay slot-race patch (2026-09-27)
+
+The full 142-replay record of submission 56556133 was profiled, including 93
+decisive external close-clone games at action agreement >=0.90. Broad replay
+route transplantation failed: the initial portfolio scored 0-6-4 against exact
+Cha22, and exact shop-pair specialists that won two source worlds fell to
+5-11-28 on held-out matching-shop worlds. Moving the clone reservation start
+earlier also produced no action effect. These approaches are rejected.
+
+The audited fill and order tables exposed a narrower causal defect. At step196
+Cha22 repeatedly sold the same12 MILK units as its rival but used market slot1
+behind a WHEAT buy while the rival used slot0, costing exactly370 coins. At
+step250 the same pattern cost282 coins on a24-unit MELON sale. A similarity-
+gated candidate preserves every command and quantity and only moves those two
+existing sales to slot0.
+
+On six exact replay-derived opponent tapes the combined patch gained exactly
+**+652 in every game**, strengthened both prior wins, and flipped two of four
+prior losses. It then tied exact Cha22 in all ten fresh paired-seat games. On a
+24-game diverse panel spanning v48, prefund, Kaito, pf_all, protected, and
+Shop0909, it scored **24-0** with zero failures; its gate fired zero times and
+reported zero errors in that unrelated panel.
+
+Candidate SHA256:
+`2ee70d3c2b7372a8cd04d714d4d45a1f9c1c53d107d1941b29a5a94ece49cf18`.
+This is the first live-replay patch in this branch that flips recorded losses
+without changing the historical panel. It remains a family-specific measured
+improvement, not proof of top-10 performance. No Kaggle submission was made.
+Detailed evidence: `analysis/CHA22_LIVE_SLOT_RACES_20260927.md`.

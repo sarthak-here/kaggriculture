@@ -7,6 +7,7 @@ agents. Use engine 1.32.7. Each JSON output is exclusive to one experiment.
 from __future__ import annotations
 import argparse
 import collections
+import collections.abc
 import hashlib
 import importlib.metadata
 import inspect
@@ -15,6 +16,16 @@ import multiprocessing as mp
 from pathlib import Path
 import time
 import traceback
+
+def json_safe(value):
+    """Normalize agent telemetry without changing the evaluated policy."""
+    if isinstance(value, collections.abc.Mapping):
+        return {str(key): json_safe(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [json_safe(item) for item in value]
+    if value is None or isinstance(value, (str, int, float, bool)):
+        return value
+    return repr(value)
 
 def submission_entrypoint(namespace, source):
     """Match kaggle_environments.agent.get_last_callable exactly.
@@ -114,7 +125,8 @@ def play(a,b,seed,order):
         agent_telemetry=[]
         for conn in connections:
             conn.send('telemetry')
-            agent_telemetry.append(conn.recv() if conn.poll(5) else {'error':'telemetry timeout'})
+            raw = conn.recv() if conn.poll(5) else {'error':'telemetry timeout'}
+            agent_telemetry.append(json_safe(raw))
         return {'seed':seed,'order':order,'status':'DONE','a':rewards[ai],'b':rewards[bi],
                 'a_checkpoints':checkpoints[ai],'b_checkpoints':checkpoints[bi],
                 'a_final_farm':farm_summary(ai),'b_final_farm':farm_summary(bi),

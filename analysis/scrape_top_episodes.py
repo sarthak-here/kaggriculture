@@ -242,6 +242,7 @@ def download_episode(episode_id, session=None):
 # --------------------------------------------------------------------------
 
 def main():
+    global OUT_DIR, DISCOVERY, MANIFEST
     ap = argparse.ArgumentParser()
     ap.add_argument("--top", type=int, default=10, help="how many leaderboard teams to target")
     ap.add_argument("--max-per-team", type=int, default=40,
@@ -250,8 +251,14 @@ def main():
                     help="keep only episodes the target team won")
     ap.add_argument("--seed-submission", type=int, default=55555746,
                     help="a submission id to start the BFS from (default: ours)")
+    ap.add_argument("--out-dir", type=str, default=OUT_DIR,
+                    help="independent corpus directory (default: replays_top)")
     ap.add_argument("--dry-run", action="store_true", help="plan only, download nothing")
     args = ap.parse_args()
+
+    OUT_DIR = os.path.abspath(args.out_dir)
+    DISCOVERY = os.path.join(OUT_DIR, "discovery.json")
+    MANIFEST = os.path.join(OUT_DIR, "manifest.json")
 
     os.makedirs(OUT_DIR, exist_ok=True)
     session = requests.Session()

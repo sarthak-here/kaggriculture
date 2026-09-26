@@ -207,7 +207,15 @@ def main():
     ap.add_argument('--workers',type=int,default=1)
     args=ap.parse_args()
     if args.output.exists():raise FileExistsError(args.output)
-    records=json.loads(args.manifest.read_text(encoding='utf-8'))['replays'] if args.manifest else [dict(path=str(p),labels=[]) for p in args.inputs]
+    if args.manifest:
+        manifest_data=json.loads(args.manifest.read_text(encoding='utf-8'))
+        if isinstance(manifest_data,list):
+            records=[dict(path='episode-%s-replay.json.gz'%r['episode_id'],
+                          labels=[dict(r,cohort=r.get('cohort','rank1'))]) for r in manifest_data]
+        else:
+            records=manifest_data['replays']
+    else:
+        records=[dict(path=str(p),labels=[]) for p in args.inputs]
     if args.manifest:
         records=[dict(r,path=str(Path(r['path']) if Path(r['path']).is_absolute() else args.manifest.parent/r['path'])) for r in records]
     if not records:raise ValueError('No replays supplied')

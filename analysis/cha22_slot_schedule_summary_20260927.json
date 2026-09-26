@@ -1,0 +1,31 @@
+{
+  "candidate": "variants/cha22_slot_schedule_v1_20260927/main.py",
+  "sha256": "2ee70d3c2b7372a8cd04d714d4d45a1f9c1c53d107d1941b29a5a94ece49cf18",
+  "replay_tapes": {
+    "episodes": [113382736, 113418129, 113426386, 113449554, 113471121, 113593430],
+    "margin_gains": [652.0, 652.0, 652.0, 652.0, 652.0, 652.0],
+    "prior_losses": 4,
+    "losses_flipped": 2,
+    "prior_wins": 2,
+    "wins_preserved": 2
+  },
+  "exact_cha22": {
+    "seeds": [1043000, 1043001, 1043002, 1043003, 1043004],
+    "completed": 10,
+    "wins": 0,
+    "losses": 0,
+    "ties": 10,
+    "failures": 0
+  },
+  "diverse_panel": {
+    "models": ["v48", "prefund", "kaito", "pf_all", "protected", "shop0909"],
+    "seeds": [1043100, 1043101],
+    "completed": 24,
+    "wins": 24,
+    "losses": 0,
+    "ties": 0,
+    "failures": 0,
+    "unintended_activations": 0,
+    "controller_errors": 0
+  }
+}
