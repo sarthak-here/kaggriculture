@@ -1,0 +1,13 @@
+{
+  "submission_id": 56599813,
+  "competition": "kaggriculture",
+  "file_name": "main.py",
+  "description": "Cha22 early market race schedule",
+  "submitted_at": "2026-09-27 06:06:46.380000",
+  "initial_status": "PENDING",
+  "candidate": "variants/cha22_slot_schedule_early_20260927/main.py",
+  "upload_sha256_crlf": "c64964fee158ad630bbb16bf04310051f4b0240d1338384e9868db218a597626",
+  "tested_sha256_lf": "93c7183b581c28933fb6c46fb5c494200738e7dea194c4a847f91b434020f6dd",
+  "verification": "The uploaded working copy has 7516 CRLF line endings. Replacing CRLF with LF produces the exact tested SHA-256. Git reports no source diff.",
+  "daily_submissions_remaining_after_upload": 4
+}

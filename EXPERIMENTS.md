@@ -5389,3 +5389,20 @@ Promoted local candidate SHA256:
 `93c7183b581c28933fb6c46fb5c494200738e7dea194c4a847f91b434020f6dd`.
 No Kaggle submission was made. Full evidence is in
 `analysis/CHA22_EARLY_SLOT_PROMOTION_20260927.md`.
+
+### #127 authorized submission
+
+After reviewing the validation, the user explicitly approved one Kaggle upload.
+The first upload command stopped locally before contacting Kaggle because Git's
+working-tree CRLF conversion changed the raw byte hash. Verification showed
+that normalizing the 7,516 CRLF endings to LF reproduces the exact tested
+SHA256 `93c7183b581c28933fb6c46fb5c494200738e7dea194c4a847f91b434020f6dd`;
+Git reported no source diff and the working file compiled successfully. The
+uploaded CRLF file SHA256 is
+`c64964fee158ad630bbb16bf04310051f4b0240d1338384e9868db218a597626`.
+
+Submitted once as Kaggle submission **56599813** at
+2026-09-27T06:06:46.380000Z with description
+`Cha22 early market race schedule`. Initial status PENDING; Kaggle reported
+four daily submissions remaining. Receipt:
+`analysis/submission_cha22_early_56599813.json`.
