@@ -1,8 +1,8 @@
 {
   "parent": "variants\\step1010_cha22_router_step144_brunch_brunch_20260927\\main.py",
   "parent_sha256": "77c115ecf1f82a943a171ca8f661a295ce9be4fcfb9319e3064a2c811a30c588",
-  "output": "variants\\step1010_brunch_pasture33_20260928\\main.py",
-  "output_sha256": "ed7ee31ad17af5987a6bfb0d55671a9c3ba9cbe25e06eb805bdc174510131712",
-  "bytes": 1057439,
+  "output": "variants\\step1010_brunch_missed_pasture_recovery_20260928\\main.py",
+  "output_sha256": "db9e45f45f7170878523877e97d90e11053dc83b1ba7e2aac072ecceef7e712e",
+  "bytes": 1057985,
   "change": "steps 69-71 recover a weed-blocked pasture using failed PLACE/CARE/PASS slots"
 }

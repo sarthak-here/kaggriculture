@@ -35,19 +35,19 @@ one additional cow from day 2 and converted it into the milk/fertilizer lead.
 All 719 transitions per seat passed the CSV cash audit.  This rules out a
 packaging, timeout, stationary-agent, or replay-decoding failure.
 
-## Patch attempt and rejection
+## Initial patch reading and later correction
 
 A guarded recovery used the otherwise ineffective step-69/70/71 farmer slots
-for `BUILD_PASTURE`, `PLACE COW`, `CARE`.  It did create the missing animal,
-but the added farm state perturbed Step1010's fixed-point controller on 565 of
-719 actions and reduced the exact-seed reward from 117,201 to 80,077.  The
-candidate is rejected without broader screening.
+for `BUILD_PASTURE`, `PLACE COW`, `CARE`. It created the missing animal and
+changed the shared weed/shop RNG trajectory. Our absolute reward fell from
+117,201 to 80,077, but the replayed opponent fell further to 60,209: the actual
+head-to-head result flipped from -8,132 to +19,868. Rejecting it on absolute
+reward was therefore incorrect; Experiment #131 supplies the promotion tests.
 
-This demonstrates that Step1010's closed-loop market/action controller is not
-locally composable: a physically dominant farm repair can alter its later
-fixed point catastrophically.  Future repair must either preserve the
-controller's reference state or replace the affected route/controller as a
-complete compatible unit.
+This demonstrates that farm edits are not local: end-of-day weed generation
+and shop selection share a day-seeded RNG, and the number of empty tiles
+changes how many random draws occur before shop selection. Evaluation must use
+head-to-head outcomes, not absolute reward or assumed same-seed world identity.
 
 Artifacts:
 

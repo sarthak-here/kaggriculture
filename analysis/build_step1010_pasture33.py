@@ -16,7 +16,7 @@ import zlib
 
 ROOT = Path(__file__).resolve().parents[1]
 PARENT = ROOT / "variants/step1010_cha22_router_step144_brunch_brunch_20260927/main.py"
-OUTPUT = ROOT / "variants/step1010_brunch_pasture33_20260928/main.py"
+OUTPUT = ROOT / "variants/step1010_brunch_missed_pasture_recovery_20260928/main.py"
 
 
 def main() -> int:
@@ -34,12 +34,22 @@ _P33_REPORT = {{"calls": 0, "started": 0, "placed": 0, "cared": 0,
                "guard_rejected": 0}}
 
 def step1010_brunch_pasture33_agent(observation, configuration=None):
-    action = _P33_PARENT(observation, configuration)
-    _P33_REPORT["calls"] += 1
     step = int(observation.get("step", -1))
     player = int(observation.get("player", 0))
     if step == 0:
         _P33_STATE[player] = 0
+    state = _P33_STATE.get(player, 0)
+    parent_observation = observation
+    if state and step <= 144:
+        parent_observation = _p33_copy.deepcopy(observation)
+        farm_view = parent_observation["farms"][player]
+        farm_view["tiles"][2][4] = None
+        if step == 71:
+            inventories = parent_observation.get("private", {{}}).get("inventories", [])
+            if inventories:
+                inventories[0]["COW"] = inventories[0].get("COW", 0) + 1
+    action = _P33_PARENT(parent_observation, configuration)
+    _P33_REPORT["calls"] += 1
     try:
         farm = observation["farms"][player]
         x, y = farm["farmer"]
@@ -64,7 +74,7 @@ def step1010_brunch_pasture33_agent(observation, configuration=None):
             _P33_STATE[player] = 0
             _P33_REPORT["guard_rejected"] += 1
         elif step == 71 and state == 2:
-            _P33_STATE[player] = 0
+            _P33_STATE[player] = 3
             if isinstance(tile, dict) and tile.get("animal") == "COW":
                 out = _p33_copy.deepcopy(action)
                 out["farmer"] = ["CARE"]
@@ -81,12 +91,13 @@ step1010_brunch_pasture33_agent.telemetry = _P33_REPORT
     compile(source, str(OUTPUT), "exec")
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(source, encoding="utf-8")
+    output_bytes = OUTPUT.read_bytes()
     result = {
         "parent": str(PARENT.relative_to(ROOT)),
         "parent_sha256": hashlib.sha256(PARENT.read_bytes()).hexdigest(),
         "output": str(OUTPUT.relative_to(ROOT)),
-        "output_sha256": hashlib.sha256(source.encode()).hexdigest(),
-        "bytes": len(source.encode()),
+        "output_sha256": hashlib.sha256(output_bytes).hexdigest(),
+        "bytes": len(output_bytes),
         "change": "steps 69-71 recover a weed-blocked pasture using failed PLACE/CARE/PASS slots",
     }
     report = ROOT / "analysis/results/step1010_pasture33_build_20260928.json"

@@ -5489,3 +5489,30 @@ seed. Although it restored the animal, it destabilized Step1010's fixed-point
 controller (565 action differences) and cut reward from 117,201 to 80,077.
 Rejected; no Kaggle submission. Full report:
 `analysis/STEP1010_BRUNCH_FIRST_LIVE_LOSS_20260928.md`.
+
+## #131 — Missed-pasture recovery flips the live loss (2026-09-28)
+
+Corrected #130's absolute-score mistake. The three-turn recovery changed the
+shared RNG/shop trajectory, so 80,077 must be compared with the opponent's
+60,209, not with the parent's score in a different shop world. It flips the
+exact Oleg tape from -8,132 to +19,868.
+
+The candidate is exact fallback unless step69 observes the parent's `PLACE
+COW` while the farmer carries a cow on an empty tile. It then uses the
+parent's otherwise ineffective PLACE/CARE/PASS slots for BUILD/PLACE/CARE.
+Forty of 41 Step1010 route tables contain this exact sequence.
+
+Direct A/B across ten independently found activation seeds produced **10 wins,
+0 losses, 10 ties**: every activated seat won and every inactive seat tied.
+The eight-seed held-out five-family panel was **80-0** versus Cha22, pf_all,
+Kaito clone/Soil, Shop0909, and V48 Mingxi/prefund. Matched incumbent controls
+were 8-8 versus Cha22, 12-4 versus Shop0909, and 10-6 versus V48, while the
+candidate was 16-0 against each. A separate 20-game non-activation screen was
+20 exact ties. Trigger frequency was about 0.2% in 5,000 scanned seat-0 worlds.
+
+Promoted local candidate generated at
+`variants/step1010_brunch_missed_pasture_recovery_20260928/main.py`, SHA256
+`db9e45f45f7170878523877e97d90e11053dc83b1ba7e2aac072ecceef7e712e`.
+This is a
+rare-state monotonic safety repair, not a universal top-10 claim. Full report:
+`analysis/STEP1010_MISSED_PASTURE_PROMOTION_20260928.md`. No Kaggle submission.
