@@ -11,6 +11,7 @@ from run_w13_isolated import play
 
 ROOT = Path(__file__).resolve().parents[1]
 MODELS = {
+    "step1010": "variants/idle_seller_step1010_20260927/main.py",
     "cha22": "public_candidates/current_20260925/cha22/main.py",
     "v48": "public_candidates/v48_clear_queue_20260918/main.py",
     "prefund": "variants/v45_prefund_10_exported/main.py",

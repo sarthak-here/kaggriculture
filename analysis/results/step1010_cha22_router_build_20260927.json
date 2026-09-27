@@ -1,0 +1,376 @@
+{
+  "step_parent": "variants\\idle_seller_step1010_20260927\\main.py",
+  "step_sha256": "03165654e70bd04479a1db776f58146531c320e622db09b9e59ae0a4353c7b82",
+  "cha_parent": "variants\\cha22_slot_schedule_early_20260927\\main.py",
+  "cha_sha256": "c64964fee158ad630bbb16bf04310051f4b0240d1338384e9868db218a597626",
+  "candidates": {
+    "step72_pet": {
+      "path": "variants\\step1010_cha22_router_step72_pet_20260927\\main.py",
+      "sha256": "0ab70235c49246acc012326280caf07372032393898b76aa3efccb10d0aa60f2",
+      "bytes": 1040175,
+      "decision_step": 72,
+      "cha_patterns": [
+        [
+          "PET_CAFE"
+        ]
+      ]
+    },
+    "step144_strict": {
+      "path": "variants\\step1010_cha22_router_step144_strict_20260927\\main.py",
+      "sha256": "65a086537166eb879a71821fe326d33ffd0a5fa5882596186585054e3b0e381f",
+      "bytes": 1040244,
+      "decision_step": 144,
+      "cha_patterns": [
+        [
+          "BRUNCH_SPOT",
+          "BRUNCH_SPOT"
+        ],
+        [
+          "PET_CAFE",
+          "BAKERY"
+        ],
+        [
+          "PET_CAFE",
+          "YARN_STORE"
+        ]
+      ]
+    },
+    "step216_ice_brunch_yarn": {
+      "path": "variants\\step1010_cha22_router_step216_ice_brunch_yarn_20260927\\main.py",
+      "sha256": "34cf12e64c357c40df695f6a6948a8354afc93e9c7bddc324287a6d33410d327",
+      "bytes": 1040210,
+      "decision_step": 216,
+      "cha_patterns": [
+        [
+          "ICE_CREAM_SHOP",
+          "BRUNCH_SPOT",
+          "YARN_STORE"
+        ]
+      ]
+    },
+    "step144_brunch_brunch": {
+      "path": "variants\\step1010_cha22_router_step144_brunch_brunch_20260927\\main.py",
+      "sha256": "a10f373e995beb25778bc2dc2f22724f5f67b09f47519fcca13770a3058d579b",
+      "bytes": 1040193,
+      "decision_step": 144,
+      "cha_patterns": [
+        [
+          "BRUNCH_SPOT",
+          "BRUNCH_SPOT"
+        ]
+      ]
+    },
+    "step144_bakery_pizza": {
+      "path": "variants\\step1010_cha22_router_step144_bakery_pizza_20260927\\main.py",
+      "sha256": "b8e715264b75ec2043449118d6ea1483b046376c82c5bfc72e2e13e2173b1527",
+      "bytes": 1040187,
+      "decision_step": 144,
+      "cha_patterns": [
+        [
+          "BAKERY",
+          "PIZZA_SHOP"
+        ]
+      ]
+    },
+    "step144_bakery_yarn": {
+      "path": "variants\\step1010_cha22_router_step144_bakery_yarn_20260927\\main.py",
+      "sha256": "2acd3099bfbae6a618390e6f2f4493438b7e201c49f9c50ded141dcae630d0da",
+      "bytes": 1040187,
+      "decision_step": 144,
+      "cha_patterns": [
+        [
+          "BAKERY",
+          "YARN_STORE"
+        ]
+      ]
+    },
+    "step216_yarn_smoothie_yarn": {
+      "path": "variants\\step1010_cha22_router_step216_yarn_smoothie_yarn_20260927\\main.py",
+      "sha256": "576462493d77d38bb1aa4097a72213f64200df2d315694cf42d91d68a3fe763d",
+      "bytes": 1040208,
+      "decision_step": 216,
+      "cha_patterns": [
+        [
+          "YARN_STORE",
+          "SMOOTHIE_SHOP",
+          "YARN_STORE"
+        ]
+      ]
+    },
+    "step144_all_close": {
+      "path": "variants\\step1010_cha22_router_step144_all_close_20260927\\main.py",
+      "sha256": "426ab34bf22a11ddcaa97f6472b4df4562472777364872476d9de95e97c69a1c",
+      "bytes": 1042176,
+      "decision_step": 144,
+      "cha_patterns": [
+        [
+          "YARN_STORE",
+          "YARN_STORE"
+        ],
+        [
+          "YARN_STORE",
+          "PET_CAFE"
+        ],
+        [
+          "YARN_STORE",
+          "FARMERS_MARKET"
+        ],
+        [
+          "YARN_STORE",
+          "BRUNCH_SPOT"
+        ],
+        [
+          "YARN_STORE",
+          "PIZZA_SHOP"
+        ],
+        [
+          "YARN_STORE",
+          "SMOOTHIE_SHOP"
+        ],
+        [
+          "YARN_STORE",
+          "BAKERY"
+        ],
+        [
+          "YARN_STORE",
+          "ICE_CREAM_SHOP"
+        ],
+        [
+          "PET_CAFE",
+          "YARN_STORE"
+        ],
+        [
+          "PET_CAFE",
+          "PET_CAFE"
+        ],
+        [
+          "PET_CAFE",
+          "FARMERS_MARKET"
+        ],
+        [
+          "PET_CAFE",
+          "BRUNCH_SPOT"
+        ],
+        [
+          "PET_CAFE",
+          "PIZZA_SHOP"
+        ],
+        [
+          "PET_CAFE",
+          "SMOOTHIE_SHOP"
+        ],
+        [
+          "PET_CAFE",
+          "BAKERY"
+        ],
+        [
+          "PET_CAFE",
+          "ICE_CREAM_SHOP"
+        ],
+        [
+          "FARMERS_MARKET",
+          "YARN_STORE"
+        ],
+        [
+          "FARMERS_MARKET",
+          "PET_CAFE"
+        ],
+        [
+          "FARMERS_MARKET",
+          "FARMERS_MARKET"
+        ],
+        [
+          "FARMERS_MARKET",
+          "BRUNCH_SPOT"
+        ],
+        [
+          "FARMERS_MARKET",
+          "PIZZA_SHOP"
+        ],
+        [
+          "FARMERS_MARKET",
+          "SMOOTHIE_SHOP"
+        ],
+        [
+          "FARMERS_MARKET",
+          "BAKERY"
+        ],
+        [
+          "FARMERS_MARKET",
+          "ICE_CREAM_SHOP"
+        ],
+        [
+          "BRUNCH_SPOT",
+          "YARN_STORE"
+        ],
+        [
+          "BRUNCH_SPOT",
+          "PET_CAFE"
+        ],
+        [
+          "BRUNCH_SPOT",
+          "FARMERS_MARKET"
+        ],
+        [
+          "BRUNCH_SPOT",
+          "BRUNCH_SPOT"
+        ],
+        [
+          "BRUNCH_SPOT",
+          "PIZZA_SHOP"
+        ],
+        [
+          "BRUNCH_SPOT",
+          "SMOOTHIE_SHOP"
+        ],
+        [
+          "BRUNCH_SPOT",
+          "BAKERY"
+        ],
+        [
+          "BRUNCH_SPOT",
+          "ICE_CREAM_SHOP"
+        ],
+        [
+          "PIZZA_SHOP",
+          "YARN_STORE"
+        ],
+        [
+          "PIZZA_SHOP",
+          "PET_CAFE"
+        ],
+        [
+          "PIZZA_SHOP",
+          "FARMERS_MARKET"
+        ],
+        [
+          "PIZZA_SHOP",
+          "BRUNCH_SPOT"
+        ],
+        [
+          "PIZZA_SHOP",
+          "PIZZA_SHOP"
+        ],
+        [
+          "PIZZA_SHOP",
+          "SMOOTHIE_SHOP"
+        ],
+        [
+          "PIZZA_SHOP",
+          "BAKERY"
+        ],
+        [
+          "PIZZA_SHOP",
+          "ICE_CREAM_SHOP"
+        ],
+        [
+          "SMOOTHIE_SHOP",
+          "YARN_STORE"
+        ],
+        [
+          "SMOOTHIE_SHOP",
+          "PET_CAFE"
+        ],
+        [
+          "SMOOTHIE_SHOP",
+          "FARMERS_MARKET"
+        ],
+        [
+          "SMOOTHIE_SHOP",
+          "BRUNCH_SPOT"
+        ],
+        [
+          "SMOOTHIE_SHOP",
+          "PIZZA_SHOP"
+        ],
+        [
+          "SMOOTHIE_SHOP",
+          "SMOOTHIE_SHOP"
+        ],
+        [
+          "SMOOTHIE_SHOP",
+          "BAKERY"
+        ],
+        [
+          "SMOOTHIE_SHOP",
+          "ICE_CREAM_SHOP"
+        ],
+        [
+          "BAKERY",
+          "YARN_STORE"
+        ],
+        [
+          "BAKERY",
+          "PET_CAFE"
+        ],
+        [
+          "BAKERY",
+          "FARMERS_MARKET"
+        ],
+        [
+          "BAKERY",
+          "BRUNCH_SPOT"
+        ],
+        [
+          "BAKERY",
+          "PIZZA_SHOP"
+        ],
+        [
+          "BAKERY",
+          "SMOOTHIE_SHOP"
+        ],
+        [
+          "BAKERY",
+          "BAKERY"
+        ],
+        [
+          "BAKERY",
+          "ICE_CREAM_SHOP"
+        ],
+        [
+          "ICE_CREAM_SHOP",
+          "YARN_STORE"
+        ],
+        [
+          "ICE_CREAM_SHOP",
+          "PET_CAFE"
+        ],
+        [
+          "ICE_CREAM_SHOP",
+          "FARMERS_MARKET"
+        ],
+        [
+          "ICE_CREAM_SHOP",
+          "BRUNCH_SPOT"
+        ],
+        [
+          "ICE_CREAM_SHOP",
+          "PIZZA_SHOP"
+        ],
+        [
+          "ICE_CREAM_SHOP",
+          "SMOOTHIE_SHOP"
+        ],
+        [
+          "ICE_CREAM_SHOP",
+          "BAKERY"
+        ],
+        [
+          "ICE_CREAM_SHOP",
+          "ICE_CREAM_SHOP"
+        ]
+      ]
+    },
+    "multistage": {
+      "path": "variants\\step1010_cha22_router_multistage_20260927\\main.py",
+      "sha256": "d6438c1252b20ce37e1c0349934360c9d1637c3ca89f7275ca1d31f4be9ae955",
+      "bytes": 1042333,
+      "decision_steps": [
+        72,
+        144,
+        216
+      ],
+      "fallback": "exact Step1010"
+    }
+  }
+}

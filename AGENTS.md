@@ -1,5 +1,17 @@
 # Agent registry
 
+## Current checkpoint — 2026-09-27 (Step1010 BRUNCH router)
+
+Strongest narrowly improved local build:
+`variants/step1010_cha22_router_step144_brunch_brunch_20260927/main.py`,
+SHA-256 `77c115ecf1f82a943a171ca8f661a295ce9be4fcfb9319e3064a2c811a30c588`.
+It preserves exact Step1010 except on close-clone
+`BRUNCH_SPOT > BRUNCH_SPOT` openings, where a warm Cha22 handoff at step144
+scored **8-0 versus Step1010 and 8-0 versus Cha22** across one discovery and
+three held-out worlds, both seats. PET and BAKERY branches, a broad handoff,
+and unconfirmed third-shop branches were rejected. No Kaggle submission was
+made; see Experiment #129 and `analysis/STEP1010_BRUNCH_ROUTER_20260927.md`.
+
 ## Current checkpoint — 2026-09-26
 
 Searched the newest 200 competition notebooks and current discussions, safely

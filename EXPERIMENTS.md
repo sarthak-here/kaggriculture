@@ -5431,3 +5431,27 @@ agent. Exact candidate SHA256:
 Apache-2.0 license and notice are retained. Full audit and reproduction:
 `analysis/LATEST_PUBLIC_SEARCH_20260927.md`. No Kaggle submission was made;
 fresh explicit approval is required.
+
+## #129 — Step1010 / Cha22 compatible-state BRUNCH router (2026-09-27)
+
+Step1010 beat exact submitted Cha22 25-5 over 30 unique discovery worlds, but
+its five losses clustered into repeatable shop-prefix families. Prefix audits
+showed the policies' complete own farm/private states remain identical through
+step91 in both seats, making a warm dual-policy handoff feasible after shops
+become visible. A staged prototype repaired all six accumulated loss worlds
+12-0 versus Step1010, but unseen signature scans correctly exposed PET_CAFE
+and BAKERY branches as overfit.
+
+The only branch that generalized was `BRUNCH_SPOT > BRUNCH_SPOT`: the exact
+frozen candidate scored **8-0 versus Step1010** (+4,034 mean) and **8-0 versus
+Cha22** (+887 mean) on one discovery plus three held-out matching-shop worlds,
+both seats, with zero failures. Broad handoff at step144 was rejected at 7-13
+versus Step1010; PET, BAKERY>PIZZA and BAKERY>YARN were also rejected on unseen
+tests. The candidate falls back to exact Step1010 for every non-match.
+
+Frozen candidate:
+`variants/step1010_cha22_router_step144_brunch_brunch_20260927/main.py`,
+SHA256 `77c115ecf1f82a943a171ca8f661a295ce9be4fcfb9319e3064a2c811a30c588`,
+1,040,259 bytes, Kaggle callable `step1010_cha22_router_agent`. No Kaggle
+submission was made. Full evidence and rejected-branch table:
+`analysis/STEP1010_BRUNCH_ROUTER_20260927.md`.
