@@ -1,0 +1,132 @@
+{
+  "source": "variants\\cha22_slot_schedule_v2_20260927\\main.py",
+  "source_sha256": "27662a396281a740b3580792dcb4ac037ff1566b267ff27c283716c0cd993517",
+  "gate": "public farm similarity >= .98",
+  "variants": [
+    {
+      "mode": "love_wheat_worker",
+      "overrides": {
+        "598": [
+          6,
+          [
+            "PLANT",
+            "WHEAT"
+          ]
+        ]
+      },
+      "candidate": "variants\\cha22_suffix_love_wheat_worker_20260927\\main.py",
+      "sha256": "b9dca1be2020713df7f338497cc00a1a0d91b7b2901f97895024836de8e9bed0"
+    },
+    {
+      "mode": "love_wheat_full",
+      "overrides": {
+        "598": [
+          6,
+          [
+            "PLANT",
+            "WHEAT"
+          ]
+        ]
+      },
+      "candidate": "variants\\cha22_suffix_love_wheat_full_20260927\\main.py",
+      "sha256": "3c1ff6e3c11b844781bdd0b3e66fa5ff3e59068d5f840c34af26572eaa44d3d4"
+    },
+    {
+      "mode": "love_late_pass",
+      "overrides": {
+        "671": [
+          8,
+          [
+            "PASS"
+          ]
+        ]
+      },
+      "candidate": "variants\\cha22_suffix_love_late_pass_20260927\\main.py",
+      "sha256": "5ad68f24e3e936344b12b223dae916f614aa2c34c906f6500faed6fdb9321db5"
+    },
+    {
+      "mode": "love_all",
+      "overrides": {
+        "598": [
+          6,
+          [
+            "PLANT",
+            "WHEAT"
+          ]
+        ],
+        "671": [
+          8,
+          [
+            "PASS"
+          ]
+        ]
+      },
+      "candidate": "variants\\cha22_suffix_love_all_20260927\\main.py",
+      "sha256": "a345ca13705d3246af215ca660c3a23e6ca7368fef292158c80f861f1d8f191a"
+    },
+    {
+      "mode": "shiji_dig",
+      "overrides": {
+        "183": [
+          6,
+          [
+            "DIG"
+          ]
+        ]
+      },
+      "candidate": "variants\\cha22_suffix_shiji_dig_20260927\\main.py",
+      "sha256": "6ab747e3beddcf62185c1b1c5d4c62fc4e699ee5c0d8a469a589d12a5c02bcb4"
+    },
+    {
+      "mode": "shiji_pass",
+      "overrides": {
+        "623": [
+          1,
+          [
+            "PASS"
+          ]
+        ]
+      },
+      "candidate": "variants\\cha22_suffix_shiji_pass_20260927\\main.py",
+      "sha256": "c59e7bcc7f704271e2858c6644a5b2c621c995c5bed0f5ae7d77f86d94fdd0c8"
+    },
+    {
+      "mode": "shiji_care",
+      "overrides": {
+        "666": [
+          8,
+          [
+            "CARE"
+          ]
+        ]
+      },
+      "candidate": "variants\\cha22_suffix_shiji_care_20260927\\main.py",
+      "sha256": "d2dc428016c9d2cda418755b91c92c332d7e3b7567b2a09a8f4635fdb6eb0614"
+    },
+    {
+      "mode": "shiji_all",
+      "overrides": {
+        "183": [
+          6,
+          [
+            "DIG"
+          ]
+        ],
+        "623": [
+          1,
+          [
+            "PASS"
+          ]
+        ],
+        "666": [
+          8,
+          [
+            "CARE"
+          ]
+        ]
+      },
+      "candidate": "variants\\cha22_suffix_shiji_all_20260927\\main.py",
+      "sha256": "d681d049f58a6c47b527f02db89d4284bb690b08b627ca2a9b0c605450f3d2ac"
+    }
+  ]
+}

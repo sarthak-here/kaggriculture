@@ -1,0 +1,26 @@
+{
+  "candidate": "variants/cha22_slot_schedule_early_20260927/main.py",
+  "sha256": "93c7183b581c28933fb6c46fb5c494200738e7dea194c4a847f91b434020f6dd",
+  "schedule": {"150": "WOOL", "196": "MILK", "249": "MELON", "250": "MELON", "252": "MELON", "270": "MILK"},
+  "replay_tapes": {
+    "episodes": [113382736, 113418129, 113426386, 113449554, 113471121, 113593430],
+    "margin_gains": [859.0, 851.0, 853.0, 859.0, 857.0, 857.0],
+    "prior_losses": 4,
+    "losses_flipped": 2,
+    "prior_wins": 2,
+    "wins_preserved": 2
+  },
+  "fresh_panel": {
+    "seeds": [1044000, 1044001],
+    "completed": 28,
+    "failures": 0,
+    "exact_cha22": {"wins": 0, "losses": 0, "ties": 4},
+    "historical_panel": {"wins": 22, "losses": 2, "ties": 0},
+    "unintended_activations": 0,
+    "controller_errors": 0
+  },
+  "rejected": {
+    "late_schedule": "0-4 versus exact Cha22 on the fresh panel",
+    "worker_suffix_router": "opponent-specific gains regressed another clone family"
+  }
+}

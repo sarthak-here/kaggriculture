@@ -1,0 +1,16 @@
+{
+  "source": "public_candidates\\current_20260925\\cha22\\main.py",
+  "source_sha256": "36812d632b181fee7e0f249fa3a1eb364e0d373d6e4211f4e49803e8dd3582aa",
+  "candidate": "variants\\cha22_slot_schedule_early_20260927\\main.py",
+  "candidate_sha256": "93c7183b581c28933fb6c46fb5c494200738e7dea194c4a847f91b434020f6dd",
+  "gate": "public farm similarity >= .90",
+  "schedule": {
+    "150": "WOOL",
+    "196": "MILK",
+    "249": "MELON",
+    "250": "MELON",
+    "252": "MELON",
+    "270": "MILK"
+  },
+  "excluded": "all post-step270 signatures after fresh regression"
+}

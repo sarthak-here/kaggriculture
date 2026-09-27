@@ -5363,3 +5363,29 @@ This is the first live-replay patch in this branch that flips recorded losses
 without changing the historical panel. It remains a family-specific measured
 improvement, not proof of top-10 performance. No Kaggle submission was made.
 Detailed evidence: `analysis/CHA22_LIVE_SLOT_RACES_20260927.md`.
+
+## #127 — Early-only clone race schedule (2026-09-27)
+
+The slot-race mechanism from #126 was expanded under controlled ablation. A
+broad support-filtered schedule improved its six source replays by755-871 coins,
+but fresh validation exposed regressions: it lost all four games against exact
+Cha22 by90-258 coins. Per-step telemetry localized every activation to the late
+block (529,552,668,673,684). That broad candidate is rejected.
+
+The replacement keeps only six repeated early races: WOOL at150, MILK at196 and
+270, and MELON at249,250,252. Across the six exact live opponent tapes it gained
+**851-859 coins in every game**, preserved both wins, and flipped two of four
+losses. On the same fresh seeds that exposed the late regression it tied exact
+Cha22 **0-0-4**. Against v48, prefund, Kaito, pf_all, protected, and Shop0909 it
+scored **22-2**; telemetry confirmed zero activations and zero errors in all28
+fresh games, so those outcomes are inherited exactly from the parent.
+
+Five rare worker-action differences were also causally ablated. Two improved
+their individual source world (+130 and +90), while three were neutral or
+harmful. Combining the positive-looking actions regressed a different clone
+family, so the worker suffix router is rejected as overfit.
+
+Promoted local candidate SHA256:
+`93c7183b581c28933fb6c46fb5c494200738e7dea194c4a847f91b434020f6dd`.
+No Kaggle submission was made. Full evidence is in
+`analysis/CHA22_EARLY_SLOT_PROMOTION_20260927.md`.

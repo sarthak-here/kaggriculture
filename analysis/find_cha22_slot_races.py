@@ -38,6 +38,8 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("corpus", type=Path)
     parser.add_argument("--agreement", type=float, default=0.9)
+    parser.add_argument("--allow-unequal", action="store_true",
+                        help="include same-step sales with different quantities")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
@@ -58,7 +60,8 @@ def main() -> int:
             if seat != own or (opp, step, item) not in sales:
                 continue
             opp_units, opp_value = sales[(opp, step, item)]
-            if own_units <= 0 or opp_units <= 0 or abs(own_units - opp_units) > 1e-9:
+            same_units = abs(own_units - opp_units) <= 1e-9
+            if own_units <= 0 or opp_units <= 0 or (not same_units and not args.allow_unequal):
                 continue
             own_price = own_value / own_units
             opp_price = opp_value / opp_units
@@ -68,12 +71,15 @@ def main() -> int:
             opp_slot = slots.get((opp, step, item), 99)
             if own_slot <= opp_slot:
                 continue
-            recoverable = round(opp_value - own_value, 6)
+            # Exact when quantities match; a conservative quote-gap estimate
+            # otherwise. Every candidate remains subject to replay A/B tests.
+            recoverable = round((opp_price - own_price) * own_units, 6)
             event = {
                 "episode": episode, "result": record["result"],
                 "margin": float(record["margin"]), "opponent": record["opponent"],
                 "agreement": float(record["agreement"]), "step": step,
                 "day": step // 24, "item": item, "units": own_units,
+                "opp_units": opp_units, "same_units": same_units,
                 "own_slot": own_slot, "opp_slot": opp_slot,
                 "own_price": own_price, "opp_price": opp_price,
                 "recoverable_value": recoverable,
@@ -100,7 +106,8 @@ def main() -> int:
     rows.sort(key=lambda row: (row["losses_flipped"], row["loss_events"],
                                row["recoverable_value"]), reverse=True)
     events.sort(key=lambda row: (row["would_flip"], row["recoverable_value"]), reverse=True)
-    payload = {"agreement": args.agreement, "games": len(records),
+    payload = {"agreement": args.agreement, "allow_unequal": args.allow_unequal,
+               "games": len(records),
                "events": events, "signatures": rows}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
