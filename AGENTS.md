@@ -12,6 +12,10 @@ three held-out worlds, both seats. PET and BAKERY branches, a broad handoff,
 and unconfirmed third-shop branches were rejected. No Kaggle submission was
 made; see Experiment #129 and `analysis/STEP1010_BRUNCH_ROUTER_20260927.md`.
 
+Authorized submission: **56618758**, submitted 2026-09-27T20:29:10.260000Z
+as `Step1010 BRUNCH state router`; initial status PENDING. Frozen uploaded
+SHA-256: `77c115ecf1f82a943a171ca8f661a295ce9be4fcfb9319e3064a2c811a30c588`.
+
 ## Current checkpoint — 2026-09-26
 
 Searched the newest 200 competition notebooks and current discussions, safely

@@ -1,0 +1,13 @@
+{
+  "competition": "kaggriculture",
+  "submission_id": 56618758,
+  "file": "variants/step1010_cha22_router_step144_brunch_brunch_20260927/main.py",
+  "file_name": "main.py",
+  "sha256": "77c115ecf1f82a943a171ca8f661a295ce9be4fcfb9319e3064a2c811a30c588",
+  "bytes": 1040259,
+  "callable": "step1010_cha22_router_agent",
+  "description": "Step1010 BRUNCH state router",
+  "submitted_at": "2026-09-27T20:29:10.260000Z",
+  "initial_status": "PENDING",
+  "daily_submissions_remaining": 3
+}

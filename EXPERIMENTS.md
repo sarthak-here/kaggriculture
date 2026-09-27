@@ -5455,3 +5455,16 @@ SHA256 `77c115ecf1f82a943a171ca8f661a295ce9be4fcfb9319e3064a2c811a30c588`,
 1,040,259 bytes, Kaggle callable `step1010_cha22_router_agent`. No Kaggle
 submission was made. Full evidence and rejected-branch table:
 `analysis/STEP1010_BRUNCH_ROUTER_20260927.md`.
+
+### #129 authorized submission
+
+After reviewing the exact-source 8-0 versus Step1010 and 8-0 versus Cha22
+confirmation, the user explicitly approved one Kaggle upload. Preflight
+reverified SHA256
+`77c115ecf1f82a943a171ca8f661a295ce9be4fcfb9319e3064a2c811a30c588`,
+1,040,259 bytes, successful compilation, and Kaggle callable
+`step1010_cha22_router_agent`. Submitted once as Kaggle submission **56618758**
+at 2026-09-27T20:29:10.260000Z with description
+`Step1010 BRUNCH state router`. Initial status PENDING; Kaggle reported three
+daily submissions remaining. Receipt:
+`analysis/submission_step1010_brunch_56618758.json`.
