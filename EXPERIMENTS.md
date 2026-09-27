@@ -5406,3 +5406,28 @@ Submitted once as Kaggle submission **56599813** at
 `Cha22 early market race schedule`. Initial status PENDING; Kaggle reported
 four daily submissions remaining. Receipt:
 `analysis/submission_cha22_early_56599813.json`.
+
+## #128 — Step1010 public refresh and validation (2026-09-27)
+
+Audited the newest 200 Kaggriculture notebooks and current discussions. Five
+plausible notebook updates were downloaded and extracted with a new static
+literal/archive extractor that never executes notebook cells. Top-2 Master V4
+and Demand-Preserving package the same `main.py`; refreshed V31 lost 0-6 to
+exact Cha22 and is rejected. Harvest Ledger, Demand-Preserving, and the new
+Idle Seller Step1010 build behaved identically in the first three worlds.
+
+Step1010 then passed the expanded protocol. It beat exact Cha22 **18-2** on ten
+fresh paired seeds with +943 mean margin. Against the exact source of current
+Kaggle submission 56599813 it scored **14-6** with only +39.5 mean margin,
+evidence that it flips close outcomes rather than padding large wins. Against
+V48, prefund, Kaito, pf_all, protected portfolio, and Shop0909 it swept
+**36-0**, with zero failures.
+
+The live check explains the urgency: submission 56599813 had settled to 32-26-12
+after 70 games, rating 2006, and 17.6% wins in its latest 17 games. Step1010 is
+therefore promoted as the next candidate, not claimed as a guaranteed top-10
+agent. Exact candidate SHA256:
+`03165654e70bd04479a1db776f58146531c320e622db09b9e59ae0a4353c7b82`.
+Apache-2.0 license and notice are retained. Full audit and reproduction:
+`analysis/LATEST_PUBLIC_SEARCH_20260927.md`. No Kaggle submission was made;
+fresh explicit approval is required.

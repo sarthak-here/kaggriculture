@@ -1,0 +1,79 @@
+Rescue controller refresh, September 22, 2026. Apache-2.0.
+Direct base: shiiin9, https://www.kaggle.com/code/shiiin9/your-market-list-is-an-order-book
+V55 controller and V56 input budgeting: Ahmed Berat Ozer.
+https://www.kaggle.com/code/ahmedberatozer/kaggriculture-v56-smarter-seeds-and-fertilizer
+Metav4: Thomas Tschinkel. Hayashi: original ShopRouter.
+Dmitrii Gluzdov: seven-turn rescue, adaptation, evaluation and integration.
+All upstream source notices remain in main.py.
+
+Historical Rescue attribution follows; file-layout statements describe the original package, not this single-file refresh.
+E182 Shop0909 + terminal physical closure (modified 2026-09-09)
+
+The active public parent is Yusuke Hayashi's yhay81/shop-router-0909 v3.
+router_parent.py and actions.json are exact original bytes, not newly authored
+routes. The parent credits aurax7's Reactive Router for sale timing and shed
+projection; that attribution remains in router_parent.py. Original payload
+LICENSE.txt is preserved unchanged (Apache License 2.0 text); it contains no
+named copyright grantor and no separate NOTICE was supplied. No additional
+ownership, endorsement, or upstream replay-data rights claim is made.
+
+Local changes: separate main.py/policy.py adapter; bounded start712 planner
+copied from frozen E180/S78 and modified for seven callbacks, exact Shop final
+liquidation, strict positive physical delivery/sale gain, and observation guards.
+unit_model.py is an unchanged frozen E180 copy of Kaggle's extracted semantics.
+The following original E180 notice is retained verbatim for attribution history.
+Its references to Thomas files describe E180, not files supplied in this Shop
+package: no Thomas tapes, trees or policy are included here.
+
+----- Original E180 notice -----
+Kaggriculture: Last-Mile Harvest Planner
+Attribution and change notice
+
+Thomas Tschinkel is the author of the parent public state-router policy and its
+published decision trees and action-route data. Source: Kaggriculture: 93.8% Win
+Rate Public State Router, notebook version 3, scriptVersionId 347936183:
+https://www.kaggle.com/code/thomastschinkel/kaggriculture-93-8-win-rate-public-state-router?scriptVersionId=347936183
+The public notebook identifies its license as Apache License, Version 2.0.
+Original published main.py SHA-256:
+b87a27ed614a33329be85f1b662e51cf4078a019fee937afcebbbbf2f51f8522
+
+Changes to that source for this distribution: compressed route/tree literals
+were decoded into readable tapes.json and trees.json; a read-only planned_action
+helper was added; descriptive headers and local data loading were adapted.
+The original parent feature extraction, tree traversal and agent behavior are
+retained. These public routes are not claimed as newly authored or trained by
+the notebook distributor.
+
+unit_model.py contains deterministic unit-action and crop-decay definitions
+extracted from Kaggle's kaggle-environments 1.32.7 Kaggriculture engine, licensed
+under Apache License, Version 2.0. Credit: Kaggle and the kaggle-environments
+contributors. Project: https://github.com/Kaggle/kaggle-environments
+Source file: kaggle_environments/envs/kaggriculture/kaggriculture.py
+Source SHA-256:
+bc8a54879ef02c7ea64b8b333d6a976f0ea65c4949149d01f463f23bccee653e
+The extracted unit/decay definitions are not a newly authored game engine;
+market price dynamics and the full interpreter are not part of this module.
+
+Additional work in this distribution: a bounded last-nine-action collection
+and delivery planner, observation guards and recovery, a settings-consuming
+factory and entry point, standalone examples, and deterministic packaging.
+The full Apache License, Version 2.0 is included as LICENSE.txt.
+No endorsement by Thomas Tschinkel or Kaggle is implied.
+
+Data provenance limitation: Thomas's source refers to public replay data and
+an upstream provenance.json. That original episode-level manifest, replay IDs
+and individual replay-author identities were not supplied with the public
+notebook/output used here. No names or episode lineage have been invented.
+Notebook-level licensing does not independently establish the missing underlying
+replay-data rights chain. The package supplies usable readable routes, not a
+reproducible reconstruction of their original collection or training process.
+
+Packaging note: source inputs described as byte-exact above are
+normalized to UTF-8/LF text with a final newline in this standalone
+notebook package. Route JSON values and parent policy behavior are unchanged.
+
+Rescue integration, September 22, 2026.
+Dmitrii Gluzdov: opening liquidity repair, complete reacting evaluation and notebook integration. The complete previous Rescue controller and all upstream notices are retained. Public Master Hybrid was evaluated as a competing base; its replacement was rejected and is not included in this archive.
+
+Herd-Safe controller refresh, September 22, 2026.
+Dmitrii Gluzdov: complete controller replacement and reacting evaluation for Herd-Safe. The unchanged Seven-Turn Rescue controller retains all inherited notices.
