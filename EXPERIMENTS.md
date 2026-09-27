@@ -5468,3 +5468,24 @@ at 2026-09-27T20:29:10.260000Z with description
 `Step1010 BRUNCH state router`. Initial status PENDING; Kaggle reported three
 daily submissions remaining. Receipt:
 `analysis/submission_step1010_brunch_56618758.json`.
+
+## #130 — Step1010 BRUNCH first live loss: weed-blocked pasture (2026-09-28)
+
+Verified that Kaggle submission 56618758 is the exact frozen #129 artifact.
+Its first recorded loss was same-submission validation self-play (-657); its
+first external loss was episode 114345819 against Oleg Smirnov, 117,201 to
+125,333 (-8,132). Both worlds were non-BRUNCH prefixes, so the new router
+branch never fired and the agent executed exact Step1010 fallback behavior.
+
+The external loss is a close-clone ICE_CREAM>YARN world. An asymmetric weed at
+our `(4,2)` blocked an early pasture. Step1010 dug the weed but never rebuilt
+the pasture; its later cow placement and care were therefore no-ops. Oleg kept
+one extra cow from day2, ultimately selling 32 more MILK (+7,167) and 22 more
+FERTILIZER (+1,021), which explains essentially the full margin. All 719 cash
+transitions per seat audited cleanly, ruling out execution or packaging failure.
+
+A guarded three-turn pasture/cow/care recovery was tested on the exact replay
+seed. Although it restored the animal, it destabilized Step1010's fixed-point
+controller (565 action differences) and cut reward from 117,201 to 80,077.
+Rejected; no Kaggle submission. Full report:
+`analysis/STEP1010_BRUNCH_FIRST_LIVE_LOSS_20260928.md`.

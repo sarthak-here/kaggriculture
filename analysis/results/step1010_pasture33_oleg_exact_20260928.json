@@ -1,0 +1,1895 @@
+{
+  "left": "variants\\step1010_cha22_router_step144_brunch_brunch_20260927\\main.py",
+  "right": "variants\\step1010_brunch_pasture33_20260928\\main.py",
+  "seed": 1183050874,
+  "seat": 0,
+  "first_state_divergence": 70,
+  "first_action_divergence": 70,
+  "left_reward": 117201.0,
+  "right_reward": 80077.0,
+  "rows": [
+    {
+      "step": 0,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [],
+        "market": []
+      },
+      "left_money": 3000.0,
+      "right_money": 3000.0
+    },
+    {
+      "step": 1,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [],
+        "market": [
+          [
+            "BUY_PRODUCT",
+            "WHEAT",
+            8
+          ],
+          [
+            "SELL",
+            "WHEAT",
+            3
+          ],
+          [
+            "BUY_SEED",
+            "WHEAT",
+            1
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [],
+        "market": [
+          [
+            "BUY_PRODUCT",
+            "WHEAT",
+            8
+          ],
+          [
+            "SELL",
+            "WHEAT",
+            3
+          ],
+          [
+            "BUY_SEED",
+            "WHEAT",
+            1
+          ]
+        ]
+      },
+      "left_money": 2854.0,
+      "right_money": 2854.0
+    },
+    {
+      "step": 2,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "NORTH"
+        ],
+        "hands": [],
+        "market": [
+          [
+            "HIRE"
+          ],
+          [
+            "HIRE"
+          ],
+          [
+            "HIRE"
+          ],
+          [
+            "HIRE"
+          ],
+          [
+            "HIRE"
+          ],
+          [
+            "BUY_ANIMAL",
+            "COW",
+            2
+          ],
+          [
+            "BUY_ANIMAL",
+            "SHEEP",
+            2
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "NORTH"
+        ],
+        "hands": [],
+        "market": [
+          [
+            "HIRE"
+          ],
+          [
+            "HIRE"
+          ],
+          [
+            "HIRE"
+          ],
+          [
+            "HIRE"
+          ],
+          [
+            "HIRE"
+          ],
+          [
+            "BUY_ANIMAL",
+            "COW",
+            2
+          ],
+          [
+            "BUY_ANIMAL",
+            "SHEEP",
+            2
+          ]
+        ]
+      },
+      "left_money": 1042.0,
+      "right_money": 1042.0
+    },
+    {
+      "step": 3,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "SOUTH"
+        ],
+        "hands": [
+          [
+            "PICKUP",
+            "COW"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "PICKUP",
+            "COW"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "SOUTH"
+        ],
+        "hands": [
+          [
+            "PICKUP",
+            "COW"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "PICKUP",
+            "COW"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 1042.0,
+      "right_money": 1042.0
+    },
+    {
+      "step": 4,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "PICKUP",
+          "SHEEP"
+        ],
+        "hands": [
+          [
+            "NORTH"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "BUILD_PASTURE"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "PICKUP",
+          "SHEEP"
+        ],
+        "hands": [
+          [
+            "NORTH"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "BUILD_PASTURE"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 1042.0,
+      "right_money": 1042.0
+    },
+    {
+      "step": 5,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "PICKUP",
+          "WHEAT"
+        ],
+        "hands": [
+          [
+            "BUILD_PASTURE"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "PLACE",
+            "COW"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "PICKUP",
+          "WHEAT"
+        ],
+        "hands": [
+          [
+            "BUILD_PASTURE"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "PLACE",
+            "COW"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 1042.0,
+      "right_money": 1042.0
+    },
+    {
+      "step": 6,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "NORTH"
+        ],
+        "hands": [
+          [
+            "PLACE",
+            "COW"
+          ],
+          [
+            "PLANT",
+            "WHEAT"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "CARE"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "NORTH"
+        ],
+        "hands": [
+          [
+            "PLACE",
+            "COW"
+          ],
+          [
+            "PLANT",
+            "WHEAT"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "CARE"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 1042.0,
+      "right_money": 1042.0
+    },
+    {
+      "step": 7,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "WEST"
+        ],
+        "hands": [
+          [
+            "NORTH"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "PICKUP",
+            "SHEEP"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "MELON",
+            2
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "WEST"
+        ],
+        "hands": [
+          [
+            "NORTH"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "PICKUP",
+            "SHEEP"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "MELON",
+            2
+          ]
+        ]
+      },
+      "left_money": 882.0,
+      "right_money": 882.0
+    },
+    {
+      "step": 8,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "BUILD_PASTURE"
+        ],
+        "hands": [
+          [
+            "NORTH"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "PICKUP",
+            "WHEAT"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "MELON",
+            1
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "BUILD_PASTURE"
+        ],
+        "hands": [
+          [
+            "NORTH"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "PICKUP",
+            "WHEAT"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "MELON",
+            1
+          ]
+        ]
+      },
+      "left_money": 802.0,
+      "right_money": 802.0
+    },
+    {
+      "step": 9,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "PLACE",
+          "SHEEP"
+        ],
+        "hands": [
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "WEST"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "PLACE",
+          "SHEEP"
+        ],
+        "hands": [
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "WEST"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 802.0,
+      "right_money": 802.0
+    },
+    {
+      "step": 10,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "FEED"
+        ],
+        "hands": [
+          [
+            "WATER"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "BUILD_PASTURE"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "MELON",
+            1
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "FEED"
+        ],
+        "hands": [
+          [
+            "WATER"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "BUILD_PASTURE"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "MELON",
+            1
+          ]
+        ]
+      },
+      "left_money": 722.0,
+      "right_money": 722.0
+    },
+    {
+      "step": 11,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "CARE"
+        ],
+        "hands": [
+          [
+            "WEST"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "PLACE",
+            "SHEEP"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "MELON",
+            2
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "CARE"
+        ],
+        "hands": [
+          [
+            "WEST"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "PLACE",
+            "SHEEP"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "MELON",
+            2
+          ]
+        ]
+      },
+      "left_money": 562.0,
+      "right_money": 562.0
+    },
+    {
+      "step": 12,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "WEST"
+        ],
+        "hands": [
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "FEED"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "MELON",
+            1
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "WEST"
+        ],
+        "hands": [
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "FEED"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "MELON",
+            1
+          ]
+        ]
+      },
+      "left_money": 482.0,
+      "right_money": 482.0
+    },
+    {
+      "step": 13,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "PLANT",
+          "MELON"
+        ],
+        "hands": [
+          [
+            "WATER"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "CARE"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "WHEAT",
+            1
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "PLANT",
+          "MELON"
+        ],
+        "hands": [
+          [
+            "WATER"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "CARE"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "WHEAT",
+            1
+          ]
+        ]
+      },
+      "left_money": 472.0,
+      "right_money": 472.0
+    },
+    {
+      "step": 14,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "WATER"
+        ],
+        "hands": [
+          [
+            "SOUTH"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PLANT",
+            "WHEAT"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "WEST"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "WHEAT",
+            1
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "WATER"
+        ],
+        "hands": [
+          [
+            "SOUTH"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PLANT",
+            "WHEAT"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "WEST"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "WHEAT",
+            1
+          ]
+        ]
+      },
+      "left_money": 462.0,
+      "right_money": 462.0
+    },
+    {
+      "step": 15,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "WEST"
+        ],
+        "hands": [
+          [
+            "WEST"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "PLANT",
+            "WHEAT"
+          ],
+          [
+            "WEST"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "MELON",
+            3
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "WEST"
+        ],
+        "hands": [
+          [
+            "WEST"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "PLANT",
+            "WHEAT"
+          ],
+          [
+            "WEST"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "MELON",
+            3
+          ]
+        ]
+      },
+      "left_money": 222.0,
+      "right_money": 222.0
+    },
+    {
+      "step": 16,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "PLANT",
+          "MELON"
+        ],
+        "hands": [
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "PLANT",
+            "MELON"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "WHEAT",
+            1
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "PLANT",
+          "MELON"
+        ],
+        "hands": [
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "PLANT",
+            "MELON"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "WHEAT",
+            1
+          ]
+        ]
+      },
+      "left_money": 212.0,
+      "right_money": 212.0
+    },
+    {
+      "step": 17,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "WATER"
+        ],
+        "hands": [
+          [
+            "WATER"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PLANT",
+            "WHEAT"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "WATER"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "WHEAT",
+            1
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "WATER"
+        ],
+        "hands": [
+          [
+            "WATER"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PLANT",
+            "WHEAT"
+          ],
+          [
+            "WEST"
+          ],
+          [
+            "WATER"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "WHEAT",
+            1
+          ]
+        ]
+      },
+      "left_money": 202.0,
+      "right_money": 202.0
+    },
+    {
+      "step": 18,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [
+          [
+            "WEST"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "PLANT",
+            "WHEAT"
+          ],
+          [
+            "WEST"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "MELON",
+            2
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [
+          [
+            "WEST"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "PLANT",
+            "WHEAT"
+          ],
+          [
+            "WEST"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "MELON",
+            2
+          ]
+        ]
+      },
+      "left_money": 42.0,
+      "right_money": 42.0
+    },
+    {
+      "step": 19,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "PLANT",
+            "MELON"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [
+          [
+            "PLANT",
+            "MELON"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "PLANT",
+            "MELON"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 42.0,
+      "right_money": 42.0
+    },
+    {
+      "step": 20,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [
+          [
+            "WATER"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "WATER"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "WHEAT",
+            1
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [
+          [
+            "WATER"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "WATER"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "WHEAT",
+            1
+          ]
+        ]
+      },
+      "left_money": 32.0,
+      "right_money": 32.0
+    },
+    {
+      "step": 21,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [
+          [
+            "WEST"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PLANT",
+            "WHEAT"
+          ],
+          [
+            "NORTH"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "WHEAT",
+            2
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [
+          [
+            "WEST"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PLANT",
+            "WHEAT"
+          ],
+          [
+            "NORTH"
+          ]
+        ],
+        "market": [
+          [
+            "BUY_SEED",
+            "WHEAT",
+            2
+          ]
+        ]
+      },
+      "left_money": 12.0,
+      "right_money": 12.0
+    },
+    {
+      "step": 22,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [
+          [
+            "PLANT",
+            "WHEAT"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "PLANT",
+            "WHEAT"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [
+          [
+            "PLANT",
+            "WHEAT"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "PLANT",
+            "WHEAT"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 12.0,
+      "right_money": 12.0
+    },
+    {
+      "step": 23,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [
+          [
+            "WATER"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [
+          [
+            "WATER"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 12.0,
+      "right_money": 12.0
+    },
+    {
+      "step": 24,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 12.0,
+      "right_money": 12.0
+    },
+    {
+      "step": 25,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "PICKUP",
+          "WHEAT"
+        ],
+        "hands": [],
+        "market": [
+          [
+            "HIRE"
+          ],
+          [
+            "HIRE"
+          ],
+          [
+            "HIRE"
+          ]
+        ]
+      },
+      "right_action": {
+        "farmer": [
+          "PICKUP",
+          "WHEAT"
+        ],
+        "hands": [],
+        "market": [
+          [
+            "HIRE"
+          ],
+          [
+            "HIRE"
+          ],
+          [
+            "HIRE"
+          ]
+        ]
+      },
+      "left_money": 8.0,
+      "right_money": 8.0
+    },
+    {
+      "step": 26,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "NORTH"
+        ],
+        "hands": [
+          [
+            "WEST"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "NORTH"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "NORTH"
+        ],
+        "hands": [
+          [
+            "WEST"
+          ],
+          [
+            "NORTH"
+          ],
+          [
+            "NORTH"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 8.0,
+      "right_money": 8.0
+    },
+    {
+      "step": 27,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "WEST"
+        ],
+        "hands": [
+          [
+            "PICKUP",
+            "WHEAT"
+          ],
+          [
+            "PICKUP",
+            "WHEAT"
+          ],
+          [
+            "WEST"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "WEST"
+        ],
+        "hands": [
+          [
+            "PICKUP",
+            "WHEAT"
+          ],
+          [
+            "PICKUP",
+            "WHEAT"
+          ],
+          [
+            "WEST"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 8.0,
+      "right_money": 8.0
+    },
+    {
+      "step": 28,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "FEED"
+        ],
+        "hands": [
+          [
+            "NORTH"
+          ],
+          [
+            "FEED"
+          ],
+          [
+            "WEST"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "FEED"
+        ],
+        "hands": [
+          [
+            "NORTH"
+          ],
+          [
+            "FEED"
+          ],
+          [
+            "WEST"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 8.0,
+      "right_money": 8.0
+    },
+    {
+      "step": 29,
+      "state_equal": true,
+      "action_equal": true,
+      "left_action": {
+        "farmer": [
+          "CARE"
+        ],
+        "hands": [
+          [
+            "FEED"
+          ],
+          [
+            "CARE"
+          ],
+          [
+            "WEST"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "CARE"
+        ],
+        "hands": [
+          [
+            "FEED"
+          ],
+          [
+            "CARE"
+          ],
+          [
+            "WEST"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 8.0,
+      "right_money": 8.0
+    },
+    {
+      "step": 70,
+      "state_equal": false,
+      "action_equal": false,
+      "left_action": {
+        "farmer": [
+          "PLACE",
+          "COW"
+        ],
+        "hands": [
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "EAST"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "BUILD_PASTURE"
+        ],
+        "hands": [
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "EAST"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 214.0,
+      "right_money": 214.0
+    },
+    {
+      "step": 71,
+      "state_equal": false,
+      "action_equal": false,
+      "left_action": {
+        "farmer": [
+          "CARE"
+        ],
+        "hands": [
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "PLACE",
+          "COW"
+        ],
+        "hands": [
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "WATER"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 214.0,
+      "right_money": 214.0
+    },
+    {
+      "step": 72,
+      "state_equal": false,
+      "action_equal": false,
+      "left_action": {
+        "farmer": [
+          "PASS"
+        ],
+        "hands": [
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ]
+        ],
+        "market": []
+      },
+      "right_action": {
+        "farmer": [
+          "CARE"
+        ],
+        "hands": [
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ],
+          [
+            "PASS"
+          ]
+        ],
+        "market": []
+      },
+      "left_money": 214.0,
+      "right_money": 214.0
+    }
+  ]
+}
