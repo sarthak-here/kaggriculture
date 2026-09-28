@@ -5516,3 +5516,27 @@ Promoted local candidate generated at
 This is a
 rare-state monotonic safety repair, not a universal top-10 claim. Full report:
 `analysis/STEP1010_MISSED_PASTURE_PROMOTION_20260928.md`. No Kaggle submission.
+
+## #132 - Severe-loss structural route breakthrough (2026-09-28)
+
+Reconstructed the winning worker route from Step1010's worst live loss,
+episode 114720494, inside the frozen Kaito execution guards. Unlike the
+previous local overrides, this changes the complete farm structure: a lean
+three-quadrant, eight-cow, four-goose route with a fixed 54-carrot program.
+
+On ten disjoint fresh seeds per opponent, paired seats, it scored **136-64
+(68%)** across ten strong families with zero failures: 20-0 pf_all, 12-8
+Step1010, 14-6 corrected MarketShock, 10-10 Cha22, 10-10 demand timing, 12-8
+V48, 12-8 protected portfolio, 14-6 Shop0909, 12-8 Jaxa, and 20-0 Kaito
+clone/Soil. On all 19 recorded Step1010 live-loss tapes it improved 0-19 to
+**12-7**; on 30 current-top-10 tapes it scored **27-3**. Tape results remain
+diagnostic only and are excluded from the direct 136-64 record.
+
+Promoted local candidate:
+`variants/severe_114720494_route_20260928/main.py`, SHA-256
+`55ba2a4371e1b7552820dbc535cb8b522c0cfb97a9f02b357759492052bcd414`.
+It compiles and ends with callable `_kaggle_submission_entrypoint`. This is
+the strongest broad candidate from the refresh, but not a claim of universal
+dominance: Cha22 and demand timing remain even. Full report:
+`analysis/SEVERE_ROUTE_BREAKTHROUGH_20260928.md`. No Kaggle submission; fresh
+explicit approval is required.

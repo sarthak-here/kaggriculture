@@ -403,3 +403,17 @@ route tuning.
 - Strongest agent tested locally. Explicitly approved and submitted unchanged to
   Kaggle as **56325431** on 2026-09-18 at 08:28:19 UTC; initially PENDING.
   Full evidence: `analysis/V48_CLEAR_QUEUE_REPORT_20260918.md`.
+
+## Best local candidate: severe-loss structural route (#132, 2026-09-28)
+
+- Frozen file: `variants/severe_114720494_route_20260928/main.py`.
+- SHA-256: `55ba2a4371e1b7552820dbc535cb8b522c0cfb97a9f02b357759492052bcd414`.
+- Reconstructed from live loss episode 114720494 inside Kaito execution
+  guards; lean 3Q/8C/4G structure with a fixed 54-carrot program.
+- Fresh ten-family paired panel: **136-64 (68%)**, zero failures, including
+  20-0 pf_all, 12-8 Step1010, 14-6 MarketShock, and 20-0 Kaito clone/Soil.
+- All 19 Step1010 live-loss tapes improve from 0-19 to **12-7**; current top-10
+  tape diagnostic is **27-3**. Tape results are not reactive promotion tests.
+- Strongest current local candidate, but Cha22 and demand timing are still
+  10-10. Not submitted. Full evidence:
+  `analysis/SEVERE_ROUTE_BREAKTHROUGH_20260928.md`.
