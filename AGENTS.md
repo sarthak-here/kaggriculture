@@ -417,3 +417,14 @@ route tuning.
 - Strongest current local candidate, but Cha22 and demand timing are still
   10-10. Not submitted. Full evidence:
   `analysis/SEVERE_ROUTE_BREAKTHROUGH_20260928.md`.
+
+## Rejected specialist: replay 114268528 YARN hybrid (#133, 2026-09-29)
+
+- Specialist route: `variants/top10_yarn_20260929/114268528/main.py`.
+- Unconditional hybrid:
+  `variants/severe_top10_yarn_114268528_hybrid_20260929/main.py`.
+- Specialist versus severe route: **26-10** across discovery plus holdout.
+- Third-panel results: 14-6 pf_all, but **4-16** Step1010, **4-16**
+  MarketShock, and **4-16** Cha22; zero failures.
+- Rejected as a global replacement. Preserve as input to an opponent-aware
+  state bridge only. Not submitted.

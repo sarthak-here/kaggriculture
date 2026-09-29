@@ -5540,3 +5540,19 @@ the strongest broad candidate from the refresh, but not a claim of universal
 dominance: Cha22 and demand timing remain even. Full report:
 `analysis/SEVERE_ROUTE_BREAKTHROUGH_20260928.md`. No Kaggle submission; fresh
 explicit approval is required.
+
+## #133 — Top-player YARN specialist search (2026-09-29)
+
+Ten current-top replay routes were screened on balanced YARN-first,
+YARN-second, and YARN-third worlds. Replay 112946412''s apparent 18-0 discovery
+sweep collapsed to 0-12-6 on disjoint holdout and was rejected. Replay
+114268528 generalized: **14-4 discovery and 12-6 holdout (26-10 combined)**,
+zero failures, using a distinct animal/market economy with no carrot planting.
+
+An unconditional guarded hybrid was then tested on a third ten-seed YARN panel.
+It beat pf_all **14-6**, but lost **4-16 each** to Step1010 recovery,
+MarketShock, and Cha22. It is therefore a matchup specialist, not a promotion,
+and must not be submitted. The next candidate is a turn-1 opponent-signature
+bridge that retains the severe fallback for those three families and unknown
+openings. Full evidence:
+`analysis/YARN_SPECIALIST_SEARCH_20260929.md`. No Kaggle submission.
