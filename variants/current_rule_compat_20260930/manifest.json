@@ -1,0 +1,34 @@
+[
+  {
+    "name": "v48",
+    "base": "variants\\step1010_brunch_missed_pasture_recovery_20260928\\main.py",
+    "donor": "public_candidates\\v48_clear_queue_20260918\\main.py",
+    "payload": "_R108_DATA",
+    "payload_sha256": "4f14e67e729651a46e73eacb9ec45ee559cdc0326815c59c31cd28b1e2e1a680",
+    "status": "identical_to_base_no_variant_built"
+  },
+  {
+    "name": "v45",
+    "base": "variants\\step1010_brunch_missed_pasture_recovery_20260928\\main.py",
+    "donor": "variants\\v45_prefund_10_exported\\main.py",
+    "payload": "_R108_DATA",
+    "payload_sha256": "4f14e67e729651a46e73eacb9ec45ee559cdc0326815c59c31cd28b1e2e1a680",
+    "status": "identical_to_base_no_variant_built"
+  },
+  {
+    "name": "demand",
+    "base": "variants\\step1010_brunch_missed_pasture_recovery_20260928\\main.py",
+    "donor": "public_candidates\\current_20260924\\demand_timing\\main.py",
+    "payload": "_R108_DATA",
+    "payload_sha256": "4f14e67e729651a46e73eacb9ec45ee559cdc0326815c59c31cd28b1e2e1a680",
+    "status": "identical_to_base_no_variant_built"
+  },
+  {
+    "name": "marketshock",
+    "base": "variants\\step1010_brunch_missed_pasture_recovery_20260928\\main.py",
+    "donor": "variants\\marketshock_callable_fix_20260928\\main.py",
+    "payload": "_R108_DATA",
+    "payload_sha256": "4f14e67e729651a46e73eacb9ec45ee559cdc0326815c59c31cd28b1e2e1a680",
+    "status": "identical_to_base_no_variant_built"
+  }
+]

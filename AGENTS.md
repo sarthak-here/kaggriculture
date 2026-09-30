@@ -1,5 +1,23 @@
 # Agent registry
 
+## Current checkpoint — 2026-09-30 (historical compatibility tournament)
+
+Fresh paired-seat testing across pf_all, corrected V45, V48, Step1010 and the
+severe route found Step1010 strongest on the tested common worlds: 6-0 versus
+pf_all, V45 and V48.  Severe remains matchup-specific: 10-0 versus pf_all and
+4-2 versus V48, but 0-10 versus Step1010, Cha22 and demand-timing.
+
+Step1010, V48, V45, demand-timing and MarketShock carry the exact same
+3,982-action/41-route/64-shop `_R108_DATA` payload (SHA-256
+`4f14e67e729651a46e73eacb9ec45ee559cdc0326815c59c31cd28b1e2e1a680`),
+so route transplantation between them is a no-op; their differences are in
+controller overlays.  A real 1.32.7 hinge-pricing repair to old Flexonafft won
+13-5-2 against its parent but lost 0-10 to each of Step1010, V48, V45 and
+severe.  It is preserved at
+`variants/flexonafft_current_rules_20260930/main.py` but rejected for promotion.
+No Kaggle submission was made.  See Experiment #134 and
+`analysis/CURRENT_RULE_COMPAT_20260930.md`.
+
 ## Current checkpoint — 2026-09-27 (Step1010 BRUNCH router)
 
 Strongest narrowly improved local build:

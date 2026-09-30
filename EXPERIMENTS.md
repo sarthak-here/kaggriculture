@@ -5556,3 +5556,34 @@ and must not be submitted. The next candidate is a turn-1 opponent-signature
 bridge that retains the severe fallback for those three families and unknown
 openings. Full evidence:
 `analysis/YARN_SPECIALIST_SEARCH_20260929.md`. No Kaggle submission.
+
+## #134 — Historical-agent current-rule compatibility tournament (2026-09-30)
+
+Ran fresh paired-seat games under engine 1.32.7 across five historical bases.
+On seeds 1100100-1100102, Step1010 beat pf_all, corrected V45 and V48 **6-0
+each**; V48 beat V45 6-0; and both V45 and V48 beat pf_all 6-0.  Severe remains
+matchup-specific: it beat pf_all **10-0** on seeds 1100000-1100004 and V48
+**4-2** on 1100100-1100102, but lost **0-10 each** to Step1010, Cha22 and
+demand-timing on 1100000-1100004.  Every game completed.
+
+Recursive static decoding found that Step1010, V48, V45, demand-timing and
+MarketShock all carry the exact same 3,982-action, 41-route, 64-shop
+`_R108_DATA` portfolio, SHA-256
+`4f14e67e729651a46e73eacb9ec45ee559cdc0326815c59c31cd28b1e2e1a680`.
+Their strength differences are controller overlays, not route/shop data.
+Transplanting these portfolios is therefore a no-op.  Severe remains on the
+incompatible older `_V44_ROUTES` architecture and cannot be forced into R108.
+
+Built a genuine current-rule child of frozen Flexonafft.  The original already
+uses observed unlocked shops and a ten-order cap, but priced CARROT/TOMATO/EGG
+with obsolete log/linear/linear curves.  Changing only these to the 1.32.7
+hinge evaluator scored **13-5-2** against its parent on ten fresh paired seeds
+(+65 mean, zero failures, identical production).  It then lost **0-10 each**
+to Step1010, V48, V45 and severe on seeds 1100300-1100304, with mean margins
+from -29,755 to -56,918.  This is a valid compatibility repair but a rejected
+promotion: current pricing alone cannot close the production/economy gap.
+
+Preserved artifact: `variants/flexonafft_current_rules_20260930/main.py`.
+Builder and full report: `analysis/build_flexonafft_current_rules.py`,
+`analysis/build_current_rule_compat_cohort.py`, and
+`analysis/CURRENT_RULE_COMPAT_20260930.md`.  No Kaggle submission was made.
