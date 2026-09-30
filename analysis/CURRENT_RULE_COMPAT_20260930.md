@@ -71,3 +71,27 @@ of -32,343, -29,755, -29,966 and -56,918 respectively.
   route/shop payloads are already identical.
 
 No Kaggle submission was made.
+
+## Strict execution audit
+
+`analysis/audit_current_rule_execution.py` then checked the six concrete agents
+against the installed 1.32.7 engine rather than treating a final score as proof
+of compatibility.  Every agent completed all 720 steps, exposed a callable via
+Kaggle's own last-callable selector, emitted no structurally invalid unit or
+market action, and completed a world containing duplicate shop instances.
+
+The repaired Flexonafft `_market_price` matched the engine at 117 boundary and
+off-boundary points across all nine products, with zero mismatches.  This
+directly verifies the hinge implementation and parameters.
+
+There are accepted market no-ops in several controller families: pf_all emits
+two market `PASS` placeholders, V45 emits three empty/zero-quantity orders, V48
+emits 122, and Step1010 emits 13.  The engine deliberately ignores these and all
+games complete; in V48/Step they are part of queue-clearing overlays.  They are
+not an API/rule incompatibility, but they prevent describing the agents as
+"perfect".  Severe and repaired Flexonafft emitted none in the audited games.
+
+Therefore the precise conclusion is: the current-rule repair is correct and
+all six agents are executable on 1.32.7, but only Flexonafft was actually
+rewritten for stale rules, and finite execution tests do not prove strategic
+perfection.  Flexonafft remains rejected by the broad competitive panel.
