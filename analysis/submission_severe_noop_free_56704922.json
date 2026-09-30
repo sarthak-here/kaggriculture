@@ -1,0 +1,21 @@
+{
+  "competition": "kaggriculture",
+  "submission_id": 56704922,
+  "file": "variants/noop_free_20260930/severe_114720494/main.py",
+  "file_name": "main.py",
+  "sha256": "d94f62a825ab27d02119da99f4a19606f2da841e22f14aa34fa24ab40e0b3bca",
+  "bytes": 117945,
+  "callable": "current_rule_noop_free_agent",
+  "description": "Severe route current-rule cleanup",
+  "submitted_at": "2026-09-30T10:34:42.610000Z",
+  "status_at_check": "COMPLETE",
+  "public_score_at_check": 688.5,
+  "episode_api_at_check": {
+    "matches": 13,
+    "wins": 10,
+    "losses": 2,
+    "ties": 1,
+    "rating": 1256.6
+  },
+  "approval": "User explicitly approved submitting Severe in this turn"
+}

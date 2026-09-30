@@ -5607,3 +5607,35 @@ V48 improved 10-0 by a small +43 mean, and Step improved 4-0-6 by +2 mean.
 
 Artifacts and exact results are documented in
 `analysis/NOOP_FREE_COHORT_20260930.md`.  No Kaggle submission was made.
+
+## #136 — Severe submission and V45/V48-gated YARN repair (2026-09-30)
+
+With explicit user approval, submitted the exact no-op-free Severe artifact as
+submission **56704922** (`Severe route current-rule cleanup`), SHA-256
+`d94f62a825ab27d02119da99f4a19606f2da841e22f14aa34fa24ab40e0b3bca`.
+Kaggle marked it COMPLETE. The first scoreboard snapshot was 688.5, but the
+episode API already showed **2 wins, 0 losses, 1 tie** and rating 759.7 after
+three matches, so 688.5 was not evidence of a loss.
+
+All losses by Severe against repaired V45, V48 and Step1010 in the five-seed
+round robin were concentrated in the same two first-shop-YARN worlds. The old
+114268528 broad specialist was rejected again on disjoint seeds: it changed
+the Step matchup from 8-12 to 6-14 and left V45/V48 at 8-12 with worse margins.
+
+A ten-route targeted screen found replay **114605783**. Gated only on the
+observable V45/V48 turn-one signature (empty farm, no hands, farmer `[4,4]`,
+money exactly 2,867), the exact finalized agent improved both repaired V45 and
+V48 from **8-12 to 12-8** on the same ten held-out paired seeds. Against older
+V45 and V48 descendants it preserved the controls' 12-8 and 8-12 records,
+respectively, although margins worsened. The inactive path was neutral versus
+Severe (4-4-2, mean 0, identical production). No signature collision was
+found across Step, MarketShock, protected portfolio, Shop0909, Jaxa, pf_all,
+or Kaito/Soil.
+
+Final local candidate:
+`variants/severe_v45v48_yarn_114605783_20260930/main.py`, SHA-256
+`a690ab09f2909d254621d88085d64b3bbe2d949d384e978f3b4e6e51e94c10be`.
+It completed a strict 720-step 1.32.7 audit with zero hard errors and zero
+ignored orders. This is a narrow counter, not a universal Severe replacement.
+Full evidence: `analysis/SEVERE_V45V48_YARN_ROUTER_20260930.md`. No submission
+of this router; fresh explicit approval is required.
