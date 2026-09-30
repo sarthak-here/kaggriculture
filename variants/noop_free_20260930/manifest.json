@@ -1,0 +1,73 @@
+[
+  {
+    "name": "pf_all",
+    "source": "variants\\pf_all\\main.py",
+    "source_sha256": "9c26a3fd8ea3ae0719f042347f076576469fd1e778a6368bdc31181d0630130e",
+    "source_callable": "_kaggle_submission_entrypoint",
+    "source_noop_count": 2,
+    "source_noop_types": {
+      "market_pass": 2
+    },
+    "output": "variants\\noop_free_20260930\\pf_all\\main.py",
+    "output_sha256": "e0c8972d8d9a5425b4dd4992486f030ac6302d57ee93bedc9e76a421025abce5"
+  },
+  {
+    "name": "v45_prefund",
+    "source": "variants\\v45_prefund_10_exported\\main.py",
+    "source_sha256": "70866c42acad63aaef1d81dd77d85fa5b4d6682af241b33f55e61b6bc14e96cc",
+    "source_callable": "agent",
+    "source_noop_count": 3,
+    "source_noop_types": {
+      "empty_order": 1,
+      "zero_quantity": 2
+    },
+    "output": "variants\\noop_free_20260930\\v45_prefund\\main.py",
+    "output_sha256": "dcee56ce4cefb6cfd674a96bfdb05d6487a0c5f37bb6d59f05a3ad1a13085419"
+  },
+  {
+    "name": "v48_clear_queue",
+    "source": "public_candidates\\v48_clear_queue_20260918\\main.py",
+    "source_sha256": "4b5402888feeb4170dce38f34bebe56788b62ca287139fce7db72df8eb89bb96",
+    "source_callable": "_e335_agent",
+    "source_noop_count": 122,
+    "source_noop_types": {
+      "empty_order": 120,
+      "zero_quantity": 2
+    },
+    "output": "variants\\noop_free_20260930\\v48_clear_queue\\main.py",
+    "output_sha256": "c249cd8e114b8c84b5501f7ad57cda590de7a411926422a2bae312bd50d33d1a"
+  },
+  {
+    "name": "step1010",
+    "source": "variants\\step1010_brunch_missed_pasture_recovery_20260928\\main.py",
+    "source_sha256": "95eecb92529771afbbf7fb425360369dffa394d5b211ccd212ebd35cbbc7fcaf",
+    "source_callable": "step1010_brunch_pasture33_agent",
+    "source_noop_count": 13,
+    "source_noop_types": {
+      "empty_order": 9,
+      "zero_quantity": 4
+    },
+    "output": "variants\\noop_free_20260930\\step1010\\main.py",
+    "output_sha256": "da54a79d42a9225569873d840b65e03573c843274a74a6f0f5b2d7d53c0e4d1c"
+  },
+  {
+    "name": "severe_114720494",
+    "source": "variants\\severe_114720494_route_20260928\\main.py",
+    "source_sha256": "3f995d171abaef6f2a1ffa20b1286a161096d541e24f304d4284167813ece8b9",
+    "source_callable": "_kaggle_submission_entrypoint",
+    "source_noop_count": 0,
+    "source_noop_types": {},
+    "output": "variants\\noop_free_20260930\\severe_114720494\\main.py",
+    "output_sha256": "dd538a68374c1e00bab0e3cb223d9ff4805bbbc265bbeb668e446b26a0dba115"
+  },
+  {
+    "name": "flexonafft_repaired",
+    "source": "variants\\flexonafft_current_rules_20260930\\main.py",
+    "source_sha256": "47873e54ae5ac9812e2fc352ee3ad9368d6f5c9786db8148db767998655526f5",
+    "source_callable": "_kaggle_submission_entrypoint",
+    "source_noop_count": 0,
+    "source_noop_types": {},
+    "output": "variants\\noop_free_20260930\\flexonafft_repaired\\main.py",
+    "output_sha256": "16f33e27175417e3e7fab6e645d952c8bd46e6cafb2996a78dcd2897688c970e"
+  }
+]

@@ -436,6 +436,18 @@ route tuning.
   10-10. Not submitted. Full evidence:
   `analysis/SEVERE_ROUTE_BREAKTHROUGH_20260928.md`.
 
+## Current-rule no-op-free cohort (#135, 2026-09-30)
+
+- Six isolated wrappers live under `variants/noop_free_20260930/`; all frozen
+  parents remain unchanged.
+- Strict audit: six 720-step completions, zero hard action errors, zero ignored
+  market entries, correct final callables, and repeated-shop coverage.
+- Fresh internal round robin (50 games per agent): Step1010 44-6, Severe 38-12,
+  V48 34-16, V45 24-26, pf_all 9-41, Flexonafft 1-49; zero failures.
+- Severe beat Step1010 6-4 directly, so keep both: Step is the broad cohort
+  leader and Severe is its best tested counter.
+- Full report: `analysis/NOOP_FREE_COHORT_20260930.md`. Not submitted.
+
 ## Rejected specialist: replay 114268528 YARN hybrid (#133, 2026-09-29)
 
 - Specialist route: `variants/top10_yarn_20260929/114268528/main.py`.

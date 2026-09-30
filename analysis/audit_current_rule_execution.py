@@ -8,6 +8,7 @@ full current-rule game.  This is a compatibility audit, not a strength test.
 from __future__ import annotations
 
 import json
+import os
 import runpy
 from collections import Counter
 from pathlib import Path
@@ -36,6 +37,11 @@ AGENTS = {
     "severe_114720494": ROOT / "variants" / "severe_114720494_route_20260928" / "main.py",
     "flexonafft_repaired": ROOT / "variants" / "flexonafft_current_rules_20260930" / "main.py",
 }
+
+if os.environ.get("KAG_NOOP_FREE") == "1":
+    cohort_root = ROOT / "variants" / "noop_free_20260930"
+    AGENTS = {name: cohort_root / name / "main.py" for name in AGENTS}
+    OUT = ROOT / "analysis" / "noop_free_execution_audit_20260930.json"
 
 UNIT_OPS = {
     "NORTH", "SOUTH", "EAST", "WEST", "PASS", "PICKUP", "DROP", "PLACE",

@@ -5587,3 +5587,23 @@ Preserved artifact: `variants/flexonafft_current_rules_20260930/main.py`.
 Builder and full report: `analysis/build_flexonafft_current_rules.py`,
 `analysis/build_current_rule_compat_cohort.py`, and
 `analysis/CURRENT_RULE_COMPAT_20260930.md`.  No Kaggle submission was made.
+
+## #135 — No-op-free six-agent repair and round robin (2026-09-30)
+
+Built isolated wrappers for pf_all, V45 prefund, V48 clear queue, Step1010,
+Severe 114720494 and repaired Flexonafft.  The wrappers remove only market
+entries ignored by engine 1.32.7: empty rows, market `PASS`, malformed
+quantities and non-positive quantities.  Originals remain unchanged.  A strict
+720-step audit of all six repaired files found zero hard action errors, zero
+remaining ignored orders, correct Kaggle-selected callables, repeated-shop
+coverage, and 117/117 engine-price matches for repaired Flexonafft.
+
+Fresh paired-seat round robin on seeds 1100500-1100504, 150 games total and
+zero failures: Step1010 **44-6**, Severe **38-12**, V48 **34-16**, V45
+**24-26**, pf_all **9-41**, Flexonafft **1-49**.  Severe beat Step1010 6-4
+head-to-head, but Step had the best complete-cohort record.  Direct child vs
+frozen-parent A/B on seeds 1100600-1100604 showed no negative child record;
+V48 improved 10-0 by a small +43 mean, and Step improved 4-0-6 by +2 mean.
+
+Artifacts and exact results are documented in
+`analysis/NOOP_FREE_COHORT_20260930.md`.  No Kaggle submission was made.

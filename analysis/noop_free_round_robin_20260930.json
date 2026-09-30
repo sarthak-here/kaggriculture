@@ -1,0 +1,2642 @@
+{
+  "seeds": [
+    1100500,
+    1100501,
+    1100502,
+    1100503,
+    1100504
+  ],
+  "paired_seats": true,
+  "games_per_pair": 10,
+  "ranking": [
+    "step1010",
+    "severe_114720494",
+    "v48_clear_queue",
+    "v45_prefund",
+    "pf_all",
+    "flexonafft_repaired"
+  ],
+  "standings": {
+    "pf_all": {
+      "wins": 9,
+      "losses": 41,
+      "ties": 0,
+      "failures": 0,
+      "points": 9.0,
+      "all_game_win_rate": 0.18,
+      "point_rate": 0.18
+    },
+    "v45_prefund": {
+      "wins": 24,
+      "losses": 26,
+      "ties": 0,
+      "failures": 0,
+      "points": 24.0,
+      "all_game_win_rate": 0.48,
+      "point_rate": 0.48
+    },
+    "v48_clear_queue": {
+      "wins": 34,
+      "losses": 16,
+      "ties": 0,
+      "failures": 0,
+      "points": 34.0,
+      "all_game_win_rate": 0.68,
+      "point_rate": 0.68
+    },
+    "step1010": {
+      "wins": 44,
+      "losses": 6,
+      "ties": 0,
+      "failures": 0,
+      "points": 44.0,
+      "all_game_win_rate": 0.88,
+      "point_rate": 0.88
+    },
+    "severe_114720494": {
+      "wins": 38,
+      "losses": 12,
+      "ties": 0,
+      "failures": 0,
+      "points": 38.0,
+      "all_game_win_rate": 0.76,
+      "point_rate": 0.76
+    },
+    "flexonafft_repaired": {
+      "wins": 1,
+      "losses": 49,
+      "ties": 0,
+      "failures": 0,
+      "points": 1.0,
+      "all_game_win_rate": 0.02,
+      "point_rate": 0.02
+    }
+  },
+  "pairs": [
+    {
+      "a": "pf_all",
+      "b": "v45_prefund",
+      "wins_a": 0,
+      "wins_b": 10,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin_a": -30861.2,
+      "rows": [
+        {
+          "seed": 1100500,
+          "order": 0,
+          "a": 46548.0,
+          "b": 89049.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100500,
+          "order": 1,
+          "a": 47183.0,
+          "b": 89988.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 0,
+          "a": 76491.0,
+          "b": 103827.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 1,
+          "a": 76491.0,
+          "b": 103827.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 0,
+          "a": 61172.0,
+          "b": 97730.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 1,
+          "a": 61172.0,
+          "b": 97730.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 0,
+          "a": 106149.0,
+          "b": 125005.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 1,
+          "a": 106149.0,
+          "b": 125005.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 0,
+          "a": 78944.0,
+          "b": 107847.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 1,
+          "a": 78944.0,
+          "b": 107847.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP"
+          ]
+        }
+      ]
+    },
+    {
+      "a": "pf_all",
+      "b": "v48_clear_queue",
+      "wins_a": 0,
+      "wins_b": 10,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin_a": -30730.9,
+      "rows": [
+        {
+          "seed": 1100500,
+          "order": 0,
+          "a": 46477.0,
+          "b": 89188.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100500,
+          "order": 1,
+          "a": 47203.0,
+          "b": 90083.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 0,
+          "a": 76191.0,
+          "b": 103397.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 1,
+          "a": 76191.0,
+          "b": 103397.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 0,
+          "a": 61035.0,
+          "b": 97208.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 1,
+          "a": 61035.0,
+          "b": 97208.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 0,
+          "a": 106168.0,
+          "b": 124761.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 1,
+          "a": 106168.0,
+          "b": 124761.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 0,
+          "a": 78944.0,
+          "b": 107831.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 1,
+          "a": 78944.0,
+          "b": 107831.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP"
+          ]
+        }
+      ]
+    },
+    {
+      "a": "pf_all",
+      "b": "step1010",
+      "wins_a": 0,
+      "wins_b": 10,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin_a": -31517.9,
+      "rows": [
+        {
+          "seed": 1100500,
+          "order": 0,
+          "a": 47695.0,
+          "b": 88759.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100500,
+          "order": 1,
+          "a": 47076.0,
+          "b": 90187.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 0,
+          "a": 75310.0,
+          "b": 103094.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 1,
+          "a": 75310.0,
+          "b": 103094.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 0,
+          "a": 56403.0,
+          "b": 94711.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "FARMERS_MARKET"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 1,
+          "a": 56403.0,
+          "b": 94711.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "FARMERS_MARKET"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 0,
+          "a": 105151.0,
+          "b": 124857.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 1,
+          "a": 105151.0,
+          "b": 124857.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 0,
+          "a": 80542.0,
+          "b": 110246.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 1,
+          "a": 80542.0,
+          "b": 110246.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP"
+          ]
+        }
+      ]
+    },
+    {
+      "a": "pf_all",
+      "b": "severe_114720494",
+      "wins_a": 0,
+      "wins_b": 10,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin_a": -39217.6,
+      "rows": [
+        {
+          "seed": 1100500,
+          "order": 0,
+          "a": 39637.0,
+          "b": 89824.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "FARMERS_MARKET"
+          ]
+        },
+        {
+          "seed": 1100500,
+          "order": 1,
+          "a": 19810.0,
+          "b": 78037.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "PET_CAFE",
+            "FARMERS_MARKET"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 0,
+          "a": 77135.0,
+          "b": 113695.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 1,
+          "a": 77135.0,
+          "b": 113695.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 0,
+          "a": 79850.0,
+          "b": 92570.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "BRUNCH_SPOT",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 1,
+          "a": 79850.0,
+          "b": 92570.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "BRUNCH_SPOT",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 0,
+          "a": 106951.0,
+          "b": 130877.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 1,
+          "a": 106951.0,
+          "b": 130877.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 0,
+          "a": 58128.0,
+          "b": 126803.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "FARMERS_MARKET",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 1,
+          "a": 58128.0,
+          "b": 126803.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "FARMERS_MARKET",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "BRUNCH_SPOT"
+          ]
+        }
+      ]
+    },
+    {
+      "a": "pf_all",
+      "b": "flexonafft_repaired",
+      "wins_a": 9,
+      "wins_b": 1,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin_a": 1499.7,
+      "rows": [
+        {
+          "seed": 1100500,
+          "order": 0,
+          "a": 79439.0,
+          "b": 73128.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "FARMERS_MARKET",
+            "BAKERY",
+            "BAKERY"
+          ]
+        },
+        {
+          "seed": 1100500,
+          "order": 1,
+          "a": 79439.0,
+          "b": 73128.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "FARMERS_MARKET",
+            "BAKERY",
+            "BAKERY"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 0,
+          "a": 58790.0,
+          "b": 55033.0,
+          "shops": [
+            "FARMERS_MARKET",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 1,
+          "a": 58790.0,
+          "b": 55033.0,
+          "shops": [
+            "FARMERS_MARKET",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 0,
+          "a": 69785.0,
+          "b": 65072.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "PET_CAFE",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "YARN_STORE",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 1,
+          "a": 70311.0,
+          "b": 103997.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "BRUNCH_SPOT",
+            "YARN_STORE",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP",
+            "FARMERS_MARKET",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 0,
+          "a": 122098.0,
+          "b": 119382.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "PET_CAFE",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 1,
+          "a": 122098.0,
+          "b": 119382.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "PET_CAFE",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 0,
+          "a": 95534.0,
+          "b": 86333.0,
+          "shops": [
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "YARN_STORE",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PET_CAFE",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 1,
+          "a": 95534.0,
+          "b": 86333.0,
+          "shops": [
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "YARN_STORE",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PET_CAFE",
+            "BRUNCH_SPOT"
+          ]
+        }
+      ]
+    },
+    {
+      "a": "v45_prefund",
+      "b": "v48_clear_queue",
+      "wins_a": 0,
+      "wins_b": 10,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin_a": -2498.6,
+      "rows": [
+        {
+          "seed": 1100500,
+          "order": 0,
+          "a": 70763.0,
+          "b": 74329.0,
+          "shops": [
+            "YARN_STORE",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100500,
+          "order": 1,
+          "a": 70695.0,
+          "b": 74397.0,
+          "shops": [
+            "YARN_STORE",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 0,
+          "a": 53691.0,
+          "b": 58041.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "PET_CAFE",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 1,
+          "a": 53691.0,
+          "b": 58041.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "PET_CAFE",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 0,
+          "a": 87430.0,
+          "b": 89333.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 1,
+          "a": 87430.0,
+          "b": 89333.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 0,
+          "a": 131912.0,
+          "b": 132756.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 1,
+          "a": 131912.0,
+          "b": 132756.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 0,
+          "a": 70152.0,
+          "b": 71914.0,
+          "shops": [
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 1,
+          "a": 70152.0,
+          "b": 71914.0,
+          "shops": [
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP"
+          ]
+        }
+      ]
+    },
+    {
+      "a": "v45_prefund",
+      "b": "step1010",
+      "wins_a": 0,
+      "wins_b": 10,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin_a": -4834.2,
+      "rows": [
+        {
+          "seed": 1100500,
+          "order": 0,
+          "a": 69652.0,
+          "b": 76181.0,
+          "shops": [
+            "YARN_STORE",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100500,
+          "order": 1,
+          "a": 69580.0,
+          "b": 76249.0,
+          "shops": [
+            "YARN_STORE",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 0,
+          "a": 52244.0,
+          "b": 58797.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "PET_CAFE",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 1,
+          "a": 52244.0,
+          "b": 58797.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "PET_CAFE",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 0,
+          "a": 86111.0,
+          "b": 90052.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 1,
+          "a": 86111.0,
+          "b": 90052.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 0,
+          "a": 131572.0,
+          "b": 133345.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 1,
+          "a": 131572.0,
+          "b": 133345.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 0,
+          "a": 70106.0,
+          "b": 75411.0,
+          "shops": [
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 1,
+          "a": 70106.0,
+          "b": 75411.0,
+          "shops": [
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP"
+          ]
+        }
+      ]
+    },
+    {
+      "a": "v45_prefund",
+      "b": "severe_114720494",
+      "wins_a": 4,
+      "wins_b": 6,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin_a": -4243.8,
+      "rows": [
+        {
+          "seed": 1100500,
+          "order": 0,
+          "a": 111699.0,
+          "b": 96991.0,
+          "shops": [
+            "YARN_STORE",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "SMOOTHIE_SHOP",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100500,
+          "order": 1,
+          "a": 111699.0,
+          "b": 96991.0,
+          "shops": [
+            "YARN_STORE",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "SMOOTHIE_SHOP",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 0,
+          "a": 63378.0,
+          "b": 75014.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 1,
+          "a": 63378.0,
+          "b": 75014.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 0,
+          "a": 95355.0,
+          "b": 85293.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "BRUNCH_SPOT",
+            "BRUNCH_SPOT",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 1,
+          "a": 95355.0,
+          "b": 85293.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "BRUNCH_SPOT",
+            "BRUNCH_SPOT",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 0,
+          "a": 93963.0,
+          "b": 108125.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "PET_CAFE",
+            "SMOOTHIE_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 1,
+          "a": 93963.0,
+          "b": 108125.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "PET_CAFE",
+            "SMOOTHIE_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 0,
+          "a": 74215.0,
+          "b": 94406.0,
+          "shops": [
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 1,
+          "a": 74215.0,
+          "b": 94406.0,
+          "shops": [
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP"
+          ]
+        }
+      ]
+    },
+    {
+      "a": "v45_prefund",
+      "b": "flexonafft_repaired",
+      "wins_a": 10,
+      "wins_b": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin_a": 33085.4,
+      "rows": [
+        {
+          "seed": 1100500,
+          "order": 0,
+          "a": 91130.0,
+          "b": 48367.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100500,
+          "order": 1,
+          "a": 90315.0,
+          "b": 47713.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 0,
+          "a": 103725.0,
+          "b": 74233.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 1,
+          "a": 103725.0,
+          "b": 74233.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 0,
+          "a": 118618.0,
+          "b": 84175.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "YARN_STORE",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 1,
+          "a": 118618.0,
+          "b": 84175.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "YARN_STORE",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 0,
+          "a": 125251.0,
+          "b": 104308.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 1,
+          "a": 125251.0,
+          "b": 104308.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 0,
+          "a": 113448.0,
+          "b": 75485.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 1,
+          "a": 113441.0,
+          "b": 75671.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP"
+          ]
+        }
+      ]
+    },
+    {
+      "a": "v48_clear_queue",
+      "b": "step1010",
+      "wins_a": 0,
+      "wins_b": 10,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin_a": -3753.8,
+      "rows": [
+        {
+          "seed": 1100500,
+          "order": 0,
+          "a": 70613.0,
+          "b": 75195.0,
+          "shops": [
+            "YARN_STORE",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100500,
+          "order": 1,
+          "a": 70541.0,
+          "b": 75263.0,
+          "shops": [
+            "YARN_STORE",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 0,
+          "a": 53938.0,
+          "b": 57032.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "PET_CAFE",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 1,
+          "a": 53938.0,
+          "b": 57032.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "PET_CAFE",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 0,
+          "a": 86098.0,
+          "b": 89960.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 1,
+          "a": 86098.0,
+          "b": 89960.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 0,
+          "a": 131621.0,
+          "b": 133227.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 1,
+          "a": 131621.0,
+          "b": 133227.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 0,
+          "a": 70541.0,
+          "b": 76096.0,
+          "shops": [
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 1,
+          "a": 70541.0,
+          "b": 76096.0,
+          "shops": [
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP"
+          ]
+        }
+      ]
+    },
+    {
+      "a": "v48_clear_queue",
+      "b": "severe_114720494",
+      "wins_a": 4,
+      "wins_b": 6,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin_a": -4181.0,
+      "rows": [
+        {
+          "seed": 1100500,
+          "order": 0,
+          "a": 111641.0,
+          "b": 96744.0,
+          "shops": [
+            "YARN_STORE",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "SMOOTHIE_SHOP",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100500,
+          "order": 1,
+          "a": 111641.0,
+          "b": 96744.0,
+          "shops": [
+            "YARN_STORE",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "SMOOTHIE_SHOP",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 0,
+          "a": 63146.0,
+          "b": 74878.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 1,
+          "a": 63146.0,
+          "b": 74878.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 0,
+          "a": 95457.0,
+          "b": 85146.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "BRUNCH_SPOT",
+            "BRUNCH_SPOT",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 1,
+          "a": 95457.0,
+          "b": 85146.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "BRUNCH_SPOT",
+            "BRUNCH_SPOT",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 0,
+          "a": 93956.0,
+          "b": 108033.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "PET_CAFE",
+            "SMOOTHIE_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 1,
+          "a": 93956.0,
+          "b": 108033.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "PET_CAFE",
+            "SMOOTHIE_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 0,
+          "a": 74552.0,
+          "b": 94856.0,
+          "shops": [
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 1,
+          "a": 74552.0,
+          "b": 94856.0,
+          "shops": [
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP"
+          ]
+        }
+      ]
+    },
+    {
+      "a": "v48_clear_queue",
+      "b": "flexonafft_repaired",
+      "wins_a": 10,
+      "wins_b": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin_a": 33021.0,
+      "rows": [
+        {
+          "seed": 1100500,
+          "order": 0,
+          "a": 91442.0,
+          "b": 48097.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100500,
+          "order": 1,
+          "a": 90619.0,
+          "b": 47451.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 0,
+          "a": 103342.0,
+          "b": 74177.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 1,
+          "a": 103342.0,
+          "b": 74177.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 0,
+          "a": 118051.0,
+          "b": 83955.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "YARN_STORE",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 1,
+          "a": 118051.0,
+          "b": 83955.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "YARN_STORE",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 0,
+          "a": 125088.0,
+          "b": 104346.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 1,
+          "a": 125088.0,
+          "b": 104346.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 0,
+          "a": 113427.0,
+          "b": 75485.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 1,
+          "a": 113420.0,
+          "b": 75671.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP"
+          ]
+        }
+      ]
+    },
+    {
+      "a": "step1010",
+      "b": "severe_114720494",
+      "wins_a": 4,
+      "wins_b": 6,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin_a": -4303.8,
+      "rows": [
+        {
+          "seed": 1100500,
+          "order": 0,
+          "a": 109073.0,
+          "b": 95263.0,
+          "shops": [
+            "YARN_STORE",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "SMOOTHIE_SHOP",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100500,
+          "order": 1,
+          "a": 109073.0,
+          "b": 95263.0,
+          "shops": [
+            "YARN_STORE",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "SMOOTHIE_SHOP",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PET_CAFE",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 0,
+          "a": 62129.0,
+          "b": 74594.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 1,
+          "a": 62129.0,
+          "b": 74594.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 0,
+          "a": 98369.0,
+          "b": 82314.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "BRUNCH_SPOT",
+            "PIZZA_SHOP",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 1,
+          "a": 98369.0,
+          "b": 82314.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "BRUNCH_SPOT",
+            "PIZZA_SHOP",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 0,
+          "a": 92578.0,
+          "b": 107346.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "PET_CAFE",
+            "SMOOTHIE_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 1,
+          "a": 92578.0,
+          "b": 107346.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "PET_CAFE",
+            "SMOOTHIE_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 0,
+          "a": 76003.0,
+          "b": 100154.0,
+          "shops": [
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 1,
+          "a": 76003.0,
+          "b": 100154.0,
+          "shops": [
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "PIZZA_SHOP",
+            "ICE_CREAM_SHOP"
+          ]
+        }
+      ]
+    },
+    {
+      "a": "step1010",
+      "b": "flexonafft_repaired",
+      "wins_a": 10,
+      "wins_b": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin_a": 34392.8,
+      "rows": [
+        {
+          "seed": 1100500,
+          "order": 0,
+          "a": 91928.0,
+          "b": 48667.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100500,
+          "order": 1,
+          "a": 91499.0,
+          "b": 48250.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 0,
+          "a": 103821.0,
+          "b": 73370.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 1,
+          "a": 103821.0,
+          "b": 73370.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "PIZZA_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "PIZZA_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 0,
+          "a": 119697.0,
+          "b": 82901.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 1,
+          "a": 119697.0,
+          "b": 83136.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "PET_CAFE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 0,
+          "a": 125041.0,
+          "b": 103579.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 1,
+          "a": 125041.0,
+          "b": 103579.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "BRUNCH_SPOT",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 0,
+          "a": 116729.0,
+          "b": 76513.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 1,
+          "a": 116719.0,
+          "b": 76700.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "PET_CAFE",
+            "FARMERS_MARKET",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP"
+          ]
+        }
+      ]
+    },
+    {
+      "a": "severe_114720494",
+      "b": "flexonafft_repaired",
+      "wins_a": 10,
+      "wins_b": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin_a": 47045.0,
+      "rows": [
+        {
+          "seed": 1100500,
+          "order": 0,
+          "a": 77430.0,
+          "b": 19503.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "PET_CAFE",
+            "BAKERY"
+          ]
+        },
+        {
+          "seed": 1100500,
+          "order": 1,
+          "a": 89788.0,
+          "b": 41628.0,
+          "shops": [
+            "PET_CAFE",
+            "BAKERY",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "FARMERS_MARKET"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 0,
+          "a": 150989.0,
+          "b": 105403.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "YARN_STORE",
+            "BRUNCH_SPOT",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100501,
+          "order": 1,
+          "a": 150989.0,
+          "b": 105403.0,
+          "shops": [
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "SMOOTHIE_SHOP",
+            "SMOOTHIE_SHOP",
+            "YARN_STORE",
+            "BRUNCH_SPOT",
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 0,
+          "a": 82114.0,
+          "b": 72900.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP"
+          ]
+        },
+        {
+          "seed": 1100502,
+          "order": 1,
+          "a": 82114.0,
+          "b": 72900.0,
+          "shops": [
+            "YARN_STORE",
+            "PET_CAFE",
+            "YARN_STORE",
+            "ICE_CREAM_SHOP",
+            "YARN_STORE",
+            "SMOOTHIE_SHOP",
+            "PIZZA_SHOP",
+            "SMOOTHIE_SHOP"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 0,
+          "a": 123504.0,
+          "b": 65700.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "BAKERY",
+            "FARMERS_MARKET",
+            "PIZZA_SHOP",
+            "YARN_STORE",
+            "BRUNCH_SPOT",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100503,
+          "order": 1,
+          "a": 143392.0,
+          "b": 91555.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "YARN_STORE",
+            "SMOOTHIE_SHOP",
+            "YARN_STORE"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 0,
+          "a": 126841.0,
+          "b": 54280.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "ICE_CREAM_SHOP",
+            "BRUNCH_SPOT"
+          ]
+        },
+        {
+          "seed": 1100504,
+          "order": 1,
+          "a": 126841.0,
+          "b": 54280.0,
+          "shops": [
+            "BRUNCH_SPOT",
+            "FARMERS_MARKET",
+            "FARMERS_MARKET",
+            "ICE_CREAM_SHOP",
+            "SMOOTHIE_SHOP",
+            "BAKERY",
+            "ICE_CREAM_SHOP",
+            "BRUNCH_SPOT"
+          ]
+        }
+      ]
+    }
+  ]
+}

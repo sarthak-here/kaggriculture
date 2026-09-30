@@ -1,0 +1,438 @@
+{
+  "seeds": [
+    1100600,
+    1100601,
+    1100602,
+    1100603,
+    1100604
+  ],
+  "paired_seats": true,
+  "results": [
+    {
+      "name": "pf_all",
+      "parent_noops": 2,
+      "wins": 3,
+      "losses": 3,
+      "ties": 4,
+      "failures": 0,
+      "mean_margin": 0.0,
+      "rows": [
+        {
+          "seed": 1100600,
+          "order": 0,
+          "child": 89479.0,
+          "parent": 89479.0
+        },
+        {
+          "seed": 1100600,
+          "order": 1,
+          "child": 89479.0,
+          "parent": 89479.0
+        },
+        {
+          "seed": 1100601,
+          "order": 0,
+          "child": 111604.0,
+          "parent": 111674.0
+        },
+        {
+          "seed": 1100601,
+          "order": 1,
+          "child": 111674.0,
+          "parent": 111604.0
+        },
+        {
+          "seed": 1100602,
+          "order": 0,
+          "child": 136340.0,
+          "parent": 136340.0
+        },
+        {
+          "seed": 1100602,
+          "order": 1,
+          "child": 136340.0,
+          "parent": 136340.0
+        },
+        {
+          "seed": 1100603,
+          "order": 0,
+          "child": 55927.0,
+          "parent": 55780.0
+        },
+        {
+          "seed": 1100603,
+          "order": 1,
+          "child": 55780.0,
+          "parent": 55927.0
+        },
+        {
+          "seed": 1100604,
+          "order": 0,
+          "child": 65499.0,
+          "parent": 64629.0
+        },
+        {
+          "seed": 1100604,
+          "order": 1,
+          "child": 64629.0,
+          "parent": 65499.0
+        }
+      ]
+    },
+    {
+      "name": "v45_prefund",
+      "parent_noops": 3,
+      "wins": 0,
+      "losses": 0,
+      "ties": 10,
+      "failures": 0,
+      "mean_margin": 0.0,
+      "rows": [
+        {
+          "seed": 1100600,
+          "order": 0,
+          "child": 93674.0,
+          "parent": 93674.0
+        },
+        {
+          "seed": 1100600,
+          "order": 1,
+          "child": 93674.0,
+          "parent": 93674.0
+        },
+        {
+          "seed": 1100601,
+          "order": 0,
+          "child": 112496.0,
+          "parent": 112496.0
+        },
+        {
+          "seed": 1100601,
+          "order": 1,
+          "child": 112496.0,
+          "parent": 112496.0
+        },
+        {
+          "seed": 1100602,
+          "order": 0,
+          "child": 107639.0,
+          "parent": 107639.0
+        },
+        {
+          "seed": 1100602,
+          "order": 1,
+          "child": 107639.0,
+          "parent": 107639.0
+        },
+        {
+          "seed": 1100603,
+          "order": 0,
+          "child": 120211.0,
+          "parent": 120211.0
+        },
+        {
+          "seed": 1100603,
+          "order": 1,
+          "child": 120211.0,
+          "parent": 120211.0
+        },
+        {
+          "seed": 1100604,
+          "order": 0,
+          "child": 118285.0,
+          "parent": 118285.0
+        },
+        {
+          "seed": 1100604,
+          "order": 1,
+          "child": 118285.0,
+          "parent": 118285.0
+        }
+      ]
+    },
+    {
+      "name": "v48_clear_queue",
+      "parent_noops": 122,
+      "wins": 10,
+      "losses": 0,
+      "ties": 0,
+      "failures": 0,
+      "mean_margin": 43.0,
+      "rows": [
+        {
+          "seed": 1100600,
+          "order": 0,
+          "child": 93674.0,
+          "parent": 93673.0
+        },
+        {
+          "seed": 1100600,
+          "order": 1,
+          "child": 93674.0,
+          "parent": 93673.0
+        },
+        {
+          "seed": 1100601,
+          "order": 0,
+          "child": 112456.0,
+          "parent": 112440.0
+        },
+        {
+          "seed": 1100601,
+          "order": 1,
+          "child": 112456.0,
+          "parent": 112440.0
+        },
+        {
+          "seed": 1100602,
+          "order": 0,
+          "child": 107576.0,
+          "parent": 107568.0
+        },
+        {
+          "seed": 1100602,
+          "order": 1,
+          "child": 107576.0,
+          "parent": 107568.0
+        },
+        {
+          "seed": 1100603,
+          "order": 0,
+          "child": 120118.0,
+          "parent": 119936.0
+        },
+        {
+          "seed": 1100603,
+          "order": 1,
+          "child": 120118.0,
+          "parent": 119936.0
+        },
+        {
+          "seed": 1100604,
+          "order": 0,
+          "child": 118211.0,
+          "parent": 118203.0
+        },
+        {
+          "seed": 1100604,
+          "order": 1,
+          "child": 118211.0,
+          "parent": 118203.0
+        }
+      ]
+    },
+    {
+      "name": "step1010",
+      "parent_noops": 13,
+      "wins": 4,
+      "losses": 0,
+      "ties": 6,
+      "failures": 0,
+      "mean_margin": 2.2,
+      "rows": [
+        {
+          "seed": 1100600,
+          "order": 0,
+          "child": 96403.0,
+          "parent": 96403.0
+        },
+        {
+          "seed": 1100600,
+          "order": 1,
+          "child": 96403.0,
+          "parent": 96403.0
+        },
+        {
+          "seed": 1100601,
+          "order": 0,
+          "child": 112002.0,
+          "parent": 111994.0
+        },
+        {
+          "seed": 1100601,
+          "order": 1,
+          "child": 112002.0,
+          "parent": 111994.0
+        },
+        {
+          "seed": 1100602,
+          "order": 0,
+          "child": 107993.0,
+          "parent": 107993.0
+        },
+        {
+          "seed": 1100602,
+          "order": 1,
+          "child": 107993.0,
+          "parent": 107993.0
+        },
+        {
+          "seed": 1100603,
+          "order": 0,
+          "child": 116213.0,
+          "parent": 116213.0
+        },
+        {
+          "seed": 1100603,
+          "order": 1,
+          "child": 116213.0,
+          "parent": 116213.0
+        },
+        {
+          "seed": 1100604,
+          "order": 0,
+          "child": 118389.0,
+          "parent": 118386.0
+        },
+        {
+          "seed": 1100604,
+          "order": 1,
+          "child": 118389.0,
+          "parent": 118386.0
+        }
+      ]
+    },
+    {
+      "name": "severe_114720494",
+      "parent_noops": 0,
+      "wins": 5,
+      "losses": 3,
+      "ties": 2,
+      "failures": 0,
+      "mean_margin": 3.6,
+      "rows": [
+        {
+          "seed": 1100600,
+          "order": 0,
+          "child": 109092.0,
+          "parent": 109092.0
+        },
+        {
+          "seed": 1100600,
+          "order": 1,
+          "child": 109092.0,
+          "parent": 109092.0
+        },
+        {
+          "seed": 1100601,
+          "order": 0,
+          "child": 97728.0,
+          "parent": 97725.0
+        },
+        {
+          "seed": 1100601,
+          "order": 1,
+          "child": 97728.0,
+          "parent": 97725.0
+        },
+        {
+          "seed": 1100602,
+          "order": 0,
+          "child": 99608.0,
+          "parent": 102555.0
+        },
+        {
+          "seed": 1100602,
+          "order": 1,
+          "child": 102562.0,
+          "parent": 99601.0
+        },
+        {
+          "seed": 1100603,
+          "order": 0,
+          "child": 89228.0,
+          "parent": 89219.0
+        },
+        {
+          "seed": 1100603,
+          "order": 1,
+          "child": 89228.0,
+          "parent": 89219.0
+        },
+        {
+          "seed": 1100604,
+          "order": 0,
+          "child": 117636.0,
+          "parent": 117637.0
+        },
+        {
+          "seed": 1100604,
+          "order": 1,
+          "child": 117636.0,
+          "parent": 117637.0
+        }
+      ]
+    },
+    {
+      "name": "flexonafft_repaired",
+      "parent_noops": 0,
+      "wins": 4,
+      "losses": 4,
+      "ties": 2,
+      "failures": 0,
+      "mean_margin": 0.0,
+      "rows": [
+        {
+          "seed": 1100600,
+          "order": 0,
+          "child": 103235.0,
+          "parent": 103235.0
+        },
+        {
+          "seed": 1100600,
+          "order": 1,
+          "child": 103235.0,
+          "parent": 103235.0
+        },
+        {
+          "seed": 1100601,
+          "order": 0,
+          "child": 111061.0,
+          "parent": 111131.0
+        },
+        {
+          "seed": 1100601,
+          "order": 1,
+          "child": 111131.0,
+          "parent": 111061.0
+        },
+        {
+          "seed": 1100602,
+          "order": 0,
+          "child": 130329.0,
+          "parent": 129144.0
+        },
+        {
+          "seed": 1100602,
+          "order": 1,
+          "child": 129144.0,
+          "parent": 130329.0
+        },
+        {
+          "seed": 1100603,
+          "order": 0,
+          "child": 70105.0,
+          "parent": 71724.0
+        },
+        {
+          "seed": 1100603,
+          "order": 1,
+          "child": 71724.0,
+          "parent": 70105.0
+        },
+        {
+          "seed": 1100604,
+          "order": 0,
+          "child": 59396.0,
+          "parent": 59395.0
+        },
+        {
+          "seed": 1100604,
+          "order": 1,
+          "child": 59395.0,
+          "parent": 59396.0
+        }
+      ]
+    }
+  ]
+}
