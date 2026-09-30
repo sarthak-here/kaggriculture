@@ -5639,3 +5639,37 @@ It completed a strict 720-step 1.32.7 audit with zero hard errors and zero
 ignored orders. This is a narrow counter, not a universal Severe replacement.
 Full evidence: `analysis/SEVERE_V45V48_YARN_ROUTER_20260930.md`. No submission
 of this router; fresh explicit approval is required.
+
+## #137 — Severe live-loss architecture audit (2026-09-30)
+
+Downloaded and profiled all seven recorded losses from frozen Severe
+submission 56704922. Six of seven are YARN openings. Four losses are close
+(mean -1,722); the three structural losses are Divyansh Kumar (-18,882),
+S. Mujtaba Hussain (-17,743), and KharinTymofii (-13,859). The first two build
+6-cow/11-sheep farms with 11-13 hands; Kharin builds 12 cows/5 sheep/13 hands.
+Severe remains near 8 cows/3 sheep/9-10 geese/10 hands.
+
+A strict late-YARN detector was inactive-neutral over 20 fresh paired-seat
+games. Route 114605783, one/two/three exact cow-to-sheep swaps, wool-sale
+timing, and terminal feed/harvest interventions improved selected margins but
+flipped none of the three structural results. The late-YARN Severe patch is
+rejected.
+
+A seven-lineage tape panel found the actual breakthrough: current Step1010
+was the only agent to beat all three structural opponents, by +5,926, +2,224,
+and +509. Cha22 failed Kharin; demand-timing failed Mujtaba and Kharin; V48,
+V45, Severe and pf_all failed all three. This agrees with #135's independent
+150-game round robin, where Step1010 led 44-6 versus Severe's 38-12. The gap is
+farm architecture, not a local Severe bug.
+
+Step1010 and Cha22 diverge at step 0, before opponent identity is observable,
+so a safe after-observation chassis router cannot choose between them. Keep
+Severe as a matchup counter and evaluate exact no-op-free Step1010 as the
+broad candidate.
+
+Final disjoint validation used seeds 1100700-1100709 in both seat orders:
+Step1010 scored **10-10 versus Severe, 20-0 versus V48, 16-4 versus Cha22, and
+20-0 versus demand-timing: 66-14 (82.5%) total, zero failures**. It is the best
+broad candidate, not a strict Severe replacement. Full evidence:
+`analysis/SEVERE_LIVE_STRUCTURAL_BREAKTHROUGH_20260930.md`. No Kaggle
+submission was made.

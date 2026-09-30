@@ -1,5 +1,23 @@
 # Agent registry
 
+## Current checkpoint — 2026-09-30 (Severe live-loss architecture audit)
+
+All seven losses from Severe submission 56704922 were profiled. Six were YARN
+openings; the three large losses came from livestock/labour architectures that
+Severe cannot reproduce with a local suffix patch. Late-YARN route swaps,
+partial and full cow-to-sheep swaps, wool-sale timing, and terminal overrides
+improved margins but flipped none of the three structural results.
+
+Current no-op-free Step1010 was the only one of seven frozen lineages to beat
+all three exact structural opponents (+5,926, +2,224, +509), consistent with
+its first-place 44-6 result in the independent 150-game current-rule round
+robin. A final disjoint 80-game direct panel scored 66-14: 10-10 versus Severe,
+20-0 versus V48, 16-4 versus Cha22, and 20-0 versus demand-timing, with zero
+failures. It is the broad candidate; Severe remains a matchup-specific counter.
+This is not a claim that Step1010 never loses. No Kaggle submission was made. See
+Experiment #137 and
+`analysis/SEVERE_LIVE_STRUCTURAL_BREAKTHROUGH_20260930.md`.
+
 ## Current checkpoint — 2026-09-30 (historical compatibility tournament)
 
 Fresh paired-seat testing across pf_all, corrected V45, V48, Step1010 and the
