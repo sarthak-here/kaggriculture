@@ -5673,3 +5673,15 @@ Step1010 scored **10-10 versus Severe, 20-0 versus V48, 16-4 versus Cha22, and
 broad candidate, not a strict Severe replacement. Full evidence:
 `analysis/SEVERE_LIVE_STRUCTURAL_BREAKTHROUGH_20260930.md`. No Kaggle
 submission was made.
+
+### #137 authorized submission
+
+After reviewing the final 66-14, zero-failure panel, the user explicitly
+approved one upload of the exact no-op-free Step1010 artifact. Preflight
+reverified compilation and SHA-256
+`e76f39f60ed1bf52dd01001f93284f22ad2fcd7a470d55be47f0093d1eaac00c`.
+Submitted once as Kaggle submission **56716957** at
+2026-09-30T19:27:28.973000Z with description
+`Step1010 current-rule broad candidate`. Initial status PENDING; Kaggle
+reported three daily submissions remaining. Receipt:
+`analysis/submission_step1010_broad_56716957.json`.

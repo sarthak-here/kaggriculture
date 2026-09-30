@@ -14,9 +14,13 @@ its first-place 44-6 result in the independent 150-game current-rule round
 robin. A final disjoint 80-game direct panel scored 66-14: 10-10 versus Severe,
 20-0 versus V48, 16-4 versus Cha22, and 20-0 versus demand-timing, with zero
 failures. It is the broad candidate; Severe remains a matchup-specific counter.
-This is not a claim that Step1010 never loses. No Kaggle submission was made. See
-Experiment #137 and
+This is not a claim that Step1010 never loses. See Experiment #137 and
 `analysis/SEVERE_LIVE_STRUCTURAL_BREAKTHROUGH_20260930.md`.
+
+Authorized submission: **56716957**, submitted
+2026-09-30T19:27:28.973000Z as `Step1010 current-rule broad candidate`.
+Initial status PENDING. Frozen uploaded SHA-256:
+`e76f39f60ed1bf52dd01001f93284f22ad2fcd7a470d55be47f0093d1eaac00c`.
 
 ## Current checkpoint — 2026-09-30 (historical compatibility tournament)
 

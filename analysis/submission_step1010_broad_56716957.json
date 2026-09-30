@@ -1,0 +1,22 @@
+{
+  "competition": "kaggriculture",
+  "submission_id": 56716957,
+  "submitted_at": "2026-09-30T19:27:28.973000Z",
+  "description": "Step1010 current-rule broad candidate",
+  "status_at_receipt": "PENDING",
+  "source": "variants/noop_free_20260930/step1010/main.py",
+  "sha256": "e76f39f60ed1bf52dd01001f93284f22ad2fcd7a470d55be47f0093d1eaac00c",
+  "validation": {
+    "games": 80,
+    "wins": 66,
+    "losses": 14,
+    "ties": 0,
+    "failures": 0,
+    "opponents": {
+      "severe": "10-10-0",
+      "v48_clear_queue": "20-0-0",
+      "cha22": "16-4-0",
+      "demand_timing": "20-0-0"
+    }
+  }
+}
