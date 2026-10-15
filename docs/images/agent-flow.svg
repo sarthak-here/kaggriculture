@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">How the Kaggriculture agent works</title>
+  <desc id="desc">Shop sequence selects a route, which drives farm actions, market control, safety checks, and income.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#b87343"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="675" rx="28" fill="#f7f4ed"/>
+  <text x="70" y="90" fill="#172033" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="800">HOW THE AGENT WORKED</text>
+  <text x="72" y="134" fill="#5c6678" font-family="Arial, Helvetica, sans-serif" font-size="24">A deterministic route controller with reactive market decisions</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <rect x="55" y="238" width="190" height="150" rx="22" fill="#ffffff" stroke="#cad1db" stroke-width="3"/>
+    <text x="150" y="292" fill="#172033" font-size="26" font-weight="700">SHOP</text>
+    <text x="150" y="326" fill="#172033" font-size="26" font-weight="700">SEQUENCE</text>
+    <text x="150" y="363" fill="#687386" font-size="17">Observe the world</text>
+
+    <rect x="285" y="238" width="190" height="150" rx="22" fill="#fff8f1" stroke="#b87343" stroke-width="4"/>
+    <text x="380" y="292" fill="#7a3f25" font-size="26" font-weight="700">ROUTE</text>
+    <text x="380" y="326" fill="#7a3f25" font-size="26" font-weight="700">SELECTION</text>
+    <text x="380" y="363" fill="#8b5a3c" font-size="17">Choose a farm plan</text>
+
+    <rect x="515" y="238" width="190" height="150" rx="22" fill="#ffffff" stroke="#6b9b65" stroke-width="3"/>
+    <text x="610" y="292" fill="#244c31" font-size="26" font-weight="700">FARM</text>
+    <text x="610" y="326" fill="#244c31" font-size="26" font-weight="700">ACTIONS</text>
+    <text x="610" y="354" fill="#657367" font-size="16">Plant · Water · Harvest</text>
+    <text x="610" y="377" fill="#657367" font-size="16">Animals · Workers · Land</text>
+
+    <rect x="745" y="238" width="190" height="150" rx="22" fill="#ffffff" stroke="#d39b3d" stroke-width="3"/>
+    <text x="840" y="292" fill="#634715" font-size="26" font-weight="700">MARKET</text>
+    <text x="840" y="326" fill="#634715" font-size="26" font-weight="700">CONTROL</text>
+    <text x="840" y="354" fill="#75684f" font-size="16">Capital protection</text>
+    <text x="840" y="377" fill="#75684f" font-size="16">Buy · Sell · Preempt</text>
+
+    <rect x="975" y="238" width="170" height="150" rx="22" fill="#172033"/>
+    <text x="1060" y="296" fill="#ffffff" font-size="26" font-weight="700">INCOME</text>
+    <text x="1060" y="338" fill="#e8a66f" font-size="35" font-weight="800">SCORE</text>
+    <text x="1060" y="371" fill="#c5cfdd" font-size="16">Final objective</text>
+  </g>
+
+  <g fill="none" stroke="#b87343" stroke-width="6" marker-end="url(#arrow)">
+    <path d="M245 313 L278 313"/>
+    <path d="M475 313 L508 313"/>
+    <path d="M705 313 L738 313"/>
+    <path d="M935 313 L968 313"/>
+  </g>
+
+  <rect x="285" y="466" width="650" height="112" rx="20" fill="#edf0f4"/>
+  <text x="610" y="510" text-anchor="middle" fill="#172033" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">EXECUTION SAFETY LAYER</text>
+  <text x="610" y="548" text-anchor="middle" fill="#596577" font-family="Arial, Helvetica, sans-serif" font-size="19">Remove invalid orders · preserve action limits · return a safe fallback</text>
+  <path d="M380 466 L380 420 M610 466 L610 420 M840 466 L840 420" stroke="#7d8797" stroke-width="3" stroke-dasharray="8 8"/>
+</svg>
